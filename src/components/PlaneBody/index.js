@@ -9,9 +9,12 @@ import { JetsNotInit } from '../NotInit';
 
 import './index.css';
 
+
+
 export const JetsPlaneBody = ({ activeDeck, content, exits, bulks, isSeatMapInited, config, showOneDeck }) => {
-  const { params, colorTheme } = useContext(JetsContext);
+  const { params, colorTheme, componentOverrides } = useContext(JetsContext);
   const elementRefs = useRef(new Array());
+  const ResolvedJetsNotInit = componentOverrides?.JetsNotInit ?? JetsNotInit;
 
   const { lang, visibleFuselage } = config;
 
@@ -100,7 +103,7 @@ export const JetsPlaneBody = ({ activeDeck, content, exits, bulks, isSeatMapInit
       ) : isSeatMapInited ? (
         <JetsNoData />
       ) : (
-        <JetsNotInit />
+        <ResolvedJetsNotInit />
       )}
       {visibleFuselage && decks?.length ? (
         isTailFirst ? (

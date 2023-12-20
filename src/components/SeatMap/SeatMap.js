@@ -72,6 +72,7 @@ export const JetsSeatMap = ({
   onLayoutUpdated,
   onSeatMouseLeave,
   onSeatMouseClick,
+  componentOverrides,
 }) => {
   const colorTheme = JetsDataHelper.mergeColorThemeWithConstraints(
     JetsSeatMap.defaultProps.config.colorTheme,
@@ -210,6 +211,7 @@ export const JetsSeatMap = ({
 
   const onSeatClick = (data, element, event) => {
     const shouldSelectOnClick = params?.tooltipOnHover && !params?.isTouchDevice;
+
     if (shouldSelectOnClick) {
       if (params.externalPassengerManagement) {
         // if (!params.builtInTooltip) {
@@ -353,6 +355,7 @@ export const JetsSeatMap = ({
     params,
     colorTheme,
     activeTooltip,
+    componentOverrides,
   };
 
   return (

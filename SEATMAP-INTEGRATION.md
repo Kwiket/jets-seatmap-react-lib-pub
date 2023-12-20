@@ -586,3 +586,23 @@ This event fires up when cursor leave seat boudaries. It provides the same data 
 ### <a name="onseatmouseclick"></a> onSeatMouseClick
 
 This event is triggered when the mouse is clicked on the seat, but only `externalPassengerManagement == true && tooltipOnHover == true`. It provides the same data like [onTooltipRequested](#-ontooltiprequested).
+
+## Advanced: Overriding Components
+
+An optional `componentOverrides` object can be passed into `<JetsSeatMap />` to override either the `<JetsSeat />` component or 
+the `<JetsNotInit />` (loading state before seat map is initialized).
+
+Note: If you override `<JetsSeat />` you will need to build the seat component and ensure that interaction events are handled correctly.
+
+```jsx
+const componentOverrides = {
+  JetsSeat: MyCustomJetsSeat,
+  JetsNotInit: MyCustomLoader,
+};
+
+<JetsSeatMap
+  ...
+  componentOverrides={componentOverrides}
+  ...
+/>
+```
