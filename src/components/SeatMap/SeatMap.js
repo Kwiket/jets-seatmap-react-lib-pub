@@ -335,11 +335,13 @@ export const JetsSeatMap = ({
     );
   };
 
-  const scaleTransformValue = ` ${params?.rotation} ${params?.offset} scale(${params?.scale})`;
+  // const scaleTransformValue = ` ${params?.rotation} ${params?.offset} scale(${params?.scale})`;
+  const scaleTransformValue = ` ${params?.rotation} ${params?.offset}`;
 
   const scaleWrapStyle = {
     transform: scaleTransformValue,
     transformOrigin: 'top left',
+    zoom: params?.scale,
     width: params?.innerWidth,
     height: params?.scaledTotalDecksHeight,
   };

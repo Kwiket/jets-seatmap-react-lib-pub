@@ -62,11 +62,11 @@ const FLIGHT_MOCK5 = {
   passengerType: 'ADT',
 };
 
-const FLIGHT_MOCK = {
+const FLIGHT_MOCK6 = {
   id: '111',
   airlineCode: 'LH',
   flightNo: '2470',
-  departureDate: '2024-12-25',
+  departureDate: '2024-07-25',
   departure: 'MUC',
   arrival: 'LHR',
   cabinClass: 'E',
@@ -81,6 +81,17 @@ const FLIGHT_MOCK7 = {
   departure: 'MUC',
   arrival: 'BOS',
   cabinClass: 'E',
+};
+
+const FLIGHT_MOCK = {
+  id: '111',
+  airlineCode: 'LH',
+  flightNo: '424',
+  departureDate: '2024-10-29',
+  departure: 'MUC',
+  arrival: 'BOS',
+  cabinClass: 'B',
+  planeCode: '',
 };
 
 export default FLIGHT_MOCK;

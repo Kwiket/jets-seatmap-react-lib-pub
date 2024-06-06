@@ -5,7 +5,7 @@ const CONFIG_MOCK = {
   rightToLeft: false,
 
   visibleFuselage: true,
-  visibleWings: false,
+  visibleWings: true,
 
   builtInDeckSelector: true,
   singleDeckMode: true,
