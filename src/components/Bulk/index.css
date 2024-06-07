@@ -18,12 +18,18 @@
   width: 100%;
 }
 
+.zoomed_bulk__sticker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
 .bulk__sticker {
   position: absolute;
   top: 50%;
   left: 50%;
-
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, -50%);
 }
 
 .bulk__sticker--album {

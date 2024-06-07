@@ -16,6 +16,8 @@ import {
   DEFAULT_TOOLTIP_ON_HOVER,
   DEFAULT_RTL,
   DEFAULT_UNITS,
+  DEFAULT_SCALE_TYPE,
+  SCALE_TYPES,
   JetsContext,
   ENTITY_STATUS_MAP,
   ENTITY_TYPE_MAP,
@@ -80,6 +82,12 @@ export const JetsSeatMap = ({
   );
   config.colorTheme = colorTheme;
   const configuration = { ...JetsSeatMap.defaultProps.config, ...config };
+
+  // SCALE_TYPES.ZOOM is not fully supported by FF
+  const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+  if (isFirefox) {
+    configuration.scaleType = SCALE_TYPES.SCALE;
+  }
 
   const [content, setContent] = useState([]);
   const [isSeatMapInited, setSeatMapInited] = useState(false);
@@ -293,6 +301,7 @@ export const JetsSeatMap = ({
       ...tooltipData,
       nextPassenger,
       lang: configuration.lang,
+      scaleType: configuration.scaleType,
       seatmapElement: seatMapRef.current,
     });
   };
@@ -335,11 +344,15 @@ export const JetsSeatMap = ({
     );
   };
 
-  // const scaleTransformValue = ` ${params?.rotation} ${params?.offset} scale(${params?.scale})`;
-  const scaleTransformValue = ` ${params?.rotation} ${params?.offset}`;
-
   const scaleWrapStyle = {
-    transform: scaleTransformValue,
+    transform: ` ${params?.rotation} ${params?.offset} scale(${params?.scale})`,
+    transformOrigin: 'top left',
+    width: params?.innerWidth,
+    height: params?.scaledTotalDecksHeight,
+  };
+
+  const zoomWrapStyle = {
+    transform: ` ${params?.rotation} ${params?.offset}`,
     transformOrigin: 'top left',
     zoom: params?.scale,
     width: params?.innerWidth,
@@ -355,6 +368,7 @@ export const JetsSeatMap = ({
     isSeatSelectDisabled,
     switchDeck,
     params,
+    config: configuration,
     colorTheme,
     activeTooltip,
     componentOverrides,
@@ -373,7 +387,7 @@ export const JetsSeatMap = ({
       >
         {activeTooltip && <JetsTooltipGlobal data={activeTooltip} />}
         {shouldShowBuiltInDeckSelector && <JetsDeckSelector direction={!!activeDeck}></JetsDeckSelector>}
-        <div style={scaleWrapStyle}>
+        <div style={configuration.scaleType === SCALE_TYPES.SCALE ? scaleWrapStyle : zoomWrapStyle}>
           <JetsPlaneBody
             showOneDeck={shouldShowOnlyOneDeck}
             activeDeck={activeDeck}
@@ -406,6 +420,7 @@ JetsSeatMap.defaultProps = {
     tooltipOnHover: DEFAULT_TOOLTIP_ON_HOVER,
     lang: DEFAULT_LANG,
     units: DEFAULT_UNITS,
+    scaleType: DEFAULT_SCALE_TYPE,
     colorTheme: {
       deckLabelTitleColor: THEME_DECK_LABEL_TITLE_COLOR,
       floorColor: THEME_FLOOR_COLOR,

@@ -1,6 +1,12 @@
 import React, { useContext, useRef, useLayoutEffect, useState } from 'react';
 import { JetsButton } from '../Button';
-import { DEFAULT_SEAT_PASSENGER_TYPES, JetsContext, LOCALES_MAP, DEFAULT_FEATURES_RENDER_LIMIT } from '../../common';
+import {
+  DEFAULT_SEAT_PASSENGER_TYPES,
+  JetsContext,
+  LOCALES_MAP,
+  DEFAULT_FEATURES_RENDER_LIMIT,
+  SCALE_TYPES,
+} from '../../common';
 import './index.css';
 
 const CANCEL_BTN_KEY = 'cancel';
@@ -46,12 +52,11 @@ export const JetsTooltipGlobal = ({ data }) => {
     lang,
     rowName,
     antiScale,
-    // transformOrigin,
+    scaleType,
     width,
     seatmapHeight,
     seatmapWidth,
     seatmapElement,
-    // pointerOffset,
     seatNode,
     additionalProps,
   } = data;
@@ -72,9 +77,11 @@ export const JetsTooltipGlobal = ({ data }) => {
   const seatmapRect = seatmapElement.getBoundingClientRect();
   const seatmapParentRect = seatmapElement.parentElement.getBoundingClientRect();
 
-  const seatY = seatRect.top / antiScale - seatmapRect.top;
-  const seatX = seatRect.left / antiScale - seatmapRect.left;
-  const rowSeatY = seatRect.top / antiScale - seatmapParentRect.top;
+  const zoomCorrectionKoef = scaleType === SCALE_TYPES.ZOOM ? antiScale : 1;
+
+  const seatY = seatRect.top / zoomCorrectionKoef - seatmapRect.top;
+  const seatX = seatRect.left / zoomCorrectionKoef - seatmapRect.left;
+  const rowSeatY = seatRect.top / zoomCorrectionKoef - seatmapParentRect.top;
 
   const keyForPosition = params?.isHorizontal ? 'left' : 'top';
   const keyForSize = params?.isHorizontal ? 'width' : 'height';
@@ -101,9 +108,7 @@ export const JetsTooltipGlobal = ({ data }) => {
     maxWidth: params?.isHorizontal ? seatmapWidth * 1.5 : 'auto',
 
     width: params?.isHorizontal ? 'auto' : width,
-
     top: params?.isHorizontal ? `calc(${left} - ${posDiff}px)` : styleTop,
-
     left: params?.isHorizontal ? styleLeft : left,
 
     background: tooltipBackgroundColor,
@@ -119,8 +124,6 @@ export const JetsTooltipGlobal = ({ data }) => {
     borderColor: `${tooltipBorderColor} transparent transparent transparent`,
     display: params?.isHorizontal ? 'none' : '',
   };
-
-  // const pointerLeftPercentage = params?.rightToLeft ? negatePositionHorizontal : 1 - negatePositionHorizontal;
 
   const pointerStyleHorizontal = {
     left: `${negatePositionHorizontal * 100}%`,
@@ -167,7 +170,6 @@ export const JetsTooltipGlobal = ({ data }) => {
     <div
       style={style}
       className={`jets-tooltip ${params?.isHorizontal ? 'horizontal' : ''}`}
-      // className={`jets-tooltip`}
       ref={elementRef}
       onMouseLeave={params.tooltipOnHover ? e => onTooltipClose(null, null, e) : null}
     >

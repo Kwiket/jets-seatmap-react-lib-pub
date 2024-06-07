@@ -12,13 +12,15 @@ const CONFIG_MOCK = {
 
   builtInTooltip: true,
   externalPassengerManagement: false,
-  tooltipOnHover: false,
+  tooltipOnHover: true,
 
   lang: 'EN',
 
   apiUrl: process.env.JETS_BASE_API_URL,
   apiAppId: process.env.JETS_APP_ID,
   apiKey: process.env.JETS_PRIVATE_KEY,
+
+  scaleType: 'zoom',
 
   colorTheme: {
     deckLabelTitleColor: 'black',
