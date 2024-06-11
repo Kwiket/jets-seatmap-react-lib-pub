@@ -89,7 +89,7 @@ Create your [config](#config) and embed seatmap into your component page via `<J
     - [ onSeatUnselected](#-onseatunselected)
     - [ onSeatMouseLeave](#-onseatmouseleave)
     - [ onSeatMouseClick](#-onseatmouseclick)
-    - [Advanced: Overriding Components](#advanced-overriding-components)
+  - [Advanced: Overriding Components](#advanced-overriding-components)
 
 The `flight` prop is requred.
 
@@ -370,6 +370,8 @@ Full config looks like this:
   builtInTooltip: true,                     // see `onTooltipRequested` section
   externalPassengerManagement: false,       // see `onTooltipRequested` section
   tooltipOnHover: false,                    // see `onTooltipRequested` section
+
+  scaleType: 'zoom',                        // type of scaling applied to adjust to the desired width of the rendered seat map: `zoom` | `scale`, FF supports `scale` only
 
   apiUrl: 'PROVIDED_API_URL',               
   apiAppId: 'PROVIDED_APP_ID',
