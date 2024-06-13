@@ -9,6 +9,7 @@ import {
   DEFAULT_HORIZONTAL_LAYOUT,
   DEFAULT_VISIBLE_HULL,
   DEFAULT_VISIBLE_WINGS,
+  DEFAULT_VISIBLE_CABIN_TITLES,
   DEFAULT_BUILT_IN_TOOLTIP,
   DEFAULT_EXTERNAL_PASSENGER_MANAGEMENT,
   DEFAULT_SHOW_DECK_SELECTOR,
@@ -55,6 +56,9 @@ import {
   THEME_DECK_SELECTOR_SIZE,
   THEME_FUSELAGE_OUTLINE_WIDTH,
   THEME_NOT_AVAILABLE_SEATS_COLOR,
+  THEME_CABIN_TITLES_WIDTH,
+  THEME_CABIN_TITLES_HIGHLIGHT_COLORS,
+  THEME_CABIN_TITLES_LABEL_COLOR,
 } from '../../common';
 import './index.css';
 import { JetsPlaneBody } from '../PlaneBody';
@@ -410,6 +414,7 @@ JetsSeatMap.defaultProps = {
     rightToLeft: DEFAULT_RTL,
     visibleFuselage: DEFAULT_VISIBLE_HULL,
     visibleWings: DEFAULT_VISIBLE_WINGS,
+    visibleCabinTitles: DEFAULT_VISIBLE_CABIN_TITLES,
 
     builtInTooltip: DEFAULT_BUILT_IN_TOOLTIP,
     externalPassengerManagement: DEFAULT_EXTERNAL_PASSENGER_MANAGEMENT,
@@ -467,6 +472,10 @@ JetsSeatMap.defaultProps = {
       deckSelectorSize: THEME_DECK_SELECTOR_SIZE,
       exitIconUrlLeft: null,
       exitIconUrlRight: null,
+
+      cabinTitlesWidth: THEME_CABIN_TITLES_WIDTH,
+      cabinTitlesHighlightColors: THEME_CABIN_TITLES_HIGHLIGHT_COLORS,
+      cabinTitlesLabelColor: THEME_CABIN_TITLES_LABEL_COLOR,
     },
   },
   onSeatMapInited: data => {

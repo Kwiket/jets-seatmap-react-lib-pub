@@ -55,6 +55,7 @@ export class JetsDataHelper {
 
       visibleFuselage: config.visibleFuselage,
       visibleWings: config.visibleWings && isWingsExist,
+      visibleCabinTitles: config.visibleCabinTitles,
       scaledTotalDecksHeight: totalDecksHeight ? `${totalDecksHeight * (scaleCoefs.scale || 1)}px` : '100%',
     };
   };
@@ -65,8 +66,9 @@ export class JetsDataHelper {
 
   getDeckInnerWidthWithWings(deck, isWingsExist, config) {
     const wingsSpace = config?.visibleWings && isWingsExist ? config.colorTheme.wingsWidth : 0;
+    const cabinTitlesSpace = config?.visibleCabinTitles ? config.colorTheme.cabinTitlesWidth : 0;
 
-    return deck.width + wingsSpace * 2;
+    return deck.width + Math.max(wingsSpace, cabinTitlesSpace) * 2;
   }
 
   findWidestDeckRow = rows => {

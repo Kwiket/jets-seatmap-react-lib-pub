@@ -5,7 +5,8 @@ const CONFIG_MOCK = {
   rightToLeft: false,
 
   visibleFuselage: true,
-  visibleWings: true,
+  visibleWings: false,
+  visibleCabinTitles: true,
 
   builtInDeckSelector: true,
   singleDeckMode: true,
@@ -69,6 +70,8 @@ const CONFIG_MOCK = {
 
     exitIconUrlLeft: 'https://panorama.quicket.io/icons/exit-left.svg',
     exitIconUrlRight: 'https://panorama.quicket.io/icons/exit-right.svg',
+
+    cabinTitlesWidth: 85,
   },
 };
 

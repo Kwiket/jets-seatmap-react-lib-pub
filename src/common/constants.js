@@ -94,6 +94,8 @@ export const DEFAULT_VISIBLE_HULL = false;
 
 export const DEFAULT_VISIBLE_WINGS = false;
 
+export const DEFAULT_VISIBLE_CABIN_TITLES = false;
+
 export const DEFAULT_BUILT_IN_TOOLTIP = true;
 
 export const DEFAULT_EXTERNAL_PASSENGER_MANAGEMENT = false;
@@ -236,4 +238,7 @@ export const THEME_DECK_SELECTOR_FILL_COLOR = '#fff';
 export const THEME_DECK_SELECTOR_STROKE_COLOR = 'rgba(50, 50, 50, 0.5)';
 export const THEME_DECK_SELECTOR_SIZE = 25;
 
+export const THEME_CABIN_TITLES_WIDTH = 80;
+export const THEME_CABIN_TITLES_LABEL_COLOR = '#00BFFF';
+export const THEME_CABIN_TITLES_HIGHLIGHT_COLORS = { F: '#BDB76B', B: '#FF8C00', P: '#8FBC8F', E: '#1E90FF' };
 //#endregion

@@ -163,12 +163,21 @@ export class JetsContentPreparer {
     // console.log('cabinClassWidths', cabinClassWidths);
     const sum = cabinClassWidths.reduce((acc, d) => acc + d, 0);
     const targetDeckWidth = sum / cabinClassWidths.length; // Math.avg(...cabinClassWidths);
+    const firstElementOffset = this._getFirstElementDeckOffset(deck);
 
     for (const rowGroup of rowGroups) {
       const { cabin, entertainment, power, wifi } = apiData[rowGroup.classCode] || {};
       const cabinFeatures = this._mergeCabinFeatures(cabin, entertainment, power, wifi);
-      const firstElementOffset = this._getFirstElementDeckOffset(deck);
+
       const rows = this._prepareRows(rowGroup.rows, cabinFeatures, config.lang, firstElementOffset, targetDeckWidth);
+
+      const firstCabinRow = rows.at(0);
+      const lastCabinRow = rows.at(-1);
+      firstCabinRow['isFirstInCabin'] = true;
+      firstCabinRow['cabinHeight'] =
+        rows.length === 1
+          ? firstCabinRow.height
+          : lastCabinRow.topOffset - firstCabinRow.topOffset + lastCabinRow.height / 2;
 
       rowGroup.rows = rows;
     }
@@ -266,6 +275,7 @@ export class JetsContentPreparer {
       number,
       topOffset: _topOffset,
       width: rowWidth,
+      height: preparedSeats.at(0).size.height, // TODO: improve this
       seatScheme,
       classCode,
       seatType,

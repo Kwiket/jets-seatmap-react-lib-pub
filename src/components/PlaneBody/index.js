@@ -9,8 +9,6 @@ import { JetsNotInit } from '../NotInit';
 
 import './index.css';
 
-
-
 export const JetsPlaneBody = ({ activeDeck, content, exits, bulks, isSeatMapInited, config, showOneDeck }) => {
   const { params, colorTheme, componentOverrides } = useContext(JetsContext);
   const elementRefs = useRef(new Array());
@@ -18,8 +16,15 @@ export const JetsPlaneBody = ({ activeDeck, content, exits, bulks, isSeatMapInit
 
   const { lang, visibleFuselage } = config;
 
-  const { deckHeightSpacing, fuselageStrokeWidth, fuselageStrokeColor, floorColor, wingsWidth, fuselageFillColor } =
-    colorTheme;
+  const {
+    deckHeightSpacing,
+    fuselageStrokeWidth,
+    fuselageStrokeColor,
+    floorColor,
+    wingsWidth,
+    fuselageFillColor,
+    cabinTitlesWidth,
+  } = colorTheme;
 
   const decksWrapperStyle = {
     borderLeft: `${fuselageStrokeWidth}px solid ${fuselageStrokeColor}`,
@@ -43,8 +48,9 @@ export const JetsPlaneBody = ({ activeDeck, content, exits, bulks, isSeatMapInit
 
   const isTailFirst = params?.isHorizontal && !params?.rightToLeft;
 
-  const wingsSpace = params?.visibleWings ? wingsWidth * 2 : 0;
-  const bodyWidth = (params?.innerWidth || 0) - wingsSpace;
+  const wingsSpace = params?.visibleWings ? wingsWidth * 2 : 0; // TODO: rework this
+  const cabinTitlesSpace = params?.visibleCabinTitles ? cabinTitlesWidth * 2 : 0; // TODO: rework this
+  const bodyWidth = (params?.innerWidth || 0) - Math.max(wingsSpace, cabinTitlesSpace); // TODO: rework this
 
   const style = {
     width: bodyWidth || config.width,

@@ -117,6 +117,10 @@ export const LOCALE_DE = {
 };
 
 export const LOCALE_EN = {
+  F: 'First class',
+  B: 'Business class',
+  P: 'Premium class',
+  E: 'Economy class',
   ADT: 'adults',
   audio_video_ondemand: 'Audio & Video On Demand',
   audioVideo: 'Audio & Video On Demand',

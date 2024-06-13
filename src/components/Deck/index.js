@@ -5,6 +5,7 @@ import { JetsDeckExit } from '../DeckExit';
 import { JetsDeckTitle } from '../DeckTitle';
 import { JetsWing } from '../Wing';
 import { JetsRow } from '../Row';
+import { JetsCabinTitle } from '../CabinTitle';
 
 import './index.css';
 
@@ -26,6 +27,19 @@ export const JetsDeck = ({ deck, lang, exits, bulks, isSingleDeck }) => {
   return (
     <div className="jets-deck" style={deckStyle} ref={elementRef}>
       {params?.visibleWings && <JetsWing wingsInfo={wingsInfo} />}
+
+      {params?.visibleCabinTitles &&
+        rows
+          .filter(r => r.isFirstInCabin)
+          .map(row => (
+            <JetsCabinTitle
+              key={row.classCode + row.uniqId}
+              top={row.topOffset}
+              height={row.cabinHeight}
+              lang={lang}
+              localeKey={row.classCode}
+            />
+          ))}
 
       {number && !isSingleDeck && <JetsDeckTitle number={number} lang={lang} localeKey={DECK_LOCALE_KEY} />}
 

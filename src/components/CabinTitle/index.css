@@ -1,0 +1,39 @@
+.jets-cabin-title-container {
+  position: absolute;
+}
+
+.jets-cabin-title-hl-right {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 60px;
+  white-space: nowrap;
+}
+
+.jets-cabin-title-hl-left {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 60px;
+  white-space: nowrap;
+}
+
+.jets-cabin-title-label-left {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  padding: 0 6px;
+  border-radius: 3px;
+  transform-origin: bottom right;
+  font-size: 16px;
+}
+
+.jets-cabin-title-label-right {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  padding: 0 6px;
+  border-radius: 3px;
+  transform-origin: bottom left;
+  font-size: 16px;
+}

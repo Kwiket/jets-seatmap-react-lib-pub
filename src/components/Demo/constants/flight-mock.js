@@ -55,7 +55,7 @@ const FLIGHT_MOCK5 = {
   id: '1111',
   airlineCode: 'MX',
   flightNo: '100',
-  departureDate: '2024-12-11',
+  departureDate: '2024-07-11',
   departure: 'CHS',
   arrival: 'CAK',
   cabinClass: 'E',
@@ -73,7 +73,7 @@ const FLIGHT_MOCK6 = {
   planeCode: '',
 };
 
-const FLIGHT_MOCK7 = {
+const FLIGHT_MOCK = {
   id: '111',
   airlineCode: 'LH',
   flightNo: '424',
@@ -83,14 +83,14 @@ const FLIGHT_MOCK7 = {
   cabinClass: 'E',
 };
 
-const FLIGHT_MOCK = {
+const FLIGHT_MOCK8 = {
   id: '111',
   airlineCode: 'LH',
-  flightNo: '424',
-  departureDate: '2024-10-29',
+  flightNo: '494',
+  departureDate: '2024-06-27',
   departure: 'MUC',
-  arrival: 'BOS',
-  cabinClass: 'B',
+  arrival: 'YYZ',
+  cabinClass: 'A',
   planeCode: '',
 };
 
