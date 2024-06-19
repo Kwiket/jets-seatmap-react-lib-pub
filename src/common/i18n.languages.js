@@ -1,4 +1,8 @@
 export const LOCALE_PL = {
+  F: 'Pierwsza klasa',
+  B: 'Klasa biznes',
+  P: 'Klasa premium',
+  E: 'Klasa ekonomiczna',
   audio_video_ondemand: 'Audio i wideo na żądanie (%s)',
   audioVideo: 'Audio i wideo na żądanie (%s)',
   babyBassinet: 'Dostępne łóżeczko dziecięce',
@@ -38,6 +42,10 @@ export const LOCALE_PL = {
 };
 
 export const LOCALE_ES = {
+  F: 'Primera clase',
+  B: 'Clase Business',
+  P: 'Clase superior',
+  E: 'Clase turista',
   audio_video_ondemand: 'Audio y video bajo demanda (%s)',
   audioVideo: 'Audio y video bajo demanda (%s)',
   babyBassinet: 'Moisés para bebé disponible',
@@ -77,6 +85,10 @@ export const LOCALE_ES = {
 };
 
 export const LOCALE_DE = {
+  F: 'Erste Klasse',
+  B: 'Business-Klasse',
+  P: 'Premiumklasse',
+  E: 'Economy-Klasse',
   audio_video_ondemand: 'Audio & Video nach Anfrage (%s)',
   audioVideo: 'Audio & Video nach Anfrage (%s)',
   babyBassinet: 'Babywiege vorhanden',
@@ -167,6 +179,10 @@ export const LOCALE_EN = {
 };
 
 export const LOCALE_CN = {
+  F: '头等舱',
+  B: '商务舱',
+  P: '特等舱',
+  E: '经济舱',
   restrictedLegroom: '腿部空间较小',
   extraLegroom: '腿部空间较大',
   noFloorStorage: '前面无座位',
@@ -207,6 +223,10 @@ export const LOCALE_CN = {
 };
 
 export const LOCALE_RU = {
+  F: 'Первый класс',
+  B: 'Бизнес-класс',
+  P: 'Премиум-класс',
+  E: 'Эконом-класс',
   restrictedLegroom: 'Мало места для ног',
   extraLegroom: 'Много места для ног',
   noFloorStorage: 'Нет места для ручной клади под сиденьем',
@@ -247,6 +267,10 @@ export const LOCALE_RU = {
 };
 
 export const LOCALE_AR = {
+  F: 'الدرجة الأولى',
+  B: 'درجة رجال الأعمال',
+  P: 'الفئة الممتازة',
+  E: 'الدرجة الاقتصادية',
   ADT: 'بالغين',
   audio_video_ondemand: 'الصوت والفيديو حسب الطلب',
   audioVideo: 'الصوت والفيديو حسب الطلب',
@@ -293,6 +317,10 @@ export const LOCALE_AR = {
 };
 
 export const LOCALE_CS = {
+  F: 'První třída',
+  B: 'Třída Business',
+  P: 'Třída Premium',
+  E: 'Ekonomická třída',
   ADT: 'dospělí',
   audio_video_ondemand: 'Audio & Video na vyžádání',
   audioVideo: 'Audio & Video na vyžádání',
@@ -339,6 +367,10 @@ export const LOCALE_CS = {
 };
 
 export const LOCALE_FR = {
+  F: 'Première classe',
+  B: 'Classe affaires',
+  P: 'Classe Premium',
+  E: 'Classe économique',
   ADT: 'adultes',
   audio_video_ondemand: 'Audio & Vidéo à la demande',
   audioVideo: 'Audio & Vidéo à la demande',
@@ -385,6 +417,10 @@ export const LOCALE_FR = {
 };
 
 export const LOCALE_PT = {
+  F: 'Primeira classe',
+  B: 'Classe executiva',
+  P: 'Classe Premium',
+  E: 'Classe económica',
   ADT: 'adultos',
   audio_video_ondemand: 'Áudio & Vídeo Sob Demanda',
   audioVideo: 'Áudio & Vídeo Sob Demanda',
@@ -431,6 +467,10 @@ export const LOCALE_PT = {
 };
 
 export const LOCALE_IT = {
+  F: 'Prima classe',
+  B: 'Classe business',
+  P: 'Classe Premium',
+  E: 'Classe economica',
   ADT: 'adulti',
   audio_video_ondemand: 'Audio & Video su richiesta',
   audioVideo: 'Audio & Video su richiesta',
@@ -477,6 +517,10 @@ export const LOCALE_IT = {
 };
 
 export const LOCALE_UK = {
+  F: 'Перший клас',
+  B: 'Бізнес-клас',
+  P: 'Преміум-клас',
+  E: 'Економ-клас',
   ADT: 'дорослі',
   audio_video_ondemand: 'Аудіо та відео за запитом',
   audioVideo: 'Аудіо та відео за запитом',
@@ -523,6 +567,10 @@ export const LOCALE_UK = {
 };
 
 export const LOCALE_JA = {
+  F: 'ファーストクラス',
+  B: 'ビジネスクラス',
+  P: 'プレミアムクラス',
+  E: 'エコノミークラス',
   ADT: '大人',
   audio_video_ondemand: 'オンデマンドのオーディオ＆ビデオ',
   audioVideo: 'オンデマンドのオーディオ＆ビデオ',
@@ -569,6 +617,10 @@ export const LOCALE_JA = {
 };
 
 export const LOCALE_KO = {
+  F: '퍼스트 클래스',
+  B: '비즈니스 클래스',
+  P: '프리미엄 클래스',
+  E: '이코노미 클래스',
   ADT: '성인',
   audio_video_ondemand: '요청 시 오디오 및 비디오',
   audioVideo: '요청 시 오디오 및 비디오',
@@ -615,6 +667,10 @@ export const LOCALE_KO = {
 };
 
 export const LOCALE_TR = {
+  F: 'Birinci sınıf',
+  B: 'Business sınıfı',
+  P: 'Premium sınıf',
+  E: 'Ekonomi sınıfı',
   ADT: 'yetişkinler',
   audio_video_ondemand: 'Talebe Göre Ses & Video',
   audioVideo: 'Talebe Göre Ses & Video',
