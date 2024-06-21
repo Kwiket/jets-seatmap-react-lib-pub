@@ -7,13 +7,14 @@ const CONFIG_MOCK = {
   visibleFuselage: true,
   visibleWings: false,
   visibleCabinTitles: true,
+  customCabinTitles: { F: 'First', B: 'Business', P: 'Premium', E: 'Economy' },
 
   builtInDeckSelector: true,
   singleDeckMode: true,
 
   builtInTooltip: true,
   externalPassengerManagement: false,
-  tooltipOnHover: true,
+  tooltipOnHover: false,
 
   lang: 'EN',
 

@@ -94,4 +94,18 @@ const FLIGHT_MOCK8 = {
   planeCode: '',
 };
 
+const FLIGHT_MOCK9 = {
+  id: '1',
+  airlineCode: 'UA',
+  flightNo: '2236',
+  departureDate: '2024-06-29',
+  departure: 'IAH',
+  arrival: 'MSP',
+  cabinClass: 'A',
+  passengerType: 'ADT',
+  planeCode: '',
+  startRow: 14,
+  endRow: 37,
+};
+
 export default FLIGHT_MOCK;

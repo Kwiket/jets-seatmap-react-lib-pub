@@ -362,6 +362,8 @@ Full config looks like this:
   rightToLeft: false,                       // changes tooltip text alignment (and decks placement) for RTL languages support
   visibleFuselage: true,                    // should nose and tail graphics be rendered
   visibleWings: false,                      // should position of wings be shown (helps to see how far/close they are from/to certain seats)
+  visibleCabinTitles: true,                 // should cabin titles be rendered
+  customCabinTitles: { F: 'First', B: 'Business', P: 'Premium', E: 'Economy' }, // optional, to override default cabin titles, defaults: F: 'First class', B: 'Business class', P: 'Premium class', E: 'Economy class',
 
   builtInDeckSelector: false,               // if there's only one deck on the flight it doesn't do anything
                                             // if there's more it's possible to render all decks at once or only one with ability to switch them
@@ -424,6 +426,10 @@ Full config looks like this:
 
     exitIconUrlLeft: 'https://panorama.quicket.io/icons/exit-left.svg', // URL to override built-in left exit icon, optional
     exitIconUrlRight: 'https://panorama.quicket.io/icons/exit-right.svg', // URL to override built-in right exit icon, optional
+
+    cabinTitlesWidth: 80,
+    cabinTitlesHighlightColors: { F: '#BDB76B', B: '#FF8C00', P: '#8FBC8F', E: '#1E90FF' },
+    cabinTitlesLabelColor: '#00BFFF',
   },
 };
 
