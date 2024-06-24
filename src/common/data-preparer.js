@@ -398,7 +398,7 @@ export class JetsContentPreparer {
 
   _prepareSeatFeatures = (seat, cabin, lang) => {
     const { pitch: cabinSeatPitch, width: cabinSeatWidth, recline: cabinSeatRecline, audioVideo, power, wifi } = cabin;
-    const { pitch: seatPitch, width: seatWidth, recline: seatRecline } = seat.features || {};
+    const { pitch: seatPitch, width: seatWidth, recline: seatRecline } = seat || {};
     const features = { audioVideo, power, wifi, ...seat.features };
     const measurements = {
       pitch: seatPitch || cabinSeatPitch,

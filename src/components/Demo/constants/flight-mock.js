@@ -73,7 +73,7 @@ const FLIGHT_MOCK6 = {
   planeCode: '',
 };
 
-const FLIGHT_MOCK = {
+const FLIGHT_MOCK7s = {
   id: '111',
   airlineCode: 'LH',
   flightNo: '424',
@@ -106,6 +106,16 @@ const FLIGHT_MOCK9 = {
   planeCode: '',
   startRow: 14,
   endRow: 37,
+};
+
+const FLIGHT_MOCK = {
+  id: '111',
+  airlineCode: 'U2',
+  flightNo: '204',
+  departureDate: '2025-04-21',
+  departure: 'GLA',
+  arrival: 'BRS',
+  cabinClass: 'A',
 };
 
 export default FLIGHT_MOCK;
