@@ -53,6 +53,8 @@
 .jets-tooltip--feature .svg_span {
   width: 18px;
   height: 18px;
+  min-width: 18px;
+  min-height: 18px;
 }
 
 .jets-tooltip--feature > span {
@@ -175,9 +177,9 @@
   break-after: always;
 }
 
-.horizontal .jets-tooltip--measurement-box {
-  /* width: 50%; */
-}
+/* .horizontal .jets-tooltip--measurement-box {
+  width: 50%;
+} */
 
 .horizontal .jets-tooltip--measurements .svg_span {
   display: inline-block;
