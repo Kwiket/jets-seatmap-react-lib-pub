@@ -209,4 +209,40 @@ export class JetsSeatMapService {
   findPassengerBySeatNumber = (passengers, seatNumber) => {
     return passengers.find(passenger => passenger.seat?.seatLabel === seatNumber);
   };
+
+  /**
+   * Checks the existence of seats with the provided numbers and returns lists of existing and non-existing seat numbers.
+   *
+   * @param { Array<Object> } seatNumbers - Array of seat numbers.
+   * @param { Array<Object> } content - The data containing the info about seats / rows / decks.
+   * @returns { Object } An object containing arrays of existing (if found) and non-existing (if not found) seat numbers.
+   * @property { Array<string> } existent - Array of seat numbers that exist in the provided plane data.
+   * @property { Array<string> } nonexistent - Array of seat numbers that doesn't exist in the provided plane data.
+   */
+  getSeatExistenceInfo = (seatNumbers, content) => {
+    if (!seatNumbers || !content) return;
+
+    const providedSeatNumbers = seatNumbers.map(number => number.toString().toUpperCase());
+
+    const allSeatNumbers = content.flatMap(deck =>
+      deck?.rows?.flatMap(row =>
+        row?.seats?.filter(seat => seat?.type === ENTITY_TYPE_MAP.seat).map(seat => seat?.number?.toUpperCase())
+      )
+    );
+
+    const { existentSeatNumbers, nonexistentSeatNumbers } = providedSeatNumbers.reduce(
+      (acc, number) => {
+        if (allSeatNumbers.includes(number)) {
+          acc.existentSeatNumbers.push(number);
+        } else {
+          acc.nonexistentSeatNumbers.push(number);
+        }
+
+        return acc;
+      },
+      { existentSeatNumbers: [], nonexistentSeatNumbers: [] }
+    );
+
+    return { existent: existentSeatNumbers, nonexistent: nonexistentSeatNumbers };
+  };
 }
