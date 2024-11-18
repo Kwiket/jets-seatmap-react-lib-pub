@@ -604,7 +604,7 @@ This event is triggered when the mouse is clicked on the seat, but only `externa
 
 ### <a name="onavailabilityapplied"></a> onAvailabilityApplied
 
-This event is triggered when the Availability param is applied. It provides the lists of existing and non-existing seat labels.
+This event is triggered when the [Availability](#-availability) param is applied. It provides the lists of existing and non-existing seat labels.
 
 ```typescript
 interface IExistingSeatsLabelsInfo {
