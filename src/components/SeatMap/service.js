@@ -224,7 +224,7 @@ export class JetsSeatMapService {
 
     const providedSeatLabels = seatLabels.map(seatLabel => seatLabel.toString().toUpperCase());
 
-    const allSeatNumbers = decks.flatMap(deck =>
+    const deckSeatLabels = decks.flatMap(deck =>
       deck?.rows?.flatMap(row =>
         row?.seats?.filter(seat => seat?.type === ENTITY_TYPE_MAP.seat).map(seat => seat?.number?.toUpperCase())
       )
@@ -232,7 +232,7 @@ export class JetsSeatMapService {
 
     return providedSeatLabels.reduce(
       (acc, number) => {
-        if (allSeatNumbers.includes(number)) {
+        if (deckSeatLabels.includes(number)) {
           acc.existingSeatLabels.push(number);
         } else {
           acc.nonExistingSeatLabels.push(number);
