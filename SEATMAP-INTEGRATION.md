@@ -89,6 +89,7 @@ Create your [config](#config) and embed seatmap into your component page via `<J
     - [ onSeatUnselected](#-onseatunselected)
     - [ onSeatMouseLeave](#-onseatmouseleave)
     - [ onSeatMouseClick](#-onseatmouseclick)
+    - [ onAvailabilityApplied](#-onavailabilityapplied)
   - [Advanced: Overriding Components](#advanced-overriding-components)
 
 The `flight` prop is requred.
@@ -589,6 +590,8 @@ interface ISeat {
 }
 ```
 
+&nbsp;
+
 ### <a name="onseatmouseleave"></a> onSeatMouseLeave
 
 This event fires up when cursor leave seat boudaries. It provides the same data like [onTooltipRequested](#-ontooltiprequested).
@@ -596,6 +599,21 @@ This event fires up when cursor leave seat boudaries. It provides the same data 
 ### <a name="onseatmouseclick"></a> onSeatMouseClick
 
 This event is triggered when the mouse is clicked on the seat, but only `externalPassengerManagement == true && tooltipOnHover == true`. It provides the same data like [onTooltipRequested](#-ontooltiprequested).
+
+&nbsp;
+
+### <a name="onavailabilityapplied"></a> onAvailabilityApplied
+
+This event is triggered when the Availability param is applied. It provides the lists of existing and non-existing seat labels.
+
+```typescript
+interface IExistingSeatsLabelsInfo {
+  existingSeatLabels: string[];
+  nonExistingSeatLabels: string[];
+}
+```
+
+&nbsp;
 
 ## Advanced: Overriding Components
 
