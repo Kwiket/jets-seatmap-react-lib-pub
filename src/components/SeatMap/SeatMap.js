@@ -159,13 +159,13 @@ export const JetsSeatMap = ({
 
     const data = service.setAvailabilityHandler(content, availability);
 
-    const providedSeatNumbers = availability.map(({ label }) => label);
-    const seatsExistenceInfo = service.getSeatExistenceInfo(providedSeatNumbers, data);
+    const providedSeatLabels = availability.map(({ label }) => label);
+    const existingSeatsInfo = service.compareWithDecksSeatsInfo(providedSeatLabels, data);
 
     setPassengers();
     setContent(data);
     setActiveTooltip(null);
-    onAvailabilityApplied(seatsExistenceInfo);
+    onAvailabilityApplied(existingSeatsInfo);
   }, [availability]);
 
   useEffect(() => {

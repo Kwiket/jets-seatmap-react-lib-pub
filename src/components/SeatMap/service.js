@@ -211,38 +211,36 @@ export class JetsSeatMapService {
   };
 
   /**
-   * Checks the existence of seats with the provided numbers and returns lists of existing and non-existing seat numbers.
+   * Checks the existence of seats with the provided labels and returns lists of existing and non-existing seat labels.
    *
-   * @param { Array<Object> } seatNumbers - Array of seat numbers.
-   * @param { Array<Object> } content - The data containing the info about seats / rows / decks.
-   * @returns { Object } An object containing arrays of existing (if found) and non-existing (if not found) seat numbers.
-   * @property { Array<string> } existent - Array of seat numbers that exist in the provided plane data.
-   * @property { Array<string> } nonexistent - Array of seat numbers that doesn't exist in the provided plane data.
+   * @param { Array<Object> } seatLabels - Array of seat labels.
+   * @param { Array<Object> } decks - The data containing the info about seats / rows / decks.
+   * @returns { Object } An object containing arrays of existing (if found) and non-existing (if not found) seat labels.
+   * @property { Array<string> } existingSeatLabels - Array of seat labels that exist in the provided plane data.
+   * @property { Array<string> } nonExistingSeatLabels - Array of seat labels that doesn't exist in the provided plane data.
    */
-  getSeatExistenceInfo = (seatNumbers, content) => {
-    if (!seatNumbers || !content) return;
+  compareWithDecksSeatsInfo = (seatLabels, decks) => {
+    if (!seatLabels || !decks) return;
 
-    const providedSeatNumbers = seatNumbers.map(number => number.toString().toUpperCase());
+    const providedSeatLabels = seatLabels.map(seatLabel => seatLabel.toString().toUpperCase());
 
-    const allSeatNumbers = content.flatMap(deck =>
+    const allSeatNumbers = decks.flatMap(deck =>
       deck?.rows?.flatMap(row =>
         row?.seats?.filter(seat => seat?.type === ENTITY_TYPE_MAP.seat).map(seat => seat?.number?.toUpperCase())
       )
     );
 
-    const { existentSeatNumbers, nonexistentSeatNumbers } = providedSeatNumbers.reduce(
+    return providedSeatLabels.reduce(
       (acc, number) => {
         if (allSeatNumbers.includes(number)) {
-          acc.existentSeatNumbers.push(number);
+          acc.existingSeatLabels.push(number);
         } else {
-          acc.nonexistentSeatNumbers.push(number);
+          acc.nonExistingSeatLabels.push(number);
         }
 
         return acc;
       },
-      { existentSeatNumbers: [], nonexistentSeatNumbers: [] }
+      { existingSeatLabels: [], nonExistingSeatLabels: [] }
     );
-
-    return { existent: existentSeatNumbers, nonexistent: nonexistentSeatNumbers };
   };
 }
