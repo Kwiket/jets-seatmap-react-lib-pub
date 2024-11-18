@@ -211,6 +211,23 @@ export class JetsSeatMapService {
   };
 
   /**
+   * Finds the index of the deck that contains provided seat label.
+   *
+   * @param { string } seatLabel - The seat label to search for.
+   * @param { Array<Object> } decks - The data containing the info about seats / rows / decks.
+   * @returns { number } - The index of the deck containing the seatLabel, or -1 if not found.
+   */
+  getDeckIndexBySeatLabel = (seatLabel, decks) => {
+    if (!seatLabel || !decks?.length) return -1;
+
+    return decks.findIndex(
+      deck =>
+        Array.isArray(deck.rows) &&
+        deck.rows.some(row => Array.isArray(row.seats) && row.seats.some(seat => seat.number === seatLabel))
+    );
+  };
+
+  /**
    * Checks the existence of seats with the provided labels and returns lists of existing and non-existing seat labels.
    *
    * @param { Array<string> } seatLabels - Array of seat labels.

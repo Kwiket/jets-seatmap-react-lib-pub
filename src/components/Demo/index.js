@@ -14,6 +14,8 @@ export const DemoComponent = () => {
   const [defaultPassengers, setDefaultPassengers] = useState(JSON.stringify(PASSENGERS_MOCK, null, 2));
   const [defaultDeckIndex, setDefaultDeckIndex] = useState(0);
   const [deckIndex, setDeckIndex] = useState(0);
+  const [defaultCurrentSeat, setDefaultCurrentSeat] = useState(null);
+  const [currentSeat, setCurrentSeat] = useState(null);
 
   const onSetFlight = () => {
     setFlight(JSON.parse(defaultFlight));
@@ -47,6 +49,14 @@ export const DemoComponent = () => {
     setDeckIndex(defaultDeckIndex);
   };
 
+  const onSetDefaultCurrentSeat = e => {
+    setDefaultCurrentSeat(e.target.value);
+  };
+
+  const onSetCurrentSeat = () => {
+    setCurrentSeat(defaultCurrentSeat);
+  };
+
   return (
     <div className="jets-demo">
       <div className="jets-demo--controllers">
@@ -66,6 +76,10 @@ export const DemoComponent = () => {
           <textarea onChange={e => onDeckChange(e)} defaultValue={0} />
           <JetsButton className="jets-btn jets-demo--btn" content="SET DECK" onClick={onSetDeck} />
         </div>
+        <div className="jets-demo--controller">
+          <textarea onChange={e => onSetDefaultCurrentSeat(e)} defaultValue={null} />
+          <JetsButton className="jets-btn jets-demo--btn" content="SET CURRENT SEAT" onClick={onSetCurrentSeat} />
+        </div>
       </div>
       <div className="jets-demo--seat-map">
         <JetsSeatMap
@@ -74,6 +88,7 @@ export const DemoComponent = () => {
           availability={availability}
           passengers={passengers}
           currentDeckIndex={deckIndex}
+          currentSeat={currentSeat}
         />
       </div>
     </div>
