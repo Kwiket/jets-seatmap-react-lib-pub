@@ -213,7 +213,7 @@ export class JetsSeatMapService {
   /**
    * Checks the existence of seats with the provided labels and returns lists of existing and non-existing seat labels.
    *
-   * @param { Array<Object> } seatLabels - Array of seat labels.
+   * @param { Array<string> } seatLabels - Array of seat labels.
    * @param { Array<Object> } decks - The data containing the info about seats / rows / decks.
    * @returns { Object } An object containing arrays of existing (if found) and non-existing (if not found) seat labels.
    * @property { Array<string> } existingSeatLabels - Array of seat labels that exist in the provided plane data.
