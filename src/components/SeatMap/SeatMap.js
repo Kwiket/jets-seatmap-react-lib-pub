@@ -71,7 +71,7 @@ export const JetsSeatMap = ({
   passengers,
   config,
   currentDeckIndex,
-  currentSeat,
+  seatJumpTo,
   onSeatMapInited,
   onSeatSelected,
   onSeatUnselected,
@@ -99,7 +99,7 @@ export const JetsSeatMap = ({
   const [isSeatMapInited, setSeatMapInited] = useState(false);
   const [passengersList, setPassengersList] = useState([]);
   const [activeTooltip, setActiveTooltip] = useState(null);
-  const [activeSeatLabel, setActiveSeatLabel] = useState(null);
+  const [seatLabelJumpTo, setSeatLabelJumpTo] = useState(null);
   const [isSelectAvailable, setSelectAvailable] = useState(false);
   const [activeDeck, setActiveDeck] = useState(0);
   const [params, setParams] = useState(null);
@@ -194,26 +194,27 @@ export const JetsSeatMap = ({
   }, [currentDeckIndex]);
 
   useEffect(() => {
-    if (!currentSeat || !content?.length) return;
+    if (!seatJumpTo || !content?.length) return;
 
-    const _currentSeatLabel = currentSeat?.toString().trim().toUpperCase();
-    const { nonExistingSeatLabels } = service.compareWithDecksSeatsInfo([_currentSeatLabel], content);
+    const _providedSeatLabel = seatJumpTo?.seatLabel?.toString().trim().toUpperCase();
+    const { nonExistingSeatLabels } = service.compareWithDecksSeatsInfo([_providedSeatLabel], content);
 
-    if (nonExistingSeatLabels.includes(_currentSeatLabel)) {
-      console.log('Provided seat does not exist: ', _currentSeatLabel);
+    if (nonExistingSeatLabels.includes(_providedSeatLabel)) {
+      console.log('Provided seat does not exist: ', _providedSeatLabel);
       setActiveTooltip(null);
+      resetSeatJumpTo();
       return;
     }
 
-    const seatDeck = service.getDeckIndexBySeatLabel(_currentSeatLabel, content);
+    const seatDeck = service.getDeckIndexBySeatLabel(_providedSeatLabel, content);
 
     if (seatDeck !== activeDeck) switchDeck(seatDeck);
 
-    setActiveSeatLabel(_currentSeatLabel);
-  }, [currentSeat, content]);
+    setSeatLabelJumpTo(_providedSeatLabel);
+  }, [seatJumpTo, content]);
 
-  const resetActiveSeatLabel = () => {
-    setActiveSeatLabel(null);
+  const resetSeatJumpTo = () => {
+    setSeatLabelJumpTo(null);
   };
 
   const scrollRTL = () => {
@@ -404,12 +405,12 @@ export const JetsSeatMap = ({
     onSeatUnselect,
     isSeatSelectDisabled,
     switchDeck,
-    resetActiveSeatLabel,
+    resetSeatJumpTo,
     params,
     config: configuration,
     colorTheme,
     activeTooltip,
-    activeSeatLabel,
+    seatLabelJumpTo,
     componentOverrides,
   };
 

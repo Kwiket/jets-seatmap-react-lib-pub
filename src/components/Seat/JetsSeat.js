@@ -7,7 +7,7 @@ import './index.css';
 const PASSENGER_BADGE_SIZE_COEF = 0.8;
 
 export const JetsSeat = ({ data }) => {
-  const { onSeatClick, showTooltip, onTooltipClose, activeSeatLabel, resetActiveSeatLabel, params, colorTheme } =
+  const { onSeatClick, showTooltip, onTooltipClose, seatLabelJumpTo, resetSeatJumpTo, params, colorTheme } =
     useContext(JetsContext);
   const {
     letter,
@@ -98,13 +98,13 @@ export const JetsSeat = ({ data }) => {
   }, [passenger]);
 
   useEffect(() => {
-    if (!activeSeatLabel || number?.toUpperCase() !== activeSeatLabel?.toUpperCase()) return;
+    if (!seatLabelJumpTo || number?.toUpperCase() !== seatLabelJumpTo?.toUpperCase()) return;
 
     $component.current?.scrollIntoView();
 
     showTooltip(data, $component, { nativeEvent: null });
-    resetActiveSeatLabel();
-  }, [activeSeatLabel]);
+    resetSeatJumpTo();
+  }, [seatLabelJumpTo]);
 
   const onMouseLeave = (data, $component, e) => {
     if (!e?.relatedTarget?.className?.includes('tooltip')) {
