@@ -82,6 +82,7 @@ Create your [config](#config) and embed seatmap into your component page via `<J
     - [ Availability](#-availability)
     - [ Passengers](#-passengers)
     - [ Config](#-config)
+    - [ seatJumpTo](#seatjumpto)
     - [ onSeatMapInited](#-onseatmapinited)
     - [ onLayoutUpdated](#-onlayoutupdated)
     - [ onTooltipRequested](#-ontooltiprequested)
@@ -449,6 +450,28 @@ To override exits need to set `both` fields in the config - `exitIconUrlLeft` &&
 ```
 
 If you will not pass `optional config params` then the properties will be set with default values.
+
+&nbsp;
+
+### <a name="seatjumpto"></a> seatJumpTo
+
+This property allows you to open tooltip for any seat by its label. Once the prop is provided the view will be moved to the particular seat and the tooltip will be automatically opened. This will also automatically trigger the [ onTooltipRequested](#-ontooltiprequested) method. 
+
+The property is `optional`. You can pass it asynchronously or not pass at all.
+
+```typescript
+interface ISeatJumpToData {
+  seatLabel: string;
+}
+```
+
+Example of use: 
+
+```typescript
+{
+  seatLabel: '22D'
+}
+```
 
 &nbsp;
 
