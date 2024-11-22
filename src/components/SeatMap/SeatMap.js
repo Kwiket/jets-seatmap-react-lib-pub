@@ -200,7 +200,6 @@ export const JetsSeatMap = ({
     const { nonExistingSeatLabels } = service.compareWithDecksSeatsInfo([_providedSeatLabel], content);
 
     if (nonExistingSeatLabels.includes(_providedSeatLabel)) {
-      console.log('Provided seat does not exist: ', _providedSeatLabel);
       setActiveTooltip(null);
       resetSeatJumpTo();
       return;
@@ -211,7 +210,7 @@ export const JetsSeatMap = ({
     if (seatDeck !== activeDeck) switchDeck(seatDeck);
 
     setSeatLabelJumpTo(_providedSeatLabel);
-  }, [seatJumpTo, content]);
+  }, [seatJumpTo]);
 
   const resetSeatJumpTo = () => {
     setSeatLabelJumpTo(null);
