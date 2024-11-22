@@ -94,7 +94,7 @@
   transform: rotate(160deg);
 }
 
-svg {
+.jets-seat-map svg {
   height: 100%;
   width: 100%;
 }
