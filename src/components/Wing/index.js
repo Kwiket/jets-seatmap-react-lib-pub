@@ -1,26 +1,24 @@
-import React, { useContext, useRef } from 'react';
-import { JetsContext } from '../../common';
+import React from 'react';
+import { useWings } from './useWings';
 
 import './index.css';
 
 export const JetsWing = ({ wingsInfo }) => {
-  const { params, colorTheme } = useContext(JetsContext);
-  const elementRef = useRef(null);
-
-  const style = {
-    top: wingsInfo.start,
-    height: wingsInfo.length,
-    width: params.innerWidth,
-  };
-
-  const wingStyle = {
-    background: `${colorTheme?.fuselageWingsColor}`,
-  };
+  const { isWingLeadingVisible, style } = useWings(wingsInfo);
 
   return (
-    <div className={`jets-wings`} style={style} ref={elementRef}>
-      <div className={'wing'} style={{ ...wingStyle }}></div>
-      <div className={'wing'} style={{ ...wingStyle }}></div>
+    <div className="jets-wings-alignment-wrapper" style={style.wrapper}>
+      <div className={`jets-wings`} style={style.container}>
+        {isWingLeadingVisible && (
+          <>
+            <div className={'wing-leading left'} style={style.leading?.left}></div>
+            <div className={'wing-leading right'} style={style.leading?.right}></div>
+          </>
+        )}
+
+        <div className={'wing left'} style={style.wing}></div>
+        <div className={'wing right'} style={style.wing}></div>
+      </div>
     </div>
   );
 };

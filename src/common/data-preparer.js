@@ -252,6 +252,9 @@ export class JetsContentPreparer {
     intersection.finish = Math.min(deckB, wingB);
     intersection.length = Math.max(intersection.finish - intersection.start, 0);
 
+    // TODO: replace it with the real data source
+    intersection.visibleWingsLeadings = true;
+
     return intersection;
   }
 

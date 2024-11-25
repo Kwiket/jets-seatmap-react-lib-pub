@@ -195,6 +195,7 @@ export const DEFAULT_STYLE_POSITION = 'auto';
 //#region Theme
 
 export const THEME_FLOOR_COLOR = 'rgb(30,60,90)';
+export const THEME_BACKGROUND_COLOR = 'rgb(255,255,255)';
 
 export const THEME_DECK_LABEL_TITLE_COLOR = 'rgb(255,255,255)';
 export const THEME_DECK_HEIGHT_SPACING = 200;

@@ -6,6 +6,7 @@ import { JetsTail } from '../Tail';
 import { JetsNose } from '../Nose';
 import { JetsNoData } from '../NoData';
 import { JetsNotInit } from '../NotInit';
+import { JetsWing } from '../Wing';
 
 import './index.css';
 
@@ -29,6 +30,7 @@ export const JetsPlaneBody = ({ activeDeck, content, exits, bulks, isSeatMapInit
   const decksWrapperStyle = {
     borderLeft: `${fuselageStrokeWidth}px solid ${fuselageStrokeColor}`,
     borderRight: `${fuselageStrokeWidth}px solid ${fuselageStrokeColor}`,
+    transform: params?.isHorizontal && !params.rightToLeft ? 'rotate(180deg)' : '',
   };
 
   const deckFloorStyle = {
@@ -100,6 +102,8 @@ export const JetsPlaneBody = ({ activeDeck, content, exits, bulks, isSeatMapInit
                     isSingleDeck={isSingleDeck}
                   />
                 </div>
+
+                {params?.visibleWings && <JetsWing wingsInfo={deck?.wingsInfo} />}
 
                 {index < decks.length - 1 && !showOneDeck && <JetsDeckSeparator key={index} width={bodyWidth} />}
               </React.Fragment>

@@ -25,10 +25,12 @@ const CONFIG_MOCK = {
   scaleType: 'zoom',
 
   colorTheme: {
+    seatMapBackgroundColor: '#fff',
+
     deckLabelTitleColor: 'black',
     deckHeightSpacing: 0,
 
-    wingsWidth: 50,
+    wingsWidth: 85,
     deckSeparation: 0,
 
     floorColor: '#595959',

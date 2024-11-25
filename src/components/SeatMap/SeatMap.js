@@ -22,6 +22,7 @@ import {
   JetsContext,
   ENTITY_STATUS_MAP,
   ENTITY_TYPE_MAP,
+  THEME_BACKGROUND_COLOR,
   THEME_DECK_LABEL_TITLE_COLOR,
   THEME_FLOOR_COLOR,
   THEME_SEAT_LABEL_COLOR,
@@ -463,6 +464,8 @@ JetsSeatMap.defaultProps = {
     scaleType: DEFAULT_SCALE_TYPE,
     hiddenSeatFeatures: [],
     colorTheme: {
+      seatMapBackgroundColor: THEME_BACKGROUND_COLOR,
+
       deckLabelTitleColor: THEME_DECK_LABEL_TITLE_COLOR,
       floorColor: THEME_FLOOR_COLOR,
 

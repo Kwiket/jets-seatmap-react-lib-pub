@@ -3,7 +3,6 @@ import { JetsContext, LOCALES_MAP, DEFAULT_DECK_TITLE_HEIGHT, DEFAULT_DECK_PADDI
 import { JetsBulk } from '../Bulk';
 import { JetsDeckExit } from '../DeckExit';
 import { JetsDeckTitle } from '../DeckTitle';
-import { JetsWing } from '../Wing';
 import { JetsRow } from '../Row';
 import { JetsCabinTitle } from '../CabinTitle';
 
@@ -20,14 +19,11 @@ export const JetsDeck = ({ deck, lang, exits, bulks, isSingleDeck }) => {
   const deckStyle = {
     height,
     padding: `0 ${DEFAULT_DECK_PADDING_SIZE}px 0 ${DEFAULT_DECK_PADDING_SIZE}px`,
-    transform: params?.isHorizontal && !params.rightToLeft ? 'rotate(180deg)' : '',
     margin: '0 auto',
   };
 
   return (
     <div className="jets-deck" style={deckStyle} ref={elementRef}>
-      {params?.visibleWings && <JetsWing wingsInfo={wingsInfo} />}
-
       {params?.visibleCabinTitles &&
         rows
           .filter(r => r.isFirstInCabin)
