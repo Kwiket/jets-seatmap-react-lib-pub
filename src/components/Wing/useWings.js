@@ -3,7 +3,6 @@ import { JetsContext } from '../../common';
 
 const LEADING_VERTICAL_OVERLAP_OFFSET = 3;
 const LEADING_HORIZONTAL_OVERLAP_OFFSET = 4;
-const NUMBER_OF_LEADINGS = 2;
 const DEFAULT_LEADING_BACKGROUND_COLOR = '#fff';
 
 /**
