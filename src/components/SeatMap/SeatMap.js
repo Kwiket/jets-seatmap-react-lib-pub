@@ -423,6 +423,7 @@ export const JetsSeatMap = ({
           width: configuration.horizontal ? params?.scaledTotalDecksHeight : configuration.width,
           height: configuration.horizontal ? configuration.width : params?.scaledTotalDecksHeight,
           fontFamily: colorTheme.fontFamily,
+          background: colorTheme.seatMapBackgroundColor,
         }}
       >
         {activeTooltip && <JetsTooltipGlobal data={activeTooltip} />}
