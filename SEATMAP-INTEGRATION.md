@@ -384,6 +384,8 @@ Full config looks like this:
   hiddenSeatFeatures: ['limitedRecline', 'getColdByExit', 'doNotRecline', 'wingInWindow', 'nearLavatory', 'nearGalley'], // to exclude some seat features from the built-in tooltip, all seat features are still available within the `onTooltipRequested` event
 
   colorTheme: {                             // most values are CSS-compatible
+    seatMapBackgroundColor: 'white',        
+
     deckLabelTitleColor: 'white',
     deckHeightSpacing: 100,                 // additional space on both ends of a deck (for aesthetics only)
 
