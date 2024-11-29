@@ -6,6 +6,7 @@ import {
   LOCALES_MAP,
   DEFAULT_FEATURES_RENDER_LIMIT,
   SCALE_TYPES,
+  useEnvironmentInfo,
 } from '../../common';
 import './index.css';
 
@@ -18,6 +19,8 @@ const RESTRICTION_KEY = 'seatRestrictions';
 export const JetsTooltipGlobal = ({ data }) => {
   const { isSeatSelectDisabled, onTooltipClose, onSeatSelect, onSeatUnselect, colorTheme, params } =
     useContext(JetsContext);
+
+  const { isSafari } = useEnvironmentInfo();
 
   const elementRef = useRef(null);
   const [tooltipHeight, setTooltipHeight] = useState(0);
@@ -77,11 +80,19 @@ export const JetsTooltipGlobal = ({ data }) => {
   const seatmapRect = seatmapElement.getBoundingClientRect();
   const seatmapParentRect = seatmapElement.parentElement.getBoundingClientRect();
 
-  const zoomCorrectionKoef = scaleType === SCALE_TYPES.ZOOM ? antiScale : 1;
+  let seatY = seatRect.top - seatmapRect.top;
+  let seatX = seatRect.left - seatmapRect.left;
+  let rowSeatY = seatRect.top - seatmapParentRect.top;
 
-  const seatY = seatRect.top / zoomCorrectionKoef - seatmapRect.top;
-  const seatX = seatRect.left / zoomCorrectionKoef - seatmapRect.left;
-  const rowSeatY = seatRect.top / zoomCorrectionKoef - seatmapParentRect.top;
+  // here we recalculate the values using zoomCorrectionKoef for Safari browser
+  // to avoid incorrect positioning of the tooltip
+  if (isSafari) {
+    const zoomCorrectionKoef = scaleType === SCALE_TYPES.ZOOM ? antiScale : 1;
+
+    seatY = seatRect.top / zoomCorrectionKoef - seatmapRect.top;
+    seatX = seatRect.left / zoomCorrectionKoef - seatmapRect.left;
+    rowSeatY = seatRect.top / zoomCorrectionKoef - seatmapParentRect.top;
+  }
 
   const keyForPosition = params?.isHorizontal ? 'left' : 'top';
   const keyForSize = params?.isHorizontal ? 'width' : 'height';

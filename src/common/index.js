@@ -6,3 +6,4 @@ export * from './data-preparer';
 export * from './i18n.languages';
 export * from './localStorage';
 export * from './utils';
+export * from './hooks';

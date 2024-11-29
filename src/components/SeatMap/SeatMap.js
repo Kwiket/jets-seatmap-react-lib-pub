@@ -60,6 +60,7 @@ import {
   THEME_CABIN_TITLES_WIDTH,
   THEME_CABIN_TITLES_HIGHLIGHT_COLORS,
   THEME_CABIN_TITLES_LABEL_COLOR,
+  useEnvironmentInfo,
 } from '../../common';
 import './index.css';
 import { JetsPlaneBody } from '../PlaneBody';
@@ -83,6 +84,8 @@ export const JetsSeatMap = ({
   onAvailabilityApplied,
   componentOverrides,
 }) => {
+  const { isFirefox } = useEnvironmentInfo();
+
   const colorTheme = JetsDataHelper.mergeColorThemeWithConstraints(
     JetsSeatMap.defaultProps.config.colorTheme,
     config.colorTheme
@@ -91,7 +94,6 @@ export const JetsSeatMap = ({
   const configuration = { ...JetsSeatMap.defaultProps.config, ...config };
 
   // SCALE_TYPES.ZOOM is not fully supported by FF
-  const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
   if (isFirefox) {
     configuration.scaleType = SCALE_TYPES.SCALE;
   }
