@@ -9,7 +9,7 @@
   font-weight: normal;
 }
 
-.jets-seat-map * {
+.jets-seat-map.scale.vertical * {
   filter: blur(0);
   -webkit-filter: blur(0);
   -webkit-font-smoothing: subpixel-antialiased;

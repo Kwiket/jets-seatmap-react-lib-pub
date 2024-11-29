@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 
 import { JetsSeatMapService } from './service';
 import { JetsDataHelper } from '../../common/data-helper';
@@ -213,6 +213,13 @@ export const JetsSeatMap = ({
     setSeatLabelJumpTo(_providedSeatLabel);
   }, [seatJumpTo]);
 
+  const seatMapClassName = useMemo(() => {
+    const _viewModeClassName = params?.isHorizontal ? 'horizontal' : 'vertical';
+    const _scaleTypeClassName = configuration.scaleType === SCALE_TYPES.SCALE ? 'scale' : 'zoom';
+
+    return `jets-seat-map ${_viewModeClassName} ${_scaleTypeClassName}`;
+  }, [params, configuration]);
+
   const resetSeatJumpTo = () => {
     setSeatLabelJumpTo(null);
   };
@@ -418,7 +425,7 @@ export const JetsSeatMap = ({
     <JetsContext.Provider value={providerValue}>
       <div
         ref={seatMapRef}
-        className="jets-seat-map"
+        className={seatMapClassName}
         style={{
           width: configuration.horizontal ? params?.scaledTotalDecksHeight : configuration.width,
           height: configuration.horizontal ? configuration.width : params?.scaledTotalDecksHeight,
