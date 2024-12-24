@@ -11,6 +11,10 @@
     "build-lib": "rollup -c",
     "prepublishOnly": "cp SEATMAP-INTEGRATION.md README.md && npm run build-lib"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "keywords": [
     "react",
     "seatmap",
