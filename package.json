@@ -8,8 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
-    "build-lib": "rollup -c",
-    "prepublishOnly": "cp SEATMAP-INTEGRATION.md README.md && npm run build-lib"
+    "build-lib": "rollup -c"
   },
   "files": [
     "dist",
