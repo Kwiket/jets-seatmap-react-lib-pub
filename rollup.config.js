@@ -10,6 +10,7 @@ import { terser } from 'rollup-plugin-terser';
 export default [
   {
     input: './src/index.js',
+    external: ['react', 'react-dom'],
     output: [
       {
         file: 'dist/index.js',
@@ -27,9 +28,7 @@ export default [
         minimize: true,
       }),
       copy({
-        targets: [
-          { src: 'src/assets/img', dest: 'dist/assets' },
-        ],
+        targets: [{ src: 'src/assets/img', dest: 'dist/assets' }],
       }),
       babel({
         exclude: 'node_modules/**',
