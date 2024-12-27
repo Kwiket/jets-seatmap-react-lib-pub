@@ -7,7 +7,7 @@ communication between the seatmap and a parent layer that embeds seatmap (furthe
 
 ## Installation
 
-There are 2 ways to install the library: 
+There are 2 ways to install the lib: 
 * using npm [version](https://www.npmjs.com/package/@seatmaps.com/react-lib)
 * using self-hosted version 
 
