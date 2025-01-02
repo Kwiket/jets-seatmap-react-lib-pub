@@ -91,7 +91,7 @@ export class JetsSeatMapService {
               ];
               seat['color'] = JetsDataHelper.validateColor(
                 availableSeatData?.color || wildCardSeatData?.color,
-                seat?.color
+                seat?.originalColor
               );
             } else if (seat.type === ENTITY_TYPE_MAP.seat) {
               seat['status'] = wildCardSeatData ? available : unavailable;
