@@ -3,17 +3,20 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Sticker } from './ui/Sticker';
 
 import './index.css';
-import { DECK_ITEM_ALIGN_MAP, DEFAULT_STYLE_POSITION } from '../../common/constants';
+
+import { DECK_ITEM_ALIGN_MAP, DEFAULT_STYLE_POSITION, SCALE_TYPES } from '../../common/constants';
 import { BULK_TEMPLATE_MAP } from './constants';
-import { JetsContext } from '../../common';
+import { JetsContext, useEnvironmentInfo } from '../../common';
 
 const SCALE_BULK_COEFF = 0.7;
 
 export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, topOffset }) => {
-  const { params, colorTheme } = useContext(JetsContext);
+  const { params, config, colorTheme } = useContext(JetsContext);
   const { bulkBaseColor, bulkCutColor } = colorTheme;
   const [stickerWrapperHeight, setStickerWrapperHeight] = useState(0);
   const $component = useRef(null);
+
+  const { isSafari } = useEnvironmentInfo();
 
   const [style, setStyle] = useState(() => {
     const updatedWidth = Math.floor(width * SCALE_BULK_COEFF);
@@ -60,9 +63,12 @@ export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, to
     const clientRect = $bulkBase.getBoundingClientRect();
     const bulkPartHeight = params?.isHorizontal ? clientRect.width : clientRect.height;
 
-    const preparedStickerWrapperHeight = Math.round(
-      style.height - bulkPartHeight * params.antiScale * SCALE_BULK_COEFF
-    );
+    // we should ignore anti-scale for Safari when scaleType is set to 'zoom'
+    // to avoid incorrect positioning of bulk-stickers
+    const shouldIgnoreAntiScale = isSafari && config?.scaleType === SCALE_TYPES.ZOOM;
+    const preparedBulkPartHeight = shouldIgnoreAntiScale ? bulkPartHeight : bulkPartHeight * params?.antiScale;
+
+    const preparedStickerWrapperHeight = Math.round(style.height - preparedBulkPartHeight * SCALE_BULK_COEFF);
 
     setStickerWrapperHeight(preparedStickerWrapperHeight);
   };
