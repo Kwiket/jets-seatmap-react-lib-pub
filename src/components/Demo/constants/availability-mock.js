@@ -43,13 +43,13 @@ const AVAILABILITY_MOCK = [
   {
     currency: 'USD',
     label: '35K',
-    price: 1337,
+    price: 137,
     onlyForPassengerType: ['CHD', 'INF'],
   },
   {
     currency: 'EUR',
     label: '70E',
-    price: 1488,
+    price: 133399,
   },
 ];
 
