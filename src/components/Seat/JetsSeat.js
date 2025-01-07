@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { JetsContext, ENTITY_TYPE_MAP } from '../../common';
 import { SeatIcon } from './ui/SeatIcon';
-import { SeatPriceBadge } from './ui/SeatPriceBadge';
+import { SeatPriceLabel } from './ui/SeatPriceLabel';
 
 import './index.css';
 
@@ -128,7 +128,7 @@ export const JetsSeat = ({ data }) => {
     >
       {seatType && type !== index ? (
         <>
-          {showSeatPriceLabel && <SeatPriceBadge cost={cost} currency={currency} maxWidth={size.width} />}
+          {showSeatPriceLabel && <SeatPriceLabel cost={cost} currency={currency} maxWidth={size.width} />}
           <div className={`jets-seat-number ST-${seatIconType}`}>{`${number}`}</div>
           <SeatIcon seatType={seatType} style={svgStyle} />
           {passenger && (

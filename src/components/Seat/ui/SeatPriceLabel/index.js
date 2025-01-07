@@ -3,7 +3,7 @@ import './index.css';
 
 const CURRENCY_FALLBACK_PLACEHOLDER = '*';
 
-export const SeatPriceBadge = ({ cost, currency, maxWidth }) => {
+export const SeatPriceLabel = ({ cost, currency, maxWidth }) => {
   const fullPrice = `${currency}${cost}`;
   const currencySymbol = currency?.toString().charAt(0) || CURRENCY_FALLBACK_PLACEHOLDER;
 
