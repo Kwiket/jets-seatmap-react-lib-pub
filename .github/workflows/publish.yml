@@ -2,7 +2,6 @@ name: Publish to npm
 
 on:
   push:
-    branches: ['version-3-npm']
     tags:
       - 'v*.*.*'
 
@@ -19,12 +18,6 @@ jobs:
           node-version: 20.18
           registry-url: 'https://registry.npmjs.org'
           always-auth: true
-
-      - name: Create .npmrc
-        run: |
-          echo "@seatmapscom:registry=https://registry.npmjs.org" > ~/.npmrc
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-          echo "legacy-peer-deps=true" >> ~/.npmrc
 
       - name: Install dependencies
         run: npm install
