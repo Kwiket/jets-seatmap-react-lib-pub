@@ -365,6 +365,7 @@ export class JetsContentPreparer {
     return {
       uniqId: Utils.generateId(),
       ...seat,
+      originalColor: seat?.color,
       features,
       measurements,
       status,
