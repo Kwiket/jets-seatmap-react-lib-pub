@@ -375,7 +375,7 @@ Full config looks like this:
   externalPassengerManagement: false,       // see `onTooltipRequested` section
   tooltipOnHover: false,                    // see `onTooltipRequested` section
 
-  visibleSeatPriceLabel: false,             // should seat price label be rendered
+  visibleSeatPriceLabels: false,             // should seat price labels be rendered
   currencySign: '$',                        // сurrency sign that will be displayed in the seat price label. It will also be displayed in the price in the tooltip. Only 1 character is allowed, if the length of the passed value is longer it will be truncated
 
   scaleType: 'zoom',                        // type of scaling applied to adjust to the desired width of the rendered seat map: `zoom` | `scale`, FF supports `scale` only

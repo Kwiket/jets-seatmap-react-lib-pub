@@ -29,7 +29,7 @@ export const JetsSeat = ({ data }) => {
   } = data;
   const { index, aisle } = ENTITY_TYPE_MAP;
   const componentClassNames = `jets-seat jets-${type} jets-${status} jets-seat-r-${rotation}`;
-  const showSeatPriceLabel = price && config?.visibleSeatPriceLabel;
+  const showSeatPriceLabel = price && config?.visibleSeatPriceLabels;
 
   const $component = useRef();
 
