@@ -1,5 +1,5 @@
 {
-  "name": "jets-seatmap-react-lib",
+  "name": "@seatmaps.com/react-lib",
   "version": "3.0.32",
   "description": "Jets seatmap react library.",
   "main": "dist/index.js",
@@ -10,6 +10,21 @@
     "build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "build-lib": "rollup -c"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "react",
+    "seatmap",
+    "seat map",
+    "seatmaps.com",
+    "jets",
+    "aircraft",
+    "plane",
+    "quicket",
+    "library"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kwiket/jets-seatmap-react-lib-pub.git"
