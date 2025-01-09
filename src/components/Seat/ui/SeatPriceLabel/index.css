@@ -7,6 +7,7 @@
   box-sizing: border-box;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.6);
   padding: 5px 2px;
+  color: #000;
 
   display: flex;
   justify-content: center;

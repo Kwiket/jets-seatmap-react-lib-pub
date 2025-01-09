@@ -79,9 +79,7 @@ export class JetsSeatMapService {
               return item.label === seat.number;
             });
             const currencySign =
-              (this._configuration.visibleSeatPriceLabels && this._configuration.currencySign) ||
-              availableSeatData?.currency ||
-              wildCardSeatData?.currency;
+              this._configuration.currencySign || availableSeatData?.currency || wildCardSeatData?.currency;
             const seatCost = availableSeatData?.price || wildCardSeatData?.price || 0;
 
             if (availableSeatData) {
