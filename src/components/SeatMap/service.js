@@ -11,10 +11,12 @@ import { JetsDataHelper } from '../../common/data-helper';
 export class JetsSeatMapService {
   constructor(configuration) {
     const { apiUrl, apiAppId, apiKey, colorTheme } = configuration;
+
     const localStorage = new JetsLocalStorageService();
     this._api = new JetsSeatMapApiService(apiAppId, apiKey, apiUrl, localStorage);
     this._preparer = new JetsContentPreparer();
     this._colorTheme = colorTheme;
+    this._configuration = configuration;
   }
 
   getSeatMapData = async (flight, availability, passengers, config) => {
@@ -76,11 +78,15 @@ export class JetsSeatMapService {
             const availableSeatData = availability.find(item => {
               return item.label === seat.number;
             });
+            const currencySign =
+              this._configuration.currencySign || availableSeatData?.currency || wildCardSeatData?.currency;
+            const seatCost = availableSeatData?.price || wildCardSeatData?.price || 0;
 
             if (availableSeatData) {
-              const { price, currency } = availableSeatData;
               seat['status'] = seat['status'] === selected ? selected : available;
-              seat['price'] = `${currency} ${price || 0}` || '';
+              seat['price'] = `${currencySign} ${seatCost}` || '';
+              seat['cost'] = seatCost;
+              seat['currency'] = currencySign;
               seat['passengerTypes'] =
                 availableSeatData.onlyForPassengerType ||
                 wildCardSeatData?.onlyForPassengerType ||
@@ -95,7 +101,9 @@ export class JetsSeatMapService {
               );
             } else if (seat.type === ENTITY_TYPE_MAP.seat) {
               seat['status'] = wildCardSeatData ? available : unavailable;
-              seat['price'] = wildCardSeatData ? `${wildCardSeatData?.currency} ${wildCardSeatData?.price || 0}` : null;
+              seat['price'] = wildCardSeatData ? `${currencySign} ${seatCost}` : null;
+              seat['cost'] = seatCost;
+              seat['currency'] = currencySign;
               seat['passenger'] = null;
               seat['passengerTypes'] = wildCardSeatData?.onlyForPassengerType || DEFAULT_SEAT_PASSENGER_TYPES;
               seat['additionalProps'] = wildCardSeatData?.additionalProps || [];

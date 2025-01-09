@@ -1,0 +1,35 @@
+.jets-seat-price {
+  height: 45px;
+  top: -45px;
+  position: absolute;
+  background: #fefefe;
+  border-radius: 12px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.6);
+  padding: 5px 2px;
+  color: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.jets-seat-price .currency {
+  position: absolute;
+  top: 11px;
+  left: 5px;
+  font-size: 21px;
+  line-height: 1;
+}
+
+.jets-seat-price .cost {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 28px;
+  margin-left: 16px;
+  padding-left: 3px;
+  flex: 1;
+}

@@ -82,13 +82,14 @@ Create your [config](#config) and embed seatmap into your component page via `<J
 
 - [Seatmap integration and communication](#seatmap-integration-and-communication)
   - [Installation](#installation)
+    - [Self-hosted version](#self-hosted-version)
   - [Integration](#integration)
   - [Properties](#properties)
     - [ Flight](#-flight)
     - [ Availability](#-availability)
     - [ Passengers](#-passengers)
     - [ Config](#-config)
-    - [ seatJumpTo](#seatjumpto)
+    - [ seatJumpTo](#-seatjumpto)
     - [ onSeatMapInited](#-onseatmapinited)
     - [ onLayoutUpdated](#-onlayoutupdated)
     - [ onTooltipRequested](#-ontooltiprequested)
@@ -380,6 +381,9 @@ Full config looks like this:
   builtInTooltip: true,                     // see `onTooltipRequested` section
   externalPassengerManagement: false,       // see `onTooltipRequested` section
   tooltipOnHover: false,                    // see `onTooltipRequested` section
+
+  visibleSeatPriceLabels: false,             // should seat price labels be rendered
+  currencySign: '$',                        // сurrency sign that will be displayed in the seat price label. It will also be displayed in the price in the tooltip. Only 1 character is allowed, if the length of the passed value is longer it will be truncated
 
   scaleType: 'zoom',                        // type of scaling applied to adjust to the desired width of the rendered seat map: `zoom` | `scale`, FF supports `scale` only
 

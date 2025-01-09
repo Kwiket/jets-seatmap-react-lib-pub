@@ -5,7 +5,7 @@ const CONFIG_MOCK = {
   rightToLeft: false,
 
   visibleFuselage: true,
-  visibleWings: false,
+  visibleWings: true,
   visibleCabinTitles: true,
   customCabinTitles: { F: 'First', B: 'Business', P: 'Premium', E: 'Economy' },
 
@@ -23,6 +23,9 @@ const CONFIG_MOCK = {
   apiKey: process.env.JETS_PRIVATE_KEY,
 
   scaleType: 'zoom',
+
+  visibleSeatPriceLabels: false,
+  currencySign: '$',
 
   colorTheme: {
     seatMapBackgroundColor: '#fff',

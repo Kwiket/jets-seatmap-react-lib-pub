@@ -1,13 +1,14 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { JetsContext, ENTITY_TYPE_MAP } from '../../common';
 import { SeatIcon } from './ui/SeatIcon';
+import { SeatPriceLabel } from './ui/SeatPriceLabel';
 
 import './index.css';
 
 const PASSENGER_BADGE_SIZE_COEF = 0.8;
 
 export const JetsSeat = ({ data }) => {
-  const { onSeatClick, showTooltip, onTooltipClose, seatLabelJumpTo, resetSeatJumpTo, params, colorTheme } =
+  const { onSeatClick, showTooltip, onTooltipClose, seatLabelJumpTo, resetSeatJumpTo, params, config, colorTheme } =
     useContext(JetsContext);
   const {
     letter,
@@ -22,9 +23,13 @@ export const JetsSeat = ({ data }) => {
     topOffset,
     leftOffset,
     number,
+    price,
+    cost,
+    currency,
   } = data;
   const { index, aisle } = ENTITY_TYPE_MAP;
   const componentClassNames = `jets-seat jets-${type} jets-${status} jets-seat-r-${rotation}`;
+  const showSeatPriceLabel = price && config?.visibleSeatPriceLabels;
 
   const $component = useRef();
 
@@ -123,6 +128,7 @@ export const JetsSeat = ({ data }) => {
     >
       {seatType && type !== index ? (
         <>
+          {showSeatPriceLabel && <SeatPriceLabel cost={cost} currency={currency} maxWidth={size.width} />}
           <div className={`jets-seat-number ST-${seatIconType}`}>{`${number}`}</div>
           <SeatIcon seatType={seatType} style={svgStyle} />
           {passenger && (
