@@ -42,7 +42,13 @@ export class JetsSeatMapApiService extends JetsApiService {
     const data = { flight, lang: language, units };
 
     const path = 'flight/features/plane/seatmap';
+    const availabilityDataKey = 'availabilityData';
     const responseItems = await this.postData(path, data);
+    // @TODO: delete it
+    // const responseItems = [
+    //   ..._responseItems,
+    //   { id: availabilityDataKey, mockAvailabilityData: 'Mock availability data' },
+    // ];
 
     const result = {
       seatDetails: null,
@@ -67,6 +73,11 @@ export class JetsSeatMapApiService extends JetsApiService {
           }
           result.seatDetails = item.seatDetails;
           break;
+        case availabilityDataKey: {
+          const { id, ...rest } = item;
+          result[availabilityDataKey] = { ...rest };
+          break;
+        }
         default:
           const { id, cabin, entertainment, power, wifi } = item;
           const cabinClass = id.split(':')[1];

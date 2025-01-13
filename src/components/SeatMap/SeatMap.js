@@ -136,6 +136,7 @@ export const JetsSeatMap = ({
               scaleFactor: data.params?.scale,
               decksCount: data.content?.length,
               currentDeckIndex: activeDeck,
+              availabilityData: data?.availabilityData,
             });
             hasReceivedFirstParams.current = false;
           }
