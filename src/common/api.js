@@ -1,12 +1,15 @@
+import { DEFAULT_AUTHORIZATION_SCHEME } from './constants';
+
 const JWT_TOKEN = 'jetsJwtToken';
 const TOKEN_EXPIRATION_BUFFER_IN_MS = 300000;
 
 export class JetsApiService {
-  constructor(appId, key, url, localStorage) {
+  constructor(appId, key, url, localStorage, authorizationScheme = DEFAULT_AUTHORIZATION_SCHEME) {
     this._appId = appId;
     this._apiKey = key;
     this._apiUrl = url;
     this._localStorage = localStorage;
+    this._authorizationScheme = authorizationScheme;
   }
 
   getData = async (url, options = {}) => {
