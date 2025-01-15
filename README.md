@@ -391,6 +391,8 @@ Full config looks like this:
   apiAppId: 'PROVIDED_APP_ID',
   apiKey: 'PROVIDED_API_KEY',
   
+  authorizationScheme: 'Bearer',            // authorization scheme to be sent in API client requests 'Authorization' header (default: 'Bearer', e.g. 'Authorization: Bearer {apiKey}')
+  
   hiddenSeatFeatures: ['limitedRecline', 'getColdByExit', 'doNotRecline', 'wingInWindow', 'nearLavatory', 'nearGalley'], // to exclude some seat features from the built-in tooltip, all seat features are still available within the `onTooltipRequested` event
 
   colorTheme: {                             // most values are CSS-compatible
