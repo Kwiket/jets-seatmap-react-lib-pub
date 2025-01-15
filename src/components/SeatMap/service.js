@@ -22,17 +22,15 @@ export class JetsSeatMapService {
   getSeatMapData = async (flight, availability, passengers, config) => {
     const { lang, units } = config;
     const planeFeatures = await this._api.getPlaneFeatures(flight, lang, units);
-    const availabilityData = planeFeatures?.availabilityData;
 
     let { content, params, exits, bulks } = this._preparer.prepareData(planeFeatures, config);
 
-    // @TODO: need to substitute the `availabilityData` from response
     if (availability) content = this.setAvailabilityHandler(content, availability);
 
     const activePassenger = passengers?.find(item => item.seat?.seatLabel);
     if (passengers && activePassenger) content = this.setPassengersHandler(content, passengers);
 
-    return { content, params, exits, bulks, availabilityData };
+    return { content, params, exits, bulks, availabilityData: planeFeatures?.availabilityData };
   };
 
   selectSeatHandler = (content, seat, passengersList) => {

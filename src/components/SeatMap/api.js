@@ -44,11 +44,6 @@ export class JetsSeatMapApiService extends JetsApiService {
     const path = 'flight/features/plane/seatmap';
     const availabilityDataKey = 'availabilityData';
     const responseItems = await this.postData(path, data);
-    // @TODO: delete it
-    // const responseItems = [
-    //   ..._responseItems,
-    //   { id: availabilityDataKey, mockAvailabilityData: 'Mock availability data' },
-    // ];
 
     const result = {
       seatDetails: null,

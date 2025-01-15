@@ -492,8 +492,20 @@ Example of use:
 This event fires up when seatmap (DOM tree, content) is initialized. It provides internal data such as
 
 ```typescript
+interface ISeat {
+  currency: string;
+  label: string;
+  price: number;
+}
+
+interface IAvailableSeatsData {
+  availableSeats: ISeat[]
+};
+```
+
+```typescript
 interface IInitialLayoutData {
-  availabilityData: TSeatAvailability;     // reflects what seats are available for passengers
+  availabilityData: IAvailableSeatsData;     // reflects what seats are available for passengers
   currentDeckIndex: number;     // shows current deck if "builtInDeckSelector" flag is set in config, otherwise 0
   decksCount: number;           // number of decks available for provided flight
   heightInPx: number;           // sum of lengths of all elements of the plane (decks, fuselage, separators) using internal units. Multiply by "scaleFactor" to get real pixel value on screen
