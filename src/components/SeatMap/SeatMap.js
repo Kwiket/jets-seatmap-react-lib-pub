@@ -18,6 +18,7 @@ import {
   DEFAULT_RTL,
   DEFAULT_UNITS,
   DEFAULT_SCALE_TYPE,
+  DEFAULT_AUTHORIZATION_SCHEME,
   SCALE_TYPES,
   JetsContext,
   ENTITY_STATUS_MAP,
@@ -473,6 +474,9 @@ JetsSeatMap.defaultProps = {
     lang: DEFAULT_LANG,
     units: DEFAULT_UNITS,
     scaleType: DEFAULT_SCALE_TYPE,
+
+    authorizationScheme: DEFAULT_AUTHORIZATION_SCHEME,
+
     hiddenSeatFeatures: [],
     colorTheme: {
       seatMapBackgroundColor: THEME_BACKGROUND_COLOR,

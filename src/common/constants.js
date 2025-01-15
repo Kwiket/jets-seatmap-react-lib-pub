@@ -84,6 +84,8 @@ export const DEFAULT_UNITS = 'metric';
 
 export const DEFAULT_SCALE_TYPE = SCALE_TYPES.SCALE;
 
+export const DEFAULT_AUTHORIZATION_SCHEME = 'Bearer'
+
 export const DEFAULT_SEAT_MARGIN = 3;
 
 export const DEFAULT_SEAT_MAP_WIDTH = 350;
