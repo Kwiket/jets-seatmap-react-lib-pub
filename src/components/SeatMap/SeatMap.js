@@ -91,6 +91,7 @@ export const JetsSeatMap = ({
     config.colorTheme
   );
   config.colorTheme = colorTheme;
+  config.lang = JetsDataHelper.sanitizeLanguage(config.lang);
   const configuration = { ...JetsSeatMap.defaultProps.config, ...config };
 
   // SCALE_TYPES.ZOOM is not fully supported by FF

@@ -4,6 +4,8 @@ import {
   FUSELAGE_HEIGHT_TO_WIDTH_RATIO,
   ENTITY_TYPE_MAP,
   SCALE_TYPES,
+  DEFAULT_LANG,
+  LOCALES_MAP,
 } from './constants';
 
 export class JetsDataHelper {
@@ -258,6 +260,14 @@ export class JetsDataHelper {
 
     return theme;
   }
+
+  static sanitizeLanguage = lang => {
+    if (!lang) return DEFAULT_LANG;
+
+    const _lang = lang.toUpperCase();
+
+    return LOCALES_MAP[_lang] ? _lang : DEFAULT_LANG;
+  };
 }
 
 const _colorThemeConstraints = {
