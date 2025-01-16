@@ -32,8 +32,8 @@ const API_SUPPORTED_LANGUAGES = [
 ];
 
 export class JetsSeatMapApiService extends JetsApiService {
-  constructor(appId, key, url, localStorage = null, authorizationScheme = DEFAULT_AUTHORIZATION_SCHEME) {
-    super(appId, key, url, localStorage, authorizationScheme);
+  constructor(appId, key, url, localStorage = null, apiAuthorizationScheme = DEFAULT_AUTHORIZATION_SCHEME) {
+    super(appId, key, url, localStorage, apiAuthorizationScheme);
   }
 
   getPlaneFeatures = async (flight, lang = DEFAULT_LANG, units = DEFAULT_UNITS) => {

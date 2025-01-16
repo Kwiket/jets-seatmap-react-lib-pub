@@ -475,7 +475,7 @@ JetsSeatMap.defaultProps = {
     units: DEFAULT_UNITS,
     scaleType: DEFAULT_SCALE_TYPE,
 
-    authorizationScheme: DEFAULT_AUTHORIZATION_SCHEME,
+    apiAuthorizationScheme: DEFAULT_AUTHORIZATION_SCHEME,
 
     hiddenSeatFeatures: [],
     colorTheme: {
