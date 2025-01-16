@@ -15,7 +15,7 @@ export class JetsApiService {
   getData = async (url, options = {}) => {
     let basicOptions = {};
     if (!options?.headers?.authorization) {
-      basicOptions = await this._getRequestOptions(this._authorizationScheme);
+      basicOptions = await this._getRequestOptions();
     }
 
     const reqOptions = { ...options, ...basicOptions };
@@ -29,7 +29,7 @@ export class JetsApiService {
   };
 
   postData = async (url, body, options = {}) => {
-    const basicOptions = await this._getRequestOptions(this._authorizationScheme);
+    const basicOptions = await this._getRequestOptions();
     const params = { ...options, method: 'post', body: JSON.stringify(body), ...basicOptions };
     const path = `${this._apiUrl}/${url}`;
     const response = await fetch(path, params);
@@ -42,20 +42,20 @@ export class JetsApiService {
     return responseData;
   };
 
-  _getRequestOptions = async (scheme) => {
+  _getRequestOptions = async () => {
     const token = await this._getToken();
     return {
       headers: {
         'content-type': 'application/json',
-        authorization: `${scheme} ${token}`,
+        authorization: `${this._authorizationScheme} ${token}`,
       },
     };
   };
 
-  _getAuthRequestOptions = (scheme, key) => {
+  _getAuthRequestOptions = key => {
     return {
       headers: {
-        authorization: `${scheme} ${key}`,
+        authorization: `${this._authorizationScheme} ${key}`,
       },
     };
   };
@@ -66,7 +66,7 @@ export class JetsApiService {
     if (token) return token;
 
     const path = `auth?appId=${this._appId}`;
-    const { accessToken } = await this.getData(path, this._getAuthRequestOptions(this._authorizationScheme, this._apiKey));
+    const { accessToken } = await this.getData(path, this._getAuthRequestOptions(this._apiKey));
 
     if (!accessToken) {
       throw new Error('Unable to authenticate');
