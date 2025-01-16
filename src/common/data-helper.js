@@ -223,6 +223,14 @@ export class JetsDataHelper {
     return this._isColor(strColor) ? strColor : defaultColor;
   }
 
+  static validateLanguage = lang => {
+    if (!lang) return DEFAULT_LANG;
+
+    const _lang = lang.toUpperCase();
+
+    return LOCALES_MAP[_lang] ? _lang : DEFAULT_LANG;
+  };
+
   static _isColor(strColor) {
     const s = new Option().style;
     s.color = strColor;
@@ -260,14 +268,6 @@ export class JetsDataHelper {
 
     return theme;
   }
-
-  static sanitizeLanguage = lang => {
-    if (!lang) return DEFAULT_LANG;
-
-    const _lang = lang.toUpperCase();
-
-    return LOCALES_MAP[_lang] ? _lang : DEFAULT_LANG;
-  };
 }
 
 const _colorThemeConstraints = {
