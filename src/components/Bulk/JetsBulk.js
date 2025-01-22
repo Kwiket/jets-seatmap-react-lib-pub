@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
+import DOMPurify from 'dompurify';
 
 import { Sticker } from './ui/Sticker';
 
@@ -85,13 +86,14 @@ export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, to
   }
   coloredBulkSVG = coloredBulkSVG?.replace('$baseColor', bulkBaseColor);
   coloredBulkSVG = coloredBulkSVG?.replace('$cutColor', bulkCutColor);
+  const sanitizedColoredBulkSVG = DOMPurify.sanitize(coloredBulkSVG);
 
   return (
     <div className="bulk" style={style} ref={$component}>
       <div
         className="bulk__icon"
         dangerouslySetInnerHTML={{
-          __html: coloredBulkSVG,
+          __html: sanitizedColoredBulkSVG,
         }}
       />
       {

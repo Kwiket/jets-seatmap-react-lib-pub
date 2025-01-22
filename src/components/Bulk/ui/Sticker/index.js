@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState, useContext } from 'react';
+import DOMPurify from 'dompurify';
 import { STICKER_TEMPLATE_MAP } from '../../constants';
 import { JetsContext, SCALE_TYPES } from '../../../../common';
 
@@ -31,6 +32,7 @@ export const Sticker = ({ iconType }) => {
   //   console.log('NOT SUPPORTED STICKER:', preparedIconType);
   // }
   coloredStickerSVG = preparedIconType && coloredStickerSVG?.replace('$stickerColor', bulkIconColor);
+  const sanitizedColoredStickerSVG = DOMPurify.sanitize(coloredStickerSVG);
   const bulkStickerClass = config.scaleType === SCALE_TYPES.ZOOM ? 'zoomed_bulk__sticker' : 'bulk__sticker';
 
   return (
@@ -39,7 +41,7 @@ export const Sticker = ({ iconType }) => {
         <div
           className="bulk__icon"
           dangerouslySetInnerHTML={{
-            __html: coloredStickerSVG,
+            __html: sanitizedColoredStickerSVG,
           }}
         />
       )}

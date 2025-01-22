@@ -1,0 +1,31 @@
+name: Security scans
+run-name: Running security scan 🔐
+
+on:
+  push:
+  pull_request:
+    branches:
+      - version-3
+
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Semgrep
+        run: pip install semgrep
+
+      - name: Run Semgrep scan
+        run: |
+          semgrep --config=auto --error
