@@ -81,6 +81,6 @@
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "dompurify": "^3.2.3"
+    "isomorphic-dompurify": "^2.20.0"
   }
 }
