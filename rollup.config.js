@@ -4,6 +4,7 @@ import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import copy from 'rollup-plugin-copy';
 import commonjs from 'rollup-plugin-commonjs';
+import json from '@rollup/plugin-json';
 
 import { terser } from 'rollup-plugin-terser';
 
@@ -31,13 +32,7 @@ export default [
         targets: [{ src: 'src/assets/img', dest: 'dist/assets' }],
       }),
       babel({
-        exclude: [
-          'node_modules/**',
-          "**/*.test.js",
-          'jest.config.js',
-          'jest-config/**',
-          'scripts/**'
-        ],
+        exclude: ['node_modules/**', '**/*.test.js', 'jest.config.js', 'jest-config/**', 'scripts/**'],
         presets: ['@babel/preset-react'],
         plugins: [
           [
@@ -67,6 +62,7 @@ export default [
       external(),
       resolve(),
       terser(),
+      json(),
     ],
   },
 ];

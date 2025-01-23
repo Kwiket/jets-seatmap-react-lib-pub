@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useContext } from 'react';
-import DOMPurify from 'isomorphic-dompurify';
+import DOMPurify from 'dompurify';
 import { STICKER_TEMPLATE_MAP } from '../../constants';
 import { JetsContext, SCALE_TYPES } from '../../../../common';
 
