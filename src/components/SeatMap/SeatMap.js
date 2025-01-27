@@ -108,6 +108,7 @@ export const JetsSeatMap = ({
   const [isSelectAvailable, setSelectAvailable] = useState(false);
   const [activeDeck, setActiveDeck] = useState(0);
   const [params, setParams] = useState(null);
+  const [extraSeatTypeTemplates, setExtraSeatTypeTemplates] = useState(null);
 
   const [exits, setExits] = useState([]);
   const [bulks, setBulks] = useState([]);
@@ -131,6 +132,7 @@ export const JetsSeatMap = ({
             setContent(data.content);
             setExits(data.exits);
             setBulks(data.bulks);
+            setExtraSeatTypeTemplates(data.seatTypeTemplates);
             setSeatMapInited(true);
             onSeatMapInited({
               heightInPx: data.params?.isHorizontal ? data.params?.innerWidth : data.params?.totalDecksHeight,
@@ -424,6 +426,7 @@ export const JetsSeatMap = ({
     activeTooltip,
     seatLabelJumpTo,
     componentOverrides,
+    extraSeatTypeTemplates,
   };
 
   return (

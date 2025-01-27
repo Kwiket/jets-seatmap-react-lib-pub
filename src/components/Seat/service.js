@@ -1,5 +1,5 @@
 export const seatTemplateService = {
-  getSeatIcon(seatClassType, style) {
+  getSeatIcon(seatClassType, style, extraTemplates) {
     if (!seatClassType) return;
 
     const [cabinClass, type] = seatClassType.split('-');
@@ -20,7 +20,7 @@ export const seatTemplateService = {
       }
     }
 
-    return genericTemplates.getTemplate(seatType, style);
+    return genericTemplates.getTemplate(seatType, style, extraTemplates);
   },
 };
 
@@ -234,15 +234,47 @@ const genericTemplates = {
     45: style =>
       `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 325" width="550" height="325"> <g class="seat" transform="scale(-1, 1) translate(-550,0)"> <path fill="${style.fillColor}" stroke="${style.strokeColor}" stroke-width="${style.strokeWidth}" stroke-miterlimit="4.8" d="M213.7,10.4H81.2V108c0,2.7,1.7,4.9,4.1,5.3c10.8,1.6,40.9,6,62,6c21.2,0,51.4-4.4,62.1-6c2.4-0.4,4.1-2.7,4.1-5.3C213.7,108,213.7,10.4,213.7,10.4z"/> <path fill="${style.fillColor}" stroke="${style.strokeColor}" stroke-width="${style.strokeWidth}" stroke-miterlimit="4.8" d="M81.3,5v32.9h132.4"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M186.3,7V3.7v1.1v6.7c0,1.3-0.9,2.6-2.2,2.9c-5.5,1.3-19.8,4.4-36.7,4.4c-16.7,0-31.3-3.1-36.7-4.4c-1.3-0.4-2.2-1.5-2.2-2.9V4.8V3.7V7"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M86.6,5v92.1c0.1,3.9-2.1,6.9-5.8,7h-3.1c-8.8,0.2-9.2-6.9-9.2-15.8L68,56.7c-0.1-1.6,0.1-3.3,0.5-4.8L74.1,5"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M220.8,6.3l5.5,45.7c0.5,1.5,0.6,3.2,0.5,4.8l-0.5,31.6c-0.1,8.8-0.4,15.9-9.2,15.8H214c-3.7-0.1-5.9-3.1-5.8-7V5.9"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M275.1,4.2h267.5v115.1H318.7c-24.1,0-43.6-19.5-43.6-43.6V4.2z"/> <polyline fill="${style.fillColor}" stroke="${style.strokeColor}" stroke-width="${style.strokeWidth}" stroke-miterlimit="4.8" points="543.2,244.1 35.3,244.1 35.3,315.3 543.2,315.3 "/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M489.4,204.3h8.3h1.4h8.3c1.7,0,3.1,1.1,3.6,2.8c1.7,7,5.5,25.5,5.5,47.2s-3.9,40.1-5.5,47.2c-0.5,1.6-1.7,2.8-3.6,2.8h-8.3h-1.4h-8.3c-1.7,0-3.1-1.1-3.6-2.8c-1.7-7-5.5-25.7-5.5-47.2c0-21.7,3.9-40.1,5.5-47.2C486.2,205.5,487.8,204.3,489.4,204.3z"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M443.5,243.8l-46.5-47"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M39,196.6h506"/> <rect  fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="8.5" y="6.6" width="32.4" height="313"/> <polygon fill="rgb(235, 235, 235)" points="550,195.8 550,325 548.8,325 1.2,325 0,325 0,322.2 0,2.8 0,0 1.2,0 548.8,0 550,0 550,120.2 540,120.2 540,10 10,10 10,315 540,315 540,195.8 "/> </g> </svg>`,
   },
-  getTemplate(seatType, style) {
-    const notFound = style => null;
+  getTemplate(seatType, style, extraTemplates) {
+    const existingTemplate = this._mapping[seatType];
+    let svg = existingTemplate ? existingTemplate(style) : null;
 
-    const svg = (this._mapping[seatType] || notFound)(style);
-
-    if (!svg) {
-      return economyClassTemplates.getTemplate(seatType, style);
+    // if no result from _mapping, check extraTemplates
+    if (!svg && extraTemplates && extraTemplates[seatType]) {
+      const { template } = extraTemplates[seatType];
+      svg = seatTemplateUtils.enrichSeatTemplates(template, { style });
     }
 
-    return svg;
+    // fallback to economyClassTemplates if no SVG so far
+    return svg || economyClassTemplates.getTemplate(seatType, style);
+  },
+};
+
+const seatTemplateUtils = {
+  /**
+   * Enriches a seat template string by replacing `${...}` interpolations
+   * with corresponding values from the `styles` object.
+   *
+   * @param {string} template - A string that contains the seat template
+   * @param {object} styles - An object holding the style properties used to fill interpolations.
+   * @returns {string} A string with all matching interpolations substituted by actual values.
+   */
+  enrichSeatTemplates(template, styles) {
+    // represents placeholders of the form `${styles.someProp}`
+    const interpolationShape = /\$\{([^}]+)\}/g;
+
+    return template.replace(interpolationShape, (match, path) => {
+      const parts = path.split('.');
+
+      if (!styles.hasOwnProperty(parts[0])) return match;
+
+      let currentValue = styles[parts[0]];
+
+      for (let i = 1; i < parts.length; i++) {
+        if (!currentValue || !currentValue.hasOwnProperty(parts[i])) return match;
+        currentValue = currentValue[parts[i]];
+      }
+
+      return currentValue;
+    });
   },
 };

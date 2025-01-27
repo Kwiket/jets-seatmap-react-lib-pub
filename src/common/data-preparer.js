@@ -40,10 +40,12 @@ const SEAT_MEASUREMENTS_ICONS = {
 
 export class JetsContentPreparer {
   _dataHelper = null;
+  _seatSizesMap = null;
   _deckTitleHeight = 0;
 
   constructor() {
     this._dataHelper = new JetsDataHelper();
+    this._seatSizesMap = this._prepareSeatSizes(SEAT_SIZE_BY_TYPE);
   }
 
   prepareData = (apiData, config) => {
@@ -81,6 +83,18 @@ export class JetsContentPreparer {
       bulks: preparedBulks,
     };
   };
+
+  addSeatSizes(seatTypeTemplates) {
+    if (!this._seatSizesMap) {
+      this._seatSizesMap = this._prepareSeatSizes(SEAT_SIZE_BY_TYPE);
+    }
+
+    Object.entries(seatTypeTemplates).forEach(([key, value]) => {
+      if (!this._seatSizesMap[key]) {
+        this._seatSizesMap[key] = value.size;
+      }
+    });
+  }
 
   _mergeCabinFeatures(cabin, entertainment, power, wifi) {
     const merged = { ...cabin };
@@ -296,7 +310,7 @@ export class JetsContentPreparer {
 
     // resize aisles if maxRowWidth is set
     if (maxRowWidth) {
-      const [width] = SEAT_SIZE_BY_TYPE[seatType];
+      const [width] = this._seatSizesMap[seatType];
       const seatsCount = seatScheme.match(/S|E/g).length;
       const aislesCount = seatScheme.match(/-/g).length;
       const seatsWidth = seatsCount * width;
@@ -359,8 +373,8 @@ export class JetsContentPreparer {
     const seatType = seat.seatType || _rowSeatType;
     const seatClassAndType = `${classCode}-${seatType}`;
 
-    const [seatWidthByRow, seatHeightByRow] = SEAT_SIZE_BY_TYPE[_rowSeatType];
-    const [seatWidth, seatHeight] = SEAT_SIZE_BY_TYPE[seatType];
+    const [seatWidthByRow, seatHeightByRow] = this._seatSizesMap[_rowSeatType];
+    const [seatWidth, seatHeight] = this._seatSizesMap[seatType];
 
     return {
       uniqId: Utils.generateId(),
@@ -382,7 +396,7 @@ export class JetsContentPreparer {
 
   _prepareAisle = (row, maxWidth = 0) => {
     const { number: rowNumber, seatType } = row;
-    const [width, height] = SEAT_SIZE_BY_TYPE[seatType];
+    const [width, height] = this._seatSizesMap[seatType];
     const size = { width: maxWidth || width, height };
     const type = ENTITY_TYPE_MAP.aisle;
     const status = ENTITY_STATUS_MAP.disabled;
@@ -391,7 +405,7 @@ export class JetsContentPreparer {
   };
 
   _prepareEmpty = row => {
-    const [width, height] = SEAT_SIZE_BY_TYPE[row.seatType];
+    const [width, height] = this._seatSizesMap[row.seatType];
     const size = { width, height };
     const type = ENTITY_TYPE_MAP.empty;
     const status = ENTITY_STATUS_MAP.disabled;
@@ -457,5 +471,12 @@ export class JetsContentPreparer {
     });
 
     return preparedAdditionalProps;
+  };
+
+  _prepareSeatSizes = seatSizes => {
+    return seatSizes.reduce((acc, item, index) => {
+      acc[index] = item;
+      return acc;
+    }, {});
   };
 }

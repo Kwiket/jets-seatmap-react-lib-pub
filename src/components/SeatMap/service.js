@@ -3,6 +3,7 @@ import {
   ENTITY_TYPE_MAP,
   JetsLocalStorageService,
   DEFAULT_SEAT_PASSENGER_TYPES,
+  SEAT_SIZE_BY_TYPE,
 } from '../../common';
 import { JetsSeatMapApiService } from './api';
 import { JetsContentPreparer } from '../../common/data-preparer';
@@ -21,6 +22,12 @@ export class JetsSeatMapService {
 
   getSeatMapData = async (flight, availability, passengers, config) => {
     const { lang, units } = config;
+
+    const actualNumberOfGenericTemplates = SEAT_SIZE_BY_TYPE.length - 1;
+    const seatTypeTemplates = await this._api.getSeatTypesUpdates(actualNumberOfGenericTemplates);
+
+    if (seatTypeTemplates) this._preparer.addSeatSizes(seatTypeTemplates);
+
     const planeFeatures = await this._api.getPlaneFeatures(flight, lang, units);
 
     let { content, params, exits, bulks } = this._preparer.prepareData(planeFeatures, config);
@@ -30,7 +37,7 @@ export class JetsSeatMapService {
     const activePassenger = passengers?.find(item => item.seat?.seatLabel);
     if (passengers && activePassenger) content = this.setPassengersHandler(content, passengers);
 
-    return { content, params, exits, bulks, availabilityData: planeFeatures?.availabilityData };
+    return { content, params, exits, bulks, availabilityData: planeFeatures?.availabilityData, seatTypeTemplates };
   };
 
   selectSeatHandler = (content, seat, passengersList) => {
