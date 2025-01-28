@@ -238,10 +238,9 @@ const genericTemplates = {
     const existingTemplate = this._mapping[seatType];
     let svg = existingTemplate ? existingTemplate(style) : null;
 
-    // if no result from _mapping, check extraTemplates
+    // if no result from _mapping, check provided extraTemplates
     if (!svg && extraTemplates && extraTemplates[seatType]) {
-      const { template } = extraTemplates[seatType];
-      svg = seatTemplateUtils.enrichSeatTemplates(template, { style });
+      svg = extraTemplates[seatType];
     }
 
     // fallback to economyClassTemplates if no SVG so far
@@ -249,32 +248,39 @@ const genericTemplates = {
   },
 };
 
-const seatTemplateUtils = {
+export const seatTemplateUtils = {
   /**
-   * Enriches a seat template string by replacing `${...}` interpolations
+   * Enriches seat templates with client-side theme styling, replacing `${...}` interpolations
    * with corresponding values from the `styles` object.
    *
-   * @param {string} template - A string that contains the seat template
-   * @param {object} styles - An object holding the style properties used to fill interpolations.
-   * @returns {string} A string with all matching interpolations substituted by actual values.
+   * @param {Object} seatTypeTemplates - An object keyed by seatType. Each value is an object
+   *   that contains a `template` string with placeholders (interpolations).
+   * @param {Object} styles - An object holding client-side theme style properties used to fill those placeholders.
+   * @returns {Object} A new object mapping each seatType to its enriched template string,
+   *   with all matching interpolations replaced by actual values.
    */
-  enrichSeatTemplates(template, styles) {
+  getEnrichedSeatTemplates(seatTypeTemplates, styles) {
     // represents placeholders of the form `${styles.someProp}`
     const interpolationShape = /\$\{([^}]+)\}/g;
 
-    return template.replace(interpolationShape, (match, path) => {
-      const parts = path.split('.');
+    return Object.entries(seatTypeTemplates).reduce((acc, [seatType, seatData]) => {
+      if (!seatData.template) return acc;
 
-      if (!styles.hasOwnProperty(parts[0])) return match;
+      const enrichedTemplate = seatData.template.replace(interpolationShape, (match, path) => {
+        const segments = path.split('.');
+        let currentValue = styles;
 
-      let currentValue = styles[parts[0]];
+        for (const key of segments) {
+          if (!currentValue || !(key in currentValue)) return match;
+          currentValue = currentValue[key];
+        }
 
-      for (let i = 1; i < parts.length; i++) {
-        if (!currentValue || !currentValue.hasOwnProperty(parts[i])) return match;
-        currentValue = currentValue[parts[i]];
-      }
+        return currentValue;
+      });
 
-      return currentValue;
-    });
+      acc[seatType] = enrichedTemplate;
+
+      return acc;
+    }, {});
   },
 };
