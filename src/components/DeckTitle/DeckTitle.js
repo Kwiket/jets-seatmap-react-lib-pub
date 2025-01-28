@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from 'react';
 import { JetsContext, LOCALES_MAP, DEFAULT_DECK_TITLE_HEIGHT } from '../../common';
 
-import './index.css';
+import './DeckTitle.css';
 
 export const JetsDeckTitle = ({ number, lang, localeKey }) => {
   const { params, colorTheme } = useContext(JetsContext);
