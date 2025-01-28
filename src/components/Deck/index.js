@@ -8,7 +8,7 @@ import { JetsCabinTitle } from '../CabinTitle';
 
 import './index.css';
 
-const DECK_LOCALE_KEY = 'deck';
+export const DECK_LOCALE_KEY = 'deck';
 
 export const JetsDeck = ({ deck, lang, exits, bulks, isSingleDeck }) => {
   const { rows, number, height, width, wingsInfo } = deck || {};
