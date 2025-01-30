@@ -1,5 +1,5 @@
-const ERROR_SAVE_DATA_MESSAGE = 'Error saving data to local storage. Message:';
-const ERROR_LOAD_DATA_MESSAGE = 'Error getting data from local storage. Message:';
+export const ERROR_SAVE_DATA_MESSAGE = 'Error saving data to local storage. Message:';
+export const ERROR_LOAD_DATA_MESSAGE = 'Error getting data from local storage. Message:';
 
 export class JetsLocalStorageService {
   getData(key) {
@@ -40,9 +40,5 @@ export class JetsLocalStorageService {
 
   removeData(key) {
     localStorage.removeItem(key);
-  }
-
-  clearStorage() {
-    localStorage.clear();
   }
 }
