@@ -1,0 +1,100 @@
+export const activeTooltipData = (overrides = {}) => ({
+  activeDeck: {},
+  antiScale: 3.585,
+  classCode: 'P',
+  classType: 'Premium economy',
+  color: '#5AB54C',
+  features: [
+    {
+      key: 'audioVideo',
+      icon: '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-testid="audio_video"></svg>',
+      title: 'Audio & Video On Demand',
+      uniqId: '_jsjpt16',
+      value: 'free on demand entertainment',
+    },
+    {
+      icon: '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-testid="no_storage"></svg>',
+      key: 'noFloorStorage',
+      title: null,
+      uniqId: '_il7lhgv',
+      value: 'No underseat storage',
+    },
+    {
+      icon: '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-testid="exit_row"></svg>',
+      key: 'exitRow',
+      title: null,
+      uniqId: '_2k3rpwz',
+      value: 'Exit row',
+    },
+  ],
+  lang: 'EN',
+  left: '2.500000000000002%',
+  leftOffset: 0,
+  letter: 'B',
+  measurements: [
+    {
+      icon: '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-testid="pitch"></svg>',
+      key: 'pitch',
+      title: 'Pitch',
+      uniqId: '_qrnpk4l',
+      value: '101 cm',
+    },
+    {
+      icon: '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-testid="width"></svg>',
+      key: 'width',
+      title: 'Width',
+      uniqId: '_vbpypme',
+      value: '49 cm',
+    },
+    {
+      icon: '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-testid="recline"></svg>',
+      key: 'recline',
+      title: 'Recline',
+      uniqId: '_u0ifyh5',
+      value: '20 cm',
+    },
+  ],
+  number: '33B',
+  originalColor: '#5AB54C',
+  rowName: 'Premium Economy',
+  scaleType: 'zoom',
+  seatIconType: 14,
+  seatmapElement: {
+    getBoundingClientRect: () => ({
+      top: 0,
+      left: 0,
+    }),
+    parentElement: {
+      getBoundingClientRect: () => ({
+        top: 0,
+        left: 0,
+      }),
+    },
+  },
+  seatmapHeight: 3942.421875,
+  seatmapWidth: 400,
+  seatNode: {
+    closest: () => ({
+      getBoundingClientRect: () => ({
+        top: 0,
+        left: 0,
+      }),
+    }),
+    getBoundingClientRect: () => ({
+      top: 0,
+      left: 0,
+    }),
+  },
+  seatType: 'P-14',
+  size: {
+    width: 120,
+    height: 150,
+  },
+  status: 'available',
+  top: 75,
+  topOffset: 0,
+  type: 'seat',
+  uniqId: '_pnwkg1z',
+  width: '95%',
+  ...overrides,
+});
