@@ -32,7 +32,7 @@ export default [
         targets: [{ src: 'src/assets/img', dest: 'dist/assets' }],
       }),
       babel({
-        exclude: ['node_modules/**', '**/*.test.js', 'jest.config.js', 'jest-config/**', 'scripts/**', '__mocks__/**'],
+        exclude: ['node_modules/**', '**/*.test.js', 'jest.config.js', 'jest-config/**', 'scripts/**', '__mocks__/**', '**/__fixtures__/**'],
         presets: ['@babel/preset-react'],
         plugins: [
           [

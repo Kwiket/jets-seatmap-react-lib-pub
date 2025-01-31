@@ -57,7 +57,7 @@ export class JetsSeatMapApiService extends JetsApiService {
           if (item && item.error) {
             throw new Error(item.error);
           }
-          if (flight.cabinClass) {
+          if (flight.cabinClass && cabinClasses.includes(flight.cabinClass)) {
             const { id, cabin, entertainment, power, wifi } = item;
             result[flight.cabinClass] = {
               cabin,
