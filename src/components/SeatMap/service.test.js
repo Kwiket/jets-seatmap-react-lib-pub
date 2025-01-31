@@ -60,7 +60,51 @@ describe('JetsSeatMapService', () => {
   });
 
   describe('getNextPassenger', () => {
-    it('TODO', () => {});
+    it('returns first passenger if no passengers have seat labels', () => {
+      const service = createSeatsMapService();
+
+      const firstPassenger = createPassenger(null);
+      const secondPassenger = createPassenger(null);
+      const passenger = service.getNextPassenger([firstPassenger, secondPassenger]);
+
+      expect(passenger).toEqual(firstPassenger);
+    });
+
+    it('returns second passenger if first passengers has seat labels', () => {
+      const service = createSeatsMapService();
+
+      const firstPassenger = createPassenger('33A');
+      const secondPassenger = createPassenger(null);
+      const passenger = service.getNextPassenger([firstPassenger, secondPassenger]);
+
+      expect(passenger).toEqual(secondPassenger);
+    });
+
+    it('returns undefined if all passengers have seat labels', () => {
+      const service = createSeatsMapService();
+
+      const firstPassenger = createPassenger('33A');
+      const secondPassenger = createPassenger('33F');
+      const passenger = service.getNextPassenger([firstPassenger, secondPassenger]);
+
+      expect(passenger).toBeUndefined();
+    });
+
+    it('returns undefined if no passengers are given', () => {
+      const service = createSeatsMapService();
+
+      const passenger = service.getNextPassenger([]);
+
+      expect(passenger).toBeUndefined();
+    });
+
+    it('returns undefined if null passengers are given', () => {
+      const service = createSeatsMapService();
+
+      const passenger = service.getNextPassenger(null);
+
+      expect(passenger).toBeUndefined();
+    });
   });
 
   describe('addAbbrToPassengers', () => {
