@@ -63,7 +63,96 @@ describe('JetsSeatMapService', () => {
   });
 
   describe('getDeckIndexBySeatLabel', () => {
-    it('TODO', () => {});
+    it.each([
+      [
+        'should find seat in first deck, first row',
+        {
+          seatLabel: '33A',
+          decks: [
+            {
+              rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+            },
+          ],
+          expectedIndex: 0,
+        },
+      ],
+      [
+        'should find seat in first deck, second row',
+        {
+          seatLabel: '33F',
+          decks: [
+            {
+              rows: [
+                createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }]),
+                createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33F' }]),
+              ],
+            },
+          ],
+          expectedIndex: 0,
+        },
+      ],
+      [
+        'should find seat in second deck, first row',
+        {
+          seatLabel: '33F',
+          decks: [
+            {
+              rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+            },
+            {
+              rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33F' }])],
+            },
+          ],
+          expectedIndex: 1,
+        },
+      ],
+      [
+        'should return index -1 if seat not present',
+        {
+          seatLabel: '33X',
+          decks: [
+            {
+              rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+            },
+          ],
+          expectedIndex: -1,
+        },
+      ],
+    ])('%s', (_, { seatLabel, decks, expectedIndex }) => {
+      const service = createSeatsMapService();
+
+      const actualIndex = service.getDeckIndexBySeatLabel(seatLabel, decks);
+
+      expect(actualIndex).toEqual(expectedIndex);
+    });
+
+    it('should return index -1 if no seatLabels given', () => {
+      const service = createSeatsMapService();
+
+      const actualIndex = service.getDeckIndexBySeatLabel(null, [
+        {
+          rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+        },
+      ]);
+
+      expect(actualIndex).toEqual(-1);
+    });
+
+    it('should return index -1 if no decks given', () => {
+      const service = createSeatsMapService();
+
+      const actualIndex = service.getDeckIndexBySeatLabel('33A', null);
+
+      expect(actualIndex).toEqual(-1);
+    });
+
+    it('should return index -1 if empty decks given', () => {
+      const service = createSeatsMapService();
+
+      const actualIndex = service.getDeckIndexBySeatLabel('33A', []);
+
+      expect(actualIndex).toEqual(-1);
+    });
   });
 
   describe('compareWithDecksSeatsInfo', () => {
