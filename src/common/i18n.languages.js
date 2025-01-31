@@ -41,6 +41,13 @@ export const LOCALE_PL = {
   wingInWindow: 'Skrzydło z okna',
   narrower: 'Węższe siedzisko',
   exitRow: 'Rząd wyjściowy',
+  ADT: 'dorośli',
+  CHD: 'dzieci',
+  INF: 'niemowlęta',
+  seatRestrictions: 'Siedzenie jest przeznaczone tylko dla',
+  passenger: 'Pasażer',
+  personalTvInArmrest: 'Telewizor osobisty w podłokietniku',
+  invertedSeat: 'Fotel montowany tyłem do kierunku jazdy',
 };
 
 export const LOCALE_ES = {
@@ -86,6 +93,13 @@ export const LOCALE_ES = {
   wingInWindow: 'Vista del ala desde la ventana',
   narrower: 'Asiento más estrecho',
   exitRow: 'Fila de salida',
+  ADT: 'adultos',
+  CHD: 'niños',
+  INF: 'bebés',
+  seatRestrictions: 'El asiento es sólo para',
+  passenger: 'Pasajeros',
+  personalTvInArmrest: 'TV personal en el reposabrazos',
+  invertedSeat: 'Asiento orientado hacia atrás',
 };
 
 export const LOCALE_DE = {
@@ -132,6 +146,12 @@ export const LOCALE_DE = {
   wingInWindow: 'Flügelfenster',
   narrower: 'Engerer Sitz',
   exitRow: 'Ausstiegsreihe',
+  ADT: 'Erwachsene',
+  CHD: 'Kinder',
+  INF: 'Kleinkinder',
+  seatRestrictions: 'Der Sitz ist nur für',
+  passenger: 'Passagier',
+  personalTvInArmrest: 'Personal TV in der Armlehne',
 };
 
 export const LOCALE_EN = {
@@ -227,9 +247,15 @@ export const LOCALE_CN = {
   unselect: '取消選擇',
   deck: '甲板',
   personalTvInArmrest: '扶手里的个人电视',
-  invertedSeat: '倒座',
+  invertedSeat: '后向式座椅',
   narrower: '较窄的座椅',
   exitRow: '出口行',
+  ADT: '成人',
+  CHD: '儿童',
+  INF: '婴儿',
+  seatRestrictions: '该座位仅用于',
+  passenger: '乘客',
+  prereclinedSeat: '预倾斜座椅',
 };
 
 export const LOCALE_RU = {
@@ -273,9 +299,15 @@ export const LOCALE_RU = {
   unselect: 'Убрать',
   deck: 'Этаж',
   personalTvInArmrest: 'Персональный телевизор в подлокотнике',
-  invertedSeat: 'Сиденье заднего хода',
+  invertedSeat: 'Сиденье устанавливаемое лицом назад',
   narrower: 'Более узкое сиденье',
   exitRow: 'Ряд возле выхода',
+  ADT: 'взрослые',
+  CHD: 'дети',
+  INF: 'младенцы',
+  seatRestrictions: 'Сиденье только для',
+  passenger: 'Пассажир',
+  prereclinedSeat: 'Предварительно откинутое сиденье',
 };
 
 export const LOCALE_AR = {
