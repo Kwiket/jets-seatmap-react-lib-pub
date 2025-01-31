@@ -25,6 +25,14 @@ function createRow(seatSpecs) {
   return row;
 }
 
+function createPassenger(seatNumber) {
+  return {
+    seat: {
+      seatLabel: seatNumber,
+    },
+  };
+}
+
 describe('JetsSeatMapService', () => {
   describe('getSeatMapData', () => {
     it('TODO', () => {});
@@ -59,7 +67,33 @@ describe('JetsSeatMapService', () => {
   });
 
   describe('findPassengerBySeatNumber', () => {
-    it('TODO', () => {});
+    it('should return passenger with matching seat number', () => {
+      const service = createSeatsMapService();
+
+      const expectedPassenger = createPassenger('33A');
+      const actualPassenger = service.findPassengerBySeatNumber([expectedPassenger], '33A');
+
+      expect(actualPassenger).toEqual(expectedPassenger);
+    });
+
+    it('should return passenger with matching seat number with multiple passengers in list', () => {
+      const service = createSeatsMapService();
+
+      const expectedPassenger = createPassenger('33A');
+      const otherPassenger = createPassenger('33F');
+      const actualPassenger = service.findPassengerBySeatNumber([expectedPassenger, otherPassenger], '33A');
+
+      expect(actualPassenger).toEqual(expectedPassenger);
+    });
+
+    it('should return undefined if no matching passengers in list', () => {
+      const service = createSeatsMapService();
+
+      const passenger = createPassenger('33A');
+      const actualPassenger = service.findPassengerBySeatNumber([passenger], '33X');
+
+      expect(actualPassenger).toBeUndefined();
+    });
   });
 
   describe('getDeckIndexBySeatLabel', () => {
