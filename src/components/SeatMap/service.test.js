@@ -25,8 +25,9 @@ function createRow(seatSpecs) {
   return row;
 }
 
-function createPassenger(seatNumber) {
+function createPassenger(seatNumber, passengerLabel = null) {
   return {
+    passengerLabel: passengerLabel,
     seat: {
       seatLabel: seatNumber,
     },
@@ -63,7 +64,61 @@ describe('JetsSeatMapService', () => {
   });
 
   describe('addAbbrToPassengers', () => {
-    it('TODO', () => {});
+    it('should add index to passenger if no passengerLabel defined', () => {
+      const service = createSeatsMapService();
+
+      const firstPassenger = createPassenger('33A');
+      const secondPassenger = createPassenger('33F');
+      const [modifiedFirstPassenger, modifiedSecondPassenger] = service.addAbbrToPassengers([
+        firstPassenger,
+        secondPassenger,
+      ]);
+
+      expect(modifiedFirstPassenger).toEqual({
+        ...firstPassenger,
+        abbr: 'P1',
+      });
+      expect(modifiedSecondPassenger).toEqual({
+        ...secondPassenger,
+        abbr: 'P2',
+      });
+    });
+
+    it('should add first two letters of label if one-word passengerLabel defined', () => {
+      const service = createSeatsMapService();
+
+      const firstPassenger = createPassenger('33A', 'Foobar');
+      const [modifiedPassenger] = service.addAbbrToPassengers([firstPassenger]);
+
+      expect(modifiedPassenger).toEqual({
+        ...firstPassenger,
+        abbr: 'FO',
+      });
+    });
+
+    it('should add initials of label if two-word passengerLabel defined', () => {
+      const service = createSeatsMapService();
+
+      const firstPassenger = createPassenger('33A', 'Foo Bar');
+      const [modifiedPassenger] = service.addAbbrToPassengers([firstPassenger]);
+
+      expect(modifiedPassenger).toEqual({
+        ...firstPassenger,
+        abbr: 'FB',
+      });
+    });
+
+    it('should add first two initials of label if three-word passengerLabel defined', () => {
+      const service = createSeatsMapService();
+
+      const firstPassenger = createPassenger('33A', 'Foo Ach Bar');
+      const [modifiedPassenger] = service.addAbbrToPassengers([firstPassenger]);
+
+      expect(modifiedPassenger).toEqual({
+        ...firstPassenger,
+        abbr: 'FA',
+      });
+    });
   });
 
   describe('findPassengerBySeatNumber', () => {
