@@ -56,7 +56,68 @@ describe('JetsSeatMapService', () => {
   });
 
   describe('calculateTooltipData', () => {
-    it('TODO', () => {});
+    it.each([
+      [
+        'should return correct tooltip for a horizontal tooltip',
+        {
+          isHorizontal: true,
+        },
+      ],
+      [
+        'should return correct tooltip for a vertical tooltip',
+        {
+          isHorizontal: false,
+        },
+      ],
+    ])('%s', isHorizontal => {
+      const service = createSeatsMapService();
+
+      const seatData = {
+        size: {
+          height: 50,
+        },
+      };
+      const seatTop = 100;
+      const closestNode = {
+        name: 'parentNode',
+      };
+      const seatNode = { offsetTop: seatTop, closest: jest.fn().mockReturnValue(closestNode) };
+      const boundingClientRect = {
+        width: 200,
+        height: 300,
+      };
+      const seatMapNode = {
+        name: 'seatMapNode',
+        getBoundingClientRect: jest.fn().mockReturnValue(boundingClientRect),
+      };
+      const antiScale = 5;
+
+      const result = service.calculateTooltipData(seatData, seatNode, seatMapNode, antiScale, isHorizontal);
+
+      const expectedWidth = isHorizontal ? boundingClientRect.height : boundingClientRect.width;
+      const expectedHeight = isHorizontal ? boundingClientRect.width : boundingClientRect.height;
+
+      const expectedWidthPercent = 0.95;
+      const expectedTooltipWidth = `${100 * expectedWidthPercent}%`;
+
+      const expectedTop = seatTop + seatData.size.height / 2;
+
+      const expectedLeft = `${100 * (1 - expectedWidthPercent) * 0.5}%`;
+
+      expect(result).toEqual({
+        ...seatData,
+        top: expectedTop,
+        left: expectedLeft,
+        antiScale: antiScale,
+        width: expectedTooltipWidth,
+        seatmapHeight: expectedHeight,
+        seatmapWidth: expectedWidth,
+        activeDeck: closestNode,
+        seatNode: seatNode,
+      });
+      expect(seatMapNode.getBoundingClientRect).toHaveBeenCalled();
+      expect(seatNode.closest).toHaveBeenCalledWith('.tooltip-holder');
+    });
   });
 
   describe('getNextPassenger', () => {
