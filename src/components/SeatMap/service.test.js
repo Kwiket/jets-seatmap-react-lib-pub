@@ -15,6 +15,16 @@ function createSeatsMapService(
   return new JetsSeatMapService({ apiUrl, apiAppId, apiKey, colorTheme, apiAuthorizationScheme });
 }
 
+function createRow(seatSpecs) {
+  const row = { seats: [] };
+
+  for (const { type, number } of seatSpecs) {
+    row.seats.push({ type, number });
+  }
+
+  return row;
+}
+
 describe('JetsSeatMapService', () => {
   describe('getSeatMapData', () => {
     it('TODO', () => {});
@@ -174,15 +184,5 @@ describe('JetsSeatMapService', () => {
 
       expect(result).toBeUndefined();
     });
-
-    function createRow(seatSpecs) {
-      const row = { seats: [] };
-
-      for (const { type, number } of seatSpecs) {
-        row.seats.push({ type, number });
-      }
-
-      return row;
-    }
   });
 });
