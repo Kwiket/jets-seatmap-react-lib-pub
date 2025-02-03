@@ -3,7 +3,7 @@ import { JetsContext, ENTITY_TYPE_MAP } from '../../common';
 import { SeatIcon } from './ui/SeatIcon';
 import { SeatPriceLabel } from './ui/SeatPriceLabel';
 
-import './index.css';
+import './JetsSeat.css';
 
 const PASSENGER_BADGE_SIZE_COEF = 0.8;
 
@@ -28,7 +28,7 @@ export const JetsSeat = ({ data }) => {
     currency,
   } = data;
   const { index, aisle } = ENTITY_TYPE_MAP;
-  const componentClassNames = `jets-seat jets-${type} jets-${status} jets-seat-r-${rotation}`;
+  const componentClassNames = `jets-seat jets-${type} jets-${status} ${!!rotation ? `jets-seat-r-${rotation}` : ''}`;
   const showSeatPriceLabel = price && config?.visibleSeatPriceLabels;
 
   const $component = useRef();
