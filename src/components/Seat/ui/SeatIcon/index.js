@@ -1,14 +1,13 @@
 import React, { useContext } from 'react';
 import DOMPurify from 'dompurify';
 
-import { seatTemplateService, seatTemplateUtils } from '../../service';
+import { seatTemplateService } from '../../service';
 import { JetsContext } from '../../../../common';
 
 export const SeatIcon = ({ seatType, style }) => {
   const { extraSeatTypeTemplates } = useContext(JetsContext);
-  const enrichedExtraSeatTypeTemplates = seatTemplateUtils.getEnrichedSeatTemplates(extraSeatTypeTemplates, { style });
   const sanitizedSeatIcon = DOMPurify.sanitize(
-    seatTemplateService.getSeatIcon(seatType, style, enrichedExtraSeatTypeTemplates)
+    seatTemplateService.getSeatIcon(seatType, style, extraSeatTypeTemplates)
   );
 
   return (
