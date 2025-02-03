@@ -1,9 +1,11 @@
 import { JetsSeatMapService } from './service';
-import { ENTITY_STATUS_MAP, ENTITY_TYPE_MAP } from '../../common';
+import { DEFAULT_SEAT_PASSENGER_TYPES, ENTITY_STATUS_MAP, ENTITY_TYPE_MAP, JetsContentPreparer } from '../../common';
 
-beforeAll(() => {
-  jest.clearAllMocks();
+beforeEach(() => {
+  jest.resetAllMocks();
 });
+
+jest.mock('../../common/data-preparer');
 
 function createSeatsMapService(
   apiUrl = 'apiUrl',
@@ -48,7 +50,257 @@ describe('JetsSeatMapService', () => {
   });
 
   describe('setAvailabilityHandler', () => {
-    it('TODO', () => {});
+    beforeEach(() => {
+      JetsContentPreparer.prototype._prepareSeatAdditionalProps = jest.fn().mockImplementation(() => []);
+    });
+
+    it('should use seat specific availability if present', () => {
+      const service = createSeatsMapService();
+
+      const content = [
+        {
+          rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+        },
+      ];
+      const availability = [
+        {
+          label: '33A',
+          currency: '$',
+          price: '9.99',
+          onlyForPassengerType: ['Type1', 'Type2'],
+          color: 'magenta',
+        },
+      ];
+
+      const response = service.setAvailabilityHandler(content, availability);
+
+      expect(response).toEqual([
+        {
+          rows: [
+            {
+              seats: [
+                {
+                  type: ENTITY_TYPE_MAP.seat,
+                  number: '33A',
+                  status: ENTITY_STATUS_MAP.available,
+                  price: '$ 9.99',
+                  cost: '9.99',
+                  currency: '$',
+                  passengerTypes: ['Type1', 'Type2'],
+                  additionalProps: [],
+                  color: 'magenta',
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+    });
+
+    it('should use wildcard seat details if no seat specific availability', () => {
+      const service = createSeatsMapService();
+
+      const content = [
+        {
+          rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+        },
+      ];
+      const availability = [
+        {
+          label: '*',
+          currency: '$',
+          price: '9.99',
+          onlyForPassengerType: ['Type1', 'Type2'],
+          color: 'magenta',
+        },
+      ];
+
+      const response = service.setAvailabilityHandler(content, availability);
+
+      expect(response).toEqual([
+        {
+          rows: [
+            {
+              seats: [
+                {
+                  type: ENTITY_TYPE_MAP.seat,
+                  number: '33A',
+                  status: ENTITY_STATUS_MAP.available,
+                  price: '$ 9.99',
+                  cost: '9.99',
+                  currency: '$',
+                  passenger: null,
+                  passengerTypes: ['Type1', 'Type2'],
+                  additionalProps: [],
+                  color: 'magenta',
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+    });
+
+    it('should use wildcard seat details for anything not specified in seat specific availability', () => {
+      const service = createSeatsMapService();
+
+      const content = [
+        {
+          rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+        },
+      ];
+      const availability = [
+        {
+          label: '33A',
+        },
+        {
+          label: '*',
+          currency: '$',
+          price: '9.99',
+          onlyForPassengerType: ['Type1', 'Type2'],
+          color: 'magenta',
+        },
+      ];
+
+      const response = service.setAvailabilityHandler(content, availability);
+
+      expect(response).toEqual([
+        {
+          rows: [
+            {
+              seats: [
+                {
+                  type: ENTITY_TYPE_MAP.seat,
+                  number: '33A',
+                  status: ENTITY_STATUS_MAP.available,
+                  price: '$ 9.99',
+                  cost: '9.99',
+                  currency: '$',
+                  passengerTypes: ['Type1', 'Type2'],
+                  additionalProps: [],
+                  color: 'magenta',
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+    });
+
+    it('should use configuration currency sign over seat specific or wildcard currency sign if present', () => {
+      const service = new JetsSeatMapService({ currencySign: '₱' });
+
+      const content = [
+        {
+          rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+        },
+      ];
+      const availability = [
+        {
+          label: '33A',
+          currencySign: '$',
+        },
+        {
+          label: '*',
+          currencySign: '£',
+        },
+      ];
+
+      const response = service.setAvailabilityHandler(content, availability);
+
+      expect(response).toEqual([
+        {
+          rows: [
+            {
+              seats: [
+                {
+                  type: ENTITY_TYPE_MAP.seat,
+                  number: '33A',
+                  status: ENTITY_STATUS_MAP.available,
+                  price: '₱ 0',
+                  cost: 0,
+                  currency: '₱',
+                  passengerTypes: DEFAULT_SEAT_PASSENGER_TYPES,
+                  additionalProps: [],
+                  color: undefined,
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+    });
+
+    it('should include any additionalProps returned by JetsContentPreparer', () => {
+      const service = createSeatsMapService();
+
+      const content = [
+        {
+          rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+        },
+      ];
+      const availability = [
+        {
+          label: '33A',
+          currency: '$',
+          price: '9.99',
+          onlyForPassengerType: ['Type1', 'Type2'],
+          color: 'magenta',
+        },
+      ];
+
+      const mockPrepareSeatAdditionalProps = jest.fn().mockImplementation(() => [
+        {
+          label: 'Additional prop label',
+        },
+      ]);
+
+      JetsContentPreparer.prototype._prepareSeatAdditionalProps = mockPrepareSeatAdditionalProps;
+
+      const response = service.setAvailabilityHandler(content, availability);
+
+      expect(response).toEqual([
+        {
+          rows: [
+            {
+              seats: [
+                {
+                  type: ENTITY_TYPE_MAP.seat,
+                  number: '33A',
+                  status: ENTITY_STATUS_MAP.available,
+                  price: '$ 9.99',
+                  cost: '9.99',
+                  currency: '$',
+                  passengerTypes: ['Type1', 'Type2'],
+                  additionalProps: [
+                    {
+                      label: 'Additional prop label',
+                    },
+                  ],
+                  color: 'magenta',
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+      expect(mockPrepareSeatAdditionalProps).toHaveBeenCalledTimes(1);
+      expect(mockPrepareSeatAdditionalProps).toHaveBeenCalledWith({
+        type: ENTITY_TYPE_MAP.seat,
+        number: '33A',
+        status: ENTITY_STATUS_MAP.available,
+        price: '$ 9.99',
+        cost: '9.99',
+        currency: '$',
+        passengerTypes: ['Type1', 'Type2'],
+        additionalProps: [
+          {
+            label: 'Additional prop label',
+          },
+        ],
+        color: 'magenta',
+      });
+    });
   });
 
   describe('setPassengersHandler', () => {
