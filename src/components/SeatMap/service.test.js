@@ -46,7 +46,42 @@ describe('JetsSeatMapService', () => {
   });
 
   describe('unselectSeatHandler', () => {
-    it('TODO', () => {});
+    it('should clear the seat from any passengers assigned to seats before calling setPassengersHandler', () => {
+      const service = createSeatsMapService();
+
+      const setPassengersHandlerReturnValue = {
+        key: 'value',
+      };
+      const setPassengersHandlerMock = jest
+        .spyOn(service, 'setPassengersHandler')
+        .mockImplementation(() => setPassengersHandlerReturnValue);
+
+      const passengerId = '12345';
+      const seat = {
+        passenger: {
+          id: passengerId,
+        },
+      };
+      const passengersList = [
+        {
+          id: passengerId,
+          seat: seat,
+        },
+      ];
+
+      const { data: actualData, passengers: actualPassengers } = service.unselectSeatHandler({}, seat, passengersList);
+
+      expect(actualData).toEqual(setPassengersHandlerReturnValue);
+
+      const expectedPassengers = [
+        {
+          id: passengerId,
+          seat: null,
+        },
+      ];
+      expect(actualPassengers).toEqual(expectedPassengers);
+      expect(setPassengersHandlerMock).toHaveBeenCalledWith({}, expectedPassengers);
+    });
   });
 
   describe('setAvailabilityHandler', () => {
