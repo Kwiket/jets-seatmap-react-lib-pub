@@ -1,3 +1,4 @@
+import { JetsSeatMapApiService } from './api';
 import { JetsSeatMapService } from './service';
 import { DEFAULT_SEAT_PASSENGER_TYPES, ENTITY_STATUS_MAP, ENTITY_TYPE_MAP, JetsContentPreparer } from '../../common';
 
@@ -6,6 +7,7 @@ beforeEach(() => {
 });
 
 jest.mock('../../common/data-preparer');
+jest.mock('../../components/SeatMap/api');
 
 function createSeatsMapService(
   apiUrl = 'apiUrl',
@@ -38,7 +40,235 @@ function createPassenger(seatNumber, passengerLabel = null) {
 
 describe('JetsSeatMapService', () => {
   describe('getSeatMapData', () => {
-    it('TODO', () => {});
+    beforeEach(() => {
+      JetsSeatMapApiService.prototype.getPlaneFeatures = jest.fn().mockImplementation(() => {});
+      JetsContentPreparer.prototype.prepareData = jest.fn().mockImplementation(() => {});
+    });
+
+    it('should call JetsSeatMapApiService, JetsContentPreparer, setAvailabilityHandler & setPassengersHandler', async () => {
+      const service = createSeatsMapService();
+
+      const flight = {
+        name: 'mockFlight',
+      };
+      const availability = [
+        {
+          name: 'mockAvailability',
+        },
+      ];
+      const passengers = [
+        {
+          name: 'mockPassenger',
+          seat: {
+            seatLabel: 'mockSeatLabel',
+          },
+        },
+      ];
+      const config = {
+        lang: 'EN',
+        units: 'metric',
+      };
+
+      const mockPlaneFeatures = {
+        name: 'mockGetPlaneFeatures',
+        availabilityData: {
+          name: 'mockAvailabilityData',
+        },
+      };
+      const mockGetPlaneFeatures = jest.fn().mockImplementation(() => mockPlaneFeatures);
+      JetsSeatMapApiService.prototype.getPlaneFeatures = mockGetPlaneFeatures;
+
+      const mockContent = {
+        name: 'mockContent',
+      };
+      const mockParams = {
+        name: 'mockParams',
+      };
+      const mockExits = {
+        name: 'mockExits',
+      };
+      const mockBulks = {
+        name: 'mockBulks',
+      };
+      const mockPrepareData = jest.fn().mockImplementation(() => ({
+        content: mockContent,
+        params: mockParams,
+        exits: mockExits,
+        bulks: mockBulks,
+      }));
+      JetsContentPreparer.prototype.prepareData = mockPrepareData;
+
+      const mockSetAvailabilityHandler = jest
+        .spyOn(service, 'setAvailabilityHandler')
+        .mockImplementation(content => content);
+      const mockSetPassengersHandler = jest
+        .spyOn(service, 'setPassengersHandler')
+        .mockImplementation(content => content);
+
+      const response = await service.getSeatMapData(flight, availability, passengers, config);
+
+      expect(response).toEqual({
+        content: mockContent,
+        params: mockParams,
+        exits: mockExits,
+        bulks: mockBulks,
+        availabilityData: mockPlaneFeatures.availabilityData,
+      });
+
+      expect(mockGetPlaneFeatures).toHaveBeenCalledTimes(1);
+      expect(mockGetPlaneFeatures).toHaveBeenCalledWith(flight, config.lang, config.units);
+      expect(mockPrepareData).toHaveBeenCalledTimes(1);
+      expect(mockPrepareData).toHaveBeenCalledWith(mockPlaneFeatures, config);
+      expect(mockSetAvailabilityHandler).toHaveBeenCalledTimes(1);
+      expect(mockSetAvailabilityHandler).toHaveBeenCalledWith(mockContent, availability);
+      expect(mockSetPassengersHandler).toHaveBeenCalledTimes(1);
+      expect(mockSetPassengersHandler).toHaveBeenCalledWith(mockContent, passengers);
+    });
+
+    it('should not call setAvailabilityHandler if no availability supplied', async () => {
+      const service = createSeatsMapService();
+
+      const flight = {
+        name: 'mockFlight',
+      };
+      const passengers = [
+        {
+          name: 'mockPassenger',
+          seat: {
+            seatLabel: 'mockSeatLabel',
+          },
+        },
+      ];
+      const config = {
+        lang: 'EN',
+        units: 'metric',
+      };
+
+      const mockPlaneFeatures = {
+        name: 'mockGetPlaneFeatures',
+        availabilityData: {
+          name: 'mockAvailabilityData',
+        },
+      };
+      const mockGetPlaneFeatures = jest.fn().mockImplementation(() => mockPlaneFeatures);
+      JetsSeatMapApiService.prototype.getPlaneFeatures = mockGetPlaneFeatures;
+
+      const mockContent = {
+        name: 'mockContent',
+      };
+      const mockParams = {
+        name: 'mockParams',
+      };
+      const mockExits = {
+        name: 'mockExits',
+      };
+      const mockBulks = {
+        name: 'mockBulks',
+      };
+      const mockPrepareData = jest.fn().mockImplementation(() => ({
+        content: mockContent,
+        params: mockParams,
+        exits: mockExits,
+        bulks: mockBulks,
+      }));
+      JetsContentPreparer.prototype.prepareData = mockPrepareData;
+
+      const mockSetAvailabilityHandler = jest
+        .spyOn(service, 'setAvailabilityHandler')
+        .mockImplementation(content => content);
+      const mockSetPassengersHandler = jest
+        .spyOn(service, 'setPassengersHandler')
+        .mockImplementation(content => content);
+
+      const response = await service.getSeatMapData(flight, null, passengers, config);
+
+      expect(response).toEqual({
+        content: mockContent,
+        params: mockParams,
+        exits: mockExits,
+        bulks: mockBulks,
+        availabilityData: mockPlaneFeatures.availabilityData,
+      });
+
+      expect(mockGetPlaneFeatures).toHaveBeenCalledTimes(1);
+      expect(mockGetPlaneFeatures).toHaveBeenCalledWith(flight, config.lang, config.units);
+      expect(mockPrepareData).toHaveBeenCalledTimes(1);
+      expect(mockPrepareData).toHaveBeenCalledWith(mockPlaneFeatures, config);
+      expect(mockSetAvailabilityHandler).not.toHaveBeenCalled();
+      expect(mockSetPassengersHandler).toHaveBeenCalledTimes(1);
+      expect(mockSetPassengersHandler).toHaveBeenCalledWith(mockContent, passengers);
+    });
+
+    it('should not call setAvailabilityHandler if no availability supplied', async () => {
+      const service = createSeatsMapService();
+
+      const flight = {
+        name: 'mockFlight',
+      };
+      const availability = [
+        {
+          name: 'mockAvailability',
+        },
+      ];
+      const config = {
+        lang: 'EN',
+        units: 'metric',
+      };
+
+      const mockPlaneFeatures = {
+        name: 'mockGetPlaneFeatures',
+        availabilityData: {
+          name: 'mockAvailabilityData',
+        },
+      };
+      const mockGetPlaneFeatures = jest.fn().mockImplementation(() => mockPlaneFeatures);
+      JetsSeatMapApiService.prototype.getPlaneFeatures = mockGetPlaneFeatures;
+
+      const mockContent = {
+        name: 'mockContent',
+      };
+      const mockParams = {
+        name: 'mockParams',
+      };
+      const mockExits = {
+        name: 'mockExits',
+      };
+      const mockBulks = {
+        name: 'mockBulks',
+      };
+      const mockPrepareData = jest.fn().mockImplementation(() => ({
+        content: mockContent,
+        params: mockParams,
+        exits: mockExits,
+        bulks: mockBulks,
+      }));
+      JetsContentPreparer.prototype.prepareData = mockPrepareData;
+
+      const mockSetAvailabilityHandler = jest
+        .spyOn(service, 'setAvailabilityHandler')
+        .mockImplementation(content => content);
+      const mockSetPassengersHandler = jest
+        .spyOn(service, 'setPassengersHandler')
+        .mockImplementation(content => content);
+
+      const response = await service.getSeatMapData(flight, availability, [], config);
+
+      expect(response).toEqual({
+        content: mockContent,
+        params: mockParams,
+        exits: mockExits,
+        bulks: mockBulks,
+        availabilityData: mockPlaneFeatures.availabilityData,
+      });
+
+      expect(mockGetPlaneFeatures).toHaveBeenCalledTimes(1);
+      expect(mockGetPlaneFeatures).toHaveBeenCalledWith(flight, config.lang, config.units);
+      expect(mockPrepareData).toHaveBeenCalledTimes(1);
+      expect(mockPrepareData).toHaveBeenCalledWith(mockPlaneFeatures, config);
+      expect(mockSetAvailabilityHandler).toHaveBeenCalledTimes(1);
+      expect(mockSetAvailabilityHandler).toHaveBeenCalledWith(mockContent, availability);
+      expect(mockSetPassengersHandler).not.toHaveBeenCalled();
+    });
   });
 
   describe('selectSeatHandler', () => {
