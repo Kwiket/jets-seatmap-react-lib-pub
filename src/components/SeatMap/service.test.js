@@ -18,8 +18,8 @@ function createSeatsMapService(
 function createRow(seatSpecs) {
   const row = { seats: [] };
 
-  for (const { type, number } of seatSpecs) {
-    row.seats.push({ type, number });
+  for (const seatSpec of seatSpecs) {
+    row.seats.push({ ...seatSpec });
   }
 
   return row;
