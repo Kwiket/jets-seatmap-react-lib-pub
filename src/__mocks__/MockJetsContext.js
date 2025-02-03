@@ -9,7 +9,7 @@ jest.mock('../common', () => ({
 
 const MockJetsContext = createContext();
 
-const MockJetsContextProvider = ({ children, componentOverrides = {}, config = {}, params = {} }) => {
+const MockJetsContextProvider = ({ children, componentOverrides = {}, config = {}, params = {}, events = {} }) => {
   const mergedConfig = { ...CONFIG_MOCK, ...config };
   const colorTheme = JetsDataHelper.mergeColorThemeWithConstraints(CONFIG_MOCK.colorTheme, config.colorTheme || {});
   mergedConfig.colorTheme = colorTheme;
@@ -21,7 +21,7 @@ const MockJetsContextProvider = ({ children, componentOverrides = {}, config = {
         config: mergedConfig,
         colorTheme: mergedConfig.colorTheme,
         componentOverrides,
-        isSeatSelectDisabled: false,
+        isSeatSelectDisabled: () => false,
         params: {
           tooltipOnHover: !!mergedConfig.tooltipOnHover,
           builtInTooltip: !!mergedConfig.builtInTooltip,
@@ -42,6 +42,7 @@ const MockJetsContextProvider = ({ children, componentOverrides = {}, config = {
         seatLabelJumpTo: jest.fn(),
         showTooltip: jest.fn(),
         switchDeck: jest.fn(),
+        ...events,
       }}
     >
       {children}
