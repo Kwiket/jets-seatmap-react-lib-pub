@@ -42,7 +42,53 @@ describe('JetsSeatMapService', () => {
   });
 
   describe('selectSeatHandler', () => {
-    it('TODO', () => {});
+    it('should set passenger seat, price & number for next passenger', () => {
+      const service = createSeatsMapService();
+
+      const passengerId = '12345';
+      const passenger = {
+        id: passengerId,
+      };
+      const getNextPassengerMock = jest.spyOn(service, 'getNextPassenger').mockImplementation(() => passenger);
+
+      const setPassengersHandlerReturnValue = {
+        key: 'value',
+      };
+      const setPassengersHandlerMock = jest
+        .spyOn(service, 'setPassengersHandler')
+        .mockImplementation(() => setPassengersHandlerReturnValue);
+
+      const seat = {
+        passenger: {
+          id: passengerId,
+        },
+        price: '$ 9,99',
+        number: '33A',
+      };
+      const passengersList = [
+        {
+          id: passengerId,
+        },
+      ];
+
+      const { data: actualData, passengers: actualPassengers } = service.selectSeatHandler({}, seat, passengersList);
+
+      expect(actualData).toEqual(setPassengersHandlerReturnValue);
+
+      const expectedPassengers = [
+        {
+          id: passengerId,
+          seat: {
+            price: '$ 9,99',
+            seatLabel: '33A',
+          },
+        },
+      ];
+      expect(actualPassengers).toEqual(expectedPassengers);
+      expect(getNextPassengerMock).toHaveBeenCalledTimes(1);
+      expect(setPassengersHandlerMock).toHaveBeenCalledTimes(1);
+      expect(setPassengersHandlerMock).toHaveBeenCalledWith({}, expectedPassengers);
+    });
   });
 
   describe('unselectSeatHandler', () => {
