@@ -1,14 +1,14 @@
 import { JetsSeatMapService } from './service';
 import { ENTITY_TYPE_MAP } from '../../common';
 
-export function createSeatsMapService(
-  apiUrl = 'apiUrl',
-  apiAppId = 'apiAppId',
-  apiKey = 'apiKey',
-  colorTheme = 'colorTheme',
-  apiAuthorizationScheme = 'apiAuthorizationScheme'
-) {
-  return new JetsSeatMapService({ apiUrl, apiAppId, apiKey, colorTheme, apiAuthorizationScheme });
+export function createSeatsMapService() {
+  return new JetsSeatMapService({
+    apiUrl: 'apiUrl',
+    apiAppId: 'apiAppId',
+    apiKey: 'apiKey',
+    colorTheme: 'colorTheme',
+    apiAuthorizationScheme: 'apiAuthorizationScheme',
+  });
 }
 
 export function createRow(seatSpecs) {
