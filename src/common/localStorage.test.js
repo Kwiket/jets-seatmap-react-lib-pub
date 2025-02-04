@@ -16,10 +16,12 @@ describe('JetsLocalStorageService', () => {
 
   describe('getData', () => {
     it('should return the value of the key-value pair from localStorage if set and not expired', () => {
-      localStorage.getItem.mockReturnValue(JSON.stringify({
-        value: 'the value',
-        expiry: Date.now() + SECOND_IN_MILLISECONDS,
-      }));
+      localStorage.getItem.mockReturnValue(
+        JSON.stringify({
+          value: 'the value',
+          expiry: Date.now() + SECOND_IN_MILLISECONDS,
+        })
+      );
 
       const result = jetsLocalStorageService.getData('key');
 
@@ -39,10 +41,12 @@ describe('JetsLocalStorageService', () => {
     });
 
     it('should return null if the key-value pair has expired and remove the item from localStorage', () => {
-      localStorage.getItem.mockReturnValue(JSON.stringify({
-        value: 'the value',
-        expiry: Date.now() - SECOND_IN_MILLISECONDS,
-      }));
+      localStorage.getItem.mockReturnValue(
+        JSON.stringify({
+          value: 'the value',
+          expiry: Date.now() - SECOND_IN_MILLISECONDS,
+        })
+      );
 
       const result = jetsLocalStorageService.getData('key');
 
@@ -54,10 +58,12 @@ describe('JetsLocalStorageService', () => {
     });
 
     it('should return null and remove the item from localStorage if the key-value pair exists but the value is not set', () => {
-      localStorage.getItem.mockReturnValue(JSON.stringify({
-        value: null,
-        expiry: Date.now() + SECOND_IN_MILLISECONDS,
-      }));
+      localStorage.getItem.mockReturnValue(
+        JSON.stringify({
+          value: null,
+          expiry: Date.now() + SECOND_IN_MILLISECONDS,
+        })
+      );
 
       const result = jetsLocalStorageService.getData('key');
 
@@ -69,16 +75,17 @@ describe('JetsLocalStorageService', () => {
     });
 
     it('should return null if something went wrong and log a message in the console', () => {
-      localStorage.getItem.mockReturnValue(JSON.stringify({
-        value: 'the value',
-        expiry: Date.now() + SECOND_IN_MILLISECONDS,
-      }));
+      localStorage.getItem.mockReturnValue(
+        JSON.stringify({
+          value: 'the value',
+          expiry: Date.now() + SECOND_IN_MILLISECONDS,
+        })
+      );
       const jsonParseError = new Error('json parse error');
       jest.spyOn(JSON, 'parse').mockImplementation(() => {
         throw jsonParseError;
       });
-      const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {
-      });
+      const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
 
       const result = jetsLocalStorageService.getData('key');
 
@@ -101,8 +108,9 @@ describe('JetsLocalStorageService', () => {
         'key',
         JSON.stringify({
           value: 'the value',
-          expiry: (fakeNow + SECOND_IN_MILLISECONDS),
-        }));
+          expiry: fakeNow + SECOND_IN_MILLISECONDS,
+        })
+      );
       expect(localStorage.setItem).toHaveBeenCalledTimes(1);
     });
 
@@ -114,7 +122,8 @@ describe('JetsLocalStorageService', () => {
         'key',
         JSON.stringify({
           value: 'the value',
-        }));
+        })
+      );
       expect(localStorage.setItem).toHaveBeenCalledTimes(1);
     });
 
@@ -123,8 +132,7 @@ describe('JetsLocalStorageService', () => {
       jest.spyOn(JSON, 'stringify').mockImplementation(() => {
         throw jsonStringifyError;
       });
-      const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {
-      });
+      const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
 
       const result = jetsLocalStorageService.setData('key', 'value');
 

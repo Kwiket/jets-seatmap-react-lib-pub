@@ -1,1 +1,1 @@
-export { JetsButton } from './Button.js'
+export { JetsButton } from './Button.js';
