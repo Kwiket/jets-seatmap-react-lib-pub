@@ -107,7 +107,7 @@ describe('JetsSeatMapService', () => {
       expect(passenger).toEqual(firstPassenger);
     });
 
-    it('returns second passenger if first passengers has seat labels', () => {
+    it('returns second passenger if first passenger has seat labels', () => {
       const service = createSeatsMapService();
 
       const firstPassenger = createPassenger('33A');
