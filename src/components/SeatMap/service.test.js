@@ -330,7 +330,6 @@ describe('JetsSeatMapService', () => {
       [
         'should find single seat within decks',
         {
-          purpose: 'should find single seat within decks',
           seatLabels: ['33A'],
           decks: [
             {
@@ -344,7 +343,6 @@ describe('JetsSeatMapService', () => {
       [
         'should find multiple seats within same row',
         {
-          purpose: 'should find multiple seats within same row',
           seatLabels: ['33A', '33F'],
           decks: [
             {
@@ -363,7 +361,6 @@ describe('JetsSeatMapService', () => {
       [
         'should find multiple seats within same deck, different row',
         {
-          purpose: 'should find multiple seats within same deck, different row',
           seatLabels: ['33A', '33F'],
           decks: [
             {
