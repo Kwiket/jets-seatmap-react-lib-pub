@@ -11,6 +11,10 @@ describe('JetsSeatMapService', () => {
       const passenger = {
         id: passengerId,
       };
+      const otherPassengerId = '54321'
+      const otherPassenger = {
+        id: otherPassengerId,
+      }
       const getNextPassengerMock = jest.spyOn(service, 'getNextPassenger').mockImplementation(() => passenger);
 
       const setPassengersHandlerReturnValue = {
@@ -27,11 +31,7 @@ describe('JetsSeatMapService', () => {
         price: '$ 9,99',
         number: '33A',
       };
-      const passengersList = [
-        {
-          id: passengerId,
-        },
-      ];
+      const passengersList = [ passenger, otherPassenger ];
 
       const { data: actualData, passengers: actualPassengers } = service.selectSeatHandler({}, seat, passengersList);
 
@@ -45,6 +45,9 @@ describe('JetsSeatMapService', () => {
             seatLabel: '33A',
           },
         },
+        {
+          id: otherPassengerId,
+        }
       ];
       expect(actualPassengers).toEqual(expectedPassengers);
       expect(getNextPassengerMock).toHaveBeenCalledTimes(1);
