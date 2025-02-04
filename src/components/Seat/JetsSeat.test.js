@@ -10,6 +10,7 @@ import {
   seatDataEconomy,
   seatDataAisle,
   seatDataEmpty,
+  seatDataIndex,
 } from './__fixtures__';
 import { JetsSeat } from './index';
 
@@ -110,7 +111,6 @@ describe('JetsSeat', () => {
           colorTheme: {
             defaultPassengerBadgeColor: 'rgb(0, 0, 0)',
             seatArmrestColor: 'cornflowerblue',
-            seatLabelColor: '#ff0000',
             seatStrokeColor: 'rgb(0, 0, 0)',
             seatStrokeWidth: 100,
           },
@@ -251,12 +251,53 @@ describe('JetsSeat', () => {
       expect(wrapper).toHaveClass('jets-seat jets-aisle');
     });
 
+    it('should apply the correct styles when in horizontal mode', () => {
+      const { container } = setup({
+        params: {
+          isHorizontal: true,
+        },
+        data: seatDataAisle(),
+      });
+
+      const wrapper = container.querySelector('.jets-seat');
+
+      expect(wrapper).toHaveStyle({
+        transform: 'rotate(180deg)',
+      });
+    });
+
     it('should render an empty tile', () => {
       const { container } = setup({ data: seatDataEmpty() });
       const wrapper = container.querySelector('.jets-seat');
 
       expect(wrapper).toBeInTheDocument();
       expect(wrapper).toHaveClass('jets-seat jets-empty');
+    });
+
+    it('should render an index tile', () => {
+      const { container } = setup({ data: seatDataIndex() });
+      const wrapper = container.querySelector('.jets-seat');
+
+      expect(wrapper).toBeInTheDocument();
+      expect(wrapper).toHaveClass('jets-seat jets-index');
+    });
+
+    it('should render supplied theme overrides (index)', () => {
+      const { container } = setup({
+        config: {
+          colorTheme: {
+            seatLabelColor: '#ff0000',
+          },
+        },
+        data: seatDataIndex(),
+      });
+
+      const wrapper = container.querySelector('.jets-seat div');
+
+      // seatLabelColor
+      expect(wrapper).toHaveStyle({
+        color: '#ff0000',
+      });
     });
   });
 
@@ -345,6 +386,62 @@ describe('JetsSeat', () => {
 
       expect(screen.getByText(/DS/).closest('.jets-seat-passenger')).toHaveStyle({
         backgroundColor: 'hotpink',
+      });
+    });
+
+    it('should apply the correct styles in horizontal mode', () => {
+      setup({
+        params: {
+          isHorizontal: true,
+        },
+        data: seatDataFirst({
+          passenger: {
+            abbr: 'DS',
+            passengerLabel: 'Dave Smith',
+          },
+        }),
+      });
+
+      expect(screen.getByText(/DS/)).toHaveStyle({
+        transform: 'rotate(180deg)',
+      });
+    });
+
+    it('should apply the correct styles in horizontal and rtl mode', () => {
+      setup({
+        params: {
+          isHorizontal: true,
+          rightToLeft: true,
+        },
+        data: seatDataFirst({
+          passenger: {
+            abbr: 'DS',
+            passengerLabel: 'Dave Smith',
+          },
+        }),
+      });
+
+      expect(screen.getByText(/DS/)).not.toHaveStyle({
+        transform: 'rotate(180deg)',
+      });
+    });
+
+    it('should apply the correct styles in horizontal and rtl mode', () => {
+      setup({
+        params: {
+          isHorizontal: true,
+          rightToLeft: true,
+        },
+        data: seatDataFirst({
+          passenger: {
+            abbr: 'DS',
+            passengerLabel: 'Dave Smith',
+          },
+        }),
+      });
+
+      expect(screen.getByText(/DS/)).not.toHaveStyle({
+        transform: 'rotate(180deg)',
       });
     });
   });

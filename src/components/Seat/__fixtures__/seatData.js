@@ -111,3 +111,15 @@ export const seatDataEmpty = (overrides = {}) => ({
   uniqId: '_t1h0uve',
   ...overrides,
 });
+
+export const seatDataIndex = (overrides = {}) => ({
+  letter: '',
+  size: {
+    width: 120,
+    height: 150,
+  },
+  status: 'disabled',
+  type: 'index',
+  uniqId: '_t1h0uve',
+  ...overrides,
+});
