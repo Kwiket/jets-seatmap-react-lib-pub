@@ -1,0 +1,481 @@
+import { DEFAULT_SEAT_PASSENGER_TYPES, ENTITY_STATUS_MAP, ENTITY_TYPE_MAP } from '../../common';
+import { JetsSeatMapService } from './service';
+import { createPassenger, createRow, createSeatsMapService } from './service.test';
+
+beforeEach(() => {
+  jest.resetAllMocks();
+});
+
+jest.mock('../../common/data-preparer');
+
+describe('JetsSeatMapService', () => {
+
+  describe('selectSeatHandler', () => {
+    it('should set passenger seat, price & number for next passenger', () => {
+      const service = createSeatsMapService();
+
+      const passengerId = '12345';
+      const passenger = {
+        id: passengerId,
+      };
+      const getNextPassengerMock = jest.spyOn(service, 'getNextPassenger').mockImplementation(() => passenger);
+
+      const setPassengersHandlerReturnValue = {
+        key: 'value',
+      };
+      const setPassengersHandlerMock = jest
+        .spyOn(service, 'setPassengersHandler')
+        .mockImplementation(() => setPassengersHandlerReturnValue);
+
+      const seat = {
+        passenger: {
+          id: passengerId,
+        },
+        price: '$ 9,99',
+        number: '33A',
+      };
+      const passengersList = [
+        {
+          id: passengerId,
+        },
+      ];
+
+      const { data: actualData, passengers: actualPassengers } = service.selectSeatHandler({}, seat, passengersList);
+
+      expect(actualData).toEqual(setPassengersHandlerReturnValue);
+
+      const expectedPassengers = [
+        {
+          id: passengerId,
+          seat: {
+            price: '$ 9,99',
+            seatLabel: '33A',
+          },
+        },
+      ];
+      expect(actualPassengers).toEqual(expectedPassengers);
+      expect(getNextPassengerMock).toHaveBeenCalledTimes(1);
+      expect(setPassengersHandlerMock).toHaveBeenCalledTimes(1);
+      expect(setPassengersHandlerMock).toHaveBeenCalledWith({}, expectedPassengers);
+    });
+  });
+
+  describe('unselectSeatHandler', () => {
+    it('should clear the seat from any passengers assigned to seats before calling setPassengersHandler', () => {
+      const service = createSeatsMapService();
+
+      const setPassengersHandlerReturnValue = {
+        key: 'value',
+      };
+      const setPassengersHandlerMock = jest
+        .spyOn(service, 'setPassengersHandler')
+        .mockImplementation(() => setPassengersHandlerReturnValue);
+
+      const passengerId = '12345';
+      const seat = {
+        passenger: {
+          id: passengerId,
+        },
+      };
+      const passengersList = [
+        {
+          id: passengerId,
+          seat: seat,
+        },
+      ];
+
+      const { data: actualData, passengers: actualPassengers } = service.unselectSeatHandler({}, seat, passengersList);
+
+      expect(actualData).toEqual(setPassengersHandlerReturnValue);
+
+      const expectedPassengers = [
+        {
+          id: passengerId,
+          seat: null,
+        },
+      ];
+      expect(actualPassengers).toEqual(expectedPassengers);
+      expect(setPassengersHandlerMock).toHaveBeenCalledWith({}, expectedPassengers);
+    });
+  });
+
+  describe('setAvailabilityHandler', () => {
+    beforeEach(() => {
+      JetsContentPreparer.prototype._prepareSeatAdditionalProps = jest.fn().mockImplementation(() => []);
+    });
+
+    it('should use seat specific availability if present', () => {
+      const service = createSeatsMapService();
+
+      const content = [
+        {
+          rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+        },
+      ];
+      const availability = [
+        {
+          label: '33A',
+          currency: '$',
+          price: '9.99',
+          onlyForPassengerType: ['Type1', 'Type2'],
+          color: 'magenta',
+        },
+      ];
+
+      const response = service.setAvailabilityHandler(content, availability);
+
+      expect(response).toEqual([
+        {
+          rows: [
+            {
+              seats: [
+                {
+                  type: ENTITY_TYPE_MAP.seat,
+                  number: '33A',
+                  status: ENTITY_STATUS_MAP.available,
+                  price: '$ 9.99',
+                  cost: '9.99',
+                  currency: '$',
+                  passengerTypes: ['Type1', 'Type2'],
+                  additionalProps: [],
+                  color: 'magenta',
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+    });
+
+    it('should use wildcard seat details if no seat specific availability', () => {
+      const service = createSeatsMapService();
+
+      const content = [
+        {
+          rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+        },
+      ];
+      const availability = [
+        {
+          label: '*',
+          currency: '$',
+          price: '9.99',
+          onlyForPassengerType: ['Type1', 'Type2'],
+          color: 'magenta',
+        },
+      ];
+
+      const response = service.setAvailabilityHandler(content, availability);
+
+      expect(response).toEqual([
+        {
+          rows: [
+            {
+              seats: [
+                {
+                  type: ENTITY_TYPE_MAP.seat,
+                  number: '33A',
+                  status: ENTITY_STATUS_MAP.available,
+                  price: '$ 9.99',
+                  cost: '9.99',
+                  currency: '$',
+                  passenger: null,
+                  passengerTypes: ['Type1', 'Type2'],
+                  additionalProps: [],
+                  color: 'magenta',
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+    });
+
+    it('should use wildcard seat details for anything not specified in seat specific availability', () => {
+      const service = createSeatsMapService();
+
+      const content = [
+        {
+          rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+        },
+      ];
+      const availability = [
+        {
+          label: '33A',
+        },
+        {
+          label: '*',
+          currency: '$',
+          price: '9.99',
+          onlyForPassengerType: ['Type1', 'Type2'],
+          color: 'magenta',
+        },
+      ];
+
+      const response = service.setAvailabilityHandler(content, availability);
+
+      expect(response).toEqual([
+        {
+          rows: [
+            {
+              seats: [
+                {
+                  type: ENTITY_TYPE_MAP.seat,
+                  number: '33A',
+                  status: ENTITY_STATUS_MAP.available,
+                  price: '$ 9.99',
+                  cost: '9.99',
+                  currency: '$',
+                  passengerTypes: ['Type1', 'Type2'],
+                  additionalProps: [],
+                  color: 'magenta',
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+    });
+
+    it('should use configuration currency sign over seat specific or wildcard currency sign if present', () => {
+      const service = new JetsSeatMapService({ currencySign: '₱' });
+
+      const content = [
+        {
+          rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+        },
+      ];
+      const availability = [
+        {
+          label: '33A',
+          currencySign: '$',
+        },
+        {
+          label: '*',
+          currencySign: '£',
+        },
+      ];
+
+      const response = service.setAvailabilityHandler(content, availability);
+
+      expect(response).toEqual([
+        {
+          rows: [
+            {
+              seats: [
+                {
+                  type: ENTITY_TYPE_MAP.seat,
+                  number: '33A',
+                  status: ENTITY_STATUS_MAP.available,
+                  price: '₱ 0',
+                  cost: 0,
+                  currency: '₱',
+                  passengerTypes: DEFAULT_SEAT_PASSENGER_TYPES,
+                  additionalProps: [],
+                  color: undefined,
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+    });
+
+    it('should include any additionalProps returned by JetsContentPreparer', () => {
+      const service = createSeatsMapService();
+
+      const content = [
+        {
+          rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+        },
+      ];
+      const availability = [
+        {
+          label: '33A',
+          currency: '$',
+          price: '9.99',
+          onlyForPassengerType: ['Type1', 'Type2'],
+          color: 'magenta',
+        },
+      ];
+
+      const mockPrepareSeatAdditionalProps = jest.fn().mockImplementation(() => [
+        {
+          label: 'Additional prop label',
+        },
+      ]);
+
+      JetsContentPreparer.prototype._prepareSeatAdditionalProps = mockPrepareSeatAdditionalProps;
+
+      const response = service.setAvailabilityHandler(content, availability);
+
+      expect(response).toEqual([
+        {
+          rows: [
+            {
+              seats: [
+                {
+                  type: ENTITY_TYPE_MAP.seat,
+                  number: '33A',
+                  status: ENTITY_STATUS_MAP.available,
+                  price: '$ 9.99',
+                  cost: '9.99',
+                  currency: '$',
+                  passengerTypes: ['Type1', 'Type2'],
+                  additionalProps: [
+                    {
+                      label: 'Additional prop label',
+                    },
+                  ],
+                  color: 'magenta',
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+      expect(mockPrepareSeatAdditionalProps).toHaveBeenCalledTimes(1);
+      expect(mockPrepareSeatAdditionalProps).toHaveBeenCalledWith({
+        type: ENTITY_TYPE_MAP.seat,
+        number: '33A',
+        status: ENTITY_STATUS_MAP.available,
+        price: '$ 9.99',
+        cost: '9.99',
+        currency: '$',
+        passengerTypes: ['Type1', 'Type2'],
+        additionalProps: [
+          {
+            label: 'Additional prop label',
+          },
+        ],
+        color: 'magenta',
+      });
+    });
+  });
+
+  describe('setPassengersHandler', () => {
+    it.each([
+      [
+        'should set status & passenger for available seat with matching passenger',
+        {
+          seatStatus: ENTITY_STATUS_MAP.available,
+          seatPrice: null,
+          initialPassengerSeatPrice: null,
+          expectedPrice: null,
+        },
+      ],
+      [
+        'should set status & passenger for selected seat with matching passenger',
+        {
+          seatStatus: ENTITY_STATUS_MAP.selected,
+          seatPrice: null,
+          initialPassengerSeatPrice: null,
+          expectedPrice: null,
+        },
+      ],
+      [
+        'should set status & passenger for selected seat with matching passenger and take price from seat',
+        {
+          seatStatus: ENTITY_STATUS_MAP.selected,
+          seatPrice: '3,95 EUR',
+          initialPassengerSeatPrice: null,
+          expectedPrice: '3,95 EUR',
+        },
+      ],
+      [
+        'should set status & passenger for selected seat with matching passenger and take price from existing passenger seat',
+        {
+          seatStatus: ENTITY_STATUS_MAP.selected,
+          seatPrice: null,
+          initialPassengerSeatPrice: { price: '3,95 EUR' },
+          expectedPrice: '3,95 EUR',
+        },
+      ],
+    ])('%s', (_, { seatStatus, seatPrice, initialPassengerSeatPrice, expectedPrice }) => {
+      const service = createSeatsMapService();
+
+      const passenger = createPassenger('33A');
+      passenger.seat = {
+        ...passenger.seat,
+        ...initialPassengerSeatPrice,
+      };
+
+      const deck = {
+        rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A', status: seatStatus, price: seatPrice }])],
+      };
+
+      const response = service.setPassengersHandler([deck], [passenger]);
+
+      expect(response).toEqual([
+        {
+          rows: [
+            {
+              seats: [
+                {
+                  type: ENTITY_TYPE_MAP.seat,
+                  number: '33A',
+                  status: ENTITY_STATUS_MAP.selected,
+                  passenger: passenger,
+                  price: expectedPrice,
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+    });
+
+    it('should clear seat from passenger if passenger seat is unavailable', () => {
+      const service = createSeatsMapService();
+
+      const passenger = createPassenger('33A', 'Passenger');
+
+      const deck = {
+        rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A', status: ENTITY_STATUS_MAP.unavailable }])],
+      };
+
+      service.setPassengersHandler([deck], [passenger]);
+
+      expect(passenger).toEqual({
+        passengerLabel: 'Passenger',
+        seat: null,
+      });
+    });
+
+    it('should clear passenger from seat if seat selected but no passenger is assigned to that seat', () => {
+      const service = createSeatsMapService();
+
+      const deck = {
+        rows: [
+          createRow([
+            {
+              type: ENTITY_TYPE_MAP.seat,
+              number: '33A',
+              status: ENTITY_STATUS_MAP.selected,
+              passenger: createPassenger('33A'),
+            },
+          ]),
+        ],
+      };
+
+      const response = service.setPassengersHandler([deck], []);
+
+      expect(response).toEqual([
+        {
+          rows: [
+            {
+              seats: [
+                {
+                  type: ENTITY_TYPE_MAP.seat,
+                  number: '33A',
+                  status: ENTITY_STATUS_MAP.available,
+                  passenger: null,
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+    });
+  });
+});
