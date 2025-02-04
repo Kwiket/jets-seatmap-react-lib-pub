@@ -11,10 +11,10 @@ describe('JetsSeatMapService', () => {
       const passenger = {
         id: passengerId,
       };
-      const otherPassengerId = '54321'
+      const otherPassengerId = '54321';
       const otherPassenger = {
         id: otherPassengerId,
-      }
+      };
       const getNextPassengerMock = jest.spyOn(service, 'getNextPassenger').mockImplementation(() => passenger);
 
       const setPassengersHandlerReturnValue = {
@@ -31,9 +31,14 @@ describe('JetsSeatMapService', () => {
         price: '$ 9,99',
         number: '33A',
       };
-      const passengersList = [ passenger, otherPassenger ];
+      const passengersList = [passenger, otherPassenger];
 
-      const { data: actualData, passengers: actualPassengers } = service.selectSeatHandler({}, seat, passengersList);
+      const content = {};
+      const { data: actualData, passengers: actualPassengers } = service.selectSeatHandler(
+        content,
+        seat,
+        passengersList
+      );
 
       expect(actualData).toEqual(setPassengersHandlerReturnValue);
 
@@ -47,7 +52,7 @@ describe('JetsSeatMapService', () => {
         },
         {
           id: otherPassengerId,
-        }
+        },
       ];
       expect(actualPassengers).toEqual(expectedPassengers);
       expect(getNextPassengerMock).toHaveBeenCalledTimes(1);
@@ -62,10 +67,10 @@ describe('JetsSeatMapService', () => {
       const passenger = {
         id: passengerId,
       };
-      const otherPassengerId = '54321'
+      const otherPassengerId = '54321';
       const otherPassenger = {
         id: otherPassengerId,
-      }
+      };
       const getNextPassengerMock = jest.spyOn(service, 'getNextPassenger').mockImplementation(() => null);
 
       const setPassengersHandlerReturnValue = {
@@ -82,9 +87,14 @@ describe('JetsSeatMapService', () => {
         price: '$ 9,99',
         number: '33A',
       };
-      const passengersList = [ passenger, otherPassenger ];
+      const passengersList = [passenger, otherPassenger];
 
-      const { data: actualData, passengers: actualPassengers } = service.selectSeatHandler({}, seat, passengersList);
+      const content = {};
+      const { data: actualData, passengers: actualPassengers } = service.selectSeatHandler(
+        content,
+        seat,
+        passengersList
+      );
 
       expect(actualData).toEqual(setPassengersHandlerReturnValue);
 
@@ -94,7 +104,7 @@ describe('JetsSeatMapService', () => {
         },
         {
           id: otherPassengerId,
-        }
+        },
       ];
       expect(actualPassengers).toEqual(expectedPassengers);
       expect(getNextPassengerMock).toHaveBeenCalledTimes(1);
@@ -137,7 +147,12 @@ describe('JetsSeatMapService', () => {
         },
       ];
 
-      const { data: actualData, passengers: actualPassengers } = service.unselectSeatHandler({}, seat, passengersList);
+      const content = {};
+      const { data: actualData, passengers: actualPassengers } = service.unselectSeatHandler(
+        content,
+        seat,
+        passengersList
+      );
 
       expect(actualData).toEqual(setPassengersHandlerReturnValue);
 
@@ -386,7 +401,9 @@ describe('JetsSeatMapService', () => {
         rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A', status: seatStatus, price: seatPrice }])],
       };
 
-      const response = service.setPassengersHandler([deck], [passenger]);
+      const content = [deck];
+      const passengers = [passenger];
+      const response = service.setPassengersHandler(content, passengers);
 
       expect(response).toEqual([
         {
@@ -416,7 +433,9 @@ describe('JetsSeatMapService', () => {
         rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A', status: ENTITY_STATUS_MAP.unavailable }])],
       };
 
-      service.setPassengersHandler([deck], [passenger]);
+      const content = [deck];
+      const passengers = [passenger];
+      service.setPassengersHandler(content, passengers);
 
       expect(passenger).toEqual({
         passengerLabel: 'Passenger',
@@ -440,7 +459,9 @@ describe('JetsSeatMapService', () => {
         ],
       };
 
-      const response = service.setPassengersHandler([deck], []);
+      const content = [deck];
+      const passengers = [];
+      const response = service.setPassengersHandler(content, passengers);
 
       expect(response).toEqual([
         {

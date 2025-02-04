@@ -102,7 +102,8 @@ describe('JetsSeatMapService', () => {
 
       const firstPassenger = createPassenger(null);
       const secondPassenger = createPassenger(null);
-      const passenger = service.getNextPassenger([firstPassenger, secondPassenger]);
+      const passengers = [firstPassenger, secondPassenger];
+      const passenger = service.getNextPassenger(passengers);
 
       expect(passenger).toEqual(firstPassenger);
     });
@@ -112,7 +113,8 @@ describe('JetsSeatMapService', () => {
 
       const firstPassenger = createPassenger('33A');
       const secondPassenger = createPassenger(null);
-      const passenger = service.getNextPassenger([firstPassenger, secondPassenger]);
+      const passengers = [firstPassenger, secondPassenger];
+      const passenger = service.getNextPassenger(passengers);
 
       expect(passenger).toEqual(secondPassenger);
     });
@@ -122,7 +124,8 @@ describe('JetsSeatMapService', () => {
 
       const firstPassenger = createPassenger('33A');
       const secondPassenger = createPassenger('33F');
-      const passenger = service.getNextPassenger([firstPassenger, secondPassenger]);
+      const passengers = [firstPassenger, secondPassenger];
+      const passenger = service.getNextPassenger(passengers);
 
       expect(passenger).toBeUndefined();
     });
@@ -130,7 +133,8 @@ describe('JetsSeatMapService', () => {
     it('should return undefined if no passengers are given', () => {
       const service = createSeatsMapService();
 
-      const passenger = service.getNextPassenger([]);
+      const passengers = [];
+      const passenger = service.getNextPassenger(passengers);
 
       expect(passenger).toBeUndefined();
     });
@@ -138,7 +142,8 @@ describe('JetsSeatMapService', () => {
     it('should return undefined if null passengers are given', () => {
       const service = createSeatsMapService();
 
-      const passenger = service.getNextPassenger(null);
+      const passengers = null;
+      const passenger = service.getNextPassenger(passengers);
 
       expect(passenger).toBeUndefined();
     });
@@ -150,10 +155,8 @@ describe('JetsSeatMapService', () => {
 
       const firstPassenger = createPassenger('33A');
       const secondPassenger = createPassenger('33F');
-      const [modifiedFirstPassenger, modifiedSecondPassenger] = service.addAbbrToPassengers([
-        firstPassenger,
-        secondPassenger,
-      ]);
+      const passengers = [firstPassenger, secondPassenger];
+      const [modifiedFirstPassenger, modifiedSecondPassenger] = service.addAbbrToPassengers(passengers);
 
       expect(modifiedFirstPassenger).toEqual({
         ...firstPassenger,
@@ -169,7 +172,8 @@ describe('JetsSeatMapService', () => {
       const service = createSeatsMapService();
 
       const firstPassenger = createPassenger('33A', 'Foobar');
-      const [modifiedPassenger] = service.addAbbrToPassengers([firstPassenger]);
+      const passengers = [firstPassenger];
+      const [modifiedPassenger] = service.addAbbrToPassengers(passengers);
 
       expect(modifiedPassenger).toEqual({
         ...firstPassenger,
@@ -181,7 +185,8 @@ describe('JetsSeatMapService', () => {
       const service = createSeatsMapService();
 
       const firstPassenger = createPassenger('33A', 'Foo Bar');
-      const [modifiedPassenger] = service.addAbbrToPassengers([firstPassenger]);
+      const passengers = [firstPassenger];
+      const [modifiedPassenger] = service.addAbbrToPassengers(passengers);
 
       expect(modifiedPassenger).toEqual({
         ...firstPassenger,
@@ -193,7 +198,8 @@ describe('JetsSeatMapService', () => {
       const service = createSeatsMapService();
 
       const firstPassenger = createPassenger('33A', 'Foo Ach Bar');
-      const [modifiedPassenger] = service.addAbbrToPassengers([firstPassenger]);
+      const passengers = [firstPassenger];
+      const [modifiedPassenger] = service.addAbbrToPassengers(passengers);
 
       expect(modifiedPassenger).toEqual({
         ...firstPassenger,
@@ -207,7 +213,9 @@ describe('JetsSeatMapService', () => {
       const service = createSeatsMapService();
 
       const expectedPassenger = createPassenger('33A');
-      const actualPassenger = service.findPassengerBySeatNumber([expectedPassenger], '33A');
+      const passengers = [expectedPassenger];
+      const seatNumber = '33A';
+      const actualPassenger = service.findPassengerBySeatNumber(passengers, seatNumber);
 
       expect(actualPassenger).toEqual(expectedPassenger);
     });
@@ -217,7 +225,9 @@ describe('JetsSeatMapService', () => {
 
       const expectedPassenger = createPassenger('33A');
       const otherPassenger = createPassenger('33F');
-      const actualPassenger = service.findPassengerBySeatNumber([expectedPassenger, otherPassenger], '33A');
+      const passengers = [expectedPassenger, otherPassenger];
+      const seatNumber = '33A';
+      const actualPassenger = service.findPassengerBySeatNumber(passengers, seatNumber);
 
       expect(actualPassenger).toEqual(expectedPassenger);
     });
@@ -226,7 +236,9 @@ describe('JetsSeatMapService', () => {
       const service = createSeatsMapService();
 
       const passenger = createPassenger('33A');
-      const actualPassenger = service.findPassengerBySeatNumber([passenger], '33X');
+      const passengers = [passenger];
+      const seatNumber = '33X';
+      const actualPassenger = service.findPassengerBySeatNumber(passengers, seatNumber);
 
       expect(actualPassenger).toBeUndefined();
     });
@@ -299,11 +311,13 @@ describe('JetsSeatMapService', () => {
     it('should return index -1 if no seatLabels given', () => {
       const service = createSeatsMapService();
 
-      const actualIndex = service.getDeckIndexBySeatLabel(null, [
+      const seatLabel = null;
+      const decks = [
         {
           rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
         },
-      ]);
+      ];
+      const actualIndex = service.getDeckIndexBySeatLabel(seatLabel, decks);
 
       expect(actualIndex).toEqual(-1);
     });
@@ -311,7 +325,9 @@ describe('JetsSeatMapService', () => {
     it('should return index -1 if no decks given', () => {
       const service = createSeatsMapService();
 
-      const actualIndex = service.getDeckIndexBySeatLabel('33A', null);
+      const seatLabel = '33A';
+      const decks = null;
+      const actualIndex = service.getDeckIndexBySeatLabel(seatLabel, decks);
 
       expect(actualIndex).toEqual(-1);
     });
@@ -319,7 +335,9 @@ describe('JetsSeatMapService', () => {
     it('should return index -1 if empty decks given', () => {
       const service = createSeatsMapService();
 
-      const actualIndex = service.getDeckIndexBySeatLabel('33A', []);
+      const seatLabel = '33A';
+      const decks = [];
+      const actualIndex = service.getDeckIndexBySeatLabel(seatLabel, decks);
 
       expect(actualIndex).toEqual(-1);
     });
@@ -428,7 +446,9 @@ describe('JetsSeatMapService', () => {
     it('should return undefined if no seatLabels given', () => {
       const service = createSeatsMapService();
 
-      const result = service.compareWithDecksSeatsInfo(null, []);
+      const seatLabels = null;
+      const decks = [];
+      const result = service.compareWithDecksSeatsInfo(seatLabels, decks);
 
       expect(result).toBeUndefined();
     });
@@ -436,7 +456,9 @@ describe('JetsSeatMapService', () => {
     it('should return undefined if no decks given', () => {
       const service = createSeatsMapService();
 
-      const result = service.compareWithDecksSeatsInfo([], null);
+      const seatLabels = [];
+      const decks = null;
+      const result = service.compareWithDecksSeatsInfo(seatLabels, decks);
 
       expect(result).toBeUndefined();
     });
