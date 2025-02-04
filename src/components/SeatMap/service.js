@@ -36,7 +36,7 @@ export class JetsSeatMapService {
   selectSeatHandler = (content, seat, passengersList) => {
     const nextPassenger = this.getNextPassenger(passengersList);
     const passengers = passengersList.map(passenger => {
-      if (nextPassenger.id === passenger.id) {
+      if (nextPassenger?.id === passenger.id) {
         const data = {
           price: seat['price'],
           seatLabel: seat['number'],
