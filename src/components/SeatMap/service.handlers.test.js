@@ -2,7 +2,7 @@ import { DEFAULT_SEAT_PASSENGER_TYPES, ENTITY_STATUS_MAP, ENTITY_TYPE_MAP } from
 import { JetsSeatMapService } from './service';
 import { createPassenger, createRow, createSeatsMapService } from './service.test';
 
-describe('JetsSeatMapService', () => {
+describe('JetsSeatMapService handlers', () => {
   describe('selectSeatHandler', () => {
     it('should set passenger seat, price & number for next passenger', () => {
       const service = createSeatsMapService();
