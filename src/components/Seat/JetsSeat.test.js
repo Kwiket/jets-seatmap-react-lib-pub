@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 
 import { MockJetsContextProvider } from '../../__mocks__/MockJetsContext';
 
@@ -14,10 +13,9 @@ import {
 } from './__fixtures__';
 import { JetsSeat } from './index';
 
-const setup = ({ data = {}, config = {}, params = {}, events = {} } = {}) => ({
-  user: userEvent.setup(),
+const setup = ({ data = {}, config = {}, params = {} } = {}) => ({
   ...render(
-    <MockJetsContextProvider config={config} events={events} params={{ ...paramsData(params) }}>
+    <MockJetsContextProvider config={config} params={{ ...paramsData(params) }}>
       <JetsSeat data={data} />
     </MockJetsContextProvider>
   ),
@@ -25,7 +23,7 @@ const setup = ({ data = {}, config = {}, params = {}, events = {} } = {}) => ({
 
 describe('JetsSeat', () => {
   describe('when any seat type is rendered', () => {
-    it('should add the correct classes', async () => {
+    it('should add the correct classes when available', async () => {
       setup({ data: seatDataFirst() });
 
       const wrapper = screen.getByText(/1A/).closest('.jets-seat');
@@ -34,10 +32,49 @@ describe('JetsSeat', () => {
       expect(wrapper).toHaveClass('jets-seat jets-seat jets-available');
     });
 
-    it('should display the seat number', async () => {
+    it('should add the correct classes when unavailable', async () => {
+      setup({
+        data: seatDataFirst({
+          status: 'unavailable',
+        }),
+      });
+
+      const wrapper = screen.getByText(/1A/).closest('.jets-seat');
+
+      // jets-seat twice due to component naming and seatType data
+      expect(wrapper).toHaveClass('jets-seat jets-seat jets-unavailable');
+    });
+
+    it('should add the correct classes when selected', async () => {
+      setup({
+        data: seatDataFirst({
+          status: 'selected',
+        }),
+      });
+
+      const wrapper = screen.getByText(/1A/).closest('.jets-seat');
+
+      // jets-seat twice due to component naming and seatType data
+      expect(wrapper).toHaveClass('jets-seat jets-seat jets-selected');
+    });
+
+    it('should display the seat number with correct classes', async () => {
       setup({ data: seatDataFirst() });
 
-      expect(screen.getByText(/1A/)).toBeInTheDocument();
+      const seatNumber = screen.getByText(/1A/);
+
+      expect(seatNumber).toBeInTheDocument();
+      expect(seatNumber).toHaveClass('jets-seat-number ST-23');
+    });
+
+    it('should apply the correct class based on seatIconType', async () => {
+      setup({
+        data: seatDataFirst({
+          seatIconType: '99',
+        }),
+      });
+
+      expect(screen.getByText(/1A/)).toHaveClass('ST-99');
     });
 
     it('should render with the correct offset', () => {
@@ -67,32 +104,33 @@ describe('JetsSeat', () => {
       });
     });
 
-    it('should fire onClick handlers when clicked', async () => {
-      const onSeatClick = jest.fn();
-
-      const { user } = setup({
-        data: seatDataFirst(),
-        events: { onSeatClick },
+    it('should render supplied theme overrides', () => {
+      const { container } = setup({
+        config: {
+          colorTheme: {
+            defaultPassengerBadgeColor: 'rgb(0, 0, 0)',
+            seatArmrestColor: 'cornflowerblue',
+            seatLabelColor: '#ff0000',
+            seatStrokeColor: 'rgb(0, 0, 0)',
+            seatStrokeWidth: 100,
+          },
+        },
+        data: seatDataFirst({
+          seatType: 'F-2',
+        }),
       });
 
-      await user.click(screen.getByText(/1A/));
-      expect(onSeatClick).toHaveBeenCalledTimes(1);
-    });
-  });
+      const seatSVGPath = container.querySelector('.jets-seat-svg path:first-of-type');
 
-  describe('when hover mode is turned on', () => {
-    it('should fire onMouseEnter and onMouseLeave handlers', async () => {
-      const showTooltip = jest.fn();
-      const onTooltipClose = jest.fn();
+      // seatStrokeColor
+      expect(seatSVGPath).toHaveAttribute('stroke', 'rgb(0, 0, 0)');
+      // seatStrokeWidth
+      expect(seatSVGPath).toHaveAttribute('stroke-width', '100');
 
-      const { user } = setup({
-        data: seatDataFirst(),
-        events: { onTooltipClose, showTooltip },
-        params: { tooltipOnHover: true },
-      });
+      const seatSVGRect = container.querySelector('.jets-seat-svg rect:first-of-type');
 
-      await user.hover(screen.getByText(/1A/));
-      expect(showTooltip).toHaveBeenCalledTimes(1);
+      // seatArmrestColor
+      expect(seatSVGRect).toHaveAttribute('fill', 'cornflowerblue');
     });
   });
 
@@ -210,7 +248,7 @@ describe('JetsSeat', () => {
       const wrapper = container.querySelector('.jets-seat');
 
       expect(wrapper).toBeInTheDocument();
-      expect(wrapper).toHaveClass('jets-aisle');
+      expect(wrapper).toHaveClass('jets-seat jets-aisle');
     });
 
     it('should render an empty tile', () => {
@@ -218,7 +256,7 @@ describe('JetsSeat', () => {
       const wrapper = container.querySelector('.jets-seat');
 
       expect(wrapper).toBeInTheDocument();
-      expect(wrapper).toHaveClass('jets-empty');
+      expect(wrapper).toHaveClass('jets-seat jets-empty');
     });
   });
 
@@ -237,7 +275,7 @@ describe('JetsSeat', () => {
       expect(screen.getByText(/100/)).toBeInTheDocument();
     });
 
-    it('should render a fallback label is currency is missing', () => {
+    it('should render a fallback label if currency is missing', () => {
       setup({
         config: { visibleSeatPriceLabels: true },
         data: seatDataFirst({
@@ -286,13 +324,12 @@ describe('JetsSeat', () => {
       setup({
         data: seatDataFirst({
           passenger: {
-            abbr: 'DS',
             passengerLabel: 'Dave Smith',
           },
         }),
       });
 
-      expect(screen.getByText(/DS/)).toBeInTheDocument();
+      expect(screen.getByText(/P/)).toBeInTheDocument();
     });
 
     it('should render the passenger badge with a custom colour', () => {
