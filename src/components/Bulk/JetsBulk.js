@@ -10,6 +10,8 @@ import { BULK_TEMPLATE_MAP } from './constants';
 import { JetsContext, useEnvironmentInfo } from '../../common';
 
 const SCALE_BULK_COEFF = 0.7;
+// we should ignore scaling for some bulks to avoid incorrect sizing
+const IGNORE_SCALE_FOR_BULK_IDS = ['26', '27', '28'];
 
 export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, topOffset }) => {
   const { params, config, colorTheme } = useContext(JetsContext);
@@ -20,8 +22,10 @@ export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, to
   const { isSafari } = useEnvironmentInfo();
 
   const [style, setStyle] = useState(() => {
-    const updatedWidth = Math.floor(width * SCALE_BULK_COEFF);
-    const updatedHeight = Math.floor(height * SCALE_BULK_COEFF);
+    const _scaleBulkCoeff = IGNORE_SCALE_FOR_BULK_IDS.includes(id) ? 1 : SCALE_BULK_COEFF;
+
+    const updatedWidth = Math.floor(width * _scaleBulkCoeff);
+    const updatedHeight = Math.floor(height * _scaleBulkCoeff);
 
     const leftAlignment = align === DECK_ITEM_ALIGN_MAP.left ? Math.max(xOffset, 0) : DEFAULT_STYLE_POSITION;
     const rightAlignment = align === DECK_ITEM_ALIGN_MAP.right ? Math.max(xOffset, 0) : DEFAULT_STYLE_POSITION;
@@ -30,7 +34,7 @@ export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, to
 
     const centerAlignment =
       align === DECK_ITEM_ALIGN_MAP.center && xOffset
-        ? Math.floor(xOffset * SCALE_BULK_COEFF + centerOfThePlane - halfOfTheBulk)
+        ? Math.floor(xOffset * _scaleBulkCoeff + centerOfThePlane - halfOfTheBulk)
         : DEFAULT_STYLE_POSITION;
 
     return {
