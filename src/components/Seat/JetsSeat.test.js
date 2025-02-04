@@ -262,20 +262,6 @@ describe('JetsSeat', () => {
       expect(screen.queryByText(/\$/)).not.toBeInTheDocument();
       expect(screen.queryByText(/100/)).not.toBeInTheDocument();
     });
-
-    // this detects a bug in the price display, uncomment when fixed
-    // it('should not render the price when cost is missing', () => {
-    //   setup({
-    //     config: { visibleSeatPriceLabels: true },
-    //     data: seatDataFirst({
-    //       currency: '$',
-    //       price: 100,
-    //     }),
-    //   });
-
-    //   expect(screen.queryByText(/\$/)).not.toBeInTheDocument();
-    //   expect(screen.queryByText(/100/)).not.toBeInTheDocument();
-    // });
   });
 
   describe('when passenger information is passed', () => {
