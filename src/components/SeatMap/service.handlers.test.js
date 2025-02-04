@@ -54,7 +54,7 @@ describe('JetsSeatMapService', () => {
   });
 
   describe('unselectSeatHandler', () => {
-    it('should clear the seat from any passengers assigned to seats before calling setPassengersHandler', () => {
+    it('should clear the seat from any passengers assigned to the supplied seat before calling setPassengersHandler', () => {
       const service = createSeatsMapService();
 
       const setPassengersHandlerReturnValue = {
@@ -65,15 +65,25 @@ describe('JetsSeatMapService', () => {
         .mockImplementation(() => setPassengersHandlerReturnValue);
 
       const passengerId = '12345';
+      const otherPassengerId = '54321';
       const seat = {
         passenger: {
           id: passengerId,
+        },
+      };
+      const otherSeat = {
+        passenger: {
+          id: otherPassengerId,
         },
       };
       const passengersList = [
         {
           id: passengerId,
           seat: seat,
+        },
+        {
+          id: otherPassengerId,
+          seat: otherSeat,
         },
       ];
 
@@ -85,6 +95,10 @@ describe('JetsSeatMapService', () => {
         {
           id: passengerId,
           seat: null,
+        },
+        {
+          id: otherPassengerId,
+          seat: otherSeat,
         },
       ];
       expect(actualPassengers).toEqual(expectedPassengers);
