@@ -54,6 +54,53 @@ describe('JetsSeatMapService', () => {
       expect(setPassengersHandlerMock).toHaveBeenCalledTimes(1);
       expect(setPassengersHandlerMock).toHaveBeenCalledWith({}, expectedPassengers);
     });
+
+    it('should not modify passengers if no next passenger', () => {
+      const service = createSeatsMapService();
+
+      const passengerId = '12345';
+      const passenger = {
+        id: passengerId,
+      };
+      const otherPassengerId = '54321'
+      const otherPassenger = {
+        id: otherPassengerId,
+      }
+      const getNextPassengerMock = jest.spyOn(service, 'getNextPassenger').mockImplementation(() => null);
+
+      const setPassengersHandlerReturnValue = {
+        key: 'value',
+      };
+      const setPassengersHandlerMock = jest
+        .spyOn(service, 'setPassengersHandler')
+        .mockImplementation(() => setPassengersHandlerReturnValue);
+
+      const seat = {
+        passenger: {
+          id: passengerId,
+        },
+        price: '$ 9,99',
+        number: '33A',
+      };
+      const passengersList = [ passenger, otherPassenger ];
+
+      const { data: actualData, passengers: actualPassengers } = service.selectSeatHandler({}, seat, passengersList);
+
+      expect(actualData).toEqual(setPassengersHandlerReturnValue);
+
+      const expectedPassengers = [
+        {
+          id: passengerId,
+        },
+        {
+          id: otherPassengerId,
+        }
+      ];
+      expect(actualPassengers).toEqual(expectedPassengers);
+      expect(getNextPassengerMock).toHaveBeenCalledTimes(1);
+      expect(setPassengersHandlerMock).toHaveBeenCalledTimes(1);
+      expect(setPassengersHandlerMock).toHaveBeenCalledWith({}, expectedPassengers);
+    });
   });
 
   describe('unselectSeatHandler', () => {
