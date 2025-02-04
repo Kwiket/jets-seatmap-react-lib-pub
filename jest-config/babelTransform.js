@@ -1,13 +1,13 @@
-const babelJest = require('babel-jest')
+const babelJest = require('babel-jest');
 
 const hasJsxRuntime = (() => {
   try {
-    require.resolve('react/jsx-runtime')
-    return true
+    require.resolve('react/jsx-runtime');
+    return true;
   } catch (e) {
-    return false
+    return false;
   }
-})()
+})();
 
 module.exports = babelJest.createTransformer({
   presets: [
@@ -21,4 +21,4 @@ module.exports = babelJest.createTransformer({
   plugins: ['babel-plugin-styled-components'],
   babelrc: false,
   configFile: false,
-})
+});

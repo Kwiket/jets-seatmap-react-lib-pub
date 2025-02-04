@@ -1,12 +1,5 @@
 import { JetsSeatMapApiService } from './api';
-import {
-  cabin,
-  entertainment,
-  power,
-  wifi,
-  seatDetails,
-  cabinItem,
-} from './__fixtures__/seatMapApiPostDataResponse';
+import { cabin, entertainment, power, wifi, seatDetails, cabinItem } from './__fixtures__/seatMapApiPostDataResponse';
 import { flightDetails } from './__fixtures__/seatMapApiGetPlaneFeatures';
 
 jest.mock('./api', () => {
@@ -24,14 +17,16 @@ const api = new JetsSeatMapApiService('appId', 'key', 'url');
 describe('JetsSeatMapApiService', () => {
   describe('when the getPlaneFeatures function is called', () => {
     beforeEach(() => {
-      const singleCabinResponseFixture = [{
-        id: '1111',
-        cabin: cabin(),
-        entertainment: entertainment(),
-        power: power(),
-        wifi: wifi(),
-        seatDetails: seatDetails(),
-      }];
+      const singleCabinResponseFixture = [
+        {
+          id: '1111',
+          cabin: cabin(),
+          entertainment: entertainment(),
+          power: power(),
+          wifi: wifi(),
+          seatDetails: seatDetails(),
+        },
+      ];
       api.postData.mockImplementation(() => singleCabinResponseFixture);
     });
 
@@ -40,10 +35,11 @@ describe('JetsSeatMapApiService', () => {
 
       await api.getPlaneFeatures(flightFixture, 'EN', 'metric');
 
-      expect(api.postData).toHaveBeenCalledWith(
-        'flight/features/plane/seatmap',
-        { flight: flightFixture, lang: 'EN', units: 'metric' },
-      );
+      expect(api.postData).toHaveBeenCalledWith('flight/features/plane/seatmap', {
+        flight: flightFixture,
+        lang: 'EN',
+        units: 'metric',
+      });
     });
 
     it('should call postData with the default language if the provided language is not supported', async () => {
@@ -51,24 +47,27 @@ describe('JetsSeatMapApiService', () => {
 
       await api.getPlaneFeatures(flightFixture, 'A', 'metric');
 
-      expect(api.postData).toHaveBeenCalledWith(
-        'flight/features/plane/seatmap',
-        { flight: flightFixture, lang: 'EN', units: 'metric' },
-      );
+      expect(api.postData).toHaveBeenCalledWith('flight/features/plane/seatmap', {
+        flight: flightFixture,
+        lang: 'EN',
+        units: 'metric',
+      });
     });
   });
 
   describe('when a specific cabin class (F, B, P or E) is provided', () => {
     it('should return the correct information when all the information is present', async () => {
       const flightFixture = flightDetails({ cabinClass: 'E' });
-      const singleCabinResponseFixture = [{
-        id: '1111',
-        cabin: cabin(),
-        entertainment: entertainment(),
-        power: power(),
-        wifi: wifi(),
-        seatDetails: seatDetails(),
-      }];
+      const singleCabinResponseFixture = [
+        {
+          id: '1111',
+          cabin: cabin(),
+          entertainment: entertainment(),
+          power: power(),
+          wifi: wifi(),
+          seatDetails: seatDetails(),
+        },
+      ];
       api.postData.mockImplementation(() => singleCabinResponseFixture);
 
       const result = await api.getPlaneFeatures(flightFixture);
@@ -86,13 +85,15 @@ describe('JetsSeatMapApiService', () => {
 
     it('should throw if no seat details were returned from the API', async () => {
       const flightFixture = flightDetails({ cabinClass: 'E' });
-      const singleCabinResponseFixture = [{
-        id: '1111',
-        cabin: cabin(),
-        entertainment: entertainment(),
-        power: power(),
-        wifi: wifi(),
-      }];
+      const singleCabinResponseFixture = [
+        {
+          id: '1111',
+          cabin: cabin(),
+          entertainment: entertainment(),
+          power: power(),
+          wifi: wifi(),
+        },
+      ];
       api.postData.mockImplementation(() => singleCabinResponseFixture);
 
       await expect(api.getPlaneFeatures(flightFixture)).rejects.toThrow('data is not found for the flight: 1111');
@@ -100,14 +101,16 @@ describe('JetsSeatMapApiService', () => {
 
     it('should throw if the response item has an error', async () => {
       const flightFixture = flightDetails({ cabinClass: 'E' });
-      const singleCabinResponseFixture = [{
-        id: '1111',
-        cabin: cabin(),
-        entertainment: entertainment(),
-        power: power(),
-        wifi: wifi(),
-        error: 'Something went wrong!',
-      }];
+      const singleCabinResponseFixture = [
+        {
+          id: '1111',
+          cabin: cabin(),
+          entertainment: entertainment(),
+          power: power(),
+          wifi: wifi(),
+          error: 'Something went wrong!',
+        },
+      ];
       api.postData.mockImplementation(() => singleCabinResponseFixture);
 
       await expect(api.getPlaneFeatures(flightFixture)).rejects.toThrow('Something went wrong!');
@@ -196,9 +199,9 @@ describe('JetsSeatMapApiService', () => {
     it('should return...', async () => {
       const flightFixture = flightDetails({ cabinClass: 'Q' });
       const errorResponse = {
-        'statusCode': 400,
-        'message': 'cabinClass must be one of the following values: A, F, B, P, E',
-        'error': 'Bad Request',
+        statusCode: 400,
+        message: 'cabinClass must be one of the following values: A, F, B, P, E',
+        error: 'Bad Request',
       };
       api.postData.mockImplementation(() => errorResponse);
 
@@ -206,5 +209,3 @@ describe('JetsSeatMapApiService', () => {
     });
   });
 });
-
-
