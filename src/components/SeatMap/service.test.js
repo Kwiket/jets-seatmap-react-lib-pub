@@ -199,7 +199,7 @@ describe('JetsSeatMapService', () => {
       expect(mockSetPassengersHandler).toHaveBeenCalledWith(mockContent, passengers);
     });
 
-    it('should not call setAvailabilityHandler if no availability supplied', async () => {
+    it('should not call setPassengersHandler if no passengers supplied', async () => {
       const service = createSeatsMapService();
 
       const flight = {
