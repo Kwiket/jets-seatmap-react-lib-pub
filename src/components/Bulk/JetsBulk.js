@@ -9,9 +9,8 @@ import { DECK_ITEM_ALIGN_MAP, DEFAULT_STYLE_POSITION, SCALE_TYPES } from '../../
 import { BULK_TEMPLATE_MAP } from './constants';
 import { JetsContext, useEnvironmentInfo } from '../../common';
 
-const SCALE_BULK_COEFF = 0.7;
-// we should ignore scaling for some bulks to avoid incorrect sizing
-const IGNORE_SCALE_FOR_BULK_IDS = ['26', '27', '28'];
+const DEFAULT_SCALE_BULK_COEFF = 0.7;
+const SCALE_TO_BULK_COEFF_MAP = { 26: 1, 27: 1, 28: 1 };
 
 export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, topOffset }) => {
   const { params, config, colorTheme } = useContext(JetsContext);
@@ -22,10 +21,10 @@ export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, to
   const { isSafari } = useEnvironmentInfo();
 
   const [style, setStyle] = useState(() => {
-    const _scaleBulkCoeff = IGNORE_SCALE_FOR_BULK_IDS.includes(id) ? 1 : SCALE_BULK_COEFF;
+    const scaleBulkCoeff = SCALE_TO_BULK_COEFF_MAP[id] || DEFAULT_SCALE_BULK_COEFF;
 
-    const updatedWidth = Math.floor(width * _scaleBulkCoeff);
-    const updatedHeight = Math.floor(height * _scaleBulkCoeff);
+    const updatedWidth = Math.floor(width * scaleBulkCoeff);
+    const updatedHeight = Math.floor(height * scaleBulkCoeff);
 
     const leftAlignment = align === DECK_ITEM_ALIGN_MAP.left ? Math.max(xOffset, 0) : DEFAULT_STYLE_POSITION;
     const rightAlignment = align === DECK_ITEM_ALIGN_MAP.right ? Math.max(xOffset, 0) : DEFAULT_STYLE_POSITION;
@@ -34,7 +33,7 @@ export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, to
 
     const centerAlignment =
       align === DECK_ITEM_ALIGN_MAP.center && xOffset
-        ? Math.floor(xOffset * _scaleBulkCoeff + centerOfThePlane - halfOfTheBulk)
+        ? Math.floor(xOffset * scaleBulkCoeff + centerOfThePlane - halfOfTheBulk)
         : DEFAULT_STYLE_POSITION;
 
     return {
@@ -73,7 +72,7 @@ export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, to
     const shouldIgnoreAntiScale = isSafari && config?.scaleType === SCALE_TYPES.ZOOM;
     const preparedBulkPartHeight = shouldIgnoreAntiScale ? bulkPartHeight : bulkPartHeight * params?.antiScale;
 
-    const preparedStickerWrapperHeight = Math.round(style.height - preparedBulkPartHeight * SCALE_BULK_COEFF);
+    const preparedStickerWrapperHeight = Math.round(style.height - preparedBulkPartHeight * DEFAULT_SCALE_BULK_COEFF);
 
     setStickerWrapperHeight(preparedStickerWrapperHeight);
   };
