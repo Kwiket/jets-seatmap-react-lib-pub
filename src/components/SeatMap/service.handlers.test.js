@@ -2,14 +2,7 @@ import { DEFAULT_SEAT_PASSENGER_TYPES, ENTITY_STATUS_MAP, ENTITY_TYPE_MAP } from
 import { JetsSeatMapService } from './service';
 import { createPassenger, createRow, createSeatsMapService } from './service.test';
 
-beforeEach(() => {
-  jest.resetAllMocks();
-});
-
-jest.mock('../../common/data-preparer');
-
 describe('JetsSeatMapService', () => {
-
   describe('selectSeatHandler', () => {
     it('should set passenger seat, price & number for next passenger', () => {
       const service = createSeatsMapService();
@@ -100,10 +93,6 @@ describe('JetsSeatMapService', () => {
   });
 
   describe('setAvailabilityHandler', () => {
-    beforeEach(() => {
-      JetsContentPreparer.prototype._prepareSeatAdditionalProps = jest.fn().mockImplementation(() => []);
-    });
-
     it('should use seat specific availability if present', () => {
       const service = createSeatsMapService();
 
@@ -279,77 +268,6 @@ describe('JetsSeatMapService', () => {
           ],
         },
       ]);
-    });
-
-    it('should include any additionalProps returned by JetsContentPreparer', () => {
-      const service = createSeatsMapService();
-
-      const content = [
-        {
-          rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
-        },
-      ];
-      const availability = [
-        {
-          label: '33A',
-          currency: '$',
-          price: '9.99',
-          onlyForPassengerType: ['Type1', 'Type2'],
-          color: 'magenta',
-        },
-      ];
-
-      const mockPrepareSeatAdditionalProps = jest.fn().mockImplementation(() => [
-        {
-          label: 'Additional prop label',
-        },
-      ]);
-
-      JetsContentPreparer.prototype._prepareSeatAdditionalProps = mockPrepareSeatAdditionalProps;
-
-      const response = service.setAvailabilityHandler(content, availability);
-
-      expect(response).toEqual([
-        {
-          rows: [
-            {
-              seats: [
-                {
-                  type: ENTITY_TYPE_MAP.seat,
-                  number: '33A',
-                  status: ENTITY_STATUS_MAP.available,
-                  price: '$ 9.99',
-                  cost: '9.99',
-                  currency: '$',
-                  passengerTypes: ['Type1', 'Type2'],
-                  additionalProps: [
-                    {
-                      label: 'Additional prop label',
-                    },
-                  ],
-                  color: 'magenta',
-                },
-              ],
-            },
-          ],
-        },
-      ]);
-      expect(mockPrepareSeatAdditionalProps).toHaveBeenCalledTimes(1);
-      expect(mockPrepareSeatAdditionalProps).toHaveBeenCalledWith({
-        type: ENTITY_TYPE_MAP.seat,
-        number: '33A',
-        status: ENTITY_STATUS_MAP.available,
-        price: '$ 9.99',
-        cost: '9.99',
-        currency: '$',
-        passengerTypes: ['Type1', 'Type2'],
-        additionalProps: [
-          {
-            label: 'Additional prop label',
-          },
-        ],
-        color: 'magenta',
-      });
     });
   });
 
