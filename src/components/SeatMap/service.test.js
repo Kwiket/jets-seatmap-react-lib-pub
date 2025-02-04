@@ -97,7 +97,7 @@ describe('JetsSeatMapService', () => {
   });
 
   describe('getNextPassenger', () => {
-    it('returns first passenger if no passengers have seat labels', () => {
+    it('should return first passenger if no passengers have seat labels', () => {
       const service = createSeatsMapService();
 
       const firstPassenger = createPassenger(null);
@@ -107,7 +107,7 @@ describe('JetsSeatMapService', () => {
       expect(passenger).toEqual(firstPassenger);
     });
 
-    it('returns second passenger if first passenger has seat labels', () => {
+    it('should return second passenger if first passenger has seat labels', () => {
       const service = createSeatsMapService();
 
       const firstPassenger = createPassenger('33A');
@@ -117,7 +117,7 @@ describe('JetsSeatMapService', () => {
       expect(passenger).toEqual(secondPassenger);
     });
 
-    it('returns undefined if all passengers have seat labels', () => {
+    it('should return undefined if all passengers have seat labels', () => {
       const service = createSeatsMapService();
 
       const firstPassenger = createPassenger('33A');
@@ -127,7 +127,7 @@ describe('JetsSeatMapService', () => {
       expect(passenger).toBeUndefined();
     });
 
-    it('returns undefined if no passengers are given', () => {
+    it('should return undefined if no passengers are given', () => {
       const service = createSeatsMapService();
 
       const passenger = service.getNextPassenger([]);
@@ -135,7 +135,7 @@ describe('JetsSeatMapService', () => {
       expect(passenger).toBeUndefined();
     });
 
-    it('returns undefined if null passengers are given', () => {
+    it('should return undefined if null passengers are given', () => {
       const service = createSeatsMapService();
 
       const passenger = service.getNextPassenger(null);
