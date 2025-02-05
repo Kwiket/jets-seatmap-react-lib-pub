@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { JetsContext, ENTITY_TYPE_MAP } from '../../common';
+import { JetsContext, ENTITY_STATUS_MAP, ENTITY_TYPE_MAP } from '../../common';
 import { SeatIcon } from './ui/SeatIcon';
 import { SeatPriceLabel } from './ui/SeatPriceLabel';
 
@@ -8,8 +8,17 @@ import './JetsSeat.css';
 const PASSENGER_BADGE_SIZE_COEF = 0.8;
 
 export const JetsSeat = ({ data }) => {
-  const { onSeatClick, showTooltip, onTooltipClose, seatLabelJumpTo, resetSeatJumpTo, params, config, colorTheme } =
-    useContext(JetsContext);
+  const {
+    activeTooltip,
+    onSeatClick,
+    showTooltip,
+    onTooltipClose,
+    seatLabelJumpTo,
+    resetSeatJumpTo,
+    params,
+    config,
+    colorTheme,
+  } = useContext(JetsContext);
   const {
     letter,
     type,
@@ -27,7 +36,7 @@ export const JetsSeat = ({ data }) => {
     priceValue,
     currency,
   } = data;
-  const { index, aisle } = ENTITY_TYPE_MAP;
+  const { index, aisle, seat } = ENTITY_TYPE_MAP;
   const componentClassNames = `jets-seat jets-${type} jets-${status} ${!!rotation ? `jets-seat-r-${rotation}` : ''}`;
   const showSeatPriceLabel = price && config?.visibleSeatPriceLabels;
 
@@ -119,6 +128,16 @@ export const JetsSeat = ({ data }) => {
     }
   };
 
+  const handleKeyDown = e => {
+    const code = e.code;
+
+    if (code === 'Enter' || e.keyCode === 13 || code === 'Space' || e.keyCode === 32) {
+      e.preventDefault();
+
+      onSeatClick(data, $component, e);
+    }
+  };
+
   return (
     <div
       ref={$component}
@@ -127,7 +146,11 @@ export const JetsSeat = ({ data }) => {
       onClick={e => onSeatClick(data, $component, e)}
       onMouseEnter={params.tooltipOnHover ? e => showTooltip(data, $component, e) : null}
       onMouseLeave={params.tooltipOnHover ? e => onMouseLeave(data, $component, e) : null}
-      data-testid="jets-seat"
+      onKeyDown={handleKeyDown}
+      tabIndex={type === seat && data.status === ENTITY_STATUS_MAP.available ? 0 : -1}
+      aria-expanded={!!activeTooltip && activeTooltip?.number === data.number}
+      aria-haspopup="dialog"
+      aria-describedby={`seat-tooltip-${data.number}`}
     >
       {seatType && type !== index ? (
         <>

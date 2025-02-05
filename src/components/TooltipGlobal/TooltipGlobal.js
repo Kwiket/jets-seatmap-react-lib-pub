@@ -7,6 +7,7 @@ import {
   DEFAULT_FEATURES_RENDER_LIMIT,
   SCALE_TYPES,
   useEnvironmentInfo,
+  Utils,
 } from '../../common';
 
 import './TooltipGlobal.css';
@@ -179,12 +180,47 @@ export const JetsTooltipGlobal = ({ data }) => {
   const filteredFeatures = (features || []).filter(f => !params.hiddenSeatFeatures.includes(f.key));
   const finalListOfFeatures = [...filteredFeatures, ...(additionalProps || [])].slice(0, DEFAULT_FEATURES_RENDER_LIMIT);
 
+  const handleKeyDown = e => {
+    // exit on Escape
+    if (e.key === 'Escape' || e.keyCode === 27) {
+      onTooltipClose(null, null, e);
+    }
+
+    // focus trap on Tab
+    if (e.key === 'Tab' || e.keyCode === 9) {
+      const focusableEls = Utils.getFocusableElements(elementRef?.current);
+      const firstEl = focusableEls[0];
+      const lastEl = focusableEls[focusableEls.length - 1];
+
+      if (e.shiftKey) {
+        // reverse direction
+        if (document.activeElement === firstEl) {
+          e.preventDefault();
+          lastEl.focus();
+        }
+      } else {
+        if (document.activeElement === lastEl) {
+          e.preventDefault();
+          firstEl.focus();
+        }
+      }
+    }
+  };
+
+  useLayoutEffect(() => {
+    // set focus on first button on open
+    elementRef?.current.querySelectorAll('button:not(:disabled)')[0]?.focus();
+  });
+
   return (
     <div
       style={style}
       className={`jets-tooltip ${params?.isHorizontal ? 'horizontal' : ''}`}
       ref={elementRef}
       onMouseLeave={params.tooltipOnHover ? e => onTooltipClose(null, null, e) : null}
+      onKeyDown={handleKeyDown}
+      id={`seat-tooltip-${number}`}
+      role="dialog"
     >
       <div className="jets-tooltip--arrow-pointer" style={pointerStyle}></div>
       <div className="jets-tooltip--arrow-pointer-horizontal" style={pointerStyleHorizontal}></div>

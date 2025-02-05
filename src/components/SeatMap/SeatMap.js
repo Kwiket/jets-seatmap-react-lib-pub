@@ -400,6 +400,10 @@ export const JetsSeatMap = ({
       const seat = prepareSeatDataForEmit(data);
       onSeatMouseLeave({ seat, element: element.current, event: event.nativeEvent });
     }
+
+    // return focus to triggering element
+    activeTooltip.seatNode.focus();
+
     setActiveTooltip(null);
   };
 
