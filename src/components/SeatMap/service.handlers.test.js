@@ -363,7 +363,7 @@ describe('JetsSeatMapService handlers', () => {
 
     it.each([
       [
-        'should include specified cssClass, label & icon (seat-specific)',
+        'should return the specified cssClass, label & icon in additionalProps (seat-specific)',
         {
           cssClass: 'class',
           label: 'additionalProp',
@@ -372,7 +372,7 @@ describe('JetsSeatMapService handlers', () => {
         },
       ],
       [
-        'should include dot icon if none specified in additional props (seat-specific)',
+        'should return dot icon in additionalProps if none specified in availability additionalProps (seat-specific)',
         {
           cssClass: 'class',
           label: 'additionalProp',
@@ -381,7 +381,7 @@ describe('JetsSeatMapService handlers', () => {
         },
       ],
       [
-        'should include empty icon if invalid icon name specified in additionalProps (seat-specific)',
+        'should return empty icon in additionalProps if invalid icon name specified in availability additionalProps (seat-specific)',
         {
           cssClass: 'class',
           label: 'additionalProp',
@@ -455,7 +455,7 @@ describe('JetsSeatMapService handlers', () => {
 
     it.each([
       [
-        'should include specified cssClass, label & icon (wildcard)',
+        'should return the specified cssClass, label & icon in additionalProps (wildcard)',
         {
           cssClass: 'class',
           label: 'additionalProp',
@@ -464,7 +464,7 @@ describe('JetsSeatMapService handlers', () => {
         },
       ],
       [
-        'should include dot icon if none specified in additional props (wildcard)',
+        'should return dot icon in additionalProps if none specified in availability additionalProps (wildcard)',
         {
           cssClass: 'class',
           label: 'additionalProp',
@@ -473,7 +473,7 @@ describe('JetsSeatMapService handlers', () => {
         },
       ],
       [
-        'should include empty icon if invalid icon name specified in additionalProps (wildcard)',
+        'should return empty icon in additionalProps if invalid icon name specified in availability additionalProps (wildcard)',
         {
           cssClass: 'class',
           label: 'additionalProp',
