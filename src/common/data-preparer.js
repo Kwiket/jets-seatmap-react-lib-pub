@@ -443,7 +443,7 @@ export class JetsContentPreparer {
     return { features: preparedFeatures, measurements: preparedMeasurements };
   };
 
-  _prepareSeatAdditionalProps = seat => {
+  prepareSeatAdditionalProps = seat => {
     const { additionalProps } = seat || {};
 
     const preparedAdditionalProps = additionalProps?.map(item => {

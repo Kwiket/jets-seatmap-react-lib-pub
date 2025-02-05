@@ -113,7 +113,7 @@ export class JetsSeatMapService {
               );
             }
 
-            seat['additionalProps'] = this._preparer._prepareSeatAdditionalProps(seat);
+            seat['additionalProps'] = this._preparer.prepareSeatAdditionalProps(seat);
 
             return seat;
           });
