@@ -9,19 +9,22 @@ import { DECK_ITEM_ALIGN_MAP, DEFAULT_STYLE_POSITION, SCALE_TYPES } from '../../
 import { BULK_TEMPLATE_MAP } from './constants';
 import { JetsContext, useEnvironmentInfo } from '../../common';
 
-const SCALE_BULK_COEFF = 0.7;
+const DEFAULT_SCALE_BULK_COEFF = 0.7;
+const SCALE_TO_BULK_COEFF_MAP = { 26: 1, 27: 1, 28: 1 };
 
 export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, topOffset }) => {
   const { params, config, colorTheme } = useContext(JetsContext);
-  const { bulkBaseColor, bulkCutColor } = colorTheme;
+  const { bulkBaseColor, bulkCutColor, bulkIconColor } = colorTheme;
   const [stickerWrapperHeight, setStickerWrapperHeight] = useState(0);
   const $component = useRef(null);
 
   const { isSafari } = useEnvironmentInfo();
 
   const [style, setStyle] = useState(() => {
-    const updatedWidth = Math.floor(width * SCALE_BULK_COEFF);
-    const updatedHeight = Math.floor(height * SCALE_BULK_COEFF);
+    const scaleBulkCoeff = SCALE_TO_BULK_COEFF_MAP[id] || DEFAULT_SCALE_BULK_COEFF;
+
+    const updatedWidth = Math.floor(width * scaleBulkCoeff);
+    const updatedHeight = Math.floor(height * scaleBulkCoeff);
 
     const leftAlignment = align === DECK_ITEM_ALIGN_MAP.left ? Math.max(xOffset, 0) : DEFAULT_STYLE_POSITION;
     const rightAlignment = align === DECK_ITEM_ALIGN_MAP.right ? Math.max(xOffset, 0) : DEFAULT_STYLE_POSITION;
@@ -30,7 +33,7 @@ export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, to
 
     const centerAlignment =
       align === DECK_ITEM_ALIGN_MAP.center && xOffset
-        ? Math.floor(xOffset * SCALE_BULK_COEFF + centerOfThePlane - halfOfTheBulk)
+        ? Math.floor(xOffset * scaleBulkCoeff + centerOfThePlane - halfOfTheBulk)
         : DEFAULT_STYLE_POSITION;
 
     return {
@@ -69,7 +72,7 @@ export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, to
     const shouldIgnoreAntiScale = isSafari && config?.scaleType === SCALE_TYPES.ZOOM;
     const preparedBulkPartHeight = shouldIgnoreAntiScale ? bulkPartHeight : bulkPartHeight * params?.antiScale;
 
-    const preparedStickerWrapperHeight = Math.round(style.height - preparedBulkPartHeight * SCALE_BULK_COEFF);
+    const preparedStickerWrapperHeight = Math.round(style.height - preparedBulkPartHeight * DEFAULT_SCALE_BULK_COEFF);
 
     setStickerWrapperHeight(preparedStickerWrapperHeight);
   };
@@ -86,6 +89,7 @@ export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, to
   }
   coloredBulkSVG = coloredBulkSVG?.replace('$baseColor', bulkBaseColor);
   coloredBulkSVG = coloredBulkSVG?.replace('$cutColor', bulkCutColor);
+  coloredBulkSVG = coloredBulkSVG?.split('$stickerColor').join(bulkIconColor);
   const sanitizedColoredBulkSVG = DOMPurify.sanitize(coloredBulkSVG);
 
   return (
