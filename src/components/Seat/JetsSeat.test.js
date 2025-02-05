@@ -24,7 +24,7 @@ const setup = ({ data = {}, config = {}, params = {} } = {}) => ({
 
 describe('JetsSeat', () => {
   describe('when any seat type is rendered', () => {
-    it('should add the correct classes when available', async () => {
+    it('should add the correct classes when available', () => {
       setup({ data: seatDataFirst() });
 
       const wrapper = screen.getByTestId('jets-seat');
@@ -33,7 +33,7 @@ describe('JetsSeat', () => {
       expect(wrapper).toHaveClass('jets-seat jets-seat jets-available');
     });
 
-    it('should add the correct classes when unavailable', async () => {
+    it('should add the correct classes when unavailable', () => {
       setup({
         data: seatDataFirst({
           status: 'unavailable',
@@ -46,7 +46,7 @@ describe('JetsSeat', () => {
       expect(wrapper).toHaveClass('jets-seat jets-seat jets-unavailable');
     });
 
-    it('should add the correct classes when selected', async () => {
+    it('should add the correct classes when selected', () => {
       setup({
         data: seatDataFirst({
           status: 'selected',
@@ -59,7 +59,7 @@ describe('JetsSeat', () => {
       expect(wrapper).toHaveClass('jets-seat jets-seat jets-selected');
     });
 
-    it('should display the seat number with correct classes', async () => {
+    it('should display the seat number with correct classes', () => {
       setup({ data: seatDataFirst() });
 
       const seatNumber = screen.getByText(/1A/);
@@ -68,7 +68,7 @@ describe('JetsSeat', () => {
       expect(seatNumber).toHaveClass('jets-seat-number ST-23');
     });
 
-    it('should apply the correct class based on seatIconType', async () => {
+    it('should apply the correct class based on seatIconType', () => {
       setup({
         data: seatDataFirst({
           seatIconType: '99',
@@ -141,7 +141,7 @@ describe('JetsSeat', () => {
       expect(screen.getByText(/1A/)).toBeInTheDocument();
     });
 
-    it('should apply the correct class for ne rotation', async () => {
+    it('should apply the correct class for ne rotation', () => {
       setup({
         data: seatDataFirst({
           rotation: 'ne',
@@ -153,7 +153,7 @@ describe('JetsSeat', () => {
       expect(wrapper).toHaveClass('jets-seat-r-ne');
     });
 
-    it('should apply the correct class for sw rotation', async () => {
+    it('should apply the correct class for sw rotation', () => {
       setup({
         data: seatDataFirst({
           rotation: 'sw',
@@ -178,7 +178,7 @@ describe('JetsSeat', () => {
   });
 
   describe('when a business class seat is rendered', () => {
-    it('should apply the correct class for ne rotation', async () => {
+    it('should apply the correct class for ne rotation', () => {
       setup({
         data: seatDataBusiness({
           rotation: 'ne',
@@ -190,7 +190,7 @@ describe('JetsSeat', () => {
       expect(wrapper).toHaveClass('jets-seat-r-ne');
     });
 
-    it('should apply the correct class for sw rotation', async () => {
+    it('should apply the correct class for sw rotation', () => {
       setup({
         data: seatDataBusiness({
           rotation: 'sw',
