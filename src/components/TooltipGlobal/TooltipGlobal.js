@@ -182,12 +182,12 @@ export const JetsTooltipGlobal = ({ data }) => {
 
   const handleKeyDown = e => {
     // exit on Escape
-    if (e.key === 'Escape' || e.keyCode === 27) {
+    if (e.key === 'Escape') {
       onTooltipClose(null, null, e);
     }
 
     // focus trap on Tab
-    if (e.key === 'Tab' || e.keyCode === 9) {
+    if (e.key === 'Tab') {
       const focusableEls = Utils.getFocusableElements(elementRef?.current);
       const firstEl = focusableEls[0];
       const lastEl = focusableEls[focusableEls.length - 1];

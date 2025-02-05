@@ -131,7 +131,7 @@ export const JetsSeat = ({ data }) => {
   const handleKeyDown = e => {
     const code = e.code;
 
-    if (code === 'Enter' || e.keyCode === 13 || code === 'Space' || e.keyCode === 32) {
+    if (code === 'Enter' || code === 'Space') {
       e.preventDefault();
 
       onSeatClick(data, $component, e);
