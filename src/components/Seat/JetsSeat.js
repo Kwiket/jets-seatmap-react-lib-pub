@@ -125,6 +125,7 @@ export const JetsSeat = ({ data }) => {
       onClick={e => onSeatClick(data, $component, e)}
       onMouseEnter={params.tooltipOnHover ? e => showTooltip(data, $component, e) : null}
       onMouseLeave={params.tooltipOnHover ? e => onMouseLeave(data, $component, e) : null}
+      data-testid="jets-seat"
     >
       {seatType && type !== index ? (
         <>
@@ -140,7 +141,9 @@ export const JetsSeat = ({ data }) => {
           )}
         </>
       ) : (
-        <div style={indexContentStyle}>{getSeatContent()}</div>
+        <div style={indexContentStyle} data-testid="jets-seat-index">
+          {getSeatContent()}
+        </div>
       )}
     </div>
   );

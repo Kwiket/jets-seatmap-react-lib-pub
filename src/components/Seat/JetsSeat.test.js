@@ -27,7 +27,7 @@ describe('JetsSeat', () => {
     it('should add the correct classes when available', async () => {
       setup({ data: seatDataFirst() });
 
-      const wrapper = screen.getByText(/1A/).closest('.jets-seat');
+      const wrapper = screen.getByTestId('jets-seat');
 
       // jets-seat twice due to component naming and seatType data
       expect(wrapper).toHaveClass('jets-seat jets-seat jets-available');
@@ -40,7 +40,7 @@ describe('JetsSeat', () => {
         }),
       });
 
-      const wrapper = screen.getByText(/1A/).closest('.jets-seat');
+      const wrapper = screen.getByTestId('jets-seat');
 
       // jets-seat twice due to component naming and seatType data
       expect(wrapper).toHaveClass('jets-seat jets-seat jets-unavailable');
@@ -53,7 +53,7 @@ describe('JetsSeat', () => {
         }),
       });
 
-      const wrapper = screen.getByText(/1A/).closest('.jets-seat');
+      const wrapper = screen.getByTestId('jets-seat');
 
       // jets-seat twice due to component naming and seatType data
       expect(wrapper).toHaveClass('jets-seat jets-seat jets-selected');
@@ -81,7 +81,7 @@ describe('JetsSeat', () => {
     it('should render with the correct offset', () => {
       setup({ data: seatDataFirst() });
 
-      const wrapper = screen.getByText(/1A/).closest('.jets-seat');
+      const wrapper = screen.getByTestId('jets-seat');
 
       expect(wrapper).toHaveStyle({
         top: '0',
@@ -97,7 +97,7 @@ describe('JetsSeat', () => {
         }),
       });
 
-      const wrapper = screen.getByText(/1A/).closest('.jets-seat');
+      const wrapper = screen.getByTestId('jets-seat');
 
       expect(wrapper).toHaveStyle({
         top: '4378px',
@@ -148,7 +148,7 @@ describe('JetsSeat', () => {
         }),
       });
 
-      const wrapper = screen.getByText(/1A/).closest('.jets-seat');
+      const wrapper = screen.getByTestId('jets-seat');
 
       expect(wrapper).toHaveClass('jets-seat-r-ne');
     });
@@ -160,7 +160,7 @@ describe('JetsSeat', () => {
         }),
       });
 
-      const wrapper = screen.getByText(/1A/).closest('.jets-seat');
+      const wrapper = screen.getByTestId('jets-seat');
 
       expect(wrapper).toHaveClass('jets-seat-r-sw');
     });
@@ -168,7 +168,7 @@ describe('JetsSeat', () => {
     it('should render with the correct dimensions', () => {
       setup({ data: seatDataFirst() });
 
-      const wrapper = screen.getByText(/1A/).closest('.jets-seat');
+      const wrapper = screen.getByTestId('jets-seat');
 
       expect(wrapper).toHaveStyle({
         width: '200px',
@@ -185,7 +185,7 @@ describe('JetsSeat', () => {
         }),
       });
 
-      const wrapper = screen.getByText(/7A/).closest('.jets-seat');
+      const wrapper = screen.getByTestId('jets-seat');
 
       expect(wrapper).toHaveClass('jets-seat-r-ne');
     });
@@ -197,7 +197,7 @@ describe('JetsSeat', () => {
         }),
       });
 
-      const wrapper = screen.getByText(/7A/).closest('.jets-seat');
+      const wrapper = screen.getByTestId('jets-seat');
 
       expect(wrapper).toHaveClass('jets-seat-r-sw');
     });
@@ -205,7 +205,7 @@ describe('JetsSeat', () => {
     it('should render with the correct dimensions', () => {
       setup({ data: seatDataBusiness() });
 
-      const wrapper = screen.getByText(/7A/).closest('.jets-seat');
+      const wrapper = screen.getByTestId('jets-seat');
 
       expect(wrapper).toHaveStyle({
         width: '185px',
@@ -218,7 +218,7 @@ describe('JetsSeat', () => {
     it('should render with the correct dimensions', () => {
       setup({ data: seatDataPremium() });
 
-      const wrapper = screen.getByText(/33A/).closest('.jets-seat');
+      const wrapper = screen.getByTestId('jets-seat');
 
       expect(wrapper).toHaveStyle({
         width: '120px',
@@ -231,7 +231,7 @@ describe('JetsSeat', () => {
     it('should render with the correct dimensions', () => {
       setup({ data: seatDataEconomy() });
 
-      const wrapper = screen.getByText(/53A/).closest('.jets-seat');
+      const wrapper = screen.getByTestId('jets-seat');
 
       expect(wrapper).toHaveStyle({
         width: '100px',
@@ -244,22 +244,22 @@ describe('JetsSeat', () => {
     // using the escape hatch as there is no other content to grab the rendered elements
 
     it('should render an aisle tile', () => {
-      const { container } = setup({ data: seatDataAisle() });
-      const wrapper = container.querySelector('.jets-seat');
+      setup({ data: seatDataAisle() });
+      const wrapper = screen.getByTestId('jets-seat');
 
       expect(wrapper).toBeInTheDocument();
       expect(wrapper).toHaveClass('jets-seat jets-aisle');
     });
 
     it('should apply the correct styles when in horizontal mode', () => {
-      const { container } = setup({
+      setup({
         params: {
           isHorizontal: true,
         },
         data: seatDataAisle(),
       });
 
-      const wrapper = container.querySelector('.jets-seat');
+      const wrapper = screen.getByTestId('jets-seat');
 
       expect(wrapper).toHaveStyle({
         transform: 'rotate(180deg)',
@@ -267,23 +267,23 @@ describe('JetsSeat', () => {
     });
 
     it('should render an empty tile', () => {
-      const { container } = setup({ data: seatDataEmpty() });
-      const wrapper = container.querySelector('.jets-seat');
+      setup({ data: seatDataEmpty() });
+      const wrapper = screen.getByTestId('jets-seat');
 
       expect(wrapper).toBeInTheDocument();
       expect(wrapper).toHaveClass('jets-seat jets-empty');
     });
 
     it('should render an index tile', () => {
-      const { container } = setup({ data: seatDataIndex() });
-      const wrapper = container.querySelector('.jets-seat');
+      setup({ data: seatDataIndex() });
+      const wrapper = screen.getByTestId('jets-seat');
 
       expect(wrapper).toBeInTheDocument();
       expect(wrapper).toHaveClass('jets-seat jets-index');
     });
 
     it('should render supplied theme overrides (index)', () => {
-      const { container } = setup({
+      setup({
         config: {
           colorTheme: {
             seatLabelColor: '#ff0000',
@@ -292,7 +292,7 @@ describe('JetsSeat', () => {
         data: seatDataIndex(),
       });
 
-      const wrapper = container.querySelector('.jets-seat div');
+      const wrapper = screen.getByTestId('jets-seat-index');
 
       // seatLabelColor
       expect(wrapper).toHaveStyle({
