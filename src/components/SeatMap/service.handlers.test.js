@@ -1,6 +1,18 @@
-import { DEFAULT_SEAT_PASSENGER_TYPES, ENTITY_STATUS_MAP, ENTITY_TYPE_MAP } from '../../common';
+import {
+  DEFAULT_SEAT_PASSENGER_TYPES,
+  ENTITY_STATUS_MAP,
+  ENTITY_TYPE_MAP,
+  SEAT_FEATURES_ICONS,
+  Utils,
+} from '../../common';
 import { JetsSeatMapService } from './service';
 import { createPassenger, createRow, createSeatsMapService } from './service.test';
+
+beforeEach(() => {
+  jest.resetAllMocks();
+});
+
+jest.mock('../../common/utils');
 
 describe('JetsSeatMapService handlers', () => {
   describe('selectSeatHandler', () => {
@@ -347,6 +359,191 @@ describe('JetsSeatMapService handlers', () => {
           ],
         },
       ]);
+    });
+
+    it.each([
+      [
+        'should return the specified cssClass, label & icon in additionalProps (seat-specific)',
+        {
+          cssClass: 'class',
+          label: 'additionalProp',
+          iconName: '+',
+          expectedIcon: SEAT_FEATURES_ICONS['+'],
+        },
+      ],
+      [
+        'should return dot icon in additionalProps if none specified in availability additionalProps (seat-specific)',
+        {
+          cssClass: 'class',
+          label: 'additionalProp',
+          iconName: null,
+          expectedIcon: SEAT_FEATURES_ICONS['dot'],
+        },
+      ],
+      [
+        'should return empty icon in additionalProps if invalid icon name specified in availability additionalProps (seat-specific)',
+        {
+          cssClass: 'class',
+          label: 'additionalProp',
+          iconName: 'invalidIcon',
+          expectedIcon: '',
+        },
+      ],
+    ])('%s', (_, { cssClass, label, iconName, expectedIcon }) => {
+      const service = createSeatsMapService();
+
+      const content = [
+        {
+          rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+        },
+      ];
+      const availability = [
+        {
+          label: '33A',
+          currency: '$',
+          price: '9.99',
+          onlyForPassengerType: ['Type1', 'Type2'],
+          color: 'magenta',
+          additionalProps: [
+            {
+              icon: iconName,
+              label: label,
+              cssClass: cssClass,
+            },
+          ],
+        },
+      ];
+
+      const uniqId = '_random';
+      const mockGenerateId = jest.fn().mockReturnValue(uniqId);
+      Utils.generateId = mockGenerateId;
+
+      const response = service.setAvailabilityHandler(content, availability);
+
+      expect(response).toEqual([
+        {
+          rows: [
+            {
+              seats: [
+                {
+                  type: ENTITY_TYPE_MAP.seat,
+                  number: '33A',
+                  status: ENTITY_STATUS_MAP.available,
+                  price: '$ 9.99',
+                  cost: '9.99',
+                  currency: '$',
+                  passengerTypes: ['Type1', 'Type2'],
+                  additionalProps: [
+                    {
+                      cssClass: cssClass,
+                      icon: expectedIcon,
+                      title: null,
+                      uniqId: uniqId,
+                      value: label,
+                    },
+                  ],
+                  color: 'magenta',
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+
+      expect(mockGenerateId).toHaveBeenCalledTimes(1);
+    });
+
+    it.each([
+      [
+        'should return the specified cssClass, label & icon in additionalProps (wildcard)',
+        {
+          cssClass: 'class',
+          label: 'additionalProp',
+          iconName: '+',
+          expectedIcon: SEAT_FEATURES_ICONS['+'],
+        },
+      ],
+      [
+        'should return dot icon in additionalProps if none specified in availability additionalProps (wildcard)',
+        {
+          cssClass: 'class',
+          label: 'additionalProp',
+          iconName: null,
+          expectedIcon: SEAT_FEATURES_ICONS['dot'],
+        },
+      ],
+      [
+        'should return empty icon in additionalProps if invalid icon name specified in availability additionalProps (wildcard)',
+        {
+          cssClass: 'class',
+          label: 'additionalProp',
+          iconName: 'invalidIcon',
+          expectedIcon: '',
+        },
+      ],
+    ])('%s', (_, { cssClass, label, iconName, expectedIcon }) => {
+      const service = createSeatsMapService();
+
+      const content = [
+        {
+          rows: [createRow([{ type: ENTITY_TYPE_MAP.seat, number: '33A' }])],
+        },
+      ];
+      const availability = [
+        {
+          label: '*',
+          currency: '$',
+          price: '9.99',
+          onlyForPassengerType: ['Type1', 'Type2'],
+          color: 'magenta',
+          additionalProps: [
+            {
+              icon: iconName,
+              label: label,
+              cssClass: cssClass,
+            },
+          ],
+        },
+      ];
+
+      const uniqId = '_random';
+      const mockGenerateId = jest.fn().mockReturnValue(uniqId);
+      Utils.generateId = mockGenerateId;
+
+      const response = service.setAvailabilityHandler(content, availability);
+
+      expect(response).toEqual([
+        {
+          rows: [
+            {
+              seats: [
+                {
+                  type: ENTITY_TYPE_MAP.seat,
+                  number: '33A',
+                  status: ENTITY_STATUS_MAP.available,
+                  price: '$ 9.99',
+                  cost: '9.99',
+                  currency: '$',
+                  passenger: null,
+                  passengerTypes: ['Type1', 'Type2'],
+                  additionalProps: [
+                    {
+                      cssClass: cssClass,
+                      icon: expectedIcon,
+                      title: null,
+                      uniqId: uniqId,
+                      value: label,
+                    },
+                  ],
+                  color: 'magenta',
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+
+      expect(mockGenerateId).toHaveBeenCalledTimes(1);
     });
   });
 
