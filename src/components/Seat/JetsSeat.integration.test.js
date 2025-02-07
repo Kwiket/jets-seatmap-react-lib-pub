@@ -18,6 +18,41 @@ const setup = ({ data = {}, config = {}, params = {}, events = {} } = {}) => ({
 
 describe('JetsSeat', () => {
   describe('when any seat type is rendered', () => {
+    it('should not trigger handlers to scroll to the seat by default', () => {
+      const mockScrollIntoView = jest.fn();
+      const resetSeatJumpTo = jest.fn();
+      const showTooltip = jest.fn();
+
+      window.HTMLElement.prototype.scrollIntoView = mockScrollIntoView;
+
+      setup({
+        data: seatDataFirst(),
+        events: { resetSeatJumpTo, showTooltip },
+      });
+
+      expect(mockScrollIntoView).not.toHaveBeenCalled();
+      expect(showTooltip).not.toHaveBeenCalled();
+      expect(resetSeatJumpTo).not.toHaveBeenCalled();
+    });
+
+    it('should not trigger onMouseEnter and onMouseLeave handlers by default', async () => {
+      const showTooltip = jest.fn();
+      const onTooltipClose = jest.fn();
+
+      const { user } = setup({
+        data: seatDataFirst(),
+        events: { onTooltipClose, showTooltip },
+      });
+
+      const wrapper = screen.getByText(/1A/);
+
+      await user.hover(wrapper);
+      expect(showTooltip).not.toHaveBeenCalled();
+
+      await user.unhover(wrapper);
+      expect(onTooltipClose).not.toHaveBeenCalled();
+    });
+
     it('should trigger onClick handlers when clicked', async () => {
       const onSeatClick = jest.fn();
 
@@ -33,7 +68,7 @@ describe('JetsSeat', () => {
   });
 
   describe('when hover mode is turned on', () => {
-    it('should trigger onMouseEnter and onMouseLeave handlers', async () => {
+    it('should trigger onMouseEnter and onMouseLeave handlers when the seat is hovered and unhovered', async () => {
       const showTooltip = jest.fn();
       const onTooltipClose = jest.fn();
 
@@ -43,19 +78,19 @@ describe('JetsSeat', () => {
         params: { tooltipOnHover: true },
       });
 
-      const seatEl = screen.getByText(/1A/);
+      const wrapper = screen.getByText(/1A/);
 
-      await user.hover(seatEl);
+      await user.hover(wrapper);
       expect(showTooltip).toHaveBeenCalledTimes(1);
       expect(showTooltip).toHaveBeenCalledWith(seatDataFirst(), expect.any(Object), expect.any(Object));
 
-      await user.unhover(seatEl);
+      await user.unhover(wrapper);
       expect(onTooltipClose).toHaveBeenCalledTimes(1);
       expect(onTooltipClose).toHaveBeenCalledWith(seatDataFirst(), expect.any(Object), expect.any(Object));
     });
   });
 
-  describe('when a seat should be jumped to', () => {
+  describe('when a seat label is specified to jump to', () => {
     it('should trigger handlers to scroll to the seat and show the tooltip', () => {
       const mockScrollIntoView = jest.fn();
       const resetSeatJumpTo = jest.fn();
