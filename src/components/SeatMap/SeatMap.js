@@ -437,6 +437,7 @@ export const JetsSeatMap = ({
           fontFamily: colorTheme.fontFamily,
           background: colorTheme.seatMapBackgroundColor,
         }}
+        data-testid="jets-seat-map"
       >
         {activeTooltip && <JetsTooltipGlobal data={activeTooltip} />}
         {shouldShowBuiltInDeckSelector && <JetsDeckSelector direction={!!activeDeck}></JetsDeckSelector>}

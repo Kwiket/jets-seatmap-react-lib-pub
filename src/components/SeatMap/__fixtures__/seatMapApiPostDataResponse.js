@@ -7,40 +7,50 @@ const seatFeatures = (overrides = {}) => ({
   ...overrides,
 });
 
-const seat = (overrides = {}) => ({
+export const seat = (overrides = {}) => ({
+  uniqId: '_28fwzc8',
+  seatType: 'E-1',
   color: '#5AB54C',
   features: seatFeatures(),
   leftOffset: 0,
   letter: 'A',
+  number: '1A',
   topOffset: 0,
+  size: {
+    width: 100,
+    height: 100,
+  },
   ...overrides,
 });
 
-const row = (overrides = {}) => ({
+export const row = (overrides = {}) => ({
+  uniqId: '_b95h9f8',
   classCode: 'P',
   number: 33,
   seats: [seat()],
-  seatScheme: 'SS-EEEE-SS',
+  seatScheme: 'S-',
   seatType: 14,
   topOffset: 0,
   name: 'Premium Economy',
   ...overrides,
 });
 
-const wingsInfo = (overrides = {}) => ({
+export const wingsInfo = (overrides = {}) => ({
   deckLevel: 1,
   topOffset: 2600,
   height: 3700,
   ...overrides,
 });
 
-const exit = (overrides = {}) => ({
+export const exit = (overrides = {}) => ({
+  uniqId: '_m34hj5m',
   type: 'right',
   topOffset: -314,
   ...overrides,
 });
 
-const bulk = (overrides = {}) => ({
+export const bulk = (overrides = {}) => ({
+  uniqId: '_ff3p1e4',
   id: '16',
   type: 'left',
   iconType: '',
@@ -53,6 +63,7 @@ const bulk = (overrides = {}) => ({
 });
 
 const deck = (overrides = {}) => ({
+  uniqId: '_tplskd2',
   bulks: [bulk()],
   level: 1,
   rows: [row()],
