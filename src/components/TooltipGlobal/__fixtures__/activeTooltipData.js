@@ -56,9 +56,11 @@ export const activeTooltipData = (overrides = {}) => ({
   ],
   number: '33B',
   originalColor: '#5AB54C',
+  price: '$19',
   rowName: 'Premium Economy',
   scaleType: 'zoom',
   seatIconType: 14,
+  seatLabel: '33B',
   seatmapElement: {
     getBoundingClientRect: () => ({
       top: 0,
