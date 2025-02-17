@@ -297,8 +297,8 @@ export class JetsContentPreparer {
     // resize aisles if maxRowWidth is set
     if (maxRowWidth) {
       const [width] = SEAT_SIZE_BY_TYPE[seatType];
-      const seatsCount = seatScheme.match(/S|E/g).length;
-      const aislesCount = seatScheme.match(/-/g).length;
+      const seatsCount = seatScheme.match(/S|E/g)?.length;
+      const aislesCount = seatScheme.match(/-/g)?.length || 0;
       const seatsWidth = seatsCount * width;
       const widthDiff = maxRowWidth - seatsWidth;
       const targetAisleWidth = widthDiff / aislesCount;
