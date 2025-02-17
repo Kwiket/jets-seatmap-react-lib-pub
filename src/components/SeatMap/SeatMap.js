@@ -119,6 +119,8 @@ export const JetsSeatMap = ({
   const shouldShowOnlyOneDeck = params?.singleDeckMode && content.length > 1;
   const shouldShowBuiltInDeckSelector = params?.builtInDeckSelector && shouldShowOnlyOneDeck;
 
+  const ResolvedTooltip = componentOverrides?.JetsTooltip ?? JetsTooltipGlobal;
+
   useEffect(() => {
     let isMounted = true;
 
@@ -438,7 +440,7 @@ export const JetsSeatMap = ({
           background: colorTheme.seatMapBackgroundColor,
         }}
       >
-        {activeTooltip && <JetsTooltipGlobal data={activeTooltip} />}
+        {activeTooltip && <ResolvedTooltip data={activeTooltip} />}
         {shouldShowBuiltInDeckSelector && <JetsDeckSelector direction={!!activeDeck}></JetsDeckSelector>}
         <div style={configuration.scaleType === SCALE_TYPES.SCALE ? scaleWrapStyle : zoomWrapStyle}>
           <JetsPlaneBody
