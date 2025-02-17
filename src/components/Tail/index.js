@@ -65,6 +65,7 @@ export const JetsTail = ({ isFull }) => {
       dangerouslySetInnerHTML={{
         __html: content,
       }}
+      data-testid="jets-tail"
     ></div>
   );
 };

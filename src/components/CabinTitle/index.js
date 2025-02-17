@@ -43,7 +43,7 @@ export const JetsCabinTitle = ({ top, height, lang, localeKey }) => {
   };
 
   return (
-    <div className="jets-cabin-title-container" style={style} ref={elementRef}>
+    <div className="jets-cabin-title-container" style={style} ref={elementRef} data-testid="jets-cabin-title">
       <div className="jets-cabin-title-hl-left" style={lHighlightStyle}>
         <div className="jets-cabin-title-label-left" style={lLabelsStyle}>
           {title}

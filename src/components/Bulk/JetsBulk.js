@@ -93,7 +93,7 @@ export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, to
   const sanitizedColoredBulkSVG = DOMPurify.sanitize(coloredBulkSVG);
 
   return (
-    <div className="bulk" style={style} ref={$component}>
+    <div className="bulk" style={style} ref={$component} data-testid="jets-bulk">
       <div
         className="bulk__icon"
         dangerouslySetInnerHTML={{

@@ -1,4 +1,4 @@
-const seatFeatures = (overrides = {}) => ({
+export const seatFeatures = (overrides = {}) => ({
   extraLegroom: '+',
   noFloorStorage: '-',
   nearLavatory: '-',
@@ -8,18 +8,11 @@ const seatFeatures = (overrides = {}) => ({
 });
 
 export const seat = (overrides = {}) => ({
-  uniqId: '_28fwzc8',
-  seatType: 'E-1',
   color: '#5AB54C',
   features: seatFeatures(),
   leftOffset: 0,
   letter: 'A',
-  number: '1A',
   topOffset: 0,
-  size: {
-    width: 100,
-    height: 100,
-  },
   ...overrides,
 });
 
@@ -32,6 +25,7 @@ export const row = (overrides = {}) => ({
   seatType: 14,
   topOffset: 0,
   name: 'Premium Economy',
+  isFirstInCabin: true,
   ...overrides,
 });
 
@@ -62,7 +56,7 @@ export const bulk = (overrides = {}) => ({
   ...overrides,
 });
 
-const deck = (overrides = {}) => ({
+export const deck = (overrides = {}) => ({
   uniqId: '_tplskd2',
   bulks: [bulk()],
   level: 1,

@@ -75,6 +75,7 @@ export const JetsNose = ({ isFull }) => {
       dangerouslySetInnerHTML={{
         __html: content,
       }}
+      data-testid="jets-nose"
     ></div>
   );
 };

@@ -24,7 +24,7 @@ export const JetsDeckExit = ({ type, topOffset }) => {
   });
 
   return (
-    <div className="deck-exit" style={style}>
+    <div className="deck-exit" style={style} data-testid="jets-exit">
       {isBuiltInIcons ? (
         <span
           className="deck-exit__image"

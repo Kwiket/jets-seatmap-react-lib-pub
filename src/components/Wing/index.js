@@ -8,7 +8,7 @@ export const JetsWing = ({ wingsInfo }) => {
 
   return (
     <div className="jets-wings-alignment-wrapper" style={style.wrapper}>
-      <div className={`jets-wings`} style={style.container}>
+      <div className={`jets-wings`} style={style.container} data-testid="jets-wings">
         {isWingLeadingVisible && (
           <>
             <div className={'wing-leading left'} style={style.leading?.left}></div>
