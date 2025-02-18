@@ -658,7 +658,7 @@ describe('JetsSeatMapService getSeatMapData', () => {
       expect(mockSetAvailabilityHandler).toHaveBeenCalledWith(expectedResponse.content, availability);
     });
 
-    it('should call setAvailabilityHandler with content if availability present', async () => {
+    it('should call setPassengersHandler with content if passengers present', async () => {
       const planeFeatures = {
         seatDetails: {
           decks: [createSeatDetailsDeck()],
