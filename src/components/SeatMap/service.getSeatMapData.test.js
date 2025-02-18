@@ -30,7 +30,7 @@ import {
   DEFAULT_TOP_OFFSET,
   MOCK_UNIQUE_ID,
   SEAT_FEATURES_WITH_LOCALES,
-} from './service.getSeatMapData.helpers.test';
+} from './service.getSeatMapData.helpers.testUtils';
 
 beforeEach(() => {
   jest.resetAllMocks();

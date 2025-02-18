@@ -225,5 +225,3 @@ export const CUSTOM_ROW_TOP_OFFSET = 19;
 export const CUSTOM_BULK_TOP_OFFSET = 29;
 export const CUSTOM_EXIT_TOP_OFFSET = 39;
 export const CUSTOM_LARGE_TOP_OFFSET = 109;
-
-test.skip('skip', () => {});

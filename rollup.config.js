@@ -35,6 +35,7 @@ export default [
         exclude: [
           'node_modules/**',
           '**/*.test.js',
+          '**/*.testUtils.js',
           'jest.config.js',
           'jest-config/**',
           'scripts/**',
