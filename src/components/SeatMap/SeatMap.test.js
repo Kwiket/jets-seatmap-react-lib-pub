@@ -2,7 +2,7 @@ import { render, screen, waitFor, act } from '@testing-library/react';
 import { JetsSeatMap } from './SeatMap';
 import { CONFIG_MOCK } from '../Demo/constants';
 import { flightDetails } from './__fixtures__/seatMapApiGetPlaneFeatures';
-import { finalDeck, finalSeat, passenger } from './__fixtures__/SeatMapService';
+import { availability, finalDeck, finalSeat, passenger } from './__fixtures__/SeatMapService';
 import { paramsData } from '../TooltipGlobal/__fixtures__';
 import { bulk, exit, row, seat } from './__fixtures__/seatMapApiPostDataResponse';
 import { JetsSeatMapService } from './service';
@@ -49,11 +49,11 @@ describe('JetsSeatMap', () => {
   describe('when the seat map is rendered', () => {
     it('should initialize the seat map if all valid data was passed', async () => {
       const flight = flightDetails();
-      const availability = [{ data: 'some availability' }];
-      const passengers = [{ data: 'some passenger data' }];
+      const seatAvailability = [availability()];
+      const passengers = [passenger()];
       const params = paramsData();
 
-      const availabilityData = [{ data: 'some availabilityData' }];
+      const availabilityData = seatAvailability;
       const seatMapData = {
         params,
         content: [],
@@ -68,7 +68,7 @@ describe('JetsSeatMap', () => {
 
       setup({
         flight,
-        availability: availability,
+        availability: seatAvailability,
         passengers: passengers,
         currentDeckIndex: 0,
         onSeatMapInited: mockOnSeatMapInited,
@@ -78,7 +78,7 @@ describe('JetsSeatMap', () => {
         expect(screen.queryByTestId('jets-seat-map')).toBeInTheDocument();
         expect(mockGetSeatMapData).toHaveBeenCalledWith(
           flight,
-          availability,
+          seatAvailability,
           passengers,
           expect.any(Object) // not testing it was called with certain config
         );
@@ -346,7 +346,11 @@ describe('JetsSeatMap', () => {
 
       setup({
         flight: flightDetails(),
-        availability: null,
+        availability: [
+          availability({
+            label: '11A',
+          }),
+        ],
         passengers: null,
         currentDeckIndex: 0, // lower deck
       });
@@ -355,7 +359,9 @@ describe('JetsSeatMap', () => {
         expect(screen.queryByText(/11A/)).toBeInTheDocument();
         expect(screen.queryByText(/11B/)).toBeInTheDocument();
         const seatWrappers = screen.getAllByTestId('jets-seat');
+        expect(seatWrappers[0]).toHaveTextContent(/11A/);
         expect(seatWrappers[0]).toHaveClass('jets-seat jets-available');
+        expect(seatWrappers[1]).toHaveTextContent(/11B/);
         expect(seatWrappers[1]).toHaveClass('jets-seat jets-unavailable');
       });
     });
@@ -411,7 +417,9 @@ describe('JetsSeatMap', () => {
 
       await waitFor(() => {
         const seatWrappers = screen.getAllByTestId('jets-seat');
+        expect(seatWrappers[0]).toHaveTextContent(/11A/);
         expect(seatWrappers[0]).toHaveTextContent(/JD/);
+        expect(seatWrappers[1]).toHaveTextContent(/11B/);
         expect(seatWrappers[1]).not.toHaveTextContent(/JD/);
       });
     });
@@ -466,14 +474,14 @@ describe('JetsSeatMap', () => {
         expect(lowerDeckSeat).toBeInTheDocument();
         const upperDeckSeat = screen.queryByText(/22B/);
         expect(upperDeckSeat).not.toBeInTheDocument();
-        const deckTitle = screen.getByTestId('jets-cabin-title');
-        expect(deckTitle).toBeInTheDocument();
-        expect(deckTitle).toHaveTextContent('Economy');
+        const cabinTitle = screen.getByTestId('jets-cabin-title');
+        expect(cabinTitle).toBeInTheDocument();
+        expect(cabinTitle).toHaveTextContent('Economy');
       });
     });
 
     it('should render seat for a double-deck configuration, upper deck chosen', async () => {
-      const seatMapDataForOneDeck = {
+      const seatMapDataForTwoDecks = {
         params: paramsData(),
         content: [
           finalDeck({
@@ -507,7 +515,7 @@ describe('JetsSeatMap', () => {
         bulks: [[]],
       };
 
-      const mockGetSeatMapData = jest.fn().mockResolvedValue(seatMapDataForOneDeck);
+      const mockGetSeatMapData = jest.fn().mockResolvedValue(seatMapDataForTwoDecks);
       JetsSeatMapService.prototype.getSeatMapData = mockGetSeatMapData;
 
       setup({
@@ -522,9 +530,9 @@ describe('JetsSeatMap', () => {
         expect(lowerDeckSeat).not.toBeInTheDocument();
         const upperDeckSeat = screen.getByText(/22B/);
         expect(upperDeckSeat).toBeInTheDocument();
-        const deckTitle = screen.getByTestId('jets-cabin-title');
-        expect(deckTitle).toBeInTheDocument();
-        expect(deckTitle).toHaveTextContent('First');
+        const cabinTitle = screen.getByTestId('jets-cabin-title');
+        expect(cabinTitle).toBeInTheDocument();
+        expect(cabinTitle).toHaveTextContent('First');
       });
     });
 
@@ -542,7 +550,7 @@ describe('JetsSeatMap', () => {
         flight: flightDetails(),
         availability: null,
         passengers: null,
-        currentDeckIndex: 0, // lower deck
+        currentDeckIndex: 0,
       });
 
       await waitFor(() => {
