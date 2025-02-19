@@ -671,6 +671,9 @@ the `<JetsNotInit />` (loading state before seat map is initialized), or the `<J
 
 Note: If you override `<JetsSeat />` or `<JetsTooltip />`, you will need to build the corresponding component and ensure that all interaction events are handled correctly.
 
+To ensure consistent behaviour of the `<JetsTooltip />`, the following methods must be used: `onTooltipClose`, `onSeatSelect`, `onSeatUnselect`.
+In case your tooltip is used only to show seat info `onSeatSelect` and `onSeatUnselect` can be ignored.
+
 ```jsx
 const componentOverrides = {
   JetsSeat: MyCustomJetsSeat,
