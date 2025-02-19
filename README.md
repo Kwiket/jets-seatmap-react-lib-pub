@@ -667,13 +667,17 @@ interface IExistingSeatsLabelsInfo {
 ## Advanced: Overriding Components
 
 An optional `componentOverrides` object can be passed into `<JetsSeatMap />` to override either the `<JetsSeat />` component or 
-the `<JetsNotInit />` (loading state before seat map is initialized).
+the `<JetsNotInit />` (loading state before seat map is initialized), or the `<JetsTooltip />` component.
 
-Note: If you override `<JetsSeat />` you will need to build the seat component and ensure that interaction events are handled correctly.
+Note: If you override `<JetsSeat />` or `<JetsTooltip />`, you will need to build the corresponding component and ensure that all interaction events are handled correctly.
+
+To ensure consistent behaviour of the `<JetsTooltip />`, the following methods must be used: `onTooltipClose`, `onSeatSelect`, `onSeatUnselect`.
+In case your tooltip is used only to show seat info `onSeatSelect` and `onSeatUnselect` can be ignored.
 
 ```jsx
 const componentOverrides = {
   JetsSeat: MyCustomJetsSeat,
+  JetsTooltip: MyCustomJetsTooltip,
   JetsNotInit: MyCustomLoader,
 };
 
