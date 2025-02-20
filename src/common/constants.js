@@ -214,6 +214,7 @@ export const THEME_NOT_AVAILABLE_SEATS_COLOR = 'dimgrey';
 export const THEME_BULK_BASE_COLOR = 'rgb(186, 199, 213)';
 export const THEME_BULK_CUT_COLOR = 'rgb(148, 168, 190)';
 export const THEME_BULK_ICON_COLOR = 'rgb(70, 81, 94)';
+export const THEME_FLOOR_BULK_ICON_COLOR = 'rgb(206, 216, 237)';
 
 export const THEME_FUSELAGE_FILL_COLOR = 'lightgray';
 export const THEME_FUSELAGE_OUTLINE_WIDTH = 12;

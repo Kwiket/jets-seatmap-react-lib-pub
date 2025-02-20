@@ -14,7 +14,7 @@ const SCALE_TO_BULK_COEFF_MAP = { 26: 1, 27: 1, 28: 1 };
 
 export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, topOffset }) => {
   const { params, config, colorTheme } = useContext(JetsContext);
-  const { bulkBaseColor, bulkCutColor, bulkIconColor } = colorTheme;
+  const { bulkBaseColor, bulkCutColor, bulkIconColor, bulkFloorIconColor } = colorTheme;
   const [stickerWrapperHeight, setStickerWrapperHeight] = useState(0);
   const $component = useRef(null);
 
@@ -89,7 +89,7 @@ export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, to
   }
   coloredBulkSVG = coloredBulkSVG?.replace('$baseColor', bulkBaseColor);
   coloredBulkSVG = coloredBulkSVG?.replace('$cutColor', bulkCutColor);
-  coloredBulkSVG = coloredBulkSVG?.split('$stickerColor').join(bulkIconColor);
+  coloredBulkSVG = coloredBulkSVG?.split('$stickerColor').join(bulkFloorIconColor || bulkIconColor);
   const sanitizedColoredBulkSVG = DOMPurify.sanitize(coloredBulkSVG);
 
   return (

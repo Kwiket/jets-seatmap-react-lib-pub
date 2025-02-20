@@ -413,6 +413,7 @@ Full config looks like this:
     bulkBaseColor : 'dimgrey',              // colors for bulks 
     bulkCutColor : 'lightgrey',
     bulkIconColor: 'darkslategray',
+    bulkFloorIconColor: 'lightgrey',
 
     defaultPassengerBadgeColor: 'darkred',
     fontFamily: 'Montserrat, sans-serif',
