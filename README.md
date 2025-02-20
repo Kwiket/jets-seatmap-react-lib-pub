@@ -391,6 +391,10 @@ Full config looks like this:
   apiAppId: 'PROVIDED_APP_ID',
   apiKey: 'PROVIDED_API_KEY',
   apiAuthorizationScheme: 'Bearer',            // authorization scheme to be sent in API client requests 'Authorization' header (default: 'Bearer', e.g. 'Authorization: Bearer {apiKey}')
+  apiMetadata: {                            // any proprietary data to be passed in the POST request to /flight/features/plane/seatmap (e.g. for custom monitoring)
+    'PROPRIETARY_KEY': 'PROPRIETARY_VALUE',
+    ...
+  }
   
   hiddenSeatFeatures: ['limitedRecline', 'getColdByExit', 'doNotRecline', 'wingInWindow', 'nearLavatory', 'nearGalley'], // to exclude some seat features from the built-in tooltip, all seat features are still available within the `onTooltipRequested` event
 
