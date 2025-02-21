@@ -50,7 +50,7 @@ export class JetsSeatMapApiService extends JetsApiService {
       flight,
       lang: language,
       units,
-      apiMetadata: this._apiMetadata ?? undefined, // If there's no metadata, omit the property entirely
+      metadata: this._apiMetadata ?? undefined, // If there's no metadata, omit the property entirely
     };
 
     const path = 'flight/features/plane/seatmap';

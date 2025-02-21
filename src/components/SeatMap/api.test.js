@@ -79,7 +79,7 @@ describe('JetsSeatMapApiService', () => {
         flight: flightFixture,
         lang: 'EN',
         units: 'metric',
-        apiMetadata,
+        metadata: apiMetadata,
       });
     });
   });
