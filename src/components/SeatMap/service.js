@@ -185,7 +185,7 @@ export class JetsSeatMapService {
   };
 
   getNextPassenger = passengers => {
-    return passengers?.find(passenger => !passenger.seat?.seatLabel);
+    return passengers?.find(passenger => !passenger.seat?.seatLabel && !passenger.readOnly);
   };
 
   addAbbrToPassengers = passengers => {
