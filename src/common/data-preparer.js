@@ -27,6 +27,8 @@ export const SEAT_FEATURES_ICONS = {
   audioVideo:
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 21"><path d="M6.51,8.59h3.57L8.44,11.13H4.88ZM18.45,2.31,17.43,0,15,1.08l2.53,1.65Zm-3.16,1.4L12.77,2.07,9.51,3.52,12,5.17Zm-4.42,7.41h3.57l1.64-2.53H12.51Zm-1.05-5L7.29,4.51,4,6,6.56,7.6ZM18.5,8.59l-1.64,2.53h2.67V8.59Zm-16,11.24A1.16,1.16,0,0,0,3.63,21H18.37a1.16,1.16,0,0,0,1.16-1.16V13.2H2.47Zm.17-13V11.2L4.51,8.41Z" fill="#4f6f8f"></path></svg>',
   dot: '<svg width="20" height="20" viewBox="-1 -1 22 22" xmlns="http://www.w3.org/2000/svg"><path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0Z" fill="#4f6f8f"></path></svg>',
+  bluetooth:
+    '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7L12 2V22L17 17L7 7" stroke-width="1" stroke-linecap="round" fill="#4f6f8f" stroke-linejoin="round"/></svg>',
 };
 
 export const SEAT_MEASUREMENTS_ICONS = {
@@ -82,7 +84,7 @@ export class JetsContentPreparer {
     };
   };
 
-  _mergeCabinFeatures(cabin, entertainment, power, wifi) {
+  _mergeCabinFeatures(cabin, entertainment, power, wifi, bluetooth) {
     const merged = { ...cabin };
 
     if (entertainment?.exists && entertainment?.summary) {
@@ -95,6 +97,10 @@ export class JetsContentPreparer {
 
     if (wifi?.exists && wifi?.summary) {
       merged['wifi'] = wifi.summary;
+    }
+
+    if (bluetooth?.exists && bluetooth?.summary) {
+      merged['bluetooth'] = bluetooth.summary;
     }
 
     return merged;
@@ -165,8 +171,8 @@ export class JetsContentPreparer {
     const firstElementOffset = this._getFirstElementDeckOffset(deck);
 
     for (const rowGroup of rowGroups) {
-      const { cabin, entertainment, power, wifi } = apiData[rowGroup.classCode] || {};
-      const cabinFeatures = this._mergeCabinFeatures(cabin, entertainment, power, wifi);
+      const { cabin, entertainment, power, wifi, bluetooth } = apiData[rowGroup.classCode] || {};
+      const cabinFeatures = this._mergeCabinFeatures(cabin, entertainment, power, wifi, bluetooth);
 
       const rows = this._prepareRows(rowGroup.rows, cabinFeatures, config.lang, firstElementOffset, targetDeckWidth);
 
@@ -400,14 +406,22 @@ export class JetsContentPreparer {
   };
 
   _prepareSeatFeatures = (seat, cabin, lang) => {
-    const { pitch: cabinSeatPitch, width: cabinSeatWidth, recline: cabinSeatRecline, audioVideo, power, wifi } = cabin;
+    const {
+      pitch: cabinSeatPitch,
+      width: cabinSeatWidth,
+      recline: cabinSeatRecline,
+      audioVideo,
+      power,
+      wifi,
+      bluetooth,
+    } = cabin;
     const { pitch: seatPitch, width: seatWidth, recline: seatRecline } = seat || {};
 
     const seatFeaturesKeys = Object.keys(seat.features || {});
     const noReclineKeys = ['doNotRecline', 'limitedRecline', 'prereclinedSeat'];
     const isSeatWithoutRecline = seatFeaturesKeys.some(key => noReclineKeys.includes(key));
 
-    const features = { audioVideo, power, wifi, ...seat.features };
+    const features = { audioVideo, power, wifi, bluetooth, ...seat.features };
     const measurements = {
       pitch: seatPitch || cabinSeatPitch,
       width: seatWidth || cabinSeatWidth,
