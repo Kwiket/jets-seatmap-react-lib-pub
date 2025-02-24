@@ -36,7 +36,8 @@
 }
 
 .jets-seat-r-nw > .jets-seat-passenger,
-.jets-seat-r-nw > .jets-seat-number {
+.jets-seat-r-nw > .jets-seat-number,
+.jets-seat-r-nw > .jets-seat-price {
   transform: rotate(20deg);
 }
 
@@ -45,7 +46,8 @@
 }
 
 .jets-seat-r-nw45 > .jets-seat-passenger,
-.jets-seat-r-nw45 > .jets-seat-number {
+.jets-seat-r-nw45 > .jets-seat-number,
+.jets-seat-r-nw45 > .jets-seat-price {
   transform: rotate(45deg);
 }
 
@@ -54,7 +56,8 @@
 }
 
 .jets-seat-r-ne > .jets-seat-passenger,
-.jets-seat-r-ne > .jets-seat-number {
+.jets-seat-r-ne > .jets-seat-number,
+.jets-seat-r-ne > .jets-seat-price {
   transform: rotate(-20deg);
 }
 
@@ -63,7 +66,8 @@
 }
 
 .jets-seat-r-ne45 > .jets-seat-passenger,
-.jets-seat-r-ne45 > .jets-seat-number {
+.jets-seat-r-ne45 > .jets-seat-number,
+.jets-seat-r-ne45 > .jets-seat-price {
   transform: rotate(-45deg);
 }
 
@@ -72,7 +76,8 @@
 }
 
 .jets-seat-r-s > .jets-seat-passenger,
-.jets-seat-r-s > .jets-seat-number {
+.jets-seat-r-s > .jets-seat-number,
+.jets-seat-r-s > .jets-seat-price {
   transform: rotate(-180deg);
 }
 
@@ -81,7 +86,8 @@
 }
 
 .jets-seat-r-se > .jets-seat-passenger,
-.jets-seat-r-se > .jets-seat-number {
+.jets-seat-r-se > .jets-seat-number,
+.jets-seat-r-se > .jets-seat-price {
   transform: rotate(-160deg);
 }
 
@@ -90,7 +96,8 @@
 }
 
 .jets-seat-r-sw > .jets-seat-passenger,
-.jets-seat-r-sw > .jets-seat-number {
+.jets-seat-r-sw > .jets-seat-number,
+.jets-seat-r-sw > .jets-seat-price {
   transform: rotate(160deg);
 }
 
