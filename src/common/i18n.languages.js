@@ -379,7 +379,7 @@ export const LOCALE_CS = {
   audioVideo: 'Audio & Video na vyžádání',
   babyBassinet: 'Dětská postýlka k dispozici',
   bassinet: 'Dětská postýlka k dispozici',
-  bluetooth: 'Pair your headset',
+  bluetooth: 'Spárování náhlavní soupravy',
   cancel: 'Zrušit',
   CHD: 'děti',
   deck: 'Paluba',
