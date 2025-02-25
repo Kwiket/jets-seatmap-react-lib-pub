@@ -79,4 +79,34 @@ describe('JetsSeatMap', () => {
       expect(screen.getByText(/Premium Economy/)).toBeInTheDocument();
     });
   });
+
+  it('should trigger the appropriate events when a seat is selected', async () => {
+    // TODO: Rename when you know what the events are
+    const flight = flightDetails();
+
+    const singleCabinResponseFixture = [
+      {
+        id: '1111',
+        cabin: cabin(),
+        entertainment: entertainment(),
+        power: power(),
+        wifi: wifi(),
+        seatDetails: seatDetails(),
+      },
+    ];
+    mockPostData.mockImplementation(() => singleCabinResponseFixture);
+
+    setup({
+      flight: flight,
+      availability: null,
+      passengers: null,
+      currentDeckIndex: 0,
+    });
+
+    await waitFor(() => {
+      fireEvent.click(screen.getByText(/33A/));
+    });
+
+    //
+  });
 });
