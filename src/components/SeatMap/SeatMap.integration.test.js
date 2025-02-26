@@ -71,7 +71,7 @@ describe('JetsSeatMap', () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByText(/Premium Economy/)).toBeInTheDocument();
+      expect(screen.getByText(/Premium Economy 33A/)).toBeInTheDocument();
       expect(screen.getByText(/Select/)).toBeInTheDocument();
     });
   });
@@ -150,7 +150,7 @@ describe('JetsSeatMap', () => {
     ]);
   });
 
-  it('should trigger onSeatUnselected when a passenger unselects an seat they just selected', async () => {
+  it('should trigger onSeatUnselected when a passenger unselects a seat they just selected', async () => {
     const flight = flightDetails();
 
     const singleCabinResponseFixture = [
