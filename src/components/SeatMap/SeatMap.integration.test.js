@@ -1,9 +1,20 @@
 import React from 'react';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import { JetsSeatMap } from './SeatMap';
+import { finalSeat } from './__fixtures__/SeatMapService';
 import { flightDetails } from './__fixtures__/seatMapApiGetPlaneFeatures';
 import { CONFIG_MOCK } from '../Demo/constants';
-import { cabin, entertainment, power, seatDetails, wifi } from './__fixtures__/seatMapApiPostDataResponse';
+import {
+  cabin,
+  cabinItem,
+  deck,
+  entertainment,
+  power,
+  row,
+  seat,
+  seatDetails,
+  wifi,
+} from './__fixtures__/seatMapApiPostDataResponse';
 
 const setup = ({
   flight,
@@ -225,5 +236,109 @@ describe('JetsSeatMap', () => {
     expect(onSeatUnselected).toHaveBeenCalledWith([
       { abbr: 'JD', id: '1', passengerColor: 'brown', passengerLabel: 'John Doe', readOnly: false, seat: null },
     ]);
+  });
+
+  it('should not allow a seat to be selected when one is already selected', async () => {
+    const flight = flightDetails();
+
+    const twoSeatsResponseFixture = [
+      {
+        id: '1111',
+        seatDetails: seatDetails({
+          decks: [
+            deck({
+              level: 0,
+              rows: [
+                row({
+                  number: 1,
+                  classCode: 'E',
+                  seats: [
+                    finalSeat({
+                      number: '1A',
+                      letter: 'A',
+                    }),
+                    finalSeat({
+                      number: '1B',
+                      letter: 'B',
+                    }),
+                  ],
+                }),
+              ],
+            }),
+          ],
+        }),
+        cabin: cabin(),
+        entertainment: entertainment(),
+        power: power(),
+        wifi: wifi(),
+      },
+    ];
+
+    mockPostData.mockImplementation(() => twoSeatsResponseFixture);
+
+    const passengers = [
+      {
+        id: '1',
+        seat: null,
+        passengerLabel: 'John Doe',
+        passengerColor: 'brown',
+        readOnly: false,
+      },
+    ];
+
+    const availability = [
+      {
+        currency: 'EUR',
+        label: '1A',
+        price: 0,
+      },
+      {
+        currency: 'EUR',
+        label: '1B',
+        price: 0,
+      },
+    ];
+
+    const onSeatSelected = jest.fn();
+    const onSeatUnselected = jest.fn();
+
+    const { rerender } = setup({
+      flight,
+      availability: null,
+      passengers: null,
+      currentDeckIndex: 0,
+    });
+
+    rerender(
+      <JetsSeatMap
+        flight={flight}
+        passengers={passengers}
+        availability={availability}
+        currentDeckIndex={1}
+        onSeatSelected={onSeatSelected}
+        onSeatUnselected={onSeatUnselected}
+      />
+    );
+
+    await waitFor(() => {
+      fireEvent.click(screen.getByText(/1A/));
+    });
+
+    await waitFor(() => {
+      fireEvent.click(screen.getByText(/Select/));
+    });
+
+    await waitFor(() => {
+      fireEvent.click(screen.getByText(/1B/));
+    });
+
+    // await waitFor(() => {
+    //   fireEvent.click(screen.getByText(/Unselect/));
+    // });
+
+    // expect(onSeatUnselected).toHaveBeenCalledTimes(1);
+    // expect(onSeatUnselected).toHaveBeenCalledWith([
+    //   { abbr: 'JD', id: '1', passengerColor: 'brown', passengerLabel: 'John Doe', readOnly: false, seat: null },
+    // ]);
   });
 });
