@@ -27,6 +27,8 @@ export const SEAT_FEATURES_ICONS = {
   audioVideo:
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 21"><path d="M6.51,8.59h3.57L8.44,11.13H4.88ZM18.45,2.31,17.43,0,15,1.08l2.53,1.65Zm-3.16,1.4L12.77,2.07,9.51,3.52,12,5.17Zm-4.42,7.41h3.57l1.64-2.53H12.51Zm-1.05-5L7.29,4.51,4,6,6.56,7.6ZM18.5,8.59l-1.64,2.53h2.67V8.59Zm-16,11.24A1.16,1.16,0,0,0,3.63,21H18.37a1.16,1.16,0,0,0,1.16-1.16V13.2H2.47Zm.17-13V11.2L4.51,8.41Z" fill="#4f6f8f"></path></svg>',
   dot: '<svg width="20" height="20" viewBox="-1 -1 22 22" xmlns="http://www.w3.org/2000/svg"><path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0Z" fill="#4f6f8f"></path></svg>',
+  bluetooth:
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148.000000 148.000000"> <g transform="translate(0, 148.000000) scale(0.1,-0.1)" fill="#4f6f8f" stroke="none"> <path d="M667 1459 l-27 -20 -2 -264 -3 -264 -117 115 c-96 94 -122 114 -147 114 -31 0 -71 -38 -71 -68 0 -9 71 -87 157 -174 l157 -158 -157 -158 c-86 -87 -157 -165 -157 -174 0 -30 40 -68 72 -68 25 0 50 20 149 117 l119 116 0 -266 0 -266 26 -20 c15 -12 35 -21 45 -21 21 0 431 338 455 375 9 14 13 32 9 45 -4 11 -85 86 -181 166 -96 80 -174 150 -174 154 0 4 78 74 174 154 96 80 177 155 181 166 4 13 0 31 -9 45 -24 37 -434 375 -455 375 -10 0 -30 -9 -44 -21z m229 -289 c56 -47 103 -88 103 -92 1 -7 -204 -181 -219 -186 -6 -2 -10 68 -10 183 0 132 3 186 11 183 6 -2 58 -42 115 -88z m-1 -673 c58 -49 105 -92 104 -95 0 -8 -203 -175 -218 -180 -8 -3 -11 51 -11 183 0 115 4 185 10 183 5 -1 57 -43 115 -91z"/> </g> </svg>',
 };
 
 export const SEAT_MEASUREMENTS_ICONS = {
@@ -82,7 +84,7 @@ export class JetsContentPreparer {
     };
   };
 
-  _mergeCabinFeatures(cabin, entertainment, power, wifi) {
+  _mergeCabinFeatures(cabin, entertainment, power, wifi, bluetooth) {
     const merged = { ...cabin };
 
     if (entertainment?.exists && entertainment?.summary) {
@@ -95,6 +97,10 @@ export class JetsContentPreparer {
 
     if (wifi?.exists && wifi?.summary) {
       merged['wifi'] = wifi.summary;
+    }
+
+    if (bluetooth?.exists && bluetooth?.summary) {
+      merged['bluetooth'] = bluetooth.summary;
     }
 
     return merged;
@@ -165,8 +171,8 @@ export class JetsContentPreparer {
     const firstElementOffset = this._getFirstElementDeckOffset(deck);
 
     for (const rowGroup of rowGroups) {
-      const { cabin, entertainment, power, wifi } = apiData[rowGroup.classCode] || {};
-      const cabinFeatures = this._mergeCabinFeatures(cabin, entertainment, power, wifi);
+      const { cabin, entertainment, power, wifi, bluetooth } = apiData[rowGroup.classCode] || {};
+      const cabinFeatures = this._mergeCabinFeatures(cabin, entertainment, power, wifi, bluetooth);
 
       const rows = this._prepareRows(rowGroup.rows, cabinFeatures, config.lang, firstElementOffset, targetDeckWidth);
 
@@ -400,14 +406,22 @@ export class JetsContentPreparer {
   };
 
   _prepareSeatFeatures = (seat, cabin, lang) => {
-    const { pitch: cabinSeatPitch, width: cabinSeatWidth, recline: cabinSeatRecline, audioVideo, power, wifi } = cabin;
+    const {
+      pitch: cabinSeatPitch,
+      width: cabinSeatWidth,
+      recline: cabinSeatRecline,
+      audioVideo,
+      power,
+      wifi,
+      bluetooth,
+    } = cabin;
     const { pitch: seatPitch, width: seatWidth, recline: seatRecline } = seat || {};
 
     const seatFeaturesKeys = Object.keys(seat.features || {});
     const noReclineKeys = ['doNotRecline', 'limitedRecline', 'prereclinedSeat'];
     const isSeatWithoutRecline = seatFeaturesKeys.some(key => noReclineKeys.includes(key));
 
-    const features = { audioVideo, power, wifi, ...seat.features };
+    const features = { audioVideo, power, wifi, bluetooth, ...seat.features };
     const measurements = {
       pitch: seatPitch || cabinSeatPitch,
       width: seatWidth || cabinSeatWidth,
