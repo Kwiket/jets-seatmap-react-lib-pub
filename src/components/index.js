@@ -3,7 +3,6 @@ export * from './Button';
 export * from './Deck';
 export * from './DeckExit';
 export * from './DeckSelector';
-export * from './Demo';
 export * from './NoData';
 export * from './Nose';
 export * from './NotInit';
