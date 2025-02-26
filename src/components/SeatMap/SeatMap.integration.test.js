@@ -44,11 +44,6 @@ jest.mock('./api', () => {
 });
 
 describe('JetsSeatMap', () => {
-  it('it renders the SeatMap component', () => {
-    const { container } = render(<JetsSeatMap />);
-    expect(container).toBeInTheDocument();
-  });
-
   it('should show the tooltip with the correct data when a seat is clicked', async () => {
     const flight = flightDetails();
 
@@ -77,11 +72,11 @@ describe('JetsSeatMap', () => {
 
     await waitFor(() => {
       expect(screen.getByText(/Premium Economy/)).toBeInTheDocument();
+      expect(screen.getByText(/Select/)).toBeInTheDocument();
     });
   });
 
-  it('should trigger the appropriate events when a seat is selected', async () => {
-    // TODO: Rename when you know what the events are
+  it('should trigger onSeatSelected when a passenger selects an available seat', async () => {
     const flight = flightDetails();
 
     const singleCabinResponseFixture = [
@@ -94,19 +89,64 @@ describe('JetsSeatMap', () => {
         seatDetails: seatDetails(),
       },
     ];
+
     mockPostData.mockImplementation(() => singleCabinResponseFixture);
 
-    setup({
-      flight: flight,
+    const passengers = [
+      {
+        id: '1',
+        seat: null,
+        passengerLabel: 'John Doe',
+        passengerColor: 'brown',
+        readOnly: false,
+      },
+    ];
+
+    const availability = [
+      {
+        currency: 'EUR',
+        label: '33A',
+        price: 0,
+      },
+    ];
+
+    const onSeatSelected = jest.fn();
+
+    const { rerender } = setup({
+      flight,
       availability: null,
       passengers: null,
       currentDeckIndex: 0,
     });
 
+    rerender(
+      <JetsSeatMap
+        flight={flight}
+        passengers={passengers}
+        availability={availability}
+        currentDeckIndex={1}
+        onSeatSelected={onSeatSelected}
+      />
+    );
+
     await waitFor(() => {
       fireEvent.click(screen.getByText(/33A/));
     });
 
-    //
+    await waitFor(() => {
+      fireEvent.click(screen.getByText(/Select/));
+    });
+
+    expect(onSeatSelected).toHaveBeenCalledTimes(1);
+    expect(onSeatSelected).toHaveBeenCalledWith([
+      {
+        abbr: 'JD',
+        id: '1',
+        passengerColor: 'brown',
+        passengerLabel: 'John Doe',
+        readOnly: false,
+        seat: { price: undefined, seatLabel: '33A' },
+      },
+    ]);
   });
 });
