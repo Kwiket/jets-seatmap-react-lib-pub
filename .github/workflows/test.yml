@@ -7,6 +7,9 @@ on:
     branches:
       - version-3
 
+# Declare default permissions as read only.
+permissions: read-all
+
 jobs:
   tests:
     runs-on: ubuntu-latest
