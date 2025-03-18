@@ -24,7 +24,7 @@
   line-height: 1;
 }
 
-.jets-seat-price .cost {
+.jets-seat-price .priceValue {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
