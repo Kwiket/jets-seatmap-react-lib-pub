@@ -421,7 +421,8 @@ export class JetsContentPreparer {
     const noReclineKeys = ['doNotRecline', 'limitedRecline', 'prereclinedSeat'];
     const isSeatWithoutRecline = seatFeaturesKeys.some(key => noReclineKeys.includes(key));
 
-    const features = { audioVideo, power, wifi, bluetooth, ...seat.features };
+    const features = this._removeDuplicatedFeatures({ audioVideo, power, wifi, bluetooth, ...seat.features });
+
     const measurements = {
       pitch: seatPitch || cabinSeatPitch,
       width: seatWidth || cabinSeatWidth,
@@ -455,6 +456,29 @@ export class JetsContentPreparer {
     });
 
     return { features: preparedFeatures, measurements: preparedMeasurements };
+  };
+
+  _removeDuplicatedFeatures = features => {
+    const overridesMap = {
+      audio_video_ondemand: 'audioVideo',
+      usbPlug: 'power',
+      usbPowerPlug: 'power',
+      powerPlug: 'power',
+    };
+
+    const result = { ...features };
+
+    for (const dupKey in overridesMap) {
+      const canonicalKey = overridesMap[dupKey];
+      if (dupKey in result) {
+        if (result[canonicalKey] == null) {
+          result[canonicalKey] = result[dupKey];
+        }
+        delete result[dupKey];
+      }
+    }
+
+    return result;
   };
 
   prepareSeatAdditionalProps = seat => {
