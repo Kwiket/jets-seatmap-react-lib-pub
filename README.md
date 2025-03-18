@@ -423,6 +423,8 @@ The `full config` looks like this:
     bulkFloorIconColor: 'lightgrey',
 
     defaultPassengerBadgeColor: 'darkred',
+    defaultPassengerBadgeLabelColor: '#fff', 
+    defaultPassengerBadgeBorderColor: '#fff',
     fontFamily: 'Montserrat, sans-serif',
 
     tooltipBackgroundColor: 'rgb(255,255,255)',
