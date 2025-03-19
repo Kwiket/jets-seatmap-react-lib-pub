@@ -32,14 +32,26 @@ const API_SUPPORTED_LANGUAGES = [
 ];
 
 export class JetsSeatMapApiService extends JetsApiService {
-  constructor(appId, key, url, localStorage = null, apiAuthorizationScheme = DEFAULT_AUTHORIZATION_SCHEME) {
-    super(appId, key, url, localStorage, apiAuthorizationScheme);
+  constructor(
+    appId,
+    key,
+    url,
+    localStorage = null,
+    apiAuthorizationScheme = DEFAULT_AUTHORIZATION_SCHEME,
+    apiMetadata = null
+  ) {
+    super(appId, key, url, localStorage, apiAuthorizationScheme, apiMetadata);
   }
 
   getPlaneFeatures = async (flight, lang = DEFAULT_LANG, units = DEFAULT_UNITS) => {
     const language = API_SUPPORTED_LANGUAGES.includes(lang) ? lang : DEFAULT_LANG;
 
-    const data = { flight, lang: language, units };
+    const data = {
+      flight,
+      lang: language,
+      units,
+      metadata: this._apiMetadata ?? undefined, // If there's no metadata, omit the property entirely
+    };
 
     const path = 'flight/features/plane/seatmap';
     const availabilityDataKey = 'availabilityData';

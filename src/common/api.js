@@ -4,12 +4,20 @@ const JWT_TOKEN = 'jetsJwtToken';
 const TOKEN_EXPIRATION_BUFFER_IN_MS = 300000;
 
 export class JetsApiService {
-  constructor(appId, key, url, localStorage, apiAuthorizationScheme = DEFAULT_AUTHORIZATION_SCHEME) {
+  constructor(
+    appId,
+    key,
+    url,
+    localStorage,
+    apiAuthorizationScheme = DEFAULT_AUTHORIZATION_SCHEME,
+    apiMetadata = null
+  ) {
     this._appId = appId;
     this._apiKey = key;
     this._apiUrl = url;
     this._localStorage = localStorage;
     this._apiAuthorizationScheme = apiAuthorizationScheme;
+    this._apiMetadata = apiMetadata;
   }
 
   getData = async (url, options = {}) => {

@@ -1,6 +1,8 @@
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Kwiket/jets-seatmap-react-lib-pub/badge)](https://scorecard.dev/viewer/?uri=github.com/Kwiket/jets-seatmap-react-lib-pub)
+
 # Seatmap integration and communication
 
-This document describes how to integrate JetsSeatMap lib (further "seatmap") into any React.js application. Also,
+This document describes how to integrate the `JetsSeatMap` lib (further "seatmap") into any React.js application. Also,
 communication between the seatmap and a parent layer that embeds seatmap (further just "parent layer").
 
 &nbsp;
@@ -19,7 +21,7 @@ Need to `clone` this repository and install dependencies:
 
 Here you have 2 options:
 
-1. rename _.env-sample_ to _.env_. Also you need to get the `APP_ID` and `PRIVATE_KEY` from Quicket GmbH support team
+1. rename _.env-sample_ to _.env_. Also, you need to get the `APP_ID` and `PRIVATE_KEY` from the `Quicket GmbH` support team
    and put them into fields in _.env_ file.
 2. or directly change `config-mock.js`:
 
@@ -35,15 +37,15 @@ Run storybook:
 
 `npm run dev`
 
-By default you will see a loading progress bar - just input your flight parameters and press `INIT SEAT MAP`.
+By default, you will see a loading progress bar - just input your flight parameters and press `INIT SEAT MAP`.
 
-Now you can customize the source code of the library, first of all apply you CSS styles.
+Now, you can customize the source code of the library and apply your CSS styles.
 
 Before use, you have to build lib:
 
 `npm run build-lib`
 
-After that, you can publish library to new or already exisiting github repository, or publish it to your NPM account.
+After that, you can publish the library to a new or already existing github repository, or publish it to your NPM account.
 
 To connect the library to the project, you need to run:
 
@@ -57,7 +59,7 @@ or include this string into your package.json dependencies if you use the github
 
 ## Integration
 
-This section explains how to integrate seatmap into React.js application.
+This section explains how to integrate seatmap into a React.js application.
 
 Create your [config](#config) and embed seatmap into your component page via `<JetsSeatMap>` tag:
 
@@ -100,7 +102,7 @@ Create your [config](#config) and embed seatmap into your component page via `<J
     - [ onAvailabilityApplied](#-onavailabilityapplied)
   - [Advanced: Overriding Components](#advanced-overriding-components)
 
-The `flight` prop is requred.
+The `flight` prop is required.
 
 &nbsp;
 
@@ -144,11 +146,12 @@ Example of data seatmap receives:
 
 Cabin class vslues: `E` - economy, `P` - economy premium, `B` - business, `F` - first, `A` - whole plane
 
-The **departure** and **arrival** fields must consist the codes of airports. The **departureDate** field must be in
-`yyyy-mm-dd` format.
+The **departure** and **arrival** fields' values must be valid IATA airport codes. The **departureDate** field must be a valid ISO date in the `yyyy-mm-dd` format.
 
-`startRow` - first of available row numbers and its letters, colon as divider, upper case, e.g. `10` or `10:ABCDEF`. If startRow parameter is set `endRow` also needs to be set, otherwise, it will be `ignored`.
-`endRow` - last of available row numbers and its letters, colon as divider, upper case, e.g. `32` or `32:ACDF`. If endRow parameter is set `startRow` also needs to be set, otherwise, it will be `ignored`.
+`startRow` - first of available row numbers and its letters, colon as divider, upper case, e.g. `10` or `10:ABCDEF`. If the `startRow` parameter is set, `endRow` also needs to be set, otherwise, it will be `ignored`.
+`endRow` - last of available row numbers and its letters, colon as divider, upper case, e.g. `32` or `32:ACDF`. If the `endRow` parameter is set, `startRow` also needs to be set, otherwise, it will be `ignored`.
+
+Also, it is possible to define flexible start/end rows params: `"startRow":"1:?FL","endRow":"18:?AL"` - here `?FL` means row's letters includes `FL`, `AFL` will match, `ACFJL` not
 
 &nbsp;
 
@@ -225,14 +228,14 @@ Example of data seatmap receives:
 ];
 ```
 
-You can pass seat with `label` **"\*"**. This label work like **all** selector for seats. In example below all seats
+You can pass seat with `label` **"\*"**. This label works like **all** selector for seats. In the example below, all seats
 with `classCode` equals **"E"** will be enabled with `price` of _50_. However next seat configuration **"12F"** will
 override `price` and set it to _75_. You can pass seat with `price` **0**. Also you can pass seat without `price` field
 and it would be the same as pass it with **0** value.
 
 If `onlyForPassengerType` field is empty or doesn't exist, then it has no restrictions value by default.
 
-Coloring seats tip: `color` field has next set of priorities: individual > wildcard > internal. If `wildcard` color is present - it's highly recommended to add `color` property to all individual seats for visual distinction.
+Coloring seats tip: `color` field has the next set of priorities: individual > wildcard > internal. If `wildcard` color is present - it's highly recommended to add `color` property to all individual seats for visual distinction.
 
 All `additionalProps` can have property `cssClass`that will be assigned to the container, icon and label. For example, if `cssClass: 'cssClass: 'clear-air-style''` in the HTML you will have 3 additional CSS classes:
   *  `clear-air-style` - class of seat feature container
@@ -247,8 +250,8 @@ Max count of visible seat features/props = `12`.
 
 ### <a name="passengers"></a> Passengers
 
-The passengers property is array of objects and describes the passengers for seating according to the cabin map . You
-can pass it asynchronously or not pass at all, it is `optional`. If you don't pass the passengers list - seat selection
+The `passengers` property is an array of objects and describes the passengers for seating according to the cabin map. You
+can pass it asynchronously or not pass it at all, it is `optional`. If you don't pass the passengers list - seat selection
 will not work.
 
 Interface, describing data types:
@@ -285,7 +288,7 @@ Example of data seatmap receives:
         "seat": {
           "price": 0,
           "seatLabel": "12F"
-        }
+        },
         "passengerLabel": "Alex",
         "passengerColor": "brown",
         "readOnly": true
@@ -317,18 +320,18 @@ Or even like this:
 
 `seat`, `passengerType`, `passengerLabel` and `passengerColor` are not required fields.
 
-If you will not pass `passengerType`, `passengerLabel` and `passengerColor` fields the values will be set by default.
+If you do not pass `passengerType`, `passengerLabel` and `passengerColor` fields, the values will be set by default.
 
-Please notice, that seatmap identifies how many passengers to allocate by a length of `passengers` array. Therefore, for
+Please note that the seatmap identifies how many passengers to allocate by the length of the `passengers` array. Therefore, for
 example, to allocate 2 passengers without any predefined seat or its type, `passengers` array shall contain 2 items.
 
-For passengers with property `readOnly: true` not possible to unselect assigned seat.
+For passengers with property `readOnly: true`, it is not possible to unselect assigned seat.
 
 &nbsp;
 
 ### <a name="config"></a> Config
 
-The config property describes basic configuration of seat map.
+The config property describes the basic configuration of the seat map.
 
 Interface, describing data types:
 
@@ -348,7 +351,7 @@ type TUnit = 'metric' | 'imperials';
 type TLang = 'CN' | 'DE' | 'EN' | 'ES' | 'PL' | 'RU' | 'AR' | 'CS' | 'FR' | 'PT' | 'UK' | 'IT' | 'JA' | 'KO' | 'TR';
 ```
 
-Minimal config could look like this:
+Minimal `config` could look like this:
 
 ```javascript
 width: 400;
@@ -359,7 +362,7 @@ apiAppId: 'PROVIDED_APP_ID',
 apiKey: 'PROVIDED_API_KEY',
 ```
 
-Full config looks like this:
+The `full config` looks like this:
 
 ```javascript
 
@@ -391,6 +394,10 @@ Full config looks like this:
   apiAppId: 'PROVIDED_APP_ID',
   apiKey: 'PROVIDED_API_KEY',
   apiAuthorizationScheme: 'Bearer',            // authorization scheme to be sent in API client requests 'Authorization' header (default: 'Bearer', e.g. 'Authorization: Bearer {apiKey}')
+  apiMetadata: {                            // any proprietary data to be passed in the POST request to /flight/features/plane/seatmap (e.g. for custom monitoring)
+    'PROPRIETARY_KEY': 'PROPRIETARY_VALUE',
+    ...
+  }
   
   hiddenSeatFeatures: ['limitedRecline', 'getColdByExit', 'doNotRecline', 'wingInWindow', 'nearLavatory', 'nearGalley'], // to exclude some seat features from the built-in tooltip, all seat features are still available within the `onTooltipRequested` event
 
@@ -413,8 +420,11 @@ Full config looks like this:
     bulkBaseColor : 'dimgrey',              // colors for bulks 
     bulkCutColor : 'lightgrey',
     bulkIconColor: 'darkslategray',
+    bulkFloorIconColor: 'lightgrey',
 
     defaultPassengerBadgeColor: 'darkred',
+    defaultPassengerBadgeLabelColor: '#fff', 
+    defaultPassengerBadgeBorderColor: '#fff',
     fontFamily: 'Montserrat, sans-serif',
 
     tooltipBackgroundColor: 'rgb(255,255,255)',
@@ -452,7 +462,7 @@ Full config looks like this:
 
 ```
 
-To override exits need to set `both` fields in the config - `exitIconUrlLeft` && `exitIconUrlRight` + define CSS style for exits:
+To override exits, you need to set `both` fields in the config - `exitIconUrlLeft` && `exitIconUrlRight` + define CSS style for exits:
 
 ```css
 .deck-exit__image {
@@ -462,15 +472,15 @@ To override exits need to set `both` fields in the config - `exitIconUrlLeft` &&
 }
 ```
 
-If you will not pass `optional config params` then the properties will be set with default values.
+If you will not pass `optional config params,` then the properties will be set with default values.
 
 &nbsp;
 
 ### <a name="seatjumpto"></a> seatJumpTo
 
-This property allows you to open tooltip for any seat by its label. Once the prop is provided the view will be moved to the particular seat and the tooltip will be automatically opened. This will also automatically trigger the [ onTooltipRequested](#-ontooltiprequested) method. 
+This property allows you to open a tooltip for any seat by its label. Once the prop is provided, the view will be moved to the particular seat and the tooltip will be automatically opened. This will also automatically trigger the [ onTooltipRequested](#-ontooltiprequested) method. 
 
-The property is `optional`. You can pass it asynchronously or not pass at all.
+The property is `optional`. You can pass it asynchronously or not pass it at all.
 
 ```typescript
 interface ISeatJumpToData {

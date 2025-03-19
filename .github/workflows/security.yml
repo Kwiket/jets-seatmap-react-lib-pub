@@ -7,6 +7,8 @@ on:
     branches:
       - version-3
 
+permissions: read-all
+
 jobs:
   semgrep:
     runs-on: ubuntu-latest

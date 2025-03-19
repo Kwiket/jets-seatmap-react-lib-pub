@@ -214,6 +214,7 @@ export const THEME_NOT_AVAILABLE_SEATS_COLOR = 'dimgrey';
 export const THEME_BULK_BASE_COLOR = 'rgb(186, 199, 213)';
 export const THEME_BULK_CUT_COLOR = 'rgb(148, 168, 190)';
 export const THEME_BULK_ICON_COLOR = 'rgb(70, 81, 94)';
+export const THEME_FLOOR_BULK_ICON_COLOR = 'rgb(206, 216, 237)';
 
 export const THEME_FUSELAGE_FILL_COLOR = 'lightgray';
 export const THEME_FUSELAGE_OUTLINE_WIDTH = 12;
@@ -222,6 +223,8 @@ export const THEME_FUSELAGE_WINDOWS_COLOR = 'darkgrey';
 export const THEME_FUSELAGE_WINGS_COLOR = 'darkgrey';
 
 export const THEME_DEFAULT_PASSENGER_BADGE_COLOR = '#1157ce';
+export const THEME_DEFAULT_PASSENGER_BADGE_LABEL_COLOR = 'rgb(255,255,255)';
+export const THEME_DEFAULT_PASSENGER_BADGE_BORDER_COLOR = 'none';
 export const THEME_DEFAULT_FONT_FAMILY = 'Montserrat, sans-serif';
 
 export const THEME_TOOLTIP_BACKGROUND_COLOR = 'rgb(255,255,255)';

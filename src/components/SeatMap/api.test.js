@@ -53,6 +53,35 @@ describe('JetsSeatMapApiService', () => {
         units: 'metric',
       });
     });
+
+    it('should call postData with any custom metadata if provided in configuration', async () => {
+      const flightFixture = flightDetails();
+      const apiMetadata = {
+        dummy_key: 'dummy_value',
+      };
+
+      const api = new JetsSeatMapApiService('appId', 'key', 'url', null, 'JWT', apiMetadata);
+      const singleCabinResponseFixture = [
+        {
+          id: '1111',
+          cabin: cabin(),
+          entertainment: entertainment(),
+          power: power(),
+          wifi: wifi(),
+          seatDetails: seatDetails(),
+        },
+      ];
+      api.postData.mockImplementation(() => singleCabinResponseFixture);
+
+      await api.getPlaneFeatures(flightFixture, 'EN', 'metric');
+
+      expect(api.postData).toHaveBeenCalledWith('flight/features/plane/seatmap', {
+        flight: flightFixture,
+        lang: 'EN',
+        units: 'metric',
+        metadata: apiMetadata,
+      });
+    });
   });
 
   describe('when a specific cabin class (F, B, P or E) is provided', () => {
