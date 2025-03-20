@@ -40,6 +40,8 @@ export const JetsSeat = ({ data }) => {
       // left: size.width / 2 - size.width * (PASSENGER_BADGE_SIZE_COEF / 2),
       // top: size.height / 2 - size.width * (PASSENGER_BADGE_SIZE_COEF / 2),
       backgroundColor: colorTheme.defaultPassengerBadgeColor,
+      color: colorTheme.defaultPassengerBadgeLabelColor,
+      border: `1px solid ${colorTheme.defaultPassengerBadgeBorderColor}`,
       transform: params?.antiRotation,
     };
   });
