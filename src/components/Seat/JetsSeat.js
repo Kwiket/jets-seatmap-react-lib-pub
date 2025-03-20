@@ -24,7 +24,7 @@ export const JetsSeat = ({ data }) => {
     leftOffset,
     number,
     price,
-    cost,
+    priceValue,
     currency,
   } = data;
   const { index, aisle } = ENTITY_TYPE_MAP;
@@ -40,6 +40,8 @@ export const JetsSeat = ({ data }) => {
       // left: size.width / 2 - size.width * (PASSENGER_BADGE_SIZE_COEF / 2),
       // top: size.height / 2 - size.width * (PASSENGER_BADGE_SIZE_COEF / 2),
       backgroundColor: colorTheme.defaultPassengerBadgeColor,
+      color: colorTheme.defaultPassengerBadgeLabelColor,
+      border: `1px solid ${colorTheme.defaultPassengerBadgeBorderColor}`,
       transform: params?.antiRotation,
     };
   });
@@ -129,7 +131,7 @@ export const JetsSeat = ({ data }) => {
     >
       {seatType && type !== index ? (
         <>
-          {showSeatPriceLabel && <SeatPriceLabel cost={cost} currency={currency} maxWidth={size.width} />}
+          {showSeatPriceLabel && <SeatPriceLabel priceValue={priceValue} currency={currency} maxWidth={size.width} />}
           <div className={`jets-seat-number ST-${seatIconType}`}>{`${number}`}</div>
           <SeatIcon seatType={seatType} style={svgStyle} />
           {passenger && (

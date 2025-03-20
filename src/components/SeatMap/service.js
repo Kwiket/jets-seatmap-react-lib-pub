@@ -40,6 +40,8 @@ export class JetsSeatMapService {
         const data = {
           price: seat['price'],
           seatLabel: seat['number'],
+          currency: seat['currency'],
+          priceValue: seat['priceValue'],
         };
         passenger['seat'] = data;
       }
@@ -80,12 +82,12 @@ export class JetsSeatMapService {
             });
             const currencySign =
               this._configuration.currencySign || availableSeatData?.currency || wildCardSeatData?.currency;
-            const seatCost = availableSeatData?.price || wildCardSeatData?.price || 0;
+            const priceValue = availableSeatData?.price || wildCardSeatData?.price || 0;
 
             if (availableSeatData) {
               seat['status'] = seat['status'] === selected ? selected : available;
-              seat['price'] = `${currencySign} ${seatCost}` || '';
-              seat['cost'] = seatCost;
+              seat['price'] = `${currencySign} ${priceValue}` || '';
+              seat['priceValue'] = priceValue;
               seat['currency'] = currencySign;
               seat['passengerTypes'] =
                 availableSeatData.onlyForPassengerType ||
@@ -101,8 +103,8 @@ export class JetsSeatMapService {
               );
             } else if (seat.type === ENTITY_TYPE_MAP.seat) {
               seat['status'] = wildCardSeatData ? available : unavailable;
-              seat['price'] = wildCardSeatData ? `${currencySign} ${seatCost}` : null;
-              seat['cost'] = seatCost;
+              seat['price'] = wildCardSeatData ? `${currencySign} ${priceValue}` : null;
+              seat['priceValue'] = priceValue;
               seat['currency'] = currencySign;
               seat['passenger'] = null;
               seat['passengerTypes'] = wildCardSeatData?.onlyForPassengerType || DEFAULT_SEAT_PASSENGER_TYPES;

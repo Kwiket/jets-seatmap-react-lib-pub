@@ -306,7 +306,7 @@ describe('JetsSeat', () => {
       setup({
         config: { visibleSeatPriceLabels: true },
         data: seatDataFirst({
-          cost: 100,
+          priceValue: 100,
           currency: '$',
           price: 100,
         }),
@@ -320,7 +320,7 @@ describe('JetsSeat', () => {
       setup({
         config: { visibleSeatPriceLabels: true },
         data: seatDataFirst({
-          cost: 100,
+          priceValue: 100,
           price: 100,
         }),
       });
@@ -333,7 +333,7 @@ describe('JetsSeat', () => {
       setup({
         config: { visibleSeatPriceLabels: true },
         data: seatDataFirst({
-          cost: 100,
+          priceValue: 100,
           currency: '$',
         }),
       });
