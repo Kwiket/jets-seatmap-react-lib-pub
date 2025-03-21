@@ -110,8 +110,7 @@ describe('JetsSeatMap', () => {
       },
     ];
 
-    // const onSeatSelected = jest.fn();
-    const onSeatSelected = jest.fn(data => console.log('onSeatSelected called with:', data));
+    const onSeatSelected = jest.fn();
 
     const { rerender } = setup({
       flight,
