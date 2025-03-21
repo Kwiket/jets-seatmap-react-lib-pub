@@ -328,11 +328,11 @@ describe('JetsSeatMapService handlers', () => {
       const availability = [
         {
           label: '33A',
-          currencySign: '$',
+          currency: '$',
         },
         {
           label: '*',
-          currencySign: '£',
+          currency: '£',
         },
       ];
 

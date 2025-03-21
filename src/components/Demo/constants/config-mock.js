@@ -25,7 +25,6 @@ const CONFIG_MOCK = {
   scaleType: 'zoom',
 
   visibleSeatPriceLabels: false,
-  currencySign: '$',
 
   colorTheme: {
     seatMapBackgroundColor: '#fff',
