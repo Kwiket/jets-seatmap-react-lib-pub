@@ -148,7 +148,7 @@ describe('JetsSeatMap', () => {
         passengerColor: 'brown',
         passengerLabel: 'John Doe',
         readOnly: false,
-        seat: { price: 'EUR 5', seatLabel: '33A' },
+        seat: { price: 'EUR 5', currency: 'EUR', priceValue: 5, seatLabel: '33A' },
       },
     ]);
   });
