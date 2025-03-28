@@ -167,7 +167,7 @@ export const LOCALE_EN = {
   audioVideo: 'Audio & Video On Demand',
   babyBassinet: 'Baby bassinet available',
   bassinet: 'Baby bassinet available',
-  bluetooth: 'pair your headset',
+  bluetooth: 'Pair your headset',
   cancel: 'Cancel',
   CHD: 'children',
   deck: 'Deck',
@@ -418,7 +418,7 @@ export const LOCALE_CS = {
   wifi_enabled: 'WiFi povoleno',
   wifiEnabled: 'WiFi povoleno',
   wingInWindow: 'Křídlo z okenního výhledu',
-  narrower: 'užší sedadlo',
+  narrower: 'Užší sedadlo',
   exitRow: 'Výstupní řada',
 };
 
