@@ -106,7 +106,7 @@ describe('JetsSeatMap', () => {
       {
         currency: 'EUR',
         label: '33A',
-        price: 0,
+        price: 5,
       },
     ];
 
@@ -114,20 +114,23 @@ describe('JetsSeatMap', () => {
 
     const { rerender } = setup({
       flight,
-      availability: null,
-      passengers: null,
-      currentDeckIndex: 0,
+      availability,
+      passengers,
+      currentDeckIndex: 1,
+      onSeatSelected,
     });
 
-    rerender(
-      <JetsSeatMap
-        flight={flight}
-        passengers={passengers}
-        availability={availability}
-        currentDeckIndex={1}
-        onSeatSelected={onSeatSelected}
-      />
-    );
+    await waitFor(() => {
+      rerender(
+        <JetsSeatMap
+          flight={flight}
+          passengers={passengers}
+          availability={availability}
+          currentDeckIndex={1}
+          onSeatSelected={onSeatSelected}
+        />
+      );
+    });
 
     await waitFor(() => {
       fireEvent.click(screen.getByText(/33A/));
@@ -145,7 +148,7 @@ describe('JetsSeatMap', () => {
         passengerColor: 'brown',
         passengerLabel: 'John Doe',
         readOnly: false,
-        seat: { price: undefined, seatLabel: '33A' },
+        seat: { price: 'EUR 5', currency: 'EUR', priceValue: 5, seatLabel: '33A' },
       },
     ]);
   });
@@ -180,7 +183,7 @@ describe('JetsSeatMap', () => {
       {
         currency: 'EUR',
         label: '33A',
-        price: 0,
+        price: 5,
       },
     ];
 

@@ -393,7 +393,6 @@ describe('JetsSeatMap', () => {
       const mockPassenger = passenger({
         passengerLabel: 'John Doe',
         seat: {
-          price: 0,
           seatLabel: '11A',
         },
       });
