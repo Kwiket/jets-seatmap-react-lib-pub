@@ -1,6 +1,6 @@
 {
   "name": "@seatmaps.com/react-lib",
-  "version": "3.0.58",
+  "version": "3.0.59",
   "description": "Jets seatmap react library.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

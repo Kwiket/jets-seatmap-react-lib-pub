@@ -114,6 +114,7 @@ export const JetsSeatMap = ({
 
   const [exits, setExits] = useState([]);
   const [bulks, setBulks] = useState([]);
+  const [planeFeatures, setPlaneFeatures] = useState(null);
 
   const hasReceivedFirstParams = useRef(false);
   const seatMapRef = useRef();
@@ -129,24 +130,9 @@ export const JetsSeatMap = ({
 
     if (flight?.id) {
       service
-        .getSeatMapData(flight, availability, passengers, configuration)
-        .then(data => {
-          if (isMounted) {
-            setParams(data.params);
-            setContent(data.content);
-            setExits(data.exits);
-            setBulks(data.bulks);
-            setSeatMapInited(true);
-            onSeatMapInited({
-              heightInPx: data.params?.isHorizontal ? data.params?.innerWidth : data.params?.totalDecksHeight,
-              widthInPx: data.params?.isHorizontal ? data.params?.totalDecksHeight : data.params?.innerWidth,
-              scaleFactor: data.params?.scale,
-              decksCount: data.content?.length,
-              currentDeckIndex: activeDeck,
-              availabilityData: data?.availabilityData,
-            });
-            hasReceivedFirstParams.current = false;
-          }
+        .getPlaneFeatures(flight, configuration.lang, configuration.units)
+        .then(planeFeatures => {
+          setPlaneFeatures(planeFeatures);
         })
         .catch(err => {
           if (isMounted) {
@@ -166,6 +152,34 @@ export const JetsSeatMap = ({
       isMounted = false;
     };
   }, [flight]);
+
+  useEffect(() => {
+    let isMounted = true;
+    if (planeFeatures) {
+      service.processPlaneFeatures(planeFeatures, availability, passengers, configuration).then(data => {
+        if (isMounted) {
+          setParams(data.params);
+          setContent(data.content);
+          setExits(data.exits);
+          setBulks(data.bulks);
+          setSeatMapInited(true);
+          onSeatMapInited({
+            heightInPx: data.params?.isHorizontal ? data.params?.innerWidth : data.params?.totalDecksHeight,
+            widthInPx: data.params?.isHorizontal ? data.params?.totalDecksHeight : data.params?.innerWidth,
+            scaleFactor: data.params?.scale,
+            decksCount: data.content?.length,
+            currentDeckIndex: activeDeck,
+            availabilityData: data?.availabilityData,
+          });
+          hasReceivedFirstParams.current = false;
+        }
+      });
+    }
+
+    return () => {
+      isMounted = false;
+    };
+  }, [planeFeatures, configuration.width]);
 
   useEffect(() => {
     if (!availability) return;

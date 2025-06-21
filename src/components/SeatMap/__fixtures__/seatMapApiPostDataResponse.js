@@ -100,7 +100,7 @@ export const entertainment = (overrides = {}) => ({
 export const wifi = (overrides = {}) => ({
   exists: true,
   cost: 'free',
-  summary: 'WiFi enabled',
+  summary: 'Wi-Fi enabled',
   ...overrides,
 });
 

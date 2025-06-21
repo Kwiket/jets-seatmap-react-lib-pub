@@ -19,10 +19,12 @@ export class JetsSeatMapService {
     this._configuration = configuration;
   }
 
-  getSeatMapData = async (flight, availability, passengers, config) => {
-    const { lang, units } = config;
+  getPlaneFeatures = async (flight, lang, units) => {
     const planeFeatures = await this._api.getPlaneFeatures(flight, lang, units);
+    return planeFeatures;
+  };
 
+  processPlaneFeatures = async (planeFeatures, availability, passengers, config) => {
     let { content, params, exits, bulks } = this._preparer.prepareData(planeFeatures, config);
 
     if (availability) content = this.setAvailabilityHandler(content, availability);

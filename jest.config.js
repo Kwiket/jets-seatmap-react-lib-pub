@@ -1,9 +1,9 @@
 module.exports = {
   displayName: 'jest',
-  collectCoverageFrom: ['src/**/*.js', 'src/**/*.jsx'],
+  collectCoverageFrom: ['src/**/*.js', 'src/**/*.jsx', '!src/components/Demo/**'],
   coverageThreshold: {
     global: {
-      lines: 0,
+      lines: 85,
     },
   },
   moduleNameMapper: {

@@ -609,7 +609,9 @@ describe('JetsSeatMapService getSeatMapData', () => {
         };
         const availability = null;
         const passengers = null;
-        const response = await service.getSeatMapData(flight, availability, passengers, config);
+
+        const fetchedPlaneFeatures = await service.getPlaneFeatures(flight, config.lang, config.units);
+        const response = await service.processPlaneFeatures(fetchedPlaneFeatures, availability, passengers, config);
 
         expect(response).toEqual({
           content: expectedResponse.content,
@@ -646,7 +648,9 @@ describe('JetsSeatMapService getSeatMapData', () => {
         lang: 'EN',
         units: 'metric',
       };
-      const response = await service.getSeatMapData(flight, availability, passengers, config);
+
+      const fetchedPlaneFeatures = await service.getPlaneFeatures(flight, config.lang, config.units);
+      const response = await service.processPlaneFeatures(fetchedPlaneFeatures, availability, passengers, config);
 
       const expectedResponse = createExpectedResponse({
         content: [createPreparedDeck()],
@@ -676,7 +680,9 @@ describe('JetsSeatMapService getSeatMapData', () => {
         lang: 'EN',
         units: 'metric',
       };
-      const response = await service.getSeatMapData(flight, availability, passengers, config);
+
+      const fetchedPlaneFeatures = await service.getPlaneFeatures(flight, config.lang, config.units);
+      const response = await service.processPlaneFeatures(fetchedPlaneFeatures, availability, passengers, config);
 
       const expectedResponse = createExpectedResponse({
         content: [createPreparedDeck()],
@@ -716,7 +722,8 @@ describe('JetsSeatMapService getSeatMapData', () => {
             lang: 'EN',
             units: 'metric',
           };
-          const response = await service.getSeatMapData(flight, availability, passengers, config);
+          const fetchedPlaneFeatures = await service.getPlaneFeatures(flight, config.lang, config.units);
+          const response = await service.processPlaneFeatures(fetchedPlaneFeatures, availability, passengers, config);
 
           const expectedContent = [
             createPreparedDeck({
@@ -788,7 +795,8 @@ describe('JetsSeatMapService getSeatMapData', () => {
             lang: lang,
             units: 'metric',
           };
-          const response = await service.getSeatMapData(flight, availability, passengers, config);
+          const fetchedPlaneFeatures = await service.getPlaneFeatures(flight, config.lang, config.units);
+          const response = await service.processPlaneFeatures(fetchedPlaneFeatures, availability, passengers, config);
 
           const expectedRecline = ['doNotRecline', 'limitedRecline', 'prereclinedSeat'].includes(feature)
             ? '- -'
