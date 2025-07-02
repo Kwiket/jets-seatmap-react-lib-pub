@@ -170,6 +170,7 @@ export const JetsSeatMap = ({
             decksCount: data.content?.length,
             currentDeckIndex: activeDeck,
             availabilityData: data?.availabilityData,
+            media: data?.media,
           });
           hasReceivedFirstParams.current = false;
         }
