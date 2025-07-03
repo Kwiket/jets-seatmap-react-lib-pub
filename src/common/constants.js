@@ -122,6 +122,8 @@ export const DEFAULT_FEATURES_RENDER_LIMIT = 12;
 // divide height/width for each and add them together (remember that actual clipping rect is viewBox, use its values when available)
 export const FUSELAGE_HEIGHT_TO_WIDTH_RATIO = 2.4;
 
+export const SEAT_MAP_WIDTH_TO_WINGS_WIDTH_RATIO = 4;
+
 export const SEAT_SIZE_BY_TYPE = [
   [100, 100],
   [122, 218],
