@@ -268,6 +268,36 @@ export class JetsDataHelper {
 
     return theme;
   }
+
+  static calculateSeatColorByScore(score, customSeatColorRanges) {
+    if (typeof score !== 'number' || score < 1 || score > 10) {
+      return null;
+    }
+
+    if (!Array.isArray(customSeatColorRanges) || !customSeatColorRanges.length) {
+      return null;
+    }
+
+    const matchingRange = customSeatColorRanges.find(range => {
+      if (!range || typeof range.color !== 'string' || !Array.isArray(range.range) || range.range.length !== 2) {
+        return false;
+      }
+
+      const [min, max] = range.range;
+
+      if (typeof min !== 'number' || typeof max !== 'number' || min > max) {
+        return false;
+      }
+
+      if (score >= min && score <= max && this._isColor(range.color)) {
+        return true;
+      }
+
+      return false;
+    });
+
+    return matchingRange ? matchingRange.color : null;
+  }
 }
 
 const _colorThemeConstraints = {

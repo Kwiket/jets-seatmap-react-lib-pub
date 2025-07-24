@@ -457,6 +457,21 @@ The `full config` looks like this:
     cabinTitlesWidth: 80,
     cabinTitlesHighlightColors: { F: '#BDB76B', B: '#FF8C00', P: '#8FBC8F', E: '#1E90FF' },
     cabinTitlesLabelColor: '#00BFFF',
+
+    customSeatColorRanges: [                    // optional: define color ranges for seat scoring (1-10)
+      {
+        color: 'red',                           // CSS-compatible color value
+        range: [1, 3.99]                       // score range [min, max] (inclusive)
+      },
+      {
+        color: 'yellow',
+        range: [4, 7.99]
+      },
+      {
+        color: 'green',
+        range: [8, 10]
+      }
+    ],
   },
 };
 
@@ -473,6 +488,16 @@ To override exits, you need to set `both` fields in the config - `exitIconUrlLef
 ```
 
 If you will not pass `optional config params,` then the properties will be set with default values.
+
+The seatmap supports dynamic seat coloring based on score values. When a seat has a `score` field and `customSeatColorRanges` is defined in the colorTheme, the seat will be colored according to the score value.
+
+**Behavior:**
+- If seat has a `score` value and `customSeatColorRanges` is defined → seat is colored based on the first matching range
+- If no matching range found → falls back to the seat's original `color` property
+- Scores outside 1-10 range are ignored
+- Overlapping ranges use the first matching range
+
+**Priority order:** Score-based color > Original seat color > Default color
 
 &nbsp;
 
