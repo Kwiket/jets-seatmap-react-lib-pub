@@ -5,9 +5,14 @@ import { MockJetsContextProvider } from '../../__mocks__/MockJetsContext';
 import { JetsTooltipGlobal } from './index';
 import { activeTooltipData, paramsData } from './__fixtures__';
 
-const setup = ({ data = {}, config = {}, params = {}, events = {} } = {}) => ({
+const setup = ({ data = {}, componentOverrides = {}, config = {}, params = {}, events = {} } = {}) => ({
   ...render(
-    <MockJetsContextProvider config={config} params={{ ...paramsData(params) }} events={events}>
+    <MockJetsContextProvider
+      componentOverrides={componentOverrides}
+      config={config}
+      params={{ ...paramsData(params) }}
+      events={events}
+    >
       <JetsTooltipGlobal data={{ ...activeTooltipData(data) }} />
     </MockJetsContextProvider>
   ),

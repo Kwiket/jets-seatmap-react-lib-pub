@@ -3,7 +3,7 @@ import './index.css';
 
 export const JetsNotInit = () => {
   return (
-    <div className="jets-not-init">
+    <div className="jets-not-init" data-testid="jets-not-init">
       <div className="lds-roller jets-not-init--spinner">
         <div></div>
         <div></div>
