@@ -4,12 +4,12 @@ import userEvent from '@testing-library/user-event';
 import { MockJetsContextProvider } from '../../__mocks__/MockJetsContext';
 
 import { JetsTooltipGlobal } from './index';
-import { activeTooltipData, paramsData } from './__fixtures__';
+import { activeTooltipData } from './__fixtures__';
 
 const setup = ({ data = {}, config = {}, params = {}, events = {} } = {}) => ({
   user: userEvent.setup(),
   ...render(
-    <MockJetsContextProvider config={config} params={{ ...paramsData(params) }} events={events}>
+    <MockJetsContextProvider config={config} params={params} events={events}>
       <JetsTooltipGlobal data={{ ...activeTooltipData(data) }} />
     </MockJetsContextProvider>
   ),
