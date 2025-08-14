@@ -1,12 +1,14 @@
 import { render, screen, waitFor, act } from '@testing-library/react';
+
+import { configData, paramsData } from '../../__fixtures__';
+
 import { JetsSeatMap } from './SeatMap';
-import { CONFIG_MOCK } from '../Demo/constants';
 import { flightDetails } from './__fixtures__/seatMapApiGetPlaneFeatures';
 import { availability, finalDeck, finalSeat, passenger } from './__fixtures__/SeatMapService';
-import { paramsData } from '../TooltipGlobal/__fixtures__';
 import { bulk, exit, row, seat } from './__fixtures__/seatMapApiPostDataResponse';
 import { JetsSeatMapService } from './service';
 
+jest.mock('../DeckSelector');
 jest.mock('./service');
 
 const setup = ({
@@ -14,21 +16,17 @@ const setup = ({
   availability,
   passengers,
   currentDeckIndex,
-  configOverrides,
+  configOverrides = configData(),
   onSeatMapInited,
   onAvailabilityApplied,
 }) => {
-  const config = {
-    ...CONFIG_MOCK,
-    ...configOverrides,
-  };
   return render(
     <JetsSeatMap
       flight={flight}
       availability={availability}
       passengers={passengers}
       currentDeckIndex={currentDeckIndex}
-      config={config}
+      config={configOverrides}
       onSeatMapInited={onSeatMapInited}
       onAvailabilityApplied={onAvailabilityApplied}
     />
@@ -36,6 +34,8 @@ const setup = ({
 };
 
 describe('JetsSeatMap', () => {
+  const JetsDeckSelector = jest.spyOn(require('../DeckSelector'), 'JetsDeckSelector');
+
   beforeEach(() => {
     JetsSeatMapService.prototype = {
       getPlaneFeatures: jest.fn(),
@@ -45,6 +45,60 @@ describe('JetsSeatMap', () => {
       compareWithDecksSeatsInfo: jest.fn(),
       addAbbrToPassengers: jest.fn(passengers => passengers),
     };
+
+    JetsDeckSelector.mockImplementation(jest.fn().mockReturnValue(<div>JetsDeckSelector</div>));
+  });
+
+  describe('when the seat map is initialized', () => {
+    it('should use the provided config values', async () => {
+      const flight = flightDetails();
+      const seatAvailability = [availability()];
+      const passengers = [passenger()];
+      const params = paramsData();
+      const mockConfig = configData();
+      // color theme config is tested with components
+      delete mockConfig.colorTheme;
+
+      const availabilityData = seatAvailability;
+      const planeFeatures = { some: 'planeFeatures' };
+      const seatMapData = {
+        params,
+        content: [],
+        exits: [[]],
+        bulks: [[]],
+        availabilityData,
+      };
+
+      const mockOnSeatMapInited = jest.fn();
+      const mockGetPlaneFeatures = jest.fn().mockResolvedValue(planeFeatures);
+      const mockProcessPlaneFeatures = jest.fn().mockResolvedValue(seatMapData);
+      JetsSeatMapService.prototype.getPlaneFeatures = mockGetPlaneFeatures;
+      JetsSeatMapService.prototype.processPlaneFeatures = mockProcessPlaneFeatures;
+
+      setup({
+        flight,
+        availability: seatAvailability,
+        passengers: passengers,
+        currentDeckIndex: 0,
+      });
+
+      await waitFor(() => {
+        expect(JetsSeatMapService).toHaveBeenCalledWith(expect.objectContaining(mockConfig));
+
+        expect(JetsSeatMapService.prototype.getPlaneFeatures).toHaveBeenCalledWith(
+          flight,
+          mockConfig.lang,
+          mockConfig.units
+        );
+
+        expect(mockProcessPlaneFeatures).toHaveBeenCalledWith(
+          planeFeatures,
+          seatAvailability,
+          passengers,
+          expect.objectContaining(mockConfig)
+        );
+      });
+    });
   });
 
   describe('when the seat map is rendered', () => {
@@ -250,7 +304,7 @@ describe('JetsSeatMap', () => {
         availability: null,
         passengers: null,
         currentDeckIndex: 1,
-        configOverrides: { visibleFuselage: true },
+        configOverrides: configData({ visibleFuselage: true }),
       });
 
       await waitFor(() => {
@@ -287,7 +341,7 @@ describe('JetsSeatMap', () => {
         availability: null,
         passengers: null,
         currentDeckIndex: 1,
-        configOverrides: { visibleFuselage: false },
+        configOverrides: configData({ visibleFuselage: false }),
       });
 
       await waitFor(() => {
@@ -326,7 +380,7 @@ describe('JetsSeatMap', () => {
         availability: seatAvailability,
         passengers: passengers,
         currentDeckIndex: 0,
-        configOverrides: { width: initialWidth },
+        configOverrides: configData({ width: initialWidth }),
       });
 
       await waitFor(() => {
@@ -346,7 +400,7 @@ describe('JetsSeatMap', () => {
           availability={seatAvailability}
           passengers={passengers}
           currentDeckIndex={0}
-          config={{ ...CONFIG_MOCK, width: updatedWidth }}
+          config={configData({ width: updatedWidth })}
         />
       );
 
@@ -510,13 +564,18 @@ describe('JetsSeatMap', () => {
         expect(seatWrappers[0]).toHaveTextContent(/JD/);
         expect(seatWrappers[1]).toHaveTextContent(/11B/);
         expect(seatWrappers[1]).not.toHaveTextContent(/JD/);
+        expect(screen.queryByText(/JetsDeckSelector/)).not.toBeInTheDocument();
       });
     });
 
     it('should render seat for a double-deck configuration, lower deck chosen', async () => {
       const planeFeatures = { some: 'planeFeatures' };
       const seatMapDataForOneDeck = {
-        params: paramsData(),
+        params: paramsData({
+          builtInDeckSelector: true,
+          singleDeckMode: true,
+          visibleCabinTitles: true,
+        }),
         content: [
           finalDeck({
             rows: [
@@ -567,13 +626,18 @@ describe('JetsSeatMap', () => {
         const cabinTitle = screen.getByTestId('jets-cabin-title');
         expect(cabinTitle).toBeInTheDocument();
         expect(cabinTitle).toHaveTextContent('Economy');
+        expect(screen.getByText(/JetsDeckSelector/)).toBeInTheDocument();
       });
     });
 
     it('should render seat for a double-deck configuration, upper deck chosen', async () => {
       const planeFeatures = { some: 'planeFeatures' };
       const seatMapDataForTwoDecks = {
-        params: paramsData(),
+        params: paramsData({
+          builtInDeckSelector: true,
+          singleDeckMode: true,
+          visibleCabinTitles: true,
+        }),
         content: [
           finalDeck({
             rows: [
@@ -624,6 +688,112 @@ describe('JetsSeatMap', () => {
         const cabinTitle = screen.getByTestId('jets-cabin-title');
         expect(cabinTitle).toBeInTheDocument();
         expect(cabinTitle).toHaveTextContent('First');
+        expect(screen.getByText(/JetsDeckSelector/)).toBeInTheDocument();
+      });
+    });
+
+    it('should not render the deck selector if builtInDeckSelector is false', async () => {
+      const planeFeatures = { some: 'planeFeatures' };
+      const seatMapDataForTwoDecks = {
+        params: paramsData(),
+        content: [
+          finalDeck({
+            rows: [
+              row({
+                isFirstInCabin: true,
+                classCode: 'E',
+                seats: [
+                  finalSeat({
+                    number: '11A',
+                  }),
+                ],
+              }),
+            ],
+          }),
+          finalDeck({
+            rows: [
+              row({
+                isFirstInCabin: true,
+                classCode: 'F',
+                seats: [
+                  finalSeat({
+                    number: '22B',
+                  }),
+                ],
+              }),
+            ],
+          }),
+        ],
+        exits: [[]],
+        bulks: [[]],
+      };
+
+      JetsSeatMapService.prototype.getPlaneFeatures = jest.fn().mockResolvedValue(planeFeatures);
+      JetsSeatMapService.prototype.processPlaneFeatures = jest.fn().mockResolvedValue(seatMapDataForTwoDecks);
+
+      setup({
+        flight: flightDetails(),
+        availability: null,
+        passengers: null,
+        currentDeckIndex: 1, // upper deck
+        configOverrides: configData({ builtInDeckSelector: false }),
+      });
+
+      await waitFor(() => {
+        expect(screen.queryByText(/JetsDeckSelector/)).not.toBeInTheDocument();
+      });
+    });
+
+    it('should render two decks when shouldShowOnlyOneDeck is false', async () => {
+      const planeFeatures = { some: 'planeFeatures' };
+      const seatMapDataForTwoDecks = {
+        params: paramsData(),
+        content: [
+          finalDeck({
+            rows: [
+              row({
+                isFirstInCabin: true,
+                classCode: 'E',
+                seats: [
+                  finalSeat({
+                    number: '11A',
+                  }),
+                ],
+              }),
+            ],
+          }),
+          finalDeck({
+            rows: [
+              row({
+                isFirstInCabin: true,
+                classCode: 'F',
+                seats: [
+                  finalSeat({
+                    number: '22B',
+                  }),
+                ],
+              }),
+            ],
+          }),
+        ],
+        exits: [[]],
+        bulks: [[]],
+      };
+
+      JetsSeatMapService.prototype.getPlaneFeatures = jest.fn().mockResolvedValue(planeFeatures);
+      JetsSeatMapService.prototype.processPlaneFeatures = jest.fn().mockResolvedValue(seatMapDataForTwoDecks);
+
+      setup({
+        flight: flightDetails(),
+        availability: null,
+        passengers: null,
+        currentDeckIndex: 1, // upper deck
+        configOverrides: configData({ shouldShowOnlyOneDeck: false }),
+      });
+
+      await waitFor(() => {
+        expect(screen.getAllByTestId('jets-plane-body-deck')).toHaveLength(2);
+        expect(screen.getByTestId('jets-deck-separator')).toBeVisible();
       });
     });
 
