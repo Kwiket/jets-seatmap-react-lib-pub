@@ -515,6 +515,34 @@ interface IAvailableSeatsData {
 ```
 
 ```typescript
+interface IMediaData {
+  photoData: IPhotoData[];
+  panoData: IPanoData[];
+}
+
+interface IPhotoData {
+  file: string;
+  thumb: string;
+  size: ISize;
+  thumbSize: ISize;
+  description: string;
+}
+
+interface IPanoData {
+  file: string;
+  rawFile: string;
+  thumb: string;
+  thumbSize: ISize;
+  description: string;
+}
+
+interface ISize {
+  w: number;
+  h: number;
+}
+```
+
+```typescript
 interface IInitialLayoutData {
   availabilityData: IAvailableSeatsData;     // reflects what seats are available for passengers
   currentDeckIndex: number;     // shows current deck if "builtInDeckSelector" flag is set in config, otherwise 0
@@ -522,6 +550,7 @@ interface IInitialLayoutData {
   heightInPx: number;           // sum of lengths of all elements of the plane (decks, fuselage, separators) using internal units. Multiply by "scaleFactor" to get real pixel value on screen
   scaleFactor: number;          // scale applied to fit into provided boundaries
   widthInPx: number;            // outer width of the plane. CAUTION: if "horizontal" flag is set - height and width are swapped around to reflect that
+  media: IMediaData;            // contains media data for the aircraft cabin
   error: string;                // error message if not possible to build a seat map
 }
 ```

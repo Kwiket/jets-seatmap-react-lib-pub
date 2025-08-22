@@ -55,6 +55,7 @@ export const JetsTooltipGlobal = ({ data }) => {
     passengerTypes,
     lang,
     rowName,
+    name: seatName,
     antiScale,
     scaleType,
     width,
@@ -192,7 +193,7 @@ export const JetsTooltipGlobal = ({ data }) => {
         <div className="jets-tooltip--content">
           <div className="jets-tooltip--header" style={headerStyle}>
             <div className="jets-tooltip--header-title">
-              {rowName || classType} {number}
+              {seatName || rowName || classType} {number}
             </div>
             <div className="jets-tooltip--header-price">{price}</div>
           </div>

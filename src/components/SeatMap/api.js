@@ -70,13 +70,18 @@ export class JetsSeatMapApiService extends JetsApiService {
             throw new Error(item.error);
           }
           if (flight.cabinClass && cabinClasses.includes(flight.cabinClass)) {
-            const { id, cabin, entertainment, power, wifi } = item;
+            const { id, cabin, entertainment, power, wifi, media } = item;
+
             result[flight.cabinClass] = {
               cabin,
               entertainment,
               power,
               wifi,
             };
+
+            if (media) {
+              result.media = media;
+            }
           }
           result.seatDetails = item.seatDetails;
           break;

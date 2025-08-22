@@ -64,6 +64,7 @@ import {
   THEME_CABIN_TITLES_WIDTH,
   THEME_CABIN_TITLES_HIGHLIGHT_COLORS,
   THEME_CABIN_TITLES_LABEL_COLOR,
+  SEAT_MAP_WIDTH_TO_WINGS_WIDTH_RATIO,
   useEnvironmentInfo,
 } from '../../common';
 import './index.css';
@@ -101,6 +102,13 @@ export const JetsSeatMap = ({
   // SCALE_TYPES.ZOOM is not fully supported by FF
   if (isFirefox) {
     configuration.scaleType = SCALE_TYPES.SCALE;
+  }
+
+  const wingsWidthLimit = configuration.width / SEAT_MAP_WIDTH_TO_WINGS_WIDTH_RATIO;
+  const wingsAreTooWide = configuration.colorTheme.wingsWidth > wingsWidthLimit;
+
+  if (wingsAreTooWide) {
+    configuration.colorTheme.wingsWidth = wingsWidthLimit;
   }
 
   const [content, setContent] = useState([]);
@@ -170,6 +178,7 @@ export const JetsSeatMap = ({
             decksCount: data.content?.length,
             currentDeckIndex: activeDeck,
             availabilityData: data?.availabilityData,
+            media: data?.media,
           });
           hasReceivedFirstParams.current = false;
         }
