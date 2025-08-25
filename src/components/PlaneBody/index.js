@@ -79,6 +79,7 @@ export const JetsPlaneBody = ({ activeDeck, content, exits, bulks, isSeatMapInit
             !showOneDeck || index == deckToShow ? (
               <React.Fragment key={deck.uniqId + index}>
                 <div
+                  data-testid="jets-plane-body-deck"
                   ref={element => {
                     elementRefs.current[index] = element;
                   }}
