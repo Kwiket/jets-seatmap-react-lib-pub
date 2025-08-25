@@ -31,7 +31,7 @@ export const JetsSeat = ({ data }) => {
   const { index, aisle } = ENTITY_TYPE_MAP;
   const componentClassNames = `jets-seat jets-${type} jets-${status} ${!!rotation ? `jets-seat-r-${rotation}` : ''}`;
   const showSeatPriceLabel = price && config?.visibleSeatPriceLabels;
-  const seatFillColor = JetsDataHelper.calculateSeatColorByScore(score, colorTheme.customSeatColorRanges) || color;
+  const seatColor = JetsDataHelper.calculateSeatColorByScore(score, colorTheme.customSeatColorRanges) || color;
 
   const $component = useRef();
 
@@ -72,7 +72,7 @@ export const JetsSeat = ({ data }) => {
   const svgStyle = {
     strokeColor: colorTheme.seatStrokeColor,
     armrestColor: colorTheme.seatArmrestColor,
-    fillColor: seatFillColor,
+    fillColor: seatColor,
     strokeWidth: colorTheme.seatStrokeWidth,
   };
 

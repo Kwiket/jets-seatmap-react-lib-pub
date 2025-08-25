@@ -77,6 +77,24 @@ const CONFIG_MOCK = {
     exitIconUrlRight: 'https://panorama.quicket.io/icons/exit-right.svg',
 
     cabinTitlesWidth: 85,
+    customSeatColorRanges: [
+      {
+        color: '#c7683d', // CSS-compatible color value
+        range: [1, 2.99], // score range [min, max] (inclusive)
+      },
+      {
+        color: '#e6be3f',
+        range: [3, 4.99],
+      },
+      {
+        color: '#4071b9',
+        range: [5, 6.5],
+      },
+      {
+        color: '#8fb947',
+        range: [6.51, 10],
+      },
+    ],
   },
   // hiddenSeatFeatures: ['limitedRecline', 'getColdByExit', 'doNotRecline', 'wingInWindow', 'nearLavatory', 'nearGalley'],
 };
