@@ -9,6 +9,7 @@ import { DECK_ITEM_ALIGN_MAP, DEFAULT_STYLE_POSITION, SCALE_TYPES } from '../../
 import { BULK_TEMPLATE_MAP } from './constants';
 import { JetsContext, useEnvironmentInfo } from '../../common';
 
+const SVG_WIDTH_SCALE_BULK_COEFF = 0.775;
 const DEFAULT_SCALE_BULK_COEFF = 0.7;
 const SCALE_TO_BULK_COEFF_MAP = { 26: 1, 27: 1, 28: 1 };
 
@@ -28,12 +29,18 @@ export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, to
 
     const leftAlignment = align === DECK_ITEM_ALIGN_MAP.left ? Math.max(xOffset, 0) : DEFAULT_STYLE_POSITION;
     const rightAlignment = align === DECK_ITEM_ALIGN_MAP.right ? Math.max(xOffset, 0) : DEFAULT_STYLE_POSITION;
-    const centerOfThePlane = params.innerWidth / 2;
-    const halfOfTheBulk = updatedWidth / 2;
+
+    const wingsWidth = params.visibleWings ? colorTheme.wingsWidth : 0;
+    const cabinTitlesWidth = params.visibleCabinTitles ? colorTheme.cabinTitlesWidth : 0;
+
+    const zeroAlignedCenterOfThePlane =
+      params.innerWidth / 2 - Math.max(wingsWidth, cabinTitlesWidth) - colorTheme.fuselageStrokeWidth;
+
+    const halfOfTheBulk = (width * SVG_WIDTH_SCALE_BULK_COEFF) / 2;
 
     const centerAlignment =
       align === DECK_ITEM_ALIGN_MAP.center && xOffset
-        ? Math.floor(xOffset * scaleBulkCoeff + centerOfThePlane - halfOfTheBulk)
+        ? Math.floor(xOffset + zeroAlignedCenterOfThePlane - halfOfTheBulk)
         : DEFAULT_STYLE_POSITION;
 
     return {
