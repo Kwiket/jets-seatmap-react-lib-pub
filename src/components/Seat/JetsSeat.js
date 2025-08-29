@@ -147,7 +147,11 @@ export const JetsSeat = ({ data }) => {
       onMouseEnter={params.tooltipOnHover ? e => showTooltip(data, $component, e) : null}
       onMouseLeave={params.tooltipOnHover ? e => onMouseLeave(data, $component, e) : null}
       onKeyDown={handleKeyDown}
-      tabIndex={type === seat && data.status === ENTITY_STATUS_MAP.available ? 0 : -1}
+      tabIndex={
+        type === seat && (data.status !== ENTITY_STATUS_MAP.unavailable || data.status !== ENTITY_STATUS_MAP.disabled)
+          ? 0
+          : -1
+      }
       aria-expanded={!!activeTooltip && activeTooltip?.number === data.number}
       aria-haspopup="dialog"
       aria-describedby={`seat-tooltip-${data.number}`}
