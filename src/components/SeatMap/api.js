@@ -29,6 +29,7 @@ const API_SUPPORTED_LANGUAGES = [
   'TR',
   'UK',
   'SV',
+  'VI',
 ];
 
 export class JetsSeatMapApiService extends JetsApiService {
