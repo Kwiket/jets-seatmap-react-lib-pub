@@ -156,15 +156,7 @@ export const JetsTooltipGlobal = ({ data }) => {
   const filteredFeatures = (features || []).filter(f => !params.hiddenSeatFeatures.includes(f.key));
   const finalListOfFeatures = [...filteredFeatures, ...(additionalProps || [])].slice(0, DEFAULT_FEATURES_RENDER_LIMIT);
 
-  const onMouseLeave = e => {
-    if (!params?.tooltipOnHover) {
-      return;
-    }
-
-    onTooltipClose(null, null, e);
-  };
-
-  const ResolvedTooltip = componentOverrides?.JetsTooltip ?? JetsTooltipGlobalView;
+  const ResolvedTooltip = componentOverrides?.JetsTooltipView ?? JetsTooltipGlobalView;
 
   return (
     <ResolvedTooltip
@@ -181,7 +173,6 @@ export const JetsTooltipGlobal = ({ data }) => {
       pointerStyleHorizontal={pointerStyleHorizontal}
       rootStyle={style}
       shouldHideButtons={shouldHideButtons}
-      onMouseLeave={onMouseLeave}
       onTooltipClose={onTooltipClose}
       onSeatSelect={onSeatSelect}
       onSeatUnselect={onSeatUnselect}

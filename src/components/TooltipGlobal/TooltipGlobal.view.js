@@ -24,7 +24,6 @@ export const JetsTooltipGlobalView = ({
   pointerStyleHorizontal,
   shouldHideButtons,
   rootStyle,
-  onMouseLeave,
   onSeatSelect,
   onSeatUnselect,
   onTooltipClose,
@@ -47,11 +46,9 @@ export const JetsTooltipGlobalView = ({
 
   const handleTooltipClose = e => onTooltipClose(null, null, e);
 
-  const handleMouseLeave = e => onMouseLeave(e);
-
   return (
     <div
-      style={style}
+      style={rootStyle}
       className={`jets-tooltip ${params?.isHorizontal ? 'horizontal' : ''}`}
       ref={elementRef}
       onMouseLeave={params.tooltipOnHover ? handleTooltipClose : null}
@@ -68,7 +65,7 @@ export const JetsTooltipGlobalView = ({
           </div>
 
           <div className="jets-tooltip--passenger-name" style={featureListStyle}>
-            {passengerLabel.length ? passengerLabel : restrictionsLabel}
+            {passengerLabel}
           </div>
 
           <div className="jets-tooltip--features" style={featureListStyle}>
@@ -141,7 +138,7 @@ export const JetsTooltipGlobalView = ({
             />
           ) : (
             <JetsButton
-              disabled={isSeatSelectDisabled(data)}
+              disabled={isSeatSelectDisabled}
               onClick={handleSeatSelect}
               content={LOCALES_MAP[lang][SELECT_BTN_KEY]}
               className="jets-btn jets-tooltip--btn "

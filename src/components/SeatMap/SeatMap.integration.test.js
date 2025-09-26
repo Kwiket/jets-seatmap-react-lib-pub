@@ -102,6 +102,28 @@ describe('JetsSeatMap', () => {
     });
   });
 
+  it('should show a custom tooltip view when provided', async () => {
+    const customTooltipView = ({ elementRef }) => <div ref={elementRef}>Custom Tooltip View</div>;
+
+    setup({
+      flight: flight,
+      availability: null,
+      passengers: null,
+      currentDeckIndex: 0,
+      componentOverrides: {
+        JetsTooltipView: customTooltipView,
+      },
+    });
+
+    await waitFor(() => {
+      fireEvent.click(screen.getByText(/33A/));
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText(/Custom Tooltip View/)).toBeVisible();
+    });
+  });
+
   it('should trigger onSeatSelected when a passenger selects an available seat', async () => {
     const passengers = [
       {

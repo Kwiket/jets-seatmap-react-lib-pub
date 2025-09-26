@@ -749,6 +749,7 @@ In case your tooltip is used only to show seat info `onSeatSelect` and `onSeatUn
 const componentOverrides = {
   JetsSeat: MyCustomJetsSeat,
   JetsTooltip: MyCustomJetsTooltip,
+  JetsTooltipView: MyCustomJetsTooltipView,
   JetsNotInit: MyCustomLoader,
 };
 
@@ -757,4 +758,34 @@ const componentOverrides = {
   componentOverrides={componentOverrides}
   ...
 />
+```
+
+### `JetsTooltip` vs `JetsTooltipView`
+
+`JetsTooltipView` is an alternative way of implementing a custom Tooltip component by passing the required props instead of needing to rely on the internal `JetsContext` or calculating render attributes such as position and orientation.
+
+**Note:** To prevent errors ensure `elementRef` is added as a `ref` to the root element in you custom implementation.
+
+```typescript
+interface IJetsTooltipView {
+  colorTheme: IColorTheme;
+  data: ISeatData;
+  elementRef: React.RefObject<React.ReactNode>;
+  featureListStyle: Partial<CSSStyleDeclaration>;
+  finalListOfFeatures: ISeatFeature[];
+  headerStyle: Partial<CSSStyleDeclaration>;
+  isSeatSelectDisabled: boolean;
+  params: {
+    isHorizontal: boolean;
+    tooltipOnHover: boolean;
+  };
+  passengerLabel: string;
+  pointerStyle: Partial<CSSStyleDeclaration>;
+  pointerStyleHorizontal: Partial<CSSStyleDeclaration>;
+  shouldHideButtons: boolean;
+  rootStyle: Partial<CSSStyleDeclaration>;
+  onSeatSelect: (data: ISeatData) => void;
+  onSeatUnselect: (data: ISeatData) => void;
+  onTooltipClose: (data: ISeatData, element: HTMLElement, event: React.EventHandler<any>) => void;
+}
 ```

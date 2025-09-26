@@ -834,7 +834,7 @@ const o = {
   z = { CN: c, DE: a, EN: n, ES: s, PL: o, RU: d, AR: h, CS: g, FR: p, PT: m, UK: u, IT: C, JA: f, KO: k, TR: v },
   y = w.SCALE,
   S = ['ADT', 'CHD', 'INF'],
-  E = [
+  T = [
     [100, 100],
     [122, 218],
     [150, 170],
@@ -882,7 +882,7 @@ const o = {
     [550, 325],
     [550, 325],
   ],
-  T = { left: 'left', right: 'right', center: 'center' },
+  E = { left: 'left', right: 'right', center: 'center' },
   H = { F: '#BDB76B', B: '#FF8C00', P: '#8FBC8F', E: '#1E90FF' };
 class _ {
   constructor(e, t, r, i, o = 'Bearer', s = null) {
@@ -1096,6 +1096,18 @@ class $ {
     const t = new Option().style;
     return (t.color = e), '' !== t.color;
   }
+  static _applyColorRangesConstraints(e) {
+    return Array.isArray(e) && e.length
+      ? e.filter(e => {
+          if (!e || !Array.isArray(e.range) || 2 !== e.range.length) return !1;
+          const [t, r] = e.range;
+          return (
+            !('number' != typeof t || 'number' != typeof r || t > r) &&
+            !('string' != typeof e.color || !this._isColor(e.color))
+          );
+        })
+      : [];
+  }
   static _filterInvalidColors(e) {
     return (
       Object.keys(e).reduce((t, r) => {
@@ -1104,6 +1116,14 @@ class $ {
       }, {}),
       e
     );
+  }
+  static calculateSeatColorByScore(e, t) {
+    if ('number' != typeof e || e < 1 || e > 10) return null;
+    const r = t.find(t => {
+      const [r, l] = t.range;
+      return e >= r && e <= l;
+    });
+    return (null == r ? void 0 : r.color) || null;
   }
 }
 l($, 'validateLanguage', e => {
@@ -1114,7 +1134,7 @@ l($, 'validateLanguage', e => {
   l($, 'mergeColorThemeWithConstraints', (e, t) => {
     let r = { ...e, ...$._filterInvalidColors(t) };
     for (let e in V) r[e] = V[e](r[e]);
-    return r;
+    return (r.customSeatColorRanges = $._applyColorRangesConstraints(r.customSeatColorRanges)), r;
   });
 const V = { fuselageStrokeWidth: e => Math.min(Math.max(10, e), 18) };
 class O {
@@ -1198,7 +1218,7 @@ class W {
         let c = 0;
         if (l) {
           var d, h;
-          const [e] = E[s],
+          const [e] = T[s],
             t =
               (l - (null === (d = i.match(/S|E/g)) || void 0 === d ? void 0 : d.length) * e) /
               ((null === (h = i.match(/-/g)) || void 0 === h ? void 0 : h.length) || 0);
@@ -1244,8 +1264,8 @@ class W {
           m = b.available,
           C = e.seatType || a,
           u = `${o}-${C}`,
-          [f, k] = E[a],
-          [v, w] = E[C];
+          [f, k] = T[a],
+          [v, w] = T[C];
         return {
           uniqId: O.generateId(),
           ...e,
@@ -1265,14 +1285,14 @@ class W {
       }),
       l(this, '_prepareAisle', (e, t = 0) => {
         const { number: r, seatType: l } = e,
-          [i, o] = E[l],
+          [i, o] = T[l],
           s = { width: t || i, height: o },
           a = L.aisle,
           n = b.disabled;
         return { uniqId: O.generateId(), letter: r, type: a, status: n, size: s };
       }),
       l(this, '_prepareEmpty', e => {
-        const [t, r] = E[e.seatType],
+        const [t, r] = T[e.seatType],
           l = { width: t, height: r },
           i = L.empty,
           o = b.disabled;
@@ -1416,7 +1436,7 @@ class W {
     );
   }
 }
-class P {
+class R {
   getData(e) {
     try {
       const t = localStorage.getItem(e);
@@ -1440,7 +1460,7 @@ class P {
     localStorage.removeItem(e);
   }
 }
-const R = () => {
+const P = () => {
     const [t, r, l, i] = e.useMemo(() => {
       const e = navigator.userAgent.toLowerCase();
       return [
@@ -1677,8 +1697,8 @@ D.set(
   );
 /*! @license DOMPurify 3.2.6 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/3.2.6/LICENSE */
 const { entries: j, setPrototypeOf: F, isFrozen: Z, getPrototypeOf: U, getOwnPropertyDescriptor: G } = Object;
-let { freeze: K, seal: q, create: Y } = Object,
-  { apply: J, construct: X } = 'undefined' != typeof Reflect && Reflect;
+let { freeze: K, seal: q, create: J } = Object,
+  { apply: Y, construct: X } = 'undefined' != typeof Reflect && Reflect;
 K ||
   (K = function (e) {
     return e;
@@ -1687,8 +1707,8 @@ K ||
     (q = function (e) {
       return e;
     }),
-  J ||
-    (J = function (e, t, r) {
+  Y ||
+    (Y = function (e, t, r) {
       return e.apply(t, r);
     }),
   X ||
@@ -1719,7 +1739,7 @@ function me(e) {
   return function (t) {
     t instanceof RegExp && (t.lastIndex = 0);
     for (var r = arguments.length, l = new Array(r > 1 ? r - 1 : 0), i = 1; i < r; i++) l[i - 1] = arguments[i];
-    return J(e, t, l);
+    return Y(e, t, l);
   };
 }
 function Ce(e, t) {
@@ -1743,7 +1763,7 @@ function ue(e) {
   return e;
 }
 function fe(e) {
-  const t = Y(null);
+  const t = J(null);
   for (const [r, l] of j(e)) {
     de(e, r) &&
       (Array.isArray(l)
@@ -2336,7 +2356,7 @@ const ve = K([
     'z',
     'zoomandpan',
   ]),
-  Ee = K([
+  Te = K([
     'accent',
     'accentunder',
     'align',
@@ -2391,7 +2411,7 @@ const ve = K([
     'width',
     'xmlns',
   ]),
-  Te = K(['xlink:href', 'xml:id', 'xlink:title', 'xml:space', 'xmlns:xlink']),
+  Ee = K(['xlink:href', 'xml:id', 'xlink:title', 'xml:space', 'xmlns:xlink']),
   He = q(/\{\{[\w\W]*|[\w\W]*\}\}/gm),
   _e = q(/<%[\w\W]*|[\w\W]*%>/gm),
   Ae = q(/\$\{[\w\W]*/gm),
@@ -2401,12 +2421,12 @@ const ve = K([
   Be = q(/^(?:\w+script|data):/i),
   Ie = q(/[\u0000-\u0020\u00A0\u1680\u180E\u2000-\u2029\u205F\u3000]/g),
   We = q(/^html$/i),
-  Pe = q(/^[a-z][.\w]*(-[.\w]+)+$/i);
-var Re = Object.freeze({
+  Re = q(/^[a-z][.\w]*(-[.\w]+)+$/i);
+var Pe = Object.freeze({
   __proto__: null,
   ARIA_ATTR: Ve,
   ATTR_WHITESPACE: Ie,
-  CUSTOM_ELEMENT: Pe,
+  CUSTOM_ELEMENT: Re,
   DATA_ATTR: $e,
   DOCTYPE_NAME: We,
   ERB_EXPR: _e,
@@ -2468,7 +2488,7 @@ var Ke = (function e() {
     L = '';
   const { implementation: x, createNodeIterator: M, createDocumentFragment: z, getElementsByTagName: y } = l,
     { importNode: S } = i;
-  let E = {
+  let T = {
     afterSanitizeAttributes: [],
     afterSanitizeElements: [],
     afterSanitizeShadowDOM: [],
@@ -2481,7 +2501,7 @@ var Ke = (function e() {
   };
   r.isSupported = 'function' == typeof j && 'function' == typeof w && x && void 0 !== x.createHTMLDocument;
   const {
-    MUSTACHE_EXPR: T,
+    MUSTACHE_EXPR: E,
     ERB_EXPR: H,
     TMPLIT_EXPR: _,
     DATA_ATTR: A,
@@ -2489,14 +2509,14 @@ var Ke = (function e() {
     IS_SCRIPT_OR_DATA: V,
     ATTR_WHITESPACE: O,
     CUSTOM_ELEMENT: B,
-  } = Re;
-  let { IS_ALLOWED_URI: I } = Re,
+  } = Pe;
+  let { IS_ALLOWED_URI: I } = Pe,
     W = null;
-  const P = Ce({}, [...ve, ...we, ...be, ...xe, ...ze]);
-  let R = null;
-  const N = Ce({}, [...ye, ...Se, ...Ee, ...Te]);
+  const R = Ce({}, [...ve, ...we, ...be, ...xe, ...ze]);
+  let P = null;
+  const N = Ce({}, [...ye, ...Se, ...Te, ...Ee]);
   let D = Object.seal(
-      Y(null, {
+      J(null, {
         tagNameCheck: { writable: !0, configurable: !1, enumerable: !0, value: null },
         attributeNameCheck: { writable: !0, configurable: !1, enumerable: !0, value: null },
         allowCustomizedBuiltInElements: { writable: !0, configurable: !1, enumerable: !0, value: !1 },
@@ -2507,7 +2527,7 @@ var Ke = (function e() {
     U = !0,
     G = !0,
     q = !1,
-    J = !0,
+    Y = !0,
     X = !1,
     pe = !0,
     me = !1,
@@ -2519,11 +2539,11 @@ var Ke = (function e() {
     Ve = !0,
     Be = !1;
   const Ie = 'user-content-';
-  let Pe = !0,
+  let Re = !0,
     Ke = !1,
     qe = {},
-    Ye = null;
-  const Je = Ce({}, [
+    Je = null;
+  const Ye = Ce({}, [
     'annotation-xml',
     'audio',
     'colgroup',
@@ -2596,19 +2616,19 @@ var Ke = (function e() {
           (e = fe(e)),
           (gt = -1 === pt.indexOf(e.PARSER_MEDIA_TYPE) ? mt : e.PARSER_MEDIA_TYPE),
           (Ct = 'application/xhtml+xml' === gt ? oe : ie),
-          (W = de(e, 'ALLOWED_TAGS') ? Ce({}, e.ALLOWED_TAGS, Ct) : P),
-          (R = de(e, 'ALLOWED_ATTR') ? Ce({}, e.ALLOWED_ATTR, Ct) : N),
+          (W = de(e, 'ALLOWED_TAGS') ? Ce({}, e.ALLOWED_TAGS, Ct) : R),
+          (P = de(e, 'ALLOWED_ATTR') ? Ce({}, e.ALLOWED_ATTR, Ct) : N),
           (at = de(e, 'ALLOWED_NAMESPACES') ? Ce({}, e.ALLOWED_NAMESPACES, oe) : nt),
           (et = de(e, 'ADD_URI_SAFE_ATTR') ? Ce(fe(tt), e.ADD_URI_SAFE_ATTR, Ct) : tt),
           (Xe = de(e, 'ADD_DATA_URI_TAGS') ? Ce(fe(Qe), e.ADD_DATA_URI_TAGS, Ct) : Qe),
-          (Ye = de(e, 'FORBID_CONTENTS') ? Ce({}, e.FORBID_CONTENTS, Ct) : Je),
+          (Je = de(e, 'FORBID_CONTENTS') ? Ce({}, e.FORBID_CONTENTS, Ct) : Ye),
           (F = de(e, 'FORBID_TAGS') ? Ce({}, e.FORBID_TAGS, Ct) : fe({})),
           (Z = de(e, 'FORBID_ATTR') ? Ce({}, e.FORBID_ATTR, Ct) : fe({})),
           (qe = !!de(e, 'USE_PROFILES') && e.USE_PROFILES),
           (U = !1 !== e.ALLOW_ARIA_ATTR),
           (G = !1 !== e.ALLOW_DATA_ATTR),
           (q = e.ALLOW_UNKNOWN_PROTOCOLS || !1),
-          (J = !1 !== e.ALLOW_SELF_CLOSE_IN_ATTR),
+          (Y = !1 !== e.ALLOW_SELF_CLOSE_IN_ATTR),
           (X = e.SAFE_FOR_TEMPLATES || !1),
           (pe = !1 !== e.SAFE_FOR_XML),
           (me = e.WHOLE_DOCUMENT || !1),
@@ -2618,7 +2638,7 @@ var Ke = (function e() {
           (He = e.FORCE_BODY || !1),
           (Ve = !1 !== e.SANITIZE_DOM),
           (Be = e.SANITIZE_NAMED_PROPS || !1),
-          (Pe = !1 !== e.KEEP_CONTENT),
+          (Re = !1 !== e.KEEP_CONTENT),
           (Ke = e.IN_PLACE || !1),
           (I = e.ALLOWED_URI_REGEXP || Oe),
           (ot = e.NAMESPACE || it),
@@ -2638,16 +2658,16 @@ var Ke = (function e() {
           Ae && (_e = !0),
           qe &&
             ((W = Ce({}, ze)),
-            (R = []),
-            !0 === qe.html && (Ce(W, ve), Ce(R, ye)),
-            !0 === qe.svg && (Ce(W, we), Ce(R, Se), Ce(R, Te)),
-            !0 === qe.svgFilters && (Ce(W, be), Ce(R, Se), Ce(R, Te)),
-            !0 === qe.mathMl && (Ce(W, xe), Ce(R, Ee), Ce(R, Te))),
-          e.ADD_TAGS && (W === P && (W = fe(W)), Ce(W, e.ADD_TAGS, Ct)),
-          e.ADD_ATTR && (R === N && (R = fe(R)), Ce(R, e.ADD_ATTR, Ct)),
+            (P = []),
+            !0 === qe.html && (Ce(W, ve), Ce(P, ye)),
+            !0 === qe.svg && (Ce(W, we), Ce(P, Se), Ce(P, Ee)),
+            !0 === qe.svgFilters && (Ce(W, be), Ce(P, Se), Ce(P, Ee)),
+            !0 === qe.mathMl && (Ce(W, xe), Ce(P, Te), Ce(P, Ee))),
+          e.ADD_TAGS && (W === R && (W = fe(W)), Ce(W, e.ADD_TAGS, Ct)),
+          e.ADD_ATTR && (P === N && (P = fe(P)), Ce(P, e.ADD_ATTR, Ct)),
           e.ADD_URI_SAFE_ATTR && Ce(et, e.ADD_URI_SAFE_ATTR, Ct),
-          e.FORBID_CONTENTS && (Ye === Je && (Ye = fe(Ye)), Ce(Ye, e.FORBID_CONTENTS, Ct)),
-          Pe && (W['#text'] = !0),
+          e.FORBID_CONTENTS && (Je === Ye && (Je = fe(Je)), Ce(Je, e.FORBID_CONTENTS, Ct)),
+          Re && (W['#text'] = !0),
           me && Ce(W, ['html', 'head', 'body']),
           W.table && (Ce(W, ['tbody']), delete F.tbody),
           e.TRUSTED_TYPES_POLICY)
@@ -2761,23 +2781,23 @@ var Ke = (function e() {
           'function' != typeof e.hasChildNodes)
       );
     },
-    Et = function (e) {
+    Tt = function (e) {
       return 'function' == typeof n && e instanceof n;
     };
-  function Tt(e, t, l) {
+  function Et(e, t, l) {
     Q(e, e => {
       e.call(r, t, l, ut);
     });
   }
   const Ht = function (e) {
       let t = null;
-      if ((Tt(E.beforeSanitizeElements, e, null), St(e))) return xt(e), !0;
+      if ((Et(T.beforeSanitizeElements, e, null), St(e))) return xt(e), !0;
       const l = Ct(e.nodeName);
       if (
-        (Tt(E.uponSanitizeElement, e, { tagName: l, allowedTags: W }),
+        (Et(T.uponSanitizeElement, e, { tagName: l, allowedTags: W }),
         pe &&
           e.hasChildNodes() &&
-          !Et(e.firstElementChild) &&
+          !Tt(e.firstElementChild) &&
           he(/<[/\w!]/g, e.innerHTML) &&
           he(/<[/\w!]/g, e.textContent))
       )
@@ -2789,7 +2809,7 @@ var Ke = (function e() {
           if (D.tagNameCheck instanceof RegExp && he(D.tagNameCheck, l)) return !1;
           if (D.tagNameCheck instanceof Function && D.tagNameCheck(l)) return !1;
         }
-        if (Pe && !Ye[l]) {
+        if (Re && !Je[l]) {
           const t = w(e) || e.parentNode,
             r = v(e) || e.childNodes;
           if (r && t) {
@@ -2807,11 +2827,11 @@ var Ke = (function e() {
         ? (X &&
             e.nodeType === De &&
             ((t = e.textContent),
-            Q([T, H, _], e => {
+            Q([E, H, _], e => {
               t = ae(t, e, ' ');
             }),
             e.textContent !== t && (re(r.removed, { element: e.cloneNode() }), (e.textContent = t))),
-          Tt(E.afterSanitizeElements, e, null),
+          Et(T.afterSanitizeElements, e, null),
           !1)
         : (xt(e), !0);
     },
@@ -2819,7 +2839,7 @@ var Ke = (function e() {
       if (Ve && ('id' === t || 'name' === t) && (r in l || r in ft)) return !1;
       if (G && !Z[t] && he(A, t));
       else if (U && he($, t));
-      else if (!R[t] || Z[t]) {
+      else if (!P[t] || Z[t]) {
         if (
           !(
             (At(e) &&
@@ -2851,10 +2871,10 @@ var Ke = (function e() {
       return 'annotation-xml' !== e && se(e, B);
     },
     $t = function (e) {
-      Tt(E.beforeSanitizeAttributes, e, null);
+      Et(T.beforeSanitizeAttributes, e, null);
       const { attributes: t } = e;
       if (!t || St(e)) return;
-      const l = { attrName: '', attrValue: '', keepAttr: !0, allowedAttributes: R, forceKeepAttr: void 0 };
+      const l = { attrName: '', attrValue: '', keepAttr: !0, allowedAttributes: P, forceKeepAttr: void 0 };
       let i = t.length;
       for (; i--; ) {
         const o = t[i],
@@ -2867,7 +2887,7 @@ var Ke = (function e() {
           (l.attrValue = h),
           (l.keepAttr = !0),
           (l.forceKeepAttr = void 0),
-          Tt(E.uponSanitizeAttribute, e, l),
+          Et(T.uponSanitizeAttribute, e, l),
           (h = l.attrValue),
           !Be || ('id' !== c && 'name' !== c) || (Mt(s, e), (h = Ie + h)),
           pe && he(/((--!?|])>)|<\/(style|title)/i, h))
@@ -2880,12 +2900,12 @@ var Ke = (function e() {
           Mt(s, e);
           continue;
         }
-        if (!J && he(/\/>/i, h)) {
+        if (!Y && he(/\/>/i, h)) {
           Mt(s, e);
           continue;
         }
         X &&
-          Q([T, H, _], e => {
+          Q([E, H, _], e => {
             h = ae(h, e, ' ');
           });
         const g = Ct(e.nodeName);
@@ -2908,14 +2928,14 @@ var Ke = (function e() {
             }
         } else Mt(s, e);
       }
-      Tt(E.afterSanitizeAttributes, e, null);
+      Et(T.afterSanitizeAttributes, e, null);
     },
     Vt = function e(t) {
       let r = null;
       const l = yt(t);
-      for (Tt(E.beforeSanitizeShadowDOM, t, null); (r = l.nextNode()); )
-        Tt(E.uponSanitizeShadowNode, r, null), Ht(r), $t(r), r.content instanceof s && e(r.content);
-      Tt(E.afterSanitizeShadowDOM, t, null);
+      for (Et(T.beforeSanitizeShadowDOM, t, null); (r = l.nextNode()); )
+        Et(T.uponSanitizeShadowNode, r, null), Ht(r), $t(r), r.content instanceof s && e(r.content);
+      Et(T.afterSanitizeShadowDOM, t, null);
     };
   return (
     (r.sanitize = function (e) {
@@ -2924,7 +2944,7 @@ var Ke = (function e() {
         o = null,
         a = null,
         c = null;
-      if (((st = !e), st && (e = '\x3c!--\x3e'), 'string' != typeof e && !Et(e))) {
+      if (((st = !e), st && (e = '\x3c!--\x3e'), 'string' != typeof e && !Tt(e))) {
         if ('function' != typeof e.toString) throw ge('toString is not a function');
         if ('string' != typeof (e = e.toString())) throw ge('dirty is not a string, aborting');
       }
@@ -2949,7 +2969,7 @@ var Ke = (function e() {
       if (_e) {
         if (Ae) for (c = z.call(l.ownerDocument); l.firstChild; ) c.appendChild(l.firstChild);
         else c = l;
-        return (R.shadowroot || R.shadowrootmode) && (c = S.call(i, c, !0)), c;
+        return (P.shadowroot || P.shadowrootmode) && (c = S.call(i, c, !0)), c;
       }
       let h = me ? l.outerHTML : l.innerHTML;
       return (
@@ -2961,7 +2981,7 @@ var Ke = (function e() {
           he(We, l.ownerDocument.doctype.name) &&
           (h = '<!DOCTYPE ' + l.ownerDocument.doctype.name + '>\n' + h),
         X &&
-          Q([T, H, _], e => {
+          Q([E, H, _], e => {
             h = ae(h, e, ' ');
           }),
         b && $e ? b.createHTML(h) : h
@@ -2981,20 +3001,20 @@ var Ke = (function e() {
       return _t(l, i, r);
     }),
     (r.addHook = function (e, t) {
-      'function' == typeof t && re(E[e], t);
+      'function' == typeof t && re(T[e], t);
     }),
     (r.removeHook = function (e, t) {
       if (void 0 !== t) {
-        const r = ee(E[e], t);
-        return -1 === r ? void 0 : le(E[e], r, 1)[0];
+        const r = ee(T[e], t);
+        return -1 === r ? void 0 : le(T[e], r, 1)[0];
       }
-      return te(E[e]);
+      return te(T[e]);
     }),
     (r.removeHooks = function (e) {
-      E[e] = [];
+      T[e] = [];
     }),
     (r.removeAllHooks = function () {
-      E = {
+      T = {
         afterSanitizeAttributes: [],
         afterSanitizeElements: [],
         afterSanitizeShadowDOM: [],
@@ -3034,7 +3054,7 @@ const qe = ({ iconType: t }) => {
     h && r.default.createElement('div', { className: 'bulk__icon', dangerouslySetInnerHTML: { __html: p } })
   );
 };
-function Ye(e, t) {
+function Je(e, t) {
   void 0 === t && (t = {});
   var r = t.insertAt;
   if (e && 'undefined' != typeof document) {
@@ -3045,33 +3065,35 @@ function Ye(e, t) {
       i.styleSheet ? (i.styleSheet.cssText = e) : i.appendChild(document.createTextNode(e));
   }
 }
-Ye(
+Je(
   '.bulk{position:absolute;transform-style:preserve-3d}.bulk__icon{display:block;height:100%;object-fit:contain;width:100%}.bulk__sticker_wrap{left:0;position:absolute;top:0;width:100%}.bulk__sticker,.zoomed_bulk__sticker{left:50%;position:absolute;top:50%;transform:translate(-50%,-50%)}.bulk__sticker--album{height:2em;width:4em}.bulk__sticker--portrait{height:4em;width:2em}'
 );
-const Je = { 26: 1, 27: 1, 28: 1 },
+const Ye = { 26: 1, 27: 1, 28: 1 },
   Xe = ({ id: t, type: l, align: i, width: o, height: s, iconType: a, xOffset: n, topOffset: c }) => {
     var d, h, g;
     const { params: p, config: m, colorTheme: C } = e.useContext(A),
       { bulkBaseColor: u, bulkCutColor: f, bulkIconColor: k, bulkFloorIconColor: v } = C,
       [b, L] = e.useState(0),
       x = e.useRef(null),
-      { isSafari: M } = R(),
+      { isSafari: M } = P(),
       [z, y] = e.useState(() => {
-        const e = Je[t] || 0.7,
+        const e = Ye[t] || 0.7,
           r = Math.floor(o * e),
           l = Math.floor(s * e),
-          a = i === T.left ? Math.max(n, 0) : 'auto',
-          d = i === T.right ? Math.max(n, 0) : 'auto',
-          h = p.innerWidth / 2,
-          g = r / 2,
-          m = i === T.center && n ? Math.floor(n * e + h - g) : 'auto';
+          a = i === E.left ? Math.max(n, 0) : 'auto',
+          d = i === E.right ? Math.max(n, 0) : 'auto',
+          h = p.visibleWings ? C.wingsWidth : 0,
+          g = p.visibleCabinTitles ? C.cabinTitlesWidth : 0,
+          m = p.innerWidth / 2 - Math.max(h, g) - C.fuselageStrokeWidth,
+          u = (0.775 * o) / 2,
+          f = i === E.center && n ? Math.floor(n + m - u) : 'auto';
         return {
           top: c,
-          left: i === T.left ? a : m,
+          left: i === E.left ? a : f,
           right: d,
           width: r,
           height: l,
-          transform: i === T.right ? 'scaleX(-1)' : '',
+          transform: i === E.right ? 'scaleX(-1)' : '',
         };
       });
     e.useEffect(() => {
@@ -3096,11 +3118,11 @@ const Je = { 26: 1, 27: 1, 28: 1 },
     (S = null === (d = S) || void 0 === d ? void 0 : d.replace('$baseColor', u)),
       (S = null === (h = S) || void 0 === h ? void 0 : h.replace('$cutColor', f)),
       (S = null === (g = S) || void 0 === g ? void 0 : g.split('$stickerColor').join(v || k));
-    const E = Ke.sanitize(S);
+    const T = Ke.sanitize(S);
     return r.default.createElement(
       'div',
       { className: 'bulk', style: z, ref: x, 'data-testid': 'jets-bulk' },
-      r.default.createElement('div', { className: 'bulk__icon', dangerouslySetInnerHTML: { __html: E } }),
+      r.default.createElement('div', { className: 'bulk__icon', dangerouslySetInnerHTML: { __html: T } }),
       r.default.createElement(
         'div',
         { className: 'bulk__sticker_wrap', style: { height: `${b}px` } },
@@ -3108,13 +3130,13 @@ const Je = { 26: 1, 27: 1, 28: 1 },
       )
     );
   };
-Ye(
+Je(
   '.jets-btn{-webkit-font-smoothing:antialiased;background-color:#4071b9;border:1px solid #ccc;border-radius:2px;color:#fff;cursor:pointer;display:inline-block;font-family:inherit;font-size:14px;font-weight:600;height:40px;line-height:1.5;padding:9.5px 18px;text-align:center;text-decoration:none;vertical-align:middle}.jets-btn:disabled{background-color:#ccc!important;color:#000!important;cursor:not-allowed}'
 );
 const Qe = ({ content: e, onClick: t, className: l, disabled: o, active: s, ...a }) =>
   r.default.createElement('button', i({}, a, { className: l, onClick: t, disabled: o }), e);
 Qe.defaultProps = { content: 'Btn', className: 'jets-btn', disabled: !1, active: !1, onClick: () => {} };
-Ye(
+Je(
   '.deck-exit{height:72px;position:absolute;width:72px;z-index:-1}.deck-bulk__image{display:block;height:100%;object-fit:contain;width:100%}'
 );
 const et = ({ type: t, topOffset: l }) => {
@@ -3138,11 +3160,11 @@ const et = ({ type: t, topOffset: l }) => {
       : r.default.createElement('img', { className: 'deck-exit__image', src: 'left' === t ? o : s })
   );
 };
-Ye('.jets-deck--title{font-size:18px;font-weight:700;position:absolute;top:0}');
+Je('.jets-deck--title{font-size:18px;font-weight:700;position:absolute;top:0}');
 const tt = ({ number: t, lang: l, localeKey: i }) => {
     const { config: o, params: s, colorTheme: a } = e.useContext(A),
       n = e.useRef(null),
-      { isSafari: c } = R(),
+      { isSafari: c } = P(),
       d = c && (null == o ? void 0 : o.scaleType) === w.ZOOM,
       h = {
         transform: d ? void 0 : `scale(${s.antiScale}) translateY(30px)`,
@@ -3302,7 +3324,7 @@ const tt = ({ number: t, lang: l, localeKey: i }) => {
     const l = Ke.sanitize(rt.getSeatIcon(e, t));
     return r.default.createElement('div', { className: 'jets-seat-svg', dangerouslySetInnerHTML: { __html: l } });
   };
-Ye(
+Je(
   '.jets-seat-price{align-items:center;background:#fefefe;border-radius:12px;box-shadow:1px 1px 1px 1px rgba(0,0,0,.6);box-sizing:border-box;color:#000;display:flex;height:45px;justify-content:center;overflow:hidden;padding:5px 2px;position:absolute;top:-45px}.jets-seat-price .currency{font-size:21px;left:5px;line-height:1;position:absolute;top:11px}.jets-seat-price .priceValue{flex:1;font-size:28px;margin-left:16px;overflow:hidden;padding-left:3px;text-overflow:ellipsis;white-space:nowrap}'
 );
 const ct = ({ priceValue: e, currency: t, maxWidth: l }) => {
@@ -3315,7 +3337,7 @@ const ct = ({ priceValue: e, currency: t, maxWidth: l }) => {
     r.default.createElement('span', { className: 'priceValue' }, e)
   );
 };
-Ye(
+Je(
   '.jets-seat{align-items:center;box-sizing:border-box;display:flex;float:left;justify-content:center;position:relative;z-index:10}.jets-unavailable{cursor:not-allowed;position:relative}.jets-available,.jets-selected{cursor:pointer;position:relative}.jets-selected{color:#fff}.jets-aisle,.jets-empty,.jets-index{pointer-events:none}.jets-seat-r-nw{transform:rotate(-20deg)}.jets-seat-r-nw>.jets-seat-number,.jets-seat-r-nw>.jets-seat-passenger,.jets-seat-r-nw>.jets-seat-price{transform:rotate(20deg)}.jets-seat-r-nw45{transform:rotate(-45deg)}.jets-seat-r-nw45>.jets-seat-number,.jets-seat-r-nw45>.jets-seat-passenger,.jets-seat-r-nw45>.jets-seat-price{transform:rotate(45deg)}.jets-seat-r-ne{transform:rotate(20deg)}.jets-seat-r-ne>.jets-seat-number,.jets-seat-r-ne>.jets-seat-passenger,.jets-seat-r-ne>.jets-seat-price{transform:rotate(-20deg)}.jets-seat-r-ne45{transform:rotate(45deg)}.jets-seat-r-ne45>.jets-seat-number,.jets-seat-r-ne45>.jets-seat-passenger,.jets-seat-r-ne45>.jets-seat-price{transform:rotate(-45deg)}.jets-seat-r-s{transform:rotate(180deg)}.jets-seat-r-s>.jets-seat-number,.jets-seat-r-s>.jets-seat-passenger,.jets-seat-r-s>.jets-seat-price{transform:rotate(-180deg)}.jets-seat-r-se{transform:scale(.8) rotate(160deg)}.jets-seat-r-se>.jets-seat-number,.jets-seat-r-se>.jets-seat-passenger,.jets-seat-r-se>.jets-seat-price{transform:rotate(-160deg)}.jets-seat-r-sw{transform:scale(.8) rotate(-160deg)}.jets-seat-r-sw>.jets-seat-number,.jets-seat-r-sw>.jets-seat-passenger,.jets-seat-r-sw>.jets-seat-price{transform:rotate(160deg)}.jets-seat-map svg{height:100%;width:100%}.jets-seat-passenger{align-items:center;border-radius:50%;display:flex;font-size:36px;justify-content:center;max-height:192px;max-width:192px;position:absolute;z-index:11}.jets-seat-svg{height:100%;width:100%}.jets-seat-number{color:#fff;font-size:30px;position:absolute;text-align:center;top:18%;z-index:1}.ST-5,.ST-6{top:28%}.ST-8{margin-left:12px}.ST-9{margin-right:12px}.ST-10{margin-left:60px}.ST-11{margin-right:60px}.ST-12{margin-right:106px;top:25%}.ST-13{margin-left:106px;top:25%}.ST-15{margin-left:38px}.ST-16{margin-right:38px}.ST-17{margin-left:72px}.ST-18{margin-right:72px}.ST-20,.ST-21{top:65%}.ST-22,.ST-23{top:60%}.ST-24,.ST-25{top:55%}.ST-26{margin-right:50px;top:30%}.ST-27{margin-left:50px;top:30%}.ST-28{margin-right:62px;top:45%}.ST-29{margin-left:62px;top:45%}.ST-30{margin-right:62px;top:60%}.ST-31{margin-left:62px;top:60%}.ST-32{margin-right:58px;top:60%}.ST-33{margin-left:58px;top:60%}.ST-34{margin-left:27px;top:40%}.ST-35{margin-right:27px;top:40%}.ST-36{margin-right:122px;top:62%}.ST-37{margin-left:122px;top:62%}.ST-38{margin-right:122px;top:28%}.ST-39{margin-left:122px;top:28%}.ST-42{margin-left:260px;top:70%}.ST-43{margin-right:242px;top:70%}.ST-44{margin-right:254px;top:18%}.ST-45{margin-left:260px;top:18%}'
 );
 const dt = ({ data: t }) => {
@@ -3345,12 +3367,14 @@ const dt = ({ data: t }) => {
       price: M,
       priceValue: z,
       currency: y,
+      score: S,
     } = t,
-    { index: S, aisle: E } = L,
-    T = `jets-seat jets-${g} jets-${p} ${f ? `jets-seat-r-${f}` : ''}`,
-    H = M && (null == c ? void 0 : c.visibleSeatPriceLabels),
-    _ = e.useRef(),
-    [$, V] = e.useState(() => ({
+    { index: T, aisle: E } = L,
+    H = `jets-seat jets-${g} jets-${p} ${f ? `jets-seat-r-${f}` : ''}`,
+    _ = M && (null == c ? void 0 : c.visibleSeatPriceLabels),
+    V = $.calculateSeatColorByScore(S, d.customSeatColorRanges) || u,
+    O = e.useRef(),
+    [B, I] = e.useState(() => ({
       width: 0.8 * m.width,
       height: 0.8 * m.width,
       backgroundColor: d.defaultPassengerBadgeColor,
@@ -3358,17 +3382,17 @@ const dt = ({ data: t }) => {
       border: `1px solid ${d.defaultPassengerBadgeBorderColor}`,
       transform: null == n ? void 0 : n.antiRotation,
     })),
-    O = () => (g === S || g === E ? '' : C ? C.abbr || 'P' : '');
-  let B = '';
-  null == n || !n.isHorizontal || (g !== E && g !== S) || (B = n.rightToLeft ? '' : 'rotate(180deg)');
-  const I = { width: m.width, height: m.height, top: w, left: b, transform: B },
-    W = {
+    W = () => (g === T || g === E ? '' : C ? C.abbr || 'P' : '');
+  let R = '';
+  null == n || !n.isHorizontal || (g !== E && g !== T) || (R = n.rightToLeft ? '' : 'rotate(180deg)');
+  const P = { width: m.width, height: m.height, top: w, left: b, transform: R },
+    N = {
       strokeColor: d.seatStrokeColor,
       armrestColor: d.seatArmrestColor,
-      fillColor: u,
+      fillColor: V,
       strokeWidth: d.seatStrokeWidth,
     },
-    P = {
+    D = {
       transform: `${null == n ? void 0 : n.antiRotation} scale(${n.antiScale})`,
       color: d.seatLabelColor,
       zIndex: 100,
@@ -3376,26 +3400,26 @@ const dt = ({ data: t }) => {
   e.useEffect(() => {
     C &&
       (() => {
-        if (!_.current) return;
-        if (!_.current.querySelector('.seat')) return;
-        const e = { ...$ };
-        null != C && C.passengerColor && (e.backgroundColor = C.passengerColor), V(e);
+        if (!O.current) return;
+        if (!O.current.querySelector('.seat')) return;
+        const e = { ...B };
+        null != C && C.passengerColor && (e.backgroundColor = C.passengerColor), I(e);
       })();
   }, [C]),
     e.useEffect(() => {
       var e;
       s &&
         (null == x ? void 0 : x.toUpperCase()) === (null == s ? void 0 : s.toUpperCase()) &&
-        (null === (e = _.current) || void 0 === e || e.scrollIntoView(), i(t, _, { nativeEvent: null }), a());
+        (null === (e = O.current) || void 0 === e || e.scrollIntoView(), i(t, O, { nativeEvent: null }), a());
     }, [s]);
   return r.default.createElement(
     'div',
     {
-      ref: _,
-      style: I,
-      className: T,
-      onClick: e => l(t, _, e),
-      onMouseEnter: n.tooltipOnHover ? e => i(t, _, e) : null,
+      ref: O,
+      style: P,
+      className: H,
+      onClick: e => l(t, O, e),
+      onMouseEnter: n.tooltipOnHover ? e => i(t, O, e) : null,
       onMouseLeave: n.tooltipOnHover
         ? e =>
             ((e, t, r) => {
@@ -3407,21 +3431,21 @@ const dt = ({ data: t }) => {
                 void 0 !== l &&
                 l.includes('tooltip')) ||
                 o(e, t, r);
-            })(t, _, e)
+            })(t, O, e)
         : null,
       'data-testid': 'jets-seat',
     },
-    k && g !== S
+    k && g !== T
       ? r.default.createElement(
           r.default.Fragment,
           null,
-          H && r.default.createElement(ct, { priceValue: z, currency: y, maxWidth: m.width }),
+          _ && r.default.createElement(ct, { priceValue: z, currency: y, maxWidth: m.width }),
           r.default.createElement('div', { className: `jets-seat-number ST-${v}` }, `${x}`),
-          r.default.createElement(nt, { seatType: k, style: W }),
+          r.default.createElement(nt, { seatType: k, style: N }),
           C &&
             r.default.createElement(
               'div',
-              { className: 'jets-seat-passenger', style: $ },
+              { className: 'jets-seat-passenger', style: B },
               r.default.createElement(
                 'div',
                 {
@@ -3429,14 +3453,14 @@ const dt = ({ data: t }) => {
                     transform: null == n || !n.isHorizontal || (null != n && n.rightToLeft) ? '' : 'rotate(180deg)',
                   },
                 },
-                O()
+                W()
               )
             )
         )
-      : r.default.createElement('div', { style: P, 'data-testid': 'jets-seat-index' }, O())
+      : r.default.createElement('div', { style: D, 'data-testid': 'jets-seat-index' }, W())
   );
 };
-Ye('.jets-row{position:absolute}');
+Je('.jets-row{position:absolute}');
 const ht = ({ seats: t, top: l }) => {
   var i;
   const o = e.useRef(null),
@@ -3448,7 +3472,7 @@ const ht = ({ seats: t, top: l }) => {
     null == t ? void 0 : t.map(e => r.default.createElement(a, { key: e.uniqId, data: e }))
   );
 };
-Ye(
+Je(
   '.jets-cabin-title-container{position:absolute}.jets-cabin-title-hl-right{right:0}.jets-cabin-title-hl-left,.jets-cabin-title-hl-right{position:absolute;top:0;white-space:nowrap;width:60px}.jets-cabin-title-hl-left{left:0}.jets-cabin-title-label-left{right:0;transform-origin:bottom right}.jets-cabin-title-label-left,.jets-cabin-title-label-right{border-radius:3px;font-size:16px;padding:0 6px;position:absolute;top:0}.jets-cabin-title-label-right{left:0;transform-origin:bottom left}'
 );
 const gt = ({ top: t, height: l, lang: i, localeKey: o }) => {
@@ -3476,7 +3500,7 @@ const gt = ({ top: t, height: l, lang: i, localeKey: o }) => {
     )
   );
 };
-Ye(
+Je(
   '.jets-deck{align-items:center;box-sizing:border-box;display:flex;flex-direction:column;height:100%;position:relative;transform-style:preserve-3d;width:100%}'
 );
 const pt = ({ deck: t, lang: l, exits: i, bulks: o, isSingleDeck: s }) => {
@@ -3523,7 +3547,7 @@ const pt = ({ deck: t, lang: l, exits: i, bulks: o, isSingleDeck: s }) => {
       : null
   );
 };
-Ye(
+Je(
   '.jets-deck-selector{background-color:hsla(0,0%,50%,.5);border-radius:3px;height:40px;margin:5px;padding:5px;position:absolute;z-index:1000}'
 );
 const mt = ({ direction: t }) => {
@@ -3551,7 +3575,7 @@ const mt = ({ direction: t }) => {
   });
   var h;
 };
-Ye(
+Je(
   '.jets-no-data{align-items:center;display:flex;font-size:18px;font-weight:700;height:100%;height:100vh;justify-content:center;width:100%}'
 );
 const Ct = () => {
@@ -3563,7 +3587,7 @@ const Ct = () => {
     'Seat map is not found for the flight'
   );
 };
-Ye('.jets-nose{position:relative}.jets-nose:not(.cut) .nose-dotted-line,.nose-dotted-line{stroke:none}');
+Je('.jets-nose{position:relative}.jets-nose:not(.cut) .nose-dotted-line,.nose-dotted-line{stroke:none}');
 const ut = ({ isFull: t }) => {
   const { params: l, colorTheme: i } = e.useContext(A),
     [o, s] = e.useState(0),
@@ -3597,13 +3621,13 @@ const ut = ({ isFull: t }) => {
     'data-testid': 'jets-nose',
   });
 };
-Ye(
+Je(
   '.jets-not-init{align-items:center;display:flex;font-size:18px;font-weight:700;height:100%;height:100vh;justify-content:center;width:100%}.jets-not-init--spinner{height:50px;width:50px}.lds-roller{display:inline-block;height:80px;position:relative;width:80px}.lds-roller div{animation:lds-roller 1.2s cubic-bezier(.5,0,.5,1) infinite;transform-origin:40px 40px}.lds-roller div:after{background:#000;border-radius:50%;content:" ";display:block;height:7px;margin:-4px 0 0 -4px;position:absolute;width:7px}.lds-roller div:first-child{animation-delay:-36ms}.lds-roller div:first-child:after{left:63px;top:63px}.lds-roller div:nth-child(2){animation-delay:-72ms}.lds-roller div:nth-child(2):after{left:56px;top:68px}.lds-roller div:nth-child(3){animation-delay:-.108s}.lds-roller div:nth-child(3):after{left:48px;top:71px}.lds-roller div:nth-child(4){animation-delay:-.144s}.lds-roller div:nth-child(4):after{left:40px;top:72px}.lds-roller div:nth-child(5){animation-delay:-.18s}.lds-roller div:nth-child(5):after{left:32px;top:71px}.lds-roller div:nth-child(6){animation-delay:-.216s}.lds-roller div:nth-child(6):after{left:24px;top:68px}.lds-roller div:nth-child(7){animation-delay:-.252s}.lds-roller div:nth-child(7):after{left:17px;top:63px}.lds-roller div:nth-child(8){animation-delay:-.288s}.lds-roller div:nth-child(8):after{left:12px;top:56px}@keyframes lds-roller{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}'
 );
 const ft = () =>
   r.default.createElement(
     'div',
-    { className: 'jets-not-init' },
+    { className: 'jets-not-init', 'data-testid': 'jets-not-init' },
     r.default.createElement(
       'div',
       { className: 'lds-roller jets-not-init--spinner' },
@@ -3617,14 +3641,19 @@ const ft = () =>
       r.default.createElement('div', null)
     )
   );
-Ye('.jets-deck-separator{mix-blend-mode:screen;position:relative;width:100%}');
+Je('.jets-deck-separator{mix-blend-mode:screen;position:relative;width:100%}');
 const kt = ({ width: t }) => {
   const { params: l, colorTheme: i } = e.useContext(A),
     o = e.useRef(null),
     s = { height: i.deckSeparation, background: i.fuselageFillColor };
-  return r.default.createElement('div', { className: 'jets-deck-separator', style: s, ref: o });
+  return r.default.createElement('div', {
+    className: 'jets-deck-separator',
+    'data-testid': 'jets-deck-separator',
+    style: s,
+    ref: o,
+  });
 };
-Ye('.jets-tail{position:relative}.jets-tail:not(.cut) .tail-dotted-line,.tail-dotted-line{stroke:none}');
+Je('.jets-tail{position:relative}.jets-tail:not(.cut) .tail-dotted-line,.tail-dotted-line{stroke:none}');
 const vt = ({ isFull: t }) => {
   const { params: l, colorTheme: i } = e.useContext(A),
     [o, s] = e.useState(0),
@@ -3658,7 +3687,7 @@ const vt = ({ isFull: t }) => {
     'data-testid': 'jets-tail',
   });
 };
-Ye(
+Je(
   '.jets-wings{box-sizing:border-box;overflow:hidden;position:absolute;transform:translateZ(-10px)}.jets-wings-alignment-wrapper{align-items:center;display:flex;flex-direction:column;position:absolute;width:100%;z-index:-1}.jets-wings .wing{height:100%;position:absolute;transform-origin:top center;width:50%}.jets-wings .wing.left{left:0}.jets-wings .wing.right{right:0}.jets-wings .wing-leading{height:30px;overflow:hidden;position:absolute;z-index:1}.jets-wings .wing-leading.left{clip-path:polygon(100% 10%,0 100%,0 0)}.jets-wings .wing-leading.right{clip-path:polygon(100% 0,100% 100%,-10% 0)}'
 );
 const wt = ({ wingsInfo: t }) => {
@@ -3714,7 +3743,7 @@ const wt = ({ wingsInfo: t }) => {
     )
   );
 };
-Ye(
+Je(
   '.jets-plane-body{margin:0 auto}.jets-deck-wrapper{z-index:1}.deck-floor,.jets-deck-wrapper{position:relative;transform-style:preserve-3d}'
 );
 const bt = ({ activeDeck: t, content: l, exits: i, bulks: o, isSeatMapInited: s, config: a, showOneDeck: n }) => {
@@ -3741,17 +3770,17 @@ const bt = ({ activeDeck: t, content: l, exits: i, bulks: o, isSeatMapInited: s,
       y = l ? [...l] : [];
     let S = t;
     null == a || !a.horizontal || (null != a && a.rightToLeft) || (y.reverse(), (S = y.length - 1 - S));
-    const E = (null == d ? void 0 : d.isHorizontal) && !(null != d && d.rightToLeft),
-      T = null != d && d.visibleWings ? 2 * b : 0,
+    const T = (null == d ? void 0 : d.isHorizontal) && !(null != d && d.rightToLeft),
+      E = null != d && d.visibleWings ? 2 * b : 0,
       H = null != d && d.visibleCabinTitles ? 2 * x : 0,
-      _ = ((null == d ? void 0 : d.innerWidth) || 0) - Math.max(T, H),
+      _ = ((null == d ? void 0 : d.innerWidth) || 0) - Math.max(E, H),
       $ = { width: _ || a.width },
       V = 1 == (null == y ? void 0 : y.length);
     return r.default.createElement(
       'div',
       { className: 'jets-plane-body', style: $ },
       u && null != y && y.length
-        ? E
+        ? T
           ? r.default.createElement(vt, { isFull: true })
           : r.default.createElement(ut, { isFull: true })
         : null,
@@ -3770,6 +3799,7 @@ const bt = ({ activeDeck: t, content: l, exits: i, bulks: o, isSeatMapInited: s,
                         r.default.createElement(
                           'div',
                           {
+                            'data-testid': 'jets-plane-body-deck',
                             ref: e => {
                               p.current[t] = e;
                             },
@@ -3800,7 +3830,7 @@ const bt = ({ activeDeck: t, content: l, exits: i, bulks: o, isSeatMapInited: s,
         ? r.default.createElement(Ct, null)
         : r.default.createElement(m, null),
       u && null != y && y.length
-        ? E
+        ? T
           ? r.default.createElement(ut, { isFull: true })
           : r.default.createElement(vt, { isFull: true })
         : null
@@ -3856,8 +3886,8 @@ class xt extends _ {
             case e.id:
               if (t && t.error) throw new Error(t.error);
               if (e.cabinClass && n.includes(e.cabinClass)) {
-                const { id: r, cabin: l, entertainment: i, power: o, wifi: s } = t;
-                a[e.cabinClass] = { cabin: l, entertainment: i, power: o, wifi: s };
+                const { id: r, cabin: l, entertainment: i, power: o, wifi: s, media: n } = t;
+                (a[e.cabinClass] = { cabin: l, entertainment: i, power: o, wifi: s }), n && (a.media = n);
               }
               a.seatDetails = t.seatDetails;
               break;
@@ -3891,7 +3921,14 @@ class Mt {
               });
         return (
           r && n && (i = this.setPassengersHandler(i, r)),
-          { content: i, params: o, exits: s, bulks: a, availabilityData: null == e ? void 0 : e.availabilityData }
+          {
+            content: i,
+            params: o,
+            exits: s,
+            bulks: a,
+            availabilityData: null == e ? void 0 : e.availabilityData,
+            media: null == e ? void 0 : e.media,
+          }
         );
       }),
       l(this, 'selectSeatHandler', (e, t, r) => {
@@ -4069,17 +4106,17 @@ class Mt {
         });
       });
     const { apiUrl: t, apiAppId: r, apiKey: i, colorTheme: o, apiAuthorizationScheme: s, apiMetadata: a } = e,
-      n = new P();
+      n = new R();
     (this._api = new xt(r, i, t, n, s, a)),
       (this._preparer = new W()),
       (this._colorTheme = o),
       (this._configuration = e);
   }
 }
-Ye(
+Je(
   '.jets-seat-map{font-family:sans-serif;font-weight:400;height:100%;position:relative;width:100%}.jets-seat-map.scale.vertical *{-webkit-font-smoothing:subpixel-antialiased;filter:blur(0);-webkit-filter:blur(0)}'
 );
-Ye(
+Je(
   '.jets-tooltip{background:#fff;border-radius:2px;box-shadow:0 0 0 1px #c0cad5,0 0 4px 0 rgb(0 0 0/8%),0 8px 8px 0 rgb(0 0 0/8%),0 16px 16px 0 rgb(0 0 0/8%);box-sizing:border-box;font-size:12px;max-width:100%;outline:0;position:absolute;z-index:200}.jets-tooltip--content{padding:16px 16px 0}.jets-tooltip--body.no-buttons .jets-tooltip--content{padding:16px}.jets-tooltip--body.no-buttons .jets-tooltip--btns-block{display:none}.jets-tooltip--header{display:flex;font-size:16px;font-weight:700;justify-content:space-between;margin-bottom:8px;width:100%}.jets-tooltip--passenger-name{font-size:15px;font-weight:700;margin-bottom:8px}.jets-tooltip--features>ul{list-style:none;margin:0;padding:0;width:100%}.jets-tooltip--feature img{height:18px;width:18px}.jets-tooltip--feature .svg_span{height:18px;min-height:18px;min-width:18px;width:18px}.jets-tooltip--feature>span{display:block}.jets-tooltip--features>ul>li{align-items:center;color:#4f6f8f;display:flex;font-size:13px;line-height:1.4;margin-bottom:.6rem;width:100%}.jets-tooltip--features>ul>li>div{margin:0 5px}.jets-tooltip--btns-block{display:flex;width:100%}.jets-tooltip--btn{-webkit-font-smoothing:antialiased;border-radius:2px;border-style:solid;border-width:0;cursor:pointer;display:inline-block;font-family:inherit;font-size:14px;font-weight:700;line-height:1.5;margin:1%;padding:9.5px 18px;text-align:center;text-decoration:none;vertical-align:middle;width:48%}.jets-tooltip--arrow-pointer{border-width:14px 16px 0;margin:0 0 0 -16px;transform-origin:top}.jets-tooltip--arrow-pointer,.jets-tooltip--arrow-pointer-horizontal{border-color:#fff transparent transparent;border-style:solid;height:0;position:absolute;width:0}.jets-tooltip--arrow-pointer-horizontal{border-width:16px 14px 16px 0;margin:-16px 0 0 -14px;transform-origin:right}.jets-tooltip--measurements{grid-column-gap:3%;display:grid;grid-auto-columns:minmax(0,1fr);grid-auto-flow:column;margin:10px 0}.jets-tooltip--measurement{backface-visibility:hidden;border:1px solid #4f6f8f;border-radius:6px;box-sizing:border-box;padding:10px;transform:translateZ(0);transform-style:preserve-3d}.jets-tooltip--measurement svg{display:block;height:40px}.jets-tooltip--measurement-value{color:#4f6f8f;margin-top:10px;text-align:center}.horizontal .jets-tooltip--measurement{align-items:center;display:flex;justify-content:space-evenly}.horizontal .jets-tooltip--features{-moz-column-count:2;-webkit-column-count:2;column-count:2;-moz-column-gap:20px;-webkit-column-gap:20px;column-gap:20px}.horizontal .jets-tooltip--features>ul>li:nth-child(6){-webkit-column-break-after:always;break-after:always}.horizontal .jets-tooltip--measurements .svg_span{display:inline-block}.horizontal .jets-tooltip--measurement-value{display:inline-block;margin:0 4px}.horizontal .jets-tooltip--measurement svg{height:30px}'
 );
 const zt = ({
@@ -4096,30 +4133,30 @@ const zt = ({
     pointerStyleHorizontal: h,
     shouldHideButtons: g,
     rootStyle: p,
-    onMouseLeave: m,
-    onSeatSelect: C,
-    onSeatUnselect: u,
-    onTooltipClose: f,
+    onSeatSelect: m,
+    onSeatUnselect: C,
+    onTooltipClose: u,
   }) => {
-    var k;
+    var f;
     const {
-        tooltipFontColor: v,
-        tooltipIconColor: w,
-        tooltipIconBorderColor: b,
-        tooltipIconBackgroundColor: L,
-        tooltipSelectButtonTextColor: x,
-        tooltipSelectButtonBackgroundColor: M,
-        tooltipCancelButtonTextColor: y,
-        tooltipCancelButtonBackgroundColor: S,
+        tooltipFontColor: k,
+        tooltipIconColor: v,
+        tooltipIconBorderColor: w,
+        tooltipIconBackgroundColor: b,
+        tooltipSelectButtonTextColor: L,
+        tooltipSelectButtonBackgroundColor: x,
+        tooltipCancelButtonTextColor: M,
+        tooltipCancelButtonBackgroundColor: y,
       } = e,
-      { number: E, classType: T, measurements: H, price: _, passenger: A, lang: $, rowName: V } = t;
+      { number: S, classType: T, measurements: E, price: H, passenger: _, lang: A, rowName: $, name: V } = t,
+      O = e => u(null, null, e);
     return r.default.createElement(
       'div',
       {
         style: p,
         className: 'jets-tooltip ' + (null != n && n.isHorizontal ? 'horizontal' : ''),
         ref: l,
-        onMouseLeave: e => m(e),
+        onMouseLeave: n.tooltipOnHover ? O : null,
       },
       r.default.createElement('div', { className: 'jets-tooltip--arrow-pointer', style: d }),
       r.default.createElement('div', { className: 'jets-tooltip--arrow-pointer-horizontal', style: h }),
@@ -4132,8 +4169,8 @@ const zt = ({
           r.default.createElement(
             'div',
             { className: 'jets-tooltip--header', style: s },
-            r.default.createElement('div', { className: 'jets-tooltip--header-title' }, V || T, ' ', E),
-            r.default.createElement('div', { className: 'jets-tooltip--header-price' }, _)
+            r.default.createElement('div', { className: 'jets-tooltip--header-title' }, V || $ || T, ' ', S),
+            r.default.createElement('div', { className: 'jets-tooltip--header-price' }, H)
           ),
           r.default.createElement('div', { className: 'jets-tooltip--passenger-name', style: i }, c),
           r.default.createElement(
@@ -4154,7 +4191,7 @@ const zt = ({
                     : r.default.createElement('span', null, t),
                   r.default.createElement(
                     'div',
-                    { className: '' + (o ? o + '-label' : ''), style: o ? {} : { color: v } },
+                    { className: '' + (o ? o + '-label' : ''), style: o ? {} : { color: k } },
                     i
                   )
                 )
@@ -4165,14 +4202,14 @@ const zt = ({
           r.default.createElement(
             'div',
             { className: 'jets-tooltip--measurements' },
-            H.map(({ uniqId: e, title: t, icon: l, value: i }) =>
+            E.map(({ uniqId: e, title: t, icon: l, value: i }) =>
               r.default.createElement(
                 'div',
-                { style: { borderColor: b, background: L }, className: 'jets-tooltip--measurement', key: e },
+                { style: { borderColor: w, background: b }, className: 'jets-tooltip--measurement', key: e },
                 l
                   ? r.default.createElement('span', {
                       className: 'svg_span',
-                      style: { fill: w },
+                      style: { fill: v },
                       dangerouslySetInnerHTML: { __html: l },
                     })
                   : r.default.createElement('span', null),
@@ -4190,25 +4227,25 @@ const zt = ({
           'div',
           { className: 'jets-tooltip--btns-block' },
           r.default.createElement(Qe, {
-            onClick: e => f(null, null, e),
-            content: z[$].cancel,
+            onClick: O,
+            content: z[A].cancel,
             className: 'jets-btn jets-tooltip--btn',
-            style: { color: y, backgroundColor: S },
+            style: { color: M, backgroundColor: y },
           }),
-          A
+          _
             ? r.default.createElement(Qe, {
-                disabled: null == t || null === (k = t.passenger) || void 0 === k ? void 0 : k.readOnly,
-                onClick: () => u(t),
-                content: z[$].unselect,
+                disabled: null == t || null === (f = t.passenger) || void 0 === f ? void 0 : f.readOnly,
+                onClick: () => C(t),
+                content: z[A].unselect,
                 className: 'jets-btn jets-tooltip--btn ',
-                style: { color: x, backgroundColor: M },
+                style: { color: L, backgroundColor: x },
               })
             : r.default.createElement(Qe, {
                 disabled: a,
-                onClick: () => C(t),
-                content: z[$].select,
+                onClick: () => m(t),
+                content: z[A].select,
                 className: 'jets-btn jets-tooltip--btn ',
-                style: { color: x, backgroundColor: M },
+                style: { color: L, backgroundColor: x },
               })
         )
       )
@@ -4225,7 +4262,7 @@ const zt = ({
         colorTheme: c,
         params: d,
       } = e.useContext(A),
-      { isSafari: h } = R(),
+      { isSafari: h } = P(),
       g = e.useRef(null),
       [p, m] = e.useState(0),
       [C, u] = e.useState(0),
@@ -4234,8 +4271,8 @@ const zt = ({
       {
         top: M,
         left: y,
-        features: E,
-        passenger: T,
+        features: T,
+        passenger: E,
         passengerTypes: H,
         lang: _,
         antiScale: $,
@@ -4244,28 +4281,28 @@ const zt = ({
         seatmapHeight: B,
         seatmapWidth: I,
         seatmapElement: W,
-        seatNode: P,
+        seatNode: R,
         additionalProps: N,
       } = t,
       D = t.size.height / $,
       j = (t.size.width / $ - 16 - 8) / 2,
-      F = P.closest('.jets-row').getBoundingClientRect(),
-      Z = P.getBoundingClientRect(),
+      F = R.closest('.jets-row').getBoundingClientRect(),
+      Z = R.getBoundingClientRect(),
       U = W.getBoundingClientRect(),
       G = W.parentElement.getBoundingClientRect();
     let K = Z.top - U.top,
       q = Z.left - U.left,
-      Y = Z.top - G.top;
+      J = Z.top - G.top;
     if (h) {
       const e = V === w.ZOOM ? $ : 1;
-      (K = Z.top / e - U.top), (q = Z.left / e - U.left), (Y = Z.top / e - G.top);
+      (K = Z.top / e - U.top), (q = Z.left / e - U.left), (J = Z.top / e - G.top);
     }
-    const J = null != d && d.isHorizontal ? 'left' : 'top',
+    const Y = null != d && d.isHorizontal ? 'left' : 'top',
       X = null != d && d.isHorizontal ? 'width' : 'height',
-      Q = G[J] + 0.5 * G[X],
+      Q = G[Y] + 0.5 * G[X],
       ee = C < q,
-      te = F[J] > Q,
-      re = Number(Y > p),
+      te = F[Y] > Q,
+      re = Number(J > p),
       le = Number(ee) * Number(te),
       ie = p - K,
       oe = Math.min(ie - 16, 0),
@@ -4306,7 +4343,7 @@ const zt = ({
       pe = { direction: d.rightToLeft ? 'rtl' : 'ltr' },
       me = (null == d ? void 0 : d.tooltipOnHover) && !(null != d && d.isTouchDevice);
     let Ce = '';
-    T && (Ce = (null == T ? void 0 : T.passengerLabel) || `${z[_].passenger} ${null == T ? void 0 : T.id}`);
+    E && (Ce = (null == E ? void 0 : E.passengerLabel) || `${z[_].passenger} ${null == E ? void 0 : E.id}`);
     let ue = '';
     if (H) {
       const e = S,
@@ -4314,8 +4351,8 @@ const zt = ({
       let r = t.map(e => z[_][e]);
       ue = t.length < e.length ? `${z[_].seatRestrictions}: ${r.join(', ')}` : '';
     }
-    const fe = [...(E || []).filter(e => !d.hiddenSeatFeatures.includes(e.key)), ...(N || [])].slice(0, 12),
-      ke = null !== (l = null == i ? void 0 : i.JetsTooltip) && void 0 !== l ? l : zt;
+    const fe = [...(T || []).filter(e => !d.hiddenSeatFeatures.includes(e.key)), ...(N || [])].slice(0, 12),
+      ke = null !== (l = null == i ? void 0 : i.JetsTooltipView) && void 0 !== l ? l : zt;
     return r.default.createElement(ke, {
       colorTheme: c,
       data: t,
@@ -4330,9 +4367,6 @@ const zt = ({
       pointerStyleHorizontal: he,
       rootStyle: ce,
       shouldHideButtons: me,
-      onMouseLeave: e => {
-        null != d && d.tooltipOnHover && s(null, null, e);
-      },
       onTooltipClose: s,
       onSeatSelect: a,
       onSeatUnselect: n,
@@ -4355,35 +4389,39 @@ const zt = ({
     onAvailabilityApplied: C,
     componentOverrides: u,
   }) => {
-    const { isFirefox: f } = R(),
-      k = $.mergeColorThemeWithConstraints(St.defaultProps.config.colorTheme, o.colorTheme);
-    (o.colorTheme = k), (o.lang = $.validateLanguage(o.lang));
-    const v = { ...St.defaultProps.config, ...o };
-    f && (v.scaleType = w.SCALE);
-    const [x, M] = e.useState([]),
-      [z, y] = e.useState(!1),
-      [S, E] = e.useState([]),
-      [T, H] = e.useState(null),
+    var f;
+    const { isFirefox: k } = P(),
+      v = $.mergeColorThemeWithConstraints(St.defaultProps.config.colorTheme, o.colorTheme);
+    (o.colorTheme = v), (o.lang = $.validateLanguage(o.lang));
+    const x = { ...St.defaultProps.config, ...o };
+    k && (x.scaleType = w.SCALE);
+    const M = x.width / 4;
+    x.colorTheme.wingsWidth > M && (x.colorTheme.wingsWidth = M);
+    const [z, y] = e.useState([]),
+      [S, T] = e.useState(!1),
+      [E, H] = e.useState([]),
       [_, V] = e.useState(null),
-      [O, B] = e.useState(!1),
-      [I, W] = e.useState(0),
-      [P, N] = e.useState(null),
-      [D, j] = e.useState([]),
+      [O, B] = e.useState(null),
+      [I, W] = e.useState(!1),
+      [R, N] = e.useState(0),
+      [D, j] = e.useState(null),
       [F, Z] = e.useState([]),
-      [U, G] = e.useState(null),
-      K = e.useRef(!1),
-      q = e.useRef(),
-      Y = new Mt(v),
-      J = (null == P ? void 0 : P.singleDeckMode) && x.length > 1,
-      X = (null == P ? void 0 : P.builtInDeckSelector) && J;
+      [U, G] = e.useState([]),
+      [K, q] = e.useState(null),
+      J = e.useRef(!1),
+      Y = e.useRef(),
+      X = new Mt(x),
+      Q = (null == D ? void 0 : D.singleDeckMode) && z.length > 1,
+      ee = (null == D ? void 0 : D.builtInDeckSelector) && Q,
+      te = null !== (f = null == u ? void 0 : u.JetsTooltip) && void 0 !== f ? f : yt;
     e.useEffect(() => {
       let e = !0;
       return (
         null != t &&
           t.id &&
-          Y.getPlaneFeatures(t, v.lang, v.units)
+          X.getPlaneFeatures(t, x.lang, x.units)
             .then(e => {
-              G(e);
+              q(e);
             })
             .catch(t => {
               e &&
@@ -4404,15 +4442,15 @@ const zt = ({
       e.useEffect(() => {
         let e = !0;
         return (
-          U &&
-            Y.processPlaneFeatures(U, l, i, v).then(t => {
+          K &&
+            X.processPlaneFeatures(K, l, i, x).then(t => {
               var r, l, i, o, s, a, c, d;
               e &&
-                (N(t.params),
-                M(t.content),
-                j(t.exits),
-                Z(t.bulks),
-                y(!0),
+                (j(t.params),
+                y(t.content),
+                Z(t.exits),
+                G(t.bulks),
+                T(!0),
                 n({
                   heightInPx:
                     null !== (r = t.params) && void 0 !== r && r.isHorizontal
@@ -4432,119 +4470,120 @@ const zt = ({
                       : a.innerWidth,
                   scaleFactor: null === (c = t.params) || void 0 === c ? void 0 : c.scale,
                   decksCount: null === (d = t.content) || void 0 === d ? void 0 : d.length,
-                  currentDeckIndex: I,
+                  currentDeckIndex: R,
                   availabilityData: null == t ? void 0 : t.availabilityData,
+                  media: null == t ? void 0 : t.media,
                 }),
-                (K.current = !1));
+                (J.current = !1));
             }),
           () => {
             e = !1;
           }
         );
-      }, [U, v.width]),
+      }, [K, x.width]),
       e.useEffect(() => {
         if (!l) return;
-        const e = Y.setAvailabilityHandler(x, l),
+        const e = X.setAvailabilityHandler(z, l),
           t = l.map(({ label: e }) => e),
-          r = Y.compareWithDecksSeatsInfo(t, e);
-        le(), M(e), H(null), C(r);
+          r = X.compareWithDecksSeatsInfo(t, e);
+        se(), y(e), V(null), C(r);
       }, [l]),
       e.useEffect(() => {
-        le(), H(null);
+        se(), V(null);
       }, [i]),
       e.useEffect(() => {
-        !K.current && P && ((K.current = !0), re(s), te(), ie());
-      }, [P]),
+        !J.current && D && ((J.current = !0), oe(s), ie(), ae());
+      }, [D]),
       e.useEffect(() => {
-        te(), ie();
-      }, [I]),
+        ie(), ae();
+      }, [R]),
       e.useEffect(() => {
-        re(s);
+        oe(s);
       }, [s]),
       e.useEffect(() => {
         var e;
-        if (!a || null == x || !x.length) return;
+        if (!a || null == z || !z.length) return;
         const t = null == a || null === (e = a.seatLabel) || void 0 === e ? void 0 : e.toString().trim().toUpperCase(),
-          { nonExistingSeatLabels: r } = Y.compareWithDecksSeatsInfo([t], x);
-        if (r.includes(t)) return H(null), void ee();
-        const l = Y.getDeckIndexBySeatLabel(t, x);
-        l !== I && re(l), V(t);
+          { nonExistingSeatLabels: r } = X.compareWithDecksSeatsInfo([t], z);
+        if (r.includes(t)) return V(null), void le();
+        const l = X.getDeckIndexBySeatLabel(t, z);
+        l !== R && oe(l), B(t);
       }, [a]);
-    const Q = e.useMemo(
+    const re = e.useMemo(
         () =>
-          `jets-seat-map ${null != P && P.isHorizontal ? 'horizontal' : 'vertical'} ${
-            v.scaleType === w.SCALE ? 'scale' : 'zoom'
+          `jets-seat-map ${null != D && D.isHorizontal ? 'horizontal' : 'vertical'} ${
+            x.scaleType === w.SCALE ? 'scale' : 'zoom'
           }`,
-        [P, v]
+        [D, x]
       ),
-      ee = () => {
-        V(null);
-      },
-      te = () => {
-        null != P &&
-          P.isHorizontal &&
-          null != P &&
-          P.rightToLeft &&
-          (q.current.parentElement.scrollLeft = P.totalDecksHeight);
-      },
-      re = e => {
-        if (!J || x.length < 2) return;
-        let t = (I + 1) % x.length;
-        if (void 0 !== e) {
-          if (e < 0 || e > x.length - 1) return;
-          t = e;
-        }
-        const r = (null == P ? void 0 : P.separateDeckHeights[t]) * (P.scale || 1) + 'px',
-          l = null == P ? void 0 : P.separateDeckHeights[t];
-        N({ ...P, scaledTotalDecksHeight: r, totalDecksHeight: l }), W(t), H(null);
-      },
       le = () => {
-        i = Y.addAbbrToPassengers(i);
-        const e = Y.setPassengersHandler(x, i || []);
-        M(e), E(i);
+        B(null);
       },
       ie = () => {
-        if (!P) return;
-        const e = null == P ? void 0 : P.separateDeckHeights[I],
-          t = J ? e : null == P ? void 0 : P.totalDecksHeight,
+        null != D &&
+          D.isHorizontal &&
+          null != D &&
+          D.rightToLeft &&
+          (Y.current.parentElement.scrollLeft = D.totalDecksHeight);
+      },
+      oe = e => {
+        if (!Q || z.length < 2) return;
+        let t = (R + 1) % z.length;
+        if (void 0 !== e) {
+          if (e < 0 || e > z.length - 1) return;
+          t = e;
+        }
+        const r = (null == D ? void 0 : D.separateDeckHeights[t]) * (D.scale || 1) + 'px',
+          l = null == D ? void 0 : D.separateDeckHeights[t];
+        j({ ...D, scaledTotalDecksHeight: r, totalDecksHeight: l }), N(t), V(null);
+      },
+      se = () => {
+        i = X.addAbbrToPassengers(i);
+        const e = X.setPassengersHandler(z, i || []);
+        y(e), H(i);
+      },
+      ae = () => {
+        if (!D) return;
+        const e = null == D ? void 0 : D.separateDeckHeights[R],
+          t = Q ? e : null == D ? void 0 : D.totalDecksHeight,
           r = {
-            heightInPx: null != P && P.isHorizontal ? (null == P ? void 0 : P.innerWidth) : t,
-            widthInPx: null != P && P.isHorizontal ? t : null == P ? void 0 : P.innerWidth,
-            scaleFactor: null == P ? void 0 : P.scale,
-            decksCount: null == x ? void 0 : x.length,
-            currentDeckIndex: I,
+            heightInPx: null != D && D.isHorizontal ? (null == D ? void 0 : D.innerWidth) : t,
+            widthInPx: null != D && D.isHorizontal ? t : null == D ? void 0 : D.innerWidth,
+            scaleFactor: null == D ? void 0 : D.scale,
+            decksCount: null == z ? void 0 : z.length,
+            currentDeckIndex: R,
           };
         g(r);
       },
-      oe = e => {
+      ne = e => {
         const t = { ...e, label: e.number };
         return delete t.number, delete t.leftOffset, delete t.topOffset, delete t.size, t;
       },
-      se = (e, t, r) => {
-        const l = oe(e);
-        if ((h({ seat: l, element: t.current, event: r.nativeEvent }), !P.builtInTooltip)) return;
+      ce = (e, t, r) => {
+        const l = ne(e);
+        if ((h({ seat: l, element: t.current, event: r.nativeEvent }), !D.builtInTooltip)) return;
         if (e.type !== L.seat || (e.status !== b.available && e.status !== b.selected)) return;
-        const i = Y.getNextPassenger(S),
-          o = Y.calculateTooltipData(
+        const i = X.getNextPassenger(E),
+          o = X.calculateTooltipData(
             e,
             t.current,
-            q.current,
-            null == P ? void 0 : P.antiScale,
-            null == P ? void 0 : P.isHorizontal
+            Y.current,
+            null == D ? void 0 : D.antiScale,
+            null == D ? void 0 : D.isHorizontal
           );
-        B(!!i), H({ ...o, nextPassenger: i, lang: v.lang, scaleType: v.scaleType, seatmapElement: q.current });
+        W(!!i), V({ ...o, nextPassenger: i, lang: x.lang, scaleType: x.scaleType, seatmapElement: Y.current });
       },
-      ae = e => {
-        const { data: t, passengers: r } = Y.selectSeatHandler(x, e, S);
-        M(t), E(r), H(null), c(r);
+      de = e => {
+        const { data: t, passengers: r } = X.selectSeatHandler(z, e, E);
+        y(t), H(r), V(null), c(r);
       },
-      ne = e => {
-        const { data: t, passengers: r } = Y.unselectSeatHandler(x, e, S);
-        M(t), E(r), H(null), d(r);
+      he = e => {
+        const { data: t, passengers: r } = X.unselectSeatHandler(z, e, E);
+        y(t), H(r), V(null), d(r);
       },
-      ce = e => {
+      ge = e => {
         var t, r;
-        const l = Y.getNextPassenger(S);
+        const l = X.getNextPassenger(E);
         return (
           !l ||
           ((null == l ? void 0 : l.passengerType) &&
@@ -4552,87 +4591,87 @@ const zt = ({
             !(null !== (r = e.passengerTypes) && void 0 !== r && r.includes(null == l ? void 0 : l.passengerType)))
         );
       },
-      de = {
-        transform: ` ${null == P ? void 0 : P.rotation} ${null == P ? void 0 : P.offset} scale(${
-          null == P ? void 0 : P.scale
+      pe = {
+        transform: ` ${null == D ? void 0 : D.rotation} ${null == D ? void 0 : D.offset} scale(${
+          null == D ? void 0 : D.scale
         })`,
         transformOrigin: 'top left',
-        width: null == P ? void 0 : P.innerWidth,
-        height: null == P ? void 0 : P.scaledTotalDecksHeight,
+        width: null == D ? void 0 : D.innerWidth,
+        height: null == D ? void 0 : D.scaledTotalDecksHeight,
       },
-      he = {
-        transform: ` ${null == P ? void 0 : P.rotation} ${null == P ? void 0 : P.offset}`,
+      me = {
+        transform: ` ${null == D ? void 0 : D.rotation} ${null == D ? void 0 : D.offset}`,
         transformOrigin: 'top left',
-        zoom: null == P ? void 0 : P.scale,
-        width: null == P ? void 0 : P.innerWidth,
-        height: null == P ? void 0 : P.scaledTotalDecksHeight,
+        zoom: null == D ? void 0 : D.scale,
+        width: null == D ? void 0 : D.innerWidth,
+        height: null == D ? void 0 : D.scaledTotalDecksHeight,
       },
-      ge = {
+      Ce = {
         onSeatClick: (e, t, r) => {
-          if ((null == P ? void 0 : P.tooltipOnHover) && !(null != P && P.isTouchDevice)) {
-            if (P.externalPassengerManagement) {
-              const l = oe(e);
+          if ((null == D ? void 0 : D.tooltipOnHover) && !(null != D && D.isTouchDevice)) {
+            if (D.externalPassengerManagement) {
+              const l = ne(e);
               return void m({ seat: l, element: t.current, event: r.nativeEvent });
             }
             if (null != e && e.passenger) {
               var l;
               if (null != e && null !== (l = e.passenger) && void 0 !== l && l.readOnly) return;
-              ne(e);
+              he(e);
             } else {
-              if (ce(e)) return;
-              ae(e);
+              if (ge(e)) return;
+              de(e);
             }
-          } else se(e, t, r);
+          } else ce(e, t, r);
         },
-        showTooltip: se,
+        showTooltip: ce,
         onTooltipClose: (e, t, r) => {
           if (e && t) {
-            const l = oe(e);
+            const l = ne(e);
             p({ seat: l, element: t.current, event: r.nativeEvent });
           }
-          H(null);
+          V(null);
         },
-        onSeatSelect: ae,
-        onSeatUnselect: ne,
-        isSeatSelectDisabled: ce,
-        switchDeck: re,
-        resetSeatJumpTo: ee,
-        params: P,
-        config: v,
-        colorTheme: k,
-        activeTooltip: T,
-        seatLabelJumpTo: _,
+        onSeatSelect: de,
+        onSeatUnselect: he,
+        isSeatSelectDisabled: ge,
+        switchDeck: oe,
+        resetSeatJumpTo: le,
+        params: D,
+        config: x,
+        colorTheme: v,
+        activeTooltip: _,
+        seatLabelJumpTo: O,
         componentOverrides: u,
       };
     return r.default.createElement(
       A.Provider,
-      { value: ge },
+      { value: Ce },
       r.default.createElement(
         'div',
         {
-          ref: q,
-          className: Q,
+          ref: Y,
+          className: re,
           style: {
-            width: v.horizontal ? (null == P ? void 0 : P.scaledTotalDecksHeight) : v.width,
-            height: v.horizontal ? v.width : null == P ? void 0 : P.scaledTotalDecksHeight,
-            fontFamily: k.fontFamily,
-            background: k.seatMapBackgroundColor,
+            width: x.horizontal ? (null == D ? void 0 : D.scaledTotalDecksHeight) : x.width,
+            height: x.horizontal ? x.width : null == D ? void 0 : D.scaledTotalDecksHeight,
+            fontFamily: v.fontFamily,
+            background: v.seatMapBackgroundColor,
           },
           'data-testid': 'jets-seat-map',
         },
-        T && r.default.createElement(yt, { data: T }),
-        X && r.default.createElement(mt, { direction: !!I }),
+        _ && r.default.createElement(te, { data: _ }),
+        ee && r.default.createElement(mt, { direction: !!R }),
         r.default.createElement(
           'div',
-          { style: v.scaleType === w.SCALE ? de : he },
+          { style: x.scaleType === w.SCALE ? pe : me },
           r.default.createElement(bt, {
-            showOneDeck: J,
-            activeDeck: I,
-            content: x,
-            exits: D,
-            bulks: F,
-            isSeatMapInited: z,
-            config: v,
+            showOneDeck: Q,
+            activeDeck: R,
+            content: z,
+            exits: F,
+            bulks: U,
+            isSeatMapInited: S,
+            config: x,
           })
         )
       )
@@ -4729,7 +4768,7 @@ const zt = ({
 }),
   (exports.BULK_TEMPLATE_MAP = N),
   (exports.CLASS_CODE_MAP = M),
-  (exports.DECK_ITEM_ALIGN_MAP = T),
+  (exports.DECK_ITEM_ALIGN_MAP = E),
   (exports.DECK_LOCALE_KEY = 'deck'),
   (exports.DEFAULT_AUTHORIZATION_SCHEME = 'Bearer'),
   (exports.DEFAULT_BUILT_IN_TOOLTIP = true),
@@ -4771,7 +4810,7 @@ const zt = ({
   (exports.JetsDeck = pt),
   (exports.JetsDeckExit = et),
   (exports.JetsDeckSelector = mt),
-  (exports.JetsLocalStorageService = P),
+  (exports.JetsLocalStorageService = R),
   (exports.JetsNoData = Ct),
   (exports.JetsNose = ut),
   (exports.JetsNotInit = ft),
@@ -4802,8 +4841,9 @@ const zt = ({
   (exports.LOCALE_UK = u),
   (exports.SCALE_TYPES = w),
   (exports.SEAT_FEATURES_ICONS = B),
+  (exports.SEAT_MAP_WIDTH_TO_WINGS_WIDTH_RATIO = 4),
   (exports.SEAT_MEASUREMENTS_ICONS = I),
-  (exports.SEAT_SIZE_BY_TYPE = E),
+  (exports.SEAT_SIZE_BY_TYPE = T),
   (exports.STICKER_TEMPLATE_MAP = D),
   (exports.SeatIcon = nt),
   (exports.Sticker = qe),
@@ -4850,4 +4890,4 @@ const zt = ({
   (exports.THEME_WINGS_WIDTH = 30),
   (exports.Utils = O),
   (exports.seatTemplateService = rt),
-  (exports.useEnvironmentInfo = R);
+  (exports.useEnvironmentInfo = P);
