@@ -14,6 +14,7 @@ import {
   LOCALE_JA,
   LOCALE_KO,
   LOCALE_TR,
+  LOCALE_VI,
 } from './i18n.languages';
 
 export const SCALE_TYPES = {
@@ -72,6 +73,7 @@ export const LOCALES_MAP = {
   JA: LOCALE_JA,
   KO: LOCALE_KO,
   TR: LOCALE_TR,
+  VI: LOCALE_VI,
 };
 
 //#endregion
