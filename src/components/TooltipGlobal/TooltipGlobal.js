@@ -1,5 +1,4 @@
 import React, { useContext, useRef, useLayoutEffect, useState } from 'react';
-import { JetsButton } from '../Button';
 import {
   DEFAULT_SEAT_PASSENGER_TYPES,
   JetsContext,
@@ -8,17 +7,13 @@ import {
   SCALE_TYPES,
   useEnvironmentInfo,
 } from '../../common';
+import { JetsTooltipGlobalView } from './TooltipGlobal.view';
 
-import './TooltipGlobal.css';
-
-const CANCEL_BTN_KEY = 'cancel';
-const SELECT_BTN_KEY = 'select';
-const UNSELECT_BTN_KEY = 'unselect';
 const PASSENGER_KEY = 'passenger';
 const RESTRICTION_KEY = 'seatRestrictions';
 
 export const JetsTooltipGlobal = ({ data }) => {
-  const { isSeatSelectDisabled, onTooltipClose, onSeatSelect, onSeatUnselect, colorTheme, params } =
+  const { componentOverrides, isSeatSelectDisabled, onTooltipClose, onSeatSelect, onSeatUnselect, colorTheme, params } =
     useContext(JetsContext);
 
   const { isSafari } = useEnvironmentInfo();
@@ -28,34 +23,15 @@ export const JetsTooltipGlobal = ({ data }) => {
   const [tooltipWidth, setTooltipWidth] = useState(0);
   const [position, setPosition] = useState(0);
 
-  const {
-    tooltipBackgroundColor,
-    tooltipHeaderColor,
-    tooltipBorderColor,
-    tooltipFontColor,
-    tooltipIconColor,
-    tooltipIconBorderColor,
-    tooltipIconBackgroundColor,
-    tooltipSelectButtonTextColor,
-    tooltipSelectButtonBackgroundColor,
-    tooltipCancelButtonTextColor,
-    tooltipCancelButtonBackgroundColor,
-  } = colorTheme;
+  const { tooltipBackgroundColor, tooltipHeaderColor, tooltipBorderColor, tooltipFontColor } = colorTheme;
 
   const {
-    number,
-    classType,
     top,
     left,
     features,
-    measurements,
-    price,
     passenger,
-    nextPassenger,
     passengerTypes,
     lang,
-    rowName,
-    name: seatName,
     antiScale,
     scaleType,
     width,
@@ -180,107 +156,26 @@ export const JetsTooltipGlobal = ({ data }) => {
   const filteredFeatures = (features || []).filter(f => !params.hiddenSeatFeatures.includes(f.key));
   const finalListOfFeatures = [...filteredFeatures, ...(additionalProps || [])].slice(0, DEFAULT_FEATURES_RENDER_LIMIT);
 
+  const ResolvedTooltip = componentOverrides?.JetsTooltipView ?? JetsTooltipGlobalView;
+
   return (
-    <div
-      style={style}
-      className={`jets-tooltip ${params?.isHorizontal ? 'horizontal' : ''}`}
-      ref={elementRef}
-      onMouseLeave={params.tooltipOnHover ? e => onTooltipClose(null, null, e) : null}
-    >
-      <div className="jets-tooltip--arrow-pointer" style={pointerStyle}></div>
-      <div className="jets-tooltip--arrow-pointer-horizontal" style={pointerStyleHorizontal}></div>
-      <div className={`jets-tooltip--body ${shouldHideButtons ? 'no-buttons' : ''}`}>
-        <div className="jets-tooltip--content">
-          <div className="jets-tooltip--header" style={headerStyle}>
-            <div className="jets-tooltip--header-title">
-              {seatName || rowName || classType} {number}
-            </div>
-            <div className="jets-tooltip--header-price">{price}</div>
-          </div>
-
-          <div className="jets-tooltip--passenger-name" style={featureListStyle}>
-            {passengerLabel.length ? passengerLabel : restrictionsLabel}
-          </div>
-
-          <div className="jets-tooltip--features" style={featureListStyle}>
-            <ul>
-              {finalListOfFeatures.map(({ uniqId, title, icon, value, cssClass }) => (
-                <li className={`jets-tooltip--feature ${cssClass || ''}`} key={uniqId}>
-                  {icon ? (
-                    <span
-                      className={`svg_span ${cssClass ? cssClass + '-icon' : ''}`}
-                      dangerouslySetInnerHTML={{
-                        __html: icon,
-                      }}
-                    ></span>
-                  ) : (
-                    <span>{title}</span>
-                  )}
-                  <div
-                    className={`${cssClass ? cssClass + '-label' : ''}`}
-                    style={cssClass ? {} : { color: tooltipFontColor }}
-                  >
-                    {value}
-                  </div>
-                </li>
-              ))}
-              {finalListOfFeatures.length % 2 == 1 && <li className="jets-tooltip--feature">&nbsp;</li>}
-            </ul>
-          </div>
-
-          <div className="jets-tooltip--measurements">
-            {measurements.map(({ uniqId, title, icon, value }) => (
-              <div
-                style={{ borderColor: tooltipIconBorderColor, background: tooltipIconBackgroundColor }}
-                className="jets-tooltip--measurement"
-                key={uniqId}
-              >
-                {icon ? (
-                  <span
-                    className="svg_span"
-                    style={{ fill: tooltipIconColor }}
-                    dangerouslySetInnerHTML={{
-                      __html: icon,
-                    }}
-                  ></span>
-                ) : (
-                  <span></span>
-                )}
-                <div className="jets-tooltip--measurement-box">
-                  <div className="jets-tooltip--measurement-value">{title}</div>
-                  <div className="jets-tooltip--measurement-value">{value}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="jets-tooltip--btns-block">
-          <JetsButton
-            onClick={e => onTooltipClose(null, null, e)}
-            content={LOCALES_MAP[lang][CANCEL_BTN_KEY]}
-            className="jets-btn jets-tooltip--btn"
-            style={{ color: tooltipCancelButtonTextColor, backgroundColor: tooltipCancelButtonBackgroundColor }}
-          />
-          {passenger ? (
-            <JetsButton
-              disabled={data?.passenger?.readOnly}
-              onClick={() => onSeatUnselect(data)}
-              content={LOCALES_MAP[lang][UNSELECT_BTN_KEY]}
-              className="jets-btn jets-tooltip--btn "
-              style={{ color: tooltipSelectButtonTextColor, backgroundColor: tooltipSelectButtonBackgroundColor }}
-            />
-          ) : (
-            <JetsButton
-              disabled={isSeatSelectDisabled(data)}
-              onClick={() => onSeatSelect(data)}
-              content={LOCALES_MAP[lang][SELECT_BTN_KEY]}
-              className="jets-btn jets-tooltip--btn "
-              style={{ color: tooltipSelectButtonTextColor, backgroundColor: tooltipSelectButtonBackgroundColor }}
-            />
-          )}
-        </div>
-      </div>
-    </div>
+    <ResolvedTooltip
+      colorTheme={colorTheme}
+      data={data}
+      elementRef={elementRef}
+      featureListStyle={featureListStyle}
+      finalListOfFeatures={finalListOfFeatures}
+      headerStyle={headerStyle}
+      isSeatSelectDisabled={isSeatSelectDisabled(data)}
+      params={params}
+      passengerLabel={passengerLabel.length ? passengerLabel : restrictionsLabel}
+      pointerStyle={pointerStyle}
+      pointerStyleHorizontal={pointerStyleHorizontal}
+      rootStyle={style}
+      shouldHideButtons={shouldHideButtons}
+      onTooltipClose={onTooltipClose}
+      onSeatSelect={onSeatSelect}
+      onSeatUnselect={onSeatUnselect}
+    />
   );
 };
