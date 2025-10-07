@@ -1,3 +1,4893 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("react");function t(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var r=t(e);function l(e,t,r){return(t=function(e){var t=function(e,t){if("object"!=typeof e||!e)return e;var r=e[Symbol.toPrimitive];if(void 0!==r){var l=r.call(e,t||"default");if("object"!=typeof l)return l;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"==typeof t?t:t+""}(t))in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}function i(){return i=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var l in r)({}).hasOwnProperty.call(r,l)&&(e[l]=r[l])}return e},i.apply(null,arguments)}const o={F:"Pierwsza klasa",B:"Klasa biznes",P:"Klasa premium",E:"Klasa ekonomiczna",audio_video_ondemand:"Audio i wideo na żądanie (%s)",audioVideo:"Audio i wideo na żądanie (%s)",babyBassinet:"Dostępne łóżeczko dziecięce",bassinet:"Dostępne łóżeczko dziecięce",cancel:"Anulować",deck:"Piętro",doNotRecline:"Możliwe ograniczone odchylenie pleców",extraLegroom:"Dodatkowa przestrzeń na nogi",getColdByExit:"Blisko wyjść i w chłodzie",limitedOverheadStorage:"Ograniczona przestrzeń magazynowa",limitedRecline:"Możliwe ograniczone odchylenie pleców",misalignedWindow:"Częściowy lub brak widoku okna",nearGalley:"W pobliżu kuchni",nearLavatory:"W pobliżu toalet",nearStairs:"Obszar o dużym natężeniu ruchu na schodach",noFloorStorage:"Brak miejsca na bagaż pod siedzeniem",noOverheadStorage:"Ograniczona przestrzeń magazynowa",noWindow:"Częściowy lub brak widoku okna",pitch:"Pochylenie",power:"Wtyczka zasilania (%s)",powerPlug:"Wtyczka zasilania (%s)",prereclinedSeat:"Wstępnie rozkładane siedzenie",recline:"Rozkładany",reservedCrewSeat:"Zarezerwowany",restrictedLegroom:"Ograniczona przestrzeń na nogi",select:"Wybierać",standardSeat:"Miejsce standardowe",storageBoxBetweenWall:"Schowek między ścianą",trayTableInArmrest:"Taca w podłokietniku",unselect:"Odznacz",usbPlug:"Wtyczka USB",usbPowerPlug:"USB i wtyczka zasilania (%s)",width:"Szerokość",wifi_enabled:"Wi-Fi włączone",wifiEnabled:"Wi-Fi włączone",wingInWindow:"Skrzydło z okna",narrower:"Węższe siedzisko",exitRow:"Rząd wyjściowy",ADT:"dorośli",CHD:"dzieci",INF:"niemowlęta",seatRestrictions:"Siedzenie jest przeznaczone tylko dla",passenger:"Pasażer",personalTvInArmrest:"Telewizor osobisty w podłokietniku",invertedSeat:"Fotel montowany tyłem do kierunku jazdy"},s={F:"Primera clase",B:"Clase Business",P:"Clase superior",E:"Clase turista",audio_video_ondemand:"Audio y video bajo demanda (%s)",audioVideo:"Audio y video bajo demanda (%s)",babyBassinet:"Moisés para bebé disponible",bassinet:"Moisés para bebé disponible",cancel:"Cancelar",deck:"Suelo",doNotRecline:"Posibles dolores de espalda por reclinación limitada",extraLegroom:"Espacio extra para las piernas",getColdByExit:"Cerca de la salida de corriente de aire y frío",limitedOverheadStorage:"Espacio de almacenamiento limitado",limitedRecline:"Posibles dolores de espalda por reclinación limitada",misalignedWindow:"Vista parcial o nula por la ventana",nearGalley:"Cerca de las cocinas",nearLavatory:"Cerca de los baños",nearStairs:"Zona de escaleras de mucho tráfico",noFloorStorage:"No hay almacenamiento debajo del asiento",noOverheadStorage:"Espacio de almacenamiento limitado",noWindow:"Vista parcial o nula por la ventana",pitch:"Separación",power:"Enchufe (%s)",powerPlug:"Enchufe (%s)",prereclinedSeat:"Asiento pre reclinado",recline:"Reclinación",reservedCrewSeat:"Reservado",restrictedLegroom:"Espacio para las piernas restringido",select:"Seleccionar asiento",standardSeat:"Asiento estándar",storageBoxBetweenWall:"Schowek między ścianą",trayTableInArmrest:"Mesa de bandejas en el reposabrazos",unselect:"Deseleccionar",usbPlug:"Enchufe USB",usbPowerPlug:"USB y enchufe (%s)",width:"Anchura",wifi_enabled:"Wi-Fi habilitado",wifiEnabled:"Wi-Fi habilitado",wingInWindow:"Vista del ala desde la ventana",narrower:"Asiento más estrecho",exitRow:"Fila de salida",ADT:"adultos",CHD:"niños",INF:"bebés",seatRestrictions:"El asiento es sólo para",passenger:"Pasajeros",personalTvInArmrest:"TV personal en el reposabrazos",invertedSeat:"Asiento orientado hacia atrás"},a={F:"Erste Klasse",B:"Business-Klasse",P:"Premiumklasse",E:"Economy-Klasse",audio_video_ondemand:"Audio & Video nach Anfrage (%s)",audioVideo:"Audio & Video nach Anfrage (%s)",babyBassinet:"Babywiege vorhanden",bassinet:"Babywiege vorhanden",cancel:"Aufheben",deck:"Deck",doNotRecline:"Eingeschränkte Liegeposition, Rückenschmerzen möglich",extraLegroom:"Mehr Beinfreiheit",getColdByExit:"Nah zum Ausgang, Zugluft, kalt",invertedSeat:"Nach hinten gerichteter Sitz",limitedOverheadStorage:"Stauraum in den oberen Gepäckfächern begrenzt",limitedRecline:"Eingeschränkte Liegeposition, Rückenschmerzen möglich",misalignedWindow:"Teil- oder fehlende Fensterblick",nearGalley:"In der Nähe von der Bordküche",nearLavatory:"In der Nähe von Toiletten",nearStairs:"Treppen, schwere Verkehrsfläche",noFloorStorage:"Kein Stauraum unter dem Sitz",noOverheadStorage:"Kein Stauraum in den oberen Gepäckfächern",noWindow:"Kein Fensterblick",pitch:"Abstand",power:"Stromanschluss (%s)",powerPlug:"Stromanschluss (%s)",prereclinedSeat:"Vorgelehnter sitz",recline:"Rücklehne",reservedCrewSeat:"Reserviert",restrictedLegroom:"Eingeschränkte Beinfreiheit",select:"Sitz auswählen",standardSeat:"Standardsitz",storageBoxBetweenWall:"Aufbewahrungsbox zwischen Wand",trayTableInArmrest:"Tablett-Tisch in der Armlehne",unselect:"Auswahl aufheben",usbPlug:"USB Anschluss",usbPowerPlug:"USB und Stromanschluss (%s)",width:"Breite",wifi_enabled:"Wi-Fi aktiviert",wifiEnabled:"Wi-Fi aktiviert",wingInWindow:"Flügelfenster",narrower:"Engerer Sitz",exitRow:"Ausstiegsreihe",ADT:"Erwachsene",CHD:"Kinder",INF:"Kleinkinder",seatRestrictions:"Der Sitz ist nur für",passenger:"Passagier",personalTvInArmrest:"Personal TV in der Armlehne"},n={F:"First class",B:"Business class",P:"Premium class",E:"Economy class",ADT:"adults",audio_video_ondemand:"Audio & Video On Demand",audioVideo:"Audio & Video On Demand",babyBassinet:"Baby bassinet available",bassinet:"Baby bassinet available",cancel:"Cancel",CHD:"children",deck:"Deck",doNotRecline:"Restricted recline, backaches possible",extraLegroom:"Extra Legroom",getColdByExit:"Close to exit, drafts and chilly",INF:"infants",invertedSeat:"Rear-Facing Seat",limitedOverheadStorage:"Limited storage space",limitedRecline:"Restricted recline, backaches possible",misalignedWindow:"Partial or missing window view",nearGalley:"Close to galleys",nearLavatory:"Close to restrooms",nearStairs:"Stairs, heavy traffic area",noFloorStorage:"No underseat storage",noOverheadStorage:"Limited storage space",noWindow:"Partial or missing window view",personalTvInArmrest:"Personal TV in armrest",passenger:"Passenger",pitch:"Pitch",power:"Power plug",powerPlug:"Power plug",prereclinedSeat:"Pre-reclined seat",recline:"Recline",reservedCrewSeat:"Reserved",restrictedLegroom:"Constrained Legroom",select:"Select",seatRestrictions:"The seat is only for",standardSeat:"Standard seat",storageBoxBetweenWall:"Storage box between wall",trayTableInArmrest:"Tray table in the armrest",unselect:"Unselect",usbPlug:"USB plug",usbPowerPlug:"USB & power plug",width:"Width",wifi_enabled:"WiFi enabled",wifiEnabled:"WiFi enabled",wingInWindow:"Wing from window view",narrower:"Narrower seat",exitRow:"Exit row"},c={F:"头等舱",B:"商务舱",P:"特等舱",E:"经济舱",restrictedLegroom:"腿部空间较小",extraLegroom:"腿部空间较大",noFloorStorage:"前面无座位",noOverheadStorage:"行李柜较小",limitedOverheadStorage:"行李柜较小",trayTableInArmrest:"托盘桌在扶手里",getColdByExit:"靠近紧急出口，较冷",misalignedWindow:"部分窗户或无窗户",noWindow:"部分窗户或无窗户",doNotRecline:"后仰角度小，可能背疼",limitedRecline:"后仰角度小，可能背疼",storageBoxBetweenWall:"牆間儲物箱",nearLavatory:"靠近洗手间",nearGalley:"靠近厨房",nearStairs:"楼梯，来往人流较多",wingInWindow:"机翼在窗外视线内",standardSeat:"标准座位",reservedCrewSeat:"已预订",bassinet:"有婴儿摇篮",babyBassinet:"有婴儿摇篮",audio_video_ondemand:"自选式机上视听娱乐系统",audioVideo:"自选式机上视听娱乐系统",wifi_enabled:"有WiFi",wifiEnabled:"有WiFi",usbPlug:"USB端口",usbPowerPlug:"USB端口及电源插座",powerPlug:"电源插座",power:"电源插座",pitch:"座位间距",width:"座位宽度",recline:"倾斜度",cancel:"取消",select:"選擇",unselect:"取消選擇",deck:"甲板",personalTvInArmrest:"扶手里的个人电视",invertedSeat:"后向式座椅",narrower:"较窄的座椅",exitRow:"出口行",ADT:"成人",CHD:"儿童",INF:"婴儿",seatRestrictions:"该座位仅用于",passenger:"乘客",prereclinedSeat:"预倾斜座椅"},d={F:"Первый класс",B:"Бизнес-класс",P:"Премиум-класс",E:"Эконом-класс",restrictedLegroom:"Мало места для ног",extraLegroom:"Много места для ног",noFloorStorage:"Нет места для ручной клади под сиденьем",noOverheadStorage:"Нет полки для ручной клади",limitedOverheadStorage:"Полка ручной клади ограничена в размерах",trayTableInArmrest:"Откидной столик в подлокотнике",getColdByExit:"Возле выхода",misalignedWindow:"Иллюминатор смещён",noWindow:"Иллюминатор отстутсвует",doNotRecline:"Спинка кресла не отклоняется",limitedRecline:"Ограниченное отклонение спинки кресла",storageBoxBetweenWall:"Ящик для хранения в стене",nearLavatory:"Около туалета",nearGalley:"Около буфета-кухни",nearStairs:"Рядом с лестницей, активное движение",wingInWindow:"Место возле крыла самолёта",standardSeat:"Стандартное сиденье",reservedCrewSeat:"Зарезервированное персоналом",bassinet:"Рядом с детской кроваткий",babyBassinet:"Рядом с детской кроваткой",audio_video_ondemand:"Развлекательная аудио- и видеопрограмма",audioVideo:"Развлекательная аудио- и видеопрограмма",wifi_enabled:"Наличие WiFi",wifiEnabled:"Наличие WiFi",usbPlug:"Наличие USB-порта",usbPowerPlug:"Наличие розетки и USB-порта",powerPlug:"Розетка",power:"Розетка",pitch:"Длинна",width:"Ширина",recline:"Наклон",cancel:"Закрыть",select:"Выбрать",unselect:"Убрать",deck:"Этаж",personalTvInArmrest:"Персональный телевизор в подлокотнике",invertedSeat:"Сиденье устанавливаемое лицом назад",narrower:"Более узкое сиденье",exitRow:"Ряд возле выхода",ADT:"взрослые",CHD:"дети",INF:"младенцы",seatRestrictions:"Сиденье только для",passenger:"Пассажир",prereclinedSeat:"Предварительно откинутое сиденье"},h={F:"الدرجة الأولى",B:"درجة رجال الأعمال",P:"الفئة الممتازة",E:"الدرجة الاقتصادية",ADT:"بالغين",audio_video_ondemand:"الصوت والفيديو حسب الطلب",audioVideo:"الصوت والفيديو حسب الطلب",babyBassinet:"سرير الرضع متاح",bassinet:"سرير الرضع متاح",cancel:"إلغاء",CHD:"أطفال",deck:"سطح السفينة",doNotRecline:"ميل محدود، ممكن ألم الظهر",extraLegroom:"مساحة إضافية للأرجل",getColdByExit:"قرب الخروج، تيارات هوائية وبرودة",INF:"رضع",invertedSeat:"مقعد مواجه للخلف",limitedOverheadStorage:"مساحة تخزين علوية محدودة",limitedRecline:"ميل محدود، ممكن ألم الظهر",misalignedWindow:"نافذة جزئية أو مفقودة",nearGalley:"بالقرب من المطبخ",nearLavatory:"بالقرب من الحمام",nearStairs:"الدرج، منطقة حركة كثيفة",noFloorStorage:"لا يوجد مساحة تخزين تحت المقعد",noOverheadStorage:"مساحة تخزين علوية محدودة",noWindow:"نافذة جزئية أو مفقودة",personalTvInArmrest:"تلفزيون شخصي في مسند الذراع",passenger:"راكب",pitch:"ميل",power:"مأخذ كهرباء",powerPlug:"مأخذ كهرباء",prereclinedSeat:"مقعد مائل مسبقًا",recline:"ميل",reservedCrewSeat:"محجوز",restrictedLegroom:"مساحة محدودة للأرجل",select:"اختر",seatRestrictions:"المقعد مخصص فقط لـ",standardSeat:"مقعد قياسي",storageBoxBetweenWall:"صندوق تخزين بين الجدران",trayTableInArmrest:"طاولة صينية في مسند الذراع",unselect:"إلغاء الاختيار",usbPlug:"مأخذ USB",usbPowerPlug:"USB ومأخذ كهرباء",width:"عرض",wifi_enabled:"واي فاي مفعل",wifiEnabled:"واي فاي مفعل",wingInWindow:"جناح من نافذة العرض",narrower:"مقعد أضيق",exitRow:"صف الخروج"},g={F:"První třída",B:"Třída Business",P:"Třída Premium",E:"Ekonomická třída",ADT:"dospělí",audio_video_ondemand:"Audio & Video na vyžádání",audioVideo:"Audio & Video na vyžádání",babyBassinet:"Dětská postýlka k dispozici",bassinet:"Dětská postýlka k dispozici",cancel:"Zrušit",CHD:"děti",deck:"Paluba",doNotRecline:"Omezené naklápění, možné bolesti zad",extraLegroom:"Více místa na nohy",getColdByExit:"Blízko k východu, průvan a chlad",INF:"kojenci",invertedSeat:"Sedadlo obrácené dozadu",limitedOverheadStorage:"Omezený úložný prostor nahoře",limitedRecline:"Omezené naklápění, možné bolesti zad",misalignedWindow:"Částečný nebo chybějící výhled z okna",nearGalley:"Blízko kuchyňky",nearLavatory:"Blízko WC",nearStairs:"Schody, oblast s vysokým provozem",noFloorStorage:"Žádné úložné místo pod sedadlem",noOverheadStorage:"Omezený úložný prostor nahoře",noWindow:"Částečný nebo chybějící výhled z okna",personalTvInArmrest:"Osobní TV v opěradle",passenger:"Cestující",pitch:"Naklonění",power:"Elektrická zásuvka",powerPlug:"Elektrická zásuvka",prereclinedSeat:"Přednakloněné sedadlo",recline:"Naklonit",reservedCrewSeat:"Rezervováno",restrictedLegroom:"Omezený prostor pro nohy",select:"Vybrat",seatRestrictions:"Sedadlo je pouze pro",standardSeat:"Standardní sedadlo",storageBoxBetweenWall:"Úložný box mezi stěnami",trayTableInArmrest:"Stolek v opěradle",unselect:"Zrušit výběr",usbPlug:"USB zásuvka",usbPowerPlug:"USB & elektrická zásuvka",width:"Šířka",wifi_enabled:"WiFi povoleno",wifiEnabled:"WiFi povoleno",wingInWindow:"Křídlo z okenního výhledu",narrower:"užší sedadlo",exitRow:"Výstupní řada"},p={F:"Première classe",B:"Classe affaires",P:"Classe Premium",E:"Classe économique",ADT:"adultes",audio_video_ondemand:"Audio & Vidéo à la demande",audioVideo:"Audio & Vidéo à la demande",babyBassinet:"Berceau pour bébé disponible",bassinet:"Berceau pour bébé disponible",cancel:"Annuler",CHD:"enfants",deck:"Pont",doNotRecline:"Inclinaison limitée, possibles maux de dos",extraLegroom:"Espace supplémentaire pour les jambes",getColdByExit:"Près de la sortie, courants d’air et froid",INF:"nourrissons",invertedSeat:"Siège orienté vers l’arrière",limitedOverheadStorage:"Espace de rangement en hauteur limité",limitedRecline:"Inclinaison limitée, possibles maux de dos",misalignedWindow:"Vue partielle ou manquante par la fenêtre",nearGalley:"Près de la cuisine",nearLavatory:"Près des toilettes",nearStairs:"Escaliers, zone de fort passage",noFloorStorage:"Pas de rangement sous le siège",noOverheadStorage:"Espace de rangement en hauteur limité",noWindow:"Vue partielle ou manquante par la fenêtre",personalTvInArmrest:"TV personnelle dans l’accoudoir",passenger:"Passager",pitch:"Inclinaison",power:"Prise électrique",powerPlug:"Prise électrique",prereclinedSeat:"Siège pré-incliné",recline:"Incliner",reservedCrewSeat:"Réservé",restrictedLegroom:"Espace pour les jambes limité",select:"Sélectionner",seatRestrictions:"Le siège est uniquement pour",standardSeat:"Siège standard",storageBoxBetweenWall:"Boîte de rangement entre les parois",trayTableInArmrest:"Tablette dans l’accoudoir",unselect:"Désélectionner",usbPlug:"Prise USB",usbPowerPlug:"Prise USB & électrique",width:"Largeur",wifi_enabled:"WiFi activé",wifiEnabled:"WiFi activé",wingInWindow:"Vue de l’aile depuis la fenêtre",narrower:"Siège plus étroit",exitRow:"Rang de sortie"},m={F:"Primeira classe",B:"Classe executiva",P:"Classe Premium",E:"Classe económica",ADT:"adultos",audio_video_ondemand:"Áudio & Vídeo Sob Demanda",audioVideo:"Áudio & Vídeo Sob Demanda",babyBassinet:"Berço para bebê disponível",bassinet:"Berço para bebê disponível",cancel:"Cancelar",CHD:"crianças",deck:"Convés",doNotRecline:"Reclinação restrita, possíveis dores nas costas",extraLegroom:"Espaço extra para as pernas",getColdByExit:"Perto da saída, correntes de ar e frio",INF:"bebês",invertedSeat:"Assento virado para trás",limitedOverheadStorage:"Armazenamento superior limitado",limitedRecline:"Reclinação restrita, possíveis dores nas costas",misalignedWindow:"Vista parcial ou ausente da janela",nearGalley:"Perto da cozinha",nearLavatory:"Perto do lavatório",nearStairs:"Escadas, área de tráfego intenso",noFloorStorage:"Sem armazenamento sob o assento",noOverheadStorage:"Armazenamento superior limitado",noWindow:"Vista parcial ou ausente da janela",personalTvInArmrest:"TV pessoal no apoio de braço",passenger:"Passageiro",pitch:"Inclinação",power:"Tomada",powerPlug:"Tomada",prereclinedSeat:"Assento pré-reclinado",recline:"Reclinar",reservedCrewSeat:"Reservado",restrictedLegroom:"Espaço para as pernas restrito",select:"Selecionar",seatRestrictions:"O assento é apenas para",standardSeat:"Assento padrão",storageBoxBetweenWall:"Caixa de armazenamento entre a parede",trayTableInArmrest:"Mesa de bandeja no apoio de braço",unselect:"Desmarcar",usbPlug:"Tomada USB",usbPowerPlug:"USB & tomada",width:"Largura",wifi_enabled:"WiFi habilitado",wifiEnabled:"WiFi habilitado",wingInWindow:"Vista da asa da janela",narrower:"Assento mais estreito",exitRow:"Fila de saída"},C={F:"Prima classe",B:"Classe business",P:"Classe Premium",E:"Classe economica",ADT:"adulti",audio_video_ondemand:"Audio & Video su richiesta",audioVideo:"Audio & Video su richiesta",babyBassinet:"Culla per neonati disponibile",bassinet:"Culla per neonati disponibile",cancel:"Annulla",CHD:"bambini",deck:"Ponte",doNotRecline:"Reclinazione limitata, possibili mal di schiena",extraLegroom:"Spazio extra per le gambe",getColdByExit:"Vicino all’uscita, correnti d’aria e freddo",INF:"neonati",invertedSeat:"Sedile rivolto all’indietro",limitedOverheadStorage:"Spazio di stivaggio limitato sopra",limitedRecline:"Reclinazione limitata, possibili mal di schiena",misalignedWindow:"Vista parziale o mancante dalla finestra",nearGalley:"Vicino alla cucina",nearLavatory:"Vicino ai servizi igienici",nearStairs:"Scale, zona di forte passaggio",noFloorStorage:"Nessuno spazio di stivaggio sotto il sedile",noOverheadStorage:"Spazio di stivaggio limitato sopra",noWindow:"Vista parziale o mancante dalla finestra",personalTvInArmrest:"TV personale nell’appoggiabraccia",passenger:"Passeggero",pitch:"Inclinazione",power:"Presa di corrente",powerPlug:"Presa di corrente",prereclinedSeat:"Sedile pre-reclinato",recline:"Reclinare",reservedCrewSeat:"Riservato",restrictedLegroom:"Spazio per le gambe limitato",select:"Seleziona",seatRestrictions:"Il sedile è solo per",standardSeat:"Sedile standard",storageBoxBetweenWall:"Scatola di stivaggio tra le pareti",trayTableInArmrest:"Tavolino nell’appoggiabraccia",unselect:"Deseleziona",usbPlug:"Presa USB",usbPowerPlug:"USB & presa di corrente",width:"Larghezza",wifi_enabled:"WiFi abilitato",wifiEnabled:"WiFi abilitato",wingInWindow:"Ala vista dalla finestra",narrower:"Sedile più stretto",exitRow:"Fila di uscita"},u={F:"Перший клас",B:"Бізнес-клас",P:"Преміум-клас",E:"Економ-клас",ADT:"дорослі",audio_video_ondemand:"Аудіо та відео за запитом",audioVideo:"Аудіо та відео за запитом",babyBassinet:"Ліжечко для немовляти доступне",bassinet:"Ліжечко для немовляти доступне",cancel:"Скасувати",CHD:"діти",deck:"Палуба",doNotRecline:"Обмежений нахил, можливі болі в спині",extraLegroom:"Додаткове місце для ніг",getColdByExit:"Біля виходу, можливі протяги та холод",INF:"немовлята",invertedSeat:"Задом наперед сидіння",limitedOverheadStorage:"Обмежене місце для зберігання зверху",limitedRecline:"Обмежений нахил, можливі болі в спині",misalignedWindow:"Частковий або відсутній вид з вікна",nearGalley:"Біля камбузу",nearLavatory:"Біля туалету",nearStairs:"Сходи, зона з високим рухом",noFloorStorage:"Немає місця для зберігання під сидінням",noOverheadStorage:"Обмежене місце для зберігання зверху",noWindow:"Частковий або відсутній вид з вікна",personalTvInArmrest:"Особистий ТБ в підлокітнику",passenger:"Пасажир",pitch:"Відстань",power:"Розетка",powerPlug:"Розетка",prereclinedSeat:"Попередньо нахилений сидіння",recline:"Нахил",reservedCrewSeat:"Зарезервовано",restrictedLegroom:"Обмежене місце для ніг",select:"Вибрати",seatRestrictions:"Сидіння тільки для",standardSeat:"Стандартне сидіння",storageBoxBetweenWall:"Коробка для зберігання між стінами",trayTableInArmrest:"Столик у підлокітнику",unselect:"Скасувати вибір",usbPlug:"USB-розетка",usbPowerPlug:"USB & електрична розетка",width:"Ширина",wifi_enabled:"WiFi увімкнено",wifiEnabled:"WiFi увімкнено",wingInWindow:"Вигляд крила з вікна",narrower:"Вужче сидіння",exitRow:"Ряд біля виходу"},f={F:"ファーストクラス",B:"ビジネスクラス",P:"プレミアムクラス",E:"エコノミークラス",ADT:"大人",audio_video_ondemand:"オンデマンドのオーディオ＆ビデオ",audioVideo:"オンデマンドのオーディオ＆ビデオ",babyBassinet:"ベビーベッド利用可能",bassinet:"ベビーベッド利用可能",cancel:"キャンセル",CHD:"子供",deck:"デッキ",doNotRecline:"リクライニング制限、背中の痛みの可能性",extraLegroom:"追加の足元スペース",getColdByExit:"出口付近、通風と寒さ",INF:"乳児",invertedSeat:"後ろ向きの座席",limitedOverheadStorage:"オーバーヘッドの収納スペースが限られています",limitedRecline:"リクライニング制限、背中の痛みの可能性",misalignedWindow:"部分的または欠けている窓の眺め",nearGalley:"ギャレーの近く",nearLavatory:"トイレの近く",nearStairs:"階段、交通量の多いエリア",noFloorStorage:"座席下の収納スペースなし",noOverheadStorage:"オーバーヘッドの収納スペースが限られています",noWindow:"部分的または欠けている窓の眺め",personalTvInArmrest:"アームレスト内の個人用テレビ",passenger:"乗客",pitch:"ピッチ",power:"電源プラグ",powerPlug:"電源プラグ",prereclinedSeat:"事前にリクライニングされた座席",recline:"リクライニング",reservedCrewSeat:"予約済み",restrictedLegroom:"足元スペースが制限されています",select:"選択",seatRestrictions:"座席は次のみのため",standardSeat:"標準の座席",storageBoxBetweenWall:"壁の間の収納ボックス",trayTableInArmrest:"アームレスト内のトレイテーブル",unselect:"選択解除",usbPlug:"USBプラグ",usbPowerPlug:"USB＆電源プラグ",width:"幅",wifi_enabled:"WiFi有効",wifiEnabled:"WiFi有効",wingInWindow:"窓からの翼の眺め",narrower:"狭いシート",exitRow:"出口列"},k={F:"퍼스트 클래스",B:"비즈니스 클래스",P:"프리미엄 클래스",E:"이코노미 클래스",ADT:"성인",audio_video_ondemand:"요청 시 오디오 및 비디오",audioVideo:"요청 시 오디오 및 비디오",babyBassinet:"아기용 바스켓 사용 가능",bassinet:"아기용 바스켓 사용 가능",cancel:"취소",CHD:"어린이",deck:"데크",doNotRecline:"제한된 기울기, 허리 통증 가능성",extraLegroom:"추가 다리 공간",getColdByExit:"출구 근처, 통풍 및 추움",INF:"유아",invertedSeat:"뒤집힌 좌석",limitedOverheadStorage:"제한된 수납 공간",limitedRecline:"제한된 기울기, 허리 통증 가능성",misalignedWindow:"부분적 또는 누락된 창 뷰",nearGalley:"갤리 근처",nearLavatory:"화장실 근처",nearStairs:"계단, 높은 트래픽 지역",noFloorStorage:"좌석 아래 보관 공간 없음",noOverheadStorage:"제한된 수납 공간",noWindow:"부분적 또는 누락된 창 뷰",personalTvInArmrest:"팔걸이에 개인 TV",passenger:"승객",pitch:"피치",power:"전원 플러그",powerPlug:"전원 플러그",prereclinedSeat:"미리 기울어진 좌석",recline:"기울기",reservedCrewSeat:"예약됨",restrictedLegroom:"제한된 다리 공간",select:"선택",seatRestrictions:"좌석은 오로지",standardSeat:"표준 좌석",storageBoxBetweenWall:"벽 사이의 보관 상자",trayTableInArmrest:"팔걸이에 트레이 테이블",unselect:"선택 취소",usbPlug:"USB 플러그",usbPowerPlug:"USB 및 전원 플러그",width:"너비",wifi_enabled:"WiFi 사용 가능",wifiEnabled:"WiFi 사용 가능",wingInWindow:"창에서 날개 뷰",narrower:"좁은 좌석",exitRow:"행 종료"},v={F:"Birinci sınıf",B:"Business sınıfı",P:"Premium sınıf",E:"Ekonomi sınıfı",ADT:"yetişkinler",audio_video_ondemand:"Talebe Göre Ses & Video",audioVideo:"Talebe Göre Ses & Video",babyBassinet:"Bebek beşiği mevcut",bassinet:"Bebek beşiği mevcut",cancel:"İptal",CHD:"çocuklar",deck:"Güverte",doNotRecline:"Sınırlı eğim, olası sırt ağrıları",extraLegroom:"Ekstra bacak aralığı",getColdByExit:"Çıkışa yakın, hava akımı ve soğuk",INF:"bebekler",invertedSeat:"Ters yönlü koltuk",limitedOverheadStorage:"Sınırlı üst depolama alanı",limitedRecline:"Sınırlı eğim, olası sırt ağrıları",misalignedWindow:"Kısmi veya eksik pencere görünümü",nearGalley:"Mutfak alanına yakın",nearLavatory:"Tuvaletin yanında",nearStairs:"Merdivenler, yoğun trafik alanı",noFloorStorage:"Koltuk altı depolama alanı yok",noOverheadStorage:"Sınırlı üst depolama alanı",noWindow:"Kısmi veya eksik pencere görünümü",personalTvInArmrest:"Kol dayama içinde kişisel TV",passenger:"Yolcu",pitch:"Eğim",power:"Elektrik prizi",powerPlug:"Elektrik prizi",prereclinedSeat:"Önceden eğimli koltuk",recline:"Yatma Derecesi",reservedCrewSeat:"Rezerve",restrictedLegroom:"Sınırlı bacak aralığı",select:"Seç",seatRestrictions:"Koltuk sadece için",standardSeat:"Standart koltuk",storageBoxBetweenWall:"Duvarlar arasında depolama kutusu",trayTableInArmrest:"Kol dayamada tepsi masası",unselect:"Seçimi kaldır",usbPlug:"USB prizi",usbPowerPlug:"USB & elektrik prizi",width:"Genişlik",wifi_enabled:"WiFi etkin",wifiEnabled:"WiFi etkin",wingInWindow:"Pencereden kanat görünümü",narrower:"Daha dar koltuk",exitRow:"Çıkış sırası"},w={ZOOM:"zoom",SCALE:"scale"},b={available:"available",unavailable:"unavailable",selected:"selected",preferred:"preferred",extra:"extra",disabled:"disabled"},L={seat:"seat",aisle:"aisle",empty:"empty",index:"index"},x={seat:"S",empty:"E",aisle:"-"},M={f:"First",b:"Business",p:"Premium economy",e:"Economy"},z={CN:c,DE:a,EN:n,ES:s,PL:o,RU:d,AR:h,CS:g,FR:p,PT:m,UK:u,IT:C,JA:f,KO:k,TR:v},y=w.SCALE,S=["ADT","CHD","INF"],T=[[100,100],[122,218],[150,170],[100,100],[122,200],[200,200],[200,200],[140,200],[150,200],[150,200],[200,150],[200,150],[200,185],[200,185],[120,150],[150,175],[150,175],[185,175],[185,175],[255,175],[130,330],[130,330],[200,400],[200,400],[200,365],[200,365],[200,200],[200,200],[200,200],[200,200],[200,265],[200,265],[200,330],[200,330],[200,200],[200,200],[550,435],[550,435],[550,435],[550,435],[275,1230],[275,1230],[550,325],[550,325],[550,325],[550,325]],E={left:"left",right:"right",center:"center"},H={F:"#BDB76B",B:"#FF8C00",P:"#8FBC8F",E:"#1E90FF"};class _{constructor(e,t,r,i,o="Bearer",s=null){l(this,"getData",(async(e,t={})=>{var r;let l={};null!=t&&null!==(r=t.headers)&&void 0!==r&&r.authorization||(l=await this._getRequestOptions());const i={...t,...l},o=await fetch(`${this._apiUrl}/${e}`,i),s=await o.json();if(!o.ok)throw new Error(`getData: ${o.status} - ${s.message}`);return await s})),l(this,"postData",(async(e,t,r={})=>{const l=await this._getRequestOptions(),i={...r,method:"post",body:JSON.stringify(t),...l},o=`${this._apiUrl}/${e}`,s=await fetch(o,i),a=await s.json();if(!s.ok)throw new Error(`postData: ${s.status} - ${a.message}`);return a})),l(this,"_getRequestOptions",(async()=>{const e=await this._getToken();return{headers:{"content-type":"application/json",authorization:`${this._apiAuthorizationScheme} ${e}`}}})),l(this,"_getAuthRequestOptions",(e=>({headers:{authorization:`${this._apiAuthorizationScheme} ${e}`}}))),l(this,"_getToken",(async()=>{const e=this._localStorage?this._localStorage.getData("jetsJwtToken"):null;if(e)return e;const t=`auth?appId=${this._appId}`,{accessToken:r}=await this.getData(t,this._getAuthRequestOptions(this._apiKey));if(!r)throw new Error("Unable to authenticate");return this._saveToken(r),r})),l(this,"_saveToken",(e=>{if(!e||!this._localStorage)return;const{exp:t}=this._parseJwt(e),r=this._getTokenTTL(t);this._localStorage.setData("jetsJwtToken",e,r)})),this._appId=e,this._apiKey=t,this._apiUrl=r,this._localStorage=i,this._apiAuthorizationScheme=o,this._apiMetadata=s}_getTokenTTL(e){return 1e3*e-Date.now()-3e5}_parseJwt(e){var t=e.split(".")[1].replace(/-/g,"+").replace(/_/g,"/"),r=decodeURIComponent(atob(t).split("").map((function(e){return"%"+("00"+e.charCodeAt(0).toString(16)).slice(-2)})).join(""));return JSON.parse(r)}}const A=r.default.createContext();class ${constructor(){l(this,"getSeatMapParams",((e,t)=>{var r,l,i;const o=e.map((e=>e.width)),s=Math.max(...o)+2*(null==t||null===(r=t.colorTheme)||void 0===r?void 0:r.fuselageStrokeWidth)||0,a=e.map((e=>e.wingsInfo.length)),n=Math.max(...a)>0,c=this._calculateSeatMapScale(s,t.width),d=this._calculateSeatMapRotation(t.horizontal,t.rightToLeft,c.scale,t.scaleType),h=t.visibleFuselage?2.4*s:0,g=(null==t||null===(l=t.colorTheme)||void 0===l?void 0:l.deckHeightSpacing)*e.length*2||0,p=t.singleDeckMode?0:(e.length-1)*((null==t||null===(i=t.colorTheme)||void 0===i?void 0:i.deckSeparation)||0),m=e.map((e=>e.height)).reduce(((e,t)=>e+t),0)+h+p+g,C=e.map((e=>e.height+h+p+g)),u=navigator.maxTouchPoints||"ontouchstart"in document.documentElement;return{...c,...d,innerWidth:s,isTouchDevice:u,tooltipOnHover:t.tooltipOnHover,builtInTooltip:null==t?void 0:t.builtInTooltip,externalPassengerManagement:null==t?void 0:t.externalPassengerManagement,builtInDeckSelector:null==t?void 0:t.builtInDeckSelector,singleDeckMode:null==t?void 0:t.singleDeckMode,totalDecksHeight:m,separateDeckHeights:C,visibleFuselage:t.visibleFuselage,visibleWings:t.visibleWings&&n,visibleCabinTitles:t.visibleCabinTitles,scaledTotalDecksHeight:m?m*(c.scale||1)+"px":"100%",hiddenSeatFeatures:t.hiddenSeatFeatures}})),l(this,"findWidestDeckRow",(e=>[...e].filter((e=>!!e.number)).sort(((e,t)=>t.width-e.width))[0])),l(this,"findBiggestDeckRow",(e=>{const t=[...e].sort(((e,t)=>{const r=/S/g;return t.seatScheme.match(r).length-e.seatScheme.match(r).length}));return this.assignAllLettersForBiggestRow(t[0],e)})),l(this,"assignAllLettersForBiggestRow",((e,t)=>{const r={...e,seats:e.seats.map((e=>({...e})))};try{const e=this.rowLetters(r),l=t.find((t=>{if(t.seatScheme===r.seatScheme){const r=this.rowLetters(t);if(e!==r)return t}}));l&&r.seats.forEach(((e,t)=>{e.letter=`${e.letter} - ${l.seats[t].letter}`}))}catch(e){console.error("Error at assignAllLettersForBiggestRow",e)}return r})),l(this,"rowLetters",(e=>{const t={[L.aisle]:"-",[L.empty]:" "};return e.seats.map((e=>t[e.type]||e.letter)).join()})),l(this,"getDefaultSeatSizeByClass",(e=>e&&SEAT_SIZE_BY_CLASS[e]?SEAT_SIZE_BY_CLASS[e]:DEFAULT_SEAT_SIZE)),l(this,"_calculateSeatMapRotation",((e,t,r,l)=>{let i="",o="",s="";return e&&(i="rotate(90deg)",o=l===w.ZOOM?`translateY(${-100/r}%)`:"translateY(-100%)",s="rotate(-90deg)"),{rotation:i,offset:o,antiRotation:s,isHorizontal:e,rightToLeft:t}})),l(this,"_calculateSeatMapScale",((e,t)=>({scale:t/e||1,antiScale:e/t||1}))),l(this,"_calculateDecksHeight",((e,t,r)=>null==e?void 0:e.map(((e,l)=>{const i=t[l],o=r[l];return this.calculateDeckHeight(e.rows,i,o)})))),l(this,"calculateDeckHeight",((e,t,r)=>{if(!e.length)return 0;const l=e[e.length-1],{topOffset:i,seats:o}=l,s=this._findLowestSeat(o),{height:a,topOffset:n}=this._calculateLastElementHeight(t),{height:c,topOffset:d}=this._calculateLastElementHeight(r),h=i+s.topOffset+s.size.height,g=n+a,p=d+c,m=Math.max(h,g,p);return Math.round(m)})),l(this,"_findLowestSeat",(e=>{let t=0;const r=e.filter((e=>e.letter&&!Number.isInteger(e.letter)));let l=r[0];for(const e of r){const{width:r,height:i}=e.size,o=(e.topOffset||0)+i;t<o&&(t=o,l=e)}return l})),l(this,"_calculateLastElementHeight",(e=>null==e?void 0:e.reduce(((e,{topOffset:t,height:r})=>(t>e.topOffset&&(e.topOffset=t,e.height=r||150),e)),{topOffset:0,height:0})))}getDeckInnerWidth(e,t){return e+20+24||t.width}getDeckInnerWidthWithWings(e,t,r){const l=null!=r&&r.visibleWings&&t?r.colorTheme.wingsWidth:0,i=null!=r&&r.visibleCabinTitles?r.colorTheme.cabinTitlesWidth:0;return e.width+2*Math.max(l,i)}static validateColor(e,t){return this._isColor(e)?e:t}static _isColor(e){const t=(new Option).style;return t.color=e,""!==t.color}static _filterInvalidColors(e){return Object.keys(e).reduce(((t,r)=>{if(!r.toLowerCase().endsWith("color"))return t[r]=e[r],t;return this._isColor(e[r])?t[r]=e[r]:console.warn("config.colorTheme",r,"has invalid color",e[r]),t}),{}),e}}l($,"validateLanguage",(e=>{if(!e)return"EN";const t=e.toUpperCase();return z[t]?t:"EN"})),l($,"mergeColorThemeWithConstraints",((e,t)=>{let r={...e,...$._filterInvalidColors(t)};for(let e in V)r[e]=V[e](r[e]);return r}));const V={fuselageStrokeWidth:e=>Math.min(Math.max(10,e),18)};class O{static generateId(){return"_"+Math.random().toString(36).substring(2,9)}}const B={"+":'<svg width="20" height="20" viewBox="-1 -1 22 22" xmlns="http://www.w3.org/2000/svg"><path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM7.29 14.29L3.7 10.7C3.31 10.31 3.31 9.68 3.7 9.29C4.09 8.9 4.72 8.9 5.11 9.29L8 12.17L14.88 5.29C15.27 4.9 15.9 4.9 16.29 5.29C16.68 5.68 16.68 6.31 16.29 6.7L8.7 14.29C8.32 14.68 7.68 14.68 7.29 14.29Z" fill="#11d900"></path></svg>',"-":'<svg width="20" height="20" viewBox="-1 -1 22 22" xmlns="http://www.w3.org/2000/svg"><path d="M11.89 6.7L10 8.59L8.11 6.7C7.72 6.31 7.09 6.31 6.7 6.7C6.31 7.09 6.31 7.72 6.7 8.11L8.59 10L6.7 11.89C6.31 12.28 6.31 12.91 6.7 13.3C7.09 13.69 7.72 13.69 8.11 13.3L10 11.41L11.89 13.3C12.28 13.69 12.91 13.69 13.3 13.3C13.69 12.91 13.69 12.28 13.3 11.89L11.41 10L13.3 8.11C13.69 7.72 13.69 7.09 13.3 6.7C12.91 6.32 12.27 6.32 11.89 6.7ZM10 0C4.47 0 0 4.47 0 10C0 15.53 4.47 20 10 20C15.53 20 20 15.53 20 10C20 4.47 15.53 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="red"></path></svg>',wifi:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.23 11"><title>wifi</title><path d="M6.62,9.91A1.08,1.08,0,1,0,7.7,8.82,1.08,1.08,0,0,0,6.62,9.91M7.7,7.64A2.24,2.24,0,0,1,9.84,9.26L11,8a3.76,3.76,0,0,0-6.65.09L5.54,9.32A2.25,2.25,0,0,1,7.7,7.64m0-3.06a5.25,5.25,0,0,1,4.37,2.35l1.08-1.15a6.75,6.75,0,0,0-11,.14L3.25,7A5.26,5.26,0,0,1,7.69,4.58m0-3a8.19,8.19,0,0,1,6.45,3.15l1.08-1.14A9.73,9.73,0,0,0,0,3.78L1.11,4.89A8.22,8.22,0,0,1,7.7,1.56" fill="#4f6f8f"/></svg>',wifi_enabled:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.23 11"><title>wifi</title><path d="M6.62,9.91A1.08,1.08,0,1,0,7.7,8.82,1.08,1.08,0,0,0,6.62,9.91M7.7,7.64A2.24,2.24,0,0,1,9.84,9.26L11,8a3.76,3.76,0,0,0-6.65.09L5.54,9.32A2.25,2.25,0,0,1,7.7,7.64m0-3.06a5.25,5.25,0,0,1,4.37,2.35l1.08-1.15a6.75,6.75,0,0,0-11,.14L3.25,7A5.26,5.26,0,0,1,7.69,4.58m0-3a8.19,8.19,0,0,1,6.45,3.15l1.08-1.14A9.73,9.73,0,0,0,0,3.78L1.11,4.89A8.22,8.22,0,0,1,7.7,1.56" fill="#4f6f8f"/></svg>',wifiEnabled:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.23 11"><title>wifi</title><path d="M6.62,9.91A1.08,1.08,0,1,0,7.7,8.82,1.08,1.08,0,0,0,6.62,9.91M7.7,7.64A2.24,2.24,0,0,1,9.84,9.26L11,8a3.76,3.76,0,0,0-6.65.09L5.54,9.32A2.25,2.25,0,0,1,7.7,7.64m0-3.06a5.25,5.25,0,0,1,4.37,2.35l1.08-1.15a6.75,6.75,0,0,0-11,.14L3.25,7A5.26,5.26,0,0,1,7.69,4.58m0-3a8.19,8.19,0,0,1,6.45,3.15l1.08-1.14A9.73,9.73,0,0,0,0,3.78L1.11,4.89A8.22,8.22,0,0,1,7.7,1.56" fill="#4f6f8f"/></svg>',power:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 21"><path d="M20.07,10.16a1.34,1.34,0,0,1-1.34,1.34H3.5a1.34,1.34,0,1,1,0-2.68h2V1.12a1.12,1.12,0,1,1,2.24,0v7.7h6.73V1.12a1.12,1.12,0,1,1,2.24,0v7.7h2A1.34,1.34,0,0,1,20.07,10.16ZM3.54,12.63V18.8A2.25,2.25,0,0,0,5.4,21H16.84a2.24,2.24,0,0,0,1.85-2.2V12.62Z"  fill="#4f6f8f"></path></svg>',audioVideo:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 21"><path d="M6.51,8.59h3.57L8.44,11.13H4.88ZM18.45,2.31,17.43,0,15,1.08l2.53,1.65Zm-3.16,1.4L12.77,2.07,9.51,3.52,12,5.17Zm-4.42,7.41h3.57l1.64-2.53H12.51Zm-1.05-5L7.29,4.51,4,6,6.56,7.6ZM18.5,8.59l-1.64,2.53h2.67V8.59Zm-16,11.24A1.16,1.16,0,0,0,3.63,21H18.37a1.16,1.16,0,0,0,1.16-1.16V13.2H2.47Zm.17-13V11.2L4.51,8.41Z" fill="#4f6f8f"></path></svg>',dot:'<svg width="20" height="20" viewBox="-1 -1 22 22" xmlns="http://www.w3.org/2000/svg"><path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0Z" fill="#4f6f8f"></path></svg>'},I={recline:'<svg width="48" height="51" viewBox="0 0 48 51" xmlns="http://www.w3.org/2000/svg"><g transform="scale(-1, 1) translate(-48,0)"><path d="M19.3954 30.8342C19.7952 31.1919 20.4265 30.8973 20.4265 30.3502C20.4265 30.1818 20.3424 30.0345 20.2161 29.9082L20.1319 29.8241L19.2902 29.1507L19.2691 29.1296C18.8272 28.7298 18.1538 29.1086 18.259 29.6978C18.2801 29.8451 18.3432 29.9503 18.4484 30.0345L18.4695 30.0555L19.3112 30.7289L19.3954 30.8131V30.8342Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5973 0.152473C13.2084 0.510215 12.051 1.49927 11.8616 3.2038V3.30902C11.4284 12.9854 11.4976 17.6783 12.4905 21.7889L11.967 21.091L11.946 21.0489C11.8197 20.8384 11.5672 20.7543 11.3357 20.7753C10.8938 20.8384 10.6833 21.3435 10.9148 21.7223L10.9359 21.7643L11.6303 22.6903L11.6724 22.7534L11.6934 22.7955C11.9769 23.1853 12.5288 23.0977 12.734 22.7212C12.8634 23.1823 13.0052 23.6402 13.1601 24.1013C13.1537 24.128 13.1488 24.1557 13.1454 24.1844C13.1244 24.3527 13.1875 24.5211 13.2927 24.6473L13.3138 24.6894L13.4099 24.8175C14.1463 26.8561 15.1378 29.0219 16.4364 31.8585L16.4492 31.8863C16.5014 32.0005 16.5542 32.1159 16.6075 32.2325C17.1074 33.3248 17.6558 34.5232 18.246 35.841C18.0278 35.9337 17.8592 36.149 17.8592 36.4318C17.8592 36.6001 17.9434 36.7474 18.0697 36.8737L18.8904 37.6944L18.9535 37.7365C19.0105 37.7891 19.073 37.828 19.1381 37.8543C19.2985 38.2206 19.4614 38.5951 19.6267 38.978C19.9424 39.7355 20.2581 40.2616 20.9735 40.6615C21.5838 40.9982 22.3624 41.1455 23.625 41.1665C24.8703 41.187 26.0681 41.2 27.2319 41.2077L29.5644 48.0056H22.8676C22.1942 48.0056 21.626 48.5527 21.626 49.2472C21.626 49.9206 22.1731 50.4888 22.8676 50.4888H31.1617C31.2508 50.4988 31.3418 50.499 31.433 50.4888H42.838C43.5114 50.4888 44.0795 49.9416 44.0795 49.2472C44.0795 48.5738 43.5324 48.0056 42.838 48.0056H32.1957L29.8663 41.2168C31.8256 41.2179 33.7121 41.2077 35.5976 41.1974C36.2285 41.194 36.8594 41.1906 37.4928 41.1876C38.3328 41.1876 39.1769 41.1835 40.1246 41.179C41.3371 41.1731 42.7192 41.1665 44.4793 41.1665C45.7419 41.1876 46.5836 40.3037 47.0045 39.1253C47.1518 38.7044 47.236 38.2415 47.257 37.7785C47.2781 37.3155 47.236 36.8315 47.1308 36.3896C46.8151 35.148 46.0155 34.1379 44.5845 34.0117C40.2916 33.6539 37.4297 33.4014 34.5888 33.1489C33.2553 33.0322 31.925 32.9122 30.6452 32.7968C28.6936 32.6208 26.859 32.4553 25.3085 32.3282C19.7951 20.3544 18.6166 17.5976 19.6057 3.43528C19.7109 1.96223 18.8481 0.910044 17.6486 0.383953C17.1857 0.173516 16.6806 0.0472546 16.1545 0.00516733C15.6285 -0.0158763 15.1024 0.026211 14.5973 0.152473ZM28.3161 38.6924C31.509 38.7099 34.4611 38.691 37.4717 38.6623C40.0812 38.6413 42.7116 38.6202 44.4582 38.6202H44.4793C44.4793 38.6202 44.5424 38.4729 44.6266 38.2625C44.6897 38.0731 44.7318 37.8416 44.7528 37.6101C44.7739 37.3787 44.7528 37.1472 44.6897 36.9367C44.6266 36.6632 44.5214 36.4738 44.353 36.4527C43.8105 36.4054 43.2248 36.3545 42.6047 36.3006C40.1945 36.0912 37.2654 35.8367 34.3362 35.5689L34.335 35.5688C31.4945 35.3163 28.6538 35.0638 24.3405 34.7061L23.625 34.643L23.3304 33.9906L23.2462 33.8223C23.1555 33.6256 23.0658 33.4313 22.9772 33.2392C22.7687 33.4555 22.4052 33.5083 22.1311 33.2752V33.2963L22.0469 33.2331L21.5419 32.8123L21.2052 32.4756C21.0789 32.3493 21.0158 32.223 20.9947 32.0547C20.9526 31.5075 21.605 31.1919 22.0048 31.5496L22.3415 31.8863L22.3617 31.9031C17.1874 20.6464 16.1038 17.4332 17.1015 3.24589C17.1226 2.97232 16.9121 2.76188 16.6175 2.63562C16.4281 2.55145 16.1966 2.48832 15.9441 2.46727C15.6916 2.44623 15.4391 2.46727 15.2076 2.5304L15.2286 2.55145C14.7867 2.67771 14.4079 2.97232 14.3448 3.45632C13.7423 17.155 14.1695 20.4518 16.9083 26.8319L17.5225 27.4461C17.7771 27.7007 17.767 28.0756 17.5559 28.3069C17.9026 29.0826 18.2795 29.9097 18.6886 30.8073L18.7008 30.8341C19.6057 32.7912 20.6579 35.0849 21.8995 37.9679C22.0047 38.2415 22.1099 38.4098 22.1941 38.4519C22.4045 38.5781 22.8254 38.6202 23.6461 38.6413C25.1362 38.6658 26.5566 38.6814 27.9307 38.6901C28.0607 38.6701 28.1906 38.6716 28.3161 38.6924Z"></path><path d="M0.140476 10.527L0.132009 10.5185L0.182563 10.6533L0.0983887 10.485V9.05399C0.140476 8.88564 0.245694 8.75938 0.371956 8.67521C0.834916 8.38059 1.42414 8.80147 1.29788 9.32756V10.1062L1.38205 10.3587C1.5504 10.7796 1.2137 11.2215 0.771785 11.2004C0.540305 11.1794 0.329869 11.0321 0.245694 10.8006L0.22465 10.7375L0.140476 10.527Z"></path><path d="M2.26588 12.6525C2.05545 12.1264 1.31892 12.1474 1.12953 12.6525C1.0664 12.7998 1.0664 12.9471 1.12953 13.0944L1.15057 13.1575L1.48727 13.9151L1.59249 14.2307C1.80292 14.7358 2.51841 14.7358 2.72884 14.2307C2.79197 14.0834 2.79197 13.9151 2.72884 13.7678L2.56049 13.2627L2.30797 12.6945L2.28693 12.6314L2.26588 12.6525Z"></path><path d="M3.63372 16.0405C3.42328 15.5354 2.7078 15.5354 2.49736 16.0405C2.43423 16.1878 2.43423 16.3561 2.49736 16.5034V16.5245L2.68676 17.0295L2.93928 17.6188V17.6398C3.17076 18.1659 3.90729 18.1238 4.07564 17.5977C4.11772 17.4504 4.11772 17.3031 4.05459 17.1558V17.1347L3.73894 16.3982L3.61268 16.0615V16.0405H3.63372Z"></path><path d="M5.08573 19.3864C4.83321 18.8393 4.05459 18.9445 3.92833 19.5337C3.90729 19.66 3.92833 19.7862 3.97042 19.9125V19.9336L4.51755 21.0278C4.62277 21.2383 4.85425 21.3856 5.08573 21.3856C5.52765 21.3645 5.80121 20.9016 5.61182 20.5017L5.06469 19.4075V19.3864H5.08573Z"></path><path d="M5.56973 22.7534C5.5066 22.9217 5.52765 23.0901 5.61182 23.2374L6.24313 24.2896L6.28522 24.3527C6.41148 24.5421 6.62192 24.6684 6.85339 24.6473C7.31636 24.6263 7.56888 24.1212 7.3374 23.7214L7.29531 23.6583L6.664 22.6061L6.68505 22.6482C6.43252 22.1852 5.73808 22.2273 5.56973 22.7534Z"></path><path d="M8.57897 25.6995C8.26332 25.2576 7.54784 25.4259 7.46366 25.9731C7.44262 26.1204 7.4847 26.2887 7.56888 26.415L8.32645 27.4251L8.34749 27.4461C8.68419 27.867 9.37863 27.6776 9.44176 27.1305C9.46281 26.9621 9.42072 26.8148 9.3155 26.6886L8.55793 25.6785L8.57897 25.6995Z"></path><path d="M10.8517 28.4773C10.7044 28.3089 10.4729 28.2458 10.2625 28.3089C9.7995 28.4141 9.63116 28.9823 9.96785 29.319L9.9889 29.3401L10.3677 29.8451L10.8306 30.3081C11.2094 30.6868 11.8828 30.4133 11.8828 29.8661C11.8828 29.6978 11.8197 29.5505 11.6934 29.4453L11.6513 29.4032L11.5251 29.2348L10.9359 28.6456L10.8517 28.4773Z"></path><path d="M13.4401 31.0235C13.0613 30.6658 12.451 30.9183 12.4089 31.4444C12.4089 31.6338 12.472 31.8022 12.5983 31.9284L13.4401 32.7702C13.8399 33.1279 14.4712 32.8333 14.4712 32.3072C14.4712 32.1389 14.387 31.9705 14.2608 31.8653L13.419 31.0235H13.4401Z"></path><path d="M16.1547 33.4857C15.7549 33.1279 15.1446 33.4225 15.1446 33.9486C15.1446 34.117 15.2288 34.2853 15.355 34.4116L16.2178 35.2744C16.3651 35.4217 16.5756 35.4638 16.786 35.4217C17.27 35.2954 17.4173 34.7062 17.0385 34.3695L16.1547 33.4857Z"></path><path d="M9.67324 19.6389C9.94681 20.1019 10.6202 20.0388 10.7886 19.5127C10.8306 19.3443 10.8306 19.176 10.7465 19.0287L10.3887 18.3132L10.3046 18.1028L10.2625 18.0186C10.031 17.5556 9.33654 17.5977 9.14715 18.0817C9.08402 18.2501 9.08402 18.4184 9.16819 18.5868L9.21028 18.6709L9.54698 19.5127L9.6522 19.7231L9.67324 19.6389Z"></path><path d="M8.0108 16.314C8.11601 16.5455 8.32645 16.6718 8.57897 16.6718C9.02089 16.6507 9.29446 16.2088 9.12611 15.809L8.78941 14.9673L8.74732 14.841L8.70523 14.7568C8.4948 14.2728 7.8214 14.2518 7.58992 14.7358C7.52679 14.9041 7.50575 15.0725 7.58992 15.2408L7.63201 15.325L7.80036 15.83L8.0108 16.3561V16.314Z"></path><path d="M6.57983 12.905C6.79026 13.4311 7.54784 13.41 7.73723 12.8839C7.77931 12.7366 7.77931 12.5893 7.73723 12.4631L7.71618 12.442L7.54784 11.937L7.4847 11.8107L7.29531 11.3688V11.3477C7.08488 10.8006 6.30626 10.8217 6.13791 11.3898C6.09582 11.5161 6.09582 11.6424 6.15896 11.7897V11.8107L6.47461 12.5472L6.664 12.926L6.68505 12.9471L6.57983 12.905Z"></path><path d="M5.27512 9.45382C5.48556 10.001 6.26417 9.97991 6.43252 9.43278C6.47461 9.30651 6.47461 9.18025 6.43252 9.05399L6.41148 8.99086L6.28522 8.69625L6.03269 8.02285L5.94852 7.8545L5.92748 7.83346C5.696 7.32841 4.95947 7.3705 4.79112 7.89659C4.74903 8.0439 4.74903 8.1912 4.81216 8.33851V8.44372L5.12782 9.28547L5.19095 9.43278L5.21199 9.49591L5.27512 9.45382Z"></path><path d="M3.44433 7.66511C3.97042 7.62302 4.2019 6.97067 3.82311 6.61293C3.69685 6.48667 3.5285 6.44458 3.36015 6.44458H2.28693L1.65562 6.76023H1.63457C1.40309 6.86545 1.27683 7.09693 1.27683 7.32841C1.29788 7.77033 1.73979 8.0439 2.13962 7.8545H3.00241L3.44433 7.66511Z"></path></g></svg>',width:'<svg width="35" height="50" viewBox="0 0 35 50" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M31.1151 33.3111C32.0089 33.4715 32.8177 33.9081 33.4335 34.5238C34.2198 35.31 34.7141 36.4106 34.7141 37.6011C34.7141 38.7916 34.2198 39.8922 33.4335 40.6784C32.6472 41.4645 31.5464 41.9587 30.3557 41.9587H23.2082L23.1928 47.4843H27.8396C28.5361 47.4843 29.0977 48.0458 29.0977 48.7421C29.0977 49.4385 28.5361 50 27.8396 50H7.86769C7.17126 50 6.60962 49.4385 6.60962 48.7421C6.60962 48.0458 7.17126 47.4843 7.86769 47.4843H12.4992L12.5146 41.9587H5.35149C4.16082 41.9587 3.06 41.4645 2.2737 40.6784C1.48741 39.8922 0.993164 38.7916 0.993164 37.6011C0.993164 36.4106 1.48741 35.31 2.2737 34.5238C2.88437 33.9133 3.68474 33.4788 4.56958 33.3152L4.82779 23.4241C4.72932 23.4271 4.63334 23.4314 4.51247 23.4369C4.3114 23.446 4.04146 23.4581 3.57663 23.4727C2.90266 23.4951 2.31855 22.956 2.29609 22.2597C2.27362 21.5859 2.8128 21.0019 3.50923 20.9794C3.98488 20.965 4.26402 20.9529 4.47273 20.9438C4.63574 20.9368 4.75578 20.9316 4.89293 20.9286L5.32902 4.22282C5.35149 3.05481 5.84573 1.9991 6.60956 1.2354C7.37339 0.471698 8.42928 0 9.59749 0H26.0873C27.2555 0 28.3114 0.471698 29.0752 1.2354C29.839 1.9991 30.3108 3.05481 30.3557 4.22282L30.7921 20.9384C30.8322 20.94 30.8743 20.9419 30.9198 20.9438C31.1286 20.9529 31.4077 20.965 31.8833 20.9794C32.5798 21.0019 33.1189 21.5859 33.0965 22.2597C33.074 22.956 32.4899 23.4951 31.8159 23.4727C31.3511 23.4581 31.0812 23.446 30.8801 23.4369C30.8724 23.4365 30.8648 23.4362 30.8573 23.4359L31.1151 33.3111ZM20.6991 47.4843L20.7145 41.9587H15.0083L14.9929 47.4843H20.6991ZM27.8171 4.26775L28.5809 33.221H7.05887L7.82271 4.26775C7.82271 3.77359 8.0249 3.32435 8.36188 2.98742C8.6764 2.67296 9.10325 2.4708 9.57502 2.4708H26.0648C26.5366 2.4708 26.9634 2.67296 27.2779 2.98742C27.5925 3.32435 27.7946 3.77359 27.8171 4.26775ZM30.3557 35.7368H5.35149C4.83479 35.7368 4.38547 35.9389 4.04849 36.2759C3.7115 36.6128 3.50931 37.0845 3.50931 37.5787C3.50931 38.0953 3.7115 38.5445 4.04849 38.8814C4.38547 39.2184 4.85725 39.4205 5.35149 39.4205H30.3557C30.8724 39.4205 31.3218 39.2184 31.6587 38.8814C31.9957 38.5445 32.1979 38.0728 32.1979 37.5787C32.1979 37.062 31.9957 36.6128 31.6587 36.2759C31.3218 35.9389 30.85 35.7368 30.3557 35.7368Z"></path></svg>',pitch:'<svg width="74" height="51" viewBox="0 0 74 51" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.98892 0.152473C1.60004 0.510215 0.442636 1.49927 0.253243 3.2038V3.30902C-0.503624 20.2124 0.272842 21.9085 4.82805 31.8585L4.84076 31.8863L4.99918 32.2325L4.99924 32.2327L4.99927 32.2327C5.87007 34.1358 6.88816 36.3607 8.01834 38.978C8.334 39.7355 8.64965 40.2616 9.36514 40.6615C9.9754 40.9982 10.754 41.1455 12.0166 41.1665C13.2619 41.187 14.4597 41.2 15.6234 41.2077L17.9559 48.0057H11.2591C10.5857 48.0057 10.0175 48.5528 10.0175 49.2473C10.0175 49.9207 10.5646 50.4888 11.2591 50.4888H19.5541C19.6426 50.4987 19.7329 50.499 19.8235 50.4888H31.2295C31.9029 50.4888 32.471 49.9417 32.471 49.2473C32.471 48.5739 31.9239 48.0057 31.2295 48.0057H20.5872L18.2578 41.2168C20.2165 41.2179 22.1025 41.2077 23.9874 41.1974H23.9883H23.9892L23.992 41.1974L23.9947 41.1974C24.6238 41.194 25.2528 41.1906 25.8844 41.1876C26.7241 41.1876 27.5679 41.1835 28.5151 41.179H28.5156H28.5162C29.7287 41.1731 31.1108 41.1665 32.8709 41.1665C34.1335 41.1876 34.9752 40.3037 35.3961 39.1253C35.5434 38.7044 35.6276 38.2415 35.6486 37.7785C35.6697 37.3155 35.6276 36.8315 35.5224 36.3896C35.2067 35.148 34.4071 34.1379 32.9761 34.0117C28.6832 33.6539 25.8213 33.4014 22.9804 33.1489C21.6481 33.0323 20.3191 32.9124 19.0403 32.7971L19.0374 32.7968L19.0368 32.7968L19.0366 32.7968C17.085 32.6207 15.2506 32.4553 13.7001 32.3282C8.18669 20.3544 7.00825 17.5976 7.9973 3.43528C8.10252 1.96223 7.23973 0.910044 6.04024 0.383953C5.57728 0.173516 5.07224 0.0472546 4.54614 0.00516733C4.02005 -0.0158763 3.49396 0.026211 2.98892 0.152473ZM16.7077 38.6924C19.9006 38.7099 22.8527 38.691 25.8633 38.6623C28.4728 38.6413 31.1032 38.6202 32.8498 38.6202H32.8709C32.8709 38.6202 32.934 38.4729 33.0182 38.2625C33.0813 38.0731 33.1234 37.8416 33.1444 37.6101C33.1655 37.3787 33.1444 37.1472 33.0813 36.9367C33.0182 36.6632 32.913 36.4738 32.7446 36.4527C32.2021 36.4054 31.6163 36.3545 30.9963 36.3006L30.9954 36.3005C28.5853 36.0911 25.6566 35.8367 22.7278 35.5689L22.7265 35.5688L22.7256 35.5687L22.7244 35.5686C19.8846 35.3162 17.0443 35.0637 12.7321 34.7061L12.0166 34.643L11.722 33.9906L11.6378 33.8223C5.70355 20.9646 4.44093 18.2079 5.49311 3.24589C5.51415 2.97232 5.30371 2.76188 5.0091 2.63562C4.81971 2.55145 4.58823 2.48832 4.33571 2.46727C4.08319 2.44623 3.83066 2.46727 3.59918 2.5304L3.62022 2.55145C3.17831 2.67771 2.79952 2.97232 2.73639 3.45632C2.02158 19.7078 2.75606 21.3194 7.08023 30.8073L7.09242 30.8341C7.9973 32.7911 9.04948 35.0849 10.2911 37.9679C10.3963 38.2415 10.5015 38.4098 10.5857 38.4519C10.7961 38.5781 11.217 38.6202 12.0377 38.6413C13.5277 38.6658 14.948 38.6814 16.322 38.6901C16.4521 38.67 16.5821 38.6715 16.7077 38.6924ZM40.9889 0.152473C39.6 0.510215 38.4426 1.49927 38.2532 3.2038V3.30902C37.4964 20.2124 38.2728 21.9085 42.828 31.8585L42.8408 31.8863L42.9991 32.2323C43.8699 34.1355 44.8881 36.3605 46.0183 38.978C46.334 39.7355 46.6497 40.2616 47.3651 40.6615C47.9754 40.9982 48.754 41.1455 50.0166 41.1665C51.2619 41.187 52.4597 41.2 53.6234 41.2077L55.9559 48.0057H49.2591C48.5857 48.0057 48.0175 48.5528 48.0175 49.2473C48.0175 49.9207 48.5646 50.4888 49.2591 50.4888H57.5541C57.6426 50.4987 57.7329 50.499 57.8235 50.4888H69.2295C69.9029 50.4888 70.471 49.9417 70.471 49.2473C70.471 48.5739 69.9239 48.0057 69.2295 48.0057H58.5872L56.2578 41.2168C58.2165 41.2179 60.1025 41.2077 61.9874 41.1974H61.9883H61.9892C62.6201 41.194 63.251 41.1906 63.8844 41.1876C64.7241 41.1876 65.5679 41.1835 66.5151 41.179H66.5156H66.5162C67.7288 41.1731 69.1108 41.1665 70.8709 41.1665C72.1335 41.1876 72.9752 40.3037 73.3961 39.1253C73.5434 38.7044 73.6276 38.2415 73.6486 37.7785C73.6697 37.3155 73.6276 36.8315 73.5224 36.3896C73.2067 35.148 72.4071 34.1379 70.9761 34.0117C66.6832 33.6539 63.8213 33.4014 60.9804 33.1489C59.6486 33.0324 58.3201 32.9125 57.0417 32.7972L57.0376 32.7969L57.0368 32.7968L57.0366 32.7968L57.0361 32.7967C55.0847 32.6207 53.2505 32.4553 51.7001 32.3282C46.1867 20.3544 45.0083 17.5976 45.9973 3.43528C46.1025 1.96223 45.2397 0.910044 44.0402 0.383953C43.5773 0.173516 43.0722 0.0472546 42.5461 0.00516733C42.0201 -0.0158763 41.494 0.026211 40.9889 0.152473ZM54.7077 38.6924C57.9006 38.7099 60.8527 38.691 63.8633 38.6623C66.4728 38.6413 69.1032 38.6202 70.8498 38.6202H70.8709C70.8709 38.6202 70.934 38.4729 71.0182 38.2625C71.0813 38.0731 71.1234 37.8416 71.1444 37.6101C71.1655 37.3787 71.1444 37.1472 71.0813 36.9367C71.0182 36.6632 70.913 36.4738 70.7446 36.4527C70.2021 36.4054 69.6163 36.3545 68.9963 36.3006L68.9954 36.3005C66.5853 36.0911 63.6566 35.8367 60.7278 35.5689L60.7265 35.5688C57.886 35.3163 55.0454 35.0638 50.7321 34.7061L50.0166 34.643L49.722 33.9906L49.6378 33.8223C43.7035 20.9646 42.4409 18.2079 43.4931 3.24589C43.5142 2.97232 43.3037 2.76188 43.0091 2.63562C42.8197 2.55145 42.5882 2.48832 42.3357 2.46727C42.0832 2.44623 41.8307 2.46727 41.5992 2.5304L41.6202 2.55145C41.1783 2.67771 40.7995 2.97232 40.7364 3.45632C40.0216 19.7078 40.7561 21.3194 45.0802 30.8073L45.0924 30.8341C45.9973 32.7911 47.0495 35.0849 48.2911 37.9679C48.3963 38.2415 48.5015 38.4098 48.5857 38.4519C48.7961 38.5781 49.217 38.6202 50.0377 38.6413C51.5277 38.6658 52.948 38.6814 54.322 38.6901C54.4521 38.67 54.5821 38.6715 54.7077 38.6924Z"></path></svg>'};class W{constructor(){l(this,"_dataHelper",null),l(this,"_deckTitleHeight",0),l(this,"prepareData",((e,t)=>{if(!e)return[];const{seatDetails:r}=e,l=null==r?void 0:r.decks,i=l&&l.length;this._deckTitleHeight=l&&l.length>1?80:0;const o=i?this._prepareBulks(l):[],s=i?this._prepareExits(l):[],a=i?l.map(((r,l)=>{const i=o[l],a=s[l];return{...this._prepareDeck(r,i,a,e,t),number:l+1}})):[],n=Math.max(...a.map((e=>e.wingsInfo.length)))>0,c=a.map((e=>this._updateDeckWithWings(e,n,t)));return{content:c,params:this._dataHelper.getSeatMapParams(c,t),exits:s,bulks:o}})),l(this,"_prepareRows",((e,t,r,l,i=0)=>{if(null==e||!e.length)return[];return e.map((e=>this._prepareRow(e,t,r,l,i)))})),l(this,"_prepareRow",((e,t,r,l,i=0)=>{const{number:o,topOffset:s,seatScheme:a,classCode:n,seatType:c}=e,d=s+l,h=this._prepareSeats(e,t,r,i),g=h.map((e=>e.size.width)).reduce(((e,t)=>e+t),0);return{seats:h,uniqId:O.generateId(),number:o,topOffset:d,width:g,height:h.at(0).size.height,seatScheme:a,classCode:n,seatType:c}})),l(this,"_prepareSeats",((e,t,r,l=0)=>{const{seatScheme:i,seats:o,seatType:s}=e;if(null==o||!o.length)return[];let a=0;const n=i.split("");let c=0;if(l){var d,h;const[e]=T[s],t=(l-(null===(d=i.match(/S|E/g))||void 0===d?void 0:d.length)*e)/((null===(h=i.match(/-/g))||void 0===h?void 0:h.length)||0);c=t>0?Math.min(t,e):1}return n.reduce(((l,i)=>{let s={};return i===x.aisle?s=this._prepareAisle(e,c):i===x.empty?s=this._prepareEmpty(e):i===x.seat&&(s=this._prepareSeat(o[a],e,t,r),a++),l.push(s),l}),[])})),l(this,"_prepareIndexRow",(e=>{const t=e.seats.map((t=>(t.letter=t.type===L.aisle?"":t.letter,t.type=t.type===L.aisle?L.empty:L.index,t.status=b.disabled,t.topOffset=t.topOffset-t.size.height/2,t.number="",t.size={width:t.size.width,height:50},t.seatScheme=e.seatScheme,t.rotation="",t)));return{...e,number:"",seats:t,topOffset:e.topOffset}})),l(this,"_prepareSeat",((e,t,r,l)=>{const{number:i,classCode:o,name:s,seatType:a}=t,n=this._prepareSeatFeatures(e,r,l),c=n.features,d=n.measurements,h=M[o.toLowerCase()]||"",g=i+(null==e?void 0:e.letter)||"",p=L.seat,m=b.available,C=e.seatType||a,u=`${o}-${C}`,[f,k]=T[a],[v,w]=T[C];return{uniqId:O.generateId(),...e,originalColor:null==e?void 0:e.color,features:c,measurements:d,status:m,type:p,number:g,classType:h,classCode:o,rowName:s,seatType:u,seatIconType:C,size:{width:Math.max(f,v),height:w}}})),l(this,"_prepareAisle",((e,t=0)=>{const{number:r,seatType:l}=e,[i,o]=T[l],s={width:t||i,height:o},a=L.aisle,n=b.disabled;return{uniqId:O.generateId(),letter:r,type:a,status:n,size:s}})),l(this,"_prepareEmpty",(e=>{const[t,r]=T[e.seatType],l={width:t,height:r},i=L.empty,o=b.disabled;return{uniqId:O.generateId(),letter:"",status:o,type:i,size:l}})),l(this,"_prepareSeatFeatures",((e,t,r)=>{const{pitch:l,width:i,recline:o,audioVideo:s,power:a,wifi:n}=t,{pitch:c,width:d,recline:h}=e||{},g=Object.keys(e.features||{}),p=["doNotRecline","limitedRecline","prereclinedSeat"],m=g.some((e=>p.includes(e))),C={audioVideo:s,power:a,wifi:n,...e.features},u={pitch:c||l,width:d||i,recline:m?"- -":h||o},f=["+","-"];return{features:Object.entries(C).filter((([e,t])=>!!t&&!u[e])).map((([e,t])=>{const l=O.generateId(),i=z[r][e]||e;if(f.includes(t)){return{uniqId:l,title:null,icon:B[t]||"",value:i,key:e}}return{uniqId:l,title:i,icon:B[e]||"",value:t,key:e}})),measurements:Object.entries(u).map((([e,t])=>{const l=z[r][e]||e,i=I[e]||"";return{uniqId:O.generateId(),title:l,icon:i,value:t,key:e}}))}})),l(this,"prepareSeatAdditionalProps",(e=>{const{additionalProps:t}=e||{};return null==t?void 0:t.map((e=>({icon:B[(null==e?void 0:e.icon)||"dot"]||"",title:null,uniqId:O.generateId(),value:null==e?void 0:e.label,cssClass:null==e?void 0:e.cssClass})))})),this._dataHelper=new $}_mergeCabinFeatures(e,t,r,l){const i={...e};return null!=t&&t.exists&&null!=t&&t.summary&&(i.audioVideo=t.summary),null!=r&&r.exists&&null!=r&&r.summary&&(i.power=r.summary),null!=l&&l.exists&&null!=l&&l.summary&&(i.wifi=l.summary),i}_prepareExits(e){return this._updateAllDeckItemsTopOffset(e,"exits")}_prepareBulks(e){return this._updateAllDeckItemsTopOffset(e,"bulks")}_getFirstElementDeckOffset(e){const t=e.bulks.reduce(((e,t)=>t.topOffset<e?t.topOffset:e),0),r=e.exits.reduce(((e,t)=>t.topOffset<e?t.topOffset:e),0),l=e.rows.sort(((e,t)=>{e.topOffset,t.topOffset})).at(0).seats.reduce(((e,t)=>t.topOffset<e?t.topOffset:e),0),i=Math.min(t,r,l);return(i<0?-i:i)+this._deckTitleHeight+120}_updateAllDeckItemsTopOffset(e,t){return e.map((e=>{const r=this._getFirstElementDeckOffset(e);return this._updateDeckItemsTopOffset(e,t,r)}))}_updateDeckItemsTopOffset(e,t,r=0){return e[t].map((e=>{const t={...e,uniqId:O.generateId()},l=t.topOffset+r;return t.topOffset=l,t}))}_prepareDeck(e,t,r,l,i){const o=this._groupRowsByCabinClass(e.rows),s=[];for(const e of o){const t=this._dataHelper.findBiggestDeckRow(e.rows),r=this._prepareRow(t,{},i.lang);s.push(r.width)}const a=s.reduce(((e,t)=>e+t),0)/s.length,n=this._getFirstElementDeckOffset(e);for(const e of o){const{cabin:t,entertainment:r,power:o,wifi:s}=l[e.classCode]||{},c=this._mergeCabinFeatures(t,r,o,s),d=this._prepareRows(e.rows,c,i.lang,n,a),h=d.at(0),g=d.at(-1);h.isFirstInCabin=!0,h.cabinHeight=1===d.length?h.height:g.topOffset-h.topOffset+g.height/2,e.rows=d}const c=o.flatMap((e=>e.rows)),d=this._dataHelper.getDeckInnerWidth(a,i),h=this._dataHelper.calculateDeckHeight(c,t,r),g=this._prepareWingsForDeck(e.wingsInfo,c[0].topOffset,h);return{uniqId:O.generateId(),width:d,height:h,level:e.level,rows:c,wingsInfo:g}}_groupRowsByCabinClass(e){const t=[];let r=null,l=null;for(const i of e)i.classCode!==r&&(r=i.classCode,l={rows:[],topOffset:i.topOffset,classCode:r,width:0},t.push(l)),l.rows.push(i);return t}_updateDeckWithWings(e,t,r){return{...e,width:this._dataHelper.getDeckInnerWidthWithWings(e,t,r)}}_prepareWingsForDeck(e,t,r){let l={start:0,finish:0,length:0};if(!e)return l;const i=t,{topOffset:o,height:s}=e,a=i+o,n=a+s,c=r;return l.start=Math.max(0,a),l.finish=Math.min(c,n),l.length=Math.max(l.finish-l.start,0),l.visibleWingsLeadings=!0,l}}class R{getData(e){try{const t=localStorage.getItem(e);if(!t)return null;const{value:r,expiry:l}=JSON.parse(t),i=(new Date).getTime();return!r||l<i?(this.removeData(e),null):r}catch(e){return console.log("Error getting data from local storage. Message:",e),null}}setData(e,t,r){try{const l={value:t};return r&&(l.expiry=(new Date).getTime()+r),localStorage.setItem(e,JSON.stringify(l)),!0}catch(e){return console.log("Error saving data to local storage. Message:",e),!1}}removeData(e){localStorage.removeItem(e)}}const P=()=>{const[t,r,l,i]=e.useMemo((()=>{const e=navigator.userAgent.toLowerCase();return[e.includes("firefox"),e.includes("chrome"),e.includes("safari")&&!e.includes("chrome"),e.includes("edge")]}),[]);return{isFirefox:t,isChrome:r,isSafari:l,isEdge:i}},N=new Map;N.set("0",'\n  <svg id="bulk-0" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n  </svg>\n'),N.set("1",'\n  <svg\n    id="bulk-1"\n    viewBox="0 0 420 119"\n    xmlns="http://www.w3.org/2000/svg"\n  >\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,4V108.6A10.42,10.42,0,0,0,10.44,119H409.56A10.42,10.42,0,0,0,420,108.6V4Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M416.06,0H3.94A4,4,0,0,0,0,4,4,4,0,0,0,3.94,8H416.06A4,4,0,0,0,420,4,4,4,0,0,0,416.06,0Z"\n    />\n  </svg>\n'),N.set("2",'\n  <svg id="bulk-2" viewBox="0 0 420 93" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,4.5V82.8A10.2,10.2,0,0,0,10.2,93H409.8A10.2,10.2,0,0,0,420,82.8V4.5Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M415.52,0H4.48A4.49,4.49,0,0,0,0,4.5C0,8,3,9,5.48,9h409C417,9,420,8.17,420,4.5A4.49,4.49,0,0,0,415.52,0Z"\n    />\n  </svg>\n'),N.set("3",'\n  <svg id="bulk-3" viewBox="0 0 420 133" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,13.5v97.88A21.64,21.64,0,0,0,21.67,133H398.33A21.64,21.64,0,0,0,420,111.38V13.5Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.29,0H12.71C5.69,0,0,6,0,13.5,0,21.2,6.17,27,12.71,27H407.29C413.83,27,420,20.08,420,13.5,420,6,414.31,0,407.29,0Z"\n    />\n  </svg>\n'),N.set("4",'\n  <svg id="bulk-4" viewBox="0 0 265 116" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,4.5V106.38A9.61,9.61,0,0,0,9.61,116H255.39a9.61,9.61,0,0,0,9.61-9.62V4.5Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M260.65,0H4.35A4.52,4.52,0,0,0,0,4.5,4.43,4.43,0,0,0,4.35,9h256.3A4.43,4.43,0,0,0,265,4.5,4.69,4.69,0,0,0,260.65,0Z"\n    />\n  </svg>\n'),N.set("5",'\n  <svg id="bulk-5" viewBox="0 0 424 210" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,86V194.86A15.11,15.11,0,0,0,15.07,210H408.93A15.11,15.11,0,0,0,424,194.86V86Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.8,16.8,0,0,0,0,16.82V86a17.06,17.06,0,0,0,16.78,17.12H407.22A17.06,17.06,0,0,0,424,86V16.82A16.8,16.8,0,0,0,407.22,0Z"\n    />\n  </svg>\n'),N.set("6",'\n  <svg id="bulk-6" viewBox="0 0 424 255" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,131V239.85A15.11,15.11,0,0,0,15.07,255H408.93A15.11,15.11,0,0,0,424,239.85V131Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.8,16.8,0,0,0,0,16.82V131c0,9.29,7.51,17.28,16.78,17.28H407.22c9.27,0,16.78-8,16.78-17.28V16.82A16.8,16.8,0,0,0,407.22,0Z"\n    />\n  </svg>\n'),N.set("7",'\n  <svg id="bulk-7" viewBox="0 0 280 254" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,131V239a15,15,0,0,0,15,15H265a15,15,0,0,0,15-15V131Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M263.26,0H16.74A16.76,16.76,0,0,0,0,16.79V131a16.94,16.94,0,0,0,16.74,17H263.26A16.94,16.94,0,0,0,280,131V16.79A16.76,16.76,0,0,0,263.26,0Z"\n    />\n  </svg>\n'),N.set("8",'\n  <svg id="bulk-8" viewBox="0 0 424 290" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base" \n      fill="$baseColor"\n      d="M0,166V275a15,15,0,0,0,15.07,15H408.93A15,15,0,0,0,424,275V166Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.79,16.79,0,0,0,0,16.8V166a17,17,0,0,0,16.78,\n      \n      17H407.22A17,17,0,0,0,424,166V16.8A16.79,16.79,0,0,0,407.22,0Z"\n    />\n  </svg>\n'),N.set("9",'\n  <svg id="bulk-9" viewBox="0 0 352 328" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,205V313a15,15,0,0,0,15,15H337a15,15,0,0,0,15-15V205Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M335.25,0H16.75A16.75,16.75,0,0,0,0,16.75V205a17,17,0,0,0,16.75,17H335.25A17,17,0,0,0,352,205V16.75A16.75,16.75,0,0,0,335.25,0Z"\n    />\n  </svg>\n'),N.set("10",'\n  <svg id="bulk-10" viewBox="0 0 424 329" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,205V314a15,15,0,0,0,15.07,15H408.93A15,15,0,0,0,424,314V205Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.77,16.77,0,0,0,0,16.75V205a17,17,0,0,0,16.78,17H407.22A17,17,0,0,0,424,205V16.75A16.77,16.77,0,0,0,407.22,0Z"\n    />\n  </svg>\n'),N.set("11",'\n  <svg id="bulk-11" viewBox="0 0 282 329" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,205V314a15,15,0,0,0,15.08,15H266.92A15,15,0,0,0,282,314V205Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M265.21,0H16.79A16.77,16.77,0,0,0,0,16.75V205a17,17,0,0,0,16.79,17H265.21A17,17,0,0,0,282,205V16.75A16.77,16.77,0,0,0,265.21,0Z"\n    />\n  </svg>\n'),N.set("12",'\n  <svg id="bulk-12" viewBox="0 0 424 371" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,247V356a15,15,0,0,0,15.07,15H408.93A15,15,0,0,0,424,356V247Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.78,16.78,0,0,0,0,16.77V247a17,17,0,0,0,16.78,17H407.22A17,17,0,0,0,424,247V16.77A16.78,16.78,0,0,0,407.22,0Z"\n    />\n  </svg>\n'),N.set("13",'\n  <svg id="bulk-13" viewBox="0 0 352 371" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,247V356a15,15,0,0,0,15,15H337a15,15,0,0,0,15-15V247Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M335.25,0H16.75A16.73,16.73,0,0,0,0,16.72V247a17,17,0,0,0,16.75,17H335.25A17,17,0,0,0,352,247V16.72A16.73,16.73,0,0,0,335.25,0Z"\n    />\n  </svg>\n'),N.set("14",'\n  <svg id="bulk-14" viewBox="0 0 424 450" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,328V435a15,15,0,0,0,15.07,15H408.93A15,15,0,0,0,424,435V328Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.79,16.79,0,0,0,0,16.8V328a17,17,0,0,0,16.78,17H407.22A17,17,0,0,0,424,328V16.8A16.79,16.79,0,0,0,407.22,0Z"\n    />\n  </svg>\n'),N.set("15",'\n  <svg id="bulk-15" viewBox="0 0 424 527" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,403V512a15,15,0,0,0,15.07,15H408.93A15,15,0,0,0,424,512V403Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.77,16.77,0,0,0,0,16.76V403a17,17,0,0,0,16.78,17H407.22A17,17,0,0,0,424,403V16.76A16.77,16.77,0,0,0,407.22,0Z"\n    />\n  </svg>\n'),N.set("16",'\n  <svg id="bulk-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 313 106">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M10.6,66.1C6,79.1,2.4,92.4,0,106h306.5c5,0,6.5-3.6,6.5-6.1V5C103.8,22.3,39.2-2.7,10.6,66.1z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M307.7,0L70.6,13.5c-45.5,3.5-60,52.6-60,52.6c22.5-33.3,36.2-41.4,60.6-42.7L308.3,9.9c2.6,0,4.7-2.1,4.7-4.7\n    c0-0.1,0-0.2,0-0.2C313.1,2.6,310.2-0.1,307.7,0z"\n    />\n  </svg>\n'),N.set("17",'\n  <svg\n    version="1.1"\n    id="bulk-17"\n    xmlns="http://www.w3.org/2000/svg"\n    xmlns:xlink="http://www.w3.org/1999/xlink"\n    x="0px"\n    y="0px"\n    viewBox="0 0 313 91"\n    style="enable-background:new 0 0 313 91;"\n    xml:space="preserve"\n  >\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M10.6,44.8C4.6,57,0,69.9,0,91h307c3.3,0,6-2.7,6-6V4C33.7-1,37.9-4.8,10.6,44.8z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M308.5,0H58.4C28.6,0,13.5,39.4,11.1,43.9c0,0,20.4-34.9,46.3-34.9h251.1c2.5,0,4.5-2.5,4.5-4.9S311,0,308.5,0z"\n    />\n  </svg>\n'),N.set("18",'\n  <svg\n    version="1.1"\n    id="bulk-18"\n    xmlns="http://www.w3.org/2000/svg"\n    xmlns:xlink="http://www.w3.org/1999/xlink"\n    x="0px"\n    y="0px"\n    viewBox="0 0 289 126"\n    style="enable-background:new 0 0 289 126;"\n    xml:space="preserve"\n  >\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,126h276c7.3,0,13-4,13-9.6V12C31.7,18.9,10.4,28.2,0,126z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M277.2,0C45.5,19.8,8.2-4.5,0,126C9.7,23.2,127.6,42.7,275.1,26c10.2-0.9,13.9-7.6,13.9-14\n    C289,5.3,284.2,0,277.2,0z"\n    />\n  </svg>\n'),N.set("19",'\n  <svg\n    id="bulk-19"\n    version="1.1"\n    viewBox="0 0 268 172"\n    xmlns="http://www.w3.org/2000/svg"\n  >\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M21,23.6C13.9,33.5,4.6,60.1,0,96.1c0,0,242.7,71.6,252.7,74.9c10,3.3,15.3-2,15.3-8.6V54\n    C268,54,54.7,5.7,45.7,6C35.1,6.3,25.7,17.8,21,23.6z"\n    />\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M258.1,45.3c-7.3-2-139-33.6-184.7-44.3C60.5-1.8,38.6-0.1,21,23.6c2-2.5,10.4-11.6,21.1-9\n    c12.3,3,190.6,49.1,190.6,49.1C240,66,259.1,71,265.4,61c1.8-2.8,2.5-5.1,2.6-7C268.1,49.1,263.4,46.7,258.1,45.3z"\n    />\n  </svg>\n'),N.set("20",'\n  <svg\n    id="bulk-20"\n    version="1.1"\n    viewBox="0 0 286 197"\n    xmlns="http://www.w3.org/2000/svg"\n  >\n    <path \n      class="bulk-base" \n      fill="$baseColor"\n      d="M8,88L0,197h270c8.5,0,16-5.5,16-14V88H8z" />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M285.5,13c-0.8-7.7-4.2-13-14.5-13C258.7,0,115.7,11.8,90,14C19,20.1,0,69.8,0,111v86\n    c6.2-42.3,25.1-76.5,82-81.8c33.7-3.5,184-14.2,184-14.2c11.2,0,20-4.5,20-15C286,56.2,285.9,20.4,285.5,13z"\n    />\n  </svg>\n'),N.set("21",'\n  <svg\n    id="bulk-21"\n    version="1.1"\n    viewBox="0 0 287 235"\n    xmlns="http://www.w3.org/2000/svg"\n    icon-transform="scale(0.66) rotate(-4.5) translate(170 38)"\n  >\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      fill-opacity="1"\n      stroke-width="3"\n      d="M0,235h271c10,0,16-5.7,16-14V113H0V235z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      fill-opacity="1"\n      stroke-width="1"\n      d="M270,0C260.4,0,95.2,11.3,62,17S0,49,0,104v131c0,0,9.9-74.3,66-79s199-15,199-15c10.3,0,22-3.7,22-16V20\n      C287,6.2,278.3,0,270,0z"\n    />\n  </svg>\n'),N.set("22",'\n  <svg\n    id="bulk-22"\n    version="1.1"\n    viewBox="0 0 287 322"\n    xmlns="http://www.w3.org/2000/svg"\n  >\n    <path class="bulk-base" \n      d="M0,145v177h271c10,0,16-5.7,16-14V145H0z" \n      fill="$baseColor"/>\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M270,0C260.4,0,95.2,10.3,62,16S0,47,0,102v215c0,0,9.9-74.3,66-79s199-15,199-15c10.3,0,22-3.7,22-16V19\n    C287,6.9,278.8,0,270,0z"\n    />\n  </svg>\n'),N.set("23",'\n  <svg\n    version="1.1"\n    id="bulk-23"\n    xmlns="http://www.w3.org/2000/svg"\n    xmlns:xlink="http://www.w3.org/1999/xlink"\n    x="0px"\n    y="0px"\n    viewBox="0 0 287 357"\n    style="enable-background:new 0 0 287 357;"\n    xml:space="preserve"\n  >\n    <path \n      class="bulk-base" \n      d="M0,200l0.1,157H271c10,0,16-5.7,16-14V200H0z" \n      fill="$baseColor"/>\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M270,0C260.4,0,94.6,7.6,62,16C17.4,27.5,0,47.1,0,118v239c0,0,9.9-74.3,66-79s199-15,199-15\n    c10.3,0,22-3.7,22-16V19C287,7.6,279.6,0,270,0z"\n    />\n    <rect\n      x="36"\n      y="48"\n      transform="matrix(0.9989 -4.616482e-02 4.616482e-02 0.9989 -6.312 7.1897)"\n      class="st1"\n      width="233"\n      height="184.5"\n      fill-opacity="0"\n    />\n  </svg>\n'),N.set("24",'\n  <svg\n    id="bulk-24"\n    version="1.1"\n    viewBox="0 0 287 437"\n    xmlns="http://www.w3.org/2000/svg"\n  >\n    <path class="bulk-base" d="M0,300v137h271c10,0,16-5.7,16-14V300H0z" fill="$baseColor"/>\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M270,0C260.4,0,95.2,10.3,62,16S0,47,0,102v335c0,0,9.9-74.3,66-79s199-15,199-15c10.3,0,22-3.7,22-16V19\n    C287,7.1,279.1,0,270,0z"\n    />\n  </svg>\n'),N.set("25",'\n  <svg id="bulk-25" viewBox="0 0 286 512" xmlns="http://www.w3.org/2000/svg">\n    <path class="bulk-base" d="M0,350V512H271c10,0,15-4.67,15-13V350Z" fill="$baseColor"/>\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M267,0C257.42,0,94.18,10.33,61,16S0,45,0,102V512s8.9-73.33,65-78,200-15,200-15c10.26,0,21-3.67,21-16V19C286,3.63,278.19,0,267,0Z"\n    />\n  </svg>\n'),N.set("26",'\n  <svg id="bulk-26" viewBox="0 0 45 44" xmlns="http://www.w3.org/2000/svg">\n    <g transform="translate(0.0,44.00) scale(0.1,-0.1)" >\n      <path class="icon bulk" fill="$stickerColor" d="M181 414 c-25 -32 -26 -43 -5 -72 19 -27 64 -29 87 -4 24 26 21 68 -5 86 -32 23 -54 20 -77 -10z"/>\n      <path class="icon bulk" fill="$stickerColor" d="M105 254 c-29 -35 -35 -48 -25 -57 9 -9 19 -3 46 28 l34 40 0 -37 0 -38 65 0 65 0 0 33 1 32 28 -32 c28 -34 51 -43 51 -20 0 7 -16 32 -36 55 l-36 42 -78 0 -78 0 -37 -46z"/>\n      <path class="icon bulk" fill="$stickerColor" d="M125 130 c-18 -19 -25 -34 -21 -47 8 -26 74 -89 83 -79 6 6 2 21 -22 78 -5 12 1 21 21 31 l28 15 -31 15 c-29 16 -31 15 -58 -13z"/>\n      <path class="icon bulk" fill="$stickerColor" d="M270 148 c-36 -13 -37 -18 -12 -37 23 -17 23 -18 6 -54 -27 -57 -6 -68 40 -20 41 44 45 71 14 100 -18 17 -28 19 -48 11z"/>\n    </g>\n  </svg>\n  '),N.set("27",'\n  <svg id="bulk-27" viewBox="0 0 114 115" xmlns="http://www.w3.org/2000/svg">\n    <g clip-path="url(#clip0_1014_1377)">\n      <path class="icon bulk" fill="$stickerColor" d="M101.283 0.919922H12.7167C5.7 0.931322 0.0114 6.61992 0 13.6366V102.203C0.0114 109.22 5.7 114.909 12.7167 114.92H101.283C108.3 114.909 113.989 109.22 114 102.203V13.6366C113.989 6.61992 108.3 0.931322 101.283 0.919922ZM111.15 102.203C111.133 107.647 106.727 112.053 101.283 112.07H12.7167C7.2732 112.053 2.8671 107.647 2.85 102.203V13.6366C2.8671 8.19312 7.2732 3.78702 12.7167 3.76992H101.283C106.727 3.78702 111.133 8.19312 111.15 13.6366V102.203ZM70.9137 96.3037C63.6519 97.9738 48.1365 99.319 39.9798 95.4487C35.5053 93.3283 34.0347 88.8823 33.63 85.3027C33.2823 82.3615 31.4982 69.2059 33.003 56.8597C34.5135 44.485 41.7639 36.0889 41.7639 36.0889L42.6759 36.4537C43.0464 35.4391 43.4568 34.1566 43.662 32.9596C43.662 32.9596 42.1458 30.9532 40.413 28.2058C39.3072 26.4502 39.3072 22.882 40.641 20.716C42.978 16.9312 47.8116 15.6715 50.8725 17.2504C52.4628 18.0712 55.2729 19.1086 57.1083 24.6718C58.1172 27.727 58.6986 33.1762 57.0285 37.531C56.5098 38.8762 53.5971 38.1067 52.2405 37.0636C51.9327 37.0636 51.6762 37.0921 51.4881 37.1605C50.7186 37.4398 50.2626 38.557 50.0175 39.412L50.8896 39.7654L51.3285 42.6154C51.3285 42.6154 54.2469 48.0988 55.1532 54.5854C55.1988 54.9046 55.2444 55.2637 55.3014 55.6399C57.2736 58.0852 59.3313 59.8294 61.104 59.6698C63.5094 59.4532 70.4634 48.3097 70.4634 48.3097L70.9194 48.5947C71.0676 48.2185 71.3925 47.4889 71.9625 46.8277C72.7662 45.8929 75.3198 44.3026 75.9069 44.5534C76.494 44.8042 74.6301 46.537 74.6301 46.537C74.6301 46.537 76.6764 45.9613 77.1153 45.1291C77.5542 44.2969 77.4459 43.1455 77.9532 43.2538C78.4662 43.3621 78.4662 45.0835 78.2439 46.0468C78.0273 47.0044 77.5143 47.221 77.5143 47.221C77.5143 47.221 77.4402 47.6884 77.0754 48.1957C76.7106 48.703 74.4078 49.6606 73.9518 50.4757L74.6301 50.8975C74.6301 50.8975 68.8845 71.1268 59.1318 70.8019C58.539 70.7848 57.9405 70.6708 57.342 70.4941C57.6384 72.6544 58.5846 79.5571 58.6245 79.8706C58.6245 79.8706 83.1915 78.0922 84.7818 85.1374C84.7818 85.1488 84.7818 85.1545 84.7818 85.1659C86.4177 92.5303 78.1527 94.6165 70.9023 96.2866L70.9137 96.3037Z" />\n    </g>\n    <defs>\n      <clipPath id="clip0_1014_1377">\n        <rect width="114" height="114" transform="translate(0 0.919922)"/>\n      </clipPath>\n    </defs>\n  </svg>\n  '),N.set("28",'\n  <svg id="bulk-28" viewBox="0 0 114 115" xmlns="http://www.w3.org/2000/svg">\n    <g clip-path="url(#clip0_1014_1379)">\n      <path class="icon bulk" fill="$stickerColor" d="M101.283 0.0800781H12.7167C5.7 0.0914781 0.0114 5.78008 0 12.7968V101.363C0.0114 108.38 5.7 114.069 12.7167 114.08H101.283C108.3 114.069 113.989 108.38 114 101.363V12.7968C113.989 5.78008 108.3 0.0914781 101.283 0.0800781ZM111.15 101.363C111.133 106.807 106.727 111.213 101.283 111.23H12.7167C7.2732 111.213 2.8671 106.807 2.85 101.363V12.7968C2.8671 7.35328 7.2732 2.94718 12.7167 2.93008H101.283C106.727 2.94718 111.133 7.35328 111.15 12.7968V101.363ZM90.7782 29.2299L91.4508 26.8131L70.5717 21.1302L70.3836 21.0789L67.488 31.2306H35.4939L39.7803 84.5598C39.8145 87.1647 41.9577 89.2737 44.5911 89.2737H69.4602C72.0879 89.2737 74.2311 87.1704 74.271 84.5712L79.3041 31.2306H70.1214L72.1392 24.1569L90.7839 29.2356L90.7782 29.2299ZM38.4522 43.8789L37.6599 33.6702H66.7926L63.8856 43.8789H38.4579H38.4522ZM55.8828 57.6159L53.8593 63.3729L48.051 61.3665L50.0745 55.6095L55.8828 57.6159ZM50.8611 82.4337L44.6538 75.132L52.0182 68.976L58.2255 76.2777L50.8611 82.4337ZM67.146 73.7127L58.0488 70.572L61.2123 61.5546L70.3095 64.6953L67.146 73.7127ZM77.1381 33.6702L76.209 43.8789H66.5133L69.4203 33.6702H77.1381Z"/>\n    </g>\n    <defs>\n      <clipPath id="clip0_1014_1379">\n        <rect width="114" height="114" transform="translate(0 0.0800781)"/>\n      </clipPath>\n    </defs>\n  </svg>\n  ');const D=new Map;D.set("d",'\n  <svg>\n    <symbol\n      id="icon-d"\n    >{{!--\n      viewBox="0 0 200 200"\n    --}}<path\n        class="icon bulk" fill="$stickerColor"\n        d="M177.69,0H22.31A22.34,22.34,0,0,0,0,22.31V177.69A22.34,22.34,0,0,0,22.31,200H177.69A22.34,22.34,0,0,0,200,177.69V22.31A22.34,22.34,0,0,0,177.69,0ZM195,177.69A17.37,17.37,0,0,1,177.69,195H22.31A17.37,17.37,0,0,1,5,177.69V22.31A17.37,17.37,0,0,1,22.31,5H177.69A17.37,17.37,0,0,1,195,22.31ZM145.32,67.74h30.89V173H21.77V151.25H52.66V129.51H83.55V110.07h29.74V89.48h32ZM28.21,36.85h14.3V56.3H53.09L35.36,82.61,17.63,56.3H28.21ZM178.5,34.28a4.57,4.57,0,0,1-4.58,4.58H160.48c-6,0-8.72,1.22-14,4.89-5.6,3.92-117.45,86.89-118.58,87.72-1.39.9-5,.85-6.4-.95a4.57,4.57,0,0,1,.95-6.4c4.61-3.42,113.08-83.88,118.79-87.88,6.2-4.34,10.88-6.55,19.21-6.55h13.44A4.57,4.57,0,0,1,178.5,34.28Z"\n      />\n    </symbol>\n  </svg>\n'),D.set("e",'\n  <svg>\n    <symbol\n    id="icon-empty"\n  >{{!--\n    viewBox="0 0 200 200"\n  --}}</symbol>\n  </svg>\n'),D.set("f",'\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M177.7,0H22.3C10,0,0,10,0,22.3v155.4C0,190,10,200,22.3,200h155.4c12.3,0,22.3-10,22.3-22.3V22.3C200,10,190,0,177.7,0z M195,177.7c0,9.5-7.8,17.3-17.3,17.3H22.3C12.8,195,5,187.2,5,177.7V22.3C5,12.8,12.8,5,22.3,5h155.4c9.5,0,17.3,7.8,17.3,17.3 V177.7z"\n    />\n  </svg>\n'),D.set("g,g",'\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 138.5,238 c -33.7,-5.3 -66.3,8 -74.6,21.7 H 48.8 c 0,-4.3 -3.1,-7.7 -6.8,-7.7 -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 -0.1,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.8 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z M 66.6,358 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.2 -11.8,20.1 z m 111.1,44 H 22.3 C 10,402 0,392 0,379.7 V 224.3 C 0,212 10,202 22.3,202 h 155.4 c 12.3,0 22.3,10 22.3,22.3 V 379.7 C 200,392 190,402 177.7,402 Z M 22.3,207 C 12.8,207 5,214.8 5,224.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 224.3 C 195,214.8 187.2,207 177.7,207 Z M 138.5,36 C 104.8,30.7 72.2,44 63.9,57.7 H 48.8 C 48.8,53.4 45.7,50 42,50 c -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z m 10.9,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.1 -11.8,20.1 z M 177.7,200 H 22.3 C 10,200 0,190 0,177.7 V 22.3 C 0,10 10,0 22.3,0 H 177.7 C 190,0 200,10 200,22.3 V 177.7 C 200,190 190,200 177.7,200 Z M 22.3,5 C 12.8,5 5,12.8 5,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 195,12.8 187.2,5 177.7,5 Z"\n    />\n  </svg>\n'),D.set("g,l",'\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 145.2,255.4 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.3 -5,11.4 -11.3,11.3 z m -26.7,17.1 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 v -87.2 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 v -34.8 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,-0.1 -14.5,2.7 -14.5,14.7 z m -48,-28.3 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 h 0.1 c 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 364 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 364 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,262.2 72.9,257.7 64.6,257.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 v 0 0 c 3,0 5.5,-2.5 5.5,-5.5 v 0 -125.4 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 v 0 z m 101.8,16 V 224.3 C 200,212 190,202 177.7,202 H 22.3 C 10,202 0,212 0,224.3 V 379.7 C 0,392 10,402 22.3,402 H 177.7 C 190,402 200,392 200,379.7 Z M 177.7,207 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,397 5,389.2 5,379.7 V 224.3 C 5,214.8 12.8,207 22.3,207 Z M 138.5,36 C 104.8,30.7 72.2,44 63.9,57.7 H 48.8 C 48.8,53.4 45.7,50 42,50 c -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z m 10.9,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.1 -11.8,20.1 z M 177.7,200 H 22.3 C 10,200 0,190 0,177.7 V 22.3 C 0,10 10,0 22.3,0 H 177.7 C 190,0 200,10 200,22.3 V 177.7 C 200,190 190,200 177.7,200 Z M 22.3,5 C 12.8,5 5,12.8 5,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 195,12.8 187.2,5 177.7,5 Z"\n    />\n  </svg>\n'),D.set("g",'\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M138.49,36c-33.72-5.26-66.31,8-74.58,21.72H48.83C48.83,53.44,45.78,50,42,50s-6.82,3.44-6.82,7.69a7.77,7.77,0,0,0,4,7,7.24,7.24,0,0,0-4,6.57,6.83,6.83,0,1,0,13.64,0h15c7.07,13.29,33.64,25.4,74.71,21.12,6.69-.7,12.16-12.63,12.16-28.21S145.16,37,138.49,36Zm0,52.18c-5.71,0-10.33-10.73-10.33-24s4.62-24,10.33-24,10.33,10.73,10.33,24S144.2,88.13,138.49,88.13Zm3.72-24c0,4.77-1.66,8.63-3.72,8.63s-3.72-3.86-3.72-8.63,1.66-8.63,3.72-8.63S142.21,59.4,142.21,64.16ZM151.92,144a98.3,98.3,0,0,0-7.58-6.75,98.3,98.3,0,0,0,7.58-6.75c5-4.77,3.72-15.63,3.72-15.63l-20.22,17.91c-9.56-5.94-39.56-23.43-61.18-23.21-26,.26-40.49,26.75-40.49,26.75s15.08,28.6,39.87,28.6c26.58,0,49.49-16.69,59.5-25.25l22.52,20S156.88,148.78,151.92,144Zm-96.27-7.15c-2.17,0-3.93-2.25-3.93-5s1.76-5,3.93-5,3.93,2.25,3.93,5S57.82,136.87,55.65,136.87Zm10.95,19.2a36.83,36.83,0,0,0,6.82-20.26c.31-12.05-6.82-17.75-6.82-17.75s11.36-.13,11.78,18S66.6,156.07,66.6,156.07ZM177.69,200H22.31A22.34,22.34,0,0,1,0,177.69V22.31A22.34,22.34,0,0,1,22.31,0H177.69A22.34,22.34,0,0,1,200,22.31V177.69A22.34,22.34,0,0,1,177.69,200ZM22.31,5A17.37,17.37,0,0,0,5,22.31V177.69A17.37,17.37,0,0,0,22.31,195H177.69A17.37,17.37,0,0,0,195,177.69V22.31A17.37,17.37,0,0,0,177.69,5Z"\n    />\n  </svg>\n'),D.set("gg",'\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 340.5,36 c -33.7,-5.3 -66.3,8 -74.6,21.7 h -15.1 c 0,-4.3 -3.1,-7.7 -6.8,-7.7 -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.3,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.2,0 3.9,2.2 3.9,5 0,2.8 -1.7,5 -3.9,5 z m 11,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.2 -11.8,20.1 -11.8,20.1 z M 379.7,200 H 224.3 C 212,200 202,190 202,177.7 V 22.3 C 202,10 212,0 224.3,0 H 379.7 C 392,0 402,10 402,22.3 V 177.7 C 402,190 392,200 379.7,200 Z M 224.3,5 C 214.8,5 207,12.8 207,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 397,12.8 389.2,5 379.7,5 Z M 138.5,36 C 104.8,30.7 72.2,44 63.9,57.7 H 48.8 C 48.8,53.4 45.7,50 42,50 c -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z m 10.9,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.1 -11.8,20.1 z M 177.7,200 H 22.3 C 10,200 0,190 0,177.7 V 22.3 C 0,10 10,0 22.3,0 H 177.7 C 190,0 200,10 200,22.3 V 177.7 C 200,190 190,200 177.7,200 Z M 22.3,5 C 12.8,5 5,12.8 5,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 195,12.8 187.2,5 177.7,5 Z"\n    />\n  </svg>\n'),D.set("gl",'\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 347.2,53.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.4,-11.3 6.2,0 11.3,5.1 11.3,11.3 -0.1,6.2 -5.2,11.3 -11.4,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 335 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 0,0 0.1,0 0.1,0 6.3,0 11.3,-5.1 11.3,-11.3 0,-0.1 0,-0.1 0,0 z m -34,58.5 10.3,-29.3 h 1.2 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 h 11.7 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 280.5,60.1 274.9,55.7 266.6,55.7 H 256 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.6,61 c 0,3 2.4,5.5 5.5,5.5 0,0 0,0 0,0 v 0 c 3,0 5.5,-2.5 5.5,-5.5 0,0 0,0 0,0 V 36.3 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 0,0 0,0 0,0 z m 101.9,16 V 22.3 C 402,10 392,0 379.7,0 H 224.3 C 212,0 202,10 202,22.3 v 155.4 c 0,12.3 10,22.3 22.3,22.3 H 379.7 C 392,200 402,190 402,177.7 Z M 379.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 224.3 C 214.8,195 207,187.2 207,177.7 V 22.3 C 207,12.8 214.8,5 224.3,5 Z M 138.5,36 C 104.8,30.7 72.2,44 63.9,57.7 H 48.8 C 48.8,53.4 45.7,50 42,50 c -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z m 10.9,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.1 -11.8,20.1 z M 177.7,200 H 22.3 C 10,200 0,190 0,177.7 V 22.3 C 0,10 10,0 22.3,0 H 177.7 C 190,0 200,10 200,22.3 V 177.7 C 200,190 190,200 177.7,200 Z M 22.3,5 C 12.8,5 5,12.8 5,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 195,12.8 187.2,5 177.7,5 Z"\n    />\n  </svg>\n'),D.set("gs",'\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 2.3684758e-15 0 10.000781 0 22.300781 L 0 177.69922 C 2.3684758e-15 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 0 177.69922 0 L 22.300781 0 z M 223.30078 0 C 211.00078 0 201 10.000781 201 22.300781 L 201 177.69922 C 201 189.99922 211.00078 200 223.30078 200 L 378.69922 200 C 390.99922 200 401 189.99922 401 177.69922 L 401 22.300781 C 401 10.000781 390.99922 2.3684758e-15 378.69922 0 L 223.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 223.30078 5 L 378.69922 5 C 388.19922 5 396 12.800781 396 22.300781 L 396 177.69922 C 396 187.19922 388.19922 195 378.69922 195 L 223.30078 195 C 213.80078 195 206 187.19922 206 177.69922 L 206 22.300781 C 206 12.800781 213.80078 5 223.30078 5 z M 361.40039 29.800781 C 353.10039 29.800781 348.39922 32.000781 342.19922 36.300781 C 336.49922 40.300781 228.00039 120.79922 223.40039 124.19922 C 221.40039 125.69922 221 128.59961 222.5 130.59961 C 224 132.59961 226.90039 133 228.90039 131.5 C 230.10039 130.7 341.9 47.700781 347.5 43.800781 C 352.8 40.100781 355.5 38.900391 361.5 38.900391 L 374.90039 38.900391 C 377.50039 38.900391 379.5 36.800781 379.5 34.300781 C 379.5 31.700781 377.40078 29.700781 374.80078 29.800781 L 361.40039 29.800781 z M 122.87305 34.808594 C 95.206616 34.866107 70.903516 46.139844 63.900391 57.699219 L 48.800781 57.699219 C 48.800781 53.399219 45.7 50 42 50 C 38.3 50 35.199219 53.399219 35.199219 57.699219 C 35.099219 60.599219 36.699219 63.299219 39.199219 64.699219 C 36.699219 65.899219 35.199219 68.500781 35.199219 71.300781 C 34.999219 75.100781 37.899219 78.3 41.699219 78.5 C 45.499219 78.7 48.700391 75.8 48.900391 72 L 48.900391 71.300781 L 63.900391 71.300781 C 71.000391 84.600781 97.499609 96.700391 138.59961 92.400391 C 145.29961 91.700391 150.80078 79.799219 150.80078 64.199219 C 150.80078 48.599219 145.2 37 138.5 36 C 133.23438 35.171875 127.99646 34.797943 122.87305 34.808594 z M 138.5 40.199219 C 144.2 40.199219 148.80078 50.899219 148.80078 64.199219 C 148.80078 77.499219 144.2 88.099219 138.5 88.199219 C 132.8 88.199219 128.19922 77.499219 128.19922 64.199219 C 128.19922 50.899219 132.8 40.199219 138.5 40.199219 z M 138.5 55.599609 C 136.5 55.599609 134.80078 59.499219 134.80078 64.199219 C 134.80078 68.899219 136.5 72.800781 138.5 72.800781 C 140.5 72.800781 142.19922 68.999219 142.19922 64.199219 C 142.19922 59.399219 140.5 55.599609 138.5 55.599609 z M 346.30078 67.699219 L 346.30078 89.5 L 314.30078 89.5 L 314.30078 110.09961 L 284.59961 110.09961 L 284.59961 129.5 L 253.69922 129.5 L 253.69922 151.19922 L 222.80078 151.19922 L 222.80078 173 L 377.19922 173 L 377.19922 67.699219 L 346.30078 67.699219 z M 74.199219 109.5 C 48.199219 109.8 33.699219 136.30078 33.699219 136.30078 C 33.699219 136.30078 48.799609 164.90039 73.599609 164.90039 C 100.19961 164.90039 123.09961 148.19922 133.09961 139.69922 L 155.59961 159.69922 C 155.59961 159.69922 156.90039 148.8 151.90039 144 C 149.50039 141.6 147.00078 139.39922 144.30078 137.19922 C 146.90078 135.09922 149.50039 132.80039 151.90039 130.40039 C 156.90039 125.60039 155.59961 114.80078 155.59961 114.80078 L 135.40039 132.69922 C 125.80039 126.79922 95.799219 109.3 74.199219 109.5 z M 66.599609 118 C 66.599609 118 78.000391 117.9 78.400391 136 C 78.800391 154.1 66.599609 156.09961 66.599609 156.09961 C 70.799609 150.19961 73.200391 143.10078 73.400391 135.80078 C 73.700391 123.70078 66.599609 118 66.599609 118 z M 55.699219 126.90039 C 57.799219 126.90039 59.599609 129.10039 59.599609 131.90039 C 59.599609 134.70039 57.799219 136.90039 55.699219 136.90039 C 53.499219 136.90039 51.800781 134.70039 51.800781 131.90039 C 51.800781 129.10039 53.599219 126.90039 55.699219 126.90039 z"\n    />\n  </svg>\n'),D.set("l,g",'\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 138.5,238 c -33.7,-5.3 -66.3,8 -74.6,21.7 H 48.8 c 0,-4.3 -3.1,-7.7 -6.8,-7.7 -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 -0.1,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.8 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z M 66.6,358 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.2 -11.8,20.1 z m 111.1,44 H 22.3 C 10,402 0,392 0,379.7 V 224.3 C 0,212 10,202 22.3,202 h 155.4 c 12.3,0 22.3,10 22.3,22.3 V 379.7 C 200,392 190,402 177.7,402 Z M 22.3,207 C 12.8,207 5,214.8 5,224.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 224.3 C 195,214.8 187.2,207 177.7,207 Z M 145.2,53.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.2 -5,11.3 -11.3,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 0,0 0.1,0 0.1,0 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,60.1 72.9,55.7 64.6,55.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 0,0 0,0 0,0 v 0 c 3,0 5.5,-2.5 5.5,-5.5 0,0 0,0 0,0 V 36.3 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 0,0 0,0 0,0 z m 101.8,16 V 22.3 C 200,10 190,0 177.7,0 H 22.3 C 10,0 0,10 0,22.3 V 177.7 C 0,190 10,200 22.3,200 H 177.7 C 190,200 200,190 200,177.7 Z M 177.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,195 5,187.2 5,177.7 V 22.3 C 5,12.8 12.8,5 22.3,5 Z"\n    />\n  </svg>\n'),D.set("l,l",'\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 145.2,255.4 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.3 -5.1,11.4 -11.3,11.3 z m -26.7,17.1 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 v -87.2 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 v -34.8 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,-0.1 -14.5,2.7 -14.5,14.7 z m -48,-28.3 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 0,0 0.1,0 0.1,0 6.3,0 11.3,-5.1 11.3,-11.3 0,-0.1 0,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 364 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 364 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,262.2 72.9,257.7 64.6,257.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 0,0 0,0 0,0 v 0 c 3,0 5.5,-2.5 5.5,-5.5 0,0 0,0 0,0 V 238.3 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 0,0 0,0 0,0 z m 101.8,16 V 224.3 C 200,212 190,202 177.7,202 H 22.3 C 10,202 0,212 0,224.3 V 379.7 C 0,392 10,402 22.3,402 H 177.7 C 190,402 200,392 200,379.7 Z M 177.7,207 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,397 5,389.2 5,379.7 V 224.3 C 5,214.8 12.8,207 22.3,207 Z M 145.2,53.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.2 -5,11.3 -11.3,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 0,0 0.1,0 0.1,0 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,60.1 72.9,55.7 64.6,55.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 0,0 0,0 0,0 v 0 c 3,0 5.5,-2.5 5.5,-5.5 0,0 0,0 0,0 V 36.3 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 0,0 0,0 0,0 z m 101.8,16 V 22.3 C 200,10 190,0 177.7,0 H 22.3 C 10,0 0,10 0,22.3 V 177.7 C 0,190 10,200 22.3,200 H 177.7 C 190,200 200,190 200,177.7 Z M 177.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,195 5,187.2 5,177.7 V 22.3 C 5,12.8 12.8,5 22.3,5 Z"\n    />\n  </svg>\n'),D.set("l,s",'\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 59.199219 30.800781 C 52.899219 30.800781 47.800781 35.799609 47.800781 42.099609 C 47.800781 48.399609 52.799609 53.5 59.099609 53.5 L 59.199219 53.5 C 65.499219 53.5 70.5 48.399219 70.5 42.199219 C 70.5 35.899219 65.499219 30.800781 59.199219 30.800781 z M 103.69922 30.800781 C 100.69922 30.800781 98.199219 33.200781 98.199219 36.300781 L 98.199219 161.69922 C 98.199219 164.69922 100.59922 167.19922 103.69922 167.19922 C 106.69922 167.19922 109.19922 164.69922 109.19922 161.69922 L 109.19922 36.300781 C 109.19922 33.300781 106.79922 30.800781 103.69922 30.800781 z M 145.19922 30.900391 C 138.99922 30.900391 133.90039 35.899219 133.90039 42.199219 C 133.90039 48.399219 138.89922 53.5 145.19922 53.5 C 151.49922 53.5 156.5 48.399219 156.5 42.199219 C 156.5 35.999219 151.39922 30.900391 145.19922 30.900391 z M 54 55.699219 C 45.8 55.699219 40.099219 60.200781 38.199219 65.800781 L 28.5 97.800781 C 26.4 104.70078 34.4 107.19922 36.5 100.69922 L 46.800781 71.400391 L 48 71.400391 C 48 71.400391 34.500391 123.80078 33.900391 125.80078 C 33.600391 126.80078 33.999609 127.5 35.099609 127.5 L 46.800781 127.5 L 46.800781 162 C 46.800781 169 57.300781 169 57.300781 162 L 57.300781 127.30078 L 61.300781 127.30078 L 61.300781 162 C 61.300781 169 71.800781 169 71.800781 162 L 71.800781 127.5 L 83.5 127.5 C 84.5 127.5 84.899219 126.80078 84.699219 125.80078 C 84.099219 123.80078 70.599609 71.400391 70.599609 71.400391 L 71.800781 71.400391 L 82.099609 100.69922 C 84.199609 107.09922 92.099609 104.70078 90.099609 97.800781 L 80.400391 65.800781 C 78.500391 60.100781 72.899609 55.699219 64.599609 55.699219 L 54 55.699219 z M 133 55.699219 C 122.1 55.699219 118.5 58.500391 118.5 70.400391 L 118.5 105.19922 C 118.5 111.99922 127.59961 111.99922 127.59961 105.19922 L 128.40039 73.400391 L 130.69922 73.400391 L 130.69922 160.59961 C 130.69922 169.59961 143.09961 169.39961 143.09961 160.59961 L 143.90039 110 L 146.40039 110 L 147.19922 160.59961 C 147.19922 169.39961 159.59961 169.59961 159.59961 160.59961 L 159.59961 73.400391 L 162 73.400391 L 162.80078 105.19922 C 162.80078 111.99922 171.90039 111.99922 171.90039 105.19922 L 171.90039 70.400391 C 171.90039 58.500391 168.30039 55.699219 157.40039 55.699219 L 133 55.699219 z M 22.300781 202 C 10.000781 202 2.3684758e-15 212.00078 0 224.30078 L 0 379.69922 C 0 391.99922 10.000781 402 22.300781 402 L 177.69922 402 C 189.99922 402 200 391.99922 200 379.69922 L 200 224.30078 C 200 212.00078 189.99922 202 177.69922 202 L 22.300781 202 z M 22.300781 207 L 177.69922 207 C 187.19922 207 195 214.80078 195 224.30078 L 195 379.69922 C 195 389.19922 187.19922 397 177.69922 397 L 22.300781 397 C 12.800781 397 5 389.19922 5 379.69922 L 5 224.30078 C 5 214.80078 12.800781 207 22.300781 207 z M 160.40039 231.80078 C 152.10039 231.80078 147.39922 234.00078 141.19922 238.30078 C 135.49922 242.30078 27.000391 322.79922 22.400391 326.19922 C 20.400391 327.69922 20 330.59961 21.5 332.59961 C 23 334.59961 25.900391 335 27.900391 333.5 C 29.100391 332.7 140.9 249.70078 146.5 245.80078 C 151.8 242.10078 154.5 240.90039 160.5 240.90039 L 173.90039 240.90039 C 176.50039 240.90039 178.5 238.80078 178.5 236.30078 C 178.5 233.70078 176.40078 231.70078 173.80078 231.80078 L 160.40039 231.80078 z M 145.30078 269.69922 L 145.30078 291.5 L 113.30078 291.5 L 113.30078 312.09961 L 83.599609 312.09961 L 83.599609 331.5 L 52.699219 331.5 L 52.699219 353.19922 L 21.800781 353.19922 L 21.800781 375 L 176.19922 375 L 176.19922 269.69922 L 145.30078 269.69922 z"\n    />\n  </svg>\n'),D.set("l",'\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M145.19,53.45a11.33,11.33,0,1,1,11.35-11.33A11.34,11.34,0,0,1,145.19,53.45Zm-26.67,17v34.8c0,6.76,9.11,6.76,9.11,0l.79-31.83h2.34v87.15c0,9,12.41,8.78,12.41,0l.78-50.59h2.46l.79,50.59c0,8.78,12.41,9,12.41,0V73.38H162l.79,31.83c0,6.76,9.12,6.76,9.12,0V70.4c0-11.91-3.56-14.72-14.49-14.72H133C122.08,55.68,118.53,58.49,118.53,70.4Zm-48-28.29A11.34,11.34,0,1,0,59.21,53.45,11.33,11.33,0,0,0,70.55,42.11ZM36.49,100.73,46.76,71.45h1.18s-13.49,52.42-14.06,54.39c-.29,1,.12,1.69,1.16,1.69H46.71V162c0,7,10.49,7,10.49,0v-34.7h4V162c0,7,10.49,7,10.49,0V127.53H83.39c1,0,1.45-.71,1.16-1.69-.56-2-14.06-54.39-14.06-54.39h1.17l10.28,29.28c2.08,6.43,10,4,8-2.9l-9.73-32c-1.88-5.65-7.53-10.12-15.8-10.12H54c-8.25,0-13.91,4.46-15.79,10.12l-9.74,32C26.44,104.72,34.39,107.16,36.49,100.73Zm61.67,61a5.48,5.48,0,0,0,5.48,5.49h0a5.48,5.48,0,0,0,5.47-5.49V36.26a5.47,5.47,0,0,0-5.47-5.47h0a5.47,5.47,0,0,0-5.48,5.47Zm101.85,16V22.31A22.34,22.34,0,0,0,177.69,0H22.31A22.34,22.34,0,0,0,0,22.31V177.69A22.34,22.34,0,0,0,22.31,200H177.69A22.34,22.34,0,0,0,200,177.69ZM177.69,5A17.37,17.37,0,0,1,195,22.31V177.69A17.37,17.37,0,0,1,177.69,195H22.31A17.37,17.37,0,0,1,5,177.69V22.31A17.37,17.37,0,0,1,22.31,5Z"\n    />\n  </svg>\n'),D.set("lg",'\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 340.5,36 c -33.7,-5.3 -66.3,8 -74.6,21.7 h -15.1 c 0,-4.3 -3.1,-7.7 -6.8,-7.7 -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.3,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.2,0 3.9,2.2 3.9,5 0,2.8 -1.7,5 -3.9,5 z m 11,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.2 -11.8,20.1 -11.8,20.1 z M 379.7,200 H 224.3 C 212,200 202,190 202,177.7 V 22.3 C 202,10 212,0 224.3,0 H 379.7 C 392,0 402,10 402,22.3 V 177.7 C 402,190 392,200 379.7,200 Z M 224.3,5 C 214.8,5 207,12.8 207,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 397,12.8 389.2,5 379.7,5 Z m -79.1,48.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.2 -5,11.3 -11.3,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 0,0 0.1,0 0.1,0 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,60.1 72.9,55.7 64.6,55.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 0,0 0,0 0,0 v 0 c 3,0 5.5,-2.5 5.5,-5.5 0,0 0,0 0,0 V 36.3 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 0,0 0,0 0,0 z m 101.8,16 V 22.3 C 200,10 190,0 177.7,0 H 22.3 C 10,0 0,10 0,22.3 V 177.7 C 0,190 10,200 22.3,200 H 177.7 C 190,200 200,190 200,177.7 Z M 177.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,195 5,187.2 5,177.7 V 22.3 C 5,12.8 12.8,5 22.3,5 Z"\n    />\n  </svg>\n'),D.set("ll,g",'\n  <svg viewBox="0 0 402 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 224.30078 0 C 212.00078 0 202 10.000781 202 22.300781 L 202 177.69922 C 202 189.99922 212.00078 200 224.30078 200 L 379.69922 200 C 391.99922 200 402 189.99922 402 177.69922 L 402 22.300781 C 402 10.000781 391.99922 2.3684758e-15 379.69922 0 L 224.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 224.30078 5 L 379.69922 5 C 389.19922 5 397 12.800781 397 22.300781 L 397 177.69922 C 397 187.19922 389.19922 195 379.69922 195 L 224.30078 195 C 214.80078 195 207 187.19922 207 177.69922 L 207 22.300781 C 207 12.800781 214.80078 5 224.30078 5 z M 59.199219 30.800781 C 52.899219 30.800781 47.800781 35.799609 47.800781 42.099609 C 47.800781 48.399609 52.799609 53.5 59.099609 53.5 L 59.199219 53.5 C 65.499219 53.5 70.5 48.399219 70.5 42.199219 C 70.5 35.899219 65.499219 30.800781 59.199219 30.800781 z M 103.69922 30.800781 C 100.69922 30.800781 98.199219 33.200781 98.199219 36.300781 L 98.199219 161.69922 C 98.199219 164.69922 100.59922 167.19922 103.69922 167.19922 C 106.69922 167.19922 109.19922 164.69922 109.19922 161.69922 L 109.19922 36.300781 C 109.19922 33.300781 106.79922 30.800781 103.69922 30.800781 z M 261.19922 30.800781 C 254.89922 30.800781 249.80078 35.799609 249.80078 42.099609 C 249.80078 48.399609 254.79961 53.5 261.09961 53.5 L 261.19922 53.5 C 267.49922 53.5 272.5 48.399219 272.5 42.199219 C 272.5 35.899219 267.49922 30.800781 261.19922 30.800781 z M 305.59961 30.800781 C 302.59961 30.800781 300.09961 33.200781 300.09961 36.300781 L 300.09961 161.69922 C 300.09961 164.69922 302.49961 167.19922 305.59961 167.19922 C 308.59961 167.19922 311.09961 164.69922 311.09961 161.69922 L 311.09961 36.300781 C 311.09961 33.300781 308.69961 30.800781 305.59961 30.800781 z M 145.19922 30.900391 C 138.99922 30.900391 133.90039 35.899219 133.90039 42.199219 C 133.90039 48.399219 138.89922 53.5 145.19922 53.5 C 151.49922 53.5 156.5 48.399219 156.5 42.199219 C 156.5 35.999219 151.39922 30.900391 145.19922 30.900391 z M 347.30078 30.900391 C 341.00078 30.900391 335.90039 35.899219 335.90039 42.199219 C 335.90039 48.399219 340.89922 53.5 347.19922 53.5 C 353.39922 53.5 358.49961 48.399219 358.59961 42.199219 C 358.59961 35.999219 353.50078 30.900391 347.30078 30.900391 z M 54 55.699219 C 45.8 55.699219 40.099219 60.200781 38.199219 65.800781 L 28.5 97.800781 C 26.4 104.70078 34.4 107.19922 36.5 100.69922 L 46.800781 71.400391 L 48 71.400391 C 48 71.400391 34.500391 123.80078 33.900391 125.80078 C 33.600391 126.80078 33.999609 127.5 35.099609 127.5 L 46.800781 127.5 L 46.800781 162 C 46.800781 169 57.300781 169 57.300781 162 L 57.300781 127.30078 L 61.300781 127.30078 L 61.300781 162 C 61.300781 169 71.800781 169 71.800781 162 L 71.800781 127.5 L 83.5 127.5 C 84.5 127.5 84.899219 126.80078 84.699219 125.80078 C 84.099219 123.80078 70.599609 71.400391 70.599609 71.400391 L 71.800781 71.400391 L 82.099609 100.69922 C 84.199609 107.09922 92.099609 104.70078 90.099609 97.800781 L 80.400391 65.800781 C 78.500391 60.100781 72.899609 55.699219 64.599609 55.699219 L 54 55.699219 z M 133 55.699219 C 122.1 55.699219 118.5 58.500391 118.5 70.400391 L 118.5 105.19922 C 118.5 111.99922 127.59961 111.99922 127.59961 105.19922 L 128.40039 73.400391 L 130.69922 73.400391 L 130.69922 160.59961 C 130.69922 169.59961 143.09961 169.39961 143.09961 160.59961 L 143.90039 110 L 146.40039 110 L 147.19922 160.59961 C 147.19922 169.39961 159.59961 169.59961 159.59961 160.59961 L 159.59961 73.400391 L 162 73.400391 L 162.80078 105.19922 C 162.80078 111.99922 171.90039 111.99922 171.90039 105.19922 L 171.90039 70.400391 C 171.90039 58.500391 168.30039 55.699219 157.40039 55.699219 L 133 55.699219 z M 256 55.699219 C 247.8 55.699219 242.09922 60.200781 240.19922 65.800781 L 230.5 97.800781 C 228.4 104.70078 236.4 107.19922 238.5 100.69922 L 248.80078 71.400391 L 250 71.400391 C 250 71.400391 236.50039 123.80078 235.90039 125.80078 C 235.60039 126.80078 235.99961 127.5 237.09961 127.5 L 248.80078 127.5 L 248.80078 162 C 248.80078 169 259.30078 169 259.30078 162 L 259.30078 127.30078 L 263.30078 127.30078 L 263.30078 162 C 263.30078 169 273.80078 169 273.80078 162 L 273.80078 127.5 L 285.5 127.5 C 286.5 127.5 286.89922 126.80078 286.69922 125.80078 C 286.09922 123.80078 272.59961 71.400391 272.59961 71.400391 L 273.80078 71.400391 L 284.09961 100.69922 C 286.19961 107.09922 294.09961 104.70078 292.09961 97.800781 L 282.40039 65.800781 C 280.50039 60.100781 274.89961 55.699219 266.59961 55.699219 L 256 55.699219 z M 335 55.699219 C 324.1 55.699219 320.5 58.500391 320.5 70.400391 L 320.5 105.19922 C 320.5 111.99922 329.59961 111.99922 329.59961 105.19922 L 330.40039 73.400391 L 332.69922 73.400391 L 332.69922 160.59961 C 332.69922 169.59961 345.09961 169.39961 345.09961 160.59961 L 345.90039 110 L 348.40039 110 L 349.19922 160.59961 C 349.19922 169.39961 361.59961 169.59961 361.59961 160.59961 L 361.59961 73.400391 L 364 73.400391 L 364.80078 105.19922 C 364.80078 111.99922 373.90039 111.99922 373.90039 105.19922 L 373.90039 70.400391 C 373.90039 58.500391 370.30039 55.699219 359.40039 55.699219 L 335 55.699219 z M 124.30078 202 C 112.00078 202 102 212.00078 102 224.30078 L 102 379.69922 C 102 391.99922 112.00078 402 124.30078 402 L 279.69922 402 C 291.99922 402 302 391.99922 302 379.69922 L 302 224.30078 C 302 212.00078 291.99922 202 279.69922 202 L 124.30078 202 z M 124.30078 207 L 279.69922 207 C 289.19922 207 297 214.80078 297 224.30078 L 297 379.69922 C 297 389.19922 289.19922 397 279.69922 397 L 124.30078 397 C 114.80078 397 107 389.19922 107 379.69922 L 107 224.30078 C 107 214.80078 114.80078 207 124.30078 207 z M 224.87305 236.80859 C 197.20662 236.86611 172.90352 248.13984 165.90039 259.69922 L 150.80078 259.69922 C 150.80078 255.39922 147.7 252 144 252 C 140.3 252 137.19922 255.39922 137.19922 259.69922 C 137.09922 262.59922 138.69922 265.29922 141.19922 266.69922 C 138.69922 267.89922 137.19922 270.50078 137.19922 273.30078 C 136.99922 277.10078 139.89922 280.3 143.69922 280.5 C 147.49922 280.7 150.70039 277.8 150.90039 274 L 150.90039 273.30078 L 165.90039 273.30078 C 173.00039 286.60078 199.49961 298.70039 240.59961 294.40039 C 247.29961 293.70039 252.80078 281.79922 252.80078 266.19922 C 252.70078 250.59922 247.1 239 240.5 238 C 235.23438 237.17188 229.99646 236.79794 224.87305 236.80859 z M 240.5 242.19922 C 246.2 242.19922 250.80078 252.89922 250.80078 266.19922 C 250.80078 279.49922 246.2 290.09922 240.5 290.19922 C 234.8 290.19922 230.19922 279.49922 230.19922 266.19922 C 230.19922 252.89922 234.8 242.19922 240.5 242.19922 z M 240.5 257.59961 C 238.5 257.59961 236.80078 261.39922 236.80078 266.19922 C 236.80078 270.89922 238.5 274.80078 240.5 274.80078 C 242.5 274.80078 244.19922 270.99922 244.19922 266.19922 C 244.19922 261.39922 242.5 257.59961 240.5 257.59961 z M 176.19922 311.5 C 150.19922 311.8 135.69922 338.30078 135.69922 338.30078 C 135.69922 338.30078 150.79961 366.90039 175.59961 366.90039 C 202.19961 366.90039 225.09961 350.19922 235.09961 341.69922 L 257.59961 361.69922 C 257.59961 361.69922 258.90039 350.8 253.90039 346 C 251.50039 343.6 249.00078 341.39922 246.30078 339.19922 C 248.90078 337.09922 251.50039 334.80039 253.90039 332.40039 C 258.90039 327.60039 257.59961 316.80078 257.59961 316.80078 L 237.40039 334.69922 C 227.80039 328.79922 197.79922 311.3 176.19922 311.5 z M 168.59961 319.90039 C 168.59961 319.90039 180.00039 319.80039 180.40039 337.90039 C 180.80039 356.20039 168.59961 358.1 168.59961 358 C 172.79961 352.1 175.20039 344.99922 175.40039 337.69922 C 175.70039 325.59922 168.59961 319.90039 168.59961 319.90039 z M 157.59961 328.90039 C 159.79961 328.90039 161.5 331.10039 161.5 333.90039 C 161.5 336.70039 159.79961 338.90039 157.59961 338.90039 C 155.39961 338.90039 153.69922 336.70039 153.69922 333.90039 C 153.69922 331.10039 155.49961 328.90039 157.59961 328.90039 z "\n    />\n  </svg>\n'),D.set("ll,ll",'\n  <svg viewBox="0 0 402 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 347.2,53.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.4,-11.3 6.2,0 11.3,5.1 11.3,11.3 -0.1,6.2 -5.1,11.3 -11.4,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 L 346,110 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 C 374,58.5 370.4,55.7 359.5,55.7 H 335 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 h 0.1 c 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 h 1.2 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 h 11.7 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 280.5,60.1 274.9,55.7 266.6,55.7 H 256 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 v 0 0 c 3,0 5.5,-2.5 5.5,-5.5 v 0 -125.4 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 v 0 z m 101.8,16 V 22.3 C 402,10 392,0 379.7,0 H 224.3 C 212,0 202,10 202,22.3 v 155.4 c 0,12.3 10,22.3 22.3,22.3 H 379.7 C 392,200 402,190 402,177.7 Z M 379.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 224.3 C 214.8,195 207,187.2 207,177.7 V 22.3 C 207,12.8 214.8,5 224.3,5 Z m -32.5,250.4 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.4,-11.3 6.2,0 11.3,5.1 11.3,11.3 -0.1,6.3 -5.1,11.4 -11.4,11.3 z m -26.7,17.1 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 L 346,312 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 v -87.2 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 v -34.8 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 335 c -10.9,0 -14.5,2.8 -14.5,14.8 z m -48,-28.3 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 h 0.1 c 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 h 1.2 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 h 11.7 V 364 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 364 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 c -1.9,-5.6 -7.5,-10.1 -15.8,-10.1 H 256 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 v 0 0 c 3,0 5.5,-2.5 5.5,-5.5 v 0 -125.4 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 v 0 z m 101.8,16 V 224.3 C 402,212 392,202 379.7,202 H 224.3 C 212,202 202,212 202,224.3 v 155.4 c 0,12.3 10,22.3 22.3,22.3 H 379.7 C 392,402 402,392 402,379.7 Z M 379.7,207 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 224.3 C 214.8,397 207,389.2 207,379.7 V 224.3 c 0,-9.5 7.8,-17.3 17.3,-17.3 z m -234.5,48.4 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.3 -5,11.4 -11.3,11.3 z m -26.7,17.1 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 v -87.2 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 v -34.8 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,-0.1 -14.5,2.7 -14.5,14.7 z m -48,-28.3 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 h 0.1 c 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 364 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 364 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,262.2 72.9,257.7 64.6,257.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 v 0 0 c 3,0 5.5,-2.5 5.5,-5.5 v 0 -125.4 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 v 0 z m 101.8,16 V 224.3 C 200,212 190,202 177.7,202 H 22.3 C 10,202 0,212 0,224.3 V 379.7 C 0,392 10,402 22.3,402 H 177.7 C 190,402 200,392 200,379.7 Z M 177.7,207 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,397 5,389.2 5,379.7 V 224.3 C 5,214.8 12.8,207 22.3,207 Z M 145.2,53.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.2 -5,11.3 -11.3,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 h 0.1 c 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,60.1 72.9,55.7 64.6,55.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 v 0 0 c 3,0 5.5,-2.5 5.5,-5.5 v 0 -125.4 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 v 0 z m 101.8,16 V 22.3 C 200,10 190,0 177.7,0 H 22.3 C 10,0 0,10 0,22.3 V 177.7 C 0,190 10,200 22.3,200 H 177.7 C 190,200 200,190 200,177.7 Z M 177.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,195 5,187.2 5,177.7 V 22.3 C 5,12.8 12.8,5 22.3,5 Z"\n    />\n  </svg>\n'),D.set("ll,s",'\n  <svg viewBox="0 0 402 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 224.30078 0 C 212.00078 0 202 10.000781 202 22.300781 L 202 177.69922 C 202 189.99922 212.00078 200 224.30078 200 L 379.69922 200 C 391.99922 200 402 189.99922 402 177.69922 L 402 22.300781 C 402 10.000781 391.99922 2.3684758e-15 379.69922 0 L 224.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 224.30078 5 L 379.69922 5 C 389.19922 5 397 12.800781 397 22.300781 L 397 177.69922 C 397 187.19922 389.19922 195 379.69922 195 L 224.30078 195 C 214.80078 195 207 187.19922 207 177.69922 L 207 22.300781 C 207 12.800781 214.80078 5 224.30078 5 z M 59.199219 30.800781 C 52.899219 30.800781 47.800781 35.799609 47.800781 42.099609 C 47.800781 48.399609 52.799609 53.5 59.099609 53.5 L 59.199219 53.5 C 65.499219 53.5 70.5 48.399219 70.5 42.199219 C 70.5 35.899219 65.499219 30.800781 59.199219 30.800781 z M 103.69922 30.800781 C 100.69922 30.800781 98.199219 33.200781 98.199219 36.300781 L 98.199219 161.69922 C 98.199219 164.69922 100.59922 167.19922 103.69922 167.19922 C 106.69922 167.19922 109.19922 164.69922 109.19922 161.69922 L 109.19922 36.300781 C 109.19922 33.300781 106.79922 30.800781 103.69922 30.800781 z M 261.19922 30.800781 C 254.89922 30.800781 249.80078 35.799609 249.80078 42.099609 C 249.80078 48.399609 254.79961 53.5 261.09961 53.5 L 261.19922 53.5 C 267.49922 53.5 272.5 48.399219 272.5 42.199219 C 272.5 35.899219 267.49922 30.800781 261.19922 30.800781 z M 305.59961 30.800781 C 302.59961 30.800781 300.09961 33.200781 300.09961 36.300781 L 300.09961 161.69922 C 300.09961 164.69922 302.49961 167.19922 305.59961 167.19922 C 308.59961 167.19922 311.09961 164.69922 311.09961 161.69922 L 311.09961 36.300781 C 311.09961 33.300781 308.69961 30.800781 305.59961 30.800781 z M 145.19922 30.900391 C 138.99922 30.900391 133.90039 35.899219 133.90039 42.199219 C 133.90039 48.399219 138.89922 53.5 145.19922 53.5 C 151.49922 53.5 156.5 48.399219 156.5 42.199219 C 156.5 35.999219 151.39922 30.900391 145.19922 30.900391 z M 347.30078 30.900391 C 341.00078 30.900391 335.90039 35.899219 335.90039 42.199219 C 335.90039 48.399219 340.89922 53.5 347.19922 53.5 C 353.39922 53.5 358.49961 48.399219 358.59961 42.199219 C 358.59961 35.999219 353.50078 30.900391 347.30078 30.900391 z M 54 55.699219 C 45.8 55.699219 40.099219 60.200781 38.199219 65.800781 L 28.5 97.800781 C 26.4 104.70078 34.4 107.19922 36.5 100.69922 L 46.800781 71.400391 L 48 71.400391 C 48 71.400391 34.500391 123.80078 33.900391 125.80078 C 33.600391 126.80078 33.999609 127.5 35.099609 127.5 L 46.800781 127.5 L 46.800781 162 C 46.800781 169 57.300781 169 57.300781 162 L 57.300781 127.30078 L 61.300781 127.30078 L 61.300781 162 C 61.300781 169 71.800781 169 71.800781 162 L 71.800781 127.5 L 83.5 127.5 C 84.5 127.5 84.899219 126.80078 84.699219 125.80078 C 84.099219 123.80078 70.599609 71.400391 70.599609 71.400391 L 71.800781 71.400391 L 82.099609 100.69922 C 84.199609 107.09922 92.099609 104.70078 90.099609 97.800781 L 80.400391 65.800781 C 78.500391 60.100781 72.899609 55.699219 64.599609 55.699219 L 54 55.699219 z M 133 55.699219 C 122.1 55.699219 118.5 58.500391 118.5 70.400391 L 118.5 105.19922 C 118.5 111.99922 127.59961 111.99922 127.59961 105.19922 L 128.40039 73.400391 L 130.69922 73.400391 L 130.69922 160.59961 C 130.69922 169.59961 143.09961 169.39961 143.09961 160.59961 L 143.90039 110 L 146.40039 110 L 147.19922 160.59961 C 147.19922 169.39961 159.59961 169.59961 159.59961 160.59961 L 159.59961 73.400391 L 162 73.400391 L 162.80078 105.19922 C 162.80078 111.99922 171.90039 111.99922 171.90039 105.19922 L 171.90039 70.400391 C 171.90039 58.500391 168.30039 55.699219 157.40039 55.699219 L 133 55.699219 z M 256 55.699219 C 247.8 55.699219 242.09922 60.200781 240.19922 65.800781 L 230.5 97.800781 C 228.4 104.70078 236.4 107.19922 238.5 100.69922 L 248.80078 71.400391 L 250 71.400391 C 250 71.400391 236.50039 123.80078 235.90039 125.80078 C 235.60039 126.80078 235.99961 127.5 237.09961 127.5 L 248.80078 127.5 L 248.80078 162 C 248.80078 169 259.30078 169 259.30078 162 L 259.30078 127.30078 L 263.30078 127.30078 L 263.30078 162 C 263.30078 169 273.80078 169 273.80078 162 L 273.80078 127.5 L 285.5 127.5 C 286.5 127.5 286.89922 126.80078 286.69922 125.80078 C 286.09922 123.80078 272.59961 71.400391 272.59961 71.400391 L 273.80078 71.400391 L 284.09961 100.69922 C 286.19961 107.09922 294.09961 104.70078 292.09961 97.800781 L 282.40039 65.800781 C 280.50039 60.100781 274.89961 55.699219 266.59961 55.699219 L 256 55.699219 z M 335 55.699219 C 324.1 55.699219 320.5 58.500391 320.5 70.400391 L 320.5 105.19922 C 320.5 111.99922 329.59961 111.99922 329.59961 105.19922 L 330.40039 73.400391 L 332.69922 73.400391 L 332.69922 160.59961 C 332.69922 169.59961 345.09961 169.39961 345.09961 160.59961 L 345.90039 110 L 348.40039 110 L 349.19922 160.59961 C 349.19922 169.39961 361.59961 169.59961 361.59961 160.59961 L 361.59961 73.400391 L 364 73.400391 L 364.80078 105.19922 C 364.80078 111.99922 373.90039 111.99922 373.90039 105.19922 L 373.90039 70.400391 C 373.90039 58.500391 370.30039 55.699219 359.40039 55.699219 L 335 55.699219 z M 122.30078 202 C 110.00078 202 100 212.00078 100 224.30078 L 100 379.69922 C 100 391.99922 110.00078 402 122.30078 402 L 277.69922 402 C 289.99922 402 300 391.99922 300 379.69922 L 300 224.30078 C 300 212.00078 289.99922 202 277.69922 202 L 122.30078 202 z M 122.30078 207 L 277.69922 207 C 287.19922 207 295 214.80078 295 224.30078 L 295 379.69922 C 295 389.19922 287.19922 397 277.69922 397 L 122.30078 397 C 112.80078 397 105 389.19922 105 379.69922 L 105 224.30078 C 105 214.80078 112.80078 207 122.30078 207 z M 260.40039 231.80078 C 252.10039 231.80078 247.39922 234.00078 241.19922 238.30078 C 235.49922 242.30078 127.00039 322.79922 122.40039 326.19922 C 120.40039 327.69922 120 330.59961 121.5 332.59961 C 123 334.59961 125.90039 335 127.90039 333.5 C 129.10039 332.7 240.9 249.70078 246.5 245.80078 C 251.8 242.10078 254.5 240.90039 260.5 240.90039 L 273.90039 240.90039 C 276.50039 240.90039 278.5 238.80078 278.5 236.30078 C 278.5 233.70078 276.40078 231.70078 273.80078 231.80078 L 260.40039 231.80078 z M 245.30078 269.69922 L 245.30078 291.5 L 213.30078 291.5 L 213.30078 312.09961 L 183.59961 312.09961 L 183.59961 331.5 L 152.69922 331.5 L 152.69922 353.19922 L 121.80078 353.19922 L 121.80078 375 L 276.19922 375 L 276.19922 269.69922 L 245.30078 269.69922 z"\n    />\n  </svg>\n'),D.set("ll",'\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 224.30078 0 C 212.00078 0 202 10.000781 202 22.300781 L 202 177.69922 C 202 189.99922 212.00078 200 224.30078 200 L 379.69922 200 C 391.99922 200 402 189.99922 402 177.69922 L 402 22.300781 C 402 10.000781 391.99922 2.3684758e-15 379.69922 0 L 224.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 224.30078 5 L 379.69922 5 C 389.19922 5 397 12.800781 397 22.300781 L 397 177.69922 C 397 187.19922 389.19922 195 379.69922 195 L 224.30078 195 C 214.80078 195 207 187.19922 207 177.69922 L 207 22.300781 C 207 12.800781 214.80078 5 224.30078 5 z M 59.199219 30.800781 C 52.899219 30.800781 47.800781 35.799609 47.800781 42.099609 C 47.800781 48.399609 52.799609 53.5 59.099609 53.5 L 59.199219 53.5 C 65.499219 53.5 70.5 48.399219 70.5 42.199219 C 70.5 35.899219 65.499219 30.800781 59.199219 30.800781 z M 103.69922 30.800781 C 100.69922 30.800781 98.199219 33.200781 98.199219 36.300781 L 98.199219 161.69922 C 98.199219 164.69922 100.59922 167.19922 103.69922 167.19922 C 106.69922 167.19922 109.19922 164.69922 109.19922 161.69922 L 109.19922 36.300781 C 109.19922 33.300781 106.79922 30.800781 103.69922 30.800781 z M 261.19922 30.800781 C 254.89922 30.800781 249.80078 35.799609 249.80078 42.099609 C 249.80078 48.399609 254.79961 53.5 261.09961 53.5 L 261.19922 53.5 C 267.49922 53.5 272.5 48.399219 272.5 42.199219 C 272.5 35.899219 267.49922 30.800781 261.19922 30.800781 z M 305.59961 30.800781 C 302.59961 30.800781 300.09961 33.200781 300.09961 36.300781 L 300.09961 161.69922 C 300.09961 164.69922 302.49961 167.19922 305.59961 167.19922 C 308.59961 167.19922 311.09961 164.69922 311.09961 161.69922 L 311.09961 36.300781 C 311.09961 33.300781 308.69961 30.800781 305.59961 30.800781 z M 145.19922 30.900391 C 138.99922 30.900391 133.90039 35.899219 133.90039 42.199219 C 133.90039 48.399219 138.89922 53.5 145.19922 53.5 C 151.49922 53.5 156.5 48.399219 156.5 42.199219 C 156.5 35.999219 151.39922 30.900391 145.19922 30.900391 z M 347.30078 30.900391 C 341.00078 30.900391 335.90039 35.899219 335.90039 42.199219 C 335.90039 48.399219 340.89922 53.5 347.19922 53.5 C 353.39922 53.5 358.49961 48.399219 358.59961 42.199219 C 358.59961 35.999219 353.50078 30.900391 347.30078 30.900391 z M 54 55.699219 C 45.8 55.699219 40.099219 60.200781 38.199219 65.800781 L 28.5 97.800781 C 26.4 104.70078 34.4 107.19922 36.5 100.69922 L 46.800781 71.400391 L 48 71.400391 C 48 71.400391 34.500391 123.80078 33.900391 125.80078 C 33.600391 126.80078 33.999609 127.5 35.099609 127.5 L 46.800781 127.5 L 46.800781 162 C 46.800781 169 57.300781 169 57.300781 162 L 57.300781 127.30078 L 61.300781 127.30078 L 61.300781 162 C 61.300781 169 71.800781 169 71.800781 162 L 71.800781 127.5 L 83.5 127.5 C 84.5 127.5 84.899219 126.80078 84.699219 125.80078 C 84.099219 123.80078 70.599609 71.400391 70.599609 71.400391 L 71.800781 71.400391 L 82.099609 100.69922 C 84.199609 107.09922 92.099609 104.70078 90.099609 97.800781 L 80.400391 65.800781 C 78.500391 60.100781 72.899609 55.699219 64.599609 55.699219 L 54 55.699219 z M 133 55.699219 C 122.1 55.699219 118.5 58.500391 118.5 70.400391 L 118.5 105.19922 C 118.5 111.99922 127.59961 111.99922 127.59961 105.19922 L 128.40039 73.400391 L 130.69922 73.400391 L 130.69922 160.59961 C 130.69922 169.59961 143.09961 169.39961 143.09961 160.59961 L 143.90039 110 L 146.40039 110 L 147.19922 160.59961 C 147.19922 169.39961 159.59961 169.59961 159.59961 160.59961 L 159.59961 73.400391 L 162 73.400391 L 162.80078 105.19922 C 162.80078 111.99922 171.90039 111.99922 171.90039 105.19922 L 171.90039 70.400391 C 171.90039 58.500391 168.30039 55.699219 157.40039 55.699219 L 133 55.699219 z M 256 55.699219 C 247.8 55.699219 242.09922 60.200781 240.19922 65.800781 L 230.5 97.800781 C 228.4 104.70078 236.4 107.19922 238.5 100.69922 L 248.80078 71.400391 L 250 71.400391 C 250 71.400391 236.50039 123.80078 235.90039 125.80078 C 235.60039 126.80078 235.99961 127.5 237.09961 127.5 L 248.80078 127.5 L 248.80078 162 C 248.80078 169 259.30078 169 259.30078 162 L 259.30078 127.30078 L 263.30078 127.30078 L 263.30078 162 C 263.30078 169 273.80078 169 273.80078 162 L 273.80078 127.5 L 285.5 127.5 C 286.5 127.5 286.89922 126.80078 286.69922 125.80078 C 286.09922 123.80078 272.59961 71.400391 272.59961 71.400391 L 273.80078 71.400391 L 284.09961 100.69922 C 286.19961 107.09922 294.09961 104.70078 292.09961 97.800781 L 282.40039 65.800781 C 280.50039 60.100781 274.89961 55.699219 266.59961 55.699219 L 256 55.699219 z M 335 55.699219 C 324.1 55.699219 320.5 58.500391 320.5 70.400391 L 320.5 105.19922 C 320.5 111.99922 329.59961 111.99922 329.59961 105.19922 L 330.40039 73.400391 L 332.69922 73.400391 L 332.69922 160.59961 C 332.69922 169.59961 345.09961 169.39961 345.09961 160.59961 L 345.90039 110 L 348.40039 110 L 349.19922 160.59961 C 349.19922 169.39961 361.59961 169.59961 361.59961 160.59961 L 361.59961 73.400391 L 364 73.400391 L 364.80078 105.19922 C 364.80078 111.99922 373.90039 111.99922 373.90039 105.19922 L 373.90039 70.400391 C 373.90039 58.500391 370.30039 55.699219 359.40039 55.699219 L 335 55.699219 z"\n    />\n  </svg>\n'),D.set("ls",'\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 224.30078 0 C 212.00078 0 202 10.000781 202 22.300781 L 202 177.69922 C 202 189.99922 212.00078 200 224.30078 200 L 379.69922 200 C 391.99922 200 402 189.99922 402 177.69922 L 402 22.300781 C 402 10.000781 391.99922 2.3684758e-15 379.69922 0 L 224.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 224.30078 5 L 379.69922 5 C 389.19922 5 397 12.800781 397 22.300781 L 397 177.69922 C 397 187.19922 389.19922 195 379.69922 195 L 224.30078 195 C 214.80078 195 207 187.19922 207 177.69922 L 207 22.300781 C 207 12.800781 214.80078 5 224.30078 5 z M 362.40039 29.800781 C 354.10039 29.800781 349.39922 32.000781 343.19922 36.300781 C 337.49922 40.300781 229.00039 120.79922 224.40039 124.19922 C 222.40039 125.69922 222 128.59961 223.5 130.59961 C 225 132.59961 227.90039 133 229.90039 131.5 C 231.10039 130.7 342.9 47.700781 348.5 43.800781 C 353.8 40.100781 356.5 38.900391 362.5 38.900391 L 375.90039 38.900391 C 378.50039 38.900391 380.5 36.800781 380.5 34.300781 C 380.5 31.700781 378.40078 29.700781 375.80078 29.800781 L 362.40039 29.800781 z M 59.199219 30.800781 C 52.899219 30.800781 47.800781 35.799609 47.800781 42.099609 C 47.800781 48.399609 52.799609 53.5 59.099609 53.5 L 59.199219 53.5 C 65.499219 53.5 70.5 48.399219 70.5 42.199219 C 70.5 35.899219 65.499219 30.800781 59.199219 30.800781 z M 103.69922 30.800781 C 100.69922 30.800781 98.199219 33.200781 98.199219 36.300781 L 98.199219 161.69922 C 98.199219 164.69922 100.59922 167.19922 103.69922 167.19922 C 106.69922 167.19922 109.19922 164.69922 109.19922 161.69922 L 109.19922 36.300781 C 109.19922 33.300781 106.79922 30.800781 103.69922 30.800781 z M 145.19922 30.900391 C 138.99922 30.900391 133.90039 35.899219 133.90039 42.199219 C 133.90039 48.399219 138.89922 53.5 145.19922 53.5 C 151.49922 53.5 156.5 48.399219 156.5 42.199219 C 156.5 35.999219 151.39922 30.900391 145.19922 30.900391 z M 54 55.699219 C 45.8 55.699219 40.099219 60.200781 38.199219 65.800781 L 28.5 97.800781 C 26.4 104.70078 34.4 107.19922 36.5 100.69922 L 46.800781 71.400391 L 48 71.400391 C 48 71.400391 34.500391 123.80078 33.900391 125.80078 C 33.600391 126.80078 33.999609 127.5 35.099609 127.5 L 46.800781 127.5 L 46.800781 162 C 46.800781 169 57.300781 169 57.300781 162 L 57.300781 127.30078 L 61.300781 127.30078 L 61.300781 162 C 61.300781 169 71.800781 169 71.800781 162 L 71.800781 127.5 L 83.5 127.5 C 84.5 127.5 84.899219 126.80078 84.699219 125.80078 C 84.099219 123.80078 70.599609 71.400391 70.599609 71.400391 L 71.800781 71.400391 L 82.099609 100.69922 C 84.199609 107.09922 92.099609 104.70078 90.099609 97.800781 L 80.400391 65.800781 C 78.500391 60.100781 72.899609 55.699219 64.599609 55.699219 L 54 55.699219 z M 133 55.699219 C 122.1 55.699219 118.5 58.500391 118.5 70.400391 L 118.5 105.19922 C 118.5 111.99922 127.59961 111.99922 127.59961 105.19922 L 128.40039 73.400391 L 130.69922 73.400391 L 130.69922 160.59961 C 130.69922 169.59961 143.09961 169.39961 143.09961 160.59961 L 143.90039 110 L 146.40039 110 L 147.19922 160.59961 C 147.19922 169.39961 159.59961 169.59961 159.59961 160.59961 L 159.59961 73.400391 L 162 73.400391 L 162.80078 105.19922 C 162.80078 111.99922 171.90039 111.99922 171.90039 105.19922 L 171.90039 70.400391 C 171.90039 58.500391 168.30039 55.699219 157.40039 55.699219 L 133 55.699219 z M 347.30078 67.699219 L 347.30078 89.5 L 315.30078 89.5 L 315.30078 110.09961 L 285.59961 110.09961 L 285.59961 129.5 L 254.69922 129.5 L 254.69922 151.19922 L 223.80078 151.19922 L 223.80078 173 L 378.19922 173 L 378.19922 67.699219 L 347.30078 67.699219 z"\n    />\n  </svg>\n'),D.set("s,g",'\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 160.40039 29.800781 C 152.10039 29.800781 147.39922 32.000781 141.19922 36.300781 C 135.49922 40.300781 27.000391 120.79922 22.400391 124.19922 C 20.400391 125.69922 20 128.59961 21.5 130.59961 C 23 132.59961 25.900391 133 27.900391 131.5 C 29.100391 130.7 140.9 47.700781 146.5 43.800781 C 151.8 40.100781 154.5 38.900391 160.5 38.900391 L 173.90039 38.900391 C 176.50039 38.900391 178.5 36.800781 178.5 34.300781 C 178.5 31.700781 176.40078 29.700781 173.80078 29.800781 L 160.40039 29.800781 z M 145.30078 67.699219 L 145.30078 89.5 L 113.30078 89.5 L 113.30078 110.09961 L 83.599609 110.09961 L 83.599609 129.5 L 52.699219 129.5 L 52.699219 151.19922 L 21.800781 151.19922 L 21.800781 173 L 176.19922 173 L 176.19922 67.699219 L 145.30078 67.699219 z M 22.300781 202 C 10.000781 202 0 212.00078 0 224.30078 L 0 379.69922 C 2.3684758e-15 391.99922 10.000781 402 22.300781 402 L 177.69922 402 C 189.99922 402 200 391.99922 200 379.69922 L 200 224.30078 C 200 212.00078 189.99922 202 177.69922 202 L 22.300781 202 z M 22.300781 207 L 177.69922 207 C 187.19922 207 195 214.80078 195 224.30078 L 195 379.69922 C 195 389.19922 187.19922 397 177.69922 397 L 22.300781 397 C 12.800781 397 5 389.19922 5 379.69922 L 5 224.30078 C 5 214.80078 12.800781 207 22.300781 207 z M 122.87305 236.80859 C 95.206616 236.86611 70.903516 248.13984 63.900391 259.69922 L 48.800781 259.69922 C 48.800781 255.39922 45.7 252 42 252 C 38.3 252 35.199219 255.39922 35.199219 259.69922 C 35.099219 262.59922 36.699219 265.29922 39.199219 266.69922 C 36.699219 267.89922 35.199219 270.50078 35.199219 273.30078 C 34.999219 277.10078 37.899219 280.3 41.699219 280.5 C 45.499219 280.7 48.700391 277.8 48.900391 274 L 48.900391 273.30078 L 63.900391 273.30078 C 71.000391 286.60078 97.499609 298.70039 138.59961 294.40039 C 145.29961 293.70039 150.80078 281.79922 150.80078 266.19922 C 150.80078 250.59922 145.2 239 138.5 238 C 133.23438 237.17188 127.99646 236.79794 122.87305 236.80859 z M 138.5 242.19922 C 144.2 242.19922 148.80078 252.89922 148.80078 266.19922 C 148.80078 279.49922 144.2 290.09922 138.5 290.19922 C 132.8 290.19922 128.19922 279.49922 128.19922 266.19922 C 128.19922 252.89922 132.8 242.19922 138.5 242.19922 z M 138.5 257.59961 C 136.5 257.59961 134.80078 261.49922 134.80078 266.19922 C 134.80078 270.89922 136.5 274.80078 138.5 274.80078 C 140.5 274.80078 142.19922 270.99922 142.19922 266.19922 C 142.19922 261.39922 140.5 257.59961 138.5 257.59961 z M 74.199219 311.5 C 48.199219 311.8 33.699219 338.30078 33.699219 338.30078 C 33.699219 338.30078 48.799609 366.90039 73.599609 366.90039 C 100.19961 366.90039 123.09961 350.19922 133.09961 341.69922 L 155.59961 361.69922 C 155.59961 361.69922 156.90039 350.8 151.90039 346 C 149.50039 343.6 147.00078 341.39922 144.30078 339.19922 C 146.90078 337.09922 149.50039 334.80039 151.90039 332.40039 C 156.90039 327.60039 155.59961 316.80078 155.59961 316.80078 L 135.40039 334.69922 C 125.80039 328.79922 95.799219 311.3 74.199219 311.5 z M 66.599609 320 C 66.599609 320 78.000391 319.9 78.400391 338 C 78.800391 356.2 66.599609 358.09961 66.599609 358.09961 C 70.799609 352.19961 73.200391 345.10078 73.400391 337.80078 C 73.700391 325.70078 66.599609 320 66.599609 320 z M 55.599609 328.90039 C 57.799609 328.90039 59.5 331.10039 59.5 333.90039 C 59.5 336.70039 57.799609 338.90039 55.599609 338.90039 C 53.399609 338.90039 51.699219 336.70039 51.699219 333.90039 C 51.699219 331.10039 53.499609 328.90039 55.599609 328.90039 z"\n    />\n  </svg>\n'),D.set("s,l,g",'\n  <svg viewBox="0 0 200 604" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 160.40039 29.800781 C 152.10039 29.800781 147.39922 32.000781 141.19922 36.300781 C 135.49922 40.300781 27.000391 120.79922 22.400391 124.19922 C 20.400391 125.69922 20 128.59961 21.5 130.59961 C 23 132.59961 25.900391 133 27.900391 131.5 C 29.100391 130.7 140.9 47.700781 146.5 43.800781 C 151.8 40.100781 154.5 38.900391 160.5 38.900391 L 173.90039 38.900391 C 176.50039 38.900391 178.5 36.800781 178.5 34.300781 C 178.5 31.700781 176.40078 29.700781 173.80078 29.800781 L 160.40039 29.800781 z M 145.30078 67.699219 L 145.30078 89.5 L 113.30078 89.5 L 113.30078 110.09961 L 83.599609 110.09961 L 83.599609 129.5 L 52.699219 129.5 L 52.699219 151.19922 L 21.800781 151.19922 L 21.800781 173 L 176.19922 173 L 176.19922 67.699219 L 145.30078 67.699219 z M 22.300781 202 C 10.000781 202 2.3684758e-15 212.00078 0 224.30078 L 0 379.69922 C 0 391.99922 10.000781 402 22.300781 402 L 177.69922 402 C 189.99922 402 200 391.99922 200 379.69922 L 200 224.30078 C 200 212.00078 189.99922 202 177.69922 202 L 22.300781 202 z M 22.300781 207 L 177.69922 207 C 187.19922 207 195 214.80078 195 224.30078 L 195 379.69922 C 195 389.19922 187.19922 397 177.69922 397 L 22.300781 397 C 12.800781 397 5 389.19922 5 379.69922 L 5 224.30078 C 5 214.80078 12.800781 207 22.300781 207 z M 59.199219 232.80078 C 52.899219 232.80078 47.800781 237.79961 47.800781 244.09961 C 47.800781 250.39961 52.799609 255.5 59.099609 255.5 L 59.199219 255.5 C 65.499219 255.5 70.5 250.39922 70.5 244.19922 C 70.5 237.89922 65.499219 232.80078 59.199219 232.80078 z M 103.69922 232.80078 C 100.69922 232.80078 98.199219 235.20078 98.199219 238.30078 L 98.199219 363.69922 C 98.199219 366.69922 100.59922 369.19922 103.69922 369.19922 C 106.69922 369.19922 109.19922 366.69922 109.19922 363.69922 L 109.19922 238.30078 C 109.19922 235.30078 106.79922 232.80078 103.69922 232.80078 z M 145.19922 232.80078 C 138.99922 232.80078 133.90039 237.79961 133.90039 244.09961 C 133.90039 250.29961 138.89922 255.40039 145.19922 255.40039 C 151.39922 255.50039 156.5 250.39961 156.5 244.09961 C 156.5 237.89961 151.39922 232.80078 145.19922 232.80078 z M 54 257.69922 C 45.8 257.69922 40.099219 262.20078 38.199219 267.80078 L 28.5 299.80078 C 26.4 306.70078 34.4 309.19922 36.5 302.69922 L 46.800781 273.40039 L 48 273.40039 C 48 273.40039 34.500391 325.80078 33.900391 327.80078 C 33.600391 328.80078 33.999609 329.5 35.099609 329.5 L 46.800781 329.5 L 46.800781 364 C 46.800781 371 57.300781 371 57.300781 364 L 57.300781 329.30078 L 61.300781 329.30078 L 61.300781 364 C 61.300781 371 71.800781 371 71.800781 364 L 71.800781 329.5 L 83.5 329.5 C 84.5 329.5 84.899219 328.80078 84.699219 327.80078 C 84.099219 325.80078 70.599609 273.40039 70.599609 273.40039 L 71.800781 273.40039 L 82.099609 302.69922 C 84.199609 309.09922 92.099609 306.70078 90.099609 299.80078 L 80.400391 267.80078 C 78.500391 262.20078 72.899609 257.69922 64.599609 257.69922 L 54 257.69922 z M 133 257.80078 C 122.1 257.70078 118.5 260.5 118.5 272.5 L 118.5 307.30078 C 118.5 314.10078 127.59961 314.10078 127.59961 307.30078 L 128.40039 275.5 L 130.69922 275.5 L 130.69922 362.69922 C 130.69922 371.69922 143.09961 371.49922 143.09961 362.69922 L 143.90039 312.09961 L 146.40039 312.09961 L 147.19922 362.69922 C 147.19922 371.49922 159.59961 371.69922 159.59961 362.69922 L 159.59961 275.5 L 162 275.5 L 162.80078 307.30078 C 162.80078 314.10078 171.90039 314.10078 171.90039 307.30078 L 171.90039 272.5 C 171.90039 260.6 168.30039 257.80078 157.40039 257.80078 L 133 257.80078 z M 22.300781 404 C 10.000781 404 0 414.00078 0 426.30078 L 0 581.69922 C 2.3684758e-15 593.99922 10.000781 604 22.300781 604 L 177.69922 604 C 189.99922 604 200 593.99922 200 581.69922 L 200 426.30078 C 200 414.00078 189.99922 404 177.69922 404 L 22.300781 404 z M 22.300781 409 L 177.69922 409 C 187.19922 409 195 416.80078 195 426.30078 L 195 581.69922 C 195 591.19922 187.19922 599 177.69922 599 L 22.300781 599 C 12.800781 599 5 591.19922 5 581.69922 L 5 426.30078 C 5 416.80078 12.800781 409 22.300781 409 z M 122.87305 438.80859 C 95.206616 438.86611 70.903516 450.13984 63.900391 461.69922 L 48.800781 461.69922 C 48.800781 457.39922 45.7 454 42 454 C 38.3 454 35.199219 457.39922 35.199219 461.69922 C 35.099219 464.59922 36.699219 467.29922 39.199219 468.69922 C 36.699219 469.89922 35.199219 472.50078 35.199219 475.30078 C 34.999219 479.10078 37.899219 482.3 41.699219 482.5 C 45.499219 482.7 48.700391 479.8 48.900391 476 L 48.900391 475.30078 L 63.900391 475.30078 C 71.000391 488.60078 97.499609 500.70039 138.59961 496.40039 C 145.29961 495.70039 150.80078 483.79922 150.80078 468.19922 C 150.70078 452.59922 145.2 441 138.5 440 C 133.23438 439.17188 127.99646 438.79794 122.87305 438.80859 z M 138.5 444.19922 C 144.2 444.19922 148.80078 454.89922 148.80078 468.19922 C 148.80078 481.49922 144.2 492.09922 138.5 492.19922 C 132.8 492.19922 128.19922 481.49922 128.19922 468.19922 C 128.19922 454.89922 132.8 444.19922 138.5 444.19922 z M 138.5 459.59961 C 136.5 459.59961 134.80078 463.39922 134.80078 468.19922 C 134.80078 472.89922 136.5 476.80078 138.5 476.80078 C 140.5 476.80078 142.19922 472.99922 142.19922 468.19922 C 142.19922 463.39922 140.5 459.59961 138.5 459.59961 z M 74.199219 513.5 C 48.199219 513.8 33.699219 540.30078 33.699219 540.30078 C 33.699219 540.30078 48.799609 568.90039 73.599609 568.90039 C 100.19961 568.90039 123.09961 552.19922 133.09961 543.69922 L 155.59961 563.69922 C 155.59961 563.69922 156.90039 552.8 151.90039 548 C 149.50039 545.6 147.00078 543.39922 144.30078 541.19922 C 146.90078 539.09922 149.50039 536.80039 151.90039 534.40039 C 156.90039 529.60039 155.59961 518.80078 155.59961 518.80078 L 135.40039 536.69922 C 125.80039 530.79922 95.799219 513.3 74.199219 513.5 z M 66.599609 521.90039 C 66.599609 521.90039 78.000391 521.80039 78.400391 539.90039 C 78.800391 558.00039 66.599609 560.1 66.599609 560 C 70.799609 554.1 73.200391 546.99922 73.400391 539.69922 C 73.700391 527.59922 66.599609 521.90039 66.599609 521.90039 z M 55.699219 530.80078 C 57.799219 530.80078 59.599609 533.00078 59.599609 535.80078 C 59.599609 538.60078 57.799219 540.90078 55.699219 540.80078 C 53.499219 540.80078 51.800781 538.60078 51.800781 535.80078 C 51.800781 533.00078 53.599219 530.80078 55.699219 530.80078 z"\n    />\n  </svg>\n'),D.set("s,l",'\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 160.40039 29.800781 C 152.10039 29.800781 147.39922 32.000781 141.19922 36.300781 C 135.49922 40.300781 27.000391 120.79922 22.400391 124.19922 C 20.400391 125.69922 20 128.59961 21.5 130.59961 C 23 132.59961 25.900391 133 27.900391 131.5 C 29.100391 130.7 140.9 47.700781 146.5 43.800781 C 151.8 40.100781 154.5 38.900391 160.5 38.900391 L 173.90039 38.900391 C 176.50039 38.900391 178.5 36.800781 178.5 34.300781 C 178.5 31.700781 176.40078 29.700781 173.80078 29.800781 L 160.40039 29.800781 z M 145.30078 67.699219 L 145.30078 89.5 L 113.30078 89.5 L 113.30078 110.09961 L 83.599609 110.09961 L 83.599609 129.5 L 52.699219 129.5 L 52.699219 151.19922 L 21.800781 151.19922 L 21.800781 173 L 176.19922 173 L 176.19922 67.699219 L 145.30078 67.699219 z M 22.300781 202 C 10.000781 202 2.3684758e-15 212.00078 0 224.30078 L 0 379.69922 C 0 391.99922 10.000781 402 22.300781 402 L 177.69922 402 C 189.99922 402 200 391.99922 200 379.69922 L 200 224.30078 C 200 212.00078 189.99922 202 177.69922 202 L 22.300781 202 z M 22.300781 207 L 177.69922 207 C 187.19922 207 195 214.80078 195 224.30078 L 195 379.69922 C 195 389.19922 187.19922 397 177.69922 397 L 22.300781 397 C 12.800781 397 5 389.19922 5 379.69922 L 5 224.30078 C 5 214.80078 12.800781 207 22.300781 207 z M 59.199219 232.80078 C 52.899219 232.80078 47.800781 237.79961 47.800781 244.09961 C 47.800781 250.39961 52.799609 255.5 59.099609 255.5 L 59.199219 255.5 C 65.499219 255.5 70.5 250.39922 70.5 244.19922 C 70.5 237.89922 65.499219 232.80078 59.199219 232.80078 z M 103.69922 232.80078 C 100.69922 232.80078 98.199219 235.20078 98.199219 238.30078 L 98.199219 363.69922 C 98.199219 366.69922 100.59922 369.19922 103.69922 369.19922 C 106.69922 369.19922 109.19922 366.69922 109.19922 363.69922 L 109.19922 238.30078 C 109.19922 235.30078 106.79922 232.80078 103.69922 232.80078 z M 145.19922 232.80078 C 138.99922 232.80078 133.90039 237.79961 133.90039 244.09961 C 133.90039 250.29961 138.89922 255.40039 145.19922 255.40039 C 151.49922 255.50039 156.5 250.39961 156.5 244.09961 C 156.5 237.89961 151.39922 232.80078 145.19922 232.80078 z M 54 257.69922 C 45.8 257.69922 40.099219 262.20078 38.199219 267.80078 L 28.5 299.80078 C 26.4 306.70078 34.4 309.19922 36.5 302.69922 L 46.800781 273.40039 L 48 273.40039 C 48 273.40039 34.500391 325.80078 33.900391 327.80078 C 33.600391 328.80078 33.999609 329.5 35.099609 329.5 L 46.800781 329.5 L 46.800781 364 C 46.800781 371 57.300781 371 57.300781 364 L 57.300781 329.30078 L 61.300781 329.30078 L 61.300781 364 C 61.300781 371 71.800781 371 71.800781 364 L 71.800781 329.5 L 83.5 329.5 C 84.5 329.5 84.899219 328.80078 84.699219 327.80078 C 84.099219 325.80078 70.599609 273.40039 70.599609 273.40039 L 71.800781 273.40039 L 82.099609 302.69922 C 84.199609 309.09922 92.099609 306.70078 90.099609 299.80078 L 80.400391 267.80078 C 78.500391 262.20078 72.899609 257.69922 64.599609 257.69922 L 54 257.69922 z M 133 257.80078 C 122.1 257.70078 118.5 260.5 118.5 272.5 L 118.5 307.30078 C 118.5 314.10078 127.59961 314.10078 127.59961 307.30078 L 128.40039 275.5 L 130.69922 275.5 L 130.69922 362.69922 C 130.69922 371.69922 143.09961 371.49922 143.09961 362.69922 L 143.90039 312.09961 L 146.40039 312.09961 L 147.19922 362.69922 C 147.19922 371.49922 159.59961 371.69922 159.59961 362.69922 L 159.59961 275.5 L 162 275.5 L 162.80078 307.30078 C 162.80078 314.10078 171.90039 314.10078 171.90039 307.30078 L 171.90039 272.5 C 171.90039 260.6 168.30039 257.80078 157.40039 257.80078 L 133 257.80078 z "\n    />\n  </svg>\n'),D.set("s",'\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M177.7,0H22.3C10,0,0,10,0,22.3v155.4C0,190,10,200,22.3,200h155.4c12.3,0,22.3-10,22.3-22.3V22.3C200,10,190,0,177.7,0z M195,177.7c0,9.5-7.8,17.3-17.3,17.3H22.3C12.8,195,5,187.2,5,177.7V22.3C5,12.8,12.8,5,22.3,5h155.4c9.5,0,17.3,7.8,17.3,17.3 V177.7z M145.3,67.7h30.9V173H21.8v-21.8h30.9v-21.7h30.9v-19.4h29.7V89.5h32L145.3,67.7z M178.5,34.3c0,2.5-2,4.6-4.6,4.6 c0,0,0,0,0,0h-13.4c-6,0-8.7,1.2-14,4.9c-5.6,3.9-117.4,86.9-118.6,87.7c-2,1.5-4.9,1.1-6.4-0.9s-1.1-4.9,0.9-6.4 c4.6-3.4,113.1-83.9,118.8-87.9c6.2-4.3,10.9-6.5,19.2-6.5h13.4C176.4,29.7,178.5,31.7,178.5,34.3C178.5,34.2,178.5,34.3,178.5,34.3z"\n    />\n  </svg>\n'),D.set("sg",'\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 223.30078 0 C 211.00078 2.3684758e-15 201 10.000781 201 22.300781 L 201 177.69922 C 201 189.99922 211.00078 200 223.30078 200 L 378.69922 200 C 390.99922 200 401 189.99922 401 177.69922 L 401 22.300781 C 401 10.000781 390.99922 0 378.69922 0 L 223.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 223.30078 5 L 378.69922 5 C 388.19922 5 396 12.800781 396 22.300781 L 396 177.69922 C 396 187.19922 388.19922 195 378.69922 195 L 223.30078 195 C 213.80078 195 206 187.19922 206 177.69922 L 206 22.300781 C 206 12.800781 213.80078 5 223.30078 5 z M 160.40039 29.800781 C 152.10039 29.800781 147.39922 32.000781 141.19922 36.300781 C 135.49922 40.300781 27.000391 120.79922 22.400391 124.19922 C 20.400391 125.69922 20 128.59961 21.5 130.59961 C 23 132.59961 25.900391 133 27.900391 131.5 C 29.100391 130.7 140.9 47.700781 146.5 43.800781 C 151.8 40.100781 154.5 38.900391 160.5 38.900391 L 173.90039 38.900391 C 176.50039 38.900391 178.5 36.800781 178.5 34.300781 C 178.5 31.700781 176.40078 29.700781 173.80078 29.800781 L 160.40039 29.800781 z M 323.87305 34.808594 C 296.20662 34.866107 271.90352 46.139844 264.90039 57.699219 L 249.80078 57.699219 C 249.80078 53.399219 246.7 50 243 50 C 239.3 50 236.19922 53.399219 236.19922 57.699219 C 236.09922 60.599219 237.69922 63.299219 240.19922 64.699219 C 237.69922 65.899219 236.19922 68.500781 236.19922 71.300781 C 235.99922 75.100781 238.89922 78.3 242.69922 78.5 C 246.49922 78.7 249.70039 75.8 249.90039 72 L 249.90039 71.300781 L 264.90039 71.300781 C 272.00039 84.600781 298.49961 96.700391 339.59961 92.400391 C 346.29961 91.700391 351.80078 79.799219 351.80078 64.199219 C 351.80078 48.599219 346.2 37 339.5 36 C 334.23438 35.171875 328.99646 34.797943 323.87305 34.808594 z M 339.5 40.199219 C 345.2 40.199219 349.80078 50.899219 349.80078 64.199219 C 349.80078 77.499219 345.2 88.099219 339.5 88.199219 C 333.8 88.199219 329.19922 77.499219 329.19922 64.199219 C 329.19922 50.899219 333.8 40.199219 339.5 40.199219 z M 339.5 55.599609 C 337.5 55.599609 335.80078 59.499219 335.80078 64.199219 C 335.80078 68.899219 337.5 72.800781 339.5 72.800781 C 341.5 72.800781 343.19922 68.999219 343.19922 64.199219 C 343.19922 59.399219 341.5 55.599609 339.5 55.599609 z M 145.30078 67.699219 L 145.30078 89.5 L 113.30078 89.5 L 113.30078 110.09961 L 83.599609 110.09961 L 83.599609 129.5 L 52.699219 129.5 L 52.699219 151.19922 L 21.800781 151.19922 L 21.800781 173 L 176.19922 173 L 176.19922 67.699219 L 145.30078 67.699219 z M 275.19922 109.5 C 249.19922 109.8 234.69922 136.30078 234.69922 136.30078 C 234.69922 136.30078 249.79961 164.90039 274.59961 164.90039 C 301.19961 164.90039 324.09961 148.19922 334.09961 139.69922 L 356.59961 159.69922 C 356.59961 159.69922 357.90039 148.8 352.90039 144 C 350.50039 141.6 348.00078 139.39922 345.30078 137.19922 C 347.90078 135.09922 350.50039 132.80039 352.90039 130.40039 C 357.90039 125.60039 356.59961 114.80078 356.59961 114.80078 L 336.40039 132.69922 C 326.80039 126.79922 296.79922 109.3 275.19922 109.5 z M 267.59961 118 C 267.59961 118 279.00039 117.9 279.40039 136 C 279.80039 154.2 267.59961 156.09961 267.59961 156.09961 C 271.79961 150.19961 274.20039 143.10078 274.40039 135.80078 C 274.70039 123.70078 267.59961 118 267.59961 118 z M 256.59961 126.90039 C 258.79961 126.90039 260.5 129.10039 260.5 131.90039 C 260.5 134.70039 258.79961 136.90039 256.59961 136.90039 C 254.39961 136.90039 252.69922 134.70039 252.69922 131.90039 C 252.69922 129.10039 254.49961 126.90039 256.59961 126.90039 z"\n    />\n  </svg>\n'),D.set("sl",'\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 223.30078 0 C 211.00078 0 201 10.000781 201 22.300781 L 201 177.69922 C 201 189.99922 211.00078 200 223.30078 200 L 378.69922 200 C 390.99922 200 401 189.99922 401 177.69922 L 401 22.300781 C 401 10.000781 390.99922 2.3684758e-15 378.69922 0 L 223.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 223.30078 5 L 378.69922 5 C 388.19922 5 396 12.800781 396 22.300781 L 396 177.69922 C 396 187.19922 388.19922 195 378.69922 195 L 223.30078 195 C 213.80078 195 206 187.19922 206 177.69922 L 206 22.300781 C 206 12.800781 213.80078 5 223.30078 5 z M 160.40039 29.800781 C 152.10039 29.800781 147.39922 32.000781 141.19922 36.300781 C 135.49922 40.300781 27.000391 120.79922 22.400391 124.19922 C 20.400391 125.69922 20 128.59961 21.5 130.59961 C 23 132.59961 25.900391 133 27.900391 131.5 C 29.100391 130.7 140.9 47.700781 146.5 43.800781 C 151.8 40.100781 154.5 38.900391 160.5 38.900391 L 173.90039 38.900391 C 176.50039 38.900391 178.5 36.800781 178.5 34.300781 C 178.5 31.700781 176.40078 29.700781 173.80078 29.800781 L 160.40039 29.800781 z M 260.19922 30.800781 C 253.89922 30.800781 248.80078 35.799609 248.80078 42.099609 C 248.80078 48.399609 253.79961 53.5 260.09961 53.5 L 260.19922 53.5 C 266.49922 53.5 271.5 48.399219 271.5 42.199219 C 271.5 35.899219 266.49922 30.800781 260.19922 30.800781 z M 304.69922 30.800781 C 301.69922 30.800781 299.19922 33.200781 299.19922 36.300781 L 299.19922 161.69922 C 299.19922 164.69922 301.59922 167.19922 304.69922 167.19922 C 307.69922 167.19922 310.19922 164.69922 310.19922 161.69922 L 310.19922 36.300781 C 310.19922 33.300781 307.79922 30.800781 304.69922 30.800781 z M 346.30078 30.900391 C 340.00078 30.900391 334.90039 35.899219 334.90039 42.199219 C 334.90039 48.399219 339.89922 53.5 346.19922 53.5 C 352.49922 53.5 357.49961 48.399219 357.59961 42.199219 C 357.59961 35.999219 352.50078 30.900391 346.30078 30.900391 z M 255 55.699219 C 246.8 55.699219 241.09922 60.200781 239.19922 65.800781 L 229.5 97.800781 C 227.4 104.70078 235.4 107.19922 237.5 100.69922 L 247.80078 71.400391 L 249 71.400391 C 249 71.400391 235.50039 123.80078 234.90039 125.80078 C 234.60039 126.80078 234.99961 127.5 236.09961 127.5 L 247.80078 127.5 L 247.80078 162 C 247.80078 169 258.30078 169 258.30078 162 L 258.30078 127.30078 L 262.30078 127.30078 L 262.30078 162 C 262.30078 169 272.80078 169 272.80078 162 L 272.80078 127.5 L 284.5 127.5 C 285.5 127.5 285.89922 126.80078 285.69922 125.80078 C 285.09922 123.80078 271.59961 71.400391 271.59961 71.400391 L 272.80078 71.400391 L 283.09961 100.69922 C 285.19961 107.09922 293.09961 104.70078 291.09961 97.800781 L 281.40039 65.800781 C 279.50039 60.100781 273.89961 55.699219 265.59961 55.699219 L 255 55.699219 z M 334 55.699219 C 323.1 55.699219 319.5 58.500391 319.5 70.400391 L 319.5 105.19922 C 319.5 111.99922 328.59961 111.99922 328.59961 105.19922 L 329.40039 73.400391 L 331.69922 73.400391 L 331.69922 160.59961 C 331.69922 169.59961 344.09961 169.39961 344.09961 160.59961 L 345 110 L 347.5 110 L 348.30078 160.59961 C 348.30078 169.39961 360.69922 169.59961 360.69922 160.59961 L 360.69922 73.400391 L 363.09961 73.400391 L 363.90039 105.19922 C 363.90039 111.99922 373 111.99922 373 105.19922 L 373 70.400391 C 373 58.500391 369.4 55.699219 358.5 55.699219 L 334 55.699219 z M 145.30078 67.699219 L 145.30078 89.5 L 113.30078 89.5 L 113.30078 110.09961 L 83.599609 110.09961 L 83.599609 129.5 L 52.699219 129.5 L 52.699219 151.19922 L 21.800781 151.19922 L 21.800781 173 L 176.19922 173 L 176.19922 67.699219 L 145.30078 67.699219 z"\n    />\n  </svg>\n'),D.set("u",'\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M177.69,0H22.31A22.34,22.34,0,0,0,0,22.31V177.69A22.34,22.34,0,0,0,22.31,200H177.69A22.34,22.34,0,0,0,200,177.69V22.31A22.34,22.34,0,0,0,177.69,0ZM195,177.69A17.37,17.37,0,0,1,177.69,195H22.31A17.37,17.37,0,0,1,5,177.69V22.31A17.37,17.37,0,0,1,22.31,5H177.69A17.37,17.37,0,0,1,195,22.31ZM145.32,67.74h30.89V173H21.77V151.25H52.66V129.51H83.55V110.07h29.74V89.48h32ZM28.21,63.16H17.63L35.36,36.85,53.09,63.16H42.51V82.61H28.21ZM178.5,34.28a4.57,4.57,0,0,1-4.58,4.58H160.48c-6,0-8.72,1.22-14,4.89-5.6,3.92-117.45,86.89-118.58,87.72a4.57,4.57,0,1,1-5.45-7.35c4.61-3.42,113.08-83.88,118.79-87.88,6.2-4.34,10.88-6.55,19.21-6.55h13.44A4.57,4.57,0,0,1,178.5,34.28Z"\n    />\n  </svg>\n'),D.set("upstairs",'\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M177.69,0H22.31A22.34,22.34,0,0,0,0,22.31V177.69A22.34,22.34,0,0,0,22.31,200H177.69A22.34,22.34,0,0,0,200,177.69V22.31A22.34,22.34,0,0,0,177.69,0ZM195,177.69A17.37,17.37,0,0,1,177.69,195H22.31A17.37,17.37,0,0,1,5,177.69V22.31A17.37,17.37,0,0,1,22.31,5H177.69A17.37,17.37,0,0,1,195,22.31ZM145.32,67.74h30.89V173H21.77V151.25H52.66V129.51H83.55V110.07h29.74V89.48h32ZM28.21,63.16H17.63L35.36,36.85,53.09,63.16H42.51V82.61H28.21ZM178.5,34.28a4.57,4.57,0,0,1-4.58,4.58H160.48c-6,0-8.72,1.22-14,4.89-5.6,3.92-117.45,86.89-118.58,87.72a4.57,4.57,0,1,1-5.45-7.35c4.61-3.42,113.08-83.88,118.79-87.88,6.2-4.34,10.88-6.55,19.21-6.55h13.44A4.57,4.57,0,0,1,178.5,34.28Z"\n    />\n  </svg>\n');
-/*! @license DOMPurify 3.2.4 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/3.2.4/LICENSE */
-const{entries:j,setPrototypeOf:F,isFrozen:Z,getPrototypeOf:U,getOwnPropertyDescriptor:G}=Object;let{freeze:K,seal:q,create:Y}=Object,{apply:J,construct:X}="undefined"!=typeof Reflect&&Reflect;K||(K=function(e){return e}),q||(q=function(e){return e}),J||(J=function(e,t,r){return e.apply(t,r)}),X||(X=function(e,t){return new e(...t)});const Q=me(Array.prototype.forEach),ee=me(Array.prototype.lastIndexOf),te=me(Array.prototype.pop),re=me(Array.prototype.push),le=me(Array.prototype.splice),ie=me(String.prototype.toLowerCase),oe=me(String.prototype.toString),se=me(String.prototype.match),ae=me(String.prototype.replace),ne=me(String.prototype.indexOf),ce=me(String.prototype.trim),de=me(Object.prototype.hasOwnProperty),he=me(RegExp.prototype.test),ge=(pe=TypeError,function(){for(var e=arguments.length,t=new Array(e),r=0;r<e;r++)t[r]=arguments[r];return X(pe,t)});var pe;function me(e){return function(t){for(var r=arguments.length,l=new Array(r>1?r-1:0),i=1;i<r;i++)l[i-1]=arguments[i];return J(e,t,l)}}function Ce(e,t){let r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:ie;F&&F(e,null);let l=t.length;for(;l--;){let i=t[l];if("string"==typeof i){const e=r(i);e!==i&&(Z(t)||(t[l]=e),i=e)}e[i]=!0}return e}function ue(e){for(let t=0;t<e.length;t++){de(e,t)||(e[t]=null)}return e}function fe(e){const t=Y(null);for(const[r,l]of j(e)){de(e,r)&&(Array.isArray(l)?t[r]=ue(l):l&&"object"==typeof l&&l.constructor===Object?t[r]=fe(l):t[r]=l)}return t}function ke(e,t){for(;null!==e;){const r=G(e,t);if(r){if(r.get)return me(r.get);if("function"==typeof r.value)return me(r.value)}e=U(e)}return function(){return null}}const ve=K(["a","abbr","acronym","address","area","article","aside","audio","b","bdi","bdo","big","blink","blockquote","body","br","button","canvas","caption","center","cite","code","col","colgroup","content","data","datalist","dd","decorator","del","details","dfn","dialog","dir","div","dl","dt","element","em","fieldset","figcaption","figure","font","footer","form","h1","h2","h3","h4","h5","h6","head","header","hgroup","hr","html","i","img","input","ins","kbd","label","legend","li","main","map","mark","marquee","menu","menuitem","meter","nav","nobr","ol","optgroup","option","output","p","picture","pre","progress","q","rp","rt","ruby","s","samp","section","select","shadow","small","source","spacer","span","strike","strong","style","sub","summary","sup","table","tbody","td","template","textarea","tfoot","th","thead","time","tr","track","tt","u","ul","var","video","wbr"]),we=K(["svg","a","altglyph","altglyphdef","altglyphitem","animatecolor","animatemotion","animatetransform","circle","clippath","defs","desc","ellipse","filter","font","g","glyph","glyphref","hkern","image","line","lineargradient","marker","mask","metadata","mpath","path","pattern","polygon","polyline","radialgradient","rect","stop","style","switch","symbol","text","textpath","title","tref","tspan","view","vkern"]),be=K(["feBlend","feColorMatrix","feComponentTransfer","feComposite","feConvolveMatrix","feDiffuseLighting","feDisplacementMap","feDistantLight","feDropShadow","feFlood","feFuncA","feFuncB","feFuncG","feFuncR","feGaussianBlur","feImage","feMerge","feMergeNode","feMorphology","feOffset","fePointLight","feSpecularLighting","feSpotLight","feTile","feTurbulence"]),Le=K(["animate","color-profile","cursor","discard","font-face","font-face-format","font-face-name","font-face-src","font-face-uri","foreignobject","hatch","hatchpath","mesh","meshgradient","meshpatch","meshrow","missing-glyph","script","set","solidcolor","unknown","use"]),xe=K(["math","menclose","merror","mfenced","mfrac","mglyph","mi","mlabeledtr","mmultiscripts","mn","mo","mover","mpadded","mphantom","mroot","mrow","ms","mspace","msqrt","mstyle","msub","msup","msubsup","mtable","mtd","mtext","mtr","munder","munderover","mprescripts"]),Me=K(["maction","maligngroup","malignmark","mlongdiv","mscarries","mscarry","msgroup","mstack","msline","msrow","semantics","annotation","annotation-xml","mprescripts","none"]),ze=K(["#text"]),ye=K(["accept","action","align","alt","autocapitalize","autocomplete","autopictureinpicture","autoplay","background","bgcolor","border","capture","cellpadding","cellspacing","checked","cite","class","clear","color","cols","colspan","controls","controlslist","coords","crossorigin","datetime","decoding","default","dir","disabled","disablepictureinpicture","disableremoteplayback","download","draggable","enctype","enterkeyhint","face","for","headers","height","hidden","high","href","hreflang","id","inputmode","integrity","ismap","kind","label","lang","list","loading","loop","low","max","maxlength","media","method","min","minlength","multiple","muted","name","nonce","noshade","novalidate","nowrap","open","optimum","pattern","placeholder","playsinline","popover","popovertarget","popovertargetaction","poster","preload","pubdate","radiogroup","readonly","rel","required","rev","reversed","role","rows","rowspan","spellcheck","scope","selected","shape","size","sizes","span","srclang","start","src","srcset","step","style","summary","tabindex","title","translate","type","usemap","valign","value","width","wrap","xmlns","slot"]),Se=K(["accent-height","accumulate","additive","alignment-baseline","amplitude","ascent","attributename","attributetype","azimuth","basefrequency","baseline-shift","begin","bias","by","class","clip","clippathunits","clip-path","clip-rule","color","color-interpolation","color-interpolation-filters","color-profile","color-rendering","cx","cy","d","dx","dy","diffuseconstant","direction","display","divisor","dur","edgemode","elevation","end","exponent","fill","fill-opacity","fill-rule","filter","filterunits","flood-color","flood-opacity","font-family","font-size","font-size-adjust","font-stretch","font-style","font-variant","font-weight","fx","fy","g1","g2","glyph-name","glyphref","gradientunits","gradienttransform","height","href","id","image-rendering","in","in2","intercept","k","k1","k2","k3","k4","kerning","keypoints","keysplines","keytimes","lang","lengthadjust","letter-spacing","kernelmatrix","kernelunitlength","lighting-color","local","marker-end","marker-mid","marker-start","markerheight","markerunits","markerwidth","maskcontentunits","maskunits","max","mask","media","method","mode","min","name","numoctaves","offset","operator","opacity","order","orient","orientation","origin","overflow","paint-order","path","pathlength","patterncontentunits","patterntransform","patternunits","points","preservealpha","preserveaspectratio","primitiveunits","r","rx","ry","radius","refx","refy","repeatcount","repeatdur","restart","result","rotate","scale","seed","shape-rendering","slope","specularconstant","specularexponent","spreadmethod","startoffset","stddeviation","stitchtiles","stop-color","stop-opacity","stroke-dasharray","stroke-dashoffset","stroke-linecap","stroke-linejoin","stroke-miterlimit","stroke-opacity","stroke","stroke-width","style","surfacescale","systemlanguage","tabindex","tablevalues","targetx","targety","transform","transform-origin","text-anchor","text-decoration","text-rendering","textlength","type","u1","u2","unicode","values","viewbox","visibility","version","vert-adv-y","vert-origin-x","vert-origin-y","width","word-spacing","wrap","writing-mode","xchannelselector","ychannelselector","x","x1","x2","xmlns","y","y1","y2","z","zoomandpan"]),Te=K(["accent","accentunder","align","bevelled","close","columnsalign","columnlines","columnspan","denomalign","depth","dir","display","displaystyle","encoding","fence","frame","height","href","id","largeop","length","linethickness","lspace","lquote","mathbackground","mathcolor","mathsize","mathvariant","maxsize","minsize","movablelimits","notation","numalign","open","rowalign","rowlines","rowspacing","rowspan","rspace","rquote","scriptlevel","scriptminsize","scriptsizemultiplier","selection","separator","separators","stretchy","subscriptshift","supscriptshift","symmetric","voffset","width","xmlns"]),Ee=K(["xlink:href","xml:id","xlink:title","xml:space","xmlns:xlink"]),He=q(/\{\{[\w\W]*|[\w\W]*\}\}/gm),_e=q(/<%[\w\W]*|[\w\W]*%>/gm),Ae=q(/\$\{[\w\W]*/gm),$e=q(/^data-[\-\w.\u00B7-\uFFFF]+$/),Ve=q(/^aria-[\-\w]+$/),Oe=q(/^(?:(?:(?:f|ht)tps?|mailto|tel|callto|sms|cid|xmpp):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i),Be=q(/^(?:\w+script|data):/i),Ie=q(/[\u0000-\u0020\u00A0\u1680\u180E\u2000-\u2029\u205F\u3000]/g),We=q(/^html$/i),Re=q(/^[a-z][.\w]*(-[.\w]+)+$/i);var Pe=Object.freeze({__proto__:null,ARIA_ATTR:Ve,ATTR_WHITESPACE:Ie,CUSTOM_ELEMENT:Re,DATA_ATTR:$e,DOCTYPE_NAME:We,ERB_EXPR:_e,IS_ALLOWED_URI:Oe,IS_SCRIPT_OR_DATA:Be,MUSTACHE_EXPR:He,TMPLIT_EXPR:Ae});const Ne=1,De=3,je=7,Fe=8,Ze=9,Ue=function(){return"undefined"==typeof window?null:window},Ge=function(e,t){if("object"!=typeof e||"function"!=typeof e.createPolicy)return null;let r=null;const l="data-tt-policy-suffix";t&&t.hasAttribute(l)&&(r=t.getAttribute(l));const i="dompurify"+(r?"#"+r:"");try{return e.createPolicy(i,{createHTML:e=>e,createScriptURL:e=>e})}catch(e){return console.warn("TrustedTypes policy "+i+" could not be created."),null}};var Ke=function e(){let t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:Ue();const r=t=>e(t);if(r.version="3.2.4",r.removed=[],!t||!t.document||t.document.nodeType!==Ze||!t.Element)return r.isSupported=!1,r;let{document:l}=t;const i=l,o=i.currentScript,{DocumentFragment:s,HTMLTemplateElement:a,Node:n,Element:c,NodeFilter:d,NamedNodeMap:h=t.NamedNodeMap||t.MozNamedAttrMap,HTMLFormElement:g,DOMParser:p,trustedTypes:m}=t,C=c.prototype,u=ke(C,"cloneNode"),f=ke(C,"remove"),k=ke(C,"nextSibling"),v=ke(C,"childNodes"),w=ke(C,"parentNode");if("function"==typeof a){const e=l.createElement("template");e.content&&e.content.ownerDocument&&(l=e.content.ownerDocument)}let b,L="";const{implementation:x,createNodeIterator:M,createDocumentFragment:z,getElementsByTagName:y}=l,{importNode:S}=i;let T={afterSanitizeAttributes:[],afterSanitizeElements:[],afterSanitizeShadowDOM:[],beforeSanitizeAttributes:[],beforeSanitizeElements:[],beforeSanitizeShadowDOM:[],uponSanitizeAttribute:[],uponSanitizeElement:[],uponSanitizeShadowNode:[]};r.isSupported="function"==typeof j&&"function"==typeof w&&x&&void 0!==x.createHTMLDocument;const{MUSTACHE_EXPR:E,ERB_EXPR:H,TMPLIT_EXPR:_,DATA_ATTR:A,ARIA_ATTR:$,IS_SCRIPT_OR_DATA:V,ATTR_WHITESPACE:O,CUSTOM_ELEMENT:B}=Pe;let{IS_ALLOWED_URI:I}=Pe,W=null;const R=Ce({},[...ve,...we,...be,...xe,...ze]);let P=null;const N=Ce({},[...ye,...Se,...Te,...Ee]);let D=Object.seal(Y(null,{tagNameCheck:{writable:!0,configurable:!1,enumerable:!0,value:null},attributeNameCheck:{writable:!0,configurable:!1,enumerable:!0,value:null},allowCustomizedBuiltInElements:{writable:!0,configurable:!1,enumerable:!0,value:!1}})),F=null,Z=null,U=!0,G=!0,q=!1,J=!0,X=!1,pe=!0,me=!1,ue=!1,He=!1,_e=!1,Ae=!1,$e=!1,Ve=!0,Be=!1;const Ie="user-content-";let Re=!0,Ke=!1,qe={},Ye=null;const Je=Ce({},["annotation-xml","audio","colgroup","desc","foreignobject","head","iframe","math","mi","mn","mo","ms","mtext","noembed","noframes","noscript","plaintext","script","style","svg","template","thead","title","video","xmp"]);let Xe=null;const Qe=Ce({},["audio","video","img","source","image","track"]);let et=null;const tt=Ce({},["alt","class","for","id","label","name","pattern","placeholder","role","summary","title","value","style","xmlns"]),rt="http://www.w3.org/1998/Math/MathML",lt="http://www.w3.org/2000/svg",it="http://www.w3.org/1999/xhtml";let ot=it,st=!1,at=null;const nt=Ce({},[rt,lt,it],oe);let ct=Ce({},["mi","mo","mn","ms","mtext"]),dt=Ce({},["annotation-xml"]);const ht=Ce({},["title","style","font","a","script"]);let gt=null;const pt=["application/xhtml+xml","text/html"],mt="text/html";let Ct=null,ut=null;const ft=l.createElement("form"),kt=function(e){return e instanceof RegExp||e instanceof Function},vt=function(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(!ut||ut!==e){if(e&&"object"==typeof e||(e={}),e=fe(e),gt=-1===pt.indexOf(e.PARSER_MEDIA_TYPE)?mt:e.PARSER_MEDIA_TYPE,Ct="application/xhtml+xml"===gt?oe:ie,W=de(e,"ALLOWED_TAGS")?Ce({},e.ALLOWED_TAGS,Ct):R,P=de(e,"ALLOWED_ATTR")?Ce({},e.ALLOWED_ATTR,Ct):N,at=de(e,"ALLOWED_NAMESPACES")?Ce({},e.ALLOWED_NAMESPACES,oe):nt,et=de(e,"ADD_URI_SAFE_ATTR")?Ce(fe(tt),e.ADD_URI_SAFE_ATTR,Ct):tt,Xe=de(e,"ADD_DATA_URI_TAGS")?Ce(fe(Qe),e.ADD_DATA_URI_TAGS,Ct):Qe,Ye=de(e,"FORBID_CONTENTS")?Ce({},e.FORBID_CONTENTS,Ct):Je,F=de(e,"FORBID_TAGS")?Ce({},e.FORBID_TAGS,Ct):{},Z=de(e,"FORBID_ATTR")?Ce({},e.FORBID_ATTR,Ct):{},qe=!!de(e,"USE_PROFILES")&&e.USE_PROFILES,U=!1!==e.ALLOW_ARIA_ATTR,G=!1!==e.ALLOW_DATA_ATTR,q=e.ALLOW_UNKNOWN_PROTOCOLS||!1,J=!1!==e.ALLOW_SELF_CLOSE_IN_ATTR,X=e.SAFE_FOR_TEMPLATES||!1,pe=!1!==e.SAFE_FOR_XML,me=e.WHOLE_DOCUMENT||!1,_e=e.RETURN_DOM||!1,Ae=e.RETURN_DOM_FRAGMENT||!1,$e=e.RETURN_TRUSTED_TYPE||!1,He=e.FORCE_BODY||!1,Ve=!1!==e.SANITIZE_DOM,Be=e.SANITIZE_NAMED_PROPS||!1,Re=!1!==e.KEEP_CONTENT,Ke=e.IN_PLACE||!1,I=e.ALLOWED_URI_REGEXP||Oe,ot=e.NAMESPACE||it,ct=e.MATHML_TEXT_INTEGRATION_POINTS||ct,dt=e.HTML_INTEGRATION_POINTS||dt,D=e.CUSTOM_ELEMENT_HANDLING||{},e.CUSTOM_ELEMENT_HANDLING&&kt(e.CUSTOM_ELEMENT_HANDLING.tagNameCheck)&&(D.tagNameCheck=e.CUSTOM_ELEMENT_HANDLING.tagNameCheck),e.CUSTOM_ELEMENT_HANDLING&&kt(e.CUSTOM_ELEMENT_HANDLING.attributeNameCheck)&&(D.attributeNameCheck=e.CUSTOM_ELEMENT_HANDLING.attributeNameCheck),e.CUSTOM_ELEMENT_HANDLING&&"boolean"==typeof e.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements&&(D.allowCustomizedBuiltInElements=e.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements),X&&(G=!1),Ae&&(_e=!0),qe&&(W=Ce({},ze),P=[],!0===qe.html&&(Ce(W,ve),Ce(P,ye)),!0===qe.svg&&(Ce(W,we),Ce(P,Se),Ce(P,Ee)),!0===qe.svgFilters&&(Ce(W,be),Ce(P,Se),Ce(P,Ee)),!0===qe.mathMl&&(Ce(W,xe),Ce(P,Te),Ce(P,Ee))),e.ADD_TAGS&&(W===R&&(W=fe(W)),Ce(W,e.ADD_TAGS,Ct)),e.ADD_ATTR&&(P===N&&(P=fe(P)),Ce(P,e.ADD_ATTR,Ct)),e.ADD_URI_SAFE_ATTR&&Ce(et,e.ADD_URI_SAFE_ATTR,Ct),e.FORBID_CONTENTS&&(Ye===Je&&(Ye=fe(Ye)),Ce(Ye,e.FORBID_CONTENTS,Ct)),Re&&(W["#text"]=!0),me&&Ce(W,["html","head","body"]),W.table&&(Ce(W,["tbody"]),delete F.tbody),e.TRUSTED_TYPES_POLICY){if("function"!=typeof e.TRUSTED_TYPES_POLICY.createHTML)throw ge('TRUSTED_TYPES_POLICY configuration option must provide a "createHTML" hook.');if("function"!=typeof e.TRUSTED_TYPES_POLICY.createScriptURL)throw ge('TRUSTED_TYPES_POLICY configuration option must provide a "createScriptURL" hook.');b=e.TRUSTED_TYPES_POLICY,L=b.createHTML("")}else void 0===b&&(b=Ge(m,o)),null!==b&&"string"==typeof L&&(L=b.createHTML(""));K&&K(e),ut=e}},wt=Ce({},[...we,...be,...Le]),bt=Ce({},[...xe,...Me]),Lt=function(e){let t=w(e);t&&t.tagName||(t={namespaceURI:ot,tagName:"template"});const r=ie(e.tagName),l=ie(t.tagName);return!!at[e.namespaceURI]&&(e.namespaceURI===lt?t.namespaceURI===it?"svg"===r:t.namespaceURI===rt?"svg"===r&&("annotation-xml"===l||ct[l]):Boolean(wt[r]):e.namespaceURI===rt?t.namespaceURI===it?"math"===r:t.namespaceURI===lt?"math"===r&&dt[l]:Boolean(bt[r]):e.namespaceURI===it?!(t.namespaceURI===lt&&!dt[l])&&(!(t.namespaceURI===rt&&!ct[l])&&(!bt[r]&&(ht[r]||!wt[r]))):!("application/xhtml+xml"!==gt||!at[e.namespaceURI]))},xt=function(e){re(r.removed,{element:e});try{w(e).removeChild(e)}catch(t){f(e)}},Mt=function(e,t){try{re(r.removed,{attribute:t.getAttributeNode(e),from:t})}catch(e){re(r.removed,{attribute:null,from:t})}if(t.removeAttribute(e),"is"===e)if(_e||Ae)try{xt(t)}catch(e){}else try{t.setAttribute(e,"")}catch(e){}},zt=function(e){let t=null,r=null;if(He)e="<remove></remove>"+e;else{const t=se(e,/^[\r\n\t ]+/);r=t&&t[0]}"application/xhtml+xml"===gt&&ot===it&&(e='<html xmlns="http://www.w3.org/1999/xhtml"><head></head><body>'+e+"</body></html>");const i=b?b.createHTML(e):e;if(ot===it)try{t=(new p).parseFromString(i,gt)}catch(e){}if(!t||!t.documentElement){t=x.createDocument(ot,"template",null);try{t.documentElement.innerHTML=st?L:i}catch(e){}}const o=t.body||t.documentElement;return e&&r&&o.insertBefore(l.createTextNode(r),o.childNodes[0]||null),ot===it?y.call(t,me?"html":"body")[0]:me?t.documentElement:o},yt=function(e){return M.call(e.ownerDocument||e,e,d.SHOW_ELEMENT|d.SHOW_COMMENT|d.SHOW_TEXT|d.SHOW_PROCESSING_INSTRUCTION|d.SHOW_CDATA_SECTION,null)},St=function(e){return e instanceof g&&("string"!=typeof e.nodeName||"string"!=typeof e.textContent||"function"!=typeof e.removeChild||!(e.attributes instanceof h)||"function"!=typeof e.removeAttribute||"function"!=typeof e.setAttribute||"string"!=typeof e.namespaceURI||"function"!=typeof e.insertBefore||"function"!=typeof e.hasChildNodes)},Tt=function(e){return"function"==typeof n&&e instanceof n};function Et(e,t,l){Q(e,(e=>{e.call(r,t,l,ut)}))}const Ht=function(e){let t=null;if(Et(T.beforeSanitizeElements,e,null),St(e))return xt(e),!0;const l=Ct(e.nodeName);if(Et(T.uponSanitizeElement,e,{tagName:l,allowedTags:W}),e.hasChildNodes()&&!Tt(e.firstElementChild)&&he(/<[/\w]/g,e.innerHTML)&&he(/<[/\w]/g,e.textContent))return xt(e),!0;if(e.nodeType===je)return xt(e),!0;if(pe&&e.nodeType===Fe&&he(/<[/\w]/g,e.data))return xt(e),!0;if(!W[l]||F[l]){if(!F[l]&&At(l)){if(D.tagNameCheck instanceof RegExp&&he(D.tagNameCheck,l))return!1;if(D.tagNameCheck instanceof Function&&D.tagNameCheck(l))return!1}if(Re&&!Ye[l]){const t=w(e)||e.parentNode,r=v(e)||e.childNodes;if(r&&t){for(let l=r.length-1;l>=0;--l){const i=u(r[l],!0);i.__removalCount=(e.__removalCount||0)+1,t.insertBefore(i,k(e))}}}return xt(e),!0}return e instanceof c&&!Lt(e)?(xt(e),!0):"noscript"!==l&&"noembed"!==l&&"noframes"!==l||!he(/<\/no(script|embed|frames)/i,e.innerHTML)?(X&&e.nodeType===De&&(t=e.textContent,Q([E,H,_],(e=>{t=ae(t,e," ")})),e.textContent!==t&&(re(r.removed,{element:e.cloneNode()}),e.textContent=t)),Et(T.afterSanitizeElements,e,null),!1):(xt(e),!0)},_t=function(e,t,r){if(Ve&&("id"===t||"name"===t)&&(r in l||r in ft))return!1;if(G&&!Z[t]&&he(A,t));else if(U&&he($,t));else if(!P[t]||Z[t]){if(!(At(e)&&(D.tagNameCheck instanceof RegExp&&he(D.tagNameCheck,e)||D.tagNameCheck instanceof Function&&D.tagNameCheck(e))&&(D.attributeNameCheck instanceof RegExp&&he(D.attributeNameCheck,t)||D.attributeNameCheck instanceof Function&&D.attributeNameCheck(t))||"is"===t&&D.allowCustomizedBuiltInElements&&(D.tagNameCheck instanceof RegExp&&he(D.tagNameCheck,r)||D.tagNameCheck instanceof Function&&D.tagNameCheck(r))))return!1}else if(et[t]);else if(he(I,ae(r,O,"")));else if("src"!==t&&"xlink:href"!==t&&"href"!==t||"script"===e||0!==ne(r,"data:")||!Xe[e]){if(q&&!he(V,ae(r,O,"")));else if(r)return!1}else;return!0},At=function(e){return"annotation-xml"!==e&&se(e,B)},$t=function(e){Et(T.beforeSanitizeAttributes,e,null);const{attributes:t}=e;if(!t||St(e))return;const l={attrName:"",attrValue:"",keepAttr:!0,allowedAttributes:P,forceKeepAttr:void 0};let i=t.length;for(;i--;){const o=t[i],{name:s,namespaceURI:a,value:n}=o,c=Ct(s);let d="value"===s?n:ce(n);if(l.attrName=c,l.attrValue=d,l.keepAttr=!0,l.forceKeepAttr=void 0,Et(T.uponSanitizeAttribute,e,l),d=l.attrValue,!Be||"id"!==c&&"name"!==c||(Mt(s,e),d=Ie+d),pe&&he(/((--!?|])>)|<\/(style|title)/i,d)){Mt(s,e);continue}if(l.forceKeepAttr)continue;if(Mt(s,e),!l.keepAttr)continue;if(!J&&he(/\/>/i,d)){Mt(s,e);continue}X&&Q([E,H,_],(e=>{d=ae(d,e," ")}));const h=Ct(e.nodeName);if(_t(h,c,d)){if(b&&"object"==typeof m&&"function"==typeof m.getAttributeType)if(a);else switch(m.getAttributeType(h,c)){case"TrustedHTML":d=b.createHTML(d);break;case"TrustedScriptURL":d=b.createScriptURL(d)}try{a?e.setAttributeNS(a,s,d):e.setAttribute(s,d),St(e)?xt(e):te(r.removed)}catch(e){}}}Et(T.afterSanitizeAttributes,e,null)},Vt=function e(t){let r=null;const l=yt(t);for(Et(T.beforeSanitizeShadowDOM,t,null);r=l.nextNode();)Et(T.uponSanitizeShadowNode,r,null),Ht(r),$t(r),r.content instanceof s&&e(r.content);Et(T.afterSanitizeShadowDOM,t,null)};return r.sanitize=function(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},l=null,o=null,a=null,c=null;if(st=!e,st&&(e="\x3c!--\x3e"),"string"!=typeof e&&!Tt(e)){if("function"!=typeof e.toString)throw ge("toString is not a function");if("string"!=typeof(e=e.toString()))throw ge("dirty is not a string, aborting")}if(!r.isSupported)return e;if(ue||vt(t),r.removed=[],"string"==typeof e&&(Ke=!1),Ke){if(e.nodeName){const t=Ct(e.nodeName);if(!W[t]||F[t])throw ge("root node is forbidden and cannot be sanitized in-place")}}else if(e instanceof n)l=zt("\x3c!----\x3e"),o=l.ownerDocument.importNode(e,!0),o.nodeType===Ne&&"BODY"===o.nodeName||"HTML"===o.nodeName?l=o:l.appendChild(o);else{if(!_e&&!X&&!me&&-1===e.indexOf("<"))return b&&$e?b.createHTML(e):e;if(l=zt(e),!l)return _e?null:$e?L:""}l&&He&&xt(l.firstChild);const d=yt(Ke?e:l);for(;a=d.nextNode();)Ht(a),$t(a),a.content instanceof s&&Vt(a.content);if(Ke)return e;if(_e){if(Ae)for(c=z.call(l.ownerDocument);l.firstChild;)c.appendChild(l.firstChild);else c=l;return(P.shadowroot||P.shadowrootmode)&&(c=S.call(i,c,!0)),c}let h=me?l.outerHTML:l.innerHTML;return me&&W["!doctype"]&&l.ownerDocument&&l.ownerDocument.doctype&&l.ownerDocument.doctype.name&&he(We,l.ownerDocument.doctype.name)&&(h="<!DOCTYPE "+l.ownerDocument.doctype.name+">\n"+h),X&&Q([E,H,_],(e=>{h=ae(h,e," ")})),b&&$e?b.createHTML(h):h},r.setConfig=function(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};vt(e),ue=!0},r.clearConfig=function(){ut=null,ue=!1},r.isValidAttribute=function(e,t,r){ut||vt({});const l=Ct(e),i=Ct(t);return _t(l,i,r)},r.addHook=function(e,t){"function"==typeof t&&re(T[e],t)},r.removeHook=function(e,t){if(void 0!==t){const r=ee(T[e],t);return-1===r?void 0:le(T[e],r,1)[0]}return te(T[e])},r.removeHooks=function(e){T[e]=[]},r.removeAllHooks=function(){T={afterSanitizeAttributes:[],afterSanitizeElements:[],afterSanitizeShadowDOM:[],beforeSanitizeAttributes:[],beforeSanitizeElements:[],beforeSanitizeShadowDOM:[],uponSanitizeAttribute:[],uponSanitizeElement:[],uponSanitizeShadowNode:[]}},r}();const qe=({iconType:t})=>{var l;const[i,o]=e.useState(""),s=e.useRef(),{params:a,colorTheme:n,config:c}=e.useContext(A),{bulkIconColor:d}=n,h=t?t.toLowerCase().trim():"";e.useEffect((()=>{(()=>{if(!s.current)return;const{width:e,height:t}=s.current.getBoundingClientRect(),r=null!=a&&a.isHorizontal?t>e:e>t;o(r?"bulk__sticker--album":"bulk__sticker--portrait")})()}),[]);let g=D.get(h);g=h&&(null===(l=g)||void 0===l?void 0:l.replace("$stickerColor",d));const p=Ke.sanitize(g),m=c.scaleType===w.ZOOM?"zoomed_bulk__sticker":"bulk__sticker";return r.default.createElement("div",{className:`${m} ${i}`,ref:s},h&&r.default.createElement("div",{className:"bulk__icon",dangerouslySetInnerHTML:{__html:p}}))};function Ye(e,t){void 0===t&&(t={});var r=t.insertAt;if(e&&"undefined"!=typeof document){var l=document.head||document.getElementsByTagName("head")[0],i=document.createElement("style");i.type="text/css","top"===r&&l.firstChild?l.insertBefore(i,l.firstChild):l.appendChild(i),i.styleSheet?i.styleSheet.cssText=e:i.appendChild(document.createTextNode(e))}}Ye(".bulk{position:absolute;transform-style:preserve-3d}.bulk__icon{display:block;height:100%;object-fit:contain;width:100%}.bulk__sticker_wrap{left:0;position:absolute;top:0;width:100%}.bulk__sticker,.zoomed_bulk__sticker{left:50%;position:absolute;top:50%;transform:translate(-50%,-50%)}.bulk__sticker--album{height:2em;width:4em}.bulk__sticker--portrait{height:4em;width:2em}");const Je={26:1,27:1,28:1},Xe=({id:t,type:l,align:i,width:o,height:s,iconType:a,xOffset:n,topOffset:c})=>{var d,h,g;const{params:p,config:m,colorTheme:C}=e.useContext(A),{bulkBaseColor:u,bulkCutColor:f,bulkIconColor:k,bulkFloorIconColor:v}=C,[b,L]=e.useState(0),x=e.useRef(null),{isSafari:M}=P(),[z,y]=e.useState((()=>{const e=Je[t]||.7,r=Math.floor(o*e),l=Math.floor(s*e),a=i===E.left?Math.max(n,0):"auto",d=i===E.right?Math.max(n,0):"auto",h=p.innerWidth/2,g=r/2,m=i===E.center&&n?Math.floor(n*e+h-g):"auto";return{top:c,left:i===E.left?a:m,right:d,width:r,height:l,transform:i===E.right?"scaleX(-1)":""}}));e.useEffect((()=>{(()=>{const e=z.width>z.height?z.width/10:z.height/10,t={...z};t.fontSize=`${Math.round(e)}px`,y(t)})(),(()=>{if(!x.current)return;const e=x.current.querySelector(".bulk-base");if(!e)return;const t=e.getBoundingClientRect(),r=null!=p&&p.isHorizontal?t.width:t.height,l=M&&(null==m?void 0:m.scaleType)===w.ZOOM?r:r*(null==p?void 0:p.antiScale),i=Math.round(z.height-.7*l);L(i)})()}),[]);let S=N.get(t);if(!S)return r.default.createElement("div",{className:"bulk",ref:x});S=null===(d=S)||void 0===d?void 0:d.replace("$baseColor",u),S=null===(h=S)||void 0===h?void 0:h.replace("$cutColor",f),S=null===(g=S)||void 0===g?void 0:g.split("$stickerColor").join(v||k);const T=Ke.sanitize(S);return r.default.createElement("div",{className:"bulk",style:z,ref:x,"data-testid":"jets-bulk"},r.default.createElement("div",{className:"bulk__icon",dangerouslySetInnerHTML:{__html:T}}),r.default.createElement("div",{className:"bulk__sticker_wrap",style:{height:`${b}px`}},r.default.createElement(qe,{iconType:a})))};Ye(".jets-btn{-webkit-font-smoothing:antialiased;background-color:#4071b9;border:1px solid #ccc;border-radius:2px;color:#fff;cursor:pointer;display:inline-block;font-family:inherit;font-size:14px;font-weight:600;height:40px;line-height:1.5;padding:9.5px 18px;text-align:center;text-decoration:none;vertical-align:middle}.jets-btn:disabled{background-color:#ccc!important;color:#000!important;cursor:not-allowed}");const Qe=({content:e,onClick:t,className:l,disabled:o,active:s,...a})=>r.default.createElement("button",i({},a,{className:l,onClick:t,disabled:o}),e);Qe.defaultProps={content:"Btn",className:"jets-btn",disabled:!1,active:!1,onClick:()=>{}};Ye(".deck-exit{height:72px;position:absolute;width:72px;z-index:-1}.deck-bulk__image{display:block;height:100%;object-fit:contain;width:100%}");const et=({type:t,topOffset:l})=>{const{colorTheme:i}=e.useContext(A),{exitIconUrlLeft:o,exitIconUrlRight:s}=i,a=!o||!s,[n,c]=e.useState((()=>({top:l,left:"left"===t?0:"auto",right:"right"===t?0:"auto"})));return r.default.createElement("div",{className:"deck-exit",style:n,"data-testid":"jets-exit"},a?r.default.createElement("span",{className:"deck-exit__image",dangerouslySetInnerHTML:{__html:"left"===t?'<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="114pt" height="114pt" viewBox="0 0 114 114" preserveAspectRatio="xMidYMid meet"><g transform="translate(0,114) scale(0.1,-0.1)" fill="#d00434" stroke="none"><path d="M635 922 c-115 -85 -269 -198 -341 -251 l-132 -96 344 -252 344 -252 0 129 0 129 95 -54 95 -54 0 354 0 354 -95 -54 -94 -53 -3 127 -3 127 -210 -154z"/></g></svg>':'<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="114pt" height="114pt" viewBox="0 0 114 114" preserveAspectRatio="xMidYMid meet"><g transform="translate(0,114) scale(0.1,-0.1)" fill="#d00434" stroke="none"><path d="M290 950 l0 -129 -95 54 -95 54 0 -354 0 -354 95 54 95 54 0 -129 0 -129 344 252 c334 245 343 252 322 268 -11 9 -166 122 -343 252 l-323 236 0 -129z"/></g></svg>'}}):r.default.createElement("img",{className:"deck-exit__image",src:"left"===t?o:s}))};Ye(".jets-deck--title{font-size:18px;font-weight:700;position:absolute;top:0}");const tt=({number:t,lang:l,localeKey:i})=>{const{config:o,params:s,colorTheme:a}=e.useContext(A),n=e.useRef(null),{isSafari:c}=P(),d=c&&(null==o?void 0:o.scaleType)===w.ZOOM,h={transform:d?void 0:`scale(${s.antiScale}) translateY(30px)`,zoom:d?s.antiScale:void 0,height:"80px",color:a.deckLabelTitleColor};return r.default.createElement("div",{className:"jets-deck--title",style:h,ref:n},z[l][i],": ",t)},rt={getSeatIcon(e,t){if(!e)return;const[r,l]=e.split("-"),i=parseInt(l,10);if(i<=4)switch(r){case"F":return lt.getTemplate(i,t);case"B":return it.getTemplate(i,t);case"P":return ot.getTemplate(t);default:return st.getTemplate(i,t)}return at.getTemplate(i,t)}},lt={getTemplate(e,t){return 1===e?this._type1(t):2===e?this._type2(t):3===e?this._type3(t):this._default(t)},_type1:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg">\n            <g class="seat" transform="scale(1)"><path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M127.05,89.33H12.38V13.83A9.67,9.67,0,0,1,22,4.17,455.22,455.22,0,0,1,69.72,1.5a436.21,436.21,0,0,1,47.71,2.67,9.67,9.67,0,0,1,9.63,9.66Z"></path>\n            <path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M12.38,89.33H127.05a0,0,0,0,1,0,0v36.26a7.59,7.59,0,0,1-7.59,7.59H20a7.59,7.59,0,0,1-7.59-7.59V89.33A0,0,0,0,1,12.38,89.33Z"></path><path stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.armrestColor}" class="bc" d="M13.84,131.7H3.08A3.09,3.09,0,0,1,0,128.61V33a3.09,3.09,0,0,1,3.08-3.08H13.84A3.09,3.09,0,0,1,16.93,33v95.64A3.09,3.09,0,0,1,13.84,131.7ZM140,128.61V33a3.09,3.09,0,0,0-3.08-3.08H126.57A3.09,3.09,0,0,0,123.49,33v95.64a3.09,3.09,0,0,0,3.08,3.08h10.34A3.09,3.09,0,0,0,140,128.61Z"></path>\n            <path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M118.59,146.5H20.86c-3.83,0-7-3.93-7-8.77v-10.2c0-4.84,3.12-8.77,7-8.77l.27,0A272.65,272.65,0,0,0,69.72,123a293.15,293.15,0,0,0,48.61-4.24l.25,0c3.83,0,7,3.93,7,8.77v10.2C125.54,142.57,122.42,146.5,118.59,146.5Z"></path>\n            <path stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" class="cf" d="M94.24,140.35H45.19a4.13,4.13,0,0,1-4.13-4.14V122a4.15,4.15,0,0,1,.11-.93l3.65-7a4.13,4.13,0,0,1,4-3.21H90.1a4.13,4.13,0,0,1,4,3.09L98.24,121a4.15,4.15,0,0,1,.13,1v14.2A4.13,4.13,0,0,1,94.24,140.35Z"></path>\n            </g>\n        </svg>`,_type2:e=>`<svg version="1.1" baseProfile="full" viewBox="0 0 110 100" xmlns="http://www.w3.org/2000/svg">\n      <g class="seat" transform="scale(2)"><rect fill="${e.armrestColor}" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <rect fill="${e.armrestColor}" x="49.02" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M44.94,1.07C40.15.71,33.1,0,26.87,0,21.37,0,13.66.47,9.35.93A4.41,4.41,0,0,0,5.41,5.31V33H49V5.47A4.41,4.41,0,0,0,44.94,1.07Z" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M47.56,37.58h-40a2.85,2.85,0,0,1-2.85-2.85V31.43a2.85,2.85,0,0,1,2.85-2.85h.11A139.86,139.86,0,0,0,27.56,30a150.41,150.41,0,0,0,19.9-1.38h.1a2.85,2.85,0,0,1,2.85,2.85v3.31A2.85,2.85,0,0,1,47.56,37.58Z" />\n        <rect fill="rgb(255, 255, 255)" x="19.25" y="28.88" width="15.92" height="5.47" rx="2.02" ry="2.02" />\n      </g></svg>`,_type3:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg">\n      <g class="seat" transform="scale(2)"><rect fill="${e.armrestColor}" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <rect fill="${e.armrestColor}" x="49.02" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M44.94,1.07C40.15.71,33.1,0,26.87,0,21.37,0,13.66.47,9.35.93A4.41,4.41,0,0,0,5.41,5.31V33H49V5.47A4.41,4.41,0,0,0,44.94,1.07Z" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M47.56,37.58h-40a2.85,2.85,0,0,1-2.85-2.85V31.43a2.85,2.85,0,0,1,2.85-2.85h.11A139.86,139.86,0,0,0,27.56,30a150.41,150.41,0,0,0,19.9-1.38h.1a2.85,2.85,0,0,1,2.85,2.85v3.31A2.85,2.85,0,0,1,47.56,37.58Z" />\n        <rect fill="rgb(255, 255, 255)" x="19.25" y="28.88" width="15.92" height="5.47" rx="2.02" ry="2.02" />\n      </g></svg>`,_default:e=>`<svg version="1.1" baseProfile="full" viewBox="0 0 150 220" xmlns="http://www.w3.org/2000/svg">\n      <g class="seat" transform="scale(1.2)">\n      <path class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M89.24,20c-.34-7.62-6.46-6.61-9.52-10.33S78.71.5,70.55.5H29.75c-8.16,0-6.12,5.42-9.18,9.15S11.4,12.37,11.06,20s0,13.74,0,13.74H89.24S89.58,27.61,89.24,20Z"></path>\n      <path class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M85,72.8H16.81a6.89,6.89,0,0,1-6.88-6.86V37.14a6.89,6.89,0,0,1,6.88-6.86,326.72,326.72,0,0,1,34.08-1.9A313.07,313.07,0,0,1,85,30.27a6.89,6.89,0,0,1,6.88,6.86v28.8A6.89,6.89,0,0,1,85,72.8Z"></path>\n      <rect class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" x="9.93" y="71.69" width="81.91" height="60.75" rx="7.59" ry="7.59"></rect>\n      <path class="bc" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.armrestColor}" d="M9,142.15H3.08A3.09,3.09,0,0,1,0,139.07V84.52a3.09,3.09,0,0,1,3.08-3.08H9a3.09,3.09,0,0,1,3.08,3.08v54.55A3.09,3.09,0,0,1,9,142.15Zm91-3.08V84.52a3.09,3.09,0,0,0-3.08-3.08H91.29a3.09,3.09,0,0,0-3.08,3.08v54.55a3.09,3.09,0,0,0,3.08,3.08h5.63A3.09,3.09,0,0,0,100,139.07Z"></path>\n      <path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M84.71,145.5H14.9c-2.74,0-5-2.8-5-6.23V132c0-3.44,2.23-6.23,5-6.23l.19,0a195.67,195.67,0,0,0,34.71,3,210.38,210.38,0,0,0,34.72-3l.18,0c2.74,0,5,2.8,5,6.23v7.25C89.67,142.7,87.44,145.5,84.71,145.5Z"></path>\n      <path class="cf" fill="white" stroke="white" d="M67.32,141.13h-35a2.94,2.94,0,0,1-2.95-2.94V128.06a2.93,2.93,0,0,1,.08-.66L32,116.12a3,3,0,0,1,2.87-2.28H64.35a3,3,0,0,1,2.85,2.2l3,11.31a2.93,2.93,0,0,1,.1.74v10.09A2.94,2.94,0,0,1,67.32,141.13Z"></path>\n      </g></svg>`},it={getTemplate(e,t){return 1===e?this._type1(t):4===e?this._type4(t):this._default(t)},_type1:e=>`<svg version="1.1" baseProfile="full" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">\n            <g class="seat" transform="scale(1)">\n                <path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M127.05,89.33H12.38V13.83A9.67,9.67,0,0,1,22,4.17,455.22,455.22,0,0,1,69.72,1.5a436.21,436.21,0,0,1,47.71,2.67,9.67,9.67,0,0,1,9.63,9.66Z"></path>\n                <path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M12.38,89.33H127.05a0,0,0,0,1,0,0v36.26a7.59,7.59,0,0,1-7.59,7.59H20a7.59,7.59,0,0,1-7.59-7.59V89.33A0,0,0,0,1,12.38,89.33Z"></path><path stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.armrestColor}" class="bc" d="M13.84,131.7H3.08A3.09,3.09,0,0,1,0,128.61V33a3.09,3.09,0,0,1,3.08-3.08H13.84A3.09,3.09,0,0,1,16.93,33v95.64A3.09,3.09,0,0,1,13.84,131.7ZM140,128.61V33a3.09,3.09,0,0,0-3.08-3.08H126.57A3.09,3.09,0,0,0,123.49,33v95.64a3.09,3.09,0,0,0,3.08,3.08h10.34A3.09,3.09,0,0,0,140,128.61Z"></path>\n                <path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M118.59,146.5H20.86c-3.83,0-7-3.93-7-8.77v-10.2c0-4.84,3.12-8.77,7-8.77l.27,0A272.65,272.65,0,0,0,69.72,123a293.15,293.15,0,0,0,48.61-4.24l.25,0c3.83,0,7,3.93,7,8.77v10.2C125.54,142.57,122.42,146.5,118.59,146.5Z"></path><path stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" class="cf" d="M94.24,140.35H45.19a4.13,4.13,0,0,1-4.13-4.14V122a4.15,4.15,0,0,1,.11-.93l3.65-7a4.13,4.13,0,0,1,4-3.21H90.1a4.13,4.13,0,0,1,4,3.09L98.24,121a4.15,4.15,0,0,1,.13,1v14.2A4.13,4.13,0,0,1,94.24,140.35Z"></path>\n            </g>\n        </svg>`,_type4:e=>`<svg version="1.1" baseProfile="full" width="122" height="220" xmlns="http://www.w3.org/2000/svg"><g class="seat" transform="scale(1.2)"><path class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M89.24,20c-.34-7.62-6.46-6.61-9.52-10.33S78.71.5,70.55.5H29.75c-8.16,0-6.12,5.42-9.18,9.15S11.4,12.37,11.06,20s0,13.74,0,13.74H89.24S89.58,27.61,89.24,20Z"></path><path class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M85,72.8H16.81a6.89,6.89,0,0,1-6.88-6.86V37.14a6.89,6.89,0,0,1,6.88-6.86,326.72,326.72,0,0,1,34.08-1.9A313.07,313.07,0,0,1,85,30.27a6.89,6.89,0,0,1,6.88,6.86v28.8A6.89,6.89,0,0,1,85,72.8Z"></path><rect class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" x="9.93" y="71.69" width="81.91" height="60.75" rx="7.59" ry="7.59"></rect><path class="bc" stroke="${e.strokeColor}" fill="${e.armrestColor}" stroke-width="${e.strokeWidth}" d="M9,142.15H3.08A3.09,3.09,0,0,1,0,139.07V84.52a3.09,3.09,0,0,1,3.08-3.08H9a3.09,3.09,0,0,1,3.08,3.08v54.55A3.09,3.09,0,0,1,9,142.15Zm91-3.08V84.52a3.09,3.09,0,0,0-3.08-3.08H91.29a3.09,3.09,0,0,0-3.08,3.08v54.55a3.09,3.09,0,0,0,3.08,3.08h5.63A3.09,3.09,0,0,0,100,139.07Z"></path><path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M84.71,145.5H14.9c-2.74,0-5-2.8-5-6.23V132c0-3.44,2.23-6.23,5-6.23l.19,0a195.67,195.67,0,0,0,34.71,3,210.38,210.38,0,0,0,34.72-3l.18,0c2.74,0,5,2.8,5,6.23v7.25C89.67,142.7,87.44,145.5,84.71,145.5Z"></path><path class="cf" fill="white" stroke="white" d="M67.32,141.13h-35a2.94,2.94,0,0,1-2.95-2.94V128.06a2.93,2.93,0,0,1,.08-.66L32,116.12a3,3,0,0,1,2.87-2.28H64.35a3,3,0,0,1,2.85,2.2l3,11.31a2.93,2.93,0,0,1,.1.74v10.09A2.94,2.94,0,0,1,67.32,141.13Z"></path></g></svg>`,_default:e=>`<svg version="1.1" baseProfile="full" viewBox="0 0 110 100" xmlns="http://www.w3.org/2000/svg">\n        <g class="seat" transform="scale(2)">\n          <rect fill="${e.armrestColor}" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n          <rect fill="${e.armrestColor}" x="49.02" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" /><path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M44.94,1.07C40.15.71,33.1,0,26.87,0,21.37,0,13.66.47,9.35.93A4.41,4.41,0,0,0,5.41,5.31V33H49V5.47A4.41,4.41,0,0,0,44.94,1.07Z" />\n          <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M47.56,37.58h-40a2.85,2.85,0,0,1-2.85-2.85V31.43a2.85,2.85,0,0,1,2.85-2.85h.11A139.86,139.86,0,0,0,27.56,30a150.41,150.41,0,0,0,19.9-1.38h.1a2.85,2.85,0,0,1,2.85,2.85v3.31A2.85,2.85,0,0,1,47.56,37.58Z" />\n          <rect fill="rgb(255, 255, 255)" x="19.25" y="28.88" width="15.92" height="5.47" rx="2.02" ry="2.02" />\n      </g></svg>`},ot={getTemplate:e=>`<svg version="1.1" baseProfile="full" viewBox="0 -3 110 100" width="110" height="100" xmlns="http://www.w3.org/2000/svg">\n        <g class="seat" transform="scale(2)"><rect fill="${e.armrestColor}" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <rect fill="${e.armrestColor}" x="49.02" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M44.94,1.07C40.15.71,33.1,0,26.87,0,21.37,0,13.66.47,9.35.93A4.41,4.41,0,0,0,5.41,5.31V33H49V5.47A4.41,4.41,0,0,0,44.94,1.07Z" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M47.56,37.58h-40a2.85,2.85,0,0,1-2.85-2.85V31.43a2.85,2.85,0,0,1,2.85-2.85h.11A139.86,139.86,0,0,0,27.56,30a150.41,150.41,0,0,0,19.9-1.38h.1a2.85,2.85,0,0,1,2.85,2.85v3.31A2.85,2.85,0,0,1,47.56,37.58Z" />\n        <rect fill="rgb(255, 255, 255)" x="19.25" y="28.88" width="15.92" height="5.47" rx="2.02" ry="2.02" />\n        </g></svg>`},st={getTemplate(e,t){return 4===e?this._type4(t):this._default(t)},_type4:e=>`<svg version="1.1" baseProfile="full" width="122" height="220" xmlns="http://www.w3.org/2000/svg"><g class="seat" transform="scale(1.2)"><path class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M89.24,20c-.34-7.62-6.46-6.61-9.52-10.33S78.71.5,70.55.5H29.75c-8.16,0-6.12,5.42-9.18,9.15S11.4,12.37,11.06,20s0,13.74,0,13.74H89.24S89.58,27.61,89.24,20Z"></path><path class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M85,72.8H16.81a6.89,6.89,0,0,1-6.88-6.86V37.14a6.89,6.89,0,0,1,6.88-6.86,326.72,326.72,0,0,1,34.08-1.9A313.07,313.07,0,0,1,85,30.27a6.89,6.89,0,0,1,6.88,6.86v28.8A6.89,6.89,0,0,1,85,72.8Z"></path><rect class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" x="9.93" y="71.69" width="81.91" height="60.75" rx="7.59" ry="7.59"></rect><path class="bc" stroke="${e.strokeColor}" fill="${e.armrestColor}" stroke-width="${e.strokeWidth}" d="M9,142.15H3.08A3.09,3.09,0,0,1,0,139.07V84.52a3.09,3.09,0,0,1,3.08-3.08H9a3.09,3.09,0,0,1,3.08,3.08v54.55A3.09,3.09,0,0,1,9,142.15Zm91-3.08V84.52a3.09,3.09,0,0,0-3.08-3.08H91.29a3.09,3.09,0,0,0-3.08,3.08v54.55a3.09,3.09,0,0,0,3.08,3.08h5.63A3.09,3.09,0,0,0,100,139.07Z"></path><path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M84.71,145.5H14.9c-2.74,0-5-2.8-5-6.23V132c0-3.44,2.23-6.23,5-6.23l.19,0a195.67,195.67,0,0,0,34.71,3,210.38,210.38,0,0,0,34.72-3l.18,0c2.74,0,5,2.8,5,6.23v7.25C89.67,142.7,87.44,145.5,84.71,145.5Z"></path><path class="cf" fill="white" stroke="white" d="M67.32,141.13h-35a2.94,2.94,0,0,1-2.95-2.94V128.06a2.93,2.93,0,0,1,.08-.66L32,116.12a3,3,0,0,1,2.87-2.28H64.35a3,3,0,0,1,2.85,2.2l3,11.31a2.93,2.93,0,0,1,.1.74v10.09A2.94,2.94,0,0,1,67.32,141.13Z"></path></g></svg>`,_default:e=>`<svg version="1.1" baseProfile="full" viewBox="0 -3 110 100" width="86" height="100" xmlns="http://www.w3.org/2000/svg">\n        <g class="seat" transform="scale(2)">\n        <rect fill="${e.armrestColor}" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <rect fill="${e.armrestColor}" x="49.02" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M44.94,1.07C40.15.71,33.1,0,26.87,0,21.37,0,13.66.47,9.35.93A4.41,4.41,0,0,0,5.41,5.31V33H49V5.47A4.41,4.41,0,0,0,44.94,1.07Z" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M47.56,37.58h-40a2.85,2.85,0,0,1-2.85-2.85V31.43a2.85,2.85,0,0,1,2.85-2.85h.11A139.86,139.86,0,0,0,27.56,30a150.41,150.41,0,0,0,19.9-1.38h.1a2.85,2.85,0,0,1,2.85,2.85v3.31A2.85,2.85,0,0,1,47.56,37.58Z" />\n        <rect fill="rgb(255, 255, 255)" x="19.25" y="28.88" width="15.92" height="5.47" rx="2.02" ry="2.02" />\n        </g></svg>`},at={_mapping:{5:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat"> <polygon fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="4.1,43 67.1,43 115.6,188 81.1,197.7 27.7,182.8 3.3,161.5"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M145.8,138.9l53.6-3.3v42.5h-19.2c-0.5,0-1-0.2-1.5-0.5l-43-28.5L145.8,138.9z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M189.5,56.2c0.5-0.9,1.3-1.4,2.3-1.4l7.6-0.1v87.6l-63.1,1.6L189.5,56.2z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M6.1,119.6L29,81.1l107,63.7l-22.9,38.3c-0.9,1.5-2.6,2.4-4.4,2.1c-7.2-1-27.2-5.4-56-21.9 c-29.2-16.6-42.2-32.9-46.3-38.9C5.3,123,5.2,121.1,6.1,119.6L6.1,119.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M27.7,83.3L75.6,2.7c1.1-1.9,3.6-2.6,5.6-1.8C90.6,5,116.8,16.4,134,26.6s39.7,27.7,47.6,34.2 c1.6,1.4,2.1,3.9,1,5.8l-47.9,80.5L27.7,83.3z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M45.5,115.2l-2.8,4.6l-0.4,0.7l-2.8,4.6c-0.7,0.9-0.4,2.2,0.3,2.9c3.2,3.1,11.9,11.2,23.4,18 c11.6,6.9,22.7,10.7,27,12c1,0.4,2.1,0,2.7-1l2.8-4.6l0.4-0.7l2.8-4.6c0.7-0.9,0.4-2.2-0.3-2.9c-3.2-3.1-11.8-11.1-23.4-18 c-11.6-6.9-22.7-10.7-27-12C47.2,113.9,46.1,114.3,45.5,115.2z"/> <path fill="rgb(235, 235, 235)" d="M5,42v107.4c0,2.4,0.9,4.7,2.5,6.6c8.7,10,21,22.2,33.5,27.1c18.4,7.3,51.5,7.1,64.8,6.7c2.1-0.1,3.9-1.1,5-2.9 l24-39.6l6.1-10H200v10h-53.6l-27.1,44.8c-2.8,4.7-7.8,7.6-13.2,7.7c-2.8,0.1-6.4,0.2-10.6,0.2c-16.7,0-42.1-1.2-58.2-7.5 C23,186.8,9.4,173.6,0,162.8l0-8.1L0,42H5z"/> </g> </svg>`,6:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <polygon fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="4.1,43 67.1,43 115.6,188 81.1,197.7 27.7,182.8 3.3,161.5"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M145.8,138.9l53.6-3.3v42.5h-19.2c-0.5,0-1-0.2-1.5-0.5l-43-28.5L145.8,138.9z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M189.5,56.2c0.5-0.9,1.3-1.4,2.3-1.4l7.6-0.1v87.6l-63.1,1.6L189.5,56.2z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M6.1,119.6L29,81.1l107,63.7l-22.9,38.3c-0.9,1.5-2.6,2.4-4.4,2.1c-7.2-1-27.2-5.4-56-21.9 c-29.2-16.6-42.2-32.9-46.3-38.9C5.3,123,5.2,121.1,6.1,119.6L6.1,119.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M27.7,83.3L75.6,2.7c1.1-1.9,3.6-2.6,5.6-1.8C90.6,5,116.8,16.4,134,26.6s39.7,27.7,47.6,34.2 c1.6,1.4,2.1,3.9,1,5.8l-47.9,80.5L27.7,83.3z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M45.5,115.2l-2.8,4.6l-0.4,0.7l-2.8,4.6c-0.7,0.9-0.4,2.2,0.3,2.9c3.2,3.1,11.9,11.2,23.4,18 c11.6,6.9,22.7,10.7,27,12c1,0.4,2.1,0,2.7-1l2.8-4.6l0.4-0.7l2.8-4.6c0.7-0.9,0.4-2.2-0.3-2.9c-3.2-3.1-11.8-11.1-23.4-18 c-11.6-6.9-22.7-10.7-27-12C47.2,113.9,46.1,114.3,45.5,115.2z"/> <path fill="rgb(235, 235, 235)" d="M5,42v107.4c0,2.4,0.9,4.7,2.5,6.6c8.7,10,21,22.2,33.5,27.1c18.4,7.3,51.5,7.1,64.8,6.7c2.1-0.1,3.9-1.1,5-2.9 l24-39.6l6.1-10H200v10h-53.6l-27.1,44.8c-2.8,4.7-7.8,7.6-13.2,7.7c-2.8,0.1-6.4,0.2-10.6,0.2c-16.7,0-42.1-1.2-58.2-7.5 C23,186.8,9.4,173.6,0,162.8l0-8.1L0,42H5z"/> </g> </svg>`,7:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 200" width="140" height="200"> <g class="seat"> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M3.2,139.6c-1.4,0-2.6-1.4-2.6-3.3V3.9c0-1.9,1.1-3.3,2.6-3.3h10.1c1.4,0,2.6,1.4,2.6,3.3v132.5 c0,1.8-1.1,3.3-2.6,3.3L3.2,139.6L3.2,139.6z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M126.7,139.6c-1.4,0-2.6-1.4-2.6-3.3V3.9c0-1.8,1.1-3.3,2.6-3.3h10.1c1.4,0,2.6,1.4,2.6,3.3v132.5 c0,1.8-1.1,3.3-2.6,3.3L126.7,139.6L126.7,139.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M123.9,98.4H15.8V17.3c0-1.9,1.4-3.5,3.4-3.8c8.8-1.2,33.3-4.3,50.7-4.3s42,3.2,50.8,4.3 c1.9,0.3,3.4,1.9,3.4,3.8L123.9,98.4C124,98.4,123.9,98.4,123.9,98.4z"/> <rect x="15.9" y="138.3" fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" width="108.1" height="39"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M123.9,188.2c0,1.6-1,3.1-2.5,3.5c-6.1,2.3-23.6,7.7-51.5,7.7s-45.4-5.4-51.5-7.7c-1.5-0.6-2.5-2-2.5-3.5v-11 H124L123.9,188.2L123.9,188.2z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M123.9,145c0,1.5-1,2.9-2.3,3.4c-5.7,2.7-22.7,9-51.8,8.4c-28.8-0.5-45.7-6.1-51.5-8.5c-1.4-0.6-2.4-2-2.4-3.5 V87.7H124L123.9,145L123.9,145z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M105.4,112.6c-5.3-1.2-19.2-4.2-35.4-4.2s-30.2,3-35.4,4.2c-1.2,0.3-2.2,1.4-2.2,2.8v6.5v1v6.5 c0,1.3,0.9,2.5,2.2,2.8c5.3,1.2,19.2,4.2,35.4,4.2s30.2-3,35.4-4.2c1.2-0.3,2.2-1.4,2.2-2.8v-6.5v-1v-6.5 C107.6,114,106.8,112.9,105.4,112.6z"/> </g> </svg>`,8:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 200" width="150" height="200"> <g class="seat"> <polygon fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="108.7,161.8 138.7,170 149.3,130.6 149.3,29.8 145.5,28.8 "/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M57.8,146.8l81.5,21.3l-7.8,29c-0.3,1.2-1.3,2-2.6,2.1c-5.1,0.4-19.3,0.7-40.4-5.1s-33.2-13.3-37.2-16.2 c-1.1-0.7-1.5-2-1.2-3.1L57.8,146.8z"/> <polygon fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="0.6,130.7 0.6,30 29.5,38 12.1,133.8 "/> <path fill="rgb(235, 235, 235)" d="M38.3,2.4L0.8,128c-0.5,1.8,0.2,3.3,1.5,3.7l7.7,2.1l1.8,0.5l86.8,23.5l1.7,0.5l7.8,2.1 c1.4,0.4,2.9-0.7,3.4-2.4L149,32.4c0.5-1.8-0.2-3.3-1.5-3.7l-9.6-2.5c-1.4-0.4-2.9,0.7-3.4,2.4l-31,103.8l-81.8-22.2l31-103.8 c0.5-1.8-0.2-3.3-1.5-3.7l-9.6-2.6C40.3-0.4,38.8,0.7,38.3,2.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M21,115l12.4-41.6l81.4,22.3l-12.3,41.4c-0.4,1.2-1.4,2-2.6,2.1c-4.9,0.6-18.9,1.2-40.7-4.5 C37.1,129,25.7,121,22,117.9C21.1,117.2,20.7,116.1,21,115L21,115z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M33.3,73.6l17.2-58.9c0.4-1.4,1.9-2.2,3.4-2.1c6.9,1,26.1,3.8,39.2,7.3s31.8,10.8,38.2,13.6 c1.4,0.7,2.2,2,1.7,3.5l-18.3,58.8L33.3,73.6C33.3,73.6,33.2,73.5,33.3,73.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M39.7,96.9l-1.4,4.7l-0.2,0.7l-1.4,4.7c-0.4,1,0.2,2,1.1,2.5c3.7,2,13.4,7,25.7,10.3s23.3,4,27.6,4.2 c1.1,0,2-0.6,2.2-1.6l1.4-4.7l0.2-0.7l1.4-4.7c0.4-1-0.2-2-1.1-2.5c-3.6-2-13.4-7-25.6-10.3c-12.3-3.3-23.3-4-27.6-4.2 C41.1,95.3,40.2,96,39.7,96.9z"/> </g> </svg>`,9:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 200" width="150" height="200"> <g class="seat" transform="scale(-1, 1) translate(-150,0)"> <polygon fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="108.7,161.8 138.7,170 149.3,130.6 149.3,29.8 145.5,28.8 "/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M57.8,146.8l81.5,21.3l-7.8,29c-0.3,1.2-1.3,2-2.6,2.1c-5.1,0.4-19.3,0.7-40.4-5.1s-33.2-13.3-37.2-16.2 c-1.1-0.7-1.5-2-1.2-3.1L57.8,146.8z"/> <polygon fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="0.6,130.7 0.6,30 29.5,38 12.1,133.8 "/> <path fill="rgb(235, 235, 235)" d="M38.3,2.4L0.8,128c-0.5,1.8,0.2,3.3,1.5,3.7l7.7,2.1l1.8,0.5l86.8,23.5l1.7,0.5l7.8,2.1 c1.4,0.4,2.9-0.7,3.4-2.4L149,32.4c0.5-1.8-0.2-3.3-1.5-3.7l-9.6-2.5c-1.4-0.4-2.9,0.7-3.4,2.4l-31,103.8l-81.8-22.2l31-103.8 c0.5-1.8-0.2-3.3-1.5-3.7l-9.6-2.6C40.3-0.4,38.8,0.7,38.3,2.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M21,115l12.4-41.6l81.4,22.3l-12.3,41.4c-0.4,1.2-1.4,2-2.6,2.1c-4.9,0.6-18.9,1.2-40.7-4.5 C37.1,129,25.7,121,22,117.9C21.1,117.2,20.7,116.1,21,115L21,115z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M33.3,73.6l17.2-58.9c0.4-1.4,1.9-2.2,3.4-2.1c6.9,1,26.1,3.8,39.2,7.3s31.8,10.8,38.2,13.6 c1.4,0.7,2.2,2,1.7,3.5l-18.3,58.8L33.3,73.6C33.3,73.6,33.2,73.5,33.3,73.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M39.7,96.9l-1.4,4.7l-0.2,0.7l-1.4,4.7c-0.4,1,0.2,2,1.1,2.5c3.7,2,13.4,7,25.7,10.3s23.3,4,27.6,4.2 c1.1,0,2-0.6,2.2-1.6l1.4-4.7l0.2-0.7l1.4-4.7c0.4-1-0.2-2-1.1-2.5c-3.6-2-13.4-7-25.6-10.3c-12.3-3.3-23.3-4-27.6-4.2 C41.1,95.3,40.2,96,39.7,96.9z"/> </g> </svg>`,10:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="200" height="150"> <g class="seat"> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M31.8,3.2c-0.3-1.3-1.5-2.3-2.9-2.3L4,0.6V102h49.7L31.8,3.2z"/> <rect x="41.5" y="57.4" transform="matrix(2.089475e-03 -1 1 2.089475e-03 -56.8623 190.4811)" fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" width="51" height="132.6"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M55.7,100.5l22.6,25.2l39.7,21.6l40.1-11.3l41.3-26.7L199.3,43c0-1.7-1.3-3-3-3H44.2L55.7,100.5z"/> <path fill="rgb(235, 235, 235)" d="M98.7,146.2c-27.6-9.9-38.1-24.9-43.3-38.4c-6.3-16.4-16-68.3-16-68.3l10.3-0.2c0,0,10.2,49.5,15.3,65.6 c0.8,2.6,15.3,24,37.1,31.9c22.2,8,43.3-1.9,45.2-2.8l42.7-26.9V65.4c0-1.7,1.3-3,3-3h4c1.7,0,3,1.3,3,3v42.8 c0,2.8-1.4,5.3-3.7,6.8l-43.9,27.6l-0.3,0.2c-0.8,0.4-14,7.2-31.6,7.2C113.7,150,106.3,149,98.7,146.2z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M144.5,133.8c-0.5,1.1-1.5,1.8-2.5,1.9c-5,0.4-18.9,0.6-40-7.3c-20.9-7.9-31.7-16.3-35.3-19.6 c-0.9-0.8-1.2-2-0.8-3.1l16.5-46.2l78.6,28L144.5,133.8L144.5,133.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M81.3,62.6l21.4-60c0.5-1.5,1.9-2.2,3.4-1.9c6.7,1.4,25.4,5.5,37.9,10c12.6,4.5,29.7,13.2,35.8,16.3 c1.4,0.7,2,2.3,1.5,3.6l-21.4,60L81.3,62.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M136.8,108c-3.3-2.2-12.1-7.6-23.3-11.6c-11.1-4-21.5-5.4-25.4-5.8C87.2,90.5,86.3,91,86,92l-1.6,4.5l-0.3,0.7 l-1.6,4.5c-0.3,0.9,0,1.9,0.8,2.4c3.3,2.2,12.1,7.6,23.3,11.6s21.5,5.4,25.4,5.8c0.9,0.1,1.8-0.4,2.1-1.4l1.6-4.5l0.3-0.7l1.6-4.5 C137.9,109.6,137.6,108.5,136.8,108z"/> <rect fill="rgb(235, 235, 235)" width="5" height="150"/> </g> </svg>`,11:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="200" height="150"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M31.8,3.2c-0.3-1.3-1.5-2.3-2.9-2.3L4,0.6V102h49.7L31.8,3.2z"/> <rect x="41.5" y="57.4" transform="matrix(2.089475e-03 -1 1 2.089475e-03 -56.8623 190.4811)" fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" width="51" height="132.6"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M55.7,100.5l22.6,25.2l39.7,21.6l40.1-11.3l41.3-26.7L199.3,43c0-1.7-1.3-3-3-3H44.2L55.7,100.5z"/> <g> <path fill="rgb(235, 235, 235)" d="M98.7,146.2c-27.6-9.9-38.1-24.9-43.3-38.4c-6.3-16.4-16-68.3-16-68.3l10.3-0.2c0,0,10.2,49.5,15.3,65.6 c0.8,2.6,15.3,24,37.1,31.9c22.2,8,43.3-1.9,45.2-2.8l42.7-26.9V65.4c0-1.7,1.3-3,3-3h4c1.7,0,3,1.3,3,3v42.8 c0,2.8-1.4,5.3-3.7,6.8l-43.9,27.6l-0.3,0.2c-0.8,0.4-14,7.2-31.6,7.2C113.7,150,106.3,149,98.7,146.2z"/> </g> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M144.5,133.8c-0.5,1.1-1.5,1.8-2.5,1.9c-5,0.4-18.9,0.6-40-7.3c-20.9-7.9-31.7-16.3-35.3-19.6 c-0.9-0.8-1.2-2-0.8-3.1l16.5-46.2l78.6,28L144.5,133.8L144.5,133.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M81.3,62.6l21.4-60c0.5-1.5,1.9-2.2,3.4-1.9c6.7,1.4,25.4,5.5,37.9,10c12.6,4.5,29.7,13.2,35.8,16.3 c1.4,0.7,2,2.3,1.5,3.6l-21.4,60L81.3,62.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M136.8,108c-3.3-2.2-12.1-7.6-23.3-11.6c-11.1-4-21.5-5.4-25.4-5.8C87.2,90.5,86.3,91,86,92l-1.6,4.5l-0.3,0.7 l-1.6,4.5c-0.3,0.9,0,1.9,0.8,2.4c3.3,2.2,12.1,7.6,23.3,11.6s21.5,5.4,25.4,5.8c0.9,0.1,1.8-0.4,2.1-1.4l1.6-4.5l0.3-0.7l1.6-4.5 C137.9,109.6,137.6,108.5,136.8,108z"/> <g> <rect fill="rgb(235, 235, 235)" width="5" height="150"/> </g> </g> </svg>`,12:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 185" width="200" height="185"> <g class="seat"> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M3.6,116v63.2h65l31.4-15.7l35.4-88.1l64-40l-0.2-10.2c0,0-0.4-18.4-8.8-23.1s-17,2.8-17,2.8l-52.7,43.3 c-0.9,0.7-1.6,1.6-2.2,2.5L77.1,113L3.6,116z"/> <path fill="rgb(235, 235, 235)" d="M5,37v148H0V37c0-0.6,0.4-1,1-1h3C4.5,36,5,36.4,5,37z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M88.1,142.7L88.1,142.7c-0.1,1.2-0.8,2.2-1.8,2.7c-4.5,2-17.6,6.9-40.1,6.5c-22.3-0.4-35.3-4.7-39.8-6.6 c-1.1-0.5-1.8-1.5-1.8-2.7V93.5h83.5V142.7L88.1,142.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M4.6,96.9V33.2c0-1.5,1.1-2.7,2.6-2.9C14,29.4,33,27,46.3,27c13.4,0,32.4,2.4,39.2,3.3c1.5,0.2,2.6,1.5,2.6,2.9 v63.7H4.6L4.6,96.9z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M72.2,121.1c-3.9-0.9-14-3.1-25.9-3.1c-11.8,0-22.1,2.2-25.9,3.1c-0.9,0.2-1.5,1-1.5,2v4.7v0.8v4.7 c0,1,0.6,1.7,1.5,2c3.9,0.9,13.9,3.1,25.9,3.1s22.1-2.2,25.9-3.1c0.9-0.2,1.5-1,1.5-2v-4.7v-0.8v-4.7 C73.7,122.2,73.1,121.3,72.2,121.1z"/> <polygon fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="136.6,72.4 191.6,39.7 191.3,87.8 "/> <path fill="rgb(235, 235, 235)" d="M0,184.9v-9.5h62c9.4,0,31.7-8,34.8-16.8l32.6-78.4c2.5-7.5,10.6-11.9,18.3-9.8l42.8,12.4V39.7L200,34v51.4 c0,2.4-1,4.6-2.9,6s-4.3,1.9-6.5,1.3l-45.2-13.1c-2.8-0.8-5.9,0.9-6.8,3.7L106,161.8c-4.2,12.6-30.3,23.2-43.6,23.2L0,184.9 L0,184.9z"/> </g> </svg>`,13:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 185" width="200" height="185"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M3.6,116v63.2h65l31.4-15.7l35.4-88.1l64-40l-0.2-10.2c0,0-0.4-18.4-8.8-23.1s-17,2.8-17,2.8l-52.7,43.3 c-0.9,0.7-1.6,1.6-2.2,2.5L77.1,113L3.6,116z"/> <path fill="rgb(235, 235, 235)" d="M5,37v148H0V37c0-0.6,0.4-1,1-1h3C4.5,36,5,36.4,5,37z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M88.1,142.7L88.1,142.7c-0.1,1.2-0.8,2.2-1.8,2.7c-4.5,2-17.6,6.9-40.1,6.5c-22.3-0.4-35.3-4.7-39.8-6.6 c-1.1-0.5-1.8-1.5-1.8-2.7V93.5h83.5V142.7L88.1,142.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M4.6,96.9V33.2c0-1.5,1.1-2.7,2.6-2.9C14,29.4,33,27,46.3,27c13.4,0,32.4,2.4,39.2,3.3c1.5,0.2,2.6,1.5,2.6,2.9 v63.7H4.6L4.6,96.9z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M72.2,121.1c-3.9-0.9-14-3.1-25.9-3.1c-11.8,0-22.1,2.2-25.9,3.1c-0.9,0.2-1.5,1-1.5,2v4.7v0.8v4.7 c0,1,0.6,1.7,1.5,2c3.9,0.9,13.9,3.1,25.9,3.1s22.1-2.2,25.9-3.1c0.9-0.2,1.5-1,1.5-2v-4.7v-0.8v-4.7 C73.7,122.2,73.1,121.3,72.2,121.1z"/> <polygon fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="136.6,72.4 191.6,39.7 191.3,87.8 "/> <path fill="rgb(235, 235, 235)" d="M0,184.9v-9.5h62c9.4,0,31.7-8,34.8-16.8l32.6-78.4c2.5-7.5,10.6-11.9,18.3-9.8l42.8,12.4V39.7L200,34v51.4 c0,2.4-1,4.6-2.9,6s-4.3,1.9-6.5,1.3l-45.2-13.1c-2.8-0.8-5.9,0.9-6.8,3.7L106,161.8c-4.2,12.6-30.3,23.2-43.6,23.2L0,184.9 L0,184.9z"/> </g> </svg>`,14:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" width="120" height="150"> <g class="seat"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M115.6,129c0,0,6.3,20.4-55.5,20.4S4.6,129,4.6,129l5.8-42.7h99.4L115.6,129z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M90.9,109.6c-4.5-1.1-16.2-3.6-30-3.6s-25.7,2.5-30,3.6c-1.1,0.3-1.8,1.2-1.8,2.4v5.6v0.8v5.6 c0,1.2,0.8,2.1,1.8,2.4c4.5,1.1,16.2,3.6,30,3.6s25.7-2.5,30-3.6c1.1-0.3,1.8-1.2,1.8-2.4v-5.6v-0.8V112 C92.7,110.9,91.9,109.9,90.9,109.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M10.4,86.5V13.9c0-1.8,1.3-3.4,3.3-3.7c3.5-0.5,24.7-4.8,46.4-4.8c13,0,22.3,1.6,46.5,4.8 c1.8,0.3,3.2,1.8,3.2,3.7v72.6H10.4z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M2.4,81.7c-1.1,0-1.8-1-1.8-2.1V2.7c0-1.2,0-2.1,0-2.1H14c1.7,0,2.5,0.9,2.5,2v17.3l-3.4,9.7 l-0.9,49.9c0,1.2-1.7,2.2-2.8,2.2H2.4z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M110.6,81.7c-1.1,0-2.8-1.1-2.8-2.2 l-0.9-49.9l-3.4-9.7V2.6c0-1.2,0.9-2,2.5-2h13.4c0,0,0,1,0,2.1v77c0,1.2-0.8,2.1-1.8,2.1L110.6,81.7z"/> </g> </svg>`,15:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 175" width="150" height="175"> <g class="seat"> <path fill="rgb(235, 235, 235)"  d="M150,135c0,0-5.1,40-57.5,40S35,135,35,135V18.4c0-1.7,1.2-3,2.8-3h109.5c1.6,0,2.8,1.3,2.8,3V135H150z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M138,136.8c0,1.3-0.7,2.7-1.9,3.2c-4.8,2.4-18.9,8.3-42.8,7.9c-23.8-0.5-37.8-5.8-42.6-7.9 c-1.2-0.5-2-1.9-2-3.4v-53H138V136.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M138,83.6H48.8V8.1c0-1.7,1.2-3.4,2.8-3.5c7.3-1.1,27.6-4,41.9-4s34.7,3,42,4c1.6,0.3,2.8,1.7,2.8,3.5L138,83.6 L138,83.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M122.6,106.7c-4.3-1.2-15.8-3.9-29.3-3.9s-24.9,2.8-29.3,3.9c-1.1,0.3-1.7,1.3-1.7,2.6v6v0.9v6 c0,1.2,0.7,2.3,1.7,2.6c4.3,1.2,15.8,3.9,29.3,3.9s24.9-2.8,29.3-3.9c1.1-0.3,1.7-1.3,1.7-2.6v-6v-0.9v-6 C124.4,108,123.7,107,122.6,106.7z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M34.4,108.6H0.6v-97c0-2.7,1.5-4.9,3.2-4.9h27.3c1.8,0,3.2,2.2,3.2,4.9C34.4,11.6,34.4,108.6,34.4,108.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M34.4,121.3c0,1.2-0.3,2.3-0.8,2.7c-1.9,1.7-7.3,5.8-16.1,5.8s-14.2-4-16.1-5.8c-0.5-0.4-0.8-1.5-0.8-2.7 v-12.6h33.8C34.4,108.7,34.4,121.3,34.4,121.3z"/> </g> </svg>`,16:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 175" width="150" height="175"> <g class="seat" transform="scale(-1, 1) translate(-150,0)"> <path fill="rgb(235, 235, 235)"  d="M150,135c0,0-5.1,40-57.5,40S35,135,35,135V18.4c0-1.7,1.2-3,2.8-3h109.5c1.6,0,2.8,1.3,2.8,3V135H150z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M138,136.8c0,1.3-0.7,2.7-1.9,3.2c-4.8,2.4-18.9,8.3-42.8,7.9c-23.8-0.5-37.8-5.8-42.6-7.9 c-1.2-0.5-2-1.9-2-3.4v-53H138V136.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M138,83.6H48.8V8.1c0-1.7,1.2-3.4,2.8-3.5c7.3-1.1,27.6-4,41.9-4s34.7,3,42,4c1.6,0.3,2.8,1.7,2.8,3.5L138,83.6 L138,83.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M122.6,106.7c-4.3-1.2-15.8-3.9-29.3-3.9s-24.9,2.8-29.3,3.9c-1.1,0.3-1.7,1.3-1.7,2.6v6v0.9v6 c0,1.2,0.7,2.3,1.7,2.6c4.3,1.2,15.8,3.9,29.3,3.9s24.9-2.8,29.3-3.9c1.1-0.3,1.7-1.3,1.7-2.6v-6v-0.9v-6 C124.4,108,123.7,107,122.6,106.7z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M34.4,108.6H0.6v-97c0-2.7,1.5-4.9,3.2-4.9h27.3c1.8,0,3.2,2.2,3.2,4.9C34.4,11.6,34.4,108.6,34.4,108.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M34.4,121.3c0,1.2-0.3,2.3-0.8,2.7c-1.9,1.7-7.3,5.8-16.1,5.8s-14.2-4-16.1-5.8c-0.5-0.4-0.8-1.5-0.8-2.7 v-12.6h33.8C34.4,108.7,34.4,121.3,34.4,121.3z"/> </g> </svg>`,17:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 175" width="185" height="175"> <g class="seat"> <path fill="rgb(235, 235, 235)" d="M185,135c0,0-5.1,40-57.5,40S70,135,70,135V18.4c0-1.7,1.2-3,2.8-3h109.5c1.6,0,2.8,1.3,2.8,3V135H185z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M173,136.8c0,1.3-0.7,2.7-1.9,3.2c-4.8,2.4-18.9,8.3-42.8,7.9c-23.8-0.5-37.8-5.8-42.6-7.9 c-1.2-0.5-2-1.9-2-3.4v-53H173V136.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M173,83.6H83.8V8.1c0-1.7,1.2-3.4,2.8-3.5c7.3-1.1,27.6-4,41.9-4s34.7,3,42,4c1.6,0.3,2.8,1.7,2.8,3.5L173,83.6 L173,83.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M157.6,106.7c-4.3-1.2-15.8-3.9-29.3-3.9s-24.9,2.8-29.3,3.9c-1.1,0.3-1.7,1.3-1.7,2.6v6v0.9v6 c0,1.2,0.7,2.3,1.7,2.6c4.3,1.2,15.8,3.9,29.3,3.9s24.9-2.8,29.3-3.9c1.1-0.3,1.7-1.3,1.7-2.6v-6v-0.9v-6 C159.4,108,158.7,107,157.6,106.7z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,108.6H0.6V12.2c0-3.1,2-5.5,4.6-5.5h59.6c2.6,0,4.6,2.4,4.6,5.5L69.3,108.6L69.3,108.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,121.3c0,1.2-0.8,2.3-1.7,2.7c-3.9,1.7-14.9,5.8-32.7,5.8s-28.8-4-32.7-5.8c-1-0.4-1.6-1.5-1.6-2.7v-12.6 h68.7V121.3z"/> </g> </svg>`,18:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 175" width="185" height="175"> <g class="seat" transform="scale(-1, 1) translate(-185,0)"> <path fill="rgb(235, 235, 235)" d="M185,135c0,0-5.1,40-57.5,40S70,135,70,135V18.4c0-1.7,1.2-3,2.8-3h109.5c1.6,0,2.8,1.3,2.8,3V135H185z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M173,136.8c0,1.3-0.7,2.7-1.9,3.2c-4.8,2.4-18.9,8.3-42.8,7.9c-23.8-0.5-37.8-5.8-42.6-7.9 c-1.2-0.5-2-1.9-2-3.4v-53H173V136.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M173,83.6H83.8V8.1c0-1.7,1.2-3.4,2.8-3.5c7.3-1.1,27.6-4,41.9-4s34.7,3,42,4c1.6,0.3,2.8,1.7,2.8,3.5L173,83.6 L173,83.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M157.6,106.7c-4.3-1.2-15.8-3.9-29.3-3.9s-24.9,2.8-29.3,3.9c-1.1,0.3-1.7,1.3-1.7,2.6v6v0.9v6 c0,1.2,0.7,2.3,1.7,2.6c4.3,1.2,15.8,3.9,29.3,3.9s24.9-2.8,29.3-3.9c1.1-0.3,1.7-1.3,1.7-2.6v-6v-0.9v-6 C159.4,108,158.7,107,157.6,106.7z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,108.6H0.6V12.2c0-3.1,2-5.5,4.6-5.5h59.6c2.6,0,4.6,2.4,4.6,5.5L69.3,108.6L69.3,108.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,121.3c0,1.2-0.8,2.3-1.7,2.7c-3.9,1.7-14.9,5.8-32.7,5.8s-28.8-4-32.7-5.8c-1-0.4-1.6-1.5-1.6-2.7v-12.6 h68.7V121.3z"/> </g> </svg>`,19:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255 175" width="255" height="175"> <g class="seat"> <path fill="rgb(235, 235, 235)" d="M185,135c0,0-5.1,40-57.5,40S70,135,70,135V18.4c0-1.7,1.2-3,2.8-3h109.5c1.6,0,2.8,1.3,2.8,3V135H185z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M173,136.8c0,1.3-0.7,2.7-1.9,3.2c-4.8,2.4-18.9,8.3-42.8,7.9c-23.8-0.5-37.8-5.8-42.6-7.9 c-1.2-0.5-2-1.9-2-3.4v-53H173V136.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M173,83.6H83.8V8.1c0-1.7,1.2-3.4,2.8-3.5c7.3-1.1,27.6-4,41.9-4s34.7,3,42,4c1.6,0.3,2.8,1.7,2.8,3.5L173,83.6 L173,83.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M157.6,106.7c-4.3-1.2-15.8-3.9-29.3-3.9s-24.9,2.8-29.3,3.9c-1.1,0.3-1.7,1.3-1.7,2.6v6v0.9v6 c0,1.2,0.7,2.3,1.7,2.6c4.3,1.2,15.8,3.9,29.3,3.9s24.9-2.8,29.3-3.9c1.1-0.3,1.7-1.3,1.7-2.6v-6v-0.9v-6 C159.4,108,158.7,107,157.6,106.7z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,108.6H0.6V12.2c0-3.1,2-5.5,4.6-5.5h59.6c2.6,0,4.6,2.4,4.6,5.5L69.3,108.6L69.3,108.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,121.3c0,1.2-0.8,2.3-1.7,2.7c-3.9,1.7-14.9,5.8-32.7,5.8s-28.8-4-32.7-5.8c-1-0.4-1.6-1.5-1.6-2.7v-12.6 h68.7V121.3z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M254.3,108.6h-68.7V12.2c0-3.1,2-5.5,4.6-5.5h59.6c2.6,0,4.6,2.4,4.6,5.5L254.3,108.6L254.3,108.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M254.3,121.3c0,1.2-0.8,2.3-1.7,2.7c-3.9,1.7-14.9,5.8-32.7,5.8s-28.8-4-32.7-5.8c-1-0.4-1.6-1.5-1.6-2.7v-12.6 h68.7V121.3z"/> </g> </svg>`,20:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 330" width="130" height="330"> <g class="seat"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M119.3,307.9L119.3,307.9c0,1.4-0.9,2.7-2.2,3.4c-5.9,2.6-23,9-52.3,8.5c-29.2-0.5-46.2-6.2-52-8.6 c-1.4-0.6-2.3-1.9-2.3-3.5v-38h109L119.3,307.9L119.3,307.9L119.3,307.9z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M13.4,42.7V9h107.7v68.5H54.2c-0.9,0-1.8-0.4-2.6-1L13.4,42.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M119.3,269.8H10.4v-70.2c0-1.9,1.4-3.5,3.4-3.7c8.9-1.2,33.7-4.4,51-4.4c17.5,0,42.3,3.1,51.2,4.4 c1.9,0.3,3.4,1.9,3.4,3.7L119.3,269.8L119.3,269.8z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M91.2,286.6c-3.9-0.9-14.3-3.1-26.4-3.1c-12,0-22.5,2.2-26.4,3.1c-0.9,0.3-1.5,1-1.5,2.1v4.9v0.8v4.9 c0,1,0.6,1.8,1.5,2.1c3.9,0.9,14.3,3.1,26.4,3.1s22.5-2.2,26.4-3.1c0.9-0.3,1.5-1,1.5-2.1v-4.9v-0.8v-4.9 C92.8,287.8,92.1,286.9,91.2,286.6z"/> <path fill="rgb(235, 235, 235)" d="M0,330h130V0H0v7c0,1.7,1.3,3,3,3h117v310H10V189.2c0-1.7-1.3-3-3-3H3c-1.7,0-3,1.3-3,3V330z"/> </g> </svg>`,21:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 330" width="130" height="330"> <g class="seat" transform="scale(-1, 1) translate(-130,0)"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M119.3,307.9L119.3,307.9c0,1.4-0.9,2.7-2.2,3.4c-5.9,2.6-23,9-52.3,8.5c-29.2-0.5-46.2-6.2-52-8.6 c-1.4-0.6-2.3-1.9-2.3-3.5v-38h109L119.3,307.9L119.3,307.9L119.3,307.9z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M13.4,42.7V9h107.7v68.5H54.2c-0.9,0-1.8-0.4-2.6-1L13.4,42.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M119.3,269.8H10.4v-70.2c0-1.9,1.4-3.5,3.4-3.7c8.9-1.2,33.7-4.4,51-4.4c17.5,0,42.3,3.1,51.2,4.4 c1.9,0.3,3.4,1.9,3.4,3.7L119.3,269.8L119.3,269.8z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M91.2,286.6c-3.9-0.9-14.3-3.1-26.4-3.1c-12,0-22.5,2.2-26.4,3.1c-0.9,0.3-1.5,1-1.5,2.1v4.9v0.8v4.9 c0,1,0.6,1.8,1.5,2.1c3.9,0.9,14.3,3.1,26.4,3.1s22.5-2.2,26.4-3.1c0.9-0.3,1.5-1,1.5-2.1v-4.9v-0.8v-4.9 C92.8,287.8,92.1,286.9,91.2,286.6z"/> <path fill="rgb(235, 235, 235)" d="M0,330h130V0H0v7c0,1.7,1.3,3,3,3h117v310H10V189.2c0-1.7-1.3-3-3-3H3c-1.7,0-3,1.3-3,3V330z"/> </g> </svg>`,22:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="200" height="400"> <g class="seat"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M189.8,74.2c0,2.6-1.4,4.9-3.7,6c-9.7,4.4-38,15.5-86.6,14.6C51.4,94,23.3,84.2,13.5,80c-2.4-1.1-3.8-3.4-3.8-6 V8.6h180.4v65.7L189.8,74.2L189.8,74.2z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7,396h189V6h-24.1c0,0-20.7,141.1-20,152.3c0.9,14.4,14.1,50,12.9,50.2l-7.4,63.2L7,270.5V396z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M165,362.6c0,2.2-1.1,4-2.7,4.9c-7.1,3.6-27.9,12.5-63.6,11.8c-35.4-0.7-56-8.5-63.1-12 c-1.7-0.9-2.8-2.7-2.8-4.9v-52.9h132.4L165,362.6L165,362.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M165.2,309.5H32.7v-97.6c0-2.7,1.7-4.9,4.1-5.3c10.8-1.6,40.9-6,62-6c21.2,0,51.4,4.4,62.1,6 c2.4,0.4,4.1,2.7,4.1,5.3C165.2,211.9,165.2,309.5,165.2,309.5z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.6,333c-5.5-1.3-19.8-4.4-36.7-4.4c-16.7,0-31.3,3.1-36.7,4.4c-1.3,0.4-2.2,1.5-2.2,2.9v6.7v1.1v6.7 c0,1.5,0.9,2.5,2.2,2.9c5.5,1.3,19.8,4.4,36.7,4.4s31.3-3.1,36.7-4.4c1.3-0.4,2.2-1.5,2.2-2.9v-6.7v-1.1v-6.7 C137.8,334.6,136.9,333.3,135.6,333z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M34.4,348h3.7V230.9c0.1-3.9-2.1-6.9-5.8-7h-3.1c-8.8-0.2-9.2,6.9-9.2,15.8l-0.5,31.6 c-0.1,1.6,0.1,3.3,0.5,4.8l8,66.4C28.4,345.6,31.1,348,34.4,348z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M169.8,342.4l8-66.4c0.5-1.5,0.6-3.2,0.5-4.8l-0.5-31.6c-0.1-8.8-0.4-15.9-9.2-15.8h-3.1 c-3.7,0.1-5.9,3.1-5.8,7V348h3.7C166.7,348,169.4,345.6,169.8,342.4z"/> <path fill="rgb(235, 235, 235)" d="M200,400H0V208.1c0-1.7,1.3-3,3-3h4c1.7,0,3,1.3,3,3V390h180V10H10v78.5c0,1.7-1.3,3-3,3H3c-1.7,0-3-1.3-3-3V0 h200V400z"/> </g> </svg>`,23:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="200" height="400"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M189.8,74.2c0,2.6-1.4,4.9-3.7,6c-9.7,4.4-38,15.5-86.6,14.6C51.4,94,23.3,84.2,13.5,80c-2.4-1.1-3.8-3.4-3.8-6 V8.6h180.4v65.7L189.8,74.2L189.8,74.2z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7,396h189V6h-24.1c0,0-20.7,141.1-20,152.3c0.9,14.4,14.1,50,12.9,50.2l-7.4,63.2L7,270.5V396z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M165,362.6c0,2.2-1.1,4-2.7,4.9c-7.1,3.6-27.9,12.5-63.6,11.8c-35.4-0.7-56-8.5-63.1-12 c-1.7-0.9-2.8-2.7-2.8-4.9v-52.9h132.4L165,362.6L165,362.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M165.2,309.5H32.7v-97.6c0-2.7,1.7-4.9,4.1-5.3c10.8-1.6,40.9-6,62-6c21.2,0,51.4,4.4,62.1,6 c2.4,0.4,4.1,2.7,4.1,5.3C165.2,211.9,165.2,309.5,165.2,309.5z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.6,333c-5.5-1.3-19.8-4.4-36.7-4.4c-16.7,0-31.3,3.1-36.7,4.4c-1.3,0.4-2.2,1.5-2.2,2.9v6.7v1.1v6.7 c0,1.5,0.9,2.5,2.2,2.9c5.5,1.3,19.8,4.4,36.7,4.4s31.3-3.1,36.7-4.4c1.3-0.4,2.2-1.5,2.2-2.9v-6.7v-1.1v-6.7 C137.8,334.6,136.9,333.3,135.6,333z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M34.4,348h3.7V230.9c0.1-3.9-2.1-6.9-5.8-7h-3.1c-8.8-0.2-9.2,6.9-9.2,15.8l-0.5,31.6 c-0.1,1.6,0.1,3.3,0.5,4.8l8,66.4C28.4,345.6,31.1,348,34.4,348z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M169.8,342.4l8-66.4c0.5-1.5,0.6-3.2,0.5-4.8l-0.5-31.6c-0.1-8.8-0.4-15.9-9.2-15.8h-3.1 c-3.7,0.1-5.9,3.1-5.8,7V348h3.7C166.7,348,169.4,345.6,169.8,342.4z"/> <path fill="rgb(235, 235, 235)" d="M200,400H0V208.1c0-1.7,1.3-3,3-3h4c1.7,0,3,1.3,3,3V390h180V10H10v78.5c0,1.7-1.3,3-3,3H3c-1.7,0-3-1.3-3-3V0 h200V400z"/> </g> </svg>`,24:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 365" width="200" height="365"> <g class="seat"> <rect x="4" y="254.4" fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" width="190" height="105.6"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M8.2,304.5l1-72.9c0-1.8,0.3-3.7,0.6-5.4l8.5-33c2.4-9.2,11.8-14.7,21-12.5l3.3,0.8c4.1,1,6.5,4.8,5.5,8.9 L17.9,312.7l-3.8-1C10.5,310.9,8.2,308,8.2,304.5z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M181.8,111.1c-0.3,1.3-2,2.2-3.9,1.9c-8.9-1.3-33.7-4.5-50.6-8.3S86.9,93.2,78.5,90.5c-1.8-0.6-2.9-2.1-2.4-3.4 L93.4,6.3l101.1-0.7L181.8,111.1z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M65.9,112.4L6.9,99L7.7,6.8h121.8L70.5,110c-0.6,1.4-1.9,2.4-3.5,2.4C66.5,112.4,66.2,112.4,65.9,112.4z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M194.6,293.5l-72.8-18.2l10.4-62.2c0,0,41.2-27.1,45.8-47.1S167,5.5,167,5.5l27.5,0.1L194.6,293.5L194.6,293.5z "/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M32.5,253.8L142,281.1l-18.5,69.8c-0.4,1.7-1.7,2.8-3.3,3.1c-6.5,0.8-25.1,2.3-54.4-4.5 C36.2,342.7,20.6,332,15.5,328c-1.3-1-1.8-2.7-1.4-4.1L32.5,253.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M55.3,162.6c0.4-2,2.3-3.3,4.3-3.1c9.4,1,35,4.1,52.5,8.4c17.7,4.3,41.8,13.6,50.3,17.1 c1.8,0.8,2.8,2.7,2.4,4.7l-23.1,90.8L32.5,253.2L55.3,162.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M45.3,311.3l-1.3,4.8l-0.3,0.8l-1.3,4.8c-0.4,1,0.3,2,1,2.4c3.7,2,13.6,6.8,25.6,9.8 c12.2,3.1,23.2,3.4,27.3,3.4c1,0,2-0.6,2.3-1.7l1.3-4.8l0.3-0.8l1.3-4.8c0.4-1-0.3-2-1-2.4c-3.7-2-13.6-6.8-25.6-9.8 c-12.2-3.1-23.2-3.4-27.3-3.4C46.5,309.6,45.5,310.4,45.3,311.3z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M138.4,337.3l34.3-64.5c0.9-1.4,1.5-3.2,1.9-4.8l8.4-32.9c2.4-9.2-3.2-18.6-12.4-20.9l-3.2-0.9 c-3.8-0.9-8,1.3-9,5.4l-32,121.5l3.8,1C133.7,342.1,137.1,340.4,138.4,337.3z"/> <path fill="rgb(235, 235, 235)" d="M200,365H0V184.7c0-1.7,1.3-3,3-3h5c1.6,0,3,1.3,3,3V354h178.1V11H11v99.4c0,1.7-1.3,3-3,3H3c-1.6,0-3-1.3-3-3 V0h200V365z"/> </g> </svg>`,25:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 365" width="200" height="365"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <rect x="4" y="254.4" fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" width="190" height="105.6"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M8.2,304.5l1-72.9c0-1.8,0.3-3.7,0.6-5.4l8.5-33c2.4-9.2,11.8-14.7,21-12.5l3.3,0.8c4.1,1,6.5,4.8,5.5,8.9 L17.9,312.7l-3.8-1C10.5,310.9,8.2,308,8.2,304.5z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M181.8,111.1c-0.3,1.3-2,2.2-3.9,1.9c-8.9-1.3-33.7-4.5-50.6-8.3S86.9,93.2,78.5,90.5c-1.8-0.6-2.9-2.1-2.4-3.4 L93.4,6.3l101.1-0.7L181.8,111.1z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M65.9,112.4L6.9,99L7.7,6.8h121.8L70.5,110c-0.6,1.4-1.9,2.4-3.5,2.4C66.5,112.4,66.2,112.4,65.9,112.4z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M194.6,293.5l-72.8-18.2l10.4-62.2c0,0,41.2-27.1,45.8-47.1S167,5.5,167,5.5l27.5,0.1L194.6,293.5L194.6,293.5z "/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M32.5,253.8L142,281.1l-18.5,69.8c-0.4,1.7-1.7,2.8-3.3,3.1c-6.5,0.8-25.1,2.3-54.4-4.5 C36.2,342.7,20.6,332,15.5,328c-1.3-1-1.8-2.7-1.4-4.1L32.5,253.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M55.3,162.6c0.4-2,2.3-3.3,4.3-3.1c9.4,1,35,4.1,52.5,8.4c17.7,4.3,41.8,13.6,50.3,17.1 c1.8,0.8,2.8,2.7,2.4,4.7l-23.1,90.8L32.5,253.2L55.3,162.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M45.3,311.3l-1.3,4.8l-0.3,0.8l-1.3,4.8c-0.4,1,0.3,2,1,2.4c3.7,2,13.6,6.8,25.6,9.8 c12.2,3.1,23.2,3.4,27.3,3.4c1,0,2-0.6,2.3-1.7l1.3-4.8l0.3-0.8l1.3-4.8c0.4-1-0.3-2-1-2.4c-3.7-2-13.6-6.8-25.6-9.8 c-12.2-3.1-23.2-3.4-27.3-3.4C46.5,309.6,45.5,310.4,45.3,311.3z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M138.4,337.3l34.3-64.5c0.9-1.4,1.5-3.2,1.9-4.8l8.4-32.9c2.4-9.2-3.2-18.6-12.4-20.9l-3.2-0.9 c-3.8-0.9-8,1.3-9,5.4l-32,121.5l3.8,1C133.7,342.1,137.1,340.4,138.4,337.3z"/> <path fill="rgb(235, 235, 235)" d="M200,365H0V184.7c0-1.7,1.3-3,3-3h5c1.6,0,3,1.3,3,3V354h178.1V11H11v99.4c0,1.7-1.3,3-3,3H3c-1.6,0-3-1.3-3-3 V0h200V365z"/> </g> </svg>`,26:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat"> <rect x="9.9" y="83.4" fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" width="188.9" height="87.5"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.6,111.3l0-96.5c0-7.8,6.3-14.2,13.8-14.2h52v83.9L133.6,111.3z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M75,199.4c-1.1,0-2.1,0-3.3-0.1c-29.6-0.3-46.2-5.3-50.5-6.8c-1.3-0.4-2-1.4-2-2.4v-18.9h105v19.1 c0,0.9-0.8,2-2,2.4C115.6,195.2,100.2,199.4,75,199.4L75,199.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M12.1,152.9c-1.5-0.5-2.3-1.7-2.3-3.1v-39.5 h123.7v39.3c0,1.3-1.1,2.7-2.4,3.1c-6.8,2.5-26.1,8.3-59.5,8.7c-1.5,0-2.8,0-4.3,0C36.4,161.5,18.4,155.4,12.1,152.9z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M9.9,111.5V50.3c0-1.7,1.5-3.1,3.3-3.5c25.3-2.9,45.1-4.5,58.5-4.5c22.7,0,54.8,4,58.4,4.5 c2,0.3,3.5,1.7,3.5,3.5l0,61.2H9.9z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M40.5,129.4v4.8v0.7v4.8c0,1.1,0.8,1.9,1.9,2c4.3,0.9,16,3.1,29.3,3.1s24.9-2.3,29.3-3.1 c1.1-0.3,1.9-1.1,1.9-2v-4.8v-0.7v-4.8c0-1.1-0.8-1.9-1.9-2c-4.3-0.9-16-3.1-29.3-3.1s-24.9,2.3-29.3,3.1 C41.2,127.5,40.5,128.3,40.5,129.4z"/> <path fill="rgb(235, 235, 235)" d="M197,81.3h-4c-1.7,0-3,1.3-3,3v80h-84.5h-61H10 v-99c0-1.7-1.3-3-3-3H3c-1.7,0-3,1.3-3,3l0,109h44.1h61.8H200v-90C200,82.6,198.7,81.3,197,81.3z"/> </g> </svg>`,27:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <rect x="9.9" y="83.4" fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" width="188.9" height="87.5"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.6,111.3l0-96.5c0-7.8,6.3-14.2,13.8-14.2h52v83.9L133.6,111.3z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M75,199.4c-1.1,0-2.1,0-3.3-0.1c-29.6-0.3-46.2-5.3-50.5-6.8c-1.3-0.4-2-1.4-2-2.4v-18.9h105v19.1 c0,0.9-0.8,2-2,2.4C115.6,195.2,100.2,199.4,75,199.4L75,199.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M12.1,152.9c-1.5-0.5-2.3-1.7-2.3-3.1v-39.5 h123.7v39.3c0,1.3-1.1,2.7-2.4,3.1c-6.8,2.5-26.1,8.3-59.5,8.7c-1.5,0-2.8,0-4.3,0C36.4,161.5,18.4,155.4,12.1,152.9z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M9.9,111.5V50.3c0-1.7,1.5-3.1,3.3-3.5c25.3-2.9,45.1-4.5,58.5-4.5c22.7,0,54.8,4,58.4,4.5 c2,0.3,3.5,1.7,3.5,3.5l0,61.2H9.9z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M40.5,129.4v4.8v0.7v4.8c0,1.1,0.8,1.9,1.9,2c4.3,0.9,16,3.1,29.3,3.1s24.9-2.3,29.3-3.1 c1.1-0.3,1.9-1.1,1.9-2v-4.8v-0.7v-4.8c0-1.1-0.8-1.9-1.9-2c-4.3-0.9-16-3.1-29.3-3.1s-24.9,2.3-29.3,3.1 C41.2,127.5,40.5,128.3,40.5,129.4z"/> <path fill="rgb(235, 235, 235)" d="M197,81.3h-4c-1.7,0-3,1.3-3,3v80h-84.5h-61H10 v-99c0-1.7-1.3-3-3-3H3c-1.7,0-3,1.3-3,3l0,109h44.1h61.8H200v-90C200,82.6,198.7,81.3,197,81.3z"/> </g> </svg>`,28:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat"> <rect fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="0.6" y="115.3" width="198.8" height="84.1"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.4,80l-0.6,35.7l66.6,9.8V89.9c0,0-11.2-3.2-18-5C169.8,81.7,133.4,80,133.4,80z"/> <rect fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" x="0.6" y="0.6" width="105.4" height="16.1"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M101.1,1l2.3,39.8l96,6.5l-0.1-46.7H101L101.1,1z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.5,180.6L1,119.1c-0.3-1.4-0.5-3-0.4-4.4L1,85.4c0-8.2,0.3-14.8,7.4-14.6H11c3,0.1,4.8,2.9,4.7,6.5v108.4h-3C10,185.7,7.8,183.4,7.5,180.6L7.5,180.6z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.9,180.6l6.5-61.5c0.3-1.4,0.5-3,0.4-4.4l-0.4-29.2c0-8.2-0.3-14.8-7.4-14.6h-2.5c-3,0.1-4.8,2.9-4.7,6.5v108.4h3C133.4,185.7,135.6,183.4,135.9,180.6L135.9,180.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M24.4,0.9l-0.6,15.8L0.6,19.3V0.7l23.8-0.1V0.9z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M75.3,196.8c-1.3,0-2.5,0-3.9,0c-30.2-0.4-47.7-5.6-53.8-7.8c-1.2-0.4-2.2-1.6-2.2-2.8v-41.6h112v41.7c0,1.2-0.7,2.3-2.1,2.8C119.7,191.4,103.4,196.9,75.3,196.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M15.5,144.7V82.3c0-1.6,1.3-2.9,3.1-3.1c3.3-0.5,32.3-4.1,52.8-4.1c12.2,0,30,1.4,53,4.1c1.7,0.4,3,1.6,3,3.1v62.4L15.5,144.7L15.5,144.7z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M98,163c-4-0.7-14.5-2.8-26.5-2.8S48.8,162.1,45,163c-1,0.1-1.7,0.8-1.7,1.8v4.3v0.6v4.3c0,0.8,0.7,1.6,1.7,1.8c4,0.7,14.5,2.8,26.5,2.8s22.7-1.9,26.5-2.8c1-0.1,1.7-0.8,1.7-1.8v-4.3v-0.6v-4.3C99.7,163.9,99.1,163.2,98,163z"/> </g> </svg>`,29:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <rect fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="0.6" y="115.3" width="198.8" height="84.1"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.4,80l-0.6,35.7l66.6,9.8V89.9c0,0-11.2-3.2-18-5C169.8,81.7,133.4,80,133.4,80z"/> <rect fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" x="0.6" y="0.6" width="105.4" height="16.1"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M101.1,1l2.3,39.8l96,6.5l-0.1-46.7H101L101.1,1z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.5,180.6L1,119.1c-0.3-1.4-0.5-3-0.4-4.4L1,85.4c0-8.2,0.3-14.8,7.4-14.6H11c3,0.1,4.8,2.9,4.7,6.5v108.4h-3C10,185.7,7.8,183.4,7.5,180.6L7.5,180.6z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.9,180.6l6.5-61.5c0.3-1.4,0.5-3,0.4-4.4l-0.4-29.2c0-8.2-0.3-14.8-7.4-14.6h-2.5c-3,0.1-4.8,2.9-4.7,6.5v108.4h3C133.4,185.7,135.6,183.4,135.9,180.6L135.9,180.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M24.4,0.9l-0.6,15.8L0.6,19.3V0.7l23.8-0.1V0.9z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M75.3,196.8c-1.3,0-2.5,0-3.9,0c-30.2-0.4-47.7-5.6-53.8-7.8c-1.2-0.4-2.2-1.6-2.2-2.8v-41.6h112v41.7c0,1.2-0.7,2.3-2.1,2.8C119.7,191.4,103.4,196.9,75.3,196.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M15.5,144.7V82.3c0-1.6,1.3-2.9,3.1-3.1c3.3-0.5,32.3-4.1,52.8-4.1c12.2,0,30,1.4,53,4.1c1.7,0.4,3,1.6,3,3.1v62.4L15.5,144.7L15.5,144.7z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M98,163c-4-0.7-14.5-2.8-26.5-2.8S48.8,162.1,45,163c-1,0.1-1.7,0.8-1.7,1.8v4.3v0.6v4.3c0,0.8,0.7,1.6,1.7,1.8c4,0.7,14.5,2.8,26.5,2.8s22.7-1.9,26.5-2.8c1-0.1,1.7-0.8,1.7-1.8v-4.3v-0.6v-4.3C99.7,163.9,99.1,163.2,98,163z"/> </g> </svg>`,30:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 265" width="200" height="265"> <g class="seat"> <rect fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" x="0.6" y="0.6" width="105.4" height="66.9"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M103.4,91.6l96,6.5V0.6H99L103.4,91.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M26.4,0.6l-2.6,66.9L0.6,80.1V0.6H26.4z"/> <rect fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="0.6" y="180.3" width="198.8" height="84.1"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.4,145l-0.6,35.7l66.6,9.8v-35.6c0,0-11.2-3.2-18-5C169.8,146.7,133.4,145,133.4,145z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.5,245.6L1,184.1c-0.3-1.4-0.5-3-0.4-4.4L1,150.4c0-8.2,0.3-14.8,7.4-14.6H11c3,0.1,4.8,2.9,4.7,6.5v108.4h-3C10,250.7,7.8,248.4,7.5,245.6L7.5,245.6z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.9,245.6l6.5-61.5c0.3-1.4,0.5-3,0.4-4.4l-0.4-29.2c0-8.2-0.3-14.8-7.4-14.6h-2.5c-3,0.1-4.8,2.9-4.7,6.5v108.4h3C133.4,250.7,135.6,248.4,135.9,245.6L135.9,245.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M75.3,261.8c-1.3,0-2.5,0-3.9,0c-30.2-0.4-47.7-5.6-53.8-7.8c-1.2-0.4-2.2-1.6-2.2-2.8v-41.6h112v41.7c0,1.2-0.7,2.3-2.1,2.8C119.7,256.4,103.4,261.9,75.3,261.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M15.5,209.7v-62.4c0-1.6,1.3-2.9,3.1-3.1c3.3-0.5,32.3-4.1,52.8-4.1c12.2,0,30,1.4,53,4.1c1.7,0.4,3,1.6,3,3.1v62.4L15.5,209.7L15.5,209.7z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M98,228c-4-0.7-14.5-2.8-26.5-2.8S48.8,227.1,45,228c-1,0.1-1.7,0.8-1.7,1.8v4.3v0.6v4.3c0,0.8,0.7,1.6,1.7,1.8c4,0.7,14.5,2.8,26.5,2.8s22.7-1.9,26.5-2.8c1-0.1,1.7-0.8,1.7-1.8v-4.3v-0.6v-4.3C99.7,228.9,99.1,228.2,98,228z"/> </g> </svg>`,31:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 265" width="200" height="265"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <rect fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" x="0.6" y="0.6" width="105.4" height="66.9"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M103.4,91.6l96,6.5V0.6H99L103.4,91.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M26.4,0.6l-2.6,66.9L0.6,80.1V0.6H26.4z"/> <rect fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="0.6" y="180.3" width="198.8" height="84.1"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.4,145l-0.6,35.7l66.6,9.8v-35.6c0,0-11.2-3.2-18-5C169.8,146.7,133.4,145,133.4,145z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.5,245.6L1,184.1c-0.3-1.4-0.5-3-0.4-4.4L1,150.4c0-8.2,0.3-14.8,7.4-14.6H11c3,0.1,4.8,2.9,4.7,6.5v108.4h-3C10,250.7,7.8,248.4,7.5,245.6L7.5,245.6z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.9,245.6l6.5-61.5c0.3-1.4,0.5-3,0.4-4.4l-0.4-29.2c0-8.2-0.3-14.8-7.4-14.6h-2.5c-3,0.1-4.8,2.9-4.7,6.5v108.4h3C133.4,250.7,135.6,248.4,135.9,245.6L135.9,245.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M75.3,261.8c-1.3,0-2.5,0-3.9,0c-30.2-0.4-47.7-5.6-53.8-7.8c-1.2-0.4-2.2-1.6-2.2-2.8v-41.6h112v41.7c0,1.2-0.7,2.3-2.1,2.8C119.7,256.4,103.4,261.9,75.3,261.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M15.5,209.7v-62.4c0-1.6,1.3-2.9,3.1-3.1c3.3-0.5,32.3-4.1,52.8-4.1c12.2,0,30,1.4,53,4.1c1.7,0.4,3,1.6,3,3.1v62.4L15.5,209.7L15.5,209.7z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M98,228c-4-0.7-14.5-2.8-26.5-2.8S48.8,227.1,45,228c-1,0.1-1.7,0.8-1.7,1.8v4.3v0.6v4.3c0,0.8,0.7,1.6,1.7,1.8c4,0.7,14.5,2.8,26.5,2.8s22.7-1.9,26.5-2.8c1-0.1,1.7-0.8,1.7-1.8v-4.3v-0.6v-4.3C99.7,228.9,99.1,228.2,98,228z"/> </g> </svg>`,32:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 330" width="200" height="330"> <g class="seat"> <rect fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" x="0.6" y="0.6" width="105.4" height="66.9"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M103.4,91.6l96,6.5V0.6H99L103.4,91.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M26.4,0.6l-2.6,66.9L0.6,80.1V0.6H26.4z"/> <rect fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="0.6" y="213.4" width="198.8" height="116"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.4,181.6l-0.6,45.7l66.6,9.8v-45.6c0,0-11.2-3.2-18-5C169.8,183.3,133.4,181.6,133.4,181.6z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.5,289.5c0,0-7-64.4-6.9-65.9L1,174.4c0-8.2,0.3-14.8,7.4-14.6H11c3,0.1,4.8,2.9,4.7,6.5v128.4h-3C10,294.6,7.8,292.4,7.5,289.5L7.5,289.5z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.8,289.4c-0.3,2.9-2.5,5.1-5.2,5.1h-3V166.1c-0.1-3.6,1.7-6.4,4.7-6.5h2.5c7.1-0.2,7.4,6.4,7.4,14.6l0.4,49.2C142.7,225,135.8,289.4,135.8,289.4L135.8,289.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M75.5,307.7c-1.3,0-2.5,0-3.9,0c-30.2-0.4-47.7-5.6-53.8-7.8c-1.2-0.4-2.2-1.6-2.2-2.8v-41.6h112v41.7c0,1.2-0.7,2.3-2.1,2.8C119.9,302.2,103.6,307.8,75.5,307.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M15.6,255.5v-83.4c0-1.6,1.3-2.9,3.1-3.1c3.3-0.5,32.3-4.1,52.8-4.1c12.2,0,30,1.4,53,4.1c1.7,0.4,3,1.6,3,3.1v83.4H15.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M98.2,273.9c-4-0.7-14.5-2.8-26.5-2.8S49,273,45.2,273.9c-1,0.1-1.7,0.8-1.7,1.8v4.3v0.6v4.3c0,0.8,0.7,1.6,1.7,1.8c4,0.7,14.5,2.8,26.5,2.8s22.7-1.9,26.5-2.8c1-0.1,1.7-0.8,1.7-1.8v-4.3V280v-4.3C99.8,274.7,99.2,274,98.2,273.9z"/> </g> </svg>`,33:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 330" width="200" height="330"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <rect fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" x="0.6" y="0.6" width="105.4" height="66.9"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M103.4,91.6l96,6.5V0.6H99L103.4,91.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M26.4,0.6l-2.6,66.9L0.6,80.1V0.6H26.4z"/> <rect fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="0.6" y="213.4" width="198.8" height="116"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.4,181.6l-0.6,45.7l66.6,9.8v-45.6c0,0-11.2-3.2-18-5C169.8,183.3,133.4,181.6,133.4,181.6z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.5,289.5c0,0-7-64.4-6.9-65.9L1,174.4c0-8.2,0.3-14.8,7.4-14.6H11c3,0.1,4.8,2.9,4.7,6.5v128.4h-3C10,294.6,7.8,292.4,7.5,289.5L7.5,289.5z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.8,289.4c-0.3,2.9-2.5,5.1-5.2,5.1h-3V166.1c-0.1-3.6,1.7-6.4,4.7-6.5h2.5c7.1-0.2,7.4,6.4,7.4,14.6l0.4,49.2C142.7,225,135.8,289.4,135.8,289.4L135.8,289.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M75.5,307.7c-1.3,0-2.5,0-3.9,0c-30.2-0.4-47.7-5.6-53.8-7.8c-1.2-0.4-2.2-1.6-2.2-2.8v-41.6h112v41.7c0,1.2-0.7,2.3-2.1,2.8C119.9,302.2,103.6,307.8,75.5,307.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M15.6,255.5v-83.4c0-1.6,1.3-2.9,3.1-3.1c3.3-0.5,32.3-4.1,52.8-4.1c12.2,0,30,1.4,53,4.1c1.7,0.4,3,1.6,3,3.1v83.4H15.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M98.2,273.9c-4-0.7-14.5-2.8-26.5-2.8S49,273,45.2,273.9c-1,0.1-1.7,0.8-1.7,1.8v4.3v0.6v4.3c0,0.8,0.7,1.6,1.7,1.8c4,0.7,14.5,2.8,26.5,2.8s22.7-1.9,26.5-2.8c1-0.1,1.7-0.8,1.7-1.8v-4.3V280v-4.3C99.8,274.7,99.2,274,98.2,273.9z"/> </g> </svg>`,34:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <polygon fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="101,12.4 101,0.6 195,0.6 195,49.3 151.7,49.3 "/> <path fill="rgb(235, 235, 235)" d="M200,53.7h-44.7c-1.9,0-3.7-0.6-5.2-1.6L99.3,17.5c-2.7-1.9-4.3-5-4.3-8.4V0h9.5v9.1l50.8,34.6h35.1V0h9.5V53.7z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M197.4,89.1v73.2l-52.3,29.8l-80.4,5L5.2,118.7V39h7.1c1.2,0,2.4,0.9,2.8,2.1l15.3,40.1l95.8,7.9H197.4L197.4,89.1z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M154.4,152.7L154.4,152.7c0.6,1.4,0.4,2.9-0.5,3.9c-3.5,4.3-14.1,15.6-36.7,23.9c-22.4,8.2-37.5,7.9-42.9,7.3c-1.3-0.2-2.5-1.1-3.1-2.7l-14.3-36.4l83.2-32.7L154.4,152.7L154.4,152.7L154.4,152.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M140,116l-83.1,32.7L30.5,81.2c-0.7-1.8-0.3-3.8,1.2-4.6c6.4-3.9,24.1-14.3,37.3-19.5c13.3-5.3,33.4-9.7,40.7-11.2c1.5-0.3,3.3,0.8,4,2.6l26.5,67.4L140,116z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M124.9,140.6c-3.3,0.3-12,1.3-21.3,4.9c-9.2,3.6-16.3,8.8-19,10.9c-0.6,0.6-0.8,1.4-0.4,2.5l1.8,4.7l0.3,0.8l1.8,4.7c0.4,1,1.2,1.6,2,1.6c3.3-0.3,12-1.3,21.3-4.9s16.3-8.8,19-10.9c0.6-0.6,0.8-1.4,0.4-2.5l-1.8-4.7l-0.3-0.8l-1.8-4.7C126.6,141.3,125.7,140.6,124.9,140.6z"/> <path fill="rgb(235, 235, 235)" d="M0,38.4l0,77.3c0,1.7,0.5,3.4,1.6,4.8L62,200H135c4.6,0,9-1.2,12.9-3.6l52.1-31.6v-2.7l0,0V88.5h-5v67.6l-52.4,31.8c-2.3,1.5-5,2.2-7.7,2.2h-68l-57-75V38.4H0z"/> </g> </svg>`,35:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat"> <polygon fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="101,12.4 101,0.6 195,0.6 195,49.3 151.7,49.3 "/> <path fill="rgb(235, 235, 235)" d="M200,53.7h-44.7c-1.9,0-3.7-0.6-5.2-1.6L99.3,17.5c-2.7-1.9-4.3-5-4.3-8.4V0h9.5v9.1l50.8,34.6h35.1V0h9.5V53.7z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M197.4,89.1v73.2l-52.3,29.8l-80.4,5L5.2,118.7V39h7.1c1.2,0,2.4,0.9,2.8,2.1l15.3,40.1l95.8,7.9H197.4L197.4,89.1z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M154.4,152.7L154.4,152.7c0.6,1.4,0.4,2.9-0.5,3.9c-3.5,4.3-14.1,15.6-36.7,23.9c-22.4,8.2-37.5,7.9-42.9,7.3c-1.3-0.2-2.5-1.1-3.1-2.7l-14.3-36.4l83.2-32.7L154.4,152.7L154.4,152.7L154.4,152.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M140,116l-83.1,32.7L30.5,81.2c-0.7-1.8-0.3-3.8,1.2-4.6c6.4-3.9,24.1-14.3,37.3-19.5c13.3-5.3,33.4-9.7,40.7-11.2c1.5-0.3,3.3,0.8,4,2.6l26.5,67.4L140,116z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M124.9,140.6c-3.3,0.3-12,1.3-21.3,4.9c-9.2,3.6-16.3,8.8-19,10.9c-0.6,0.6-0.8,1.4-0.4,2.5l1.8,4.7l0.3,0.8l1.8,4.7c0.4,1,1.2,1.6,2,1.6c3.3-0.3,12-1.3,21.3-4.9s16.3-8.8,19-10.9c0.6-0.6,0.8-1.4,0.4-2.5l-1.8-4.7l-0.3-0.8l-1.8-4.7C126.6,141.3,125.7,140.6,124.9,140.6z"/> <path fill="rgb(235, 235, 235)" d="M0,38.4l0,77.3c0,1.7,0.5,3.4,1.6,4.8L62,200H135c4.6,0,9-1.2,12.9-3.6l52.1-31.6v-2.7l0,0V88.5h-5v67.6l-52.4,31.8c-2.3,1.5-5,2.2-7.7,2.2h-68l-57-75V38.4H0z"/> </g> </svg>`,36:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 435" width="550" height="435"> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.8,4.1h101l-0.1,147.5v47.5L87.8,280v150.5H7.9L7.8,4.1z"/> <rect fill="${e.fillColor}" x="46.3" y="6.9" width="67.2" height="145.6"/> <rect fill="${e.fillColor}" x="110.3" y="6.9" width="379.7" height="145.6"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M507.1,427c0,0-20.1-82.5-20.2-82.7c-1-0.3-59.1,1-98.5,15.1c-18.5,6.6-41.1,15.7-59.9,29.1V426L507.1,427z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M91.7,33.2c1.6,7.1,5.5,25.5,5.5,47.2c0,21.5-3.8,40.2-5.5,47.2c-0.5,1.7-1.9,2.8-3.6,2.8h-8.3h-1.4h-8.3c-1.9,0-3.1-1.2-3.6-2.8c-1.6-7.1-5.5-25.5-5.5-47.2s3.8-40.2,5.5-47.2c0.5-1.7,1.9-2.8,3.6-2.8h8.3h1.4h8.3C89.7,30.4,91.3,31.6,91.7,33.2z"/> <path fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M180.4,152.4l-70-74.8"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M148.2,390.8c0,2.2,1.1,4,2.7,4.9c7.1,3.6,27.9,12.5,63.6,11.8c35.4-0.7,56-8.5,63.1-12c1.7-0.9,2.8-2.7,2.8-4.9v-52.9H148L148.2,390.8L148.2,390.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M148,337.7h132.5v-97.6c0-2.7-1.7-4.9-4.1-5.3c-10.8-1.6-40.9-6-62-6c-21.2,0-51.4,4.4-62.1,6c-2.4,0.4-4.1,2.7-4.1,5.3C148,240.1,148,337.7,148,337.7z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M177.6,361.2c5.5-1.3,19.8-4.4,36.7-4.4c16.7,0,31.3,3.1,36.7,4.4c1.3,0.4,2.2,1.5,2.2,2.9v6.7v1.1v6.7c0,1.5-0.9,2.5-2.2,2.9c-5.5,1.3-19.8,4.4-36.7,4.4s-31.3-3.1-36.7-4.4c-1.3-0.4-2.2-1.5-2.2-2.9v-6.7v-1.1v-6.7C175.4,362.8,176.3,361.5,177.6,361.2z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M278.8,376.2h-3.7V259.1c-0.1-3.9,2.1-6.9,5.8-7h3.1c8.8-0.2,9.2,6.9,9.2,15.8l0.5,31.6c0.1,1.6-0.1,3.3-0.5,4.8l-8,66.4C284.8,373.8,282.1,376.2,278.8,376.2z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M143.4,370.6l-8-66.4c-0.5-1.5-0.6-3.2-0.5-4.8l0.5-31.6c0.1-8.8,0.4-15.9,9.2-15.8h3.1c3.7,0.1,5.9,3.1,5.8,7v117.2h-3.7C146.5,376.2,143.8,373.8,143.4,370.6z"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" x1="110.4" y1="5.6" x2="110.4" y2="151.9"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" x1="480.1" y1="5.6" x2="480.1" y2="151.9"/> <polyline fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" points="46.9,5.9 46.9,151.5 481.1,151.5"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M480.7,192.6h29.9h29.9V98.8V5h-29.9h-29.9v93.8V192.6z"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="480.7" y1="191.6" x2="543.5" y2="191.6"/> <path fill="rgb(235, 235, 235)" d="M543,400h4c1.7,0,3,1.3,3,3v32H200h-33.6H0V200v-27.3V0h180h20h350v220c0,1.7-1.3,3-3,3h-4c-1.7,0-3-1.3-3-3V10H197h-7H10v172.7v7.3v235h166.4H190h350v-22C540,401.3,541.3,400,543,400z"/> <path fill="rgb(235, 235, 235)" d="M533.4,105.9c-0.7-1.1-1.9-1.9-3.4-2l-18.9-3.4v-3.8c3-0.3,5.3-2.8,5.3-5.8c0-3.2-2.6-5.9-5.9-5.9s-5.9,2.6-5.9,5.9c0,0.3,0.3,0.6,0.6,0.6s0.6-0.3,0.6-0.6c0-2.6,2.1-4.7,4.7-4.7c2.6,0,4.7,2.1,4.7,4.7s-2.1,4.7-4.7,4.7c-0.3,0-0.6,0.3-0.6,0.6v4.3l-19.4,3.5c-1.5,0.2-2.8,1-3.4,2c-0.5,0.9-0.6,1.8-0.2,2.8l1.9,3.9h43l1.9-4C534,107.7,533.9,106.8,533.4,105.9z M532.6,108.2l-1.6,3.3h-41.5l-1.5-3.2c-0.3-0.7-0.1-1.3,0.2-1.7c0.5-0.8,1.4-1.3,2.6-1.5l19.5-3.5l19.6,3.5c1.1,0.1,2.1,0.7,2.5,1.5C532.6,106.9,532.8,107.5,532.6,108.2z"/> </svg>`,37:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 435" width="550" height="435"> <g class="seat"> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M542.1,430.5h-79.9V280l-20.8-80.9v-47.5L441.3,4.1h101L542.1,430.5z"/> <polygon fill="${e.fillColor}" points="439.7,6.9 436.5,6.9 60,6.9 60,152.5 436.5,152.5 439.7,152.5 503.7,152.5 503.7,6.9 "/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M221.5,426v-37.5c-18.8-13.4-41.3-22.5-59.9-29.1c-39.4-14.1-97.6-15.5-98.5-15.1C63,344.5,42.9,427,42.9,427L221.5,426z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M461.9,30.4h8.3h1.4h8.3c1.7,0,3.1,1.2,3.6,2.8c1.6,6.9,5.5,25.5,5.5,47.2s-3.8,40.1-5.5,47.2c-0.5,1.7-1.7,2.8-3.6,2.8h-8.3h-1.4h-8.3c-1.7,0-3.1-1.2-3.6-2.8c-1.6-6.9-5.5-25.7-5.5-47.2c0-21.7,3.8-40.1,5.5-47.2C458.7,31.6,460.3,30.4,461.9,30.4z"/> <path fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M439.6,77.6l-70,74.8"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M401.8,390.8c0,2.2-1.1,4-2.7,4.9c-7.1,3.6-27.9,12.5-63.6,11.8c-35.4-0.7-56-8.5-63.1-12c-1.7-0.9-2.8-2.7-2.8-4.9v-52.9H402L401.8,390.8L401.8,390.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M402,337.7H269.5v-97.6c0-2.7,1.7-4.9,4.1-5.3c10.8-1.6,40.9-6,62-6c21.2,0,51.4,4.4,62.1,6c2.4,0.4,4.1,2.7,4.1,5.3C402,240.1,402,337.7,402,337.7z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M372.4,361.2c-5.5-1.3-19.8-4.4-36.7-4.4c-16.7,0-31.3,3.1-36.7,4.4c-1.3,0.4-2.2,1.5-2.2,2.9v6.7v1.1v6.7c0,1.5,0.9,2.5,2.2,2.9c5.5,1.3,19.8,4.4,36.7,4.4c16.9,0,31.3-3.1,36.7-4.4c1.3-0.4,2.2-1.5,2.2-2.9v-6.7v-1.1v-6.7C374.6,362.8,373.7,361.5,372.4,361.2z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M271.2,376.2h3.7V259.1c0.1-3.9-2.1-6.9-5.8-7H266c-8.8-0.2-9.2,6.9-9.2,15.8l-0.5,31.6c-0.1,1.6,0.1,3.3,0.5,4.8l8,66.4C265.2,373.8,267.9,376.2,271.2,376.2z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M406.6,370.6l8-66.4c0.5-1.5,0.6-3.2,0.5-4.8l-0.5-31.6c-0.1-8.8-0.4-15.9-9.2-15.8h-3.1c-3.7,0.1-5.9,3.1-5.8,7v117.2h3.7C403.5,376.2,406.2,373.8,406.6,370.6z"/> <line fill="none" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x1="439.6" y1="5.6" x2="439.6" y2="151.9"/> <line fill="none" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x1="69.9" y1="5.6" x2="69.9" y2="151.9"/> <polyline fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" points="503.1,5.9 503.1,151.5 68.9,151.5 "/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,98.8V5h-30H9.4v93.8v93.8h29.9h29.9V98.8H69.3z"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="69.3" y1="191.6" x2="6.5" y2="191.6"/> <path fill="rgb(235, 235, 235)" d="M7,400H3c-1.7,0-3,1.3-3,3v32h350h33.6H550V200v-27.3V0H370h-20H0v220c0,1.7,1.3,3,3,3h4c1.7,0,3-1.3,3-3V10h343h7h180v172.7v7.3v235H373.6H360H10v-22C10,401.3,8.7,400,7,400z"/> <path fill="rgb(235, 235, 235)" d="M62.9,105.9c-0.7-1.1-1.9-1.9-3.4-2l-18.9-3.4v-3.8c3-0.3,5.3-2.8,5.3-5.8c0-3.2-2.6-5.9-5.9-5.9 s-5.9,2.6-5.9,5.9c0,0.3,0.3,0.6,0.6,0.6s0.6-0.3,0.6-0.6c0-2.6,2.1-4.7,4.7-4.7s4.7,2.1,4.7,4.7s-2.1,4.7-4.7,4.7 c-0.3,0-0.6,0.3-0.6,0.6v4.3L20,103.9c-1.5,0.2-2.8,1-3.4,2c-0.5,0.9-0.6,1.8-0.2,2.8l1.9,3.9h43l1.9-4 C63.5,107.7,63.4,106.8,62.9,105.9z M62,108.2l-1.6,3.3H19l-1.5-3.2c-0.3-0.7-0.1-1.3,0.2-1.7c0.5-0.8,1.4-1.3,2.6-1.5l19.5-3.5 l19.6,3.5c1.1,0.1,2.1,0.7,2.5,1.5C62.1,106.9,62.3,107.5,62,108.2z"/> </g> </svg>`,38:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 435" width="550" height="435"> <g class="seat"> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.9,4.5h79.9V155l20.8,80.9v47.5l0.1,147.5H7.8L7.9,4.5z"/> <polygon fill="${e.fillColor}" points="113.5,282.5 110.3,282.5 46.3,282.5 46.3,428.1 110.3,428.1 113.5,428.1 490,428.1 490,282.5 "/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M328.5,9v37.5c18.8,13.4,41.3,22.5,59.9,29.1c39.4,14.1,97.6,15.5,98.5,15.1C487,90.5,507.1,8,507.1,8L328.5,9z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M88.1,404.6h-8.3h-1.4h-8.3c-1.7,0-3.1-1.2-3.6-2.8c-1.6-6.9-5.5-25.5-5.5-47.2s3.8-40.1,5.5-47.2c0.5-1.7,1.7-2.8,3.6-2.8h8.3h1.4h8.3c1.7,0,3.1,1.2,3.6,2.8c1.6,6.9,5.5,25.7,5.5,47.2c0,21.7-3.8,40.1-5.5,47.2C91.3,403.4,89.7,404.6,88.1,404.6z"/> <path fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M110.4,357.4l70-74.8"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M280.4,239.5c0,2.2-1.1,4-2.7,4.9c-7.1,3.6-27.9,12.5-63.6,11.8c-35.4-0.7-56-8.5-63.1-12c-1.7-0.9-2.8-2.7-2.8-4.9v-52.9h132.4L280.4,239.5L280.4,239.5z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M280.6,186.4H148.1V88.8c0-2.7,1.7-4.9,4.1-5.3c10.8-1.6,40.9-6,62-6c21.2,0,51.4,4.4,62.1,6c2.4,0.4,4.1,2.7,4.1,5.3C280.6,88.8,280.6,186.4,280.6,186.4z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M251,209.9c-5.5-1.3-19.8-4.4-36.7-4.4c-16.7,0-31.3,3.1-36.7,4.4c-1.3,0.4-2.2,1.5-2.2,2.9v6.7v1.1v6.7c0,1.5,0.9,2.5,2.2,2.9c5.5,1.3,19.8,4.4,36.7,4.4s31.3-3.1,36.7-4.4c1.3-0.4,2.2-1.5,2.2-2.9v-6.7v-1.1v-6.7C253.2,211.5,252.3,210.2,251,209.9z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M149.8,224.9h3.7V107.8c0.1-3.9-2.1-6.9-5.8-7h-3.1c-8.8-0.2-9.2,6.9-9.2,15.8l-0.5,31.6c-0.1,1.6,0.1,3.3,0.5,4.8l8,66.4C143.8,222.5,146.5,224.9,149.8,224.9z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M285.2,219.3l8-66.4c0.5-1.5,0.6-3.2,0.5-4.8l-0.5-31.6c-0.1-8.8-0.4-15.9-9.2-15.8h-3.1c-3.7,0.1-5.9,3.1-5.8,7v117.2h3.7C282.1,224.9,284.8,222.5,285.2,219.3z"/> <line fill="none" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x1="110.4" y1="429.4" x2="110.4" y2="283.1"/> <line fill="none" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x1="480.1" y1="429.4" x2="480.1" y2="283.1"/> <polyline fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" points="46.9,429.1 46.9,283.5 481.1,283.5 "/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M480.7,336.2V430h29.9h29.9v-93.8v-93.8h-29.9h-29.9V336.2z"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="480.7" y1="243.4" x2="543.5" y2="243.4"/> <path fill="rgb(235, 235, 235)" d="M543,35h4c1.7,0,3-1.3,3-3V0H200h-33.6H0v235v27.3V435h180h20h350V215c0-1.7-1.3-3-3-3h-4c-1.7,0-3,1.3-3,3v210H197h-7H10V252.3V245V10h166.4H190h350v22C540,33.7,541.3,35,543,35z"/> <path fill="rgb(235, 235, 235)" d="M533.4,343.3c-0.7-1.1-1.9-1.9-3.4-2l-18.9-3.4v-3.8c3-0.3,5.3-2.8,5.3-5.8c0-3.2-2.6-5.9-5.9-5.9s-5.9,2.6-5.9,5.9c0,0.3,0.3,0.6,0.6,0.6s0.6-0.3,0.6-0.6c0-2.6,2.1-4.7,4.7-4.7c2.6,0,4.7,2.1,4.7,4.7s-2.1,4.7-4.7,4.7c-0.3,0-0.6,0.3-0.6,0.6v4.3l-19.4,3.5c-1.5,0.2-2.8,1-3.4,2c-0.5,0.9-0.6,1.8-0.2,2.8l1.9,3.9h43l1.9-4 C534,345.1,533.9,344.2,533.4,343.3z M532.6,345.6l-1.6,3.3h-41.5l-1.5-3.2c-0.3-0.7-0.1-1.3,0.2-1.7c0.5-0.8,1.4-1.3,2.6-1.5l19.5-3.5l19.6,3.5c1.1,0.1,2.1,0.7,2.5,1.5C532.6,344.3,532.8,344.9,532.6,345.6z"/> </g> </svg>`,39:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 435" width="550" height="435"> <g class="seat"> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M542.2,430.9h-101l0.1-147.5v-47.5l20.8-80.9V4.5H542L542.2,430.9z"/> <polygon fill="${e.fillColor}" points="439.7,282.5 436.5,282.5 60,282.5 60,428.1 436.5,428.1 439.7,428.1 503.7,428.1 503.7,282.5 "/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M42.9,8c0,0,20.1,82.5,20.2,82.7c1,0.3,59.1-1,98.5-15.1c18.5-6.6,41.1-15.7,59.9-29.1V9L42.9,8z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M458.3,401.8c-1.6-7.1-5.5-25.5-5.5-47.2c0-21.5,3.8-40.2,5.5-47.2c0.5-1.7,1.9-2.8,3.6-2.8h8.3h1.4h8.3c1.9,0,3.1,1.2,3.6,2.8c1.6,7.1,5.5,25.5,5.5,47.2s-3.8,40.2-5.5,47.2c-0.5,1.7-1.9,2.8-3.6,2.8h-8.3h-1.4h-8.3C460.3,404.6,458.7,403.4,458.3,401.8z"/> <path fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M369.6,282.6l70,74.8"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M269.6,239.5c0,2.2,1.1,4,2.7,4.9c7.1,3.6,27.9,12.5,63.6,11.8c35.4-0.7,56-8.5,63.1-12c1.7-0.9,2.8-2.7,2.8-4.9v-52.9H269.4L269.6,239.5L269.6,239.5z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M269.4,186.4h132.5V88.8c0-2.7-1.7-4.9-4.1-5.3c-10.8-1.6-40.9-6-62-6c-21.2,0-51.4,4.4-62.1,6c-2.4,0.4-4.1,2.7-4.1,5.3C269.4,88.8,269.4,186.4,269.4,186.4z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M299,209.9c5.5-1.3,19.8-4.4,36.7-4.4c16.7,0,31.3,3.1,36.7,4.4c1.3,0.4,2.2,1.5,2.2,2.9v6.7v1.1v6.7c0,1.5-0.9,2.5-2.2,2.9c-5.5,1.3-19.8,4.4-36.7,4.4c-16.9,0-31.3-3.1-36.7-4.4c-1.3-0.4-2.2-1.5-2.2-2.9v-6.7v-1.1v-6.7C296.8,211.5,297.7,210.2,299,209.9z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M400.2,224.9h-3.7V107.8c-0.1-3.9,2.1-6.9,5.8-7h3.1c8.8-0.2,9.2,6.9,9.2,15.8l0.5,31.6c0.1,1.6-0.1,3.3-0.5,4.8l-8,66.4C406.2,222.5,403.5,224.9,400.2,224.9z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M264.8,219.3l-8-66.4c-0.5-1.5-0.6-3.2-0.5-4.8l0.5-31.6c0.1-8.8,0.4-15.9,9.2-15.8h3.1c3.7,0.1,5.9,3.1,5.8,7v117.2h-3.7C267.9,224.9,265.2,222.5,264.8,219.3z"/> <line fill="none" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x1="439.6" y1="429.4" x2="439.6" y2="283.1"/> <line fill="none" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x1="69.9" y1="429.4" x2="69.9" y2="283.1"/> <polyline fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" points="503.1,429.1 503.1,283.5 68.9,283.5 "/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,242.4h-30H9.4v93.8V430h29.9h29.9v-93.8v-93.8H69.3z"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="69.3" y1="243.4" x2="6.5" y2="243.4"/> <path fill="rgb(235, 235, 235)" d="M7,35H3c-1.7,0-3-1.3-3-3V0h350h33.6H550v235v27.3V435H370h-20H0V215c0-1.7,1.3-3,3-3h4c1.7,0,3,1.3,3,3v210h343h7h180V252.3V245V10H373.6H360H10v22C10,33.7,8.7,35,7,35z"/> <path fill="rgb(235, 235, 235)" d="M62.9,343.3c-0.7-1.1-1.9-1.9-3.4-2l-18.9-3.4v-3.8c3-0.3,5.3-2.8,5.3-5.8c0-3.2-2.6-5.9-5.9-5.9 s-5.9,2.6-5.9,5.9c0,0.3,0.3,0.6,0.6,0.6s0.6-0.3,0.6-0.6c0-2.6,2.1-4.7,4.7-4.7s4.7,2.1,4.7,4.7S42.6,333,40,333c-0.3,0-0.6,0.3-0.6,0.6v4.3L20,341.3c-1.5,0.2-2.8,1-3.4,2c-0.5,0.9-0.6,1.8-0.2,2.8l1.9,3.9h43l1.9-4 C63.5,345.1,63.4,344.2,62.9,343.3z M62,345.6l-1.6,3.3H19l-1.5-3.2c-0.3-0.7-0.1-1.3,0.2-1.7c0.5-0.8,1.4-1.3,2.6-1.5l19.5-3.5l19.6,3.5c1.1,0.1,2.1,0.7,2.5,1.5C62.1,344.3,62.3,344.9,62,345.6z"/> </g> </svg>`,40:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275 1230" width="275" height="1230"> <g class="seat"> <polygon fill="${e.fillColor}" points="275,505 73,505 210.9,46.3 275,46.3 "/> <polygon fill="rgb(235, 235, 235)" points="275,513.8 70.9,513.8 70.9,503.8 275,503.8 \t"/> <polyline fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" points="275,983.4 38.8,983.4 38.8,912.2 275,912.2 "/> <path fill="rgb(235, 235, 235)" d="M50,691.8h225v10H48.4"/> <polyline fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="275,1179.3 38.5,1179.3 38.5,913.7 7.8,913.7 7.8,1225 275,1225 "/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M275,492.9H108.5c3.4-14.5,7.1-28.9,11-43.2c12.3-44.6,35.8-125.2,63-204.3c9.9-28.8,20.2-57.4,30.2-84.1H275"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M81.7,766.6l52.1,85.9l57.2-34.7c1.6-1,2.2-2.8,1.5-4.5c-3.3-7.6-12.6-28.7-20.9-42.3c-8.3-13.7-22.8-31.8-27.9-38.1c-1.2-1.4-3.2-1.7-4.7-0.8C138.9,731.9,81.7,766.6,81.7,766.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M66.8,775.8c-1.3,0.8-1.9,2.1-1.8,3.5c0.7,5.9,3.7,22.5,18.1,45.4c14.3,22.7,27,33.3,31.9,36.6c1.2,0.8,2.7,0.9,4,0.1l31-18.8l-52.1-85.8L66.8,775.8L66.8,775.8z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M275,907.2l-90.4-0.4v-41.4c0-3.5,1.9-6.8,4.9-8.6l45.6-26.9c1.5-0.9,3.3-1.4,5.1-1.4H275"/> <rect fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" x="91" y="535.5" width="159.1" height="140"/> <path fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" d="M179.1,605.5c0,4.2-3.7,7.7-8.3,7.8s-8.5-3.1-8.8-7.3s3.1-7.9,7.7-8.3c4.6-0.4,8.7,2.6,9.3,6.8L179.1,605.5z"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="177.2" y1="599.5" x2="250.3" y2="535.4"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="177.2" y1="611.4" x2="250.3" y2="675.5"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="164.1" y1="599.5" x2="90.9" y2="535.4"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="164.1" y1="611.4" x2="90.9" y2="675.5"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M80.2,1166.7h132.5v-97.6c0-2.7-1.7-4.9-4.1-5.3c-10.8-1.6-40.9-6-62-6c-21.2,0-51.4,4.4-62.1,6c-2.4,0.4-4.1,2.7-4.1,5.3C80.2,1069.1,80.2,1166.7,80.2,1166.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M80.4,1192.3c0,2.2,1.1,4,2.7,4.9c7.1,3.6,27.9,12.5,63.6,11.8c35.4-0.7,56-8.5,63.1-12c1.7-0.9,2.8-2.7,2.8-4.9v-52.9H80.2L80.4,1192.3L80.4,1192.3z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M109.8,1162.7c5.5-1.3,19.8-4.4,36.7-4.4c16.7,0,31.3,3.1,36.7,4.4c1.3,0.4,2.2,1.5,2.2,2.9v6.7v1.1v6.7c0,1.5-0.9,2.5-2.2,2.9c-5.5,1.3-19.8,4.4-36.7,4.4s-31.3-3.1-36.7-4.4c-1.3-0.4-2.2-1.5-2.2-2.9v-6.7v-1.1v-6.7C107.6,1164.3,108.5,1163,109.8,1162.7z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M211,1197.1h-3.7V1080c-0.1-3.9,2.1-6.9,5.8-7h3.1c8.8-0.2,9.2,6.9,9.2,15.8l0.5,31.6c0.1,1.6-0.1,3.3-0.5,4.8l-8,66.4C217,1194.7,214.3,1197.1,211,1197.1z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M75.6,1191.5l-8-66.4c-0.5-1.5-0.6-3.2-0.5-4.8l0.5-31.6c0.1-8.8,0.4-15.9,9.2-15.8h3.1c3.7,0.1,5.9,3.1,5.8,7v117.2H82C78.7,1197.1,76,1194.7,75.6,1191.5z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M275,50.2h-41.5c-16.2,46.2-47.1,119.3-73.2,195.3c-27.2,79.1-50.7,159.7-63,204.3C37.7,665.5,38.1,911.6,38.1,911.6l-30.3,2.1c0,0,15-320.5,42.1-396.7c11.8-33.2,25.9-102,45.8-169c25.9-86.9,57-170.8,57-170.8l67-171.3L275,5"/> <path fill="rgb(235, 235, 235)" d="M131.9,247.1C169.8,136.7,214.2,29.3,222.2,10H275V0h-59.4l-1.3,3.1c-0.5,1.2-50,119.2-91.8,240.8c-31.2,90.9-56.2,179.6-63.1,204.6C28.5,560.3,14,683.1,7.3,766.4C2.2,829.4,0.7,880,0.2,905H0v17v0.1V1230h275v-10H10V922.1V922c0-0.6,0-2.9,0.1-7H275v-10H10.2C11.4,844.1,19,632,69,451.1C75.9,426.2,100.8,337.7,131.9,247.1z"/> </g> </svg>`,41:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275 1230" width="275" height="1230"> <g class="seat"> <polyline fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  points="0,983.4 128,983.4 128,912.2 0,912.2 "/> <polyline fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8"  points="0,1225 275,1225 275,1179.3 0,1179.3 "/> <path fill="rgb(235, 235, 235)" d="M0,1220h265v-118.2h10V1230H0"/> <polygon fill="${e.fillColor}" points="0,505 79.3,505 177.6,46.3 0,46.3 "/> <polyline fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8"  points="0,50.2 176.2,50.2 153.6,157.2 213.4,157.3 212,7.7 0,6.2 "/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M0,828.5h126.6c0,0-0.9,77.7,0,78.7L0,906.8"/> <polygon fill="rgb(235, 235, 235)" points="275,995.6 265,995.6 265,704.2 205.1,508.2 205.1,507.4 209.1,159.2 208.4,10 0,10 0,0 218.4,0 219.1,159.3 215.1,506.8 275,702.8 \t"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M80.2,1166.7h132.5v-97.6c0-2.7-1.7-4.9-4.1-5.3c-10.8-1.6-40.9-6-62-6c-21.2,0-51.4,4.4-62.1,6c-2.4,0.4-4.1,2.7-4.1,5.3C80.2,1069.1,80.2,1166.7,80.2,1166.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M80.4,1192.3c0,2.2,1.1,4,2.7,4.9c7.1,3.6,27.9,12.5,63.6,11.8c35.4-0.7,56-8.5,63.1-12c1.7-0.9,2.8-2.7,2.8-4.9v-52.9H80.2L80.4,1192.3L80.4,1192.3z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M109.8,1162.7c5.5-1.3,19.8-4.4,36.7-4.4c16.7,0,31.3,3.1,36.7,4.4c1.3,0.4,2.2,1.5,2.2,2.9v6.7v1.1v6.7c0,1.5-0.9,2.5-2.2,2.9c-5.5,1.3-19.8,4.4-36.7,4.4s-31.3-3.1-36.7-4.4c-1.3-0.4-2.2-1.5-2.2-2.9v-6.7v-1.1v-6.7C107.6,1164.3,108.5,1163,109.8,1162.7z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8"  d="M211,1197.1h-3.7V1080c-0.1-3.9,2.1-6.9,5.8-7h3.1c8.8-0.2,9.2,6.9,9.2,15.8l0.5,31.6c0.1,1.6-0.1,3.3-0.5,4.8l-8,66.4C217,1194.7,214.3,1197.1,211,1197.1z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8"  d="M75.6,1191.5l-8-66.4c-0.5-1.5-0.6-3.2-0.5-4.8l0.5-31.6c0.1-8.8,0.4-15.9,9.2-15.8h3.1c3.7,0.1,5.9,3.1,5.8,7v117.2H82C78.7,1197.1,76,1194.7,75.6,1191.5z"/> <ellipse fill="rgb(235, 235, 235)" stroke="rgb(147, 147, 147)" stroke-width="1.2" stroke-miterlimit="4.8" cx="44.7" cy="878.8" rx="33.6" ry="27"/> <path fill="rgb(147, 147, 147)" d="M48.3,906.1h-7.2v-17.2c0-1.8,1.5-3.3,3.3-3.3h0.7c1.8,0,3.3,1.5,3.3,3.3L48.3,906.1L48.3,906.1z"/> <path fill="rgb(235, 235, 235)" d="M132,915H0v-10h132"/> <path fill="rgb(235, 235, 235)" d="M122.6,911.3v-99.1h10v99.1"/> <path fill="rgb(235, 235, 235)" d="M132.6,884.2v99.1h-10v-99.1"/> <polygon fill="rgb(235, 235, 235)" points="132,701.9 122,701.9 122,680.8 72.3,513.8 0,513.8 0,503.8 79.7,503.8 132,679.4"/> <polyline fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" points="0,492.9 59.8,492.9 133.3,161.3 0,161.3"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M97.8,119.4c-7.1,1.6-25.5,5.5-47.2,5.5c-21.5,0-40.2-3.8-47.2-5.5c-1.7-0.5-2.8-1.9-2.8-3.6v-8.3v-1.4v-8.3c0-1.9,1.2-3.1,2.8-3.6c7.1-1.6,25.5-5.5,47.2-5.5s40.2,3.8,47.2,5.5c1.7,0.5,2.8,1.9,2.8,3.6v8.3v1.4v8.3C100.6,117.4,99.4,119,97.8,119.4z"/> </g> </svg>`,42:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 325" width="550" height="325"> <g class="seat"> <polyline fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" points="544.4,80.9 36.5,80.9 36.5,9.7 544.4,9.7 "/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M336.3,314.6h132.5V217c0-2.7-1.7-4.9-4.1-5.3c-10.8-1.6-40.9-6-62-6c-21.2,0-51.4,4.4-62.1,6c-2.4,0.4-4.1,2.7-4.1,5.3C336.3,217,336.3,314.6,336.3,314.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M468.7,320v-32.9H336.3"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M363.7,318v3.3v-1.1v-6.7c0-1.3,0.9-2.6,2.2-2.9c5.5-1.3,19.8-4.4,36.7-4.4c16.7,0,31.3,3.1,36.7,4.4c1.3,0.4,2.2,1.5,2.2,2.9v6.7v1.1V318"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M463.4,320v-92.1c-0.1-3.9,2.1-6.9,5.8-7h3.1c8.8-0.2,9.2,6.9,9.2,15.8l0.5,31.6c0.1,1.6-0.1,3.3-0.5,4.8l-5.6,46.9"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M329.2,318.7l-5.5-45.7c-0.5-1.5-0.6-3.2-0.5-4.8l0.5-31.6c0.1-8.8,0.4-15.9,9.2-15.8h3.1c3.7,0.1,5.9,3.1,5.8,7v91.3"/> <rect fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="8" y="5.4" width="32.4" height="220.4"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M487,117.9c-1.6-7.1-5.5-25.5-5.5-47.2c0-21.5,3.8-40.2,5.5-47.2c0.5-1.7,1.9-2.8,3.6-2.8h8.3h1.4h8.3c1.9,0,3.1,1.2,3.6,2.8 c1.6,7.1,5.5,25.5,5.5,47.2s-3.8,40.2-5.5,47.2c-0.5,1.7-1.9,2.8-3.6,2.8h-8.3h-1.4h-8.3C489,120.7,487.4,119.5,487,117.9z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M274.9,320.8H7.4V205.7h223.9c24.1,0,43.6,19.5,43.6,43.6V320.8z"/> <polygon fill="rgb(235, 235, 235)" points="550,129.2 550,0 548.8,0 1.2,0 0,0 0,2.8 0,322.2 0,325 1.2,325 548.8,325 550,325 550,202.8 540,202.8 540,315 10,315 10,10 540,10 540,129.2 "/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M398.2,128.3l46.5-47"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M546.2,128.4h-506"/> </g> </svg>`,43:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 325" width="550" height="325"> <g class="seat" transform="scale(-1, 1) translate(-550,0)"> <polyline fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" points="544.4,80.9 36.5,80.9 36.5,9.7 544.4,9.7 "/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M336.3,314.6h132.5V217c0-2.7-1.7-4.9-4.1-5.3c-10.8-1.6-40.9-6-62-6c-21.2,0-51.4,4.4-62.1,6c-2.4,0.4-4.1,2.7-4.1,5.3C336.3,217,336.3,314.6,336.3,314.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M468.7,320v-32.9H336.3"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M363.7,318v3.3v-1.1v-6.7c0-1.3,0.9-2.6,2.2-2.9c5.5-1.3,19.8-4.4,36.7-4.4c16.7,0,31.3,3.1,36.7,4.4c1.3,0.4,2.2,1.5,2.2,2.9v6.7v1.1V318"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M463.4,320v-92.1c-0.1-3.9,2.1-6.9,5.8-7h3.1c8.8-0.2,9.2,6.9,9.2,15.8l0.5,31.6c0.1,1.6-0.1,3.3-0.5,4.8l-5.6,46.9"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M329.2,318.7l-5.5-45.7c-0.5-1.5-0.6-3.2-0.5-4.8l0.5-31.6c0.1-8.8,0.4-15.9,9.2-15.8h3.1c3.7,0.1,5.9,3.1,5.8,7v91.3"/> <rect fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="8" y="5.4" width="32.4" height="220.4"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M487,117.9c-1.6-7.1-5.5-25.5-5.5-47.2c0-21.5,3.8-40.2,5.5-47.2c0.5-1.7,1.9-2.8,3.6-2.8h8.3h1.4h8.3c1.9,0,3.1,1.2,3.6,2.8 c1.6,7.1,5.5,25.5,5.5,47.2s-3.8,40.2-5.5,47.2c-0.5,1.7-1.9,2.8-3.6,2.8h-8.3h-1.4h-8.3C489,120.7,487.4,119.5,487,117.9z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M274.9,320.8H7.4V205.7h223.9c24.1,0,43.6,19.5,43.6,43.6V320.8z"/> <polygon fill="rgb(235, 235, 235)" points="550,129.2 550,0 548.8,0 1.2,0 0,0 0,2.8 0,322.2 0,325 1.2,325 548.8,325 550,325 550,202.8 540,202.8 540,315 10,315 10,10 540,10 540,129.2 "/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M398.2,128.3l46.5-47"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M546.2,128.4h-506"/> </g> </svg>`,44:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 325" width="550" height="325"> <g class="seat"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M213.7,10.4H81.2V108c0,2.7,1.7,4.9,4.1,5.3c10.8,1.6,40.9,6,62,6c21.2,0,51.4-4.4,62.1-6c2.4-0.4,4.1-2.7,4.1-5.3C213.7,108,213.7,10.4,213.7,10.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M81.3,5v32.9h132.4"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M186.3,7V3.7v1.1v6.7c0,1.3-0.9,2.6-2.2,2.9c-5.5,1.3-19.8,4.4-36.7,4.4c-16.7,0-31.3-3.1-36.7-4.4c-1.3-0.4-2.2-1.5-2.2-2.9V4.8V3.7V7"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M86.6,5v92.1c0.1,3.9-2.1,6.9-5.8,7h-3.1c-8.8,0.2-9.2-6.9-9.2-15.8L68,56.7c-0.1-1.6,0.1-3.3,0.5-4.8L74.1,5"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M220.8,6.3l5.5,45.7c0.5,1.5,0.6,3.2,0.5,4.8l-0.5,31.6c-0.1,8.8-0.4,15.9-9.2,15.8H214c-3.7-0.1-5.9-3.1-5.8-7V5.9"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M275.1,4.2h267.5v115.1H318.7c-24.1,0-43.6-19.5-43.6-43.6V4.2z"/> <polyline fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" points="543.2,244.1 35.3,244.1 35.3,315.3 543.2,315.3 "/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M489.4,204.3h8.3h1.4h8.3c1.7,0,3.1,1.1,3.6,2.8c1.7,7,5.5,25.5,5.5,47.2s-3.9,40.1-5.5,47.2c-0.5,1.6-1.7,2.8-3.6,2.8h-8.3h-1.4h-8.3c-1.7,0-3.1-1.1-3.6-2.8c-1.7-7-5.5-25.7-5.5-47.2c0-21.7,3.9-40.1,5.5-47.2C486.2,205.5,487.8,204.3,489.4,204.3z"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M443.5,243.8l-46.5-47"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M39,196.6h506"/> <rect  fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="8.5" y="6.6" width="32.4" height="313"/> <polygon fill="rgb(235, 235, 235)" points="550,195.8 550,325 548.8,325 1.2,325 0,325 0,322.2 0,2.8 0,0 1.2,0 548.8,0 550,0 550,120.2 540,120.2 540,10 10,10 10,315 540,315 540,195.8 "/> </g> </svg>`,45:e=>`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 325" width="550" height="325"> <g class="seat" transform="scale(-1, 1) translate(-550,0)"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M213.7,10.4H81.2V108c0,2.7,1.7,4.9,4.1,5.3c10.8,1.6,40.9,6,62,6c21.2,0,51.4-4.4,62.1-6c2.4-0.4,4.1-2.7,4.1-5.3C213.7,108,213.7,10.4,213.7,10.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M81.3,5v32.9h132.4"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M186.3,7V3.7v1.1v6.7c0,1.3-0.9,2.6-2.2,2.9c-5.5,1.3-19.8,4.4-36.7,4.4c-16.7,0-31.3-3.1-36.7-4.4c-1.3-0.4-2.2-1.5-2.2-2.9V4.8V3.7V7"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M86.6,5v92.1c0.1,3.9-2.1,6.9-5.8,7h-3.1c-8.8,0.2-9.2-6.9-9.2-15.8L68,56.7c-0.1-1.6,0.1-3.3,0.5-4.8L74.1,5"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M220.8,6.3l5.5,45.7c0.5,1.5,0.6,3.2,0.5,4.8l-0.5,31.6c-0.1,8.8-0.4,15.9-9.2,15.8H214c-3.7-0.1-5.9-3.1-5.8-7V5.9"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M275.1,4.2h267.5v115.1H318.7c-24.1,0-43.6-19.5-43.6-43.6V4.2z"/> <polyline fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" points="543.2,244.1 35.3,244.1 35.3,315.3 543.2,315.3 "/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M489.4,204.3h8.3h1.4h8.3c1.7,0,3.1,1.1,3.6,2.8c1.7,7,5.5,25.5,5.5,47.2s-3.9,40.1-5.5,47.2c-0.5,1.6-1.7,2.8-3.6,2.8h-8.3h-1.4h-8.3c-1.7,0-3.1-1.1-3.6-2.8c-1.7-7-5.5-25.7-5.5-47.2c0-21.7,3.9-40.1,5.5-47.2C486.2,205.5,487.8,204.3,489.4,204.3z"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M443.5,243.8l-46.5-47"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M39,196.6h506"/> <rect  fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="8.5" y="6.6" width="32.4" height="313"/> <polygon fill="rgb(235, 235, 235)" points="550,195.8 550,325 548.8,325 1.2,325 0,325 0,322.2 0,2.8 0,0 1.2,0 548.8,0 550,0 550,120.2 540,120.2 540,10 10,10 10,315 540,315 540,195.8 "/> </g> </svg>`},getTemplate(e,t){const r=(this._mapping[e]||(e=>null))(t);return r||st.getTemplate(e,t)}},nt=({seatType:e,style:t})=>{const l=Ke.sanitize(rt.getSeatIcon(e,t));return r.default.createElement("div",{className:"jets-seat-svg",dangerouslySetInnerHTML:{__html:l}})};Ye(".jets-seat-price{align-items:center;background:#fefefe;border-radius:12px;box-shadow:1px 1px 1px 1px rgba(0,0,0,.6);box-sizing:border-box;color:#000;display:flex;height:45px;justify-content:center;overflow:hidden;padding:5px 2px;position:absolute;top:-45px}.jets-seat-price .currency{font-size:21px;left:5px;line-height:1;position:absolute;top:11px}.jets-seat-price .cost{flex:1;font-size:28px;margin-left:16px;overflow:hidden;padding-left:3px;text-overflow:ellipsis;white-space:nowrap}");const ct=({cost:e,currency:t,maxWidth:l})=>{const i=`${t}${e}`,o=(null==t?void 0:t.toString().charAt(0))||"*";return r.default.createElement("div",{className:"jets-seat-price",title:i,style:{maxWidth:l}},r.default.createElement("strong",{className:"currency"},o),r.default.createElement("span",{className:"cost"},e))};Ye(".jets-seat{align-items:center;box-sizing:border-box;display:flex;float:left;justify-content:center;position:relative;z-index:10}.jets-unavailable{cursor:not-allowed;position:relative}.jets-available,.jets-selected{cursor:pointer;position:relative}.jets-selected{color:#fff}.jets-aisle,.jets-empty,.jets-index{pointer-events:none}.jets-seat-r-nw{transform:rotate(-20deg)}.jets-seat-r-nw>.jets-seat-number,.jets-seat-r-nw>.jets-seat-passenger{transform:rotate(20deg)}.jets-seat-r-nw45{transform:rotate(-45deg)}.jets-seat-r-nw45>.jets-seat-number,.jets-seat-r-nw45>.jets-seat-passenger{transform:rotate(45deg)}.jets-seat-r-ne{transform:rotate(20deg)}.jets-seat-r-ne>.jets-seat-number,.jets-seat-r-ne>.jets-seat-passenger{transform:rotate(-20deg)}.jets-seat-r-ne45{transform:rotate(45deg)}.jets-seat-r-ne45>.jets-seat-number,.jets-seat-r-ne45>.jets-seat-passenger{transform:rotate(-45deg)}.jets-seat-r-s{transform:rotate(180deg)}.jets-seat-r-s>.jets-seat-number,.jets-seat-r-s>.jets-seat-passenger{transform:rotate(-180deg)}.jets-seat-r-se{transform:scale(.8) rotate(160deg)}.jets-seat-r-se>.jets-seat-number,.jets-seat-r-se>.jets-seat-passenger{transform:rotate(-160deg)}.jets-seat-r-sw{transform:scale(.8) rotate(-160deg)}.jets-seat-r-sw>.jets-seat-number,.jets-seat-r-sw>.jets-seat-passenger{transform:rotate(160deg)}.jets-seat-map svg{height:100%;width:100%}.jets-seat-passenger{align-items:center;border-radius:50%;display:flex;font-size:36px;justify-content:center;max-height:192px;max-width:192px;position:absolute;z-index:11}.jets-seat-svg{height:100%;width:100%}.jets-seat-number{color:#fff;font-size:30px;position:absolute;text-align:center;top:18%;z-index:1}.ST-5,.ST-6{top:28%}.ST-8{margin-left:12px}.ST-9{margin-right:12px}.ST-10{margin-left:60px}.ST-11{margin-right:60px}.ST-12{margin-right:106px;top:25%}.ST-13{margin-left:106px;top:25%}.ST-15{margin-left:38px}.ST-16{margin-right:38px}.ST-17{margin-left:72px}.ST-18{margin-right:72px}.ST-20,.ST-21{top:65%}.ST-22,.ST-23{top:60%}.ST-24,.ST-25{top:55%}.ST-26{margin-right:50px;top:30%}.ST-27{margin-left:50px;top:30%}.ST-28{margin-right:62px;top:45%}.ST-29{margin-left:62px;top:45%}.ST-30{margin-right:62px;top:60%}.ST-31{margin-left:62px;top:60%}.ST-32{margin-right:58px;top:60%}.ST-33{margin-left:58px;top:60%}.ST-34{margin-left:27px;top:40%}.ST-35{margin-right:27px;top:40%}.ST-36{margin-right:122px;top:62%}.ST-37{margin-left:122px;top:62%}.ST-38{margin-right:122px;top:28%}.ST-39{margin-left:122px;top:28%}.ST-42{margin-left:260px;top:70%}.ST-43{margin-right:242px;top:70%}.ST-44{margin-right:254px;top:18%}.ST-45{margin-left:260px;top:18%}");const dt=({data:t})=>{const{onSeatClick:l,showTooltip:i,onTooltipClose:o,seatLabelJumpTo:s,resetSeatJumpTo:a,params:n,config:c,colorTheme:d}=e.useContext(A),{letter:h,type:g,status:p,size:m,passenger:C,color:u,rotation:f,seatType:k,seatIconType:v,topOffset:w,leftOffset:b,number:x,price:M,cost:z,currency:y}=t,{index:S,aisle:T}=L,E=`jets-seat jets-${g} jets-${p} ${f?`jets-seat-r-${f}`:""}`,H=M&&(null==c?void 0:c.visibleSeatPriceLabels),_=e.useRef(),[$,V]=e.useState((()=>({width:.8*m.width,height:.8*m.width,backgroundColor:d.defaultPassengerBadgeColor,transform:null==n?void 0:n.antiRotation}))),O=()=>g===S||g===T?"":C?C.abbr||"P":"";let B="";null==n||!n.isHorizontal||g!==T&&g!==S||(B=n.rightToLeft?"":"rotate(180deg)");const I={width:m.width,height:m.height,top:w,left:b,transform:B},W={strokeColor:d.seatStrokeColor,armrestColor:d.seatArmrestColor,fillColor:u,strokeWidth:d.seatStrokeWidth},R={transform:`${null==n?void 0:n.antiRotation} scale(${n.antiScale})`,color:d.seatLabelColor,zIndex:100};e.useEffect((()=>{C&&(()=>{if(!_.current)return;if(!_.current.querySelector(".seat"))return;const e={...$};null!=C&&C.passengerColor&&(e.backgroundColor=C.passengerColor),V(e)})()}),[C]),e.useEffect((()=>{var e;s&&(null==x?void 0:x.toUpperCase())===(null==s?void 0:s.toUpperCase())&&(null===(e=_.current)||void 0===e||e.scrollIntoView(),i(t,_,{nativeEvent:null}),a())}),[s]);return r.default.createElement("div",{ref:_,style:I,className:E,onClick:e=>l(t,_,e),onMouseEnter:n.tooltipOnHover?e=>i(t,_,e):null,onMouseLeave:n.tooltipOnHover?e=>((e,t,r)=>{var l;null!=r&&null!==(l=r.relatedTarget)&&void 0!==l&&null!==(l=l.className)&&void 0!==l&&l.includes("tooltip")||o(e,t,r)})(t,_,e):null,"data-testid":"jets-seat"},k&&g!==S?r.default.createElement(r.default.Fragment,null,H&&r.default.createElement(ct,{cost:z,currency:y,maxWidth:m.width}),r.default.createElement("div",{className:`jets-seat-number ST-${v}`},`${x}`),r.default.createElement(nt,{seatType:k,style:W}),C&&r.default.createElement("div",{className:"jets-seat-passenger",style:$},r.default.createElement("div",{style:{transform:null==n||!n.isHorizontal||null!=n&&n.rightToLeft?"":"rotate(180deg)"}},O()))):r.default.createElement("div",{style:R,"data-testid":"jets-seat-index"},O()))};Ye(".jets-row{position:absolute}");const ht=({seats:t,top:l})=>{var i;const o=e.useRef(null),{componentOverrides:s}=e.useContext(A),a=null!==(i=null==s?void 0:s.JetsSeat)&&void 0!==i?i:dt;return r.default.createElement("div",{className:"jets-row",style:{top:l},ref:o},null==t?void 0:t.map((e=>r.default.createElement(a,{key:e.uniqId,data:e}))))};Ye(".jets-cabin-title-container{position:absolute}.jets-cabin-title-hl-right{right:0}.jets-cabin-title-hl-left,.jets-cabin-title-hl-right{position:absolute;top:0;white-space:nowrap;width:60px}.jets-cabin-title-hl-left{left:0}.jets-cabin-title-label-left{right:0;transform-origin:bottom right}.jets-cabin-title-label-left,.jets-cabin-title-label-right{border-radius:3px;font-size:16px;padding:0 6px;position:absolute;top:0}.jets-cabin-title-label-right{left:0;transform-origin:bottom left}");const gt=({top:t,height:l,lang:i,localeKey:o})=>{const{params:s,colorTheme:a,config:n}=e.useContext(A),c=e.useRef(null),d=a.cabinTitlesHighlightColors,h=n.customCabinTitles&&n.customCabinTitles[o]?n.customCabinTitles[o]:z[i][o],g={color:a.cabinTitlesLabelColor,top:t,height:l,width:s.innerWidth},p={transform:"translateY(-50%) rotate(-90deg)",zoom:s.antiScale},m={transform:"translateY(-50%) rotate(90deg)",zoom:s.antiScale},C={height:l,borderRight:`${3*s.antiScale}px solid ${d[o]}`},u={height:l,borderLeft:`${3*s.antiScale}px solid ${d[o]}`};return r.default.createElement("div",{className:"jets-cabin-title-container",style:g,ref:c,"data-testid":"jets-cabin-title"},r.default.createElement("div",{className:"jets-cabin-title-hl-left",style:C},r.default.createElement("div",{className:"jets-cabin-title-label-left",style:p},h)),r.default.createElement("div",{className:"jets-cabin-title-hl-right",style:u},r.default.createElement("div",{className:"jets-cabin-title-label-right",style:m},h)))};Ye(".jets-deck{align-items:center;box-sizing:border-box;display:flex;flex-direction:column;height:100%;position:relative;transform-style:preserve-3d;width:100%}");const pt=({deck:t,lang:l,exits:i,bulks:o,isSingleDeck:s})=>{const{rows:a,number:n,height:c,width:d,wingsInfo:h}=t||{},{params:g}=e.useContext(A),p=e.useRef(null),m={height:c,padding:"0 10px 0 10px",margin:"0 auto"};return r.default.createElement("div",{className:"jets-deck",style:m,ref:p},(null==g?void 0:g.visibleCabinTitles)&&a.filter((e=>e.isFirstInCabin)).map((e=>r.default.createElement(gt,{key:e.classCode+e.uniqId,top:e.topOffset,height:e.cabinHeight,lang:l,localeKey:e.classCode}))),n&&!s&&r.default.createElement(tt,{number:n,lang:l,localeKey:"deck"}),a.map((e=>r.default.createElement(ht,{key:e.uniqId,seats:e.seats,top:e.topOffset}))),i&&i.length?i.map((({topOffset:e,type:t,uniqId:l},i)=>r.default.createElement(et,{key:l,type:t,index:i,topOffset:e}))):null,o&&o.length?o.map((({id:e,uniqId:t,type:l,align:i,width:o,height:s,iconType:a,xOffset:n,topOffset:c})=>r.default.createElement(Xe,{id:e,key:t,type:l,align:i,width:o,height:s,iconType:a,xOffset:n,topOffset:c}))):null)};Ye(".jets-deck-selector{background-color:hsla(0,0%,50%,.5);border-radius:3px;height:40px;margin:5px;padding:5px;position:absolute;z-index:1000}");const mt=({direction:t})=>{const{params:l,colorTheme:i,switchDeck:o}=e.useContext(A),s=e.useRef(null),{deckSelectorStrokeColor:a,deckSelectorFillColor:n,deckSelectorSize:c}=i,d={transform:`rotate(${180*Number(t)}deg)`,background:n,height:c,width:c,left:null!=l&&l.rightToLeft?"auto":0,right:null!=l&&l.rightToLeft?0:"auto"};return r.default.createElement("div",{className:"jets-deck-selector",style:d,ref:s,onClick:e=>o(),dangerouslySetInnerHTML:{__html:(h=a,`\n<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 384.97 384.97" >\n<g>\n\t<g>\n\t\t<path fill="${h}" d="M360.909,0H24.061C10.767,0,0,10.767,0,24.061v336.848c0,13.293,10.767,24.061,24.061,24.061h336.848\n\t\t\tc13.281,0,24.061-10.767,24.061-24.061V24.061C384.97,10.767,374.191,0,360.909,0z M360.909,360.909H24.061V24.061h336.848\n\t\t\tV360.909z"/>\n\t\t<path fill="${h}" d="M59.935,240.666c0,6.785,5.883,12.151,12.56,11.97h239.92\n\t\t\tc10.671,0.289,16.602-12.872,8.927-20.476l-120.291-119.1c-4.74-4.692-12.403-4.523-17.191,0L63.664,232.065\n\t\t\tC61.379,234.242,59.935,237.274,59.935,240.666z M192.461,138.589l91.021,90.119H101.427L192.461,138.589z"/>\n\t</g>\n</g>\n</svg>\n`)}});var h};Ye(".jets-no-data{align-items:center;display:flex;font-size:18px;font-weight:700;height:100%;height:100vh;justify-content:center;width:100%}");const Ct=()=>{const{params:t}=e.useContext(A),l={transform:`scale(${null==t?void 0:t.antiScale})`};return r.default.createElement("div",{style:l,className:"jets-no-data"},"Seat map is not found for the flight")};Ye(".jets-nose{position:relative}.jets-nose:not(.cut) .nose-dotted-line,.nose-dotted-line{stroke:none}");const ut=({isFull:t})=>{const{params:l,colorTheme:i}=e.useContext(A),[o,s]=e.useState(0),a=e.useRef(null),{fuselageFillColor:n,fuselageStrokeColor:c,fuselageWindowsColor:d,floorColor:h}=i,g=i.fuselageStrokeWidth/(l.innerWidth/200),p={hullColor:n,windowColor:d,outlineColor:c,straightFillColor:t?n:h,strokeWidth:g};e.useLayoutEffect((()=>{s(a.current.getBoundingClientRect().width)}),[]);const m=(e=>`<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="214" viewBox="0 0 200 214">\n\n<style type="text/css">\n\t.nose-filling-straight{fill:${e.straightFillColor};}\n\t.nose-filling{fill:${e.hullColor};}\n\t.nose-outline{fill:none;stroke:${e.outlineColor};stroke-width:${e.strokeWidth};stroke-linejoin:round;stroke-miterlimit:10;}\n\t.nose-windows{fill:${e.windowColor};}\n\t.nose-dotted-line{fill:none;stroke:none;stroke-width:${e.strokeWidth};stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.9715,5.8292;}\n</style>\n\t\n<path class="nose-filling-straight" d="M1.5 213.5H198.5L198.3 189.5V189.5C198.432 183.009 197.551 176.63 195.513 170.466C183.455 134.002 137.233 2 100 2C62.7343 2.08626 16.4645 134.331 4.45578 170.661C2.43787 176.766 1.5 183.07 1.5 189.5V189.5L1.5 213.5Z" />\n<path class="nose-filling" d="M1.5 191C1.5 191 2.03703 191.308 3 191C9.75537 188.837 37.4722 179.675 47.8 179.5C61.1 179.4 86.8 190 100.1 190C113 190 137.9 179.5 150.8 179.6C163 179.7 197.1 191 197.1 191H198.5V189.4V189.4C198.5 182.97 197.562 176.666 195.544 170.561C183.535 134.232 137.266 2 100 2C62.7343 2.08626 16.4645 134.331 4.45578 170.661C2.43787 176.766 1.5 183.07 1.5 189.5V189.5V191Z" />\n<path class="nose-dotted-line" d="M5 190C14.0715 187.075 38.297 179.661 47.8 179.5C61.1 179.4 86.8 190 100.1 190C113 190 137.9 179.5 150.8 179.6C161.176 179.685 187.392 187.554 195 190"/>\n<path class="nose-outline" d="M198.5 213.5V190.435C198.5 183.385 197.47 176.464 195.252 169.772C182.801 132.214 136.97 2 100 2C63.0303 2 17.199 132.214 4.7484 169.772C2.53029 176.464 1.5 183.385 1.5 190.435V213.5" />\n<path class="nose-windows" d="M143 102.9L138.8 118.7C149.8 122 160 126.4 160 126.4C160 126 151 111.4 147.6 107.2C146.4 105.7 145 104.3 143 102.9Z" fill="white"/>\n<path class="nose-windows" d="M140.4 101.2C137.9 99.9 134.6 98.6 130 97.3C118.8 94.1 101 94 101 94V114.4C101 114.4 120.9 114.4 130 116.4C131.9 116.8 133.9 117.3 135.9 117.9L140.4 101.2Z" fill="white"/>\n<path class="nose-windows" d="M57 102.9C55 104.3 53.7 105.7 52.4 107.2C49 111.4 40 126 40 126.4C40 126.4 50.2 122 61.2 118.7L57 102.9Z" fill="white"/>\n<path class="nose-windows" d="M70.0001 97.3C65.4001 98.6 62.1001 99.9 59.6001 101.2L64.1001 117.8C66.1001 117.2 68.1001 116.7 70.0001 116.3C79.1001 114.3 98.0001 114.3 98.0001 114.3V94C98.0001 94 81.2001 94.1 70.0001 97.3Z" fill="white"/>\n</svg>\n`)(p),C=t||!0,u=!(null!=l&&l.isHorizontal&&(null==l||!l.rightToLeft))&&C,f=!(null==l||!l.isHorizontal||null!=l&&l.rightToLeft)&&C,k={transform:`${null==l||!l.isHorizontal||null!=l&&l.rightToLeft?"":"rotate(180deg)"} scale(${(o+(1.5-.5*g)*(l.innerWidth/200)*.5)/o})`,fill:c,marginTop:f?"-16px":"",marginBottom:u?"-16px":""};return r.default.createElement("div",{className:"jets-nose "+(t?"":"cut"),style:k,ref:a,dangerouslySetInnerHTML:{__html:m},"data-testid":"jets-nose"})};Ye('.jets-not-init{align-items:center;display:flex;font-size:18px;font-weight:700;height:100%;height:100vh;justify-content:center;width:100%}.jets-not-init--spinner{height:50px;width:50px}.lds-roller{display:inline-block;height:80px;position:relative;width:80px}.lds-roller div{animation:lds-roller 1.2s cubic-bezier(.5,0,.5,1) infinite;transform-origin:40px 40px}.lds-roller div:after{background:#000;border-radius:50%;content:" ";display:block;height:7px;margin:-4px 0 0 -4px;position:absolute;width:7px}.lds-roller div:first-child{animation-delay:-36ms}.lds-roller div:first-child:after{left:63px;top:63px}.lds-roller div:nth-child(2){animation-delay:-72ms}.lds-roller div:nth-child(2):after{left:56px;top:68px}.lds-roller div:nth-child(3){animation-delay:-.108s}.lds-roller div:nth-child(3):after{left:48px;top:71px}.lds-roller div:nth-child(4){animation-delay:-.144s}.lds-roller div:nth-child(4):after{left:40px;top:72px}.lds-roller div:nth-child(5){animation-delay:-.18s}.lds-roller div:nth-child(5):after{left:32px;top:71px}.lds-roller div:nth-child(6){animation-delay:-.216s}.lds-roller div:nth-child(6):after{left:24px;top:68px}.lds-roller div:nth-child(7){animation-delay:-.252s}.lds-roller div:nth-child(7):after{left:17px;top:63px}.lds-roller div:nth-child(8){animation-delay:-.288s}.lds-roller div:nth-child(8):after{left:12px;top:56px}@keyframes lds-roller{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}');const ft=()=>r.default.createElement("div",{className:"jets-not-init"},r.default.createElement("div",{className:"lds-roller jets-not-init--spinner"},r.default.createElement("div",null),r.default.createElement("div",null),r.default.createElement("div",null),r.default.createElement("div",null),r.default.createElement("div",null),r.default.createElement("div",null),r.default.createElement("div",null),r.default.createElement("div",null)));Ye(".jets-deck-separator{mix-blend-mode:screen;position:relative;width:100%}");const kt=({width:t})=>{const{params:l,colorTheme:i}=e.useContext(A),o=e.useRef(null),s={height:i.deckSeparation,background:i.fuselageFillColor};return r.default.createElement("div",{className:"jets-deck-separator",style:s,ref:o})};Ye(".jets-tail{position:relative}.jets-tail:not(.cut) .tail-dotted-line,.tail-dotted-line{stroke:none}");const vt=({isFull:t})=>{const{params:l,colorTheme:i}=e.useContext(A),[o,s]=e.useState(0),a=e.useRef(null),{fuselageFillColor:n,fuselageStrokeColor:c,floorColor:d}=i,h=i.fuselageStrokeWidth/(l.innerWidth/200),g={hullColor:n,outlineColor:c,straightFillColor:t?n:d,strokeWidth:h};e.useLayoutEffect((()=>{s(a.current.getBoundingClientRect().width)}),[]);const p=(e=>`<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 200 240">\n<style type="text/css">\n\t.tail-filling-straight{fill:${e.straightFillColor};stroke:${e.outlineColor};stroke-width:${e.strokeWidth};stroke-miterlimit:10;}\n\t.tail-filling{fill:${e.hullColor};}\n\t.tail-outline{fill:none;stroke:${e.outlineColor};stroke-width:${e.strokeWidth};stroke-miterlimit:10;}\n\t.tail-dotted-line{fill:none;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.9808,5.8847;}\n</style>\n<path class="tail-filling-straight" d="M2.3764 38.4678C1.77473 34.9207 1.5 31.332 1.5 27.7342V0H198.5V27.4086C198.5 31.2224 198.193 35.0136 197.521 38.7678C195.33 51.0122 189.575 81.2872 181.452 110.102C182.301 112.913 184.9 118.976 188.5 120.732C192.1 122.488 196.333 122.927 198 122.927V218.049L130.887 214.175C120.953 227.148 110.019 237.073 99.7 237.073C89.3766 237.073 78.4376 227.148 68.5 214.175L1.5 218.049V122.927C3.5 123.171 8.3 123.073 11.5 120.732C14.7 118.39 17.1667 112.669 18 110.102C9.94364 81.049 4.41928 50.5116 2.3764 38.4678Z"/>\n<path class="tail-filling" fill-rule="evenodd" clip-rule="evenodd" d="M124.773 31.1309C115.407 34.9612 106.068 38.7806 99.7 38.7806C93.0698 38.7806 83.4079 34.9465 73.7369 31.1086C64.0079 27.2479 54.2698 23.3834 47.6 23.4153C37.9662 23.5188 14.2876 27.4678 5.61475 28.9143C5.40053 28.95 5.19547 28.9842 5 29.0168H1.5V33.1388C1.5 33.1388 7.66764 72.8413 18 110.102C17.1667 112.669 14.7 118.39 11.5 120.732C8.3 123.073 3.5 123.171 1.5 122.927V218.049L68.5 214.175C78.4376 227.148 89.3766 237.073 99.7 237.073C110.019 237.073 120.953 227.148 130.887 214.175L198 218.049V122.927C196.333 122.927 192.1 122.488 188.5 120.732C184.9 118.976 182.301 112.913 181.452 110.102C191.956 72.8413 198.5 33.1388 198.5 33.1388V29.0168H194.897L194.408 28.9387C185.443 27.5034 160.229 23.4668 150.2 23.4147C143.718 23.383 134.232 27.2625 124.773 31.1309Z"/>\n<path class="tail-dotted-line" d="M5 29.0168C13.1094 27.6652 37.7283 23.5213 47.6 23.4152C60.9 23.3518 86.4 38.7806 99.7 38.7806C112.5 38.7806 137.3 23.3514 150.2 23.4147C160.417 23.4679 186.396 27.6566 194.897 29.0168" />\n<path class="tail-outline" d="M1.5 0V27.7342C1.5 31.332 1.77473 34.9207 2.3764 38.4678C4.41928 50.5116 9.94364 81.049 18 110.102M18 110.102C22.7259 127.145 28.3231 143.676 34.6 155.665C38.0428 162.218 51.8691 192.465 68.5 214.175M18 110.102C17.1667 112.669 14.7 118.39 11.5 120.732C8.3 123.073 3.5 123.171 1.5 122.927V218.049L68.5 214.175M198.5 0V27.4086C198.5 31.2224 198.193 35.0136 197.521 38.7678C195.33 51.0122 189.575 81.2872 181.452 110.102M181.452 110.102C176.647 127.145 171.014 143.676 164.8 155.665C161.356 162.18 147.524 192.451 130.887 214.175M181.452 110.102C182.301 112.913 184.9 118.976 188.5 120.732C192.1 122.488 196.833 122.927 198.5 122.927V218.049L130.887 214.175M68.5 214.175C78.4376 227.148 89.3766 237.073 99.7 237.073C110.019 237.073 120.953 227.148 130.887 214.175"/>\n</svg>`)(g),m=t||!0,C=!(null==l||!l.isHorizontal||null!=l&&l.rightToLeft)&&m,u=!(null!=l&&l.isHorizontal&&(null==l||!l.rightToLeft))&&m,f={transform:`${null==l||!l.isHorizontal||null!=l&&l.rightToLeft?"":"rotate(180deg)"} scale(${(o+(1.5-.5*h)*(l.innerWidth/200)*.5)/o})`,fill:c,marginTop:u?"-16px":"",marginBottom:C?"-8px":""};return r.default.createElement("div",{className:"jets-tail "+(t?"":"cut"),style:f,ref:a,dangerouslySetInnerHTML:{__html:p},"data-testid":"jets-tail"})};Ye(".jets-wings{box-sizing:border-box;overflow:hidden;position:absolute;transform:translateZ(-10px)}.jets-wings-alignment-wrapper{align-items:center;display:flex;flex-direction:column;position:absolute;width:100%;z-index:-1}.jets-wings .wing{height:100%;position:absolute;transform-origin:top center;width:50%}.jets-wings .wing.left{left:0}.jets-wings .wing.right{right:0}.jets-wings .wing-leading{height:30px;overflow:hidden;position:absolute;z-index:1}.jets-wings .wing-leading.left{clip-path:polygon(100% 10%,0 100%,0 0)}.jets-wings .wing-leading.right{clip-path:polygon(100% 0,100% 100%,-10% 0)}");const wt=({wingsInfo:t})=>{var l,i;const{isWingLeadingVisible:o,style:s}=(t=>{const{colorTheme:r,params:l}=e.useContext(A),i=()=>{if(null==r||!r.wingsWidth)return;const e={width:`${(null==r?void 0:r.wingsWidth)+8}px`,top:"-3px",background:(null==r?void 0:r.seatMapBackgroundColor)||"#fff"};return{left:{...e,left:"-4px"},right:{...e,right:"-4px"}}},o=e.useMemo((()=>({wrapper:{top:t.start},container:{height:t.length,width:l.innerWidth},wing:{background:`${null==r?void 0:r.fuselageWingsColor}`},leading:i()})),[l,r,t]);return{isWingLeadingVisible:Boolean((null==l?void 0:l.visibleWings)&&(null==t?void 0:t.visibleWingsLeadings)&&o.leading),style:o}})(t);return r.default.createElement("div",{className:"jets-wings-alignment-wrapper",style:s.wrapper},r.default.createElement("div",{className:"jets-wings",style:s.container,"data-testid":"jets-wings"},o&&r.default.createElement(r.default.Fragment,null,r.default.createElement("div",{className:"wing-leading left",style:null===(l=s.leading)||void 0===l?void 0:l.left}),r.default.createElement("div",{className:"wing-leading right",style:null===(i=s.leading)||void 0===i?void 0:i.right})),r.default.createElement("div",{className:"wing left",style:s.wing}),r.default.createElement("div",{className:"wing right",style:s.wing})))};Ye(".jets-plane-body{margin:0 auto}.jets-deck-wrapper{z-index:1}.deck-floor,.jets-deck-wrapper{position:relative;transform-style:preserve-3d}");const bt=({activeDeck:t,content:l,exits:i,bulks:o,isSeatMapInited:s,config:a,showOneDeck:n})=>{var c;const{params:d,colorTheme:h,componentOverrides:g}=e.useContext(A),p=e.useRef(new Array),m=null!==(c=null==g?void 0:g.JetsNotInit)&&void 0!==c?c:ft,{lang:C,visibleFuselage:u}=a,{deckHeightSpacing:f,fuselageStrokeWidth:k,fuselageStrokeColor:v,floorColor:w,wingsWidth:b,fuselageFillColor:L,cabinTitlesWidth:x}=h,M={borderLeft:`${k}px solid ${v}`,borderRight:`${k}px solid ${v}`,transform:null!=d&&d.isHorizontal&&!d.rightToLeft?"rotate(180deg)":""},z={backgroundColor:w,padding:`${f}px 0`,borderLeft:`solid ${L}`,borderRight:`solid ${L}`},y=l?[...l]:[];let S=t;null==a||!a.horizontal||null!=a&&a.rightToLeft||(y.reverse(),S=y.length-1-S);const T=(null==d?void 0:d.isHorizontal)&&!(null!=d&&d.rightToLeft),E=null!=d&&d.visibleWings?2*b:0,H=null!=d&&d.visibleCabinTitles?2*x:0,_=((null==d?void 0:d.innerWidth)||0)-Math.max(E,H),$={width:_||a.width},V=1==(null==y?void 0:y.length);return r.default.createElement("div",{className:"jets-plane-body",style:$},u&&null!=y&&y.length?T?r.default.createElement(vt,{isFull:true}):r.default.createElement(ut,{isFull:true}):null,null!=y&&y.length?r.default.createElement("div",{className:"jets-deck-wrapper",style:M},null==y?void 0:y.map(((e,t)=>n&&t!=S?null:r.default.createElement(r.default.Fragment,{key:e.uniqId+t},r.default.createElement("div",{ref:e=>{p.current[t]=e},className:"deck-floor tooltip-holder",style:{...z,height:e.height+f,borderWidth:`${Math.max(.5*(d.innerWidth-e.width)-k,k)}px`}},r.default.createElement(pt,{deck:e,lang:C,key:e.uniqId,exits:i[e.number-1],bulks:o[e.number-1],style:{position:"absolute"},isSingleDeck:V})),(null==d?void 0:d.visibleWings)&&r.default.createElement(wt,{wingsInfo:null==e?void 0:e.wingsInfo}),t<y.length-1&&!n&&r.default.createElement(kt,{key:t,width:_}))))):s?r.default.createElement(Ct,null):r.default.createElement(m,null),u&&null!=y&&y.length?T?r.default.createElement(ut,{isFull:true}):r.default.createElement(vt,{isFull:true}):null)},Lt=["AR","CN","CS","DA","DE","EN","EL","ES","ET","FR","HE","HU","ID","IT","JA","IW","KO","LT","LV","NL","NO","PL","PT","RO","RU","TR","UK","SV"];class xt extends _{constructor(e,t,r,i=null,o="Bearer",s=null){super(e,t,r,i,o,s),l(this,"getPlaneFeatures",(async(e,t="EN",r="metric")=>{var l;const i={flight:e,lang:Lt.includes(t)?t:"EN",units:r,metadata:null!==(l=this._apiMetadata)&&void 0!==l?l:void 0},o="availabilityData",s=await this.postData("flight/features/plane/seatmap",i),a={seatDetails:null},n=["F","B","P","E"];for(const t of s)switch(t.id){case e.id:if(t&&t.error)throw new Error(t.error);if(e.cabinClass&&n.includes(e.cabinClass)){const{id:r,cabin:l,entertainment:i,power:o,wifi:s}=t;a[e.cabinClass]={cabin:l,entertainment:i,power:o,wifi:s}}a.seatDetails=t.seatDetails;break;case o:{const{id:e,...r}=t;a.availabilityData={...r};break}default:const{id:r,cabin:l,entertainment:i,power:s,wifi:c}=t,d=r.split(":")[1];d&&n.includes(d)&&(a[d]={cabin:l,entertainment:i,power:s,wifi:c})}if(!a.seatDetails)throw new Error(`data is not found for the flight: ${e.id}`);return a}))}}class Mt{constructor(e){l(this,"getSeatMapData",(async(e,t,r,l)=>{const{lang:i,units:o}=l,s=await this._api.getPlaneFeatures(e,i,o);let{content:a,params:n,exits:c,bulks:d}=this._preparer.prepareData(s,l);t&&(a=this.setAvailabilityHandler(a,t));const h=null==r?void 0:r.find((e=>{var t;return null===(t=e.seat)||void 0===t?void 0:t.seatLabel}));return r&&h&&(a=this.setPassengersHandler(a,r)),{content:a,params:n,exits:c,bulks:d,availabilityData:null==s?void 0:s.availabilityData}})),l(this,"selectSeatHandler",((e,t,r)=>{const l=this.getNextPassenger(r),i=r.map((e=>{if((null==l?void 0:l.id)===e.id){const r={price:t.price,seatLabel:t.number};e.seat=r}return e}));return{data:this.setPassengersHandler(e,i),passengers:i}})),l(this,"unselectSeatHandler",((e,t,r)=>{const l=r.map((e=>{var r;return(null===(r=t.passenger)||void 0===r?void 0:r.id)===e.id&&(e.seat=null),e}));return{data:this.setPassengersHandler(e,l),passengers:l}})),l(this,"setAvailabilityHandler",((e,t)=>{const{selected:r,available:l,unavailable:i}=b,o=null==t?void 0:t.find((e=>"*"===e.label));return e&&e.map((e=>{const s=e.rows.map((e=>{const s=e.seats.map((e=>{const s=t.find((t=>t.label===e.number)),a=this._configuration.currencySign||(null==s?void 0:s.currency)||(null==o?void 0:o.currency),n=(null==s?void 0:s.price)||(null==o?void 0:o.price)||0;return s?(e.status=e.status===r?r:l,e.price=`${a} ${n}`||"",e.cost=n,e.currency=a,e.passengerTypes=s.onlyForPassengerType||(null==o?void 0:o.onlyForPassengerType)||S,e.additionalProps=[...(null==s?void 0:s.additionalProps)||[],...(null==o?void 0:o.additionalProps)||[]],e.color=$.validateColor((null==s?void 0:s.color)||(null==o?void 0:o.color),null==e?void 0:e.originalColor)):e.type===L.seat&&(e.status=o?l:i,e.price=o?`${a} ${n}`:null,e.cost=n,e.currency=a,e.passenger=null,e.passengerTypes=(null==o?void 0:o.onlyForPassengerType)||S,e.additionalProps=(null==o?void 0:o.additionalProps)||[],e.color=$.validateColor(null==o?void 0:o.color,this._colorTheme.notAvailableSeatsColor)),e.additionalProps=this._preparer.prepareSeatAdditionalProps(e),e}));return{...e,seats:s}}));return{...e,rows:s}}))})),l(this,"setPassengersHandler",((e,t)=>{const{selected:r,available:l,unavailable:i}=b;return e.map((e=>{const o=e.rows.map((e=>{const o=e.seats.map((e=>{const o=t.find((t=>{var r;return e.number&&(null==t||null===(r=t.seat)||void 0===r?void 0:r.seatLabel)===e.number}));var s;!o||e.status!==l&&e.status!==r?o&&e.status===i?o.seat=null:o||e.status!==r||(e.status=l,e.passenger=null):(e.status=r,e.price=(null===(s=o.seat)||void 0===s?void 0:s.price)||e.price,e.passenger=o);return e}));return{...e,seats:o}}));return{...e,rows:o}}))})),l(this,"calculateTooltipData",((e,t,r,l,i)=>{const{offsetTop:o,offsetLeft:s,clientWidth:a}=t,n=r.getBoundingClientRect(),c=t.closest(".tooltip-holder"),d=i?n.height:n.width,h=i?n.width:n.height,g=o+e.size.height/2;return{...e,top:g,left:"2.500000000000002%",antiScale:l,width:"95%",seatmapHeight:h,seatmapWidth:d,activeDeck:c,seatNode:t}})),l(this,"getNextPassenger",(e=>null==e?void 0:e.find((e=>{var t;return!(null!==(t=e.seat)&&void 0!==t&&t.seatLabel||e.readOnly)})))),l(this,"addAbbrToPassengers",(e=>null==e?void 0:e.map(((e,t)=>(e.abbr=this._getPassengerAbbr(e,t+1),e))))),l(this,"_getPassengerAbbr",((e,t)=>{const{passengerLabel:r}=e;if(!r)return`P${t}`;const l=null==r?void 0:r.split(" ");return l.length>1?l.slice(0,2).map((e=>e[0])).join(""):r.substring(0,2).toUpperCase()})),l(this,"findPassengerBySeatNumber",((e,t)=>e.find((e=>{var r;return(null===(r=e.seat)||void 0===r?void 0:r.seatLabel)===t})))),l(this,"getDeckIndexBySeatLabel",((e,t)=>e&&null!=t&&t.length?t.findIndex((t=>Array.isArray(t.rows)&&t.rows.some((t=>Array.isArray(t.seats)&&t.seats.some((t=>t.number===e)))))):-1)),l(this,"compareWithDecksSeatsInfo",((e,t)=>{if(!e||!t)return;const r=e.map((e=>e.toString().toUpperCase())),l=t.flatMap((e=>{var t;return null==e||null===(t=e.rows)||void 0===t?void 0:t.flatMap((e=>{var t;return null==e||null===(t=e.seats)||void 0===t?void 0:t.filter((e=>(null==e?void 0:e.type)===L.seat)).map((e=>{var t;return null==e||null===(t=e.number)||void 0===t?void 0:t.toUpperCase()}))}))}));return r.reduce(((e,t)=>(l.includes(t)?e.existingSeatLabels.push(t):e.nonExistingSeatLabels.push(t),e)),{existingSeatLabels:[],nonExistingSeatLabels:[]})}));const{apiUrl:t,apiAppId:r,apiKey:i,colorTheme:o,apiAuthorizationScheme:s,apiMetadata:a}=e,n=new R;this._api=new xt(r,i,t,n,s,a),this._preparer=new W,this._colorTheme=o,this._configuration=e}}Ye(".jets-seat-map{font-family:sans-serif;font-weight:400;height:100%;position:relative;width:100%}.jets-seat-map.scale.vertical *{-webkit-font-smoothing:subpixel-antialiased;filter:blur(0);-webkit-filter:blur(0)}");Ye(".jets-tooltip{background:#fff;border-radius:2px;box-shadow:0 0 0 1px #c0cad5,0 0 4px 0 rgb(0 0 0/8%),0 8px 8px 0 rgb(0 0 0/8%),0 16px 16px 0 rgb(0 0 0/8%);box-sizing:border-box;font-size:12px;max-width:100%;outline:0;position:absolute;z-index:200}.jets-tooltip--content{padding:16px 16px 0}.jets-tooltip--body.no-buttons .jets-tooltip--content{padding:16px}.jets-tooltip--body.no-buttons .jets-tooltip--btns-block{display:none}.jets-tooltip--header{display:flex;font-size:16px;font-weight:700;justify-content:space-between;margin-bottom:8px;width:100%}.jets-tooltip--passenger-name{font-size:15px;font-weight:700;margin-bottom:8px}.jets-tooltip--features>ul{list-style:none;margin:0;padding:0;width:100%}.jets-tooltip--feature img{height:18px;width:18px}.jets-tooltip--feature .svg_span{height:18px;min-height:18px;min-width:18px;width:18px}.jets-tooltip--feature>span{display:block}.jets-tooltip--features>ul>li{align-items:center;color:#4f6f8f;display:flex;font-size:13px;line-height:1.4;margin-bottom:.6rem;width:100%}.jets-tooltip--features>ul>li>div{margin:0 5px}.jets-tooltip--btns-block{display:flex;width:100%}.jets-tooltip--btn{-webkit-font-smoothing:antialiased;border-radius:2px;border-style:solid;border-width:0;cursor:pointer;display:inline-block;font-family:inherit;font-size:14px;font-weight:700;line-height:1.5;margin:1%;padding:9.5px 18px;text-align:center;text-decoration:none;vertical-align:middle;width:48%}.jets-tooltip--arrow-pointer{border-width:14px 16px 0;margin:0 0 0 -16px;transform-origin:top}.jets-tooltip--arrow-pointer,.jets-tooltip--arrow-pointer-horizontal{border-color:#fff transparent transparent;border-style:solid;height:0;position:absolute;width:0}.jets-tooltip--arrow-pointer-horizontal{border-width:16px 14px 16px 0;margin:-16px 0 0 -14px;transform-origin:right}.jets-tooltip--measurements{grid-column-gap:3%;display:grid;grid-auto-columns:minmax(0,1fr);grid-auto-flow:column;margin:10px 0}.jets-tooltip--measurement{backface-visibility:hidden;border:1px solid #4f6f8f;border-radius:6px;box-sizing:border-box;padding:10px;transform:translateZ(0);transform-style:preserve-3d}.jets-tooltip--measurement svg{display:block;height:40px}.jets-tooltip--measurement-value{color:#4f6f8f;margin-top:10px;text-align:center}.horizontal .jets-tooltip--measurement{align-items:center;display:flex;justify-content:space-evenly}.horizontal .jets-tooltip--features{-moz-column-count:2;-webkit-column-count:2;column-count:2;-moz-column-gap:20px;-webkit-column-gap:20px;column-gap:20px}.horizontal .jets-tooltip--features>ul>li:nth-child(6){-webkit-column-break-after:always;break-after:always}.horizontal .jets-tooltip--measurements .svg_span{display:inline-block}.horizontal .jets-tooltip--measurement-value{display:inline-block;margin:0 4px}.horizontal .jets-tooltip--measurement svg{height:30px}");const zt=({data:t})=>{var l;const{isSeatSelectDisabled:i,onTooltipClose:o,onSeatSelect:s,onSeatUnselect:a,colorTheme:n,params:c}=e.useContext(A),{isSafari:d}=P(),h=e.useRef(null),[g,p]=e.useState(0),[m,C]=e.useState(0),[u,f]=e.useState(0),{tooltipBackgroundColor:k,tooltipHeaderColor:v,tooltipBorderColor:b,tooltipFontColor:L,tooltipIconColor:x,tooltipIconBorderColor:M,tooltipIconBackgroundColor:y,tooltipSelectButtonTextColor:T,tooltipSelectButtonBackgroundColor:E,tooltipCancelButtonTextColor:H,tooltipCancelButtonBackgroundColor:_}=n,{number:$,classType:V,top:O,left:B,features:I,measurements:W,price:R,passenger:N,nextPassenger:D,passengerTypes:j,lang:F,rowName:Z,antiScale:U,scaleType:G,width:K,seatmapHeight:q,seatmapWidth:Y,seatmapElement:J,seatNode:X,additionalProps:Q}=t,ee=t.size.height/U,te=(t.size.width/U-16-8)/2,re=X.closest(".jets-row").getBoundingClientRect(),le=X.getBoundingClientRect(),ie=J.getBoundingClientRect(),oe=J.parentElement.getBoundingClientRect();let se=le.top-ie.top,ae=le.left-ie.left,ne=le.top-oe.top;if(d){const e=G===w.ZOOM?U:1;se=le.top/e-ie.top,ae=le.left/e-ie.left,ne=le.top/e-oe.top}const ce=null!=c&&c.isHorizontal?"left":"top",de=null!=c&&c.isHorizontal?"width":"height",he=oe[ce]+.5*oe[de],ge=m<ae,pe=re[ce]>he,me=Number(ne>g),Ce=Number(ge)*Number(pe),ue=g-se,fe=Math.min(ue-16,0),ke=g-ue+fe- -16/6,ve=ae+ee-(m+ee+14)*Ce,we=se+ee-(g+ee+14)*me,be={maxHeight:null!=c&&c.isHorizontal?q:"auto",maxWidth:null!=c&&c.isHorizontal?1.5*Y:"auto",width:null!=c&&c.isHorizontal?"auto":K,top:null!=c&&c.isHorizontal?`calc(${B} - ${fe}px)`:we,left:null!=c&&c.isHorizontal?ve:B,background:k,borderColor:b,borderStyle:"solid",color:L},Le={top:me*g,left:ae+te,transform:`rotate(${180*(1-me)}deg)`,borderColor:`${b} transparent transparent transparent`,display:null!=c&&c.isHorizontal?"none":""},xe={left:100*Ce+"%",top:ke,transform:`rotate(${180*Ce}deg)`,borderColor:`transparent ${b} transparent transparent`,display:null!=c&&c.isHorizontal?"":"none"};e.useLayoutEffect((()=>{f(h.current.getBoundingClientRect().top-document.body.getBoundingClientRect().top),p(h.current.clientHeight),C(h.current.clientWidth)}),[t,g]);const Me={color:v,direction:c.rightToLeft?"rtl":"ltr"},ze={direction:c.rightToLeft?"rtl":"ltr"},ye=(null==c?void 0:c.tooltipOnHover)&&!(null!=c&&c.isTouchDevice);let Se="";N&&(Se=(null==N?void 0:N.passengerLabel)||`${z[F].passenger} ${null==N?void 0:N.id}`);let Te="";if(j){const e=S,t=j.filter((t=>e.includes(t)));let r=t.map((e=>z[F][e]));Te=t.length<e.length?`${z[F].seatRestrictions}: ${r.join(", ")}`:""}const Ee=[...(I||[]).filter((e=>!c.hiddenSeatFeatures.includes(e.key))),...Q||[]].slice(0,12);return r.default.createElement("div",{style:be,className:"jets-tooltip "+(null!=c&&c.isHorizontal?"horizontal":""),ref:h,onMouseLeave:c.tooltipOnHover?e=>o(null,null,e):null},r.default.createElement("div",{className:"jets-tooltip--arrow-pointer",style:Le}),r.default.createElement("div",{className:"jets-tooltip--arrow-pointer-horizontal",style:xe}),r.default.createElement("div",{className:"jets-tooltip--body "+(ye?"no-buttons":"")},r.default.createElement("div",{className:"jets-tooltip--content"},r.default.createElement("div",{className:"jets-tooltip--header",style:Me},r.default.createElement("div",{className:"jets-tooltip--header-title"},Z||V," ",$),r.default.createElement("div",{className:"jets-tooltip--header-price"},R)),r.default.createElement("div",{className:"jets-tooltip--passenger-name",style:ze},Se.length?Se:Te),r.default.createElement("div",{className:"jets-tooltip--features",style:ze},r.default.createElement("ul",null,Ee.map((({uniqId:e,title:t,icon:l,value:i,cssClass:o})=>r.default.createElement("li",{className:`jets-tooltip--feature ${o||""}`,key:e},l?r.default.createElement("span",{className:"svg_span "+(o?o+"-icon":""),dangerouslySetInnerHTML:{__html:l}}):r.default.createElement("span",null,t),r.default.createElement("div",{className:""+(o?o+"-label":""),style:o?{}:{color:L}},i)))),Ee.length%2==1&&r.default.createElement("li",{className:"jets-tooltip--feature"}," "))),r.default.createElement("div",{className:"jets-tooltip--measurements"},W.map((({uniqId:e,title:t,icon:l,value:i})=>r.default.createElement("div",{style:{borderColor:M,background:y},className:"jets-tooltip--measurement",key:e},l?r.default.createElement("span",{className:"svg_span",style:{fill:x},dangerouslySetInnerHTML:{__html:l}}):r.default.createElement("span",null),r.default.createElement("div",{className:"jets-tooltip--measurement-box"},r.default.createElement("div",{className:"jets-tooltip--measurement-value"},t),r.default.createElement("div",{className:"jets-tooltip--measurement-value"},i))))))),r.default.createElement("div",{className:"jets-tooltip--btns-block"},r.default.createElement(Qe,{onClick:e=>o(null,null,e),content:z[F].cancel,className:"jets-btn jets-tooltip--btn",style:{color:H,backgroundColor:_}}),N?r.default.createElement(Qe,{disabled:null==t||null===(l=t.passenger)||void 0===l?void 0:l.readOnly,onClick:()=>a(t),content:z[F].unselect,className:"jets-btn jets-tooltip--btn ",style:{color:T,backgroundColor:E}}):r.default.createElement(Qe,{disabled:i(t),onClick:()=>s(t),content:z[F].select,className:"jets-btn jets-tooltip--btn ",style:{color:T,backgroundColor:E}}))))},yt=({flight:t,availability:l,passengers:i,config:o,currentDeckIndex:s,seatJumpTo:a,onSeatMapInited:n,onSeatSelected:c,onSeatUnselected:d,onTooltipRequested:h,onLayoutUpdated:g,onSeatMouseLeave:p,onSeatMouseClick:m,onAvailabilityApplied:C,componentOverrides:u})=>{var f;const{isFirefox:k}=P(),v=$.mergeColorThemeWithConstraints(yt.defaultProps.config.colorTheme,o.colorTheme);o.colorTheme=v,o.lang=$.validateLanguage(o.lang);const x={...yt.defaultProps.config,...o};k&&(x.scaleType=w.SCALE);const[M,z]=e.useState([]),[y,S]=e.useState(!1),[T,E]=e.useState([]),[H,_]=e.useState(null),[V,O]=e.useState(null),[B,I]=e.useState(!1),[W,R]=e.useState(0),[N,D]=e.useState(null),[j,F]=e.useState([]),[Z,U]=e.useState([]),G=e.useRef(!1),K=e.useRef(),q=new Mt(x),Y=(null==N?void 0:N.singleDeckMode)&&M.length>1,J=(null==N?void 0:N.builtInDeckSelector)&&Y,X=null!==(f=null==u?void 0:u.JetsTooltip)&&void 0!==f?f:zt;e.useEffect((()=>{let e=!0;return null!=t&&t.id&&q.getSeatMapData(t,l,i,x).then((t=>{var r,l,i,o,s,a,c,d;e&&(D(t.params),z(t.content),F(t.exits),U(t.bulks),S(!0),n({heightInPx:null!==(r=t.params)&&void 0!==r&&r.isHorizontal?null===(l=t.params)||void 0===l?void 0:l.innerWidth:null===(i=t.params)||void 0===i?void 0:i.totalDecksHeight,widthInPx:null!==(o=t.params)&&void 0!==o&&o.isHorizontal?null===(s=t.params)||void 0===s?void 0:s.totalDecksHeight:null===(a=t.params)||void 0===a?void 0:a.innerWidth,scaleFactor:null===(c=t.params)||void 0===c?void 0:c.scale,decksCount:null===(d=t.content)||void 0===d?void 0:d.length,currentDeckIndex:W,availabilityData:null==t?void 0:t.availabilityData}),G.current=!1)})).catch((t=>{e&&n({heightInPx:void 0,widthInPx:void 0,scaleFactor:void 0,decksCount:void 0,currentDeckIndex:void 0,error:t.message})})),()=>{e=!1}}),[t]),e.useEffect((()=>{if(!l)return;const e=q.setAvailabilityHandler(M,l),t=l.map((({label:e})=>e)),r=q.compareWithDecksSeatsInfo(t,e);le(),z(e),_(null),C(r)}),[l]),e.useEffect((()=>{le(),_(null)}),[i]),e.useEffect((()=>{!G.current&&N&&(G.current=!0,re(s),te(),ie())}),[N]),e.useEffect((()=>{te(),ie()}),[W]),e.useEffect((()=>{re(s)}),[s]),e.useEffect((()=>{var e;if(!a||null==M||!M.length)return;const t=null==a||null===(e=a.seatLabel)||void 0===e?void 0:e.toString().trim().toUpperCase(),{nonExistingSeatLabels:r}=q.compareWithDecksSeatsInfo([t],M);if(r.includes(t))return _(null),void ee();const l=q.getDeckIndexBySeatLabel(t,M);l!==W&&re(l),O(t)}),[a]);const Q=e.useMemo((()=>`jets-seat-map ${null!=N&&N.isHorizontal?"horizontal":"vertical"} ${x.scaleType===w.SCALE?"scale":"zoom"}`),[N,x]),ee=()=>{O(null)},te=()=>{null!=N&&N.isHorizontal&&null!=N&&N.rightToLeft&&(K.current.parentElement.scrollLeft=N.totalDecksHeight)},re=e=>{if(!Y||M.length<2)return;let t=(W+1)%M.length;if(void 0!==e){if(e<0||e>M.length-1)return;t=e}const r=(null==N?void 0:N.separateDeckHeights[t])*(N.scale||1)+"px",l=null==N?void 0:N.separateDeckHeights[t];D({...N,scaledTotalDecksHeight:r,totalDecksHeight:l}),R(t),_(null)},le=()=>{i=q.addAbbrToPassengers(i);const e=q.setPassengersHandler(M,i||[]);z(e),E(i)},ie=()=>{if(!N)return;const e=null==N?void 0:N.separateDeckHeights[W],t=Y?e:null==N?void 0:N.totalDecksHeight,r={heightInPx:null!=N&&N.isHorizontal?null==N?void 0:N.innerWidth:t,widthInPx:null!=N&&N.isHorizontal?t:null==N?void 0:N.innerWidth,scaleFactor:null==N?void 0:N.scale,decksCount:null==M?void 0:M.length,currentDeckIndex:W};g(r)},oe=e=>{const t={...e,label:e.number};return delete t.number,delete t.leftOffset,delete t.topOffset,delete t.size,t},se=(e,t,r)=>{const l=oe(e);if(h({seat:l,element:t.current,event:r.nativeEvent}),!N.builtInTooltip)return;if(e.type!==L.seat||e.status!==b.available&&e.status!==b.selected)return;const i=q.getNextPassenger(T),o=q.calculateTooltipData(e,t.current,K.current,null==N?void 0:N.antiScale,null==N?void 0:N.isHorizontal);I(!!i),_({...o,nextPassenger:i,lang:x.lang,scaleType:x.scaleType,seatmapElement:K.current})},ae=e=>{const{data:t,passengers:r}=q.selectSeatHandler(M,e,T);z(t),E(r),_(null),c(r)},ne=e=>{const{data:t,passengers:r}=q.unselectSeatHandler(M,e,T);z(t),E(r),_(null),d(r)},ce=e=>{var t,r;const l=q.getNextPassenger(T);return!l||(null==l?void 0:l.passengerType)&&(null===(t=e.passengerTypes)||void 0===t?void 0:t.length)&&!(null!==(r=e.passengerTypes)&&void 0!==r&&r.includes(null==l?void 0:l.passengerType))},de={transform:` ${null==N?void 0:N.rotation} ${null==N?void 0:N.offset} scale(${null==N?void 0:N.scale})`,transformOrigin:"top left",width:null==N?void 0:N.innerWidth,height:null==N?void 0:N.scaledTotalDecksHeight},he={transform:` ${null==N?void 0:N.rotation} ${null==N?void 0:N.offset}`,transformOrigin:"top left",zoom:null==N?void 0:N.scale,width:null==N?void 0:N.innerWidth,height:null==N?void 0:N.scaledTotalDecksHeight},ge={onSeatClick:(e,t,r)=>{if((null==N?void 0:N.tooltipOnHover)&&!(null!=N&&N.isTouchDevice)){if(N.externalPassengerManagement){const l=oe(e);return void m({seat:l,element:t.current,event:r.nativeEvent})}if(null!=e&&e.passenger){var l;if(null!=e&&null!==(l=e.passenger)&&void 0!==l&&l.readOnly)return;ne(e)}else{if(ce(e))return;ae(e)}}else se(e,t,r)},showTooltip:se,onTooltipClose:(e,t,r)=>{if(e&&t){const l=oe(e);p({seat:l,element:t.current,event:r.nativeEvent})}_(null)},onSeatSelect:ae,onSeatUnselect:ne,isSeatSelectDisabled:ce,switchDeck:re,resetSeatJumpTo:ee,params:N,config:x,colorTheme:v,activeTooltip:H,seatLabelJumpTo:V,componentOverrides:u};return r.default.createElement(A.Provider,{value:ge},r.default.createElement("div",{ref:K,className:Q,style:{width:x.horizontal?null==N?void 0:N.scaledTotalDecksHeight:x.width,height:x.horizontal?x.width:null==N?void 0:N.scaledTotalDecksHeight,fontFamily:v.fontFamily,background:v.seatMapBackgroundColor},"data-testid":"jets-seat-map"},H&&r.default.createElement(X,{data:H}),J&&r.default.createElement(mt,{direction:!!W}),r.default.createElement("div",{style:x.scaleType===w.SCALE?de:he},r.default.createElement(bt,{showOneDeck:Y,activeDeck:W,content:M,exits:j,bulks:Z,isSeatMapInited:y,config:x}))))};yt.defaultProps={config:{width:350,horizontal:false,rightToLeft:false,visibleFuselage:false,visibleWings:false,visibleCabinTitles:false,builtInTooltip:true,externalPassengerManagement:false,builtInDeckSelector:true,singleDeckMode:true,tooltipOnHover:false,lang:"EN",units:"metric",scaleType:y,apiAuthorizationScheme:"Bearer",hiddenSeatFeatures:[],colorTheme:{seatMapBackgroundColor:"rgb(255,255,255)",deckLabelTitleColor:"rgb(255,255,255)",floorColor:"rgb(30,60,90)",seatLabelColor:"rgb(255,255,255)",seatStrokeColor:"rgb(237, 237, 237)",seatStrokeWidth:1,seatArmrestColor:"rgb(185,186,186)",notAvailableSeatsColor:"dimgrey",bulkBaseColor:"rgb(186, 199, 213)",bulkCutColor:"rgb(148, 168, 190)",bulkIconColor:"rgb(70, 81, 94)",bulkFloorIconColor:"rgb(206, 216, 237)",fuselageFillColor:"lightgray",fuselageStrokeColor:"darkgrey",fuselageStrokeWidth:12,fuselageWindowsColor:"darkgrey",fuselageWingsColor:"darkgrey",defaultPassengerBadgeColor:"#1157ce",fontFamily:"Montserrat, sans-serif",deckHeightSpacing:200,wingsWidth:30,deckSeparation:50,tooltipBackgroundColor:"rgb(255,255,255)",tooltipHeaderColor:"#4f6f8f",tooltipBorderColor:"rgb(255,255,255)",tooltipFontColor:"#4f6f8f",tooltipIconColor:"#4f6f8f",tooltipIconBorderColor:"#4f6f8f",tooltipIconBackgroundColor:"#f2f5f8",tooltipSelectButtonTextColor:"rgb(255, 255, 255)",tooltipSelectButtonBackgroundColor:"rgb(0, 122, 255)",tooltipCancelButtonTextColor:"rgb(0, 24, 51)",tooltipCancelButtonBackgroundColor:"rgb(237, 240, 243)",deckSelectorStrokeColor:"rgba(50, 50, 50, 0.5)",deckSelectorFillColor:"#fff",deckSelectorSize:25,exitIconUrlLeft:null,exitIconUrlRight:null,cabinTitlesWidth:80,cabinTitlesHighlightColors:H,cabinTitlesLabelColor:"#00BFFF"}},onSeatMapInited:e=>{console.log("JetsSeatMap initialized!",e)},onSeatSelected:e=>{console.log("Passenger boarded: ",e)},onSeatUnselected:e=>{console.log("Passenger unboarded: ",e)},onTooltipRequested:e=>{console.log("Tooltip requested: ",e)},onLayoutUpdated:e=>{console.log("Layout updated: ",e)},onSeatMouseLeave:e=>{console.log("Seat mouse leave: ",e)},onSeatMouseClick:e=>{console.log("Seat mouse click: ",e)},onAvailabilityApplied:e=>{console.log("Availability applied: ",e)}},exports.BULK_TEMPLATE_MAP=N,exports.CLASS_CODE_MAP=M,exports.DECK_ITEM_ALIGN_MAP=E,exports.DECK_LOCALE_KEY="deck",exports.DEFAULT_AUTHORIZATION_SCHEME="Bearer",exports.DEFAULT_BUILT_IN_TOOLTIP=true,exports.DEFAULT_DECK_PADDING_SIZE=10,exports.DEFAULT_DECK_TITLE_HEIGHT=80,exports.DEFAULT_EXTERNAL_PASSENGER_MANAGEMENT=false,exports.DEFAULT_FEATURES_RENDER_LIMIT=12,exports.DEFAULT_HORIZONTAL_LAYOUT=false,exports.DEFAULT_INDEX_ROW_HEIGHT=120,exports.DEFAULT_LANG="EN",exports.DEFAULT_RTL=false,exports.DEFAULT_SCALE_TYPE=y,exports.DEFAULT_SEAT_CLASS="E",exports.DEFAULT_SEAT_MAP_WIDTH=350,exports.DEFAULT_SEAT_MARGIN=3,exports.DEFAULT_SEAT_PASSENGER_TYPES=S,exports.DEFAULT_SEAT_SIZE={width:86,height:100},exports.DEFAULT_SHOW_DECK_SELECTOR=true,exports.DEFAULT_SINGLE_DECK_MODE=true,exports.DEFAULT_STYLE_POSITION="auto",exports.DEFAULT_TOOLTIP_ON_HOVER=false,exports.DEFAULT_TOOLTIP_WIDTH=260,exports.DEFAULT_UNITS="metric",exports.DEFAULT_VISIBLE_CABIN_TITLES=false,exports.DEFAULT_VISIBLE_HULL=false,exports.DEFAULT_VISIBLE_WINGS=false,exports.ENTITY_SCHEME_MAP=x,exports.ENTITY_STATUS_MAP=b,exports.ENTITY_TYPE_MAP=L,exports.ERROR_LOAD_DATA_MESSAGE="Error getting data from local storage. Message:",exports.ERROR_SAVE_DATA_MESSAGE="Error saving data to local storage. Message:",exports.FUSELAGE_HEIGHT_TO_WIDTH_RATIO=2.4,exports.JetsApiService=_,exports.JetsBulk=Xe,exports.JetsButton=Qe,exports.JetsContentPreparer=W,exports.JetsContext=A,exports.JetsDataHelper=$,exports.JetsDeck=pt,exports.JetsDeckExit=et,exports.JetsDeckSelector=mt,exports.JetsLocalStorageService=R,exports.JetsNoData=Ct,exports.JetsNose=ut,exports.JetsNotInit=ft,exports.JetsPlaneBody=bt,exports.JetsRow=ht,exports.JetsSeat=dt,exports.JetsSeatMap=yt,exports.JetsSeatMapApiService=xt,exports.JetsSeatMapService=Mt,exports.JetsTail=vt,exports.JetsTooltipGlobal=zt,exports.JetsWing=wt,exports.LOCALES_MAP=z,exports.LOCALE_AR=h,exports.LOCALE_CN=c,exports.LOCALE_CS=g,exports.LOCALE_DE=a,exports.LOCALE_EN=n,exports.LOCALE_ES=s,exports.LOCALE_FR=p,exports.LOCALE_IT=C,exports.LOCALE_JA=f,exports.LOCALE_KO=k,exports.LOCALE_PL=o,exports.LOCALE_PT=m,exports.LOCALE_RU=d,exports.LOCALE_TR=v,exports.LOCALE_UK=u,exports.SCALE_TYPES=w,exports.SEAT_FEATURES_ICONS=B,exports.SEAT_MEASUREMENTS_ICONS=I,exports.SEAT_SIZE_BY_TYPE=T,exports.STICKER_TEMPLATE_MAP=D,exports.SeatIcon=nt,exports.Sticker=qe,exports.THEME_BACKGROUND_COLOR="rgb(255,255,255)",exports.THEME_BULK_BASE_COLOR="rgb(186, 199, 213)",exports.THEME_BULK_CUT_COLOR="rgb(148, 168, 190)",exports.THEME_BULK_ICON_COLOR="rgb(70, 81, 94)",exports.THEME_CABIN_TITLES_HIGHLIGHT_COLORS=H,exports.THEME_CABIN_TITLES_LABEL_COLOR="#00BFFF",exports.THEME_CABIN_TITLES_WIDTH=80,exports.THEME_DECK_HEIGHT_SPACING=200,exports.THEME_DECK_LABEL_TITLE_COLOR="rgb(255,255,255)",exports.THEME_DECK_SELECTOR_FILL_COLOR="#fff",exports.THEME_DECK_SELECTOR_SIZE=25,exports.THEME_DECK_SELECTOR_STROKE_COLOR="rgba(50, 50, 50, 0.5)",exports.THEME_DECK_SEPARATION=50,exports.THEME_DEFAULT_FONT_FAMILY="Montserrat, sans-serif",exports.THEME_DEFAULT_PASSENGER_BADGE_COLOR="#1157ce",exports.THEME_FLOOR_BULK_ICON_COLOR="rgb(206, 216, 237)",exports.THEME_FLOOR_COLOR="rgb(30,60,90)",exports.THEME_FUSELAGE_FILL_COLOR="lightgray",exports.THEME_FUSELAGE_OUTLINE_COLOR="darkgrey",exports.THEME_FUSELAGE_OUTLINE_WIDTH=12,exports.THEME_FUSELAGE_WINDOWS_COLOR="darkgrey",exports.THEME_FUSELAGE_WINGS_COLOR="darkgrey",exports.THEME_NOT_AVAILABLE_SEATS_COLOR="dimgrey",exports.THEME_SEAT_ARMREST_COLOR="rgb(185,186,186)",exports.THEME_SEAT_LABEL_COLOR="rgb(255,255,255)",exports.THEME_SEAT_STROKE_COLOR="rgb(237, 237, 237)",exports.THEME_SEAT_STROKE_WIDTH=1,exports.THEME_TOOLTIP_BACKGROUND_COLOR="rgb(255,255,255)",exports.THEME_TOOLTIP_BORDER_COLOR="rgb(255,255,255)",exports.THEME_TOOLTIP_CANCEL_BUTTON_BACKGROUND_COLOR="rgb(237, 240, 243)",exports.THEME_TOOLTIP_CANCEL_BUTTON_TEXT_COLOR="rgb(0, 24, 51)",exports.THEME_TOOLTIP_FONT_COLOR="#4f6f8f",exports.THEME_TOOLTIP_HEADER_COLOR="#4f6f8f",exports.THEME_TOOLTIP_ICON_BACKGROUND_COLOR="#f2f5f8",exports.THEME_TOOLTIP_ICON_BORDER_COLOR="#4f6f8f",exports.THEME_TOOLTIP_ICON_COLOR="#4f6f8f",exports.THEME_TOOLTIP_SELECT_BUTTON_BACKGROUND_COLOR="rgb(0, 122, 255)",exports.THEME_TOOLTIP_SELECT_BUTTON_TEXT_COLOR="rgb(255, 255, 255)",exports.THEME_WINGS_WIDTH=30,exports.Utils=O,exports.seatTemplateService=rt,exports.useEnvironmentInfo=P;
+'use strict';
+Object.defineProperty(exports, '__esModule', { value: !0 });
+var e = require('react');
+function t(e) {
+  return e && 'object' == typeof e && 'default' in e ? e : { default: e };
+}
+var r = t(e);
+function l(e, t, r) {
+  return (
+    (t = (function (e) {
+      var t = (function (e, t) {
+        if ('object' != typeof e || !e) return e;
+        var r = e[Symbol.toPrimitive];
+        if (void 0 !== r) {
+          var l = r.call(e, t || 'default');
+          if ('object' != typeof l) return l;
+          throw new TypeError('@@toPrimitive must return a primitive value.');
+        }
+        return ('string' === t ? String : Number)(e);
+      })(e, 'string');
+      return 'symbol' == typeof t ? t : t + '';
+    })(t)) in e
+      ? Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 })
+      : (e[t] = r),
+    e
+  );
+}
+function i() {
+  return (
+    (i = Object.assign
+      ? Object.assign.bind()
+      : function (e) {
+          for (var t = 1; t < arguments.length; t++) {
+            var r = arguments[t];
+            for (var l in r) ({}).hasOwnProperty.call(r, l) && (e[l] = r[l]);
+          }
+          return e;
+        }),
+    i.apply(null, arguments)
+  );
+}
+const o = {
+    F: 'Pierwsza klasa',
+    B: 'Klasa biznes',
+    P: 'Klasa premium',
+    E: 'Klasa ekonomiczna',
+    audio_video_ondemand: 'Audio i wideo na żądanie (%s)',
+    audioVideo: 'Audio i wideo na żądanie (%s)',
+    babyBassinet: 'Dostępne łóżeczko dziecięce',
+    bassinet: 'Dostępne łóżeczko dziecięce',
+    bluetooth: 'Parowanie zestawu słuchawkowego',
+    cancel: 'Anulować',
+    deck: 'Piętro',
+    doNotRecline: 'Możliwe ograniczone odchylenie pleców',
+    extraLegroom: 'Dodatkowa przestrzeń na nogi',
+    getColdByExit: 'Blisko wyjść i w chłodzie',
+    limitedOverheadStorage: 'Ograniczona przestrzeń magazynowa',
+    limitedRecline: 'Możliwe ograniczone odchylenie pleców',
+    misalignedWindow: 'Częściowy lub brak widoku okna',
+    nearGalley: 'W pobliżu kuchni',
+    nearLavatory: 'W pobliżu toalet',
+    nearStairs: 'Obszar o dużym natężeniu ruchu na schodach',
+    noFloorStorage: 'Brak miejsca na bagaż pod siedzeniem',
+    noOverheadStorage: 'Ograniczona przestrzeń magazynowa',
+    noWindow: 'Częściowy lub brak widoku okna',
+    pitch: 'Pochylenie',
+    power: 'Wtyczka zasilania (%s)',
+    powerPlug: 'Wtyczka zasilania (%s)',
+    prereclinedSeat: 'Wstępnie rozkładane siedzenie',
+    recline: 'Rozkładany',
+    reservedCrewSeat: 'Zarezerwowany',
+    restrictedLegroom: 'Ograniczona przestrzeń na nogi',
+    select: 'Wybierać',
+    standardSeat: 'Miejsce standardowe',
+    storageBoxBetweenWall: 'Schowek między ścianą',
+    trayTableInArmrest: 'Taca w podłokietniku',
+    unselect: 'Odznacz',
+    usbPlug: 'Wtyczka USB',
+    usbPowerPlug: 'USB i wtyczka zasilania (%s)',
+    width: 'Szerokość',
+    wifi_enabled: 'Wi-Fi włączone',
+    wifiEnabled: 'Wi-Fi włączone',
+    wingInWindow: 'Skrzydło z okna',
+    narrower: 'Węższe siedzisko',
+    exitRow: 'Rząd wyjściowy',
+    ADT: 'dorośli',
+    CHD: 'dzieci',
+    INF: 'niemowlęta',
+    seatRestrictions: 'Siedzenie jest przeznaczone tylko dla',
+    passenger: 'Pasażer',
+    personalTvInArmrest: 'Telewizor osobisty w podłokietniku',
+    invertedSeat: 'Fotel montowany tyłem do kierunku jazdy',
+  },
+  s = {
+    F: 'Primera clase',
+    B: 'Clase Business',
+    P: 'Clase superior',
+    E: 'Clase turista',
+    audio_video_ondemand: 'Audio y vídeo bajo demanda (%s)',
+    audioVideo: 'Audio y vídeo bajo demanda (%s)',
+    babyBassinet: 'Moisés para bebé disponible',
+    bassinet: 'Moisés para bebé disponible',
+    bluetooth: 'Emparejar los auriculares',
+    cancel: 'Cancelar',
+    deck: 'Suelo',
+    doNotRecline: 'Posibles dolores de espalda por reclinación limitada',
+    extraLegroom: 'Espacio extra para las piernas',
+    getColdByExit: 'Cerca de la salida, corrientes de aire y frío',
+    limitedOverheadStorage: 'Espacio de almacenamiento limitado',
+    limitedRecline: 'Posibles dolores de espalda por reclinación limitada',
+    misalignedWindow: 'Vista parcial o nula por la ventana',
+    nearGalley: 'Cerca de las cocinas',
+    nearLavatory: 'Cerca de los aseos',
+    nearStairs: 'Zona de escaleras de mucho tráfico',
+    noFloorStorage: 'Sin almacenamiento debajo del asiento',
+    noOverheadStorage: 'Espacio de almacenamiento limitado',
+    noWindow: 'Vista parcial o nula por la ventana',
+    pitch: 'Separación',
+    power: 'Enchufe (%s)',
+    powerPlug: 'Enchufe (%s)',
+    prereclinedSeat: 'Asiento prerreclinado',
+    recline: 'Reclinación',
+    reservedCrewSeat: 'Reservado',
+    restrictedLegroom: 'Espacio para las piernas restringido',
+    select: 'Seleccionar',
+    standardSeat: 'Asiento estándar',
+    storageBoxBetweenWall: 'Caja de almacenamiento entre la pared',
+    trayTableInArmrest: 'Bandeja plegable en el reposabrazos',
+    unselect: 'Deseleccionar',
+    usbPlug: 'Enchufe USB',
+    usbPowerPlug: 'USB y enchufe (%s)',
+    width: 'Anchura',
+    wifi_enabled: 'Wi-Fi habilitado',
+    wifiEnabled: 'Wi-Fi habilitado',
+    wingInWindow: 'Vista del ala desde la ventana',
+    narrower: 'Asiento más estrecho',
+    exitRow: 'Fila de salida',
+    ADT: 'adultos',
+    CHD: 'niños',
+    INF: 'bebés',
+    seatRestrictions: 'Asiento solo para',
+    passenger: 'Pasajeros',
+    personalTvInArmrest: 'TV personal en el reposabrazos',
+    invertedSeat: 'Asiento orientado hacia atrás',
+  },
+  a = {
+    F: 'Erste Klasse',
+    B: 'Business-Klasse',
+    P: 'Premiumklasse',
+    E: 'Economy-Klasse',
+    audio_video_ondemand: 'Audio und Video auf Anfrage (%s)',
+    audioVideo: 'Audio und Video auf Anfrage (%s)',
+    babyBassinet: 'Babywiege vorhanden',
+    bassinet: 'Babywiege vorhanden',
+    bluetooth: 'Koppeln Sie Ihr Headset',
+    cancel: 'Abbrechen',
+    deck: 'Deck',
+    doNotRecline: 'Eingeschränkte Liegeposition, Rückenschmerzen möglich',
+    extraLegroom: 'Mehr Beinfreiheit',
+    getColdByExit: 'Nah zum Ausgang, Zugluft, kalt',
+    invertedSeat: 'Nach hinten gerichteter Sitz',
+    limitedOverheadStorage: 'Stauraum in den oberen Gepäckfächern begrenzt',
+    limitedRecline: 'Eingeschränkte Liegeposition, Rückenschmerzen möglich',
+    misalignedWindow: 'Eingeschränkter oder fehlender Fensterblick',
+    nearGalley: 'In der Nähe von der Bordküche',
+    nearLavatory: 'In der Nähe von Toiletten',
+    nearStairs: 'Treppen, stark frequentierte Verkehrsfläche',
+    noFloorStorage: 'Kein Stauraum unter dem Sitz',
+    noOverheadStorage: 'Kein Stauraum in den oberen Gepäckfächern',
+    noWindow: 'Kein Fensterblick',
+    pitch: 'Abstand',
+    power: 'Stromanschluss (%s)',
+    powerPlug: 'Stromanschluss (%s)',
+    prereclinedSeat: 'Vorgelehnter sitz',
+    recline: 'Rücklehne',
+    reservedCrewSeat: 'Reserviert',
+    restrictedLegroom: 'Eingeschränkte Beinfreiheit',
+    select: 'Auswählen',
+    standardSeat: 'Standardsitz',
+    storageBoxBetweenWall: 'Aufbewahrungsbox zwischen Wand',
+    trayTableInArmrest: 'Tablett-Tisch in der Armlehne',
+    unselect: 'Auswahl aufheben',
+    usbPlug: 'USB Anschluss',
+    usbPowerPlug: 'USB und Stromanschluss (%s)',
+    width: 'Breite',
+    wifi_enabled: 'Wi-Fi aktiviert',
+    wifiEnabled: 'Wi-Fi aktiviert',
+    wingInWindow: 'Fensterblick auf Flügel',
+    narrower: 'Engerer Sitz',
+    exitRow: 'Ausstiegsreihe',
+    ADT: 'Erwachsene',
+    CHD: 'Kinder',
+    INF: 'Kleinkinder',
+    seatRestrictions: 'Der Sitz ist nur für',
+    passenger: 'Passagier',
+    personalTvInArmrest: 'Personal TV in der Armlehne',
+  },
+  n = {
+    F: 'First class',
+    B: 'Business class',
+    P: 'Premium class',
+    E: 'Economy class',
+    ADT: 'adults',
+    audio_video_ondemand: 'Audio and video on demand',
+    audioVideo: 'Audio and video on demand',
+    babyBassinet: 'Baby bassinet available',
+    bassinet: 'Baby bassinet available',
+    bluetooth: 'Pair your headset',
+    cancel: 'Cancel',
+    CHD: 'children',
+    deck: 'Deck',
+    doNotRecline: 'Restricted recline, backaches possible',
+    extraLegroom: 'Extra legroom',
+    getColdByExit: 'Close to exit, drafts and chilly',
+    INF: 'infants',
+    invertedSeat: 'Rear-facing seat',
+    limitedOverheadStorage: 'Limited storage space',
+    limitedRecline: 'Restricted recline, backaches possible',
+    misalignedWindow: 'Partial or missing window view',
+    nearGalley: 'Close to galleys',
+    nearLavatory: 'Close to restrooms',
+    nearStairs: 'Stairs, heavy traffic area',
+    noFloorStorage: 'No underseat storage',
+    noOverheadStorage: 'Limited storage space',
+    noWindow: 'Partial or missing window view',
+    personalTvInArmrest: 'Personal TV in armrest',
+    passenger: 'Passenger',
+    pitch: 'Pitch',
+    power: 'Power plug',
+    powerPlug: 'Power plug',
+    prereclinedSeat: 'Pre-reclined seat',
+    recline: 'Recline',
+    reservedCrewSeat: 'Reserved',
+    restrictedLegroom: 'Constrained Legroom',
+    select: 'Select',
+    seatRestrictions: 'The seat is only for',
+    standardSeat: 'Standard seat',
+    storageBoxBetweenWall: 'Storage box between wall',
+    trayTableInArmrest: 'Tray table in the armrest',
+    unselect: 'Unselect',
+    usbPlug: 'USB plug',
+    usbPowerPlug: 'USB and power plug',
+    width: 'Width',
+    wifi_enabled: 'Wi-Fi enabled',
+    wifiEnabled: 'Wi-Fi enabled',
+    wingInWindow: 'Wing from window view',
+    narrower: 'Narrower seat',
+    exitRow: 'Exit row',
+  },
+  c = {
+    F: '头等舱',
+    B: '商务舱',
+    P: '特等舱',
+    E: '经济舱',
+    restrictedLegroom: '腿部空间较小',
+    extraLegroom: '腿部空间较大',
+    noFloorStorage: '前面无座位',
+    noOverheadStorage: '行李柜较小',
+    limitedOverheadStorage: '行李柜较小',
+    trayTableInArmrest: '托盘桌在扶手里',
+    getColdByExit: '靠近紧急出口，较冷',
+    misalignedWindow: '部分窗户或无窗户',
+    noWindow: '部分窗户或无窗户',
+    doNotRecline: '后仰角度小，可能背疼',
+    limitedRecline: '后仰角度小，可能背疼',
+    storageBoxBetweenWall: '牆間儲物箱',
+    nearLavatory: '靠近洗手间',
+    nearGalley: '靠近厨房',
+    nearStairs: '楼梯，来往人流较多',
+    wingInWindow: '机翼在窗外视线内',
+    standardSeat: '标准座位',
+    reservedCrewSeat: '已预订',
+    bassinet: '有婴儿摇篮',
+    bluetooth: '配对您的耳麦',
+    babyBassinet: '有婴儿摇篮',
+    audio_video_ondemand: '自选式机上视听娱乐系统',
+    audioVideo: '自选式机上视听娱乐系统',
+    wifi_enabled: '有Wi-Fi',
+    wifiEnabled: '有Wi-Fi',
+    usbPlug: 'USB端口',
+    usbPowerPlug: 'USB端口及电源插座',
+    powerPlug: '电源插座',
+    power: '电源插座',
+    pitch: '座位间距',
+    width: '座位宽度',
+    recline: '倾斜度',
+    cancel: '取消',
+    select: '選擇',
+    unselect: '取消選擇',
+    deck: '甲板',
+    personalTvInArmrest: '扶手里的个人电视',
+    invertedSeat: '后向式座椅',
+    narrower: '较窄的座椅',
+    exitRow: '出口行',
+    ADT: '成人',
+    CHD: '儿童',
+    INF: '婴儿',
+    seatRestrictions: '该座位仅用于',
+    passenger: '乘客',
+    prereclinedSeat: '预倾斜座椅',
+  },
+  d = {
+    F: 'Первый класс',
+    B: 'Бизнес-класс',
+    P: 'Премиум-класс',
+    E: 'Эконом-класс',
+    restrictedLegroom: 'Мало места для ног',
+    extraLegroom: 'Много места для ног',
+    noFloorStorage: 'Нет места для ручной клади под сиденьем',
+    noOverheadStorage: 'Нет полки для ручной клади',
+    limitedOverheadStorage: 'Полка ручной клади ограничена в размерах',
+    trayTableInArmrest: 'Откидной столик в подлокотнике',
+    getColdByExit: 'Возле выхода',
+    misalignedWindow: 'Иллюминатор смещён',
+    noWindow: 'Иллюминатор отстутсвует',
+    doNotRecline: 'Спинка кресла не отклоняется',
+    limitedRecline: 'Ограниченное отклонение спинки кресла',
+    storageBoxBetweenWall: 'Ящик для хранения в стене',
+    nearLavatory: 'Около туалета',
+    nearGalley: 'Около буфета-кухни',
+    nearStairs: 'Рядом с лестницей, активное движение',
+    wingInWindow: 'Место возле крыла самолёта',
+    standardSeat: 'Стандартное сиденье',
+    reservedCrewSeat: 'Зарезервированное персоналом',
+    bassinet: 'Рядом с детской кроваткий',
+    bluetooth: 'Сопряжение гарнитуры',
+    babyBassinet: 'Рядом с детской кроваткой',
+    audio_video_ondemand: 'Развлекательная аудио- и видеопрограмма',
+    audioVideo: 'Развлекательная аудио- и видеопрограмма',
+    wifi_enabled: 'Наличие Wi-Fi',
+    wifiEnabled: 'Наличие Wi-Fi',
+    usbPlug: 'Наличие USB-порта',
+    usbPowerPlug: 'Наличие розетки и USB-порта',
+    powerPlug: 'Розетка',
+    power: 'Розетка',
+    pitch: 'Длинна',
+    width: 'Ширина',
+    recline: 'Наклон',
+    cancel: 'Закрыть',
+    select: 'Выбрать',
+    unselect: 'Убрать',
+    deck: 'Этаж',
+    personalTvInArmrest: 'Персональный телевизор в подлокотнике',
+    invertedSeat: 'Сиденье устанавливаемое лицом назад',
+    narrower: 'Более узкое сиденье',
+    exitRow: 'Ряд возле выхода',
+    ADT: 'взрослые',
+    CHD: 'дети',
+    INF: 'младенцы',
+    seatRestrictions: 'Сиденье только для',
+    passenger: 'Пассажир',
+    prereclinedSeat: 'Предварительно откинутое сиденье',
+  },
+  h = {
+    F: 'الدرجة الأولى',
+    B: 'درجة رجال الأعمال',
+    P: 'الفئة الممتازة',
+    E: 'الدرجة الاقتصادية',
+    ADT: 'بالغين',
+    audio_video_ondemand: 'الصوت والفيديو حسب الطلب',
+    audioVideo: 'الصوت والفيديو حسب الطلب',
+    babyBassinet: 'سرير الرضع متاح',
+    bassinet: 'سرير الرضع متاح',
+    bluetooth: 'إقران سماعة الرأس',
+    cancel: 'إلغاء',
+    CHD: 'أطفال',
+    deck: 'سطح السفينة',
+    doNotRecline: 'ميل محدود، ممكن ألم الظهر',
+    extraLegroom: 'مساحة إضافية للأرجل',
+    getColdByExit: 'قرب الخروج، تيارات هوائية وبرودة',
+    INF: 'رضع',
+    invertedSeat: 'مقعد مواجه للخلف',
+    limitedOverheadStorage: 'مساحة تخزين علوية محدودة',
+    limitedRecline: 'ميل محدود، ممكن ألم الظهر',
+    misalignedWindow: 'نافذة جزئية أو مفقودة',
+    nearGalley: 'بالقرب من المطبخ',
+    nearLavatory: 'بالقرب من الحمام',
+    nearStairs: 'الدرج، منطقة حركة كثيفة',
+    noFloorStorage: 'لا يوجد مساحة تخزين تحت المقعد',
+    noOverheadStorage: 'مساحة تخزين علوية محدودة',
+    noWindow: 'نافذة جزئية أو مفقودة',
+    personalTvInArmrest: 'تلفزيون شخصي في مسند الذراع',
+    passenger: 'راكب',
+    pitch: 'ميل',
+    power: 'مأخذ كهرباء',
+    powerPlug: 'مأخذ كهرباء',
+    prereclinedSeat: 'مقعد مائل مسبقًا',
+    recline: 'ميل',
+    reservedCrewSeat: 'محجوز',
+    restrictedLegroom: 'مساحة محدودة للأرجل',
+    select: 'اختر',
+    seatRestrictions: 'المقعد مخصص فقط لـ',
+    standardSeat: 'مقعد قياسي',
+    storageBoxBetweenWall: 'صندوق تخزين بين الجدران',
+    trayTableInArmrest: 'طاولة صينية في مسند الذراع',
+    unselect: 'إلغاء الاختيار',
+    usbPlug: 'مأخذ USB',
+    usbPowerPlug: 'USB ومأخذ كهرباء',
+    width: 'عرض',
+    wifi_enabled: 'واي فاي مفعل',
+    wifiEnabled: 'واي فاي مفعل',
+    wingInWindow: 'جناح من نافذة العرض',
+    narrower: 'مقعد أضيق',
+    exitRow: 'صف الخروج',
+  },
+  g = {
+    F: 'První třída',
+    B: 'Třída Business',
+    P: 'Třída Premium',
+    E: 'Ekonomická třída',
+    ADT: 'dospělí',
+    audio_video_ondemand: 'Audio a video na vyžádání',
+    audioVideo: 'Audio a video na vyžádání',
+    babyBassinet: 'Dětská postýlka k dispozici',
+    bassinet: 'Dětská postýlka k dispozici',
+    bluetooth: 'Spárování náhlavní soupravy',
+    cancel: 'Zrušit',
+    CHD: 'děti',
+    deck: 'Paluba',
+    doNotRecline: 'Omezené naklápění, možné bolesti zad',
+    extraLegroom: 'Více místa na nohy',
+    getColdByExit: 'Blízko k východu, průvan a chlad',
+    INF: 'kojenci',
+    invertedSeat: 'Sedadlo obrácené dozadu',
+    limitedOverheadStorage: 'Omezený úložný prostor nahoře',
+    limitedRecline: 'Omezené naklápění, možné bolesti zad',
+    misalignedWindow: 'Částečný nebo chybějící výhled z okna',
+    nearGalley: 'Blízko kuchyňky',
+    nearLavatory: 'Blízko WC',
+    nearStairs: 'Schody, oblast s vysokým provozem',
+    noFloorStorage: 'Žádné úložné místo pod sedadlem',
+    noOverheadStorage: 'Omezený úložný prostor nahoře',
+    noWindow: 'Částečný nebo chybějící výhled z okna',
+    personalTvInArmrest: 'Osobní TV v opěradle',
+    passenger: 'Cestující',
+    pitch: 'Naklonění',
+    power: 'Elektrická zásuvka',
+    powerPlug: 'Elektrická zásuvka',
+    prereclinedSeat: 'Přednakloněné sedadlo',
+    recline: 'Naklonit',
+    reservedCrewSeat: 'Rezervováno',
+    restrictedLegroom: 'Omezený prostor pro nohy',
+    select: 'Vybrat',
+    seatRestrictions: 'Sedadlo je pouze pro',
+    standardSeat: 'Standardní sedadlo',
+    storageBoxBetweenWall: 'Úložný box mezi stěnami',
+    trayTableInArmrest: 'Stolek v opěradle',
+    unselect: 'Zrušit výběr',
+    usbPlug: 'USB zásuvka',
+    usbPowerPlug: 'USB a elektrická zásuvka',
+    width: 'Šířka',
+    wifi_enabled: 'Wi-Fi povoleno',
+    wifiEnabled: 'Wi-Fi povoleno',
+    wingInWindow: 'Křídlo z okenního výhledu',
+    narrower: 'Užší sedadlo',
+    exitRow: 'Výstupní řada',
+  },
+  p = {
+    F: 'Première classe',
+    B: 'Classe affaires',
+    P: 'Classe Premium',
+    E: 'Classe économique',
+    ADT: 'adultes',
+    audio_video_ondemand: 'Audio et vidéo à la demande',
+    audioVideo: 'Audio et vidéo à la demande',
+    babyBassinet: 'Lit bébé disponible',
+    bassinet: 'Lit bébé disponible',
+    bluetooth: 'Appairer votre casque',
+    cancel: 'Annuler',
+    CHD: 'enfants',
+    deck: 'Pont',
+    doNotRecline: 'Inclinaison limitée, possibles maux de dos possibles',
+    extraLegroom: 'Espace supplémentaire pour les jambes',
+    getColdByExit: 'Près de la sortie, courants d’air et froid',
+    INF: 'nourrissons',
+    invertedSeat: 'Siège orienté vers l’arrière',
+    limitedOverheadStorage: 'Espace de rangement en hauteur limité',
+    limitedRecline: 'Inclinaison limitée, possibles maux de dos possibles',
+    misalignedWindow: 'Vue partielle ou manquante par la fenêtre',
+    nearGalley: 'Près de la cuisine',
+    nearLavatory: 'Près des toilettes',
+    nearStairs: 'Escaliers, zone de fort passage',
+    noFloorStorage: 'Pas de rangement sous le siège',
+    noOverheadStorage: 'Espace de rangement en hauteur limité',
+    noWindow: 'Vue partielle ou manquante par la fenêtre',
+    personalTvInArmrest: 'TV personnelle dans l’accoudoir',
+    passenger: 'Passager',
+    pitch: 'Inclinaison',
+    power: 'Prise électrique',
+    powerPlug: 'Prise électrique',
+    prereclinedSeat: 'Siège pré-incliné',
+    recline: 'Incliner',
+    reservedCrewSeat: 'Réservé',
+    restrictedLegroom: 'Espace pour les jambes limité',
+    select: 'Sélectionner',
+    seatRestrictions: 'Le siège est uniquement pour',
+    standardSeat: 'Siège standard',
+    storageBoxBetweenWall: 'Compartiment de rangement entre les cloisons',
+    trayTableInArmrest: 'Tablette dans l’accoudoir',
+    unselect: 'Désélectionner',
+    usbPlug: 'Prise USB',
+    usbPowerPlug: 'Prise USB et électrique',
+    width: 'Largeur',
+    wifi_enabled: 'Wi-Fi activé',
+    wifiEnabled: 'Wi-Fi activé',
+    wingInWindow: 'Vue de l’aile par le hublot',
+    narrower: 'Siège plus étroit',
+    exitRow: 'Rangée côté sortie',
+  },
+  m = {
+    F: 'Primeira classe',
+    B: 'Classe executiva',
+    P: 'Classe Premium',
+    E: 'Classe económica',
+    ADT: 'adultos',
+    audio_video_ondemand: 'Áudio e vídeo sob demanda',
+    audioVideo: 'Áudio e vídeo sob demanda',
+    babyBassinet: 'Berço para bebê disponível',
+    bassinet: 'Berço para bebê disponível',
+    bluetooth: 'Emparelhar o auricular',
+    cancel: 'Cancelar',
+    CHD: 'crianças',
+    deck: 'Convés',
+    doNotRecline: 'Reclinação restrita, possíveis dores nas costas',
+    extraLegroom: 'Espaço extra para as pernas',
+    getColdByExit: 'Perto da saída, correntes de ar e frio',
+    INF: 'bebês',
+    invertedSeat: 'Assento virado para trás',
+    limitedOverheadStorage: 'Armazenamento superior limitado',
+    limitedRecline: 'Reclinação restrita, possíveis dores nas costas',
+    misalignedWindow: 'Vista parcial ou ausente da janela',
+    nearGalley: 'Perto da cozinha',
+    nearLavatory: 'Perto do lavatório',
+    nearStairs: 'Escadas, área de tráfego intenso',
+    noFloorStorage: 'Sem armazenamento sob o assento',
+    noOverheadStorage: 'Armazenamento superior limitado',
+    noWindow: 'Vista parcial ou ausente da janela',
+    personalTvInArmrest: 'TV pessoal no apoio de braço',
+    passenger: 'Passageiro',
+    pitch: 'Inclinação',
+    power: 'Tomada',
+    powerPlug: 'Tomada',
+    prereclinedSeat: 'Assento pré-reclinado',
+    recline: 'Reclinar',
+    reservedCrewSeat: 'Reservado',
+    restrictedLegroom: 'Espaço para as pernas restrito',
+    select: 'Selecionar',
+    seatRestrictions: 'O assento é apenas para',
+    standardSeat: 'Assento padrão',
+    storageBoxBetweenWall: 'Caixa de armazenamento entre a parede',
+    trayTableInArmrest: 'Mesa de bandeja no apoio de braço',
+    unselect: 'Desmarcar',
+    usbPlug: 'Tomada USB',
+    usbPowerPlug: 'USB e tomada',
+    width: 'Largura',
+    wifi_enabled: 'Wi-Fi habilitado',
+    wifiEnabled: 'Wi-Fi habilitado',
+    wingInWindow: 'Vista da asa da janela',
+    narrower: 'Assento mais estreito',
+    exitRow: 'Fila de saída',
+  },
+  C = {
+    F: 'Prima classe',
+    B: 'Classe business',
+    P: 'Classe Premium',
+    E: 'Classe economica',
+    ADT: 'adulti',
+    audio_video_ondemand: 'Audio e video su richiesta',
+    audioVideo: 'Audio e video su richiesta',
+    babyBassinet: 'Culla per neonati disponibile',
+    bassinet: 'Culla per neonati disponibile',
+    bluetooth: 'Accoppiamento delle cuffie',
+    cancel: 'Annulla',
+    CHD: 'bambini',
+    deck: 'Ponte',
+    doNotRecline: 'Reclinazione limitata, possibili mal di schiena',
+    extraLegroom: 'Spazio extra per le gambe',
+    getColdByExit: 'Vicino all’uscita, correnti d’aria e freddo',
+    INF: 'neonati',
+    invertedSeat: 'Sedile rivolto all’indietro',
+    limitedOverheadStorage: 'Spazio di stivaggio limitato',
+    limitedRecline: 'Reclinazione limitata, possibili mal di schiena',
+    misalignedWindow: 'Vista finestrino parziale o assente',
+    nearGalley: 'Vicino alla cucina',
+    nearLavatory: 'Vicino ai servizi igienici',
+    nearStairs: 'Scale, zona di forte passaggio',
+    noFloorStorage: 'Nessuno spazio di stivaggio sotto il sedile',
+    noOverheadStorage: 'Spazio di stivaggio limitato',
+    noWindow: 'Vista finestrino parziale o assente',
+    personalTvInArmrest: 'TV personale nel bracciolo',
+    passenger: 'Passeggero',
+    pitch: 'Inclinazione',
+    power: 'Presa di corrente',
+    powerPlug: 'Presa di corrente',
+    prereclinedSeat: 'Sedile pre-reclinato',
+    recline: 'Reclinare',
+    reservedCrewSeat: 'Riservato',
+    restrictedLegroom: 'Spazio per le gambe limitato',
+    select: 'Seleziona',
+    seatRestrictions: 'Il sedile è solo per',
+    standardSeat: 'Sedile standard',
+    storageBoxBetweenWall: 'Scatola di stivaggio tra le pareti',
+    trayTableInArmrest: 'Tavolino nel bracciolo',
+    unselect: 'Deseleziona',
+    usbPlug: 'Presa USB',
+    usbPowerPlug: 'USB e presa di corrente',
+    width: 'Larghezza',
+    wifi_enabled: 'Abilitato Wi-Fi',
+    wifiEnabled: 'Abilitato Wi-Fi',
+    wingInWindow: 'Vista ala da finestrino',
+    narrower: 'Sedile più stretto',
+    exitRow: 'Fila di uscita',
+  },
+  u = {
+    F: 'Перший клас',
+    B: 'Бізнес-клас',
+    P: 'Преміум-клас',
+    E: 'Економ-клас',
+    ADT: 'дорослі',
+    audio_video_ondemand: 'Аудіо та відео за запитом',
+    audioVideo: 'Аудіо та відео за запитом',
+    babyBassinet: 'Ліжечко для немовляти доступне',
+    bassinet: 'Ліжечко для немовляти доступне',
+    bluetooth: 'Створіть пару з гарнітурою',
+    cancel: 'Скасувати',
+    CHD: 'діти',
+    deck: 'Палуба',
+    doNotRecline: 'Обмежений нахил, можливі болі в спині',
+    extraLegroom: 'Додаткове місце для ніг',
+    getColdByExit: 'Біля виходу, можливі протяги та холод',
+    INF: 'немовлята',
+    invertedSeat: 'Задом наперед сидіння',
+    limitedOverheadStorage: 'Обмежене місце для зберігання зверху',
+    limitedRecline: 'Обмежений нахил, можливі болі в спині',
+    misalignedWindow: 'Частковий або відсутній вид з вікна',
+    nearGalley: 'Біля камбузу',
+    nearLavatory: 'Біля туалету',
+    nearStairs: 'Сходи, зона з високим рухом',
+    noFloorStorage: 'Немає місця для зберігання під сидінням',
+    noOverheadStorage: 'Обмежене місце для зберігання зверху',
+    noWindow: 'Частковий або відсутній вид з вікна',
+    personalTvInArmrest: 'Особистий ТБ в підлокітнику',
+    passenger: 'Пасажир',
+    pitch: 'Відстань',
+    power: 'Розетка',
+    powerPlug: 'Розетка',
+    prereclinedSeat: 'Попередньо нахилений сидіння',
+    recline: 'Нахил',
+    reservedCrewSeat: 'Зарезервовано',
+    restrictedLegroom: 'Обмежене місце для ніг',
+    select: 'Вибрати',
+    seatRestrictions: 'Сидіння тільки для',
+    standardSeat: 'Стандартне сидіння',
+    storageBoxBetweenWall: 'Коробка для зберігання між стінами',
+    trayTableInArmrest: 'Столик у підлокітнику',
+    unselect: 'Скасувати вибір',
+    usbPlug: 'USB-розетка',
+    usbPowerPlug: 'USB і електрична розетка',
+    width: 'Ширина',
+    wifi_enabled: 'Wi-Fi увімкнено',
+    wifiEnabled: 'Wi-Fi увімкнено',
+    wingInWindow: 'Вигляд крила з вікна',
+    narrower: 'Вужче сидіння',
+    exitRow: 'Ряд біля виходу',
+  },
+  f = {
+    F: 'ファーストクラス',
+    B: 'ビジネスクラス',
+    P: 'プレミアムクラス',
+    E: 'エコノミークラス',
+    ADT: '大人',
+    audio_video_ondemand: 'オンデマンドのオーディオ＆ビデオ',
+    audioVideo: 'オンデマンドのオーディオ＆ビデオ',
+    babyBassinet: 'ベビーベッド利用可能',
+    bassinet: 'ベビーベッド利用可能',
+    bluetooth: 'ヘッドセットをペアリングする',
+    cancel: 'キャンセル',
+    CHD: '子供',
+    deck: 'デッキ',
+    doNotRecline: 'リクライニング制限、背中の痛みの可能性',
+    extraLegroom: '追加の足元スペース',
+    getColdByExit: '出口付近、通風と寒さ',
+    INF: '乳児',
+    invertedSeat: '後ろ向きの座席',
+    limitedOverheadStorage: 'オーバーヘッドの収納スペースが限られています',
+    limitedRecline: 'リクライニング制限、背中の痛みの可能性',
+    misalignedWindow: '部分的または欠けている窓の眺め',
+    nearGalley: 'ギャレーの近く',
+    nearLavatory: 'トイレの近く',
+    nearStairs: '階段、交通量の多いエリア',
+    noFloorStorage: '座席下の収納スペースなし',
+    noOverheadStorage: 'オーバーヘッドの収納スペースが限られています',
+    noWindow: '部分的または欠けている窓の眺め',
+    personalTvInArmrest: 'アームレスト内の個人用テレビ',
+    passenger: '乗客',
+    pitch: 'ピッチ',
+    power: '電源プラグ',
+    powerPlug: '電源プラグ',
+    prereclinedSeat: '事前にリクライニングされた座席',
+    recline: 'リクライニング',
+    reservedCrewSeat: '予約済み',
+    restrictedLegroom: '足元スペースが制限されています',
+    select: '選択',
+    seatRestrictions: '座席は次のみのため',
+    standardSeat: '標準の座席',
+    storageBoxBetweenWall: '壁の間の収納ボックス',
+    trayTableInArmrest: 'アームレスト内のトレイテーブル',
+    unselect: '選択解除',
+    usbPlug: 'USBプラグ',
+    usbPowerPlug: 'USB＆電源プラグ',
+    width: '幅',
+    wifi_enabled: 'Wi-Fi有効',
+    wifiEnabled: 'Wi-Fi有効',
+    wingInWindow: '窓からの翼の眺め',
+    narrower: '狭いシート',
+    exitRow: '出口列',
+  },
+  k = {
+    F: '퍼스트 클래스',
+    B: '비즈니스 클래스',
+    P: '프리미엄 클래스',
+    E: '이코노미 클래스',
+    ADT: '성인',
+    audio_video_ondemand: '요청 시 오디오 및 비디오',
+    audioVideo: '요청 시 오디오 및 비디오',
+    babyBassinet: '아기용 바스켓 사용 가능',
+    bassinet: '아기용 바스켓 사용 가능',
+    bluetooth: '헤드셋 페어링',
+    cancel: '취소',
+    CHD: '어린이',
+    deck: '데크',
+    doNotRecline: '제한된 기울기, 허리 통증 가능성',
+    extraLegroom: '추가 다리 공간',
+    getColdByExit: '출구 근처, 통풍 및 추움',
+    INF: '유아',
+    invertedSeat: '뒤집힌 좌석',
+    limitedOverheadStorage: '제한된 수납 공간',
+    limitedRecline: '제한된 기울기, 허리 통증 가능성',
+    misalignedWindow: '부분적 또는 누락된 창 뷰',
+    nearGalley: '갤리 근처',
+    nearLavatory: '화장실 근처',
+    nearStairs: '계단, 높은 트래픽 지역',
+    noFloorStorage: '좌석 아래 보관 공간 없음',
+    noOverheadStorage: '제한된 수납 공간',
+    noWindow: '부분적 또는 누락된 창 뷰',
+    personalTvInArmrest: '팔걸이에 개인 TV',
+    passenger: '승객',
+    pitch: '피치',
+    power: '전원 플러그',
+    powerPlug: '전원 플러그',
+    prereclinedSeat: '미리 기울어진 좌석',
+    recline: '기울기',
+    reservedCrewSeat: '예약됨',
+    restrictedLegroom: '제한된 다리 공간',
+    select: '선택',
+    seatRestrictions: '좌석은 오로지',
+    standardSeat: '표준 좌석',
+    storageBoxBetweenWall: '벽 사이의 보관 상자',
+    trayTableInArmrest: '팔걸이에 트레이 테이블',
+    unselect: '선택 취소',
+    usbPlug: 'USB 플러그',
+    usbPowerPlug: 'USB 및 전원 플러그',
+    width: '너비',
+    wifi_enabled: 'Wi-Fi 사용 가능',
+    wifiEnabled: 'Wi-Fi 사용 가능',
+    wingInWindow: '창에서 날개 뷰',
+    narrower: '좁은 좌석',
+    exitRow: '행 종료',
+  },
+  v = {
+    F: 'Birinci sınıf',
+    B: 'Business sınıfı',
+    P: 'Premium sınıf',
+    E: 'Ekonomi sınıfı',
+    ADT: 'yetişkinler',
+    audio_video_ondemand: 'Talebe göre ses ve video',
+    audioVideo: 'Talebe göre ses ve video',
+    babyBassinet: 'Bebek beşiği mevcut',
+    bassinet: 'Bebek beşiği mevcut',
+    bluetooth: 'Kulaklığınızı eşleştirin',
+    cancel: 'İptal',
+    CHD: 'çocuklar',
+    deck: 'Güverte',
+    doNotRecline: 'Sınırlı eğim, olası sırt ağrıları',
+    extraLegroom: 'Ekstra bacak aralığı',
+    getColdByExit: 'Çıkışa yakın, hava akımı ve soğuk',
+    INF: 'bebekler',
+    invertedSeat: 'Ters yönlü koltuk',
+    limitedOverheadStorage: 'Sınırlı üst depolama alanı',
+    limitedRecline: 'Sınırlı eğim, olası sırt ağrıları',
+    misalignedWindow: 'Kısmi veya eksik pencere görünümü',
+    nearGalley: 'Mutfak alanına yakın',
+    nearLavatory: 'Tuvaletin yanında',
+    nearStairs: 'Merdivenler, yoğun trafik alanı',
+    noFloorStorage: 'Koltuk altı depolama alanı yok',
+    noOverheadStorage: 'Sınırlı üst depolama alanı',
+    noWindow: 'Kısmi veya eksik pencere görünümü',
+    personalTvInArmrest: 'Kol dayama içinde kişisel TV',
+    passenger: 'Yolcu',
+    pitch: 'Eğim',
+    power: 'Elektrik prizi',
+    powerPlug: 'Elektrik prizi',
+    prereclinedSeat: 'Önceden eğimli koltuk',
+    recline: 'Yatma Derecesi',
+    reservedCrewSeat: 'Rezerve',
+    restrictedLegroom: 'Sınırlı bacak aralığı',
+    select: 'Seç',
+    seatRestrictions: 'Koltuk sadece için',
+    standardSeat: 'Standart koltuk',
+    storageBoxBetweenWall: 'Duvarlar arasında depolama kutusu',
+    trayTableInArmrest: 'Kol dayamada tepsi masası',
+    unselect: 'Seçimi kaldır',
+    usbPlug: 'USB prizi',
+    usbPowerPlug: 'USB ve elektrik prizi',
+    width: 'Genişlik',
+    wifi_enabled: 'Wi-Fi etkin',
+    wifiEnabled: 'Wi-Fi etkin',
+    wingInWindow: 'Pencereden kanat görünümü',
+    narrower: 'Daha dar koltuk',
+    exitRow: 'Çıkış sırası',
+  },
+  w = { ZOOM: 'zoom', SCALE: 'scale' },
+  b = {
+    available: 'available',
+    unavailable: 'unavailable',
+    selected: 'selected',
+    preferred: 'preferred',
+    extra: 'extra',
+    disabled: 'disabled',
+  },
+  L = { seat: 'seat', aisle: 'aisle', empty: 'empty', index: 'index' },
+  x = { seat: 'S', empty: 'E', aisle: '-' },
+  M = { f: 'First', b: 'Business', p: 'Premium economy', e: 'Economy' },
+  z = { CN: c, DE: a, EN: n, ES: s, PL: o, RU: d, AR: h, CS: g, FR: p, PT: m, UK: u, IT: C, JA: f, KO: k, TR: v },
+  y = w.SCALE,
+  S = ['ADT', 'CHD', 'INF'],
+  T = [
+    [100, 100],
+    [122, 218],
+    [150, 170],
+    [100, 100],
+    [122, 200],
+    [200, 200],
+    [200, 200],
+    [140, 200],
+    [150, 200],
+    [150, 200],
+    [200, 150],
+    [200, 150],
+    [200, 185],
+    [200, 185],
+    [120, 150],
+    [150, 175],
+    [150, 175],
+    [185, 175],
+    [185, 175],
+    [255, 175],
+    [130, 330],
+    [130, 330],
+    [200, 400],
+    [200, 400],
+    [200, 365],
+    [200, 365],
+    [200, 200],
+    [200, 200],
+    [200, 200],
+    [200, 200],
+    [200, 265],
+    [200, 265],
+    [200, 330],
+    [200, 330],
+    [200, 200],
+    [200, 200],
+    [550, 435],
+    [550, 435],
+    [550, 435],
+    [550, 435],
+    [275, 1230],
+    [275, 1230],
+    [550, 325],
+    [550, 325],
+    [550, 325],
+    [550, 325],
+  ],
+  E = { left: 'left', right: 'right', center: 'center' },
+  H = { F: '#BDB76B', B: '#FF8C00', P: '#8FBC8F', E: '#1E90FF' };
+class _ {
+  constructor(e, t, r, i, o = 'Bearer', s = null) {
+    l(this, 'getData', async (e, t = {}) => {
+      var r;
+      let l = {};
+      (null != t && null !== (r = t.headers) && void 0 !== r && r.authorization) ||
+        (l = await this._getRequestOptions());
+      const i = { ...t, ...l },
+        o = await fetch(`${this._apiUrl}/${e}`, i),
+        s = await o.json();
+      if (!o.ok) throw new Error(`getData: ${o.status} - ${s.message}`);
+      return await s;
+    }),
+      l(this, 'postData', async (e, t, r = {}) => {
+        const l = await this._getRequestOptions(),
+          i = { ...r, method: 'post', body: JSON.stringify(t), ...l },
+          o = `${this._apiUrl}/${e}`,
+          s = await fetch(o, i),
+          a = await s.json();
+        if (!s.ok) throw new Error(`postData: ${s.status} - ${a.message}`);
+        return a;
+      }),
+      l(this, '_getRequestOptions', async () => {
+        const e = await this._getToken();
+        return {
+          headers: { 'content-type': 'application/json', authorization: `${this._apiAuthorizationScheme} ${e}` },
+        };
+      }),
+      l(this, '_getAuthRequestOptions', e => ({ headers: { authorization: `${this._apiAuthorizationScheme} ${e}` } })),
+      l(this, '_getToken', async () => {
+        const e = this._localStorage ? this._localStorage.getData('jetsJwtToken') : null;
+        if (e) return e;
+        const t = `auth?appId=${this._appId}`,
+          { accessToken: r } = await this.getData(t, this._getAuthRequestOptions(this._apiKey));
+        if (!r) throw new Error('Unable to authenticate');
+        return this._saveToken(r), r;
+      }),
+      l(this, '_saveToken', e => {
+        if (!e || !this._localStorage) return;
+        const { exp: t } = this._parseJwt(e),
+          r = this._getTokenTTL(t);
+        this._localStorage.setData('jetsJwtToken', e, r);
+      }),
+      (this._appId = e),
+      (this._apiKey = t),
+      (this._apiUrl = r),
+      (this._localStorage = i),
+      (this._apiAuthorizationScheme = o),
+      (this._apiMetadata = s);
+  }
+  _getTokenTTL(e) {
+    return 1e3 * e - Date.now() - 3e5;
+  }
+  _parseJwt(e) {
+    var t = e.split('.')[1].replace(/-/g, '+').replace(/_/g, '/'),
+      r = decodeURIComponent(
+        atob(t)
+          .split('')
+          .map(function (e) {
+            return '%' + ('00' + e.charCodeAt(0).toString(16)).slice(-2);
+          })
+          .join('')
+      );
+    return JSON.parse(r);
+  }
+}
+const A = r.default.createContext();
+class $ {
+  constructor() {
+    l(this, 'getSeatMapParams', (e, t) => {
+      var r, l, i;
+      const o = e.map(e => e.width),
+        s =
+          Math.max(...o) +
+            2 * (null == t || null === (r = t.colorTheme) || void 0 === r ? void 0 : r.fuselageStrokeWidth) || 0,
+        a = e.map(e => e.wingsInfo.length),
+        n = Math.max(...a) > 0,
+        c = this._calculateSeatMapScale(s, t.width),
+        d = this._calculateSeatMapRotation(t.horizontal, t.rightToLeft, c.scale, t.scaleType),
+        h = t.visibleFuselage ? 2.4 * s : 0,
+        g =
+          (null == t || null === (l = t.colorTheme) || void 0 === l ? void 0 : l.deckHeightSpacing) * e.length * 2 || 0,
+        p = t.singleDeckMode
+          ? 0
+          : (e.length - 1) *
+            ((null == t || null === (i = t.colorTheme) || void 0 === i ? void 0 : i.deckSeparation) || 0),
+        m = e.map(e => e.height).reduce((e, t) => e + t, 0) + h + p + g,
+        C = e.map(e => e.height + h + p + g),
+        u = navigator.maxTouchPoints || 'ontouchstart' in document.documentElement;
+      return {
+        ...c,
+        ...d,
+        innerWidth: s,
+        isTouchDevice: u,
+        tooltipOnHover: t.tooltipOnHover,
+        builtInTooltip: null == t ? void 0 : t.builtInTooltip,
+        externalPassengerManagement: null == t ? void 0 : t.externalPassengerManagement,
+        builtInDeckSelector: null == t ? void 0 : t.builtInDeckSelector,
+        singleDeckMode: null == t ? void 0 : t.singleDeckMode,
+        totalDecksHeight: m,
+        separateDeckHeights: C,
+        visibleFuselage: t.visibleFuselage,
+        visibleWings: t.visibleWings && n,
+        visibleCabinTitles: t.visibleCabinTitles,
+        scaledTotalDecksHeight: m ? m * (c.scale || 1) + 'px' : '100%',
+        hiddenSeatFeatures: t.hiddenSeatFeatures,
+      };
+    }),
+      l(this, 'findWidestDeckRow', e => [...e].filter(e => !!e.number).sort((e, t) => t.width - e.width)[0]),
+      l(this, 'findBiggestDeckRow', e => {
+        const t = [...e].sort((e, t) => {
+          const r = /S/g;
+          return t.seatScheme.match(r).length - e.seatScheme.match(r).length;
+        });
+        return this.assignAllLettersForBiggestRow(t[0], e);
+      }),
+      l(this, 'assignAllLettersForBiggestRow', (e, t) => {
+        const r = { ...e, seats: e.seats.map(e => ({ ...e })) };
+        try {
+          const e = this.rowLetters(r),
+            l = t.find(t => {
+              if (t.seatScheme === r.seatScheme) {
+                const r = this.rowLetters(t);
+                if (e !== r) return t;
+              }
+            });
+          l &&
+            r.seats.forEach((e, t) => {
+              e.letter = `${e.letter} - ${l.seats[t].letter}`;
+            });
+        } catch (e) {
+          console.error('Error at assignAllLettersForBiggestRow', e);
+        }
+        return r;
+      }),
+      l(this, 'rowLetters', e => {
+        const t = { [L.aisle]: '-', [L.empty]: ' ' };
+        return e.seats.map(e => t[e.type] || e.letter).join();
+      }),
+      l(this, 'getDefaultSeatSizeByClass', e =>
+        e && SEAT_SIZE_BY_CLASS[e] ? SEAT_SIZE_BY_CLASS[e] : DEFAULT_SEAT_SIZE
+      ),
+      l(this, '_calculateSeatMapRotation', (e, t, r, l) => {
+        let i = '',
+          o = '',
+          s = '';
+        return (
+          e &&
+            ((i = 'rotate(90deg)'),
+            (o = l === w.ZOOM ? `translateY(${-100 / r}%)` : 'translateY(-100%)'),
+            (s = 'rotate(-90deg)')),
+          { rotation: i, offset: o, antiRotation: s, isHorizontal: e, rightToLeft: t }
+        );
+      }),
+      l(this, '_calculateSeatMapScale', (e, t) => ({ scale: t / e || 1, antiScale: e / t || 1 })),
+      l(this, '_calculateDecksHeight', (e, t, r) =>
+        null == e
+          ? void 0
+          : e.map((e, l) => {
+              const i = t[l],
+                o = r[l];
+              return this.calculateDeckHeight(e.rows, i, o);
+            })
+      ),
+      l(this, 'calculateDeckHeight', (e, t, r) => {
+        if (!e.length) return 0;
+        const l = e[e.length - 1],
+          { topOffset: i, seats: o } = l,
+          s = this._findLowestSeat(o),
+          { height: a, topOffset: n } = this._calculateLastElementHeight(t),
+          { height: c, topOffset: d } = this._calculateLastElementHeight(r),
+          h = i + s.topOffset + s.size.height,
+          g = n + a,
+          p = d + c,
+          m = Math.max(h, g, p);
+        return Math.round(m);
+      }),
+      l(this, '_findLowestSeat', e => {
+        let t = 0;
+        const r = e.filter(e => e.letter && !Number.isInteger(e.letter));
+        let l = r[0];
+        for (const e of r) {
+          const { width: r, height: i } = e.size,
+            o = (e.topOffset || 0) + i;
+          t < o && ((t = o), (l = e));
+        }
+        return l;
+      }),
+      l(this, '_calculateLastElementHeight', e =>
+        null == e
+          ? void 0
+          : e.reduce(
+              (e, { topOffset: t, height: r }) => (t > e.topOffset && ((e.topOffset = t), (e.height = r || 150)), e),
+              { topOffset: 0, height: 0 }
+            )
+      );
+  }
+  getDeckInnerWidth(e, t) {
+    return e + 20 + 24 || t.width;
+  }
+  getDeckInnerWidthWithWings(e, t, r) {
+    const l = null != r && r.visibleWings && t ? r.colorTheme.wingsWidth : 0,
+      i = null != r && r.visibleCabinTitles ? r.colorTheme.cabinTitlesWidth : 0;
+    return e.width + 2 * Math.max(l, i);
+  }
+  static validateColor(e, t) {
+    return this._isColor(e) ? e : t;
+  }
+  static _isColor(e) {
+    const t = new Option().style;
+    return (t.color = e), '' !== t.color;
+  }
+  static _applyColorRangesConstraints(e) {
+    return Array.isArray(e) && e.length
+      ? e.filter(e => {
+          if (!e || !Array.isArray(e.range) || 2 !== e.range.length) return !1;
+          const [t, r] = e.range;
+          return (
+            !('number' != typeof t || 'number' != typeof r || t > r) &&
+            !('string' != typeof e.color || !this._isColor(e.color))
+          );
+        })
+      : [];
+  }
+  static _filterInvalidColors(e) {
+    return (
+      Object.keys(e).reduce((t, r) => {
+        if (!r.toLowerCase().endsWith('color')) return (t[r] = e[r]), t;
+        return this._isColor(e[r]) ? (t[r] = e[r]) : console.warn('config.colorTheme', r, 'has invalid color', e[r]), t;
+      }, {}),
+      e
+    );
+  }
+  static calculateSeatColorByScore(e, t) {
+    if ('number' != typeof e || e < 1 || e > 10) return null;
+    const r = t.find(t => {
+      const [r, l] = t.range;
+      return e >= r && e <= l;
+    });
+    return (null == r ? void 0 : r.color) || null;
+  }
+}
+l($, 'validateLanguage', e => {
+  if (!e) return 'EN';
+  const t = e.toUpperCase();
+  return z[t] ? t : 'EN';
+}),
+  l($, 'mergeColorThemeWithConstraints', (e, t) => {
+    let r = { ...e, ...$._filterInvalidColors(t) };
+    for (let e in V) r[e] = V[e](r[e]);
+    return (r.customSeatColorRanges = $._applyColorRangesConstraints(r.customSeatColorRanges)), r;
+  });
+const V = { fuselageStrokeWidth: e => Math.min(Math.max(10, e), 18) };
+class O {
+  static generateId() {
+    return '_' + Math.random().toString(36).substring(2, 9);
+  }
+}
+const B = {
+    '+': '<svg width="20" height="20" viewBox="-1 -1 22 22" xmlns="http://www.w3.org/2000/svg"><path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM7.29 14.29L3.7 10.7C3.31 10.31 3.31 9.68 3.7 9.29C4.09 8.9 4.72 8.9 5.11 9.29L8 12.17L14.88 5.29C15.27 4.9 15.9 4.9 16.29 5.29C16.68 5.68 16.68 6.31 16.29 6.7L8.7 14.29C8.32 14.68 7.68 14.68 7.29 14.29Z" fill="#11d900"></path></svg>',
+    '-': '<svg width="20" height="20" viewBox="-1 -1 22 22" xmlns="http://www.w3.org/2000/svg"><path d="M11.89 6.7L10 8.59L8.11 6.7C7.72 6.31 7.09 6.31 6.7 6.7C6.31 7.09 6.31 7.72 6.7 8.11L8.59 10L6.7 11.89C6.31 12.28 6.31 12.91 6.7 13.3C7.09 13.69 7.72 13.69 8.11 13.3L10 11.41L11.89 13.3C12.28 13.69 12.91 13.69 13.3 13.3C13.69 12.91 13.69 12.28 13.3 11.89L11.41 10L13.3 8.11C13.69 7.72 13.69 7.09 13.3 6.7C12.91 6.32 12.27 6.32 11.89 6.7ZM10 0C4.47 0 0 4.47 0 10C0 15.53 4.47 20 10 20C15.53 20 20 15.53 20 10C20 4.47 15.53 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="red"></path></svg>',
+    wifi: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.23 11"><title>wifi</title><path d="M6.62,9.91A1.08,1.08,0,1,0,7.7,8.82,1.08,1.08,0,0,0,6.62,9.91M7.7,7.64A2.24,2.24,0,0,1,9.84,9.26L11,8a3.76,3.76,0,0,0-6.65.09L5.54,9.32A2.25,2.25,0,0,1,7.7,7.64m0-3.06a5.25,5.25,0,0,1,4.37,2.35l1.08-1.15a6.75,6.75,0,0,0-11,.14L3.25,7A5.26,5.26,0,0,1,7.69,4.58m0-3a8.19,8.19,0,0,1,6.45,3.15l1.08-1.14A9.73,9.73,0,0,0,0,3.78L1.11,4.89A8.22,8.22,0,0,1,7.7,1.56" fill="#4f6f8f"/></svg>',
+    wifi_enabled:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.23 11"><title>wifi</title><path d="M6.62,9.91A1.08,1.08,0,1,0,7.7,8.82,1.08,1.08,0,0,0,6.62,9.91M7.7,7.64A2.24,2.24,0,0,1,9.84,9.26L11,8a3.76,3.76,0,0,0-6.65.09L5.54,9.32A2.25,2.25,0,0,1,7.7,7.64m0-3.06a5.25,5.25,0,0,1,4.37,2.35l1.08-1.15a6.75,6.75,0,0,0-11,.14L3.25,7A5.26,5.26,0,0,1,7.69,4.58m0-3a8.19,8.19,0,0,1,6.45,3.15l1.08-1.14A9.73,9.73,0,0,0,0,3.78L1.11,4.89A8.22,8.22,0,0,1,7.7,1.56" fill="#4f6f8f"/></svg>',
+    wifiEnabled:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.23 11"><title>wifi</title><path d="M6.62,9.91A1.08,1.08,0,1,0,7.7,8.82,1.08,1.08,0,0,0,6.62,9.91M7.7,7.64A2.24,2.24,0,0,1,9.84,9.26L11,8a3.76,3.76,0,0,0-6.65.09L5.54,9.32A2.25,2.25,0,0,1,7.7,7.64m0-3.06a5.25,5.25,0,0,1,4.37,2.35l1.08-1.15a6.75,6.75,0,0,0-11,.14L3.25,7A5.26,5.26,0,0,1,7.69,4.58m0-3a8.19,8.19,0,0,1,6.45,3.15l1.08-1.14A9.73,9.73,0,0,0,0,3.78L1.11,4.89A8.22,8.22,0,0,1,7.7,1.56" fill="#4f6f8f"/></svg>',
+    power:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 21"><path d="M20.07,10.16a1.34,1.34,0,0,1-1.34,1.34H3.5a1.34,1.34,0,1,1,0-2.68h2V1.12a1.12,1.12,0,1,1,2.24,0v7.7h6.73V1.12a1.12,1.12,0,1,1,2.24,0v7.7h2A1.34,1.34,0,0,1,20.07,10.16ZM3.54,12.63V18.8A2.25,2.25,0,0,0,5.4,21H16.84a2.24,2.24,0,0,0,1.85-2.2V12.62Z"  fill="#4f6f8f"></path></svg>',
+    audioVideo:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 21"><path d="M6.51,8.59h3.57L8.44,11.13H4.88ZM18.45,2.31,17.43,0,15,1.08l2.53,1.65Zm-3.16,1.4L12.77,2.07,9.51,3.52,12,5.17Zm-4.42,7.41h3.57l1.64-2.53H12.51Zm-1.05-5L7.29,4.51,4,6,6.56,7.6ZM18.5,8.59l-1.64,2.53h2.67V8.59Zm-16,11.24A1.16,1.16,0,0,0,3.63,21H18.37a1.16,1.16,0,0,0,1.16-1.16V13.2H2.47Zm.17-13V11.2L4.51,8.41Z" fill="#4f6f8f"></path></svg>',
+    dot: '<svg width="20" height="20" viewBox="-1 -1 22 22" xmlns="http://www.w3.org/2000/svg"><path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0Z" fill="#4f6f8f"></path></svg>',
+    bluetooth:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148.000000 148.000000"> <g transform="translate(0, 148.000000) scale(0.1,-0.1)" fill="#4f6f8f" stroke="none"> <path d="M667 1459 l-27 -20 -2 -264 -3 -264 -117 115 c-96 94 -122 114 -147 114 -31 0 -71 -38 -71 -68 0 -9 71 -87 157 -174 l157 -158 -157 -158 c-86 -87 -157 -165 -157 -174 0 -30 40 -68 72 -68 25 0 50 20 149 117 l119 116 0 -266 0 -266 26 -20 c15 -12 35 -21 45 -21 21 0 431 338 455 375 9 14 13 32 9 45 -4 11 -85 86 -181 166 -96 80 -174 150 -174 154 0 4 78 74 174 154 96 80 177 155 181 166 4 13 0 31 -9 45 -24 37 -434 375 -455 375 -10 0 -30 -9 -44 -21z m229 -289 c56 -47 103 -88 103 -92 1 -7 -204 -181 -219 -186 -6 -2 -10 68 -10 183 0 132 3 186 11 183 6 -2 58 -42 115 -88z m-1 -673 c58 -49 105 -92 104 -95 0 -8 -203 -175 -218 -180 -8 -3 -11 51 -11 183 0 115 4 185 10 183 5 -1 57 -43 115 -91z"/> </g> </svg>',
+  },
+  I = {
+    recline:
+      '<svg width="48" height="51" viewBox="0 0 48 51" xmlns="http://www.w3.org/2000/svg"><g transform="scale(-1, 1) translate(-48,0)"><path d="M19.3954 30.8342C19.7952 31.1919 20.4265 30.8973 20.4265 30.3502C20.4265 30.1818 20.3424 30.0345 20.2161 29.9082L20.1319 29.8241L19.2902 29.1507L19.2691 29.1296C18.8272 28.7298 18.1538 29.1086 18.259 29.6978C18.2801 29.8451 18.3432 29.9503 18.4484 30.0345L18.4695 30.0555L19.3112 30.7289L19.3954 30.8131V30.8342Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5973 0.152473C13.2084 0.510215 12.051 1.49927 11.8616 3.2038V3.30902C11.4284 12.9854 11.4976 17.6783 12.4905 21.7889L11.967 21.091L11.946 21.0489C11.8197 20.8384 11.5672 20.7543 11.3357 20.7753C10.8938 20.8384 10.6833 21.3435 10.9148 21.7223L10.9359 21.7643L11.6303 22.6903L11.6724 22.7534L11.6934 22.7955C11.9769 23.1853 12.5288 23.0977 12.734 22.7212C12.8634 23.1823 13.0052 23.6402 13.1601 24.1013C13.1537 24.128 13.1488 24.1557 13.1454 24.1844C13.1244 24.3527 13.1875 24.5211 13.2927 24.6473L13.3138 24.6894L13.4099 24.8175C14.1463 26.8561 15.1378 29.0219 16.4364 31.8585L16.4492 31.8863C16.5014 32.0005 16.5542 32.1159 16.6075 32.2325C17.1074 33.3248 17.6558 34.5232 18.246 35.841C18.0278 35.9337 17.8592 36.149 17.8592 36.4318C17.8592 36.6001 17.9434 36.7474 18.0697 36.8737L18.8904 37.6944L18.9535 37.7365C19.0105 37.7891 19.073 37.828 19.1381 37.8543C19.2985 38.2206 19.4614 38.5951 19.6267 38.978C19.9424 39.7355 20.2581 40.2616 20.9735 40.6615C21.5838 40.9982 22.3624 41.1455 23.625 41.1665C24.8703 41.187 26.0681 41.2 27.2319 41.2077L29.5644 48.0056H22.8676C22.1942 48.0056 21.626 48.5527 21.626 49.2472C21.626 49.9206 22.1731 50.4888 22.8676 50.4888H31.1617C31.2508 50.4988 31.3418 50.499 31.433 50.4888H42.838C43.5114 50.4888 44.0795 49.9416 44.0795 49.2472C44.0795 48.5738 43.5324 48.0056 42.838 48.0056H32.1957L29.8663 41.2168C31.8256 41.2179 33.7121 41.2077 35.5976 41.1974C36.2285 41.194 36.8594 41.1906 37.4928 41.1876C38.3328 41.1876 39.1769 41.1835 40.1246 41.179C41.3371 41.1731 42.7192 41.1665 44.4793 41.1665C45.7419 41.1876 46.5836 40.3037 47.0045 39.1253C47.1518 38.7044 47.236 38.2415 47.257 37.7785C47.2781 37.3155 47.236 36.8315 47.1308 36.3896C46.8151 35.148 46.0155 34.1379 44.5845 34.0117C40.2916 33.6539 37.4297 33.4014 34.5888 33.1489C33.2553 33.0322 31.925 32.9122 30.6452 32.7968C28.6936 32.6208 26.859 32.4553 25.3085 32.3282C19.7951 20.3544 18.6166 17.5976 19.6057 3.43528C19.7109 1.96223 18.8481 0.910044 17.6486 0.383953C17.1857 0.173516 16.6806 0.0472546 16.1545 0.00516733C15.6285 -0.0158763 15.1024 0.026211 14.5973 0.152473ZM28.3161 38.6924C31.509 38.7099 34.4611 38.691 37.4717 38.6623C40.0812 38.6413 42.7116 38.6202 44.4582 38.6202H44.4793C44.4793 38.6202 44.5424 38.4729 44.6266 38.2625C44.6897 38.0731 44.7318 37.8416 44.7528 37.6101C44.7739 37.3787 44.7528 37.1472 44.6897 36.9367C44.6266 36.6632 44.5214 36.4738 44.353 36.4527C43.8105 36.4054 43.2248 36.3545 42.6047 36.3006C40.1945 36.0912 37.2654 35.8367 34.3362 35.5689L34.335 35.5688C31.4945 35.3163 28.6538 35.0638 24.3405 34.7061L23.625 34.643L23.3304 33.9906L23.2462 33.8223C23.1555 33.6256 23.0658 33.4313 22.9772 33.2392C22.7687 33.4555 22.4052 33.5083 22.1311 33.2752V33.2963L22.0469 33.2331L21.5419 32.8123L21.2052 32.4756C21.0789 32.3493 21.0158 32.223 20.9947 32.0547C20.9526 31.5075 21.605 31.1919 22.0048 31.5496L22.3415 31.8863L22.3617 31.9031C17.1874 20.6464 16.1038 17.4332 17.1015 3.24589C17.1226 2.97232 16.9121 2.76188 16.6175 2.63562C16.4281 2.55145 16.1966 2.48832 15.9441 2.46727C15.6916 2.44623 15.4391 2.46727 15.2076 2.5304L15.2286 2.55145C14.7867 2.67771 14.4079 2.97232 14.3448 3.45632C13.7423 17.155 14.1695 20.4518 16.9083 26.8319L17.5225 27.4461C17.7771 27.7007 17.767 28.0756 17.5559 28.3069C17.9026 29.0826 18.2795 29.9097 18.6886 30.8073L18.7008 30.8341C19.6057 32.7912 20.6579 35.0849 21.8995 37.9679C22.0047 38.2415 22.1099 38.4098 22.1941 38.4519C22.4045 38.5781 22.8254 38.6202 23.6461 38.6413C25.1362 38.6658 26.5566 38.6814 27.9307 38.6901C28.0607 38.6701 28.1906 38.6716 28.3161 38.6924Z"></path><path d="M0.140476 10.527L0.132009 10.5185L0.182563 10.6533L0.0983887 10.485V9.05399C0.140476 8.88564 0.245694 8.75938 0.371956 8.67521C0.834916 8.38059 1.42414 8.80147 1.29788 9.32756V10.1062L1.38205 10.3587C1.5504 10.7796 1.2137 11.2215 0.771785 11.2004C0.540305 11.1794 0.329869 11.0321 0.245694 10.8006L0.22465 10.7375L0.140476 10.527Z"></path><path d="M2.26588 12.6525C2.05545 12.1264 1.31892 12.1474 1.12953 12.6525C1.0664 12.7998 1.0664 12.9471 1.12953 13.0944L1.15057 13.1575L1.48727 13.9151L1.59249 14.2307C1.80292 14.7358 2.51841 14.7358 2.72884 14.2307C2.79197 14.0834 2.79197 13.9151 2.72884 13.7678L2.56049 13.2627L2.30797 12.6945L2.28693 12.6314L2.26588 12.6525Z"></path><path d="M3.63372 16.0405C3.42328 15.5354 2.7078 15.5354 2.49736 16.0405C2.43423 16.1878 2.43423 16.3561 2.49736 16.5034V16.5245L2.68676 17.0295L2.93928 17.6188V17.6398C3.17076 18.1659 3.90729 18.1238 4.07564 17.5977C4.11772 17.4504 4.11772 17.3031 4.05459 17.1558V17.1347L3.73894 16.3982L3.61268 16.0615V16.0405H3.63372Z"></path><path d="M5.08573 19.3864C4.83321 18.8393 4.05459 18.9445 3.92833 19.5337C3.90729 19.66 3.92833 19.7862 3.97042 19.9125V19.9336L4.51755 21.0278C4.62277 21.2383 4.85425 21.3856 5.08573 21.3856C5.52765 21.3645 5.80121 20.9016 5.61182 20.5017L5.06469 19.4075V19.3864H5.08573Z"></path><path d="M5.56973 22.7534C5.5066 22.9217 5.52765 23.0901 5.61182 23.2374L6.24313 24.2896L6.28522 24.3527C6.41148 24.5421 6.62192 24.6684 6.85339 24.6473C7.31636 24.6263 7.56888 24.1212 7.3374 23.7214L7.29531 23.6583L6.664 22.6061L6.68505 22.6482C6.43252 22.1852 5.73808 22.2273 5.56973 22.7534Z"></path><path d="M8.57897 25.6995C8.26332 25.2576 7.54784 25.4259 7.46366 25.9731C7.44262 26.1204 7.4847 26.2887 7.56888 26.415L8.32645 27.4251L8.34749 27.4461C8.68419 27.867 9.37863 27.6776 9.44176 27.1305C9.46281 26.9621 9.42072 26.8148 9.3155 26.6886L8.55793 25.6785L8.57897 25.6995Z"></path><path d="M10.8517 28.4773C10.7044 28.3089 10.4729 28.2458 10.2625 28.3089C9.7995 28.4141 9.63116 28.9823 9.96785 29.319L9.9889 29.3401L10.3677 29.8451L10.8306 30.3081C11.2094 30.6868 11.8828 30.4133 11.8828 29.8661C11.8828 29.6978 11.8197 29.5505 11.6934 29.4453L11.6513 29.4032L11.5251 29.2348L10.9359 28.6456L10.8517 28.4773Z"></path><path d="M13.4401 31.0235C13.0613 30.6658 12.451 30.9183 12.4089 31.4444C12.4089 31.6338 12.472 31.8022 12.5983 31.9284L13.4401 32.7702C13.8399 33.1279 14.4712 32.8333 14.4712 32.3072C14.4712 32.1389 14.387 31.9705 14.2608 31.8653L13.419 31.0235H13.4401Z"></path><path d="M16.1547 33.4857C15.7549 33.1279 15.1446 33.4225 15.1446 33.9486C15.1446 34.117 15.2288 34.2853 15.355 34.4116L16.2178 35.2744C16.3651 35.4217 16.5756 35.4638 16.786 35.4217C17.27 35.2954 17.4173 34.7062 17.0385 34.3695L16.1547 33.4857Z"></path><path d="M9.67324 19.6389C9.94681 20.1019 10.6202 20.0388 10.7886 19.5127C10.8306 19.3443 10.8306 19.176 10.7465 19.0287L10.3887 18.3132L10.3046 18.1028L10.2625 18.0186C10.031 17.5556 9.33654 17.5977 9.14715 18.0817C9.08402 18.2501 9.08402 18.4184 9.16819 18.5868L9.21028 18.6709L9.54698 19.5127L9.6522 19.7231L9.67324 19.6389Z"></path><path d="M8.0108 16.314C8.11601 16.5455 8.32645 16.6718 8.57897 16.6718C9.02089 16.6507 9.29446 16.2088 9.12611 15.809L8.78941 14.9673L8.74732 14.841L8.70523 14.7568C8.4948 14.2728 7.8214 14.2518 7.58992 14.7358C7.52679 14.9041 7.50575 15.0725 7.58992 15.2408L7.63201 15.325L7.80036 15.83L8.0108 16.3561V16.314Z"></path><path d="M6.57983 12.905C6.79026 13.4311 7.54784 13.41 7.73723 12.8839C7.77931 12.7366 7.77931 12.5893 7.73723 12.4631L7.71618 12.442L7.54784 11.937L7.4847 11.8107L7.29531 11.3688V11.3477C7.08488 10.8006 6.30626 10.8217 6.13791 11.3898C6.09582 11.5161 6.09582 11.6424 6.15896 11.7897V11.8107L6.47461 12.5472L6.664 12.926L6.68505 12.9471L6.57983 12.905Z"></path><path d="M5.27512 9.45382C5.48556 10.001 6.26417 9.97991 6.43252 9.43278C6.47461 9.30651 6.47461 9.18025 6.43252 9.05399L6.41148 8.99086L6.28522 8.69625L6.03269 8.02285L5.94852 7.8545L5.92748 7.83346C5.696 7.32841 4.95947 7.3705 4.79112 7.89659C4.74903 8.0439 4.74903 8.1912 4.81216 8.33851V8.44372L5.12782 9.28547L5.19095 9.43278L5.21199 9.49591L5.27512 9.45382Z"></path><path d="M3.44433 7.66511C3.97042 7.62302 4.2019 6.97067 3.82311 6.61293C3.69685 6.48667 3.5285 6.44458 3.36015 6.44458H2.28693L1.65562 6.76023H1.63457C1.40309 6.86545 1.27683 7.09693 1.27683 7.32841C1.29788 7.77033 1.73979 8.0439 2.13962 7.8545H3.00241L3.44433 7.66511Z"></path></g></svg>',
+    width:
+      '<svg width="35" height="50" viewBox="0 0 35 50" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M31.1151 33.3111C32.0089 33.4715 32.8177 33.9081 33.4335 34.5238C34.2198 35.31 34.7141 36.4106 34.7141 37.6011C34.7141 38.7916 34.2198 39.8922 33.4335 40.6784C32.6472 41.4645 31.5464 41.9587 30.3557 41.9587H23.2082L23.1928 47.4843H27.8396C28.5361 47.4843 29.0977 48.0458 29.0977 48.7421C29.0977 49.4385 28.5361 50 27.8396 50H7.86769C7.17126 50 6.60962 49.4385 6.60962 48.7421C6.60962 48.0458 7.17126 47.4843 7.86769 47.4843H12.4992L12.5146 41.9587H5.35149C4.16082 41.9587 3.06 41.4645 2.2737 40.6784C1.48741 39.8922 0.993164 38.7916 0.993164 37.6011C0.993164 36.4106 1.48741 35.31 2.2737 34.5238C2.88437 33.9133 3.68474 33.4788 4.56958 33.3152L4.82779 23.4241C4.72932 23.4271 4.63334 23.4314 4.51247 23.4369C4.3114 23.446 4.04146 23.4581 3.57663 23.4727C2.90266 23.4951 2.31855 22.956 2.29609 22.2597C2.27362 21.5859 2.8128 21.0019 3.50923 20.9794C3.98488 20.965 4.26402 20.9529 4.47273 20.9438C4.63574 20.9368 4.75578 20.9316 4.89293 20.9286L5.32902 4.22282C5.35149 3.05481 5.84573 1.9991 6.60956 1.2354C7.37339 0.471698 8.42928 0 9.59749 0H26.0873C27.2555 0 28.3114 0.471698 29.0752 1.2354C29.839 1.9991 30.3108 3.05481 30.3557 4.22282L30.7921 20.9384C30.8322 20.94 30.8743 20.9419 30.9198 20.9438C31.1286 20.9529 31.4077 20.965 31.8833 20.9794C32.5798 21.0019 33.1189 21.5859 33.0965 22.2597C33.074 22.956 32.4899 23.4951 31.8159 23.4727C31.3511 23.4581 31.0812 23.446 30.8801 23.4369C30.8724 23.4365 30.8648 23.4362 30.8573 23.4359L31.1151 33.3111ZM20.6991 47.4843L20.7145 41.9587H15.0083L14.9929 47.4843H20.6991ZM27.8171 4.26775L28.5809 33.221H7.05887L7.82271 4.26775C7.82271 3.77359 8.0249 3.32435 8.36188 2.98742C8.6764 2.67296 9.10325 2.4708 9.57502 2.4708H26.0648C26.5366 2.4708 26.9634 2.67296 27.2779 2.98742C27.5925 3.32435 27.7946 3.77359 27.8171 4.26775ZM30.3557 35.7368H5.35149C4.83479 35.7368 4.38547 35.9389 4.04849 36.2759C3.7115 36.6128 3.50931 37.0845 3.50931 37.5787C3.50931 38.0953 3.7115 38.5445 4.04849 38.8814C4.38547 39.2184 4.85725 39.4205 5.35149 39.4205H30.3557C30.8724 39.4205 31.3218 39.2184 31.6587 38.8814C31.9957 38.5445 32.1979 38.0728 32.1979 37.5787C32.1979 37.062 31.9957 36.6128 31.6587 36.2759C31.3218 35.9389 30.85 35.7368 30.3557 35.7368Z"></path></svg>',
+    pitch:
+      '<svg width="74" height="51" viewBox="0 0 74 51" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.98892 0.152473C1.60004 0.510215 0.442636 1.49927 0.253243 3.2038V3.30902C-0.503624 20.2124 0.272842 21.9085 4.82805 31.8585L4.84076 31.8863L4.99918 32.2325L4.99924 32.2327L4.99927 32.2327C5.87007 34.1358 6.88816 36.3607 8.01834 38.978C8.334 39.7355 8.64965 40.2616 9.36514 40.6615C9.9754 40.9982 10.754 41.1455 12.0166 41.1665C13.2619 41.187 14.4597 41.2 15.6234 41.2077L17.9559 48.0057H11.2591C10.5857 48.0057 10.0175 48.5528 10.0175 49.2473C10.0175 49.9207 10.5646 50.4888 11.2591 50.4888H19.5541C19.6426 50.4987 19.7329 50.499 19.8235 50.4888H31.2295C31.9029 50.4888 32.471 49.9417 32.471 49.2473C32.471 48.5739 31.9239 48.0057 31.2295 48.0057H20.5872L18.2578 41.2168C20.2165 41.2179 22.1025 41.2077 23.9874 41.1974H23.9883H23.9892L23.992 41.1974L23.9947 41.1974C24.6238 41.194 25.2528 41.1906 25.8844 41.1876C26.7241 41.1876 27.5679 41.1835 28.5151 41.179H28.5156H28.5162C29.7287 41.1731 31.1108 41.1665 32.8709 41.1665C34.1335 41.1876 34.9752 40.3037 35.3961 39.1253C35.5434 38.7044 35.6276 38.2415 35.6486 37.7785C35.6697 37.3155 35.6276 36.8315 35.5224 36.3896C35.2067 35.148 34.4071 34.1379 32.9761 34.0117C28.6832 33.6539 25.8213 33.4014 22.9804 33.1489C21.6481 33.0323 20.3191 32.9124 19.0403 32.7971L19.0374 32.7968L19.0368 32.7968L19.0366 32.7968C17.085 32.6207 15.2506 32.4553 13.7001 32.3282C8.18669 20.3544 7.00825 17.5976 7.9973 3.43528C8.10252 1.96223 7.23973 0.910044 6.04024 0.383953C5.57728 0.173516 5.07224 0.0472546 4.54614 0.00516733C4.02005 -0.0158763 3.49396 0.026211 2.98892 0.152473ZM16.7077 38.6924C19.9006 38.7099 22.8527 38.691 25.8633 38.6623C28.4728 38.6413 31.1032 38.6202 32.8498 38.6202H32.8709C32.8709 38.6202 32.934 38.4729 33.0182 38.2625C33.0813 38.0731 33.1234 37.8416 33.1444 37.6101C33.1655 37.3787 33.1444 37.1472 33.0813 36.9367C33.0182 36.6632 32.913 36.4738 32.7446 36.4527C32.2021 36.4054 31.6163 36.3545 30.9963 36.3006L30.9954 36.3005C28.5853 36.0911 25.6566 35.8367 22.7278 35.5689L22.7265 35.5688L22.7256 35.5687L22.7244 35.5686C19.8846 35.3162 17.0443 35.0637 12.7321 34.7061L12.0166 34.643L11.722 33.9906L11.6378 33.8223C5.70355 20.9646 4.44093 18.2079 5.49311 3.24589C5.51415 2.97232 5.30371 2.76188 5.0091 2.63562C4.81971 2.55145 4.58823 2.48832 4.33571 2.46727C4.08319 2.44623 3.83066 2.46727 3.59918 2.5304L3.62022 2.55145C3.17831 2.67771 2.79952 2.97232 2.73639 3.45632C2.02158 19.7078 2.75606 21.3194 7.08023 30.8073L7.09242 30.8341C7.9973 32.7911 9.04948 35.0849 10.2911 37.9679C10.3963 38.2415 10.5015 38.4098 10.5857 38.4519C10.7961 38.5781 11.217 38.6202 12.0377 38.6413C13.5277 38.6658 14.948 38.6814 16.322 38.6901C16.4521 38.67 16.5821 38.6715 16.7077 38.6924ZM40.9889 0.152473C39.6 0.510215 38.4426 1.49927 38.2532 3.2038V3.30902C37.4964 20.2124 38.2728 21.9085 42.828 31.8585L42.8408 31.8863L42.9991 32.2323C43.8699 34.1355 44.8881 36.3605 46.0183 38.978C46.334 39.7355 46.6497 40.2616 47.3651 40.6615C47.9754 40.9982 48.754 41.1455 50.0166 41.1665C51.2619 41.187 52.4597 41.2 53.6234 41.2077L55.9559 48.0057H49.2591C48.5857 48.0057 48.0175 48.5528 48.0175 49.2473C48.0175 49.9207 48.5646 50.4888 49.2591 50.4888H57.5541C57.6426 50.4987 57.7329 50.499 57.8235 50.4888H69.2295C69.9029 50.4888 70.471 49.9417 70.471 49.2473C70.471 48.5739 69.9239 48.0057 69.2295 48.0057H58.5872L56.2578 41.2168C58.2165 41.2179 60.1025 41.2077 61.9874 41.1974H61.9883H61.9892C62.6201 41.194 63.251 41.1906 63.8844 41.1876C64.7241 41.1876 65.5679 41.1835 66.5151 41.179H66.5156H66.5162C67.7288 41.1731 69.1108 41.1665 70.8709 41.1665C72.1335 41.1876 72.9752 40.3037 73.3961 39.1253C73.5434 38.7044 73.6276 38.2415 73.6486 37.7785C73.6697 37.3155 73.6276 36.8315 73.5224 36.3896C73.2067 35.148 72.4071 34.1379 70.9761 34.0117C66.6832 33.6539 63.8213 33.4014 60.9804 33.1489C59.6486 33.0324 58.3201 32.9125 57.0417 32.7972L57.0376 32.7969L57.0368 32.7968L57.0366 32.7968L57.0361 32.7967C55.0847 32.6207 53.2505 32.4553 51.7001 32.3282C46.1867 20.3544 45.0083 17.5976 45.9973 3.43528C46.1025 1.96223 45.2397 0.910044 44.0402 0.383953C43.5773 0.173516 43.0722 0.0472546 42.5461 0.00516733C42.0201 -0.0158763 41.494 0.026211 40.9889 0.152473ZM54.7077 38.6924C57.9006 38.7099 60.8527 38.691 63.8633 38.6623C66.4728 38.6413 69.1032 38.6202 70.8498 38.6202H70.8709C70.8709 38.6202 70.934 38.4729 71.0182 38.2625C71.0813 38.0731 71.1234 37.8416 71.1444 37.6101C71.1655 37.3787 71.1444 37.1472 71.0813 36.9367C71.0182 36.6632 70.913 36.4738 70.7446 36.4527C70.2021 36.4054 69.6163 36.3545 68.9963 36.3006L68.9954 36.3005C66.5853 36.0911 63.6566 35.8367 60.7278 35.5689L60.7265 35.5688C57.886 35.3163 55.0454 35.0638 50.7321 34.7061L50.0166 34.643L49.722 33.9906L49.6378 33.8223C43.7035 20.9646 42.4409 18.2079 43.4931 3.24589C43.5142 2.97232 43.3037 2.76188 43.0091 2.63562C42.8197 2.55145 42.5882 2.48832 42.3357 2.46727C42.0832 2.44623 41.8307 2.46727 41.5992 2.5304L41.6202 2.55145C41.1783 2.67771 40.7995 2.97232 40.7364 3.45632C40.0216 19.7078 40.7561 21.3194 45.0802 30.8073L45.0924 30.8341C45.9973 32.7911 47.0495 35.0849 48.2911 37.9679C48.3963 38.2415 48.5015 38.4098 48.5857 38.4519C48.7961 38.5781 49.217 38.6202 50.0377 38.6413C51.5277 38.6658 52.948 38.6814 54.322 38.6901C54.4521 38.67 54.5821 38.6715 54.7077 38.6924Z"></path></svg>',
+  };
+class W {
+  constructor() {
+    l(this, '_dataHelper', null),
+      l(this, '_deckTitleHeight', 0),
+      l(this, 'prepareData', (e, t) => {
+        if (!e) return [];
+        const { seatDetails: r } = e,
+          l = null == r ? void 0 : r.decks,
+          i = l && l.length;
+        this._deckTitleHeight = l && l.length > 1 ? 80 : 0;
+        const o = i ? this._prepareBulks(l) : [],
+          s = i ? this._prepareExits(l) : [],
+          a = i
+            ? l.map((r, l) => {
+                const i = o[l],
+                  a = s[l];
+                return { ...this._prepareDeck(r, i, a, e, t), number: l + 1 };
+              })
+            : [],
+          n = Math.max(...a.map(e => e.wingsInfo.length)) > 0,
+          c = a.map(e => this._updateDeckWithWings(e, n, t));
+        return { content: c, params: this._dataHelper.getSeatMapParams(c, t), exits: s, bulks: o };
+      }),
+      l(this, '_prepareRows', (e, t, r, l, i = 0) => {
+        if (null == e || !e.length) return [];
+        return e.map(e => this._prepareRow(e, t, r, l, i));
+      }),
+      l(this, '_prepareRow', (e, t, r, l, i = 0) => {
+        const { number: o, topOffset: s, seatScheme: a, classCode: n, seatType: c } = e,
+          d = s + l,
+          h = this._prepareSeats(e, t, r, i),
+          g = h.map(e => e.size.width).reduce((e, t) => e + t, 0);
+        return {
+          seats: h,
+          uniqId: O.generateId(),
+          number: o,
+          topOffset: d,
+          width: g,
+          height: h.at(0).size.height,
+          seatScheme: a,
+          classCode: n,
+          seatType: c,
+        };
+      }),
+      l(this, '_prepareSeats', (e, t, r, l = 0) => {
+        const { seatScheme: i, seats: o, seatType: s } = e;
+        if (null == o || !o.length) return [];
+        let a = 0;
+        const n = i.split('');
+        let c = 0;
+        if (l) {
+          var d, h;
+          const [e] = T[s],
+            t =
+              (l - (null === (d = i.match(/S|E/g)) || void 0 === d ? void 0 : d.length) * e) /
+              ((null === (h = i.match(/-/g)) || void 0 === h ? void 0 : h.length) || 0);
+          c = t > 0 ? Math.min(t, e) : 1;
+        }
+        return n.reduce((l, i) => {
+          let s = {};
+          return (
+            i === x.aisle
+              ? (s = this._prepareAisle(e, c))
+              : i === x.empty
+              ? (s = this._prepareEmpty(e))
+              : i === x.seat && ((s = this._prepareSeat(o[a], e, t, r)), a++),
+            l.push(s),
+            l
+          );
+        }, []);
+      }),
+      l(this, '_prepareIndexRow', e => {
+        const t = e.seats.map(
+          t => (
+            (t.letter = t.type === L.aisle ? '' : t.letter),
+            (t.type = t.type === L.aisle ? L.empty : L.index),
+            (t.status = b.disabled),
+            (t.topOffset = t.topOffset - t.size.height / 2),
+            (t.number = ''),
+            (t.size = { width: t.size.width, height: 50 }),
+            (t.seatScheme = e.seatScheme),
+            (t.rotation = ''),
+            t
+          )
+        );
+        return { ...e, number: '', seats: t, topOffset: e.topOffset };
+      }),
+      l(this, '_prepareSeat', (e, t, r, l) => {
+        const { number: i, classCode: o, name: s, seatType: a } = t,
+          n = this._prepareSeatFeatures(e, r, l),
+          c = n.features,
+          d = n.measurements,
+          h = M[o.toLowerCase()] || '',
+          g = i + (null == e ? void 0 : e.letter) || '',
+          p = L.seat,
+          m = b.available,
+          C = e.seatType || a,
+          u = `${o}-${C}`,
+          [f, k] = T[a],
+          [v, w] = T[C];
+        return {
+          uniqId: O.generateId(),
+          ...e,
+          originalColor: null == e ? void 0 : e.color,
+          features: c,
+          measurements: d,
+          status: m,
+          type: p,
+          number: g,
+          classType: h,
+          classCode: o,
+          rowName: s,
+          seatType: u,
+          seatIconType: C,
+          size: { width: Math.max(f, v), height: w },
+        };
+      }),
+      l(this, '_prepareAisle', (e, t = 0) => {
+        const { number: r, seatType: l } = e,
+          [i, o] = T[l],
+          s = { width: t || i, height: o },
+          a = L.aisle,
+          n = b.disabled;
+        return { uniqId: O.generateId(), letter: r, type: a, status: n, size: s };
+      }),
+      l(this, '_prepareEmpty', e => {
+        const [t, r] = T[e.seatType],
+          l = { width: t, height: r },
+          i = L.empty,
+          o = b.disabled;
+        return { uniqId: O.generateId(), letter: '', status: o, type: i, size: l };
+      }),
+      l(this, '_prepareSeatFeatures', (e, t, r) => {
+        const { pitch: l, width: i, recline: o, audioVideo: s, power: a, wifi: n, bluetooth: c } = t,
+          { pitch: d, width: h, recline: g } = e || {},
+          p = Object.keys(e.features || {}),
+          m = ['doNotRecline', 'limitedRecline', 'prereclinedSeat'],
+          C = p.some(e => m.includes(e)),
+          u = { audioVideo: s, power: a, wifi: n, bluetooth: c, ...e.features },
+          f = { pitch: d || l, width: h || i, recline: C ? '- -' : g || o },
+          k = ['+', '-'];
+        return {
+          features: Object.entries(u)
+            .filter(([e, t]) => !!t && !f[e])
+            .map(([e, t]) => {
+              const l = O.generateId(),
+                i = z[r][e] || e;
+              if (k.includes(t)) {
+                return { uniqId: l, title: null, icon: B[t] || '', value: i, key: e };
+              }
+              return { uniqId: l, title: i, icon: B[e] || '', value: t, key: e };
+            }),
+          measurements: Object.entries(f).map(([e, t]) => {
+            const l = z[r][e] || e,
+              i = I[e] || '';
+            return { uniqId: O.generateId(), title: l, icon: i, value: t, key: e };
+          }),
+        };
+      }),
+      l(this, 'prepareSeatAdditionalProps', e => {
+        const { additionalProps: t } = e || {};
+        return null == t
+          ? void 0
+          : t.map(e => ({
+              icon: B[(null == e ? void 0 : e.icon) || 'dot'] || '',
+              title: null,
+              uniqId: O.generateId(),
+              value: null == e ? void 0 : e.label,
+              cssClass: null == e ? void 0 : e.cssClass,
+            }));
+      }),
+      (this._dataHelper = new $());
+  }
+  _mergeCabinFeatures(e, t, r, l, i) {
+    const o = { ...e };
+    return (
+      null != t && t.exists && null != t && t.summary && (o.audioVideo = t.summary),
+      null != r && r.exists && null != r && r.summary && (o.power = r.summary),
+      null != l && l.exists && null != l && l.summary && (o.wifi = l.summary),
+      null != i && i.exists && null != i && i.summary && (o.bluetooth = i.summary),
+      o
+    );
+  }
+  _prepareExits(e) {
+    return this._updateAllDeckItemsTopOffset(e, 'exits');
+  }
+  _prepareBulks(e) {
+    return this._updateAllDeckItemsTopOffset(e, 'bulks');
+  }
+  _getFirstElementDeckOffset(e) {
+    const t = e.bulks.reduce((e, t) => (t.topOffset < e ? t.topOffset : e), 0),
+      r = e.exits.reduce((e, t) => (t.topOffset < e ? t.topOffset : e), 0),
+      l = e.rows
+        .sort((e, t) => {
+          e.topOffset, t.topOffset;
+        })
+        .at(0)
+        .seats.reduce((e, t) => (t.topOffset < e ? t.topOffset : e), 0),
+      i = Math.min(t, r, l);
+    return (i < 0 ? -i : i) + this._deckTitleHeight + 120;
+  }
+  _updateAllDeckItemsTopOffset(e, t) {
+    return e.map(e => {
+      const r = this._getFirstElementDeckOffset(e);
+      return this._updateDeckItemsTopOffset(e, t, r);
+    });
+  }
+  _updateDeckItemsTopOffset(e, t, r = 0) {
+    return e[t].map(e => {
+      const t = { ...e, uniqId: O.generateId() },
+        l = t.topOffset + r;
+      return (t.topOffset = l), t;
+    });
+  }
+  _prepareDeck(e, t, r, l, i) {
+    const o = this._groupRowsByCabinClass(e.rows),
+      s = [];
+    for (const e of o) {
+      const t = this._dataHelper.findBiggestDeckRow(e.rows),
+        r = this._prepareRow(t, {}, i.lang);
+      s.push(r.width);
+    }
+    const a = s.reduce((e, t) => e + t, 0) / s.length,
+      n = this._getFirstElementDeckOffset(e);
+    for (const e of o) {
+      const { cabin: t, entertainment: r, power: o, wifi: s, bluetooth: c } = l[e.classCode] || {},
+        d = this._mergeCabinFeatures(t, r, o, s, c),
+        h = this._prepareRows(e.rows, d, i.lang, n, a),
+        g = h.at(0),
+        p = h.at(-1);
+      (g.isFirstInCabin = !0),
+        (g.cabinHeight = 1 === h.length ? g.height : p.topOffset - g.topOffset + p.height / 2),
+        (e.rows = h);
+    }
+    const c = o.flatMap(e => e.rows),
+      d = this._dataHelper.getDeckInnerWidth(a, i),
+      h = this._dataHelper.calculateDeckHeight(c, t, r),
+      g = this._prepareWingsForDeck(e.wingsInfo, c[0].topOffset, h);
+    return { uniqId: O.generateId(), width: d, height: h, level: e.level, rows: c, wingsInfo: g };
+  }
+  _groupRowsByCabinClass(e) {
+    const t = [];
+    let r = null,
+      l = null;
+    for (const i of e)
+      i.classCode !== r &&
+        ((r = i.classCode), (l = { rows: [], topOffset: i.topOffset, classCode: r, width: 0 }), t.push(l)),
+        l.rows.push(i);
+    return t;
+  }
+  _updateDeckWithWings(e, t, r) {
+    return { ...e, width: this._dataHelper.getDeckInnerWidthWithWings(e, t, r) };
+  }
+  _prepareWingsForDeck(e, t, r) {
+    let l = { start: 0, finish: 0, length: 0 };
+    if (!e) return l;
+    const i = t,
+      { topOffset: o, height: s } = e,
+      a = i + o,
+      n = a + s,
+      c = r;
+    return (
+      (l.start = Math.max(0, a)),
+      (l.finish = Math.min(c, n)),
+      (l.length = Math.max(l.finish - l.start, 0)),
+      (l.visibleWingsLeadings = !0),
+      l
+    );
+  }
+}
+class R {
+  getData(e) {
+    try {
+      const t = localStorage.getItem(e);
+      if (!t) return null;
+      const { value: r, expiry: l } = JSON.parse(t),
+        i = new Date().getTime();
+      return !r || l < i ? (this.removeData(e), null) : r;
+    } catch (e) {
+      return console.log('Error getting data from local storage. Message:', e), null;
+    }
+  }
+  setData(e, t, r) {
+    try {
+      const l = { value: t };
+      return r && (l.expiry = new Date().getTime() + r), localStorage.setItem(e, JSON.stringify(l)), !0;
+    } catch (e) {
+      return console.log('Error saving data to local storage. Message:', e), !1;
+    }
+  }
+  removeData(e) {
+    localStorage.removeItem(e);
+  }
+}
+const P = () => {
+    const [t, r, l, i] = e.useMemo(() => {
+      const e = navigator.userAgent.toLowerCase();
+      return [
+        e.includes('firefox'),
+        e.includes('chrome'),
+        e.includes('safari') && !e.includes('chrome'),
+        e.includes('edge'),
+      ];
+    }, []);
+    return { isFirefox: t, isChrome: r, isSafari: l, isEdge: i };
+  },
+  N = new Map();
+N.set('0', '\n  <svg id="bulk-0" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n  </svg>\n'),
+  N.set(
+    '1',
+    '\n  <svg\n    id="bulk-1"\n    viewBox="0 0 420 119"\n    xmlns="http://www.w3.org/2000/svg"\n  >\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,4V108.6A10.42,10.42,0,0,0,10.44,119H409.56A10.42,10.42,0,0,0,420,108.6V4Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M416.06,0H3.94A4,4,0,0,0,0,4,4,4,0,0,0,3.94,8H416.06A4,4,0,0,0,420,4,4,4,0,0,0,416.06,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '2',
+    '\n  <svg id="bulk-2" viewBox="0 0 420 93" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,4.5V82.8A10.2,10.2,0,0,0,10.2,93H409.8A10.2,10.2,0,0,0,420,82.8V4.5Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M415.52,0H4.48A4.49,4.49,0,0,0,0,4.5C0,8,3,9,5.48,9h409C417,9,420,8.17,420,4.5A4.49,4.49,0,0,0,415.52,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '3',
+    '\n  <svg id="bulk-3" viewBox="0 0 420 133" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,13.5v97.88A21.64,21.64,0,0,0,21.67,133H398.33A21.64,21.64,0,0,0,420,111.38V13.5Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.29,0H12.71C5.69,0,0,6,0,13.5,0,21.2,6.17,27,12.71,27H407.29C413.83,27,420,20.08,420,13.5,420,6,414.31,0,407.29,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '4',
+    '\n  <svg id="bulk-4" viewBox="0 0 265 116" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,4.5V106.38A9.61,9.61,0,0,0,9.61,116H255.39a9.61,9.61,0,0,0,9.61-9.62V4.5Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M260.65,0H4.35A4.52,4.52,0,0,0,0,4.5,4.43,4.43,0,0,0,4.35,9h256.3A4.43,4.43,0,0,0,265,4.5,4.69,4.69,0,0,0,260.65,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '5',
+    '\n  <svg id="bulk-5" viewBox="0 0 424 210" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,86V194.86A15.11,15.11,0,0,0,15.07,210H408.93A15.11,15.11,0,0,0,424,194.86V86Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.8,16.8,0,0,0,0,16.82V86a17.06,17.06,0,0,0,16.78,17.12H407.22A17.06,17.06,0,0,0,424,86V16.82A16.8,16.8,0,0,0,407.22,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '6',
+    '\n  <svg id="bulk-6" viewBox="0 0 424 255" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,131V239.85A15.11,15.11,0,0,0,15.07,255H408.93A15.11,15.11,0,0,0,424,239.85V131Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.8,16.8,0,0,0,0,16.82V131c0,9.29,7.51,17.28,16.78,17.28H407.22c9.27,0,16.78-8,16.78-17.28V16.82A16.8,16.8,0,0,0,407.22,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '7',
+    '\n  <svg id="bulk-7" viewBox="0 0 280 254" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,131V239a15,15,0,0,0,15,15H265a15,15,0,0,0,15-15V131Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M263.26,0H16.74A16.76,16.76,0,0,0,0,16.79V131a16.94,16.94,0,0,0,16.74,17H263.26A16.94,16.94,0,0,0,280,131V16.79A16.76,16.76,0,0,0,263.26,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '8',
+    '\n  <svg id="bulk-8" viewBox="0 0 424 290" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base" \n      fill="$baseColor"\n      d="M0,166V275a15,15,0,0,0,15.07,15H408.93A15,15,0,0,0,424,275V166Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.79,16.79,0,0,0,0,16.8V166a17,17,0,0,0,16.78,\n      \n      17H407.22A17,17,0,0,0,424,166V16.8A16.79,16.79,0,0,0,407.22,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '9',
+    '\n  <svg id="bulk-9" viewBox="0 0 352 328" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,205V313a15,15,0,0,0,15,15H337a15,15,0,0,0,15-15V205Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M335.25,0H16.75A16.75,16.75,0,0,0,0,16.75V205a17,17,0,0,0,16.75,17H335.25A17,17,0,0,0,352,205V16.75A16.75,16.75,0,0,0,335.25,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '10',
+    '\n  <svg id="bulk-10" viewBox="0 0 424 329" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,205V314a15,15,0,0,0,15.07,15H408.93A15,15,0,0,0,424,314V205Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.77,16.77,0,0,0,0,16.75V205a17,17,0,0,0,16.78,17H407.22A17,17,0,0,0,424,205V16.75A16.77,16.77,0,0,0,407.22,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '11',
+    '\n  <svg id="bulk-11" viewBox="0 0 282 329" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,205V314a15,15,0,0,0,15.08,15H266.92A15,15,0,0,0,282,314V205Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M265.21,0H16.79A16.77,16.77,0,0,0,0,16.75V205a17,17,0,0,0,16.79,17H265.21A17,17,0,0,0,282,205V16.75A16.77,16.77,0,0,0,265.21,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '12',
+    '\n  <svg id="bulk-12" viewBox="0 0 424 371" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,247V356a15,15,0,0,0,15.07,15H408.93A15,15,0,0,0,424,356V247Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.78,16.78,0,0,0,0,16.77V247a17,17,0,0,0,16.78,17H407.22A17,17,0,0,0,424,247V16.77A16.78,16.78,0,0,0,407.22,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '13',
+    '\n  <svg id="bulk-13" viewBox="0 0 352 371" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,247V356a15,15,0,0,0,15,15H337a15,15,0,0,0,15-15V247Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M335.25,0H16.75A16.73,16.73,0,0,0,0,16.72V247a17,17,0,0,0,16.75,17H335.25A17,17,0,0,0,352,247V16.72A16.73,16.73,0,0,0,335.25,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '14',
+    '\n  <svg id="bulk-14" viewBox="0 0 424 450" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,328V435a15,15,0,0,0,15.07,15H408.93A15,15,0,0,0,424,435V328Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.79,16.79,0,0,0,0,16.8V328a17,17,0,0,0,16.78,17H407.22A17,17,0,0,0,424,328V16.8A16.79,16.79,0,0,0,407.22,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '15',
+    '\n  <svg id="bulk-15" viewBox="0 0 424 527" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,403V512a15,15,0,0,0,15.07,15H408.93A15,15,0,0,0,424,512V403Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.77,16.77,0,0,0,0,16.76V403a17,17,0,0,0,16.78,17H407.22A17,17,0,0,0,424,403V16.76A16.77,16.77,0,0,0,407.22,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '16',
+    '\n  <svg id="bulk-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 313 106">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M10.6,66.1C6,79.1,2.4,92.4,0,106h306.5c5,0,6.5-3.6,6.5-6.1V5C103.8,22.3,39.2-2.7,10.6,66.1z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M307.7,0L70.6,13.5c-45.5,3.5-60,52.6-60,52.6c22.5-33.3,36.2-41.4,60.6-42.7L308.3,9.9c2.6,0,4.7-2.1,4.7-4.7\n    c0-0.1,0-0.2,0-0.2C313.1,2.6,310.2-0.1,307.7,0z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '17',
+    '\n  <svg\n    version="1.1"\n    id="bulk-17"\n    xmlns="http://www.w3.org/2000/svg"\n    xmlns:xlink="http://www.w3.org/1999/xlink"\n    x="0px"\n    y="0px"\n    viewBox="0 0 313 91"\n    style="enable-background:new 0 0 313 91;"\n    xml:space="preserve"\n  >\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M10.6,44.8C4.6,57,0,69.9,0,91h307c3.3,0,6-2.7,6-6V4C33.7-1,37.9-4.8,10.6,44.8z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M308.5,0H58.4C28.6,0,13.5,39.4,11.1,43.9c0,0,20.4-34.9,46.3-34.9h251.1c2.5,0,4.5-2.5,4.5-4.9S311,0,308.5,0z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '18',
+    '\n  <svg\n    version="1.1"\n    id="bulk-18"\n    xmlns="http://www.w3.org/2000/svg"\n    xmlns:xlink="http://www.w3.org/1999/xlink"\n    x="0px"\n    y="0px"\n    viewBox="0 0 289 126"\n    style="enable-background:new 0 0 289 126;"\n    xml:space="preserve"\n  >\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,126h276c7.3,0,13-4,13-9.6V12C31.7,18.9,10.4,28.2,0,126z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M277.2,0C45.5,19.8,8.2-4.5,0,126C9.7,23.2,127.6,42.7,275.1,26c10.2-0.9,13.9-7.6,13.9-14\n    C289,5.3,284.2,0,277.2,0z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '19',
+    '\n  <svg\n    id="bulk-19"\n    version="1.1"\n    viewBox="0 0 268 172"\n    xmlns="http://www.w3.org/2000/svg"\n  >\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M21,23.6C13.9,33.5,4.6,60.1,0,96.1c0,0,242.7,71.6,252.7,74.9c10,3.3,15.3-2,15.3-8.6V54\n    C268,54,54.7,5.7,45.7,6C35.1,6.3,25.7,17.8,21,23.6z"\n    />\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M258.1,45.3c-7.3-2-139-33.6-184.7-44.3C60.5-1.8,38.6-0.1,21,23.6c2-2.5,10.4-11.6,21.1-9\n    c12.3,3,190.6,49.1,190.6,49.1C240,66,259.1,71,265.4,61c1.8-2.8,2.5-5.1,2.6-7C268.1,49.1,263.4,46.7,258.1,45.3z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '20',
+    '\n  <svg\n    id="bulk-20"\n    version="1.1"\n    viewBox="0 0 286 197"\n    xmlns="http://www.w3.org/2000/svg"\n  >\n    <path \n      class="bulk-base" \n      fill="$baseColor"\n      d="M8,88L0,197h270c8.5,0,16-5.5,16-14V88H8z" />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M285.5,13c-0.8-7.7-4.2-13-14.5-13C258.7,0,115.7,11.8,90,14C19,20.1,0,69.8,0,111v86\n    c6.2-42.3,25.1-76.5,82-81.8c33.7-3.5,184-14.2,184-14.2c11.2,0,20-4.5,20-15C286,56.2,285.9,20.4,285.5,13z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '21',
+    '\n  <svg\n    id="bulk-21"\n    version="1.1"\n    viewBox="0 0 287 235"\n    xmlns="http://www.w3.org/2000/svg"\n    icon-transform="scale(0.66) rotate(-4.5) translate(170 38)"\n  >\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      fill-opacity="1"\n      stroke-width="3"\n      d="M0,235h271c10,0,16-5.7,16-14V113H0V235z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      fill-opacity="1"\n      stroke-width="1"\n      d="M270,0C260.4,0,95.2,11.3,62,17S0,49,0,104v131c0,0,9.9-74.3,66-79s199-15,199-15c10.3,0,22-3.7,22-16V20\n      C287,6.2,278.3,0,270,0z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '22',
+    '\n  <svg\n    id="bulk-22"\n    version="1.1"\n    viewBox="0 0 287 322"\n    xmlns="http://www.w3.org/2000/svg"\n  >\n    <path class="bulk-base" \n      d="M0,145v177h271c10,0,16-5.7,16-14V145H0z" \n      fill="$baseColor"/>\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M270,0C260.4,0,95.2,10.3,62,16S0,47,0,102v215c0,0,9.9-74.3,66-79s199-15,199-15c10.3,0,22-3.7,22-16V19\n    C287,6.9,278.8,0,270,0z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '23',
+    '\n  <svg\n    version="1.1"\n    id="bulk-23"\n    xmlns="http://www.w3.org/2000/svg"\n    xmlns:xlink="http://www.w3.org/1999/xlink"\n    x="0px"\n    y="0px"\n    viewBox="0 0 287 357"\n    style="enable-background:new 0 0 287 357;"\n    xml:space="preserve"\n  >\n    <path \n      class="bulk-base" \n      d="M0,200l0.1,157H271c10,0,16-5.7,16-14V200H0z" \n      fill="$baseColor"/>\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M270,0C260.4,0,94.6,7.6,62,16C17.4,27.5,0,47.1,0,118v239c0,0,9.9-74.3,66-79s199-15,199-15\n    c10.3,0,22-3.7,22-16V19C287,7.6,279.6,0,270,0z"\n    />\n    <rect\n      x="36"\n      y="48"\n      transform="matrix(0.9989 -4.616482e-02 4.616482e-02 0.9989 -6.312 7.1897)"\n      class="st1"\n      width="233"\n      height="184.5"\n      fill-opacity="0"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '24',
+    '\n  <svg\n    id="bulk-24"\n    version="1.1"\n    viewBox="0 0 287 437"\n    xmlns="http://www.w3.org/2000/svg"\n  >\n    <path class="bulk-base" d="M0,300v137h271c10,0,16-5.7,16-14V300H0z" fill="$baseColor"/>\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M270,0C260.4,0,95.2,10.3,62,16S0,47,0,102v335c0,0,9.9-74.3,66-79s199-15,199-15c10.3,0,22-3.7,22-16V19\n    C287,7.1,279.1,0,270,0z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '25',
+    '\n  <svg id="bulk-25" viewBox="0 0 286 512" xmlns="http://www.w3.org/2000/svg">\n    <path class="bulk-base" d="M0,350V512H271c10,0,15-4.67,15-13V350Z" fill="$baseColor"/>\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M267,0C257.42,0,94.18,10.33,61,16S0,45,0,102V512s8.9-73.33,65-78,200-15,200-15c10.26,0,21-3.67,21-16V19C286,3.63,278.19,0,267,0Z"\n    />\n  </svg>\n'
+  ),
+  N.set(
+    '26',
+    '\n  <svg id="bulk-26" viewBox="0 0 45 44" xmlns="http://www.w3.org/2000/svg">\n    <g transform="translate(0.0,44.00) scale(0.1,-0.1)" >\n      <path class="icon bulk" fill="$stickerColor" d="M181 414 c-25 -32 -26 -43 -5 -72 19 -27 64 -29 87 -4 24 26 21 68 -5 86 -32 23 -54 20 -77 -10z"/>\n      <path class="icon bulk" fill="$stickerColor" d="M105 254 c-29 -35 -35 -48 -25 -57 9 -9 19 -3 46 28 l34 40 0 -37 0 -38 65 0 65 0 0 33 1 32 28 -32 c28 -34 51 -43 51 -20 0 7 -16 32 -36 55 l-36 42 -78 0 -78 0 -37 -46z"/>\n      <path class="icon bulk" fill="$stickerColor" d="M125 130 c-18 -19 -25 -34 -21 -47 8 -26 74 -89 83 -79 6 6 2 21 -22 78 -5 12 1 21 21 31 l28 15 -31 15 c-29 16 -31 15 -58 -13z"/>\n      <path class="icon bulk" fill="$stickerColor" d="M270 148 c-36 -13 -37 -18 -12 -37 23 -17 23 -18 6 -54 -27 -57 -6 -68 40 -20 41 44 45 71 14 100 -18 17 -28 19 -48 11z"/>\n    </g>\n  </svg>\n  '
+  ),
+  N.set(
+    '27',
+    '\n  <svg id="bulk-27" viewBox="0 0 114 115" xmlns="http://www.w3.org/2000/svg">\n    <g clip-path="url(#clip0_1014_1377)">\n      <path class="icon bulk" fill="$stickerColor" d="M101.283 0.919922H12.7167C5.7 0.931322 0.0114 6.61992 0 13.6366V102.203C0.0114 109.22 5.7 114.909 12.7167 114.92H101.283C108.3 114.909 113.989 109.22 114 102.203V13.6366C113.989 6.61992 108.3 0.931322 101.283 0.919922ZM111.15 102.203C111.133 107.647 106.727 112.053 101.283 112.07H12.7167C7.2732 112.053 2.8671 107.647 2.85 102.203V13.6366C2.8671 8.19312 7.2732 3.78702 12.7167 3.76992H101.283C106.727 3.78702 111.133 8.19312 111.15 13.6366V102.203ZM70.9137 96.3037C63.6519 97.9738 48.1365 99.319 39.9798 95.4487C35.5053 93.3283 34.0347 88.8823 33.63 85.3027C33.2823 82.3615 31.4982 69.2059 33.003 56.8597C34.5135 44.485 41.7639 36.0889 41.7639 36.0889L42.6759 36.4537C43.0464 35.4391 43.4568 34.1566 43.662 32.9596C43.662 32.9596 42.1458 30.9532 40.413 28.2058C39.3072 26.4502 39.3072 22.882 40.641 20.716C42.978 16.9312 47.8116 15.6715 50.8725 17.2504C52.4628 18.0712 55.2729 19.1086 57.1083 24.6718C58.1172 27.727 58.6986 33.1762 57.0285 37.531C56.5098 38.8762 53.5971 38.1067 52.2405 37.0636C51.9327 37.0636 51.6762 37.0921 51.4881 37.1605C50.7186 37.4398 50.2626 38.557 50.0175 39.412L50.8896 39.7654L51.3285 42.6154C51.3285 42.6154 54.2469 48.0988 55.1532 54.5854C55.1988 54.9046 55.2444 55.2637 55.3014 55.6399C57.2736 58.0852 59.3313 59.8294 61.104 59.6698C63.5094 59.4532 70.4634 48.3097 70.4634 48.3097L70.9194 48.5947C71.0676 48.2185 71.3925 47.4889 71.9625 46.8277C72.7662 45.8929 75.3198 44.3026 75.9069 44.5534C76.494 44.8042 74.6301 46.537 74.6301 46.537C74.6301 46.537 76.6764 45.9613 77.1153 45.1291C77.5542 44.2969 77.4459 43.1455 77.9532 43.2538C78.4662 43.3621 78.4662 45.0835 78.2439 46.0468C78.0273 47.0044 77.5143 47.221 77.5143 47.221C77.5143 47.221 77.4402 47.6884 77.0754 48.1957C76.7106 48.703 74.4078 49.6606 73.9518 50.4757L74.6301 50.8975C74.6301 50.8975 68.8845 71.1268 59.1318 70.8019C58.539 70.7848 57.9405 70.6708 57.342 70.4941C57.6384 72.6544 58.5846 79.5571 58.6245 79.8706C58.6245 79.8706 83.1915 78.0922 84.7818 85.1374C84.7818 85.1488 84.7818 85.1545 84.7818 85.1659C86.4177 92.5303 78.1527 94.6165 70.9023 96.2866L70.9137 96.3037Z" />\n    </g>\n    <defs>\n      <clipPath id="clip0_1014_1377">\n        <rect width="114" height="114" transform="translate(0 0.919922)"/>\n      </clipPath>\n    </defs>\n  </svg>\n  '
+  ),
+  N.set(
+    '28',
+    '\n  <svg id="bulk-28" viewBox="0 0 114 115" xmlns="http://www.w3.org/2000/svg">\n    <g clip-path="url(#clip0_1014_1379)">\n      <path class="icon bulk" fill="$stickerColor" d="M101.283 0.0800781H12.7167C5.7 0.0914781 0.0114 5.78008 0 12.7968V101.363C0.0114 108.38 5.7 114.069 12.7167 114.08H101.283C108.3 114.069 113.989 108.38 114 101.363V12.7968C113.989 5.78008 108.3 0.0914781 101.283 0.0800781ZM111.15 101.363C111.133 106.807 106.727 111.213 101.283 111.23H12.7167C7.2732 111.213 2.8671 106.807 2.85 101.363V12.7968C2.8671 7.35328 7.2732 2.94718 12.7167 2.93008H101.283C106.727 2.94718 111.133 7.35328 111.15 12.7968V101.363ZM90.7782 29.2299L91.4508 26.8131L70.5717 21.1302L70.3836 21.0789L67.488 31.2306H35.4939L39.7803 84.5598C39.8145 87.1647 41.9577 89.2737 44.5911 89.2737H69.4602C72.0879 89.2737 74.2311 87.1704 74.271 84.5712L79.3041 31.2306H70.1214L72.1392 24.1569L90.7839 29.2356L90.7782 29.2299ZM38.4522 43.8789L37.6599 33.6702H66.7926L63.8856 43.8789H38.4579H38.4522ZM55.8828 57.6159L53.8593 63.3729L48.051 61.3665L50.0745 55.6095L55.8828 57.6159ZM50.8611 82.4337L44.6538 75.132L52.0182 68.976L58.2255 76.2777L50.8611 82.4337ZM67.146 73.7127L58.0488 70.572L61.2123 61.5546L70.3095 64.6953L67.146 73.7127ZM77.1381 33.6702L76.209 43.8789H66.5133L69.4203 33.6702H77.1381Z"/>\n    </g>\n    <defs>\n      <clipPath id="clip0_1014_1379">\n        <rect width="114" height="114" transform="translate(0 0.0800781)"/>\n      </clipPath>\n    </defs>\n  </svg>\n  '
+  );
+const D = new Map();
+D.set(
+  'd',
+  '\n  <svg>\n    <symbol\n      id="icon-d"\n    >{{!--\n      viewBox="0 0 200 200"\n    --}}<path\n        class="icon bulk" fill="$stickerColor"\n        d="M177.69,0H22.31A22.34,22.34,0,0,0,0,22.31V177.69A22.34,22.34,0,0,0,22.31,200H177.69A22.34,22.34,0,0,0,200,177.69V22.31A22.34,22.34,0,0,0,177.69,0ZM195,177.69A17.37,17.37,0,0,1,177.69,195H22.31A17.37,17.37,0,0,1,5,177.69V22.31A17.37,17.37,0,0,1,22.31,5H177.69A17.37,17.37,0,0,1,195,22.31ZM145.32,67.74h30.89V173H21.77V151.25H52.66V129.51H83.55V110.07h29.74V89.48h32ZM28.21,36.85h14.3V56.3H53.09L35.36,82.61,17.63,56.3H28.21ZM178.5,34.28a4.57,4.57,0,0,1-4.58,4.58H160.48c-6,0-8.72,1.22-14,4.89-5.6,3.92-117.45,86.89-118.58,87.72-1.39.9-5,.85-6.4-.95a4.57,4.57,0,0,1,.95-6.4c4.61-3.42,113.08-83.88,118.79-87.88,6.2-4.34,10.88-6.55,19.21-6.55h13.44A4.57,4.57,0,0,1,178.5,34.28Z"\n      />\n    </symbol>\n  </svg>\n'
+),
+  D.set(
+    'e',
+    '\n  <svg>\n    <symbol\n    id="icon-empty"\n  >{{!--\n    viewBox="0 0 200 200"\n  --}}</symbol>\n  </svg>\n'
+  ),
+  D.set(
+    'f',
+    '\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M177.7,0H22.3C10,0,0,10,0,22.3v155.4C0,190,10,200,22.3,200h155.4c12.3,0,22.3-10,22.3-22.3V22.3C200,10,190,0,177.7,0z M195,177.7c0,9.5-7.8,17.3-17.3,17.3H22.3C12.8,195,5,187.2,5,177.7V22.3C5,12.8,12.8,5,22.3,5h155.4c9.5,0,17.3,7.8,17.3,17.3 V177.7z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'g,g',
+    '\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 138.5,238 c -33.7,-5.3 -66.3,8 -74.6,21.7 H 48.8 c 0,-4.3 -3.1,-7.7 -6.8,-7.7 -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 -0.1,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.8 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z M 66.6,358 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.2 -11.8,20.1 z m 111.1,44 H 22.3 C 10,402 0,392 0,379.7 V 224.3 C 0,212 10,202 22.3,202 h 155.4 c 12.3,0 22.3,10 22.3,22.3 V 379.7 C 200,392 190,402 177.7,402 Z M 22.3,207 C 12.8,207 5,214.8 5,224.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 224.3 C 195,214.8 187.2,207 177.7,207 Z M 138.5,36 C 104.8,30.7 72.2,44 63.9,57.7 H 48.8 C 48.8,53.4 45.7,50 42,50 c -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z m 10.9,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.1 -11.8,20.1 z M 177.7,200 H 22.3 C 10,200 0,190 0,177.7 V 22.3 C 0,10 10,0 22.3,0 H 177.7 C 190,0 200,10 200,22.3 V 177.7 C 200,190 190,200 177.7,200 Z M 22.3,5 C 12.8,5 5,12.8 5,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 195,12.8 187.2,5 177.7,5 Z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'g,l',
+    '\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 145.2,255.4 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.3 -5,11.4 -11.3,11.3 z m -26.7,17.1 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 v -87.2 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 v -34.8 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,-0.1 -14.5,2.7 -14.5,14.7 z m -48,-28.3 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 h 0.1 c 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 364 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 364 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,262.2 72.9,257.7 64.6,257.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 v 0 0 c 3,0 5.5,-2.5 5.5,-5.5 v 0 -125.4 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 v 0 z m 101.8,16 V 224.3 C 200,212 190,202 177.7,202 H 22.3 C 10,202 0,212 0,224.3 V 379.7 C 0,392 10,402 22.3,402 H 177.7 C 190,402 200,392 200,379.7 Z M 177.7,207 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,397 5,389.2 5,379.7 V 224.3 C 5,214.8 12.8,207 22.3,207 Z M 138.5,36 C 104.8,30.7 72.2,44 63.9,57.7 H 48.8 C 48.8,53.4 45.7,50 42,50 c -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z m 10.9,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.1 -11.8,20.1 z M 177.7,200 H 22.3 C 10,200 0,190 0,177.7 V 22.3 C 0,10 10,0 22.3,0 H 177.7 C 190,0 200,10 200,22.3 V 177.7 C 200,190 190,200 177.7,200 Z M 22.3,5 C 12.8,5 5,12.8 5,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 195,12.8 187.2,5 177.7,5 Z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'g',
+    '\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M138.49,36c-33.72-5.26-66.31,8-74.58,21.72H48.83C48.83,53.44,45.78,50,42,50s-6.82,3.44-6.82,7.69a7.77,7.77,0,0,0,4,7,7.24,7.24,0,0,0-4,6.57,6.83,6.83,0,1,0,13.64,0h15c7.07,13.29,33.64,25.4,74.71,21.12,6.69-.7,12.16-12.63,12.16-28.21S145.16,37,138.49,36Zm0,52.18c-5.71,0-10.33-10.73-10.33-24s4.62-24,10.33-24,10.33,10.73,10.33,24S144.2,88.13,138.49,88.13Zm3.72-24c0,4.77-1.66,8.63-3.72,8.63s-3.72-3.86-3.72-8.63,1.66-8.63,3.72-8.63S142.21,59.4,142.21,64.16ZM151.92,144a98.3,98.3,0,0,0-7.58-6.75,98.3,98.3,0,0,0,7.58-6.75c5-4.77,3.72-15.63,3.72-15.63l-20.22,17.91c-9.56-5.94-39.56-23.43-61.18-23.21-26,.26-40.49,26.75-40.49,26.75s15.08,28.6,39.87,28.6c26.58,0,49.49-16.69,59.5-25.25l22.52,20S156.88,148.78,151.92,144Zm-96.27-7.15c-2.17,0-3.93-2.25-3.93-5s1.76-5,3.93-5,3.93,2.25,3.93,5S57.82,136.87,55.65,136.87Zm10.95,19.2a36.83,36.83,0,0,0,6.82-20.26c.31-12.05-6.82-17.75-6.82-17.75s11.36-.13,11.78,18S66.6,156.07,66.6,156.07ZM177.69,200H22.31A22.34,22.34,0,0,1,0,177.69V22.31A22.34,22.34,0,0,1,22.31,0H177.69A22.34,22.34,0,0,1,200,22.31V177.69A22.34,22.34,0,0,1,177.69,200ZM22.31,5A17.37,17.37,0,0,0,5,22.31V177.69A17.37,17.37,0,0,0,22.31,195H177.69A17.37,17.37,0,0,0,195,177.69V22.31A17.37,17.37,0,0,0,177.69,5Z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'gg',
+    '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 340.5,36 c -33.7,-5.3 -66.3,8 -74.6,21.7 h -15.1 c 0,-4.3 -3.1,-7.7 -6.8,-7.7 -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.3,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.2,0 3.9,2.2 3.9,5 0,2.8 -1.7,5 -3.9,5 z m 11,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.2 -11.8,20.1 -11.8,20.1 z M 379.7,200 H 224.3 C 212,200 202,190 202,177.7 V 22.3 C 202,10 212,0 224.3,0 H 379.7 C 392,0 402,10 402,22.3 V 177.7 C 402,190 392,200 379.7,200 Z M 224.3,5 C 214.8,5 207,12.8 207,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 397,12.8 389.2,5 379.7,5 Z M 138.5,36 C 104.8,30.7 72.2,44 63.9,57.7 H 48.8 C 48.8,53.4 45.7,50 42,50 c -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z m 10.9,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.1 -11.8,20.1 z M 177.7,200 H 22.3 C 10,200 0,190 0,177.7 V 22.3 C 0,10 10,0 22.3,0 H 177.7 C 190,0 200,10 200,22.3 V 177.7 C 200,190 190,200 177.7,200 Z M 22.3,5 C 12.8,5 5,12.8 5,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 195,12.8 187.2,5 177.7,5 Z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'gl',
+    '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 347.2,53.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.4,-11.3 6.2,0 11.3,5.1 11.3,11.3 -0.1,6.2 -5.2,11.3 -11.4,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 335 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 0,0 0.1,0 0.1,0 6.3,0 11.3,-5.1 11.3,-11.3 0,-0.1 0,-0.1 0,0 z m -34,58.5 10.3,-29.3 h 1.2 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 h 11.7 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 280.5,60.1 274.9,55.7 266.6,55.7 H 256 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.6,61 c 0,3 2.4,5.5 5.5,5.5 0,0 0,0 0,0 v 0 c 3,0 5.5,-2.5 5.5,-5.5 0,0 0,0 0,0 V 36.3 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 0,0 0,0 0,0 z m 101.9,16 V 22.3 C 402,10 392,0 379.7,0 H 224.3 C 212,0 202,10 202,22.3 v 155.4 c 0,12.3 10,22.3 22.3,22.3 H 379.7 C 392,200 402,190 402,177.7 Z M 379.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 224.3 C 214.8,195 207,187.2 207,177.7 V 22.3 C 207,12.8 214.8,5 224.3,5 Z M 138.5,36 C 104.8,30.7 72.2,44 63.9,57.7 H 48.8 C 48.8,53.4 45.7,50 42,50 c -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z m 10.9,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.1 -11.8,20.1 z M 177.7,200 H 22.3 C 10,200 0,190 0,177.7 V 22.3 C 0,10 10,0 22.3,0 H 177.7 C 190,0 200,10 200,22.3 V 177.7 C 200,190 190,200 177.7,200 Z M 22.3,5 C 12.8,5 5,12.8 5,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 195,12.8 187.2,5 177.7,5 Z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'gs',
+    '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 2.3684758e-15 0 10.000781 0 22.300781 L 0 177.69922 C 2.3684758e-15 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 0 177.69922 0 L 22.300781 0 z M 223.30078 0 C 211.00078 0 201 10.000781 201 22.300781 L 201 177.69922 C 201 189.99922 211.00078 200 223.30078 200 L 378.69922 200 C 390.99922 200 401 189.99922 401 177.69922 L 401 22.300781 C 401 10.000781 390.99922 2.3684758e-15 378.69922 0 L 223.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 223.30078 5 L 378.69922 5 C 388.19922 5 396 12.800781 396 22.300781 L 396 177.69922 C 396 187.19922 388.19922 195 378.69922 195 L 223.30078 195 C 213.80078 195 206 187.19922 206 177.69922 L 206 22.300781 C 206 12.800781 213.80078 5 223.30078 5 z M 361.40039 29.800781 C 353.10039 29.800781 348.39922 32.000781 342.19922 36.300781 C 336.49922 40.300781 228.00039 120.79922 223.40039 124.19922 C 221.40039 125.69922 221 128.59961 222.5 130.59961 C 224 132.59961 226.90039 133 228.90039 131.5 C 230.10039 130.7 341.9 47.700781 347.5 43.800781 C 352.8 40.100781 355.5 38.900391 361.5 38.900391 L 374.90039 38.900391 C 377.50039 38.900391 379.5 36.800781 379.5 34.300781 C 379.5 31.700781 377.40078 29.700781 374.80078 29.800781 L 361.40039 29.800781 z M 122.87305 34.808594 C 95.206616 34.866107 70.903516 46.139844 63.900391 57.699219 L 48.800781 57.699219 C 48.800781 53.399219 45.7 50 42 50 C 38.3 50 35.199219 53.399219 35.199219 57.699219 C 35.099219 60.599219 36.699219 63.299219 39.199219 64.699219 C 36.699219 65.899219 35.199219 68.500781 35.199219 71.300781 C 34.999219 75.100781 37.899219 78.3 41.699219 78.5 C 45.499219 78.7 48.700391 75.8 48.900391 72 L 48.900391 71.300781 L 63.900391 71.300781 C 71.000391 84.600781 97.499609 96.700391 138.59961 92.400391 C 145.29961 91.700391 150.80078 79.799219 150.80078 64.199219 C 150.80078 48.599219 145.2 37 138.5 36 C 133.23438 35.171875 127.99646 34.797943 122.87305 34.808594 z M 138.5 40.199219 C 144.2 40.199219 148.80078 50.899219 148.80078 64.199219 C 148.80078 77.499219 144.2 88.099219 138.5 88.199219 C 132.8 88.199219 128.19922 77.499219 128.19922 64.199219 C 128.19922 50.899219 132.8 40.199219 138.5 40.199219 z M 138.5 55.599609 C 136.5 55.599609 134.80078 59.499219 134.80078 64.199219 C 134.80078 68.899219 136.5 72.800781 138.5 72.800781 C 140.5 72.800781 142.19922 68.999219 142.19922 64.199219 C 142.19922 59.399219 140.5 55.599609 138.5 55.599609 z M 346.30078 67.699219 L 346.30078 89.5 L 314.30078 89.5 L 314.30078 110.09961 L 284.59961 110.09961 L 284.59961 129.5 L 253.69922 129.5 L 253.69922 151.19922 L 222.80078 151.19922 L 222.80078 173 L 377.19922 173 L 377.19922 67.699219 L 346.30078 67.699219 z M 74.199219 109.5 C 48.199219 109.8 33.699219 136.30078 33.699219 136.30078 C 33.699219 136.30078 48.799609 164.90039 73.599609 164.90039 C 100.19961 164.90039 123.09961 148.19922 133.09961 139.69922 L 155.59961 159.69922 C 155.59961 159.69922 156.90039 148.8 151.90039 144 C 149.50039 141.6 147.00078 139.39922 144.30078 137.19922 C 146.90078 135.09922 149.50039 132.80039 151.90039 130.40039 C 156.90039 125.60039 155.59961 114.80078 155.59961 114.80078 L 135.40039 132.69922 C 125.80039 126.79922 95.799219 109.3 74.199219 109.5 z M 66.599609 118 C 66.599609 118 78.000391 117.9 78.400391 136 C 78.800391 154.1 66.599609 156.09961 66.599609 156.09961 C 70.799609 150.19961 73.200391 143.10078 73.400391 135.80078 C 73.700391 123.70078 66.599609 118 66.599609 118 z M 55.699219 126.90039 C 57.799219 126.90039 59.599609 129.10039 59.599609 131.90039 C 59.599609 134.70039 57.799219 136.90039 55.699219 136.90039 C 53.499219 136.90039 51.800781 134.70039 51.800781 131.90039 C 51.800781 129.10039 53.599219 126.90039 55.699219 126.90039 z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'l,g',
+    '\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 138.5,238 c -33.7,-5.3 -66.3,8 -74.6,21.7 H 48.8 c 0,-4.3 -3.1,-7.7 -6.8,-7.7 -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 -0.1,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.8 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z M 66.6,358 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.2 -11.8,20.1 z m 111.1,44 H 22.3 C 10,402 0,392 0,379.7 V 224.3 C 0,212 10,202 22.3,202 h 155.4 c 12.3,0 22.3,10 22.3,22.3 V 379.7 C 200,392 190,402 177.7,402 Z M 22.3,207 C 12.8,207 5,214.8 5,224.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 224.3 C 195,214.8 187.2,207 177.7,207 Z M 145.2,53.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.2 -5,11.3 -11.3,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 0,0 0.1,0 0.1,0 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,60.1 72.9,55.7 64.6,55.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 0,0 0,0 0,0 v 0 c 3,0 5.5,-2.5 5.5,-5.5 0,0 0,0 0,0 V 36.3 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 0,0 0,0 0,0 z m 101.8,16 V 22.3 C 200,10 190,0 177.7,0 H 22.3 C 10,0 0,10 0,22.3 V 177.7 C 0,190 10,200 22.3,200 H 177.7 C 190,200 200,190 200,177.7 Z M 177.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,195 5,187.2 5,177.7 V 22.3 C 5,12.8 12.8,5 22.3,5 Z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'l,l',
+    '\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 145.2,255.4 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.3 -5.1,11.4 -11.3,11.3 z m -26.7,17.1 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 v -87.2 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 v -34.8 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,-0.1 -14.5,2.7 -14.5,14.7 z m -48,-28.3 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 0,0 0.1,0 0.1,0 6.3,0 11.3,-5.1 11.3,-11.3 0,-0.1 0,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 364 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 364 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,262.2 72.9,257.7 64.6,257.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 0,0 0,0 0,0 v 0 c 3,0 5.5,-2.5 5.5,-5.5 0,0 0,0 0,0 V 238.3 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 0,0 0,0 0,0 z m 101.8,16 V 224.3 C 200,212 190,202 177.7,202 H 22.3 C 10,202 0,212 0,224.3 V 379.7 C 0,392 10,402 22.3,402 H 177.7 C 190,402 200,392 200,379.7 Z M 177.7,207 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,397 5,389.2 5,379.7 V 224.3 C 5,214.8 12.8,207 22.3,207 Z M 145.2,53.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.2 -5,11.3 -11.3,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 0,0 0.1,0 0.1,0 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,60.1 72.9,55.7 64.6,55.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 0,0 0,0 0,0 v 0 c 3,0 5.5,-2.5 5.5,-5.5 0,0 0,0 0,0 V 36.3 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 0,0 0,0 0,0 z m 101.8,16 V 22.3 C 200,10 190,0 177.7,0 H 22.3 C 10,0 0,10 0,22.3 V 177.7 C 0,190 10,200 22.3,200 H 177.7 C 190,200 200,190 200,177.7 Z M 177.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,195 5,187.2 5,177.7 V 22.3 C 5,12.8 12.8,5 22.3,5 Z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'l,s',
+    '\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 59.199219 30.800781 C 52.899219 30.800781 47.800781 35.799609 47.800781 42.099609 C 47.800781 48.399609 52.799609 53.5 59.099609 53.5 L 59.199219 53.5 C 65.499219 53.5 70.5 48.399219 70.5 42.199219 C 70.5 35.899219 65.499219 30.800781 59.199219 30.800781 z M 103.69922 30.800781 C 100.69922 30.800781 98.199219 33.200781 98.199219 36.300781 L 98.199219 161.69922 C 98.199219 164.69922 100.59922 167.19922 103.69922 167.19922 C 106.69922 167.19922 109.19922 164.69922 109.19922 161.69922 L 109.19922 36.300781 C 109.19922 33.300781 106.79922 30.800781 103.69922 30.800781 z M 145.19922 30.900391 C 138.99922 30.900391 133.90039 35.899219 133.90039 42.199219 C 133.90039 48.399219 138.89922 53.5 145.19922 53.5 C 151.49922 53.5 156.5 48.399219 156.5 42.199219 C 156.5 35.999219 151.39922 30.900391 145.19922 30.900391 z M 54 55.699219 C 45.8 55.699219 40.099219 60.200781 38.199219 65.800781 L 28.5 97.800781 C 26.4 104.70078 34.4 107.19922 36.5 100.69922 L 46.800781 71.400391 L 48 71.400391 C 48 71.400391 34.500391 123.80078 33.900391 125.80078 C 33.600391 126.80078 33.999609 127.5 35.099609 127.5 L 46.800781 127.5 L 46.800781 162 C 46.800781 169 57.300781 169 57.300781 162 L 57.300781 127.30078 L 61.300781 127.30078 L 61.300781 162 C 61.300781 169 71.800781 169 71.800781 162 L 71.800781 127.5 L 83.5 127.5 C 84.5 127.5 84.899219 126.80078 84.699219 125.80078 C 84.099219 123.80078 70.599609 71.400391 70.599609 71.400391 L 71.800781 71.400391 L 82.099609 100.69922 C 84.199609 107.09922 92.099609 104.70078 90.099609 97.800781 L 80.400391 65.800781 C 78.500391 60.100781 72.899609 55.699219 64.599609 55.699219 L 54 55.699219 z M 133 55.699219 C 122.1 55.699219 118.5 58.500391 118.5 70.400391 L 118.5 105.19922 C 118.5 111.99922 127.59961 111.99922 127.59961 105.19922 L 128.40039 73.400391 L 130.69922 73.400391 L 130.69922 160.59961 C 130.69922 169.59961 143.09961 169.39961 143.09961 160.59961 L 143.90039 110 L 146.40039 110 L 147.19922 160.59961 C 147.19922 169.39961 159.59961 169.59961 159.59961 160.59961 L 159.59961 73.400391 L 162 73.400391 L 162.80078 105.19922 C 162.80078 111.99922 171.90039 111.99922 171.90039 105.19922 L 171.90039 70.400391 C 171.90039 58.500391 168.30039 55.699219 157.40039 55.699219 L 133 55.699219 z M 22.300781 202 C 10.000781 202 2.3684758e-15 212.00078 0 224.30078 L 0 379.69922 C 0 391.99922 10.000781 402 22.300781 402 L 177.69922 402 C 189.99922 402 200 391.99922 200 379.69922 L 200 224.30078 C 200 212.00078 189.99922 202 177.69922 202 L 22.300781 202 z M 22.300781 207 L 177.69922 207 C 187.19922 207 195 214.80078 195 224.30078 L 195 379.69922 C 195 389.19922 187.19922 397 177.69922 397 L 22.300781 397 C 12.800781 397 5 389.19922 5 379.69922 L 5 224.30078 C 5 214.80078 12.800781 207 22.300781 207 z M 160.40039 231.80078 C 152.10039 231.80078 147.39922 234.00078 141.19922 238.30078 C 135.49922 242.30078 27.000391 322.79922 22.400391 326.19922 C 20.400391 327.69922 20 330.59961 21.5 332.59961 C 23 334.59961 25.900391 335 27.900391 333.5 C 29.100391 332.7 140.9 249.70078 146.5 245.80078 C 151.8 242.10078 154.5 240.90039 160.5 240.90039 L 173.90039 240.90039 C 176.50039 240.90039 178.5 238.80078 178.5 236.30078 C 178.5 233.70078 176.40078 231.70078 173.80078 231.80078 L 160.40039 231.80078 z M 145.30078 269.69922 L 145.30078 291.5 L 113.30078 291.5 L 113.30078 312.09961 L 83.599609 312.09961 L 83.599609 331.5 L 52.699219 331.5 L 52.699219 353.19922 L 21.800781 353.19922 L 21.800781 375 L 176.19922 375 L 176.19922 269.69922 L 145.30078 269.69922 z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'l',
+    '\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M145.19,53.45a11.33,11.33,0,1,1,11.35-11.33A11.34,11.34,0,0,1,145.19,53.45Zm-26.67,17v34.8c0,6.76,9.11,6.76,9.11,0l.79-31.83h2.34v87.15c0,9,12.41,8.78,12.41,0l.78-50.59h2.46l.79,50.59c0,8.78,12.41,9,12.41,0V73.38H162l.79,31.83c0,6.76,9.12,6.76,9.12,0V70.4c0-11.91-3.56-14.72-14.49-14.72H133C122.08,55.68,118.53,58.49,118.53,70.4Zm-48-28.29A11.34,11.34,0,1,0,59.21,53.45,11.33,11.33,0,0,0,70.55,42.11ZM36.49,100.73,46.76,71.45h1.18s-13.49,52.42-14.06,54.39c-.29,1,.12,1.69,1.16,1.69H46.71V162c0,7,10.49,7,10.49,0v-34.7h4V162c0,7,10.49,7,10.49,0V127.53H83.39c1,0,1.45-.71,1.16-1.69-.56-2-14.06-54.39-14.06-54.39h1.17l10.28,29.28c2.08,6.43,10,4,8-2.9l-9.73-32c-1.88-5.65-7.53-10.12-15.8-10.12H54c-8.25,0-13.91,4.46-15.79,10.12l-9.74,32C26.44,104.72,34.39,107.16,36.49,100.73Zm61.67,61a5.48,5.48,0,0,0,5.48,5.49h0a5.48,5.48,0,0,0,5.47-5.49V36.26a5.47,5.47,0,0,0-5.47-5.47h0a5.47,5.47,0,0,0-5.48,5.47Zm101.85,16V22.31A22.34,22.34,0,0,0,177.69,0H22.31A22.34,22.34,0,0,0,0,22.31V177.69A22.34,22.34,0,0,0,22.31,200H177.69A22.34,22.34,0,0,0,200,177.69ZM177.69,5A17.37,17.37,0,0,1,195,22.31V177.69A17.37,17.37,0,0,1,177.69,195H22.31A17.37,17.37,0,0,1,5,177.69V22.31A17.37,17.37,0,0,1,22.31,5Z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'lg',
+    '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 340.5,36 c -33.7,-5.3 -66.3,8 -74.6,21.7 h -15.1 c 0,-4.3 -3.1,-7.7 -6.8,-7.7 -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.3,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.2,0 3.9,2.2 3.9,5 0,2.8 -1.7,5 -3.9,5 z m 11,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.2 -11.8,20.1 -11.8,20.1 z M 379.7,200 H 224.3 C 212,200 202,190 202,177.7 V 22.3 C 202,10 212,0 224.3,0 H 379.7 C 392,0 402,10 402,22.3 V 177.7 C 402,190 392,200 379.7,200 Z M 224.3,5 C 214.8,5 207,12.8 207,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 397,12.8 389.2,5 379.7,5 Z m -79.1,48.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.2 -5,11.3 -11.3,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 0,0 0.1,0 0.1,0 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,60.1 72.9,55.7 64.6,55.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 0,0 0,0 0,0 v 0 c 3,0 5.5,-2.5 5.5,-5.5 0,0 0,0 0,0 V 36.3 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 0,0 0,0 0,0 z m 101.8,16 V 22.3 C 200,10 190,0 177.7,0 H 22.3 C 10,0 0,10 0,22.3 V 177.7 C 0,190 10,200 22.3,200 H 177.7 C 190,200 200,190 200,177.7 Z M 177.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,195 5,187.2 5,177.7 V 22.3 C 5,12.8 12.8,5 22.3,5 Z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'll,g',
+    '\n  <svg viewBox="0 0 402 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 224.30078 0 C 212.00078 0 202 10.000781 202 22.300781 L 202 177.69922 C 202 189.99922 212.00078 200 224.30078 200 L 379.69922 200 C 391.99922 200 402 189.99922 402 177.69922 L 402 22.300781 C 402 10.000781 391.99922 2.3684758e-15 379.69922 0 L 224.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 224.30078 5 L 379.69922 5 C 389.19922 5 397 12.800781 397 22.300781 L 397 177.69922 C 397 187.19922 389.19922 195 379.69922 195 L 224.30078 195 C 214.80078 195 207 187.19922 207 177.69922 L 207 22.300781 C 207 12.800781 214.80078 5 224.30078 5 z M 59.199219 30.800781 C 52.899219 30.800781 47.800781 35.799609 47.800781 42.099609 C 47.800781 48.399609 52.799609 53.5 59.099609 53.5 L 59.199219 53.5 C 65.499219 53.5 70.5 48.399219 70.5 42.199219 C 70.5 35.899219 65.499219 30.800781 59.199219 30.800781 z M 103.69922 30.800781 C 100.69922 30.800781 98.199219 33.200781 98.199219 36.300781 L 98.199219 161.69922 C 98.199219 164.69922 100.59922 167.19922 103.69922 167.19922 C 106.69922 167.19922 109.19922 164.69922 109.19922 161.69922 L 109.19922 36.300781 C 109.19922 33.300781 106.79922 30.800781 103.69922 30.800781 z M 261.19922 30.800781 C 254.89922 30.800781 249.80078 35.799609 249.80078 42.099609 C 249.80078 48.399609 254.79961 53.5 261.09961 53.5 L 261.19922 53.5 C 267.49922 53.5 272.5 48.399219 272.5 42.199219 C 272.5 35.899219 267.49922 30.800781 261.19922 30.800781 z M 305.59961 30.800781 C 302.59961 30.800781 300.09961 33.200781 300.09961 36.300781 L 300.09961 161.69922 C 300.09961 164.69922 302.49961 167.19922 305.59961 167.19922 C 308.59961 167.19922 311.09961 164.69922 311.09961 161.69922 L 311.09961 36.300781 C 311.09961 33.300781 308.69961 30.800781 305.59961 30.800781 z M 145.19922 30.900391 C 138.99922 30.900391 133.90039 35.899219 133.90039 42.199219 C 133.90039 48.399219 138.89922 53.5 145.19922 53.5 C 151.49922 53.5 156.5 48.399219 156.5 42.199219 C 156.5 35.999219 151.39922 30.900391 145.19922 30.900391 z M 347.30078 30.900391 C 341.00078 30.900391 335.90039 35.899219 335.90039 42.199219 C 335.90039 48.399219 340.89922 53.5 347.19922 53.5 C 353.39922 53.5 358.49961 48.399219 358.59961 42.199219 C 358.59961 35.999219 353.50078 30.900391 347.30078 30.900391 z M 54 55.699219 C 45.8 55.699219 40.099219 60.200781 38.199219 65.800781 L 28.5 97.800781 C 26.4 104.70078 34.4 107.19922 36.5 100.69922 L 46.800781 71.400391 L 48 71.400391 C 48 71.400391 34.500391 123.80078 33.900391 125.80078 C 33.600391 126.80078 33.999609 127.5 35.099609 127.5 L 46.800781 127.5 L 46.800781 162 C 46.800781 169 57.300781 169 57.300781 162 L 57.300781 127.30078 L 61.300781 127.30078 L 61.300781 162 C 61.300781 169 71.800781 169 71.800781 162 L 71.800781 127.5 L 83.5 127.5 C 84.5 127.5 84.899219 126.80078 84.699219 125.80078 C 84.099219 123.80078 70.599609 71.400391 70.599609 71.400391 L 71.800781 71.400391 L 82.099609 100.69922 C 84.199609 107.09922 92.099609 104.70078 90.099609 97.800781 L 80.400391 65.800781 C 78.500391 60.100781 72.899609 55.699219 64.599609 55.699219 L 54 55.699219 z M 133 55.699219 C 122.1 55.699219 118.5 58.500391 118.5 70.400391 L 118.5 105.19922 C 118.5 111.99922 127.59961 111.99922 127.59961 105.19922 L 128.40039 73.400391 L 130.69922 73.400391 L 130.69922 160.59961 C 130.69922 169.59961 143.09961 169.39961 143.09961 160.59961 L 143.90039 110 L 146.40039 110 L 147.19922 160.59961 C 147.19922 169.39961 159.59961 169.59961 159.59961 160.59961 L 159.59961 73.400391 L 162 73.400391 L 162.80078 105.19922 C 162.80078 111.99922 171.90039 111.99922 171.90039 105.19922 L 171.90039 70.400391 C 171.90039 58.500391 168.30039 55.699219 157.40039 55.699219 L 133 55.699219 z M 256 55.699219 C 247.8 55.699219 242.09922 60.200781 240.19922 65.800781 L 230.5 97.800781 C 228.4 104.70078 236.4 107.19922 238.5 100.69922 L 248.80078 71.400391 L 250 71.400391 C 250 71.400391 236.50039 123.80078 235.90039 125.80078 C 235.60039 126.80078 235.99961 127.5 237.09961 127.5 L 248.80078 127.5 L 248.80078 162 C 248.80078 169 259.30078 169 259.30078 162 L 259.30078 127.30078 L 263.30078 127.30078 L 263.30078 162 C 263.30078 169 273.80078 169 273.80078 162 L 273.80078 127.5 L 285.5 127.5 C 286.5 127.5 286.89922 126.80078 286.69922 125.80078 C 286.09922 123.80078 272.59961 71.400391 272.59961 71.400391 L 273.80078 71.400391 L 284.09961 100.69922 C 286.19961 107.09922 294.09961 104.70078 292.09961 97.800781 L 282.40039 65.800781 C 280.50039 60.100781 274.89961 55.699219 266.59961 55.699219 L 256 55.699219 z M 335 55.699219 C 324.1 55.699219 320.5 58.500391 320.5 70.400391 L 320.5 105.19922 C 320.5 111.99922 329.59961 111.99922 329.59961 105.19922 L 330.40039 73.400391 L 332.69922 73.400391 L 332.69922 160.59961 C 332.69922 169.59961 345.09961 169.39961 345.09961 160.59961 L 345.90039 110 L 348.40039 110 L 349.19922 160.59961 C 349.19922 169.39961 361.59961 169.59961 361.59961 160.59961 L 361.59961 73.400391 L 364 73.400391 L 364.80078 105.19922 C 364.80078 111.99922 373.90039 111.99922 373.90039 105.19922 L 373.90039 70.400391 C 373.90039 58.500391 370.30039 55.699219 359.40039 55.699219 L 335 55.699219 z M 124.30078 202 C 112.00078 202 102 212.00078 102 224.30078 L 102 379.69922 C 102 391.99922 112.00078 402 124.30078 402 L 279.69922 402 C 291.99922 402 302 391.99922 302 379.69922 L 302 224.30078 C 302 212.00078 291.99922 202 279.69922 202 L 124.30078 202 z M 124.30078 207 L 279.69922 207 C 289.19922 207 297 214.80078 297 224.30078 L 297 379.69922 C 297 389.19922 289.19922 397 279.69922 397 L 124.30078 397 C 114.80078 397 107 389.19922 107 379.69922 L 107 224.30078 C 107 214.80078 114.80078 207 124.30078 207 z M 224.87305 236.80859 C 197.20662 236.86611 172.90352 248.13984 165.90039 259.69922 L 150.80078 259.69922 C 150.80078 255.39922 147.7 252 144 252 C 140.3 252 137.19922 255.39922 137.19922 259.69922 C 137.09922 262.59922 138.69922 265.29922 141.19922 266.69922 C 138.69922 267.89922 137.19922 270.50078 137.19922 273.30078 C 136.99922 277.10078 139.89922 280.3 143.69922 280.5 C 147.49922 280.7 150.70039 277.8 150.90039 274 L 150.90039 273.30078 L 165.90039 273.30078 C 173.00039 286.60078 199.49961 298.70039 240.59961 294.40039 C 247.29961 293.70039 252.80078 281.79922 252.80078 266.19922 C 252.70078 250.59922 247.1 239 240.5 238 C 235.23438 237.17188 229.99646 236.79794 224.87305 236.80859 z M 240.5 242.19922 C 246.2 242.19922 250.80078 252.89922 250.80078 266.19922 C 250.80078 279.49922 246.2 290.09922 240.5 290.19922 C 234.8 290.19922 230.19922 279.49922 230.19922 266.19922 C 230.19922 252.89922 234.8 242.19922 240.5 242.19922 z M 240.5 257.59961 C 238.5 257.59961 236.80078 261.39922 236.80078 266.19922 C 236.80078 270.89922 238.5 274.80078 240.5 274.80078 C 242.5 274.80078 244.19922 270.99922 244.19922 266.19922 C 244.19922 261.39922 242.5 257.59961 240.5 257.59961 z M 176.19922 311.5 C 150.19922 311.8 135.69922 338.30078 135.69922 338.30078 C 135.69922 338.30078 150.79961 366.90039 175.59961 366.90039 C 202.19961 366.90039 225.09961 350.19922 235.09961 341.69922 L 257.59961 361.69922 C 257.59961 361.69922 258.90039 350.8 253.90039 346 C 251.50039 343.6 249.00078 341.39922 246.30078 339.19922 C 248.90078 337.09922 251.50039 334.80039 253.90039 332.40039 C 258.90039 327.60039 257.59961 316.80078 257.59961 316.80078 L 237.40039 334.69922 C 227.80039 328.79922 197.79922 311.3 176.19922 311.5 z M 168.59961 319.90039 C 168.59961 319.90039 180.00039 319.80039 180.40039 337.90039 C 180.80039 356.20039 168.59961 358.1 168.59961 358 C 172.79961 352.1 175.20039 344.99922 175.40039 337.69922 C 175.70039 325.59922 168.59961 319.90039 168.59961 319.90039 z M 157.59961 328.90039 C 159.79961 328.90039 161.5 331.10039 161.5 333.90039 C 161.5 336.70039 159.79961 338.90039 157.59961 338.90039 C 155.39961 338.90039 153.69922 336.70039 153.69922 333.90039 C 153.69922 331.10039 155.49961 328.90039 157.59961 328.90039 z "\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'll,ll',
+    '\n  <svg viewBox="0 0 402 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 347.2,53.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.4,-11.3 6.2,0 11.3,5.1 11.3,11.3 -0.1,6.2 -5.1,11.3 -11.4,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 L 346,110 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 C 374,58.5 370.4,55.7 359.5,55.7 H 335 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 h 0.1 c 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 h 1.2 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 h 11.7 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 280.5,60.1 274.9,55.7 266.6,55.7 H 256 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 v 0 0 c 3,0 5.5,-2.5 5.5,-5.5 v 0 -125.4 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 v 0 z m 101.8,16 V 22.3 C 402,10 392,0 379.7,0 H 224.3 C 212,0 202,10 202,22.3 v 155.4 c 0,12.3 10,22.3 22.3,22.3 H 379.7 C 392,200 402,190 402,177.7 Z M 379.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 224.3 C 214.8,195 207,187.2 207,177.7 V 22.3 C 207,12.8 214.8,5 224.3,5 Z m -32.5,250.4 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.4,-11.3 6.2,0 11.3,5.1 11.3,11.3 -0.1,6.3 -5.1,11.4 -11.4,11.3 z m -26.7,17.1 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 L 346,312 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 v -87.2 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 v -34.8 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 335 c -10.9,0 -14.5,2.8 -14.5,14.8 z m -48,-28.3 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 h 0.1 c 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 h 1.2 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 h 11.7 V 364 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 364 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 c -1.9,-5.6 -7.5,-10.1 -15.8,-10.1 H 256 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 v 0 0 c 3,0 5.5,-2.5 5.5,-5.5 v 0 -125.4 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 v 0 z m 101.8,16 V 224.3 C 402,212 392,202 379.7,202 H 224.3 C 212,202 202,212 202,224.3 v 155.4 c 0,12.3 10,22.3 22.3,22.3 H 379.7 C 392,402 402,392 402,379.7 Z M 379.7,207 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 224.3 C 214.8,397 207,389.2 207,379.7 V 224.3 c 0,-9.5 7.8,-17.3 17.3,-17.3 z m -234.5,48.4 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.3 -5,11.4 -11.3,11.3 z m -26.7,17.1 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 v -87.2 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 v -34.8 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,-0.1 -14.5,2.7 -14.5,14.7 z m -48,-28.3 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 h 0.1 c 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 364 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 364 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,262.2 72.9,257.7 64.6,257.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 v 0 0 c 3,0 5.5,-2.5 5.5,-5.5 v 0 -125.4 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 v 0 z m 101.8,16 V 224.3 C 200,212 190,202 177.7,202 H 22.3 C 10,202 0,212 0,224.3 V 379.7 C 0,392 10,402 22.3,402 H 177.7 C 190,402 200,392 200,379.7 Z M 177.7,207 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,397 5,389.2 5,379.7 V 224.3 C 5,214.8 12.8,207 22.3,207 Z M 145.2,53.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.2 -5,11.3 -11.3,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 h 0.1 c 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,60.1 72.9,55.7 64.6,55.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 v 0 0 c 3,0 5.5,-2.5 5.5,-5.5 v 0 -125.4 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 v 0 z m 101.8,16 V 22.3 C 200,10 190,0 177.7,0 H 22.3 C 10,0 0,10 0,22.3 V 177.7 C 0,190 10,200 22.3,200 H 177.7 C 190,200 200,190 200,177.7 Z M 177.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,195 5,187.2 5,177.7 V 22.3 C 5,12.8 12.8,5 22.3,5 Z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'll,s',
+    '\n  <svg viewBox="0 0 402 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 224.30078 0 C 212.00078 0 202 10.000781 202 22.300781 L 202 177.69922 C 202 189.99922 212.00078 200 224.30078 200 L 379.69922 200 C 391.99922 200 402 189.99922 402 177.69922 L 402 22.300781 C 402 10.000781 391.99922 2.3684758e-15 379.69922 0 L 224.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 224.30078 5 L 379.69922 5 C 389.19922 5 397 12.800781 397 22.300781 L 397 177.69922 C 397 187.19922 389.19922 195 379.69922 195 L 224.30078 195 C 214.80078 195 207 187.19922 207 177.69922 L 207 22.300781 C 207 12.800781 214.80078 5 224.30078 5 z M 59.199219 30.800781 C 52.899219 30.800781 47.800781 35.799609 47.800781 42.099609 C 47.800781 48.399609 52.799609 53.5 59.099609 53.5 L 59.199219 53.5 C 65.499219 53.5 70.5 48.399219 70.5 42.199219 C 70.5 35.899219 65.499219 30.800781 59.199219 30.800781 z M 103.69922 30.800781 C 100.69922 30.800781 98.199219 33.200781 98.199219 36.300781 L 98.199219 161.69922 C 98.199219 164.69922 100.59922 167.19922 103.69922 167.19922 C 106.69922 167.19922 109.19922 164.69922 109.19922 161.69922 L 109.19922 36.300781 C 109.19922 33.300781 106.79922 30.800781 103.69922 30.800781 z M 261.19922 30.800781 C 254.89922 30.800781 249.80078 35.799609 249.80078 42.099609 C 249.80078 48.399609 254.79961 53.5 261.09961 53.5 L 261.19922 53.5 C 267.49922 53.5 272.5 48.399219 272.5 42.199219 C 272.5 35.899219 267.49922 30.800781 261.19922 30.800781 z M 305.59961 30.800781 C 302.59961 30.800781 300.09961 33.200781 300.09961 36.300781 L 300.09961 161.69922 C 300.09961 164.69922 302.49961 167.19922 305.59961 167.19922 C 308.59961 167.19922 311.09961 164.69922 311.09961 161.69922 L 311.09961 36.300781 C 311.09961 33.300781 308.69961 30.800781 305.59961 30.800781 z M 145.19922 30.900391 C 138.99922 30.900391 133.90039 35.899219 133.90039 42.199219 C 133.90039 48.399219 138.89922 53.5 145.19922 53.5 C 151.49922 53.5 156.5 48.399219 156.5 42.199219 C 156.5 35.999219 151.39922 30.900391 145.19922 30.900391 z M 347.30078 30.900391 C 341.00078 30.900391 335.90039 35.899219 335.90039 42.199219 C 335.90039 48.399219 340.89922 53.5 347.19922 53.5 C 353.39922 53.5 358.49961 48.399219 358.59961 42.199219 C 358.59961 35.999219 353.50078 30.900391 347.30078 30.900391 z M 54 55.699219 C 45.8 55.699219 40.099219 60.200781 38.199219 65.800781 L 28.5 97.800781 C 26.4 104.70078 34.4 107.19922 36.5 100.69922 L 46.800781 71.400391 L 48 71.400391 C 48 71.400391 34.500391 123.80078 33.900391 125.80078 C 33.600391 126.80078 33.999609 127.5 35.099609 127.5 L 46.800781 127.5 L 46.800781 162 C 46.800781 169 57.300781 169 57.300781 162 L 57.300781 127.30078 L 61.300781 127.30078 L 61.300781 162 C 61.300781 169 71.800781 169 71.800781 162 L 71.800781 127.5 L 83.5 127.5 C 84.5 127.5 84.899219 126.80078 84.699219 125.80078 C 84.099219 123.80078 70.599609 71.400391 70.599609 71.400391 L 71.800781 71.400391 L 82.099609 100.69922 C 84.199609 107.09922 92.099609 104.70078 90.099609 97.800781 L 80.400391 65.800781 C 78.500391 60.100781 72.899609 55.699219 64.599609 55.699219 L 54 55.699219 z M 133 55.699219 C 122.1 55.699219 118.5 58.500391 118.5 70.400391 L 118.5 105.19922 C 118.5 111.99922 127.59961 111.99922 127.59961 105.19922 L 128.40039 73.400391 L 130.69922 73.400391 L 130.69922 160.59961 C 130.69922 169.59961 143.09961 169.39961 143.09961 160.59961 L 143.90039 110 L 146.40039 110 L 147.19922 160.59961 C 147.19922 169.39961 159.59961 169.59961 159.59961 160.59961 L 159.59961 73.400391 L 162 73.400391 L 162.80078 105.19922 C 162.80078 111.99922 171.90039 111.99922 171.90039 105.19922 L 171.90039 70.400391 C 171.90039 58.500391 168.30039 55.699219 157.40039 55.699219 L 133 55.699219 z M 256 55.699219 C 247.8 55.699219 242.09922 60.200781 240.19922 65.800781 L 230.5 97.800781 C 228.4 104.70078 236.4 107.19922 238.5 100.69922 L 248.80078 71.400391 L 250 71.400391 C 250 71.400391 236.50039 123.80078 235.90039 125.80078 C 235.60039 126.80078 235.99961 127.5 237.09961 127.5 L 248.80078 127.5 L 248.80078 162 C 248.80078 169 259.30078 169 259.30078 162 L 259.30078 127.30078 L 263.30078 127.30078 L 263.30078 162 C 263.30078 169 273.80078 169 273.80078 162 L 273.80078 127.5 L 285.5 127.5 C 286.5 127.5 286.89922 126.80078 286.69922 125.80078 C 286.09922 123.80078 272.59961 71.400391 272.59961 71.400391 L 273.80078 71.400391 L 284.09961 100.69922 C 286.19961 107.09922 294.09961 104.70078 292.09961 97.800781 L 282.40039 65.800781 C 280.50039 60.100781 274.89961 55.699219 266.59961 55.699219 L 256 55.699219 z M 335 55.699219 C 324.1 55.699219 320.5 58.500391 320.5 70.400391 L 320.5 105.19922 C 320.5 111.99922 329.59961 111.99922 329.59961 105.19922 L 330.40039 73.400391 L 332.69922 73.400391 L 332.69922 160.59961 C 332.69922 169.59961 345.09961 169.39961 345.09961 160.59961 L 345.90039 110 L 348.40039 110 L 349.19922 160.59961 C 349.19922 169.39961 361.59961 169.59961 361.59961 160.59961 L 361.59961 73.400391 L 364 73.400391 L 364.80078 105.19922 C 364.80078 111.99922 373.90039 111.99922 373.90039 105.19922 L 373.90039 70.400391 C 373.90039 58.500391 370.30039 55.699219 359.40039 55.699219 L 335 55.699219 z M 122.30078 202 C 110.00078 202 100 212.00078 100 224.30078 L 100 379.69922 C 100 391.99922 110.00078 402 122.30078 402 L 277.69922 402 C 289.99922 402 300 391.99922 300 379.69922 L 300 224.30078 C 300 212.00078 289.99922 202 277.69922 202 L 122.30078 202 z M 122.30078 207 L 277.69922 207 C 287.19922 207 295 214.80078 295 224.30078 L 295 379.69922 C 295 389.19922 287.19922 397 277.69922 397 L 122.30078 397 C 112.80078 397 105 389.19922 105 379.69922 L 105 224.30078 C 105 214.80078 112.80078 207 122.30078 207 z M 260.40039 231.80078 C 252.10039 231.80078 247.39922 234.00078 241.19922 238.30078 C 235.49922 242.30078 127.00039 322.79922 122.40039 326.19922 C 120.40039 327.69922 120 330.59961 121.5 332.59961 C 123 334.59961 125.90039 335 127.90039 333.5 C 129.10039 332.7 240.9 249.70078 246.5 245.80078 C 251.8 242.10078 254.5 240.90039 260.5 240.90039 L 273.90039 240.90039 C 276.50039 240.90039 278.5 238.80078 278.5 236.30078 C 278.5 233.70078 276.40078 231.70078 273.80078 231.80078 L 260.40039 231.80078 z M 245.30078 269.69922 L 245.30078 291.5 L 213.30078 291.5 L 213.30078 312.09961 L 183.59961 312.09961 L 183.59961 331.5 L 152.69922 331.5 L 152.69922 353.19922 L 121.80078 353.19922 L 121.80078 375 L 276.19922 375 L 276.19922 269.69922 L 245.30078 269.69922 z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'll',
+    '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 224.30078 0 C 212.00078 0 202 10.000781 202 22.300781 L 202 177.69922 C 202 189.99922 212.00078 200 224.30078 200 L 379.69922 200 C 391.99922 200 402 189.99922 402 177.69922 L 402 22.300781 C 402 10.000781 391.99922 2.3684758e-15 379.69922 0 L 224.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 224.30078 5 L 379.69922 5 C 389.19922 5 397 12.800781 397 22.300781 L 397 177.69922 C 397 187.19922 389.19922 195 379.69922 195 L 224.30078 195 C 214.80078 195 207 187.19922 207 177.69922 L 207 22.300781 C 207 12.800781 214.80078 5 224.30078 5 z M 59.199219 30.800781 C 52.899219 30.800781 47.800781 35.799609 47.800781 42.099609 C 47.800781 48.399609 52.799609 53.5 59.099609 53.5 L 59.199219 53.5 C 65.499219 53.5 70.5 48.399219 70.5 42.199219 C 70.5 35.899219 65.499219 30.800781 59.199219 30.800781 z M 103.69922 30.800781 C 100.69922 30.800781 98.199219 33.200781 98.199219 36.300781 L 98.199219 161.69922 C 98.199219 164.69922 100.59922 167.19922 103.69922 167.19922 C 106.69922 167.19922 109.19922 164.69922 109.19922 161.69922 L 109.19922 36.300781 C 109.19922 33.300781 106.79922 30.800781 103.69922 30.800781 z M 261.19922 30.800781 C 254.89922 30.800781 249.80078 35.799609 249.80078 42.099609 C 249.80078 48.399609 254.79961 53.5 261.09961 53.5 L 261.19922 53.5 C 267.49922 53.5 272.5 48.399219 272.5 42.199219 C 272.5 35.899219 267.49922 30.800781 261.19922 30.800781 z M 305.59961 30.800781 C 302.59961 30.800781 300.09961 33.200781 300.09961 36.300781 L 300.09961 161.69922 C 300.09961 164.69922 302.49961 167.19922 305.59961 167.19922 C 308.59961 167.19922 311.09961 164.69922 311.09961 161.69922 L 311.09961 36.300781 C 311.09961 33.300781 308.69961 30.800781 305.59961 30.800781 z M 145.19922 30.900391 C 138.99922 30.900391 133.90039 35.899219 133.90039 42.199219 C 133.90039 48.399219 138.89922 53.5 145.19922 53.5 C 151.49922 53.5 156.5 48.399219 156.5 42.199219 C 156.5 35.999219 151.39922 30.900391 145.19922 30.900391 z M 347.30078 30.900391 C 341.00078 30.900391 335.90039 35.899219 335.90039 42.199219 C 335.90039 48.399219 340.89922 53.5 347.19922 53.5 C 353.39922 53.5 358.49961 48.399219 358.59961 42.199219 C 358.59961 35.999219 353.50078 30.900391 347.30078 30.900391 z M 54 55.699219 C 45.8 55.699219 40.099219 60.200781 38.199219 65.800781 L 28.5 97.800781 C 26.4 104.70078 34.4 107.19922 36.5 100.69922 L 46.800781 71.400391 L 48 71.400391 C 48 71.400391 34.500391 123.80078 33.900391 125.80078 C 33.600391 126.80078 33.999609 127.5 35.099609 127.5 L 46.800781 127.5 L 46.800781 162 C 46.800781 169 57.300781 169 57.300781 162 L 57.300781 127.30078 L 61.300781 127.30078 L 61.300781 162 C 61.300781 169 71.800781 169 71.800781 162 L 71.800781 127.5 L 83.5 127.5 C 84.5 127.5 84.899219 126.80078 84.699219 125.80078 C 84.099219 123.80078 70.599609 71.400391 70.599609 71.400391 L 71.800781 71.400391 L 82.099609 100.69922 C 84.199609 107.09922 92.099609 104.70078 90.099609 97.800781 L 80.400391 65.800781 C 78.500391 60.100781 72.899609 55.699219 64.599609 55.699219 L 54 55.699219 z M 133 55.699219 C 122.1 55.699219 118.5 58.500391 118.5 70.400391 L 118.5 105.19922 C 118.5 111.99922 127.59961 111.99922 127.59961 105.19922 L 128.40039 73.400391 L 130.69922 73.400391 L 130.69922 160.59961 C 130.69922 169.59961 143.09961 169.39961 143.09961 160.59961 L 143.90039 110 L 146.40039 110 L 147.19922 160.59961 C 147.19922 169.39961 159.59961 169.59961 159.59961 160.59961 L 159.59961 73.400391 L 162 73.400391 L 162.80078 105.19922 C 162.80078 111.99922 171.90039 111.99922 171.90039 105.19922 L 171.90039 70.400391 C 171.90039 58.500391 168.30039 55.699219 157.40039 55.699219 L 133 55.699219 z M 256 55.699219 C 247.8 55.699219 242.09922 60.200781 240.19922 65.800781 L 230.5 97.800781 C 228.4 104.70078 236.4 107.19922 238.5 100.69922 L 248.80078 71.400391 L 250 71.400391 C 250 71.400391 236.50039 123.80078 235.90039 125.80078 C 235.60039 126.80078 235.99961 127.5 237.09961 127.5 L 248.80078 127.5 L 248.80078 162 C 248.80078 169 259.30078 169 259.30078 162 L 259.30078 127.30078 L 263.30078 127.30078 L 263.30078 162 C 263.30078 169 273.80078 169 273.80078 162 L 273.80078 127.5 L 285.5 127.5 C 286.5 127.5 286.89922 126.80078 286.69922 125.80078 C 286.09922 123.80078 272.59961 71.400391 272.59961 71.400391 L 273.80078 71.400391 L 284.09961 100.69922 C 286.19961 107.09922 294.09961 104.70078 292.09961 97.800781 L 282.40039 65.800781 C 280.50039 60.100781 274.89961 55.699219 266.59961 55.699219 L 256 55.699219 z M 335 55.699219 C 324.1 55.699219 320.5 58.500391 320.5 70.400391 L 320.5 105.19922 C 320.5 111.99922 329.59961 111.99922 329.59961 105.19922 L 330.40039 73.400391 L 332.69922 73.400391 L 332.69922 160.59961 C 332.69922 169.59961 345.09961 169.39961 345.09961 160.59961 L 345.90039 110 L 348.40039 110 L 349.19922 160.59961 C 349.19922 169.39961 361.59961 169.59961 361.59961 160.59961 L 361.59961 73.400391 L 364 73.400391 L 364.80078 105.19922 C 364.80078 111.99922 373.90039 111.99922 373.90039 105.19922 L 373.90039 70.400391 C 373.90039 58.500391 370.30039 55.699219 359.40039 55.699219 L 335 55.699219 z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'ls',
+    '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 224.30078 0 C 212.00078 0 202 10.000781 202 22.300781 L 202 177.69922 C 202 189.99922 212.00078 200 224.30078 200 L 379.69922 200 C 391.99922 200 402 189.99922 402 177.69922 L 402 22.300781 C 402 10.000781 391.99922 2.3684758e-15 379.69922 0 L 224.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 224.30078 5 L 379.69922 5 C 389.19922 5 397 12.800781 397 22.300781 L 397 177.69922 C 397 187.19922 389.19922 195 379.69922 195 L 224.30078 195 C 214.80078 195 207 187.19922 207 177.69922 L 207 22.300781 C 207 12.800781 214.80078 5 224.30078 5 z M 362.40039 29.800781 C 354.10039 29.800781 349.39922 32.000781 343.19922 36.300781 C 337.49922 40.300781 229.00039 120.79922 224.40039 124.19922 C 222.40039 125.69922 222 128.59961 223.5 130.59961 C 225 132.59961 227.90039 133 229.90039 131.5 C 231.10039 130.7 342.9 47.700781 348.5 43.800781 C 353.8 40.100781 356.5 38.900391 362.5 38.900391 L 375.90039 38.900391 C 378.50039 38.900391 380.5 36.800781 380.5 34.300781 C 380.5 31.700781 378.40078 29.700781 375.80078 29.800781 L 362.40039 29.800781 z M 59.199219 30.800781 C 52.899219 30.800781 47.800781 35.799609 47.800781 42.099609 C 47.800781 48.399609 52.799609 53.5 59.099609 53.5 L 59.199219 53.5 C 65.499219 53.5 70.5 48.399219 70.5 42.199219 C 70.5 35.899219 65.499219 30.800781 59.199219 30.800781 z M 103.69922 30.800781 C 100.69922 30.800781 98.199219 33.200781 98.199219 36.300781 L 98.199219 161.69922 C 98.199219 164.69922 100.59922 167.19922 103.69922 167.19922 C 106.69922 167.19922 109.19922 164.69922 109.19922 161.69922 L 109.19922 36.300781 C 109.19922 33.300781 106.79922 30.800781 103.69922 30.800781 z M 145.19922 30.900391 C 138.99922 30.900391 133.90039 35.899219 133.90039 42.199219 C 133.90039 48.399219 138.89922 53.5 145.19922 53.5 C 151.49922 53.5 156.5 48.399219 156.5 42.199219 C 156.5 35.999219 151.39922 30.900391 145.19922 30.900391 z M 54 55.699219 C 45.8 55.699219 40.099219 60.200781 38.199219 65.800781 L 28.5 97.800781 C 26.4 104.70078 34.4 107.19922 36.5 100.69922 L 46.800781 71.400391 L 48 71.400391 C 48 71.400391 34.500391 123.80078 33.900391 125.80078 C 33.600391 126.80078 33.999609 127.5 35.099609 127.5 L 46.800781 127.5 L 46.800781 162 C 46.800781 169 57.300781 169 57.300781 162 L 57.300781 127.30078 L 61.300781 127.30078 L 61.300781 162 C 61.300781 169 71.800781 169 71.800781 162 L 71.800781 127.5 L 83.5 127.5 C 84.5 127.5 84.899219 126.80078 84.699219 125.80078 C 84.099219 123.80078 70.599609 71.400391 70.599609 71.400391 L 71.800781 71.400391 L 82.099609 100.69922 C 84.199609 107.09922 92.099609 104.70078 90.099609 97.800781 L 80.400391 65.800781 C 78.500391 60.100781 72.899609 55.699219 64.599609 55.699219 L 54 55.699219 z M 133 55.699219 C 122.1 55.699219 118.5 58.500391 118.5 70.400391 L 118.5 105.19922 C 118.5 111.99922 127.59961 111.99922 127.59961 105.19922 L 128.40039 73.400391 L 130.69922 73.400391 L 130.69922 160.59961 C 130.69922 169.59961 143.09961 169.39961 143.09961 160.59961 L 143.90039 110 L 146.40039 110 L 147.19922 160.59961 C 147.19922 169.39961 159.59961 169.59961 159.59961 160.59961 L 159.59961 73.400391 L 162 73.400391 L 162.80078 105.19922 C 162.80078 111.99922 171.90039 111.99922 171.90039 105.19922 L 171.90039 70.400391 C 171.90039 58.500391 168.30039 55.699219 157.40039 55.699219 L 133 55.699219 z M 347.30078 67.699219 L 347.30078 89.5 L 315.30078 89.5 L 315.30078 110.09961 L 285.59961 110.09961 L 285.59961 129.5 L 254.69922 129.5 L 254.69922 151.19922 L 223.80078 151.19922 L 223.80078 173 L 378.19922 173 L 378.19922 67.699219 L 347.30078 67.699219 z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    's,g',
+    '\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 160.40039 29.800781 C 152.10039 29.800781 147.39922 32.000781 141.19922 36.300781 C 135.49922 40.300781 27.000391 120.79922 22.400391 124.19922 C 20.400391 125.69922 20 128.59961 21.5 130.59961 C 23 132.59961 25.900391 133 27.900391 131.5 C 29.100391 130.7 140.9 47.700781 146.5 43.800781 C 151.8 40.100781 154.5 38.900391 160.5 38.900391 L 173.90039 38.900391 C 176.50039 38.900391 178.5 36.800781 178.5 34.300781 C 178.5 31.700781 176.40078 29.700781 173.80078 29.800781 L 160.40039 29.800781 z M 145.30078 67.699219 L 145.30078 89.5 L 113.30078 89.5 L 113.30078 110.09961 L 83.599609 110.09961 L 83.599609 129.5 L 52.699219 129.5 L 52.699219 151.19922 L 21.800781 151.19922 L 21.800781 173 L 176.19922 173 L 176.19922 67.699219 L 145.30078 67.699219 z M 22.300781 202 C 10.000781 202 0 212.00078 0 224.30078 L 0 379.69922 C 2.3684758e-15 391.99922 10.000781 402 22.300781 402 L 177.69922 402 C 189.99922 402 200 391.99922 200 379.69922 L 200 224.30078 C 200 212.00078 189.99922 202 177.69922 202 L 22.300781 202 z M 22.300781 207 L 177.69922 207 C 187.19922 207 195 214.80078 195 224.30078 L 195 379.69922 C 195 389.19922 187.19922 397 177.69922 397 L 22.300781 397 C 12.800781 397 5 389.19922 5 379.69922 L 5 224.30078 C 5 214.80078 12.800781 207 22.300781 207 z M 122.87305 236.80859 C 95.206616 236.86611 70.903516 248.13984 63.900391 259.69922 L 48.800781 259.69922 C 48.800781 255.39922 45.7 252 42 252 C 38.3 252 35.199219 255.39922 35.199219 259.69922 C 35.099219 262.59922 36.699219 265.29922 39.199219 266.69922 C 36.699219 267.89922 35.199219 270.50078 35.199219 273.30078 C 34.999219 277.10078 37.899219 280.3 41.699219 280.5 C 45.499219 280.7 48.700391 277.8 48.900391 274 L 48.900391 273.30078 L 63.900391 273.30078 C 71.000391 286.60078 97.499609 298.70039 138.59961 294.40039 C 145.29961 293.70039 150.80078 281.79922 150.80078 266.19922 C 150.80078 250.59922 145.2 239 138.5 238 C 133.23438 237.17188 127.99646 236.79794 122.87305 236.80859 z M 138.5 242.19922 C 144.2 242.19922 148.80078 252.89922 148.80078 266.19922 C 148.80078 279.49922 144.2 290.09922 138.5 290.19922 C 132.8 290.19922 128.19922 279.49922 128.19922 266.19922 C 128.19922 252.89922 132.8 242.19922 138.5 242.19922 z M 138.5 257.59961 C 136.5 257.59961 134.80078 261.49922 134.80078 266.19922 C 134.80078 270.89922 136.5 274.80078 138.5 274.80078 C 140.5 274.80078 142.19922 270.99922 142.19922 266.19922 C 142.19922 261.39922 140.5 257.59961 138.5 257.59961 z M 74.199219 311.5 C 48.199219 311.8 33.699219 338.30078 33.699219 338.30078 C 33.699219 338.30078 48.799609 366.90039 73.599609 366.90039 C 100.19961 366.90039 123.09961 350.19922 133.09961 341.69922 L 155.59961 361.69922 C 155.59961 361.69922 156.90039 350.8 151.90039 346 C 149.50039 343.6 147.00078 341.39922 144.30078 339.19922 C 146.90078 337.09922 149.50039 334.80039 151.90039 332.40039 C 156.90039 327.60039 155.59961 316.80078 155.59961 316.80078 L 135.40039 334.69922 C 125.80039 328.79922 95.799219 311.3 74.199219 311.5 z M 66.599609 320 C 66.599609 320 78.000391 319.9 78.400391 338 C 78.800391 356.2 66.599609 358.09961 66.599609 358.09961 C 70.799609 352.19961 73.200391 345.10078 73.400391 337.80078 C 73.700391 325.70078 66.599609 320 66.599609 320 z M 55.599609 328.90039 C 57.799609 328.90039 59.5 331.10039 59.5 333.90039 C 59.5 336.70039 57.799609 338.90039 55.599609 338.90039 C 53.399609 338.90039 51.699219 336.70039 51.699219 333.90039 C 51.699219 331.10039 53.499609 328.90039 55.599609 328.90039 z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    's,l,g',
+    '\n  <svg viewBox="0 0 200 604" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 160.40039 29.800781 C 152.10039 29.800781 147.39922 32.000781 141.19922 36.300781 C 135.49922 40.300781 27.000391 120.79922 22.400391 124.19922 C 20.400391 125.69922 20 128.59961 21.5 130.59961 C 23 132.59961 25.900391 133 27.900391 131.5 C 29.100391 130.7 140.9 47.700781 146.5 43.800781 C 151.8 40.100781 154.5 38.900391 160.5 38.900391 L 173.90039 38.900391 C 176.50039 38.900391 178.5 36.800781 178.5 34.300781 C 178.5 31.700781 176.40078 29.700781 173.80078 29.800781 L 160.40039 29.800781 z M 145.30078 67.699219 L 145.30078 89.5 L 113.30078 89.5 L 113.30078 110.09961 L 83.599609 110.09961 L 83.599609 129.5 L 52.699219 129.5 L 52.699219 151.19922 L 21.800781 151.19922 L 21.800781 173 L 176.19922 173 L 176.19922 67.699219 L 145.30078 67.699219 z M 22.300781 202 C 10.000781 202 2.3684758e-15 212.00078 0 224.30078 L 0 379.69922 C 0 391.99922 10.000781 402 22.300781 402 L 177.69922 402 C 189.99922 402 200 391.99922 200 379.69922 L 200 224.30078 C 200 212.00078 189.99922 202 177.69922 202 L 22.300781 202 z M 22.300781 207 L 177.69922 207 C 187.19922 207 195 214.80078 195 224.30078 L 195 379.69922 C 195 389.19922 187.19922 397 177.69922 397 L 22.300781 397 C 12.800781 397 5 389.19922 5 379.69922 L 5 224.30078 C 5 214.80078 12.800781 207 22.300781 207 z M 59.199219 232.80078 C 52.899219 232.80078 47.800781 237.79961 47.800781 244.09961 C 47.800781 250.39961 52.799609 255.5 59.099609 255.5 L 59.199219 255.5 C 65.499219 255.5 70.5 250.39922 70.5 244.19922 C 70.5 237.89922 65.499219 232.80078 59.199219 232.80078 z M 103.69922 232.80078 C 100.69922 232.80078 98.199219 235.20078 98.199219 238.30078 L 98.199219 363.69922 C 98.199219 366.69922 100.59922 369.19922 103.69922 369.19922 C 106.69922 369.19922 109.19922 366.69922 109.19922 363.69922 L 109.19922 238.30078 C 109.19922 235.30078 106.79922 232.80078 103.69922 232.80078 z M 145.19922 232.80078 C 138.99922 232.80078 133.90039 237.79961 133.90039 244.09961 C 133.90039 250.29961 138.89922 255.40039 145.19922 255.40039 C 151.39922 255.50039 156.5 250.39961 156.5 244.09961 C 156.5 237.89961 151.39922 232.80078 145.19922 232.80078 z M 54 257.69922 C 45.8 257.69922 40.099219 262.20078 38.199219 267.80078 L 28.5 299.80078 C 26.4 306.70078 34.4 309.19922 36.5 302.69922 L 46.800781 273.40039 L 48 273.40039 C 48 273.40039 34.500391 325.80078 33.900391 327.80078 C 33.600391 328.80078 33.999609 329.5 35.099609 329.5 L 46.800781 329.5 L 46.800781 364 C 46.800781 371 57.300781 371 57.300781 364 L 57.300781 329.30078 L 61.300781 329.30078 L 61.300781 364 C 61.300781 371 71.800781 371 71.800781 364 L 71.800781 329.5 L 83.5 329.5 C 84.5 329.5 84.899219 328.80078 84.699219 327.80078 C 84.099219 325.80078 70.599609 273.40039 70.599609 273.40039 L 71.800781 273.40039 L 82.099609 302.69922 C 84.199609 309.09922 92.099609 306.70078 90.099609 299.80078 L 80.400391 267.80078 C 78.500391 262.20078 72.899609 257.69922 64.599609 257.69922 L 54 257.69922 z M 133 257.80078 C 122.1 257.70078 118.5 260.5 118.5 272.5 L 118.5 307.30078 C 118.5 314.10078 127.59961 314.10078 127.59961 307.30078 L 128.40039 275.5 L 130.69922 275.5 L 130.69922 362.69922 C 130.69922 371.69922 143.09961 371.49922 143.09961 362.69922 L 143.90039 312.09961 L 146.40039 312.09961 L 147.19922 362.69922 C 147.19922 371.49922 159.59961 371.69922 159.59961 362.69922 L 159.59961 275.5 L 162 275.5 L 162.80078 307.30078 C 162.80078 314.10078 171.90039 314.10078 171.90039 307.30078 L 171.90039 272.5 C 171.90039 260.6 168.30039 257.80078 157.40039 257.80078 L 133 257.80078 z M 22.300781 404 C 10.000781 404 0 414.00078 0 426.30078 L 0 581.69922 C 2.3684758e-15 593.99922 10.000781 604 22.300781 604 L 177.69922 604 C 189.99922 604 200 593.99922 200 581.69922 L 200 426.30078 C 200 414.00078 189.99922 404 177.69922 404 L 22.300781 404 z M 22.300781 409 L 177.69922 409 C 187.19922 409 195 416.80078 195 426.30078 L 195 581.69922 C 195 591.19922 187.19922 599 177.69922 599 L 22.300781 599 C 12.800781 599 5 591.19922 5 581.69922 L 5 426.30078 C 5 416.80078 12.800781 409 22.300781 409 z M 122.87305 438.80859 C 95.206616 438.86611 70.903516 450.13984 63.900391 461.69922 L 48.800781 461.69922 C 48.800781 457.39922 45.7 454 42 454 C 38.3 454 35.199219 457.39922 35.199219 461.69922 C 35.099219 464.59922 36.699219 467.29922 39.199219 468.69922 C 36.699219 469.89922 35.199219 472.50078 35.199219 475.30078 C 34.999219 479.10078 37.899219 482.3 41.699219 482.5 C 45.499219 482.7 48.700391 479.8 48.900391 476 L 48.900391 475.30078 L 63.900391 475.30078 C 71.000391 488.60078 97.499609 500.70039 138.59961 496.40039 C 145.29961 495.70039 150.80078 483.79922 150.80078 468.19922 C 150.70078 452.59922 145.2 441 138.5 440 C 133.23438 439.17188 127.99646 438.79794 122.87305 438.80859 z M 138.5 444.19922 C 144.2 444.19922 148.80078 454.89922 148.80078 468.19922 C 148.80078 481.49922 144.2 492.09922 138.5 492.19922 C 132.8 492.19922 128.19922 481.49922 128.19922 468.19922 C 128.19922 454.89922 132.8 444.19922 138.5 444.19922 z M 138.5 459.59961 C 136.5 459.59961 134.80078 463.39922 134.80078 468.19922 C 134.80078 472.89922 136.5 476.80078 138.5 476.80078 C 140.5 476.80078 142.19922 472.99922 142.19922 468.19922 C 142.19922 463.39922 140.5 459.59961 138.5 459.59961 z M 74.199219 513.5 C 48.199219 513.8 33.699219 540.30078 33.699219 540.30078 C 33.699219 540.30078 48.799609 568.90039 73.599609 568.90039 C 100.19961 568.90039 123.09961 552.19922 133.09961 543.69922 L 155.59961 563.69922 C 155.59961 563.69922 156.90039 552.8 151.90039 548 C 149.50039 545.6 147.00078 543.39922 144.30078 541.19922 C 146.90078 539.09922 149.50039 536.80039 151.90039 534.40039 C 156.90039 529.60039 155.59961 518.80078 155.59961 518.80078 L 135.40039 536.69922 C 125.80039 530.79922 95.799219 513.3 74.199219 513.5 z M 66.599609 521.90039 C 66.599609 521.90039 78.000391 521.80039 78.400391 539.90039 C 78.800391 558.00039 66.599609 560.1 66.599609 560 C 70.799609 554.1 73.200391 546.99922 73.400391 539.69922 C 73.700391 527.59922 66.599609 521.90039 66.599609 521.90039 z M 55.699219 530.80078 C 57.799219 530.80078 59.599609 533.00078 59.599609 535.80078 C 59.599609 538.60078 57.799219 540.90078 55.699219 540.80078 C 53.499219 540.80078 51.800781 538.60078 51.800781 535.80078 C 51.800781 533.00078 53.599219 530.80078 55.699219 530.80078 z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    's,l',
+    '\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 160.40039 29.800781 C 152.10039 29.800781 147.39922 32.000781 141.19922 36.300781 C 135.49922 40.300781 27.000391 120.79922 22.400391 124.19922 C 20.400391 125.69922 20 128.59961 21.5 130.59961 C 23 132.59961 25.900391 133 27.900391 131.5 C 29.100391 130.7 140.9 47.700781 146.5 43.800781 C 151.8 40.100781 154.5 38.900391 160.5 38.900391 L 173.90039 38.900391 C 176.50039 38.900391 178.5 36.800781 178.5 34.300781 C 178.5 31.700781 176.40078 29.700781 173.80078 29.800781 L 160.40039 29.800781 z M 145.30078 67.699219 L 145.30078 89.5 L 113.30078 89.5 L 113.30078 110.09961 L 83.599609 110.09961 L 83.599609 129.5 L 52.699219 129.5 L 52.699219 151.19922 L 21.800781 151.19922 L 21.800781 173 L 176.19922 173 L 176.19922 67.699219 L 145.30078 67.699219 z M 22.300781 202 C 10.000781 202 2.3684758e-15 212.00078 0 224.30078 L 0 379.69922 C 0 391.99922 10.000781 402 22.300781 402 L 177.69922 402 C 189.99922 402 200 391.99922 200 379.69922 L 200 224.30078 C 200 212.00078 189.99922 202 177.69922 202 L 22.300781 202 z M 22.300781 207 L 177.69922 207 C 187.19922 207 195 214.80078 195 224.30078 L 195 379.69922 C 195 389.19922 187.19922 397 177.69922 397 L 22.300781 397 C 12.800781 397 5 389.19922 5 379.69922 L 5 224.30078 C 5 214.80078 12.800781 207 22.300781 207 z M 59.199219 232.80078 C 52.899219 232.80078 47.800781 237.79961 47.800781 244.09961 C 47.800781 250.39961 52.799609 255.5 59.099609 255.5 L 59.199219 255.5 C 65.499219 255.5 70.5 250.39922 70.5 244.19922 C 70.5 237.89922 65.499219 232.80078 59.199219 232.80078 z M 103.69922 232.80078 C 100.69922 232.80078 98.199219 235.20078 98.199219 238.30078 L 98.199219 363.69922 C 98.199219 366.69922 100.59922 369.19922 103.69922 369.19922 C 106.69922 369.19922 109.19922 366.69922 109.19922 363.69922 L 109.19922 238.30078 C 109.19922 235.30078 106.79922 232.80078 103.69922 232.80078 z M 145.19922 232.80078 C 138.99922 232.80078 133.90039 237.79961 133.90039 244.09961 C 133.90039 250.29961 138.89922 255.40039 145.19922 255.40039 C 151.49922 255.50039 156.5 250.39961 156.5 244.09961 C 156.5 237.89961 151.39922 232.80078 145.19922 232.80078 z M 54 257.69922 C 45.8 257.69922 40.099219 262.20078 38.199219 267.80078 L 28.5 299.80078 C 26.4 306.70078 34.4 309.19922 36.5 302.69922 L 46.800781 273.40039 L 48 273.40039 C 48 273.40039 34.500391 325.80078 33.900391 327.80078 C 33.600391 328.80078 33.999609 329.5 35.099609 329.5 L 46.800781 329.5 L 46.800781 364 C 46.800781 371 57.300781 371 57.300781 364 L 57.300781 329.30078 L 61.300781 329.30078 L 61.300781 364 C 61.300781 371 71.800781 371 71.800781 364 L 71.800781 329.5 L 83.5 329.5 C 84.5 329.5 84.899219 328.80078 84.699219 327.80078 C 84.099219 325.80078 70.599609 273.40039 70.599609 273.40039 L 71.800781 273.40039 L 82.099609 302.69922 C 84.199609 309.09922 92.099609 306.70078 90.099609 299.80078 L 80.400391 267.80078 C 78.500391 262.20078 72.899609 257.69922 64.599609 257.69922 L 54 257.69922 z M 133 257.80078 C 122.1 257.70078 118.5 260.5 118.5 272.5 L 118.5 307.30078 C 118.5 314.10078 127.59961 314.10078 127.59961 307.30078 L 128.40039 275.5 L 130.69922 275.5 L 130.69922 362.69922 C 130.69922 371.69922 143.09961 371.49922 143.09961 362.69922 L 143.90039 312.09961 L 146.40039 312.09961 L 147.19922 362.69922 C 147.19922 371.49922 159.59961 371.69922 159.59961 362.69922 L 159.59961 275.5 L 162 275.5 L 162.80078 307.30078 C 162.80078 314.10078 171.90039 314.10078 171.90039 307.30078 L 171.90039 272.5 C 171.90039 260.6 168.30039 257.80078 157.40039 257.80078 L 133 257.80078 z "\n    />\n  </svg>\n'
+  ),
+  D.set(
+    's',
+    '\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M177.7,0H22.3C10,0,0,10,0,22.3v155.4C0,190,10,200,22.3,200h155.4c12.3,0,22.3-10,22.3-22.3V22.3C200,10,190,0,177.7,0z M195,177.7c0,9.5-7.8,17.3-17.3,17.3H22.3C12.8,195,5,187.2,5,177.7V22.3C5,12.8,12.8,5,22.3,5h155.4c9.5,0,17.3,7.8,17.3,17.3 V177.7z M145.3,67.7h30.9V173H21.8v-21.8h30.9v-21.7h30.9v-19.4h29.7V89.5h32L145.3,67.7z M178.5,34.3c0,2.5-2,4.6-4.6,4.6 c0,0,0,0,0,0h-13.4c-6,0-8.7,1.2-14,4.9c-5.6,3.9-117.4,86.9-118.6,87.7c-2,1.5-4.9,1.1-6.4-0.9s-1.1-4.9,0.9-6.4 c4.6-3.4,113.1-83.9,118.8-87.9c6.2-4.3,10.9-6.5,19.2-6.5h13.4C176.4,29.7,178.5,31.7,178.5,34.3C178.5,34.2,178.5,34.3,178.5,34.3z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'sg',
+    '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 223.30078 0 C 211.00078 2.3684758e-15 201 10.000781 201 22.300781 L 201 177.69922 C 201 189.99922 211.00078 200 223.30078 200 L 378.69922 200 C 390.99922 200 401 189.99922 401 177.69922 L 401 22.300781 C 401 10.000781 390.99922 0 378.69922 0 L 223.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 223.30078 5 L 378.69922 5 C 388.19922 5 396 12.800781 396 22.300781 L 396 177.69922 C 396 187.19922 388.19922 195 378.69922 195 L 223.30078 195 C 213.80078 195 206 187.19922 206 177.69922 L 206 22.300781 C 206 12.800781 213.80078 5 223.30078 5 z M 160.40039 29.800781 C 152.10039 29.800781 147.39922 32.000781 141.19922 36.300781 C 135.49922 40.300781 27.000391 120.79922 22.400391 124.19922 C 20.400391 125.69922 20 128.59961 21.5 130.59961 C 23 132.59961 25.900391 133 27.900391 131.5 C 29.100391 130.7 140.9 47.700781 146.5 43.800781 C 151.8 40.100781 154.5 38.900391 160.5 38.900391 L 173.90039 38.900391 C 176.50039 38.900391 178.5 36.800781 178.5 34.300781 C 178.5 31.700781 176.40078 29.700781 173.80078 29.800781 L 160.40039 29.800781 z M 323.87305 34.808594 C 296.20662 34.866107 271.90352 46.139844 264.90039 57.699219 L 249.80078 57.699219 C 249.80078 53.399219 246.7 50 243 50 C 239.3 50 236.19922 53.399219 236.19922 57.699219 C 236.09922 60.599219 237.69922 63.299219 240.19922 64.699219 C 237.69922 65.899219 236.19922 68.500781 236.19922 71.300781 C 235.99922 75.100781 238.89922 78.3 242.69922 78.5 C 246.49922 78.7 249.70039 75.8 249.90039 72 L 249.90039 71.300781 L 264.90039 71.300781 C 272.00039 84.600781 298.49961 96.700391 339.59961 92.400391 C 346.29961 91.700391 351.80078 79.799219 351.80078 64.199219 C 351.80078 48.599219 346.2 37 339.5 36 C 334.23438 35.171875 328.99646 34.797943 323.87305 34.808594 z M 339.5 40.199219 C 345.2 40.199219 349.80078 50.899219 349.80078 64.199219 C 349.80078 77.499219 345.2 88.099219 339.5 88.199219 C 333.8 88.199219 329.19922 77.499219 329.19922 64.199219 C 329.19922 50.899219 333.8 40.199219 339.5 40.199219 z M 339.5 55.599609 C 337.5 55.599609 335.80078 59.499219 335.80078 64.199219 C 335.80078 68.899219 337.5 72.800781 339.5 72.800781 C 341.5 72.800781 343.19922 68.999219 343.19922 64.199219 C 343.19922 59.399219 341.5 55.599609 339.5 55.599609 z M 145.30078 67.699219 L 145.30078 89.5 L 113.30078 89.5 L 113.30078 110.09961 L 83.599609 110.09961 L 83.599609 129.5 L 52.699219 129.5 L 52.699219 151.19922 L 21.800781 151.19922 L 21.800781 173 L 176.19922 173 L 176.19922 67.699219 L 145.30078 67.699219 z M 275.19922 109.5 C 249.19922 109.8 234.69922 136.30078 234.69922 136.30078 C 234.69922 136.30078 249.79961 164.90039 274.59961 164.90039 C 301.19961 164.90039 324.09961 148.19922 334.09961 139.69922 L 356.59961 159.69922 C 356.59961 159.69922 357.90039 148.8 352.90039 144 C 350.50039 141.6 348.00078 139.39922 345.30078 137.19922 C 347.90078 135.09922 350.50039 132.80039 352.90039 130.40039 C 357.90039 125.60039 356.59961 114.80078 356.59961 114.80078 L 336.40039 132.69922 C 326.80039 126.79922 296.79922 109.3 275.19922 109.5 z M 267.59961 118 C 267.59961 118 279.00039 117.9 279.40039 136 C 279.80039 154.2 267.59961 156.09961 267.59961 156.09961 C 271.79961 150.19961 274.20039 143.10078 274.40039 135.80078 C 274.70039 123.70078 267.59961 118 267.59961 118 z M 256.59961 126.90039 C 258.79961 126.90039 260.5 129.10039 260.5 131.90039 C 260.5 134.70039 258.79961 136.90039 256.59961 136.90039 C 254.39961 136.90039 252.69922 134.70039 252.69922 131.90039 C 252.69922 129.10039 254.49961 126.90039 256.59961 126.90039 z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'sl',
+    '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 223.30078 0 C 211.00078 0 201 10.000781 201 22.300781 L 201 177.69922 C 201 189.99922 211.00078 200 223.30078 200 L 378.69922 200 C 390.99922 200 401 189.99922 401 177.69922 L 401 22.300781 C 401 10.000781 390.99922 2.3684758e-15 378.69922 0 L 223.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 223.30078 5 L 378.69922 5 C 388.19922 5 396 12.800781 396 22.300781 L 396 177.69922 C 396 187.19922 388.19922 195 378.69922 195 L 223.30078 195 C 213.80078 195 206 187.19922 206 177.69922 L 206 22.300781 C 206 12.800781 213.80078 5 223.30078 5 z M 160.40039 29.800781 C 152.10039 29.800781 147.39922 32.000781 141.19922 36.300781 C 135.49922 40.300781 27.000391 120.79922 22.400391 124.19922 C 20.400391 125.69922 20 128.59961 21.5 130.59961 C 23 132.59961 25.900391 133 27.900391 131.5 C 29.100391 130.7 140.9 47.700781 146.5 43.800781 C 151.8 40.100781 154.5 38.900391 160.5 38.900391 L 173.90039 38.900391 C 176.50039 38.900391 178.5 36.800781 178.5 34.300781 C 178.5 31.700781 176.40078 29.700781 173.80078 29.800781 L 160.40039 29.800781 z M 260.19922 30.800781 C 253.89922 30.800781 248.80078 35.799609 248.80078 42.099609 C 248.80078 48.399609 253.79961 53.5 260.09961 53.5 L 260.19922 53.5 C 266.49922 53.5 271.5 48.399219 271.5 42.199219 C 271.5 35.899219 266.49922 30.800781 260.19922 30.800781 z M 304.69922 30.800781 C 301.69922 30.800781 299.19922 33.200781 299.19922 36.300781 L 299.19922 161.69922 C 299.19922 164.69922 301.59922 167.19922 304.69922 167.19922 C 307.69922 167.19922 310.19922 164.69922 310.19922 161.69922 L 310.19922 36.300781 C 310.19922 33.300781 307.79922 30.800781 304.69922 30.800781 z M 346.30078 30.900391 C 340.00078 30.900391 334.90039 35.899219 334.90039 42.199219 C 334.90039 48.399219 339.89922 53.5 346.19922 53.5 C 352.49922 53.5 357.49961 48.399219 357.59961 42.199219 C 357.59961 35.999219 352.50078 30.900391 346.30078 30.900391 z M 255 55.699219 C 246.8 55.699219 241.09922 60.200781 239.19922 65.800781 L 229.5 97.800781 C 227.4 104.70078 235.4 107.19922 237.5 100.69922 L 247.80078 71.400391 L 249 71.400391 C 249 71.400391 235.50039 123.80078 234.90039 125.80078 C 234.60039 126.80078 234.99961 127.5 236.09961 127.5 L 247.80078 127.5 L 247.80078 162 C 247.80078 169 258.30078 169 258.30078 162 L 258.30078 127.30078 L 262.30078 127.30078 L 262.30078 162 C 262.30078 169 272.80078 169 272.80078 162 L 272.80078 127.5 L 284.5 127.5 C 285.5 127.5 285.89922 126.80078 285.69922 125.80078 C 285.09922 123.80078 271.59961 71.400391 271.59961 71.400391 L 272.80078 71.400391 L 283.09961 100.69922 C 285.19961 107.09922 293.09961 104.70078 291.09961 97.800781 L 281.40039 65.800781 C 279.50039 60.100781 273.89961 55.699219 265.59961 55.699219 L 255 55.699219 z M 334 55.699219 C 323.1 55.699219 319.5 58.500391 319.5 70.400391 L 319.5 105.19922 C 319.5 111.99922 328.59961 111.99922 328.59961 105.19922 L 329.40039 73.400391 L 331.69922 73.400391 L 331.69922 160.59961 C 331.69922 169.59961 344.09961 169.39961 344.09961 160.59961 L 345 110 L 347.5 110 L 348.30078 160.59961 C 348.30078 169.39961 360.69922 169.59961 360.69922 160.59961 L 360.69922 73.400391 L 363.09961 73.400391 L 363.90039 105.19922 C 363.90039 111.99922 373 111.99922 373 105.19922 L 373 70.400391 C 373 58.500391 369.4 55.699219 358.5 55.699219 L 334 55.699219 z M 145.30078 67.699219 L 145.30078 89.5 L 113.30078 89.5 L 113.30078 110.09961 L 83.599609 110.09961 L 83.599609 129.5 L 52.699219 129.5 L 52.699219 151.19922 L 21.800781 151.19922 L 21.800781 173 L 176.19922 173 L 176.19922 67.699219 L 145.30078 67.699219 z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'u',
+    '\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M177.69,0H22.31A22.34,22.34,0,0,0,0,22.31V177.69A22.34,22.34,0,0,0,22.31,200H177.69A22.34,22.34,0,0,0,200,177.69V22.31A22.34,22.34,0,0,0,177.69,0ZM195,177.69A17.37,17.37,0,0,1,177.69,195H22.31A17.37,17.37,0,0,1,5,177.69V22.31A17.37,17.37,0,0,1,22.31,5H177.69A17.37,17.37,0,0,1,195,22.31ZM145.32,67.74h30.89V173H21.77V151.25H52.66V129.51H83.55V110.07h29.74V89.48h32ZM28.21,63.16H17.63L35.36,36.85,53.09,63.16H42.51V82.61H28.21ZM178.5,34.28a4.57,4.57,0,0,1-4.58,4.58H160.48c-6,0-8.72,1.22-14,4.89-5.6,3.92-117.45,86.89-118.58,87.72a4.57,4.57,0,1,1-5.45-7.35c4.61-3.42,113.08-83.88,118.79-87.88,6.2-4.34,10.88-6.55,19.21-6.55h13.44A4.57,4.57,0,0,1,178.5,34.28Z"\n    />\n  </svg>\n'
+  ),
+  D.set(
+    'upstairs',
+    '\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M177.69,0H22.31A22.34,22.34,0,0,0,0,22.31V177.69A22.34,22.34,0,0,0,22.31,200H177.69A22.34,22.34,0,0,0,200,177.69V22.31A22.34,22.34,0,0,0,177.69,0ZM195,177.69A17.37,17.37,0,0,1,177.69,195H22.31A17.37,17.37,0,0,1,5,177.69V22.31A17.37,17.37,0,0,1,22.31,5H177.69A17.37,17.37,0,0,1,195,22.31ZM145.32,67.74h30.89V173H21.77V151.25H52.66V129.51H83.55V110.07h29.74V89.48h32ZM28.21,63.16H17.63L35.36,36.85,53.09,63.16H42.51V82.61H28.21ZM178.5,34.28a4.57,4.57,0,0,1-4.58,4.58H160.48c-6,0-8.72,1.22-14,4.89-5.6,3.92-117.45,86.89-118.58,87.72a4.57,4.57,0,1,1-5.45-7.35c4.61-3.42,113.08-83.88,118.79-87.88,6.2-4.34,10.88-6.55,19.21-6.55h13.44A4.57,4.57,0,0,1,178.5,34.28Z"\n    />\n  </svg>\n'
+  );
+/*! @license DOMPurify 3.2.6 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/3.2.6/LICENSE */
+const { entries: j, setPrototypeOf: F, isFrozen: Z, getPrototypeOf: U, getOwnPropertyDescriptor: G } = Object;
+let { freeze: K, seal: q, create: J } = Object,
+  { apply: Y, construct: X } = 'undefined' != typeof Reflect && Reflect;
+K ||
+  (K = function (e) {
+    return e;
+  }),
+  q ||
+    (q = function (e) {
+      return e;
+    }),
+  Y ||
+    (Y = function (e, t, r) {
+      return e.apply(t, r);
+    }),
+  X ||
+    (X = function (e, t) {
+      return new e(...t);
+    });
+const Q = me(Array.prototype.forEach),
+  ee = me(Array.prototype.lastIndexOf),
+  te = me(Array.prototype.pop),
+  re = me(Array.prototype.push),
+  le = me(Array.prototype.splice),
+  ie = me(String.prototype.toLowerCase),
+  oe = me(String.prototype.toString),
+  se = me(String.prototype.match),
+  ae = me(String.prototype.replace),
+  ne = me(String.prototype.indexOf),
+  ce = me(String.prototype.trim),
+  de = me(Object.prototype.hasOwnProperty),
+  he = me(RegExp.prototype.test),
+  ge =
+    ((pe = TypeError),
+    function () {
+      for (var e = arguments.length, t = new Array(e), r = 0; r < e; r++) t[r] = arguments[r];
+      return X(pe, t);
+    });
+var pe;
+function me(e) {
+  return function (t) {
+    t instanceof RegExp && (t.lastIndex = 0);
+    for (var r = arguments.length, l = new Array(r > 1 ? r - 1 : 0), i = 1; i < r; i++) l[i - 1] = arguments[i];
+    return Y(e, t, l);
+  };
+}
+function Ce(e, t) {
+  let r = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : ie;
+  F && F(e, null);
+  let l = t.length;
+  for (; l--; ) {
+    let i = t[l];
+    if ('string' == typeof i) {
+      const e = r(i);
+      e !== i && (Z(t) || (t[l] = e), (i = e));
+    }
+    e[i] = !0;
+  }
+  return e;
+}
+function ue(e) {
+  for (let t = 0; t < e.length; t++) {
+    de(e, t) || (e[t] = null);
+  }
+  return e;
+}
+function fe(e) {
+  const t = J(null);
+  for (const [r, l] of j(e)) {
+    de(e, r) &&
+      (Array.isArray(l)
+        ? (t[r] = ue(l))
+        : l && 'object' == typeof l && l.constructor === Object
+        ? (t[r] = fe(l))
+        : (t[r] = l));
+  }
+  return t;
+}
+function ke(e, t) {
+  for (; null !== e; ) {
+    const r = G(e, t);
+    if (r) {
+      if (r.get) return me(r.get);
+      if ('function' == typeof r.value) return me(r.value);
+    }
+    e = U(e);
+  }
+  return function () {
+    return null;
+  };
+}
+const ve = K([
+    'a',
+    'abbr',
+    'acronym',
+    'address',
+    'area',
+    'article',
+    'aside',
+    'audio',
+    'b',
+    'bdi',
+    'bdo',
+    'big',
+    'blink',
+    'blockquote',
+    'body',
+    'br',
+    'button',
+    'canvas',
+    'caption',
+    'center',
+    'cite',
+    'code',
+    'col',
+    'colgroup',
+    'content',
+    'data',
+    'datalist',
+    'dd',
+    'decorator',
+    'del',
+    'details',
+    'dfn',
+    'dialog',
+    'dir',
+    'div',
+    'dl',
+    'dt',
+    'element',
+    'em',
+    'fieldset',
+    'figcaption',
+    'figure',
+    'font',
+    'footer',
+    'form',
+    'h1',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
+    'head',
+    'header',
+    'hgroup',
+    'hr',
+    'html',
+    'i',
+    'img',
+    'input',
+    'ins',
+    'kbd',
+    'label',
+    'legend',
+    'li',
+    'main',
+    'map',
+    'mark',
+    'marquee',
+    'menu',
+    'menuitem',
+    'meter',
+    'nav',
+    'nobr',
+    'ol',
+    'optgroup',
+    'option',
+    'output',
+    'p',
+    'picture',
+    'pre',
+    'progress',
+    'q',
+    'rp',
+    'rt',
+    'ruby',
+    's',
+    'samp',
+    'section',
+    'select',
+    'shadow',
+    'small',
+    'source',
+    'spacer',
+    'span',
+    'strike',
+    'strong',
+    'style',
+    'sub',
+    'summary',
+    'sup',
+    'table',
+    'tbody',
+    'td',
+    'template',
+    'textarea',
+    'tfoot',
+    'th',
+    'thead',
+    'time',
+    'tr',
+    'track',
+    'tt',
+    'u',
+    'ul',
+    'var',
+    'video',
+    'wbr',
+  ]),
+  we = K([
+    'svg',
+    'a',
+    'altglyph',
+    'altglyphdef',
+    'altglyphitem',
+    'animatecolor',
+    'animatemotion',
+    'animatetransform',
+    'circle',
+    'clippath',
+    'defs',
+    'desc',
+    'ellipse',
+    'filter',
+    'font',
+    'g',
+    'glyph',
+    'glyphref',
+    'hkern',
+    'image',
+    'line',
+    'lineargradient',
+    'marker',
+    'mask',
+    'metadata',
+    'mpath',
+    'path',
+    'pattern',
+    'polygon',
+    'polyline',
+    'radialgradient',
+    'rect',
+    'stop',
+    'style',
+    'switch',
+    'symbol',
+    'text',
+    'textpath',
+    'title',
+    'tref',
+    'tspan',
+    'view',
+    'vkern',
+  ]),
+  be = K([
+    'feBlend',
+    'feColorMatrix',
+    'feComponentTransfer',
+    'feComposite',
+    'feConvolveMatrix',
+    'feDiffuseLighting',
+    'feDisplacementMap',
+    'feDistantLight',
+    'feDropShadow',
+    'feFlood',
+    'feFuncA',
+    'feFuncB',
+    'feFuncG',
+    'feFuncR',
+    'feGaussianBlur',
+    'feImage',
+    'feMerge',
+    'feMergeNode',
+    'feMorphology',
+    'feOffset',
+    'fePointLight',
+    'feSpecularLighting',
+    'feSpotLight',
+    'feTile',
+    'feTurbulence',
+  ]),
+  Le = K([
+    'animate',
+    'color-profile',
+    'cursor',
+    'discard',
+    'font-face',
+    'font-face-format',
+    'font-face-name',
+    'font-face-src',
+    'font-face-uri',
+    'foreignobject',
+    'hatch',
+    'hatchpath',
+    'mesh',
+    'meshgradient',
+    'meshpatch',
+    'meshrow',
+    'missing-glyph',
+    'script',
+    'set',
+    'solidcolor',
+    'unknown',
+    'use',
+  ]),
+  xe = K([
+    'math',
+    'menclose',
+    'merror',
+    'mfenced',
+    'mfrac',
+    'mglyph',
+    'mi',
+    'mlabeledtr',
+    'mmultiscripts',
+    'mn',
+    'mo',
+    'mover',
+    'mpadded',
+    'mphantom',
+    'mroot',
+    'mrow',
+    'ms',
+    'mspace',
+    'msqrt',
+    'mstyle',
+    'msub',
+    'msup',
+    'msubsup',
+    'mtable',
+    'mtd',
+    'mtext',
+    'mtr',
+    'munder',
+    'munderover',
+    'mprescripts',
+  ]),
+  Me = K([
+    'maction',
+    'maligngroup',
+    'malignmark',
+    'mlongdiv',
+    'mscarries',
+    'mscarry',
+    'msgroup',
+    'mstack',
+    'msline',
+    'msrow',
+    'semantics',
+    'annotation',
+    'annotation-xml',
+    'mprescripts',
+    'none',
+  ]),
+  ze = K(['#text']),
+  ye = K([
+    'accept',
+    'action',
+    'align',
+    'alt',
+    'autocapitalize',
+    'autocomplete',
+    'autopictureinpicture',
+    'autoplay',
+    'background',
+    'bgcolor',
+    'border',
+    'capture',
+    'cellpadding',
+    'cellspacing',
+    'checked',
+    'cite',
+    'class',
+    'clear',
+    'color',
+    'cols',
+    'colspan',
+    'controls',
+    'controlslist',
+    'coords',
+    'crossorigin',
+    'datetime',
+    'decoding',
+    'default',
+    'dir',
+    'disabled',
+    'disablepictureinpicture',
+    'disableremoteplayback',
+    'download',
+    'draggable',
+    'enctype',
+    'enterkeyhint',
+    'face',
+    'for',
+    'headers',
+    'height',
+    'hidden',
+    'high',
+    'href',
+    'hreflang',
+    'id',
+    'inputmode',
+    'integrity',
+    'ismap',
+    'kind',
+    'label',
+    'lang',
+    'list',
+    'loading',
+    'loop',
+    'low',
+    'max',
+    'maxlength',
+    'media',
+    'method',
+    'min',
+    'minlength',
+    'multiple',
+    'muted',
+    'name',
+    'nonce',
+    'noshade',
+    'novalidate',
+    'nowrap',
+    'open',
+    'optimum',
+    'pattern',
+    'placeholder',
+    'playsinline',
+    'popover',
+    'popovertarget',
+    'popovertargetaction',
+    'poster',
+    'preload',
+    'pubdate',
+    'radiogroup',
+    'readonly',
+    'rel',
+    'required',
+    'rev',
+    'reversed',
+    'role',
+    'rows',
+    'rowspan',
+    'spellcheck',
+    'scope',
+    'selected',
+    'shape',
+    'size',
+    'sizes',
+    'span',
+    'srclang',
+    'start',
+    'src',
+    'srcset',
+    'step',
+    'style',
+    'summary',
+    'tabindex',
+    'title',
+    'translate',
+    'type',
+    'usemap',
+    'valign',
+    'value',
+    'width',
+    'wrap',
+    'xmlns',
+    'slot',
+  ]),
+  Se = K([
+    'accent-height',
+    'accumulate',
+    'additive',
+    'alignment-baseline',
+    'amplitude',
+    'ascent',
+    'attributename',
+    'attributetype',
+    'azimuth',
+    'basefrequency',
+    'baseline-shift',
+    'begin',
+    'bias',
+    'by',
+    'class',
+    'clip',
+    'clippathunits',
+    'clip-path',
+    'clip-rule',
+    'color',
+    'color-interpolation',
+    'color-interpolation-filters',
+    'color-profile',
+    'color-rendering',
+    'cx',
+    'cy',
+    'd',
+    'dx',
+    'dy',
+    'diffuseconstant',
+    'direction',
+    'display',
+    'divisor',
+    'dur',
+    'edgemode',
+    'elevation',
+    'end',
+    'exponent',
+    'fill',
+    'fill-opacity',
+    'fill-rule',
+    'filter',
+    'filterunits',
+    'flood-color',
+    'flood-opacity',
+    'font-family',
+    'font-size',
+    'font-size-adjust',
+    'font-stretch',
+    'font-style',
+    'font-variant',
+    'font-weight',
+    'fx',
+    'fy',
+    'g1',
+    'g2',
+    'glyph-name',
+    'glyphref',
+    'gradientunits',
+    'gradienttransform',
+    'height',
+    'href',
+    'id',
+    'image-rendering',
+    'in',
+    'in2',
+    'intercept',
+    'k',
+    'k1',
+    'k2',
+    'k3',
+    'k4',
+    'kerning',
+    'keypoints',
+    'keysplines',
+    'keytimes',
+    'lang',
+    'lengthadjust',
+    'letter-spacing',
+    'kernelmatrix',
+    'kernelunitlength',
+    'lighting-color',
+    'local',
+    'marker-end',
+    'marker-mid',
+    'marker-start',
+    'markerheight',
+    'markerunits',
+    'markerwidth',
+    'maskcontentunits',
+    'maskunits',
+    'max',
+    'mask',
+    'media',
+    'method',
+    'mode',
+    'min',
+    'name',
+    'numoctaves',
+    'offset',
+    'operator',
+    'opacity',
+    'order',
+    'orient',
+    'orientation',
+    'origin',
+    'overflow',
+    'paint-order',
+    'path',
+    'pathlength',
+    'patterncontentunits',
+    'patterntransform',
+    'patternunits',
+    'points',
+    'preservealpha',
+    'preserveaspectratio',
+    'primitiveunits',
+    'r',
+    'rx',
+    'ry',
+    'radius',
+    'refx',
+    'refy',
+    'repeatcount',
+    'repeatdur',
+    'restart',
+    'result',
+    'rotate',
+    'scale',
+    'seed',
+    'shape-rendering',
+    'slope',
+    'specularconstant',
+    'specularexponent',
+    'spreadmethod',
+    'startoffset',
+    'stddeviation',
+    'stitchtiles',
+    'stop-color',
+    'stop-opacity',
+    'stroke-dasharray',
+    'stroke-dashoffset',
+    'stroke-linecap',
+    'stroke-linejoin',
+    'stroke-miterlimit',
+    'stroke-opacity',
+    'stroke',
+    'stroke-width',
+    'style',
+    'surfacescale',
+    'systemlanguage',
+    'tabindex',
+    'tablevalues',
+    'targetx',
+    'targety',
+    'transform',
+    'transform-origin',
+    'text-anchor',
+    'text-decoration',
+    'text-rendering',
+    'textlength',
+    'type',
+    'u1',
+    'u2',
+    'unicode',
+    'values',
+    'viewbox',
+    'visibility',
+    'version',
+    'vert-adv-y',
+    'vert-origin-x',
+    'vert-origin-y',
+    'width',
+    'word-spacing',
+    'wrap',
+    'writing-mode',
+    'xchannelselector',
+    'ychannelselector',
+    'x',
+    'x1',
+    'x2',
+    'xmlns',
+    'y',
+    'y1',
+    'y2',
+    'z',
+    'zoomandpan',
+  ]),
+  Te = K([
+    'accent',
+    'accentunder',
+    'align',
+    'bevelled',
+    'close',
+    'columnsalign',
+    'columnlines',
+    'columnspan',
+    'denomalign',
+    'depth',
+    'dir',
+    'display',
+    'displaystyle',
+    'encoding',
+    'fence',
+    'frame',
+    'height',
+    'href',
+    'id',
+    'largeop',
+    'length',
+    'linethickness',
+    'lspace',
+    'lquote',
+    'mathbackground',
+    'mathcolor',
+    'mathsize',
+    'mathvariant',
+    'maxsize',
+    'minsize',
+    'movablelimits',
+    'notation',
+    'numalign',
+    'open',
+    'rowalign',
+    'rowlines',
+    'rowspacing',
+    'rowspan',
+    'rspace',
+    'rquote',
+    'scriptlevel',
+    'scriptminsize',
+    'scriptsizemultiplier',
+    'selection',
+    'separator',
+    'separators',
+    'stretchy',
+    'subscriptshift',
+    'supscriptshift',
+    'symmetric',
+    'voffset',
+    'width',
+    'xmlns',
+  ]),
+  Ee = K(['xlink:href', 'xml:id', 'xlink:title', 'xml:space', 'xmlns:xlink']),
+  He = q(/\{\{[\w\W]*|[\w\W]*\}\}/gm),
+  _e = q(/<%[\w\W]*|[\w\W]*%>/gm),
+  Ae = q(/\$\{[\w\W]*/gm),
+  $e = q(/^data-[\-\w.\u00B7-\uFFFF]+$/),
+  Ve = q(/^aria-[\-\w]+$/),
+  Oe = q(/^(?:(?:(?:f|ht)tps?|mailto|tel|callto|sms|cid|xmpp|matrix):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i),
+  Be = q(/^(?:\w+script|data):/i),
+  Ie = q(/[\u0000-\u0020\u00A0\u1680\u180E\u2000-\u2029\u205F\u3000]/g),
+  We = q(/^html$/i),
+  Re = q(/^[a-z][.\w]*(-[.\w]+)+$/i);
+var Pe = Object.freeze({
+  __proto__: null,
+  ARIA_ATTR: Ve,
+  ATTR_WHITESPACE: Ie,
+  CUSTOM_ELEMENT: Re,
+  DATA_ATTR: $e,
+  DOCTYPE_NAME: We,
+  ERB_EXPR: _e,
+  IS_ALLOWED_URI: Oe,
+  IS_SCRIPT_OR_DATA: Be,
+  MUSTACHE_EXPR: He,
+  TMPLIT_EXPR: Ae,
+});
+const Ne = 1,
+  De = 3,
+  je = 7,
+  Fe = 8,
+  Ze = 9,
+  Ue = function () {
+    return 'undefined' == typeof window ? null : window;
+  },
+  Ge = function (e, t) {
+    if ('object' != typeof e || 'function' != typeof e.createPolicy) return null;
+    let r = null;
+    const l = 'data-tt-policy-suffix';
+    t && t.hasAttribute(l) && (r = t.getAttribute(l));
+    const i = 'dompurify' + (r ? '#' + r : '');
+    try {
+      return e.createPolicy(i, { createHTML: e => e, createScriptURL: e => e });
+    } catch (e) {
+      return console.warn('TrustedTypes policy ' + i + ' could not be created.'), null;
+    }
+  };
+var Ke = (function e() {
+  let t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : Ue();
+  const r = t => e(t);
+  if (((r.version = '3.2.6'), (r.removed = []), !t || !t.document || t.document.nodeType !== Ze || !t.Element))
+    return (r.isSupported = !1), r;
+  let { document: l } = t;
+  const i = l,
+    o = i.currentScript,
+    {
+      DocumentFragment: s,
+      HTMLTemplateElement: a,
+      Node: n,
+      Element: c,
+      NodeFilter: d,
+      NamedNodeMap: h = t.NamedNodeMap || t.MozNamedAttrMap,
+      HTMLFormElement: g,
+      DOMParser: p,
+      trustedTypes: m,
+    } = t,
+    C = c.prototype,
+    u = ke(C, 'cloneNode'),
+    f = ke(C, 'remove'),
+    k = ke(C, 'nextSibling'),
+    v = ke(C, 'childNodes'),
+    w = ke(C, 'parentNode');
+  if ('function' == typeof a) {
+    const e = l.createElement('template');
+    e.content && e.content.ownerDocument && (l = e.content.ownerDocument);
+  }
+  let b,
+    L = '';
+  const { implementation: x, createNodeIterator: M, createDocumentFragment: z, getElementsByTagName: y } = l,
+    { importNode: S } = i;
+  let T = {
+    afterSanitizeAttributes: [],
+    afterSanitizeElements: [],
+    afterSanitizeShadowDOM: [],
+    beforeSanitizeAttributes: [],
+    beforeSanitizeElements: [],
+    beforeSanitizeShadowDOM: [],
+    uponSanitizeAttribute: [],
+    uponSanitizeElement: [],
+    uponSanitizeShadowNode: [],
+  };
+  r.isSupported = 'function' == typeof j && 'function' == typeof w && x && void 0 !== x.createHTMLDocument;
+  const {
+    MUSTACHE_EXPR: E,
+    ERB_EXPR: H,
+    TMPLIT_EXPR: _,
+    DATA_ATTR: A,
+    ARIA_ATTR: $,
+    IS_SCRIPT_OR_DATA: V,
+    ATTR_WHITESPACE: O,
+    CUSTOM_ELEMENT: B,
+  } = Pe;
+  let { IS_ALLOWED_URI: I } = Pe,
+    W = null;
+  const R = Ce({}, [...ve, ...we, ...be, ...xe, ...ze]);
+  let P = null;
+  const N = Ce({}, [...ye, ...Se, ...Te, ...Ee]);
+  let D = Object.seal(
+      J(null, {
+        tagNameCheck: { writable: !0, configurable: !1, enumerable: !0, value: null },
+        attributeNameCheck: { writable: !0, configurable: !1, enumerable: !0, value: null },
+        allowCustomizedBuiltInElements: { writable: !0, configurable: !1, enumerable: !0, value: !1 },
+      })
+    ),
+    F = null,
+    Z = null,
+    U = !0,
+    G = !0,
+    q = !1,
+    Y = !0,
+    X = !1,
+    pe = !0,
+    me = !1,
+    ue = !1,
+    He = !1,
+    _e = !1,
+    Ae = !1,
+    $e = !1,
+    Ve = !0,
+    Be = !1;
+  const Ie = 'user-content-';
+  let Re = !0,
+    Ke = !1,
+    qe = {},
+    Je = null;
+  const Ye = Ce({}, [
+    'annotation-xml',
+    'audio',
+    'colgroup',
+    'desc',
+    'foreignobject',
+    'head',
+    'iframe',
+    'math',
+    'mi',
+    'mn',
+    'mo',
+    'ms',
+    'mtext',
+    'noembed',
+    'noframes',
+    'noscript',
+    'plaintext',
+    'script',
+    'style',
+    'svg',
+    'template',
+    'thead',
+    'title',
+    'video',
+    'xmp',
+  ]);
+  let Xe = null;
+  const Qe = Ce({}, ['audio', 'video', 'img', 'source', 'image', 'track']);
+  let et = null;
+  const tt = Ce({}, [
+      'alt',
+      'class',
+      'for',
+      'id',
+      'label',
+      'name',
+      'pattern',
+      'placeholder',
+      'role',
+      'summary',
+      'title',
+      'value',
+      'style',
+      'xmlns',
+    ]),
+    rt = 'http://www.w3.org/1998/Math/MathML',
+    lt = 'http://www.w3.org/2000/svg',
+    it = 'http://www.w3.org/1999/xhtml';
+  let ot = it,
+    st = !1,
+    at = null;
+  const nt = Ce({}, [rt, lt, it], oe);
+  let ct = Ce({}, ['mi', 'mo', 'mn', 'ms', 'mtext']),
+    dt = Ce({}, ['annotation-xml']);
+  const ht = Ce({}, ['title', 'style', 'font', 'a', 'script']);
+  let gt = null;
+  const pt = ['application/xhtml+xml', 'text/html'],
+    mt = 'text/html';
+  let Ct = null,
+    ut = null;
+  const ft = l.createElement('form'),
+    kt = function (e) {
+      return e instanceof RegExp || e instanceof Function;
+    },
+    vt = function () {
+      let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+      if (!ut || ut !== e) {
+        if (
+          ((e && 'object' == typeof e) || (e = {}),
+          (e = fe(e)),
+          (gt = -1 === pt.indexOf(e.PARSER_MEDIA_TYPE) ? mt : e.PARSER_MEDIA_TYPE),
+          (Ct = 'application/xhtml+xml' === gt ? oe : ie),
+          (W = de(e, 'ALLOWED_TAGS') ? Ce({}, e.ALLOWED_TAGS, Ct) : R),
+          (P = de(e, 'ALLOWED_ATTR') ? Ce({}, e.ALLOWED_ATTR, Ct) : N),
+          (at = de(e, 'ALLOWED_NAMESPACES') ? Ce({}, e.ALLOWED_NAMESPACES, oe) : nt),
+          (et = de(e, 'ADD_URI_SAFE_ATTR') ? Ce(fe(tt), e.ADD_URI_SAFE_ATTR, Ct) : tt),
+          (Xe = de(e, 'ADD_DATA_URI_TAGS') ? Ce(fe(Qe), e.ADD_DATA_URI_TAGS, Ct) : Qe),
+          (Je = de(e, 'FORBID_CONTENTS') ? Ce({}, e.FORBID_CONTENTS, Ct) : Ye),
+          (F = de(e, 'FORBID_TAGS') ? Ce({}, e.FORBID_TAGS, Ct) : fe({})),
+          (Z = de(e, 'FORBID_ATTR') ? Ce({}, e.FORBID_ATTR, Ct) : fe({})),
+          (qe = !!de(e, 'USE_PROFILES') && e.USE_PROFILES),
+          (U = !1 !== e.ALLOW_ARIA_ATTR),
+          (G = !1 !== e.ALLOW_DATA_ATTR),
+          (q = e.ALLOW_UNKNOWN_PROTOCOLS || !1),
+          (Y = !1 !== e.ALLOW_SELF_CLOSE_IN_ATTR),
+          (X = e.SAFE_FOR_TEMPLATES || !1),
+          (pe = !1 !== e.SAFE_FOR_XML),
+          (me = e.WHOLE_DOCUMENT || !1),
+          (_e = e.RETURN_DOM || !1),
+          (Ae = e.RETURN_DOM_FRAGMENT || !1),
+          ($e = e.RETURN_TRUSTED_TYPE || !1),
+          (He = e.FORCE_BODY || !1),
+          (Ve = !1 !== e.SANITIZE_DOM),
+          (Be = e.SANITIZE_NAMED_PROPS || !1),
+          (Re = !1 !== e.KEEP_CONTENT),
+          (Ke = e.IN_PLACE || !1),
+          (I = e.ALLOWED_URI_REGEXP || Oe),
+          (ot = e.NAMESPACE || it),
+          (ct = e.MATHML_TEXT_INTEGRATION_POINTS || ct),
+          (dt = e.HTML_INTEGRATION_POINTS || dt),
+          (D = e.CUSTOM_ELEMENT_HANDLING || {}),
+          e.CUSTOM_ELEMENT_HANDLING &&
+            kt(e.CUSTOM_ELEMENT_HANDLING.tagNameCheck) &&
+            (D.tagNameCheck = e.CUSTOM_ELEMENT_HANDLING.tagNameCheck),
+          e.CUSTOM_ELEMENT_HANDLING &&
+            kt(e.CUSTOM_ELEMENT_HANDLING.attributeNameCheck) &&
+            (D.attributeNameCheck = e.CUSTOM_ELEMENT_HANDLING.attributeNameCheck),
+          e.CUSTOM_ELEMENT_HANDLING &&
+            'boolean' == typeof e.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements &&
+            (D.allowCustomizedBuiltInElements = e.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements),
+          X && (G = !1),
+          Ae && (_e = !0),
+          qe &&
+            ((W = Ce({}, ze)),
+            (P = []),
+            !0 === qe.html && (Ce(W, ve), Ce(P, ye)),
+            !0 === qe.svg && (Ce(W, we), Ce(P, Se), Ce(P, Ee)),
+            !0 === qe.svgFilters && (Ce(W, be), Ce(P, Se), Ce(P, Ee)),
+            !0 === qe.mathMl && (Ce(W, xe), Ce(P, Te), Ce(P, Ee))),
+          e.ADD_TAGS && (W === R && (W = fe(W)), Ce(W, e.ADD_TAGS, Ct)),
+          e.ADD_ATTR && (P === N && (P = fe(P)), Ce(P, e.ADD_ATTR, Ct)),
+          e.ADD_URI_SAFE_ATTR && Ce(et, e.ADD_URI_SAFE_ATTR, Ct),
+          e.FORBID_CONTENTS && (Je === Ye && (Je = fe(Je)), Ce(Je, e.FORBID_CONTENTS, Ct)),
+          Re && (W['#text'] = !0),
+          me && Ce(W, ['html', 'head', 'body']),
+          W.table && (Ce(W, ['tbody']), delete F.tbody),
+          e.TRUSTED_TYPES_POLICY)
+        ) {
+          if ('function' != typeof e.TRUSTED_TYPES_POLICY.createHTML)
+            throw ge('TRUSTED_TYPES_POLICY configuration option must provide a "createHTML" hook.');
+          if ('function' != typeof e.TRUSTED_TYPES_POLICY.createScriptURL)
+            throw ge('TRUSTED_TYPES_POLICY configuration option must provide a "createScriptURL" hook.');
+          (b = e.TRUSTED_TYPES_POLICY), (L = b.createHTML(''));
+        } else void 0 === b && (b = Ge(m, o)), null !== b && 'string' == typeof L && (L = b.createHTML(''));
+        K && K(e), (ut = e);
+      }
+    },
+    wt = Ce({}, [...we, ...be, ...Le]),
+    bt = Ce({}, [...xe, ...Me]),
+    Lt = function (e) {
+      let t = w(e);
+      (t && t.tagName) || (t = { namespaceURI: ot, tagName: 'template' });
+      const r = ie(e.tagName),
+        l = ie(t.tagName);
+      return (
+        !!at[e.namespaceURI] &&
+        (e.namespaceURI === lt
+          ? t.namespaceURI === it
+            ? 'svg' === r
+            : t.namespaceURI === rt
+            ? 'svg' === r && ('annotation-xml' === l || ct[l])
+            : Boolean(wt[r])
+          : e.namespaceURI === rt
+          ? t.namespaceURI === it
+            ? 'math' === r
+            : t.namespaceURI === lt
+            ? 'math' === r && dt[l]
+            : Boolean(bt[r])
+          : e.namespaceURI === it
+          ? !(t.namespaceURI === lt && !dt[l]) && !(t.namespaceURI === rt && !ct[l]) && !bt[r] && (ht[r] || !wt[r])
+          : !('application/xhtml+xml' !== gt || !at[e.namespaceURI]))
+      );
+    },
+    xt = function (e) {
+      re(r.removed, { element: e });
+      try {
+        w(e).removeChild(e);
+      } catch (t) {
+        f(e);
+      }
+    },
+    Mt = function (e, t) {
+      try {
+        re(r.removed, { attribute: t.getAttributeNode(e), from: t });
+      } catch (e) {
+        re(r.removed, { attribute: null, from: t });
+      }
+      if ((t.removeAttribute(e), 'is' === e))
+        if (_e || Ae)
+          try {
+            xt(t);
+          } catch (e) {}
+        else
+          try {
+            t.setAttribute(e, '');
+          } catch (e) {}
+    },
+    zt = function (e) {
+      let t = null,
+        r = null;
+      if (He) e = '<remove></remove>' + e;
+      else {
+        const t = se(e, /^[\r\n\t ]+/);
+        r = t && t[0];
+      }
+      'application/xhtml+xml' === gt &&
+        ot === it &&
+        (e = '<html xmlns="http://www.w3.org/1999/xhtml"><head></head><body>' + e + '</body></html>');
+      const i = b ? b.createHTML(e) : e;
+      if (ot === it)
+        try {
+          t = new p().parseFromString(i, gt);
+        } catch (e) {}
+      if (!t || !t.documentElement) {
+        t = x.createDocument(ot, 'template', null);
+        try {
+          t.documentElement.innerHTML = st ? L : i;
+        } catch (e) {}
+      }
+      const o = t.body || t.documentElement;
+      return (
+        e && r && o.insertBefore(l.createTextNode(r), o.childNodes[0] || null),
+        ot === it ? y.call(t, me ? 'html' : 'body')[0] : me ? t.documentElement : o
+      );
+    },
+    yt = function (e) {
+      return M.call(
+        e.ownerDocument || e,
+        e,
+        d.SHOW_ELEMENT | d.SHOW_COMMENT | d.SHOW_TEXT | d.SHOW_PROCESSING_INSTRUCTION | d.SHOW_CDATA_SECTION,
+        null
+      );
+    },
+    St = function (e) {
+      return (
+        e instanceof g &&
+        ('string' != typeof e.nodeName ||
+          'string' != typeof e.textContent ||
+          'function' != typeof e.removeChild ||
+          !(e.attributes instanceof h) ||
+          'function' != typeof e.removeAttribute ||
+          'function' != typeof e.setAttribute ||
+          'string' != typeof e.namespaceURI ||
+          'function' != typeof e.insertBefore ||
+          'function' != typeof e.hasChildNodes)
+      );
+    },
+    Tt = function (e) {
+      return 'function' == typeof n && e instanceof n;
+    };
+  function Et(e, t, l) {
+    Q(e, e => {
+      e.call(r, t, l, ut);
+    });
+  }
+  const Ht = function (e) {
+      let t = null;
+      if ((Et(T.beforeSanitizeElements, e, null), St(e))) return xt(e), !0;
+      const l = Ct(e.nodeName);
+      if (
+        (Et(T.uponSanitizeElement, e, { tagName: l, allowedTags: W }),
+        pe &&
+          e.hasChildNodes() &&
+          !Tt(e.firstElementChild) &&
+          he(/<[/\w!]/g, e.innerHTML) &&
+          he(/<[/\w!]/g, e.textContent))
+      )
+        return xt(e), !0;
+      if (e.nodeType === je) return xt(e), !0;
+      if (pe && e.nodeType === Fe && he(/<[/\w]/g, e.data)) return xt(e), !0;
+      if (!W[l] || F[l]) {
+        if (!F[l] && At(l)) {
+          if (D.tagNameCheck instanceof RegExp && he(D.tagNameCheck, l)) return !1;
+          if (D.tagNameCheck instanceof Function && D.tagNameCheck(l)) return !1;
+        }
+        if (Re && !Je[l]) {
+          const t = w(e) || e.parentNode,
+            r = v(e) || e.childNodes;
+          if (r && t) {
+            for (let l = r.length - 1; l >= 0; --l) {
+              const i = u(r[l], !0);
+              (i.__removalCount = (e.__removalCount || 0) + 1), t.insertBefore(i, k(e));
+            }
+          }
+        }
+        return xt(e), !0;
+      }
+      return e instanceof c && !Lt(e)
+        ? (xt(e), !0)
+        : ('noscript' !== l && 'noembed' !== l && 'noframes' !== l) || !he(/<\/no(script|embed|frames)/i, e.innerHTML)
+        ? (X &&
+            e.nodeType === De &&
+            ((t = e.textContent),
+            Q([E, H, _], e => {
+              t = ae(t, e, ' ');
+            }),
+            e.textContent !== t && (re(r.removed, { element: e.cloneNode() }), (e.textContent = t))),
+          Et(T.afterSanitizeElements, e, null),
+          !1)
+        : (xt(e), !0);
+    },
+    _t = function (e, t, r) {
+      if (Ve && ('id' === t || 'name' === t) && (r in l || r in ft)) return !1;
+      if (G && !Z[t] && he(A, t));
+      else if (U && he($, t));
+      else if (!P[t] || Z[t]) {
+        if (
+          !(
+            (At(e) &&
+              ((D.tagNameCheck instanceof RegExp && he(D.tagNameCheck, e)) ||
+                (D.tagNameCheck instanceof Function && D.tagNameCheck(e))) &&
+              ((D.attributeNameCheck instanceof RegExp && he(D.attributeNameCheck, t)) ||
+                (D.attributeNameCheck instanceof Function && D.attributeNameCheck(t)))) ||
+            ('is' === t &&
+              D.allowCustomizedBuiltInElements &&
+              ((D.tagNameCheck instanceof RegExp && he(D.tagNameCheck, r)) ||
+                (D.tagNameCheck instanceof Function && D.tagNameCheck(r))))
+          )
+        )
+          return !1;
+      } else if (et[t]);
+      else if (he(I, ae(r, O, '')));
+      else if (
+        ('src' !== t && 'xlink:href' !== t && 'href' !== t) ||
+        'script' === e ||
+        0 !== ne(r, 'data:') ||
+        !Xe[e]
+      ) {
+        if (q && !he(V, ae(r, O, '')));
+        else if (r) return !1;
+      } else;
+      return !0;
+    },
+    At = function (e) {
+      return 'annotation-xml' !== e && se(e, B);
+    },
+    $t = function (e) {
+      Et(T.beforeSanitizeAttributes, e, null);
+      const { attributes: t } = e;
+      if (!t || St(e)) return;
+      const l = { attrName: '', attrValue: '', keepAttr: !0, allowedAttributes: P, forceKeepAttr: void 0 };
+      let i = t.length;
+      for (; i--; ) {
+        const o = t[i],
+          { name: s, namespaceURI: a, value: n } = o,
+          c = Ct(s),
+          d = n;
+        let h = 'value' === s ? d : ce(d);
+        if (
+          ((l.attrName = c),
+          (l.attrValue = h),
+          (l.keepAttr = !0),
+          (l.forceKeepAttr = void 0),
+          Et(T.uponSanitizeAttribute, e, l),
+          (h = l.attrValue),
+          !Be || ('id' !== c && 'name' !== c) || (Mt(s, e), (h = Ie + h)),
+          pe && he(/((--!?|])>)|<\/(style|title)/i, h))
+        ) {
+          Mt(s, e);
+          continue;
+        }
+        if (l.forceKeepAttr) continue;
+        if (!l.keepAttr) {
+          Mt(s, e);
+          continue;
+        }
+        if (!Y && he(/\/>/i, h)) {
+          Mt(s, e);
+          continue;
+        }
+        X &&
+          Q([E, H, _], e => {
+            h = ae(h, e, ' ');
+          });
+        const g = Ct(e.nodeName);
+        if (_t(g, c, h)) {
+          if (b && 'object' == typeof m && 'function' == typeof m.getAttributeType)
+            if (a);
+            else
+              switch (m.getAttributeType(g, c)) {
+                case 'TrustedHTML':
+                  h = b.createHTML(h);
+                  break;
+                case 'TrustedScriptURL':
+                  h = b.createScriptURL(h);
+              }
+          if (h !== d)
+            try {
+              a ? e.setAttributeNS(a, s, h) : e.setAttribute(s, h), St(e) ? xt(e) : te(r.removed);
+            } catch (t) {
+              Mt(s, e);
+            }
+        } else Mt(s, e);
+      }
+      Et(T.afterSanitizeAttributes, e, null);
+    },
+    Vt = function e(t) {
+      let r = null;
+      const l = yt(t);
+      for (Et(T.beforeSanitizeShadowDOM, t, null); (r = l.nextNode()); )
+        Et(T.uponSanitizeShadowNode, r, null), Ht(r), $t(r), r.content instanceof s && e(r.content);
+      Et(T.afterSanitizeShadowDOM, t, null);
+    };
+  return (
+    (r.sanitize = function (e) {
+      let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
+        l = null,
+        o = null,
+        a = null,
+        c = null;
+      if (((st = !e), st && (e = '\x3c!--\x3e'), 'string' != typeof e && !Tt(e))) {
+        if ('function' != typeof e.toString) throw ge('toString is not a function');
+        if ('string' != typeof (e = e.toString())) throw ge('dirty is not a string, aborting');
+      }
+      if (!r.isSupported) return e;
+      if ((ue || vt(t), (r.removed = []), 'string' == typeof e && (Ke = !1), Ke)) {
+        if (e.nodeName) {
+          const t = Ct(e.nodeName);
+          if (!W[t] || F[t]) throw ge('root node is forbidden and cannot be sanitized in-place');
+        }
+      } else if (e instanceof n)
+        (l = zt('\x3c!----\x3e')),
+          (o = l.ownerDocument.importNode(e, !0)),
+          (o.nodeType === Ne && 'BODY' === o.nodeName) || 'HTML' === o.nodeName ? (l = o) : l.appendChild(o);
+      else {
+        if (!_e && !X && !me && -1 === e.indexOf('<')) return b && $e ? b.createHTML(e) : e;
+        if (((l = zt(e)), !l)) return _e ? null : $e ? L : '';
+      }
+      l && He && xt(l.firstChild);
+      const d = yt(Ke ? e : l);
+      for (; (a = d.nextNode()); ) Ht(a), $t(a), a.content instanceof s && Vt(a.content);
+      if (Ke) return e;
+      if (_e) {
+        if (Ae) for (c = z.call(l.ownerDocument); l.firstChild; ) c.appendChild(l.firstChild);
+        else c = l;
+        return (P.shadowroot || P.shadowrootmode) && (c = S.call(i, c, !0)), c;
+      }
+      let h = me ? l.outerHTML : l.innerHTML;
+      return (
+        me &&
+          W['!doctype'] &&
+          l.ownerDocument &&
+          l.ownerDocument.doctype &&
+          l.ownerDocument.doctype.name &&
+          he(We, l.ownerDocument.doctype.name) &&
+          (h = '<!DOCTYPE ' + l.ownerDocument.doctype.name + '>\n' + h),
+        X &&
+          Q([E, H, _], e => {
+            h = ae(h, e, ' ');
+          }),
+        b && $e ? b.createHTML(h) : h
+      );
+    }),
+    (r.setConfig = function () {
+      let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+      vt(e), (ue = !0);
+    }),
+    (r.clearConfig = function () {
+      (ut = null), (ue = !1);
+    }),
+    (r.isValidAttribute = function (e, t, r) {
+      ut || vt({});
+      const l = Ct(e),
+        i = Ct(t);
+      return _t(l, i, r);
+    }),
+    (r.addHook = function (e, t) {
+      'function' == typeof t && re(T[e], t);
+    }),
+    (r.removeHook = function (e, t) {
+      if (void 0 !== t) {
+        const r = ee(T[e], t);
+        return -1 === r ? void 0 : le(T[e], r, 1)[0];
+      }
+      return te(T[e]);
+    }),
+    (r.removeHooks = function (e) {
+      T[e] = [];
+    }),
+    (r.removeAllHooks = function () {
+      T = {
+        afterSanitizeAttributes: [],
+        afterSanitizeElements: [],
+        afterSanitizeShadowDOM: [],
+        beforeSanitizeAttributes: [],
+        beforeSanitizeElements: [],
+        beforeSanitizeShadowDOM: [],
+        uponSanitizeAttribute: [],
+        uponSanitizeElement: [],
+        uponSanitizeShadowNode: [],
+      };
+    }),
+    r
+  );
+})();
+const qe = ({ iconType: t }) => {
+  var l;
+  const [i, o] = e.useState(''),
+    s = e.useRef(),
+    { params: a, colorTheme: n, config: c } = e.useContext(A),
+    { bulkIconColor: d } = n,
+    h = t ? t.toLowerCase().trim() : '';
+  e.useEffect(() => {
+    (() => {
+      if (!s.current) return;
+      const { width: e, height: t } = s.current.getBoundingClientRect(),
+        r = null != a && a.isHorizontal ? t > e : e > t;
+      o(r ? 'bulk__sticker--album' : 'bulk__sticker--portrait');
+    })();
+  }, []);
+  let g = D.get(h);
+  g = h && (null === (l = g) || void 0 === l ? void 0 : l.replace('$stickerColor', d));
+  const p = Ke.sanitize(g),
+    m = c.scaleType === w.ZOOM ? 'zoomed_bulk__sticker' : 'bulk__sticker';
+  return r.default.createElement(
+    'div',
+    { className: `${m} ${i}`, ref: s },
+    h && r.default.createElement('div', { className: 'bulk__icon', dangerouslySetInnerHTML: { __html: p } })
+  );
+};
+function Je(e, t) {
+  void 0 === t && (t = {});
+  var r = t.insertAt;
+  if (e && 'undefined' != typeof document) {
+    var l = document.head || document.getElementsByTagName('head')[0],
+      i = document.createElement('style');
+    (i.type = 'text/css'),
+      'top' === r && l.firstChild ? l.insertBefore(i, l.firstChild) : l.appendChild(i),
+      i.styleSheet ? (i.styleSheet.cssText = e) : i.appendChild(document.createTextNode(e));
+  }
+}
+Je(
+  '.bulk{position:absolute;transform-style:preserve-3d}.bulk__icon{display:block;height:100%;object-fit:contain;width:100%}.bulk__sticker_wrap{left:0;position:absolute;top:0;width:100%}.bulk__sticker,.zoomed_bulk__sticker{left:50%;position:absolute;top:50%;transform:translate(-50%,-50%)}.bulk__sticker--album{height:2em;width:4em}.bulk__sticker--portrait{height:4em;width:2em}'
+);
+const Ye = { 26: 1, 27: 1, 28: 1 },
+  Xe = ({ id: t, type: l, align: i, width: o, height: s, iconType: a, xOffset: n, topOffset: c }) => {
+    var d, h, g;
+    const { params: p, config: m, colorTheme: C } = e.useContext(A),
+      { bulkBaseColor: u, bulkCutColor: f, bulkIconColor: k, bulkFloorIconColor: v } = C,
+      [b, L] = e.useState(0),
+      x = e.useRef(null),
+      { isSafari: M } = P(),
+      [z, y] = e.useState(() => {
+        const e = Ye[t] || 0.7,
+          r = Math.floor(o * e),
+          l = Math.floor(s * e),
+          a = i === E.left ? Math.max(n, 0) : 'auto',
+          d = i === E.right ? Math.max(n, 0) : 'auto',
+          h = p.visibleWings ? C.wingsWidth : 0,
+          g = p.visibleCabinTitles ? C.cabinTitlesWidth : 0,
+          m = p.innerWidth / 2 - Math.max(h, g) - C.fuselageStrokeWidth,
+          u = (0.775 * o) / 2,
+          f = i === E.center && n ? Math.floor(n + m - u) : 'auto';
+        return {
+          top: c,
+          left: i === E.left ? a : f,
+          right: d,
+          width: r,
+          height: l,
+          transform: i === E.right ? 'scaleX(-1)' : '',
+        };
+      });
+    e.useEffect(() => {
+      (() => {
+        const e = z.width > z.height ? z.width / 10 : z.height / 10,
+          t = { ...z };
+        (t.fontSize = `${Math.round(e)}px`), y(t);
+      })(),
+        (() => {
+          if (!x.current) return;
+          const e = x.current.querySelector('.bulk-base');
+          if (!e) return;
+          const t = e.getBoundingClientRect(),
+            r = null != p && p.isHorizontal ? t.width : t.height,
+            l = M && (null == m ? void 0 : m.scaleType) === w.ZOOM ? r : r * (null == p ? void 0 : p.antiScale),
+            i = Math.round(z.height - 0.7 * l);
+          L(i);
+        })();
+    }, []);
+    let S = N.get(t);
+    if (!S) return r.default.createElement('div', { className: 'bulk', ref: x });
+    (S = null === (d = S) || void 0 === d ? void 0 : d.replace('$baseColor', u)),
+      (S = null === (h = S) || void 0 === h ? void 0 : h.replace('$cutColor', f)),
+      (S = null === (g = S) || void 0 === g ? void 0 : g.split('$stickerColor').join(v || k));
+    const T = Ke.sanitize(S);
+    return r.default.createElement(
+      'div',
+      { className: 'bulk', style: z, ref: x, 'data-testid': 'jets-bulk' },
+      r.default.createElement('div', { className: 'bulk__icon', dangerouslySetInnerHTML: { __html: T } }),
+      r.default.createElement(
+        'div',
+        { className: 'bulk__sticker_wrap', style: { height: `${b}px` } },
+        r.default.createElement(qe, { iconType: a })
+      )
+    );
+  };
+Je(
+  '.jets-btn{-webkit-font-smoothing:antialiased;background-color:#4071b9;border:1px solid #ccc;border-radius:2px;color:#fff;cursor:pointer;display:inline-block;font-family:inherit;font-size:14px;font-weight:600;height:40px;line-height:1.5;padding:9.5px 18px;text-align:center;text-decoration:none;vertical-align:middle}.jets-btn:disabled{background-color:#ccc!important;color:#000!important;cursor:not-allowed}'
+);
+const Qe = ({ content: e, onClick: t, className: l, disabled: o, active: s, ...a }) =>
+  r.default.createElement('button', i({}, a, { className: l, onClick: t, disabled: o }), e);
+Qe.defaultProps = { content: 'Btn', className: 'jets-btn', disabled: !1, active: !1, onClick: () => {} };
+Je(
+  '.deck-exit{height:72px;position:absolute;width:72px;z-index:-1}.deck-bulk__image{display:block;height:100%;object-fit:contain;width:100%}'
+);
+const et = ({ type: t, topOffset: l }) => {
+  const { colorTheme: i } = e.useContext(A),
+    { exitIconUrlLeft: o, exitIconUrlRight: s } = i,
+    a = !o || !s,
+    [n, c] = e.useState(() => ({ top: l, left: 'left' === t ? 0 : 'auto', right: 'right' === t ? 0 : 'auto' }));
+  return r.default.createElement(
+    'div',
+    { className: 'deck-exit', style: n, 'data-testid': 'jets-exit' },
+    a
+      ? r.default.createElement('span', {
+          className: 'deck-exit__image',
+          dangerouslySetInnerHTML: {
+            __html:
+              'left' === t
+                ? '<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="114pt" height="114pt" viewBox="0 0 114 114" preserveAspectRatio="xMidYMid meet"><g transform="translate(0,114) scale(0.1,-0.1)" fill="#d00434" stroke="none"><path d="M635 922 c-115 -85 -269 -198 -341 -251 l-132 -96 344 -252 344 -252 0 129 0 129 95 -54 95 -54 0 354 0 354 -95 -54 -94 -53 -3 127 -3 127 -210 -154z"/></g></svg>'
+                : '<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="114pt" height="114pt" viewBox="0 0 114 114" preserveAspectRatio="xMidYMid meet"><g transform="translate(0,114) scale(0.1,-0.1)" fill="#d00434" stroke="none"><path d="M290 950 l0 -129 -95 54 -95 54 0 -354 0 -354 95 54 95 54 0 -129 0 -129 344 252 c334 245 343 252 322 268 -11 9 -166 122 -343 252 l-323 236 0 -129z"/></g></svg>',
+          },
+        })
+      : r.default.createElement('img', { className: 'deck-exit__image', src: 'left' === t ? o : s })
+  );
+};
+Je('.jets-deck--title{font-size:18px;font-weight:700;position:absolute;top:0}');
+const tt = ({ number: t, lang: l, localeKey: i }) => {
+    const { config: o, params: s, colorTheme: a } = e.useContext(A),
+      n = e.useRef(null),
+      { isSafari: c } = P(),
+      d = c && (null == o ? void 0 : o.scaleType) === w.ZOOM,
+      h = {
+        transform: d ? void 0 : `scale(${s.antiScale}) translateY(30px)`,
+        zoom: d ? s.antiScale : void 0,
+        height: '80px',
+        color: a.deckLabelTitleColor,
+      };
+    return r.default.createElement('div', { className: 'jets-deck--title', style: h, ref: n }, z[l][i], ': ', t);
+  },
+  rt = {
+    getSeatIcon(e, t) {
+      if (!e) return;
+      const [r, l] = e.split('-'),
+        i = parseInt(l, 10);
+      if (i <= 4)
+        switch (r) {
+          case 'F':
+            return lt.getTemplate(i, t);
+          case 'B':
+            return it.getTemplate(i, t);
+          case 'P':
+            return ot.getTemplate(t);
+          default:
+            return st.getTemplate(i, t);
+        }
+      return at.getTemplate(i, t);
+    },
+  },
+  lt = {
+    getTemplate(e, t) {
+      return 1 === e ? this._type1(t) : 2 === e ? this._type2(t) : 3 === e ? this._type3(t) : this._default(t);
+    },
+    _type1: e =>
+      `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg">\n            <g class="seat" transform="scale(1)"><path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M127.05,89.33H12.38V13.83A9.67,9.67,0,0,1,22,4.17,455.22,455.22,0,0,1,69.72,1.5a436.21,436.21,0,0,1,47.71,2.67,9.67,9.67,0,0,1,9.63,9.66Z"></path>\n            <path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M12.38,89.33H127.05a0,0,0,0,1,0,0v36.26a7.59,7.59,0,0,1-7.59,7.59H20a7.59,7.59,0,0,1-7.59-7.59V89.33A0,0,0,0,1,12.38,89.33Z"></path><path stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.armrestColor}" class="bc" d="M13.84,131.7H3.08A3.09,3.09,0,0,1,0,128.61V33a3.09,3.09,0,0,1,3.08-3.08H13.84A3.09,3.09,0,0,1,16.93,33v95.64A3.09,3.09,0,0,1,13.84,131.7ZM140,128.61V33a3.09,3.09,0,0,0-3.08-3.08H126.57A3.09,3.09,0,0,0,123.49,33v95.64a3.09,3.09,0,0,0,3.08,3.08h10.34A3.09,3.09,0,0,0,140,128.61Z"></path>\n            <path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M118.59,146.5H20.86c-3.83,0-7-3.93-7-8.77v-10.2c0-4.84,3.12-8.77,7-8.77l.27,0A272.65,272.65,0,0,0,69.72,123a293.15,293.15,0,0,0,48.61-4.24l.25,0c3.83,0,7,3.93,7,8.77v10.2C125.54,142.57,122.42,146.5,118.59,146.5Z"></path>\n            <path stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" class="cf" d="M94.24,140.35H45.19a4.13,4.13,0,0,1-4.13-4.14V122a4.15,4.15,0,0,1,.11-.93l3.65-7a4.13,4.13,0,0,1,4-3.21H90.1a4.13,4.13,0,0,1,4,3.09L98.24,121a4.15,4.15,0,0,1,.13,1v14.2A4.13,4.13,0,0,1,94.24,140.35Z"></path>\n            </g>\n        </svg>`,
+    _type2: e =>
+      `<svg version="1.1" baseProfile="full" viewBox="0 0 110 100" xmlns="http://www.w3.org/2000/svg">\n      <g class="seat" transform="scale(2)"><rect fill="${e.armrestColor}" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <rect fill="${e.armrestColor}" x="49.02" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M44.94,1.07C40.15.71,33.1,0,26.87,0,21.37,0,13.66.47,9.35.93A4.41,4.41,0,0,0,5.41,5.31V33H49V5.47A4.41,4.41,0,0,0,44.94,1.07Z" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M47.56,37.58h-40a2.85,2.85,0,0,1-2.85-2.85V31.43a2.85,2.85,0,0,1,2.85-2.85h.11A139.86,139.86,0,0,0,27.56,30a150.41,150.41,0,0,0,19.9-1.38h.1a2.85,2.85,0,0,1,2.85,2.85v3.31A2.85,2.85,0,0,1,47.56,37.58Z" />\n        <rect fill="rgb(255, 255, 255)" x="19.25" y="28.88" width="15.92" height="5.47" rx="2.02" ry="2.02" />\n      </g></svg>`,
+    _type3: e =>
+      `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg">\n      <g class="seat" transform="scale(2)"><rect fill="${e.armrestColor}" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <rect fill="${e.armrestColor}" x="49.02" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M44.94,1.07C40.15.71,33.1,0,26.87,0,21.37,0,13.66.47,9.35.93A4.41,4.41,0,0,0,5.41,5.31V33H49V5.47A4.41,4.41,0,0,0,44.94,1.07Z" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M47.56,37.58h-40a2.85,2.85,0,0,1-2.85-2.85V31.43a2.85,2.85,0,0,1,2.85-2.85h.11A139.86,139.86,0,0,0,27.56,30a150.41,150.41,0,0,0,19.9-1.38h.1a2.85,2.85,0,0,1,2.85,2.85v3.31A2.85,2.85,0,0,1,47.56,37.58Z" />\n        <rect fill="rgb(255, 255, 255)" x="19.25" y="28.88" width="15.92" height="5.47" rx="2.02" ry="2.02" />\n      </g></svg>`,
+    _default: e =>
+      `<svg version="1.1" baseProfile="full" viewBox="0 0 150 220" xmlns="http://www.w3.org/2000/svg">\n      <g class="seat" transform="scale(1.2)">\n      <path class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M89.24,20c-.34-7.62-6.46-6.61-9.52-10.33S78.71.5,70.55.5H29.75c-8.16,0-6.12,5.42-9.18,9.15S11.4,12.37,11.06,20s0,13.74,0,13.74H89.24S89.58,27.61,89.24,20Z"></path>\n      <path class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M85,72.8H16.81a6.89,6.89,0,0,1-6.88-6.86V37.14a6.89,6.89,0,0,1,6.88-6.86,326.72,326.72,0,0,1,34.08-1.9A313.07,313.07,0,0,1,85,30.27a6.89,6.89,0,0,1,6.88,6.86v28.8A6.89,6.89,0,0,1,85,72.8Z"></path>\n      <rect class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" x="9.93" y="71.69" width="81.91" height="60.75" rx="7.59" ry="7.59"></rect>\n      <path class="bc" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.armrestColor}" d="M9,142.15H3.08A3.09,3.09,0,0,1,0,139.07V84.52a3.09,3.09,0,0,1,3.08-3.08H9a3.09,3.09,0,0,1,3.08,3.08v54.55A3.09,3.09,0,0,1,9,142.15Zm91-3.08V84.52a3.09,3.09,0,0,0-3.08-3.08H91.29a3.09,3.09,0,0,0-3.08,3.08v54.55a3.09,3.09,0,0,0,3.08,3.08h5.63A3.09,3.09,0,0,0,100,139.07Z"></path>\n      <path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M84.71,145.5H14.9c-2.74,0-5-2.8-5-6.23V132c0-3.44,2.23-6.23,5-6.23l.19,0a195.67,195.67,0,0,0,34.71,3,210.38,210.38,0,0,0,34.72-3l.18,0c2.74,0,5,2.8,5,6.23v7.25C89.67,142.7,87.44,145.5,84.71,145.5Z"></path>\n      <path class="cf" fill="white" stroke="white" d="M67.32,141.13h-35a2.94,2.94,0,0,1-2.95-2.94V128.06a2.93,2.93,0,0,1,.08-.66L32,116.12a3,3,0,0,1,2.87-2.28H64.35a3,3,0,0,1,2.85,2.2l3,11.31a2.93,2.93,0,0,1,.1.74v10.09A2.94,2.94,0,0,1,67.32,141.13Z"></path>\n      </g></svg>`,
+  },
+  it = {
+    getTemplate(e, t) {
+      return 1 === e ? this._type1(t) : 4 === e ? this._type4(t) : this._default(t);
+    },
+    _type1: e =>
+      `<svg version="1.1" baseProfile="full" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">\n            <g class="seat" transform="scale(1)">\n                <path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M127.05,89.33H12.38V13.83A9.67,9.67,0,0,1,22,4.17,455.22,455.22,0,0,1,69.72,1.5a436.21,436.21,0,0,1,47.71,2.67,9.67,9.67,0,0,1,9.63,9.66Z"></path>\n                <path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M12.38,89.33H127.05a0,0,0,0,1,0,0v36.26a7.59,7.59,0,0,1-7.59,7.59H20a7.59,7.59,0,0,1-7.59-7.59V89.33A0,0,0,0,1,12.38,89.33Z"></path><path stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.armrestColor}" class="bc" d="M13.84,131.7H3.08A3.09,3.09,0,0,1,0,128.61V33a3.09,3.09,0,0,1,3.08-3.08H13.84A3.09,3.09,0,0,1,16.93,33v95.64A3.09,3.09,0,0,1,13.84,131.7ZM140,128.61V33a3.09,3.09,0,0,0-3.08-3.08H126.57A3.09,3.09,0,0,0,123.49,33v95.64a3.09,3.09,0,0,0,3.08,3.08h10.34A3.09,3.09,0,0,0,140,128.61Z"></path>\n                <path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M118.59,146.5H20.86c-3.83,0-7-3.93-7-8.77v-10.2c0-4.84,3.12-8.77,7-8.77l.27,0A272.65,272.65,0,0,0,69.72,123a293.15,293.15,0,0,0,48.61-4.24l.25,0c3.83,0,7,3.93,7,8.77v10.2C125.54,142.57,122.42,146.5,118.59,146.5Z"></path><path stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" class="cf" d="M94.24,140.35H45.19a4.13,4.13,0,0,1-4.13-4.14V122a4.15,4.15,0,0,1,.11-.93l3.65-7a4.13,4.13,0,0,1,4-3.21H90.1a4.13,4.13,0,0,1,4,3.09L98.24,121a4.15,4.15,0,0,1,.13,1v14.2A4.13,4.13,0,0,1,94.24,140.35Z"></path>\n            </g>\n        </svg>`,
+    _type4: e =>
+      `<svg version="1.1" baseProfile="full" width="122" height="220" xmlns="http://www.w3.org/2000/svg"><g class="seat" transform="scale(1.2)"><path class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M89.24,20c-.34-7.62-6.46-6.61-9.52-10.33S78.71.5,70.55.5H29.75c-8.16,0-6.12,5.42-9.18,9.15S11.4,12.37,11.06,20s0,13.74,0,13.74H89.24S89.58,27.61,89.24,20Z"></path><path class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M85,72.8H16.81a6.89,6.89,0,0,1-6.88-6.86V37.14a6.89,6.89,0,0,1,6.88-6.86,326.72,326.72,0,0,1,34.08-1.9A313.07,313.07,0,0,1,85,30.27a6.89,6.89,0,0,1,6.88,6.86v28.8A6.89,6.89,0,0,1,85,72.8Z"></path><rect class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" x="9.93" y="71.69" width="81.91" height="60.75" rx="7.59" ry="7.59"></rect><path class="bc" stroke="${e.strokeColor}" fill="${e.armrestColor}" stroke-width="${e.strokeWidth}" d="M9,142.15H3.08A3.09,3.09,0,0,1,0,139.07V84.52a3.09,3.09,0,0,1,3.08-3.08H9a3.09,3.09,0,0,1,3.08,3.08v54.55A3.09,3.09,0,0,1,9,142.15Zm91-3.08V84.52a3.09,3.09,0,0,0-3.08-3.08H91.29a3.09,3.09,0,0,0-3.08,3.08v54.55a3.09,3.09,0,0,0,3.08,3.08h5.63A3.09,3.09,0,0,0,100,139.07Z"></path><path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M84.71,145.5H14.9c-2.74,0-5-2.8-5-6.23V132c0-3.44,2.23-6.23,5-6.23l.19,0a195.67,195.67,0,0,0,34.71,3,210.38,210.38,0,0,0,34.72-3l.18,0c2.74,0,5,2.8,5,6.23v7.25C89.67,142.7,87.44,145.5,84.71,145.5Z"></path><path class="cf" fill="white" stroke="white" d="M67.32,141.13h-35a2.94,2.94,0,0,1-2.95-2.94V128.06a2.93,2.93,0,0,1,.08-.66L32,116.12a3,3,0,0,1,2.87-2.28H64.35a3,3,0,0,1,2.85,2.2l3,11.31a2.93,2.93,0,0,1,.1.74v10.09A2.94,2.94,0,0,1,67.32,141.13Z"></path></g></svg>`,
+    _default: e =>
+      `<svg version="1.1" baseProfile="full" viewBox="0 0 110 100" xmlns="http://www.w3.org/2000/svg">\n        <g class="seat" transform="scale(2)">\n          <rect fill="${e.armrestColor}" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n          <rect fill="${e.armrestColor}" x="49.02" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" /><path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M44.94,1.07C40.15.71,33.1,0,26.87,0,21.37,0,13.66.47,9.35.93A4.41,4.41,0,0,0,5.41,5.31V33H49V5.47A4.41,4.41,0,0,0,44.94,1.07Z" />\n          <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M47.56,37.58h-40a2.85,2.85,0,0,1-2.85-2.85V31.43a2.85,2.85,0,0,1,2.85-2.85h.11A139.86,139.86,0,0,0,27.56,30a150.41,150.41,0,0,0,19.9-1.38h.1a2.85,2.85,0,0,1,2.85,2.85v3.31A2.85,2.85,0,0,1,47.56,37.58Z" />\n          <rect fill="rgb(255, 255, 255)" x="19.25" y="28.88" width="15.92" height="5.47" rx="2.02" ry="2.02" />\n      </g></svg>`,
+  },
+  ot = {
+    getTemplate: e =>
+      `<svg version="1.1" baseProfile="full" viewBox="0 -3 110 100" width="110" height="100" xmlns="http://www.w3.org/2000/svg">\n        <g class="seat" transform="scale(2)"><rect fill="${e.armrestColor}" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <rect fill="${e.armrestColor}" x="49.02" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M44.94,1.07C40.15.71,33.1,0,26.87,0,21.37,0,13.66.47,9.35.93A4.41,4.41,0,0,0,5.41,5.31V33H49V5.47A4.41,4.41,0,0,0,44.94,1.07Z" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M47.56,37.58h-40a2.85,2.85,0,0,1-2.85-2.85V31.43a2.85,2.85,0,0,1,2.85-2.85h.11A139.86,139.86,0,0,0,27.56,30a150.41,150.41,0,0,0,19.9-1.38h.1a2.85,2.85,0,0,1,2.85,2.85v3.31A2.85,2.85,0,0,1,47.56,37.58Z" />\n        <rect fill="rgb(255, 255, 255)" x="19.25" y="28.88" width="15.92" height="5.47" rx="2.02" ry="2.02" />\n        </g></svg>`,
+  },
+  st = {
+    getTemplate(e, t) {
+      return 4 === e ? this._type4(t) : this._default(t);
+    },
+    _type4: e =>
+      `<svg version="1.1" baseProfile="full" width="122" height="220" xmlns="http://www.w3.org/2000/svg"><g class="seat" transform="scale(1.2)"><path class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M89.24,20c-.34-7.62-6.46-6.61-9.52-10.33S78.71.5,70.55.5H29.75c-8.16,0-6.12,5.42-9.18,9.15S11.4,12.37,11.06,20s0,13.74,0,13.74H89.24S89.58,27.61,89.24,20Z"></path><path class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M85,72.8H16.81a6.89,6.89,0,0,1-6.88-6.86V37.14a6.89,6.89,0,0,1,6.88-6.86,326.72,326.72,0,0,1,34.08-1.9A313.07,313.07,0,0,1,85,30.27a6.89,6.89,0,0,1,6.88,6.86v28.8A6.89,6.89,0,0,1,85,72.8Z"></path><rect class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" x="9.93" y="71.69" width="81.91" height="60.75" rx="7.59" ry="7.59"></rect><path class="bc" stroke="${e.strokeColor}" fill="${e.armrestColor}" stroke-width="${e.strokeWidth}" d="M9,142.15H3.08A3.09,3.09,0,0,1,0,139.07V84.52a3.09,3.09,0,0,1,3.08-3.08H9a3.09,3.09,0,0,1,3.08,3.08v54.55A3.09,3.09,0,0,1,9,142.15Zm91-3.08V84.52a3.09,3.09,0,0,0-3.08-3.08H91.29a3.09,3.09,0,0,0-3.08,3.08v54.55a3.09,3.09,0,0,0,3.08,3.08h5.63A3.09,3.09,0,0,0,100,139.07Z"></path><path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M84.71,145.5H14.9c-2.74,0-5-2.8-5-6.23V132c0-3.44,2.23-6.23,5-6.23l.19,0a195.67,195.67,0,0,0,34.71,3,210.38,210.38,0,0,0,34.72-3l.18,0c2.74,0,5,2.8,5,6.23v7.25C89.67,142.7,87.44,145.5,84.71,145.5Z"></path><path class="cf" fill="white" stroke="white" d="M67.32,141.13h-35a2.94,2.94,0,0,1-2.95-2.94V128.06a2.93,2.93,0,0,1,.08-.66L32,116.12a3,3,0,0,1,2.87-2.28H64.35a3,3,0,0,1,2.85,2.2l3,11.31a2.93,2.93,0,0,1,.1.74v10.09A2.94,2.94,0,0,1,67.32,141.13Z"></path></g></svg>`,
+    _default: e =>
+      `<svg version="1.1" baseProfile="full" viewBox="0 -3 110 100" width="86" height="100" xmlns="http://www.w3.org/2000/svg">\n        <g class="seat" transform="scale(2)">\n        <rect fill="${e.armrestColor}" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <rect fill="${e.armrestColor}" x="49.02" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M44.94,1.07C40.15.71,33.1,0,26.87,0,21.37,0,13.66.47,9.35.93A4.41,4.41,0,0,0,5.41,5.31V33H49V5.47A4.41,4.41,0,0,0,44.94,1.07Z" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M47.56,37.58h-40a2.85,2.85,0,0,1-2.85-2.85V31.43a2.85,2.85,0,0,1,2.85-2.85h.11A139.86,139.86,0,0,0,27.56,30a150.41,150.41,0,0,0,19.9-1.38h.1a2.85,2.85,0,0,1,2.85,2.85v3.31A2.85,2.85,0,0,1,47.56,37.58Z" />\n        <rect fill="rgb(255, 255, 255)" x="19.25" y="28.88" width="15.92" height="5.47" rx="2.02" ry="2.02" />\n        </g></svg>`,
+  },
+  at = {
+    _mapping: {
+      5: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat"> <polygon fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="4.1,43 67.1,43 115.6,188 81.1,197.7 27.7,182.8 3.3,161.5"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M145.8,138.9l53.6-3.3v42.5h-19.2c-0.5,0-1-0.2-1.5-0.5l-43-28.5L145.8,138.9z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M189.5,56.2c0.5-0.9,1.3-1.4,2.3-1.4l7.6-0.1v87.6l-63.1,1.6L189.5,56.2z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M6.1,119.6L29,81.1l107,63.7l-22.9,38.3c-0.9,1.5-2.6,2.4-4.4,2.1c-7.2-1-27.2-5.4-56-21.9 c-29.2-16.6-42.2-32.9-46.3-38.9C5.3,123,5.2,121.1,6.1,119.6L6.1,119.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M27.7,83.3L75.6,2.7c1.1-1.9,3.6-2.6,5.6-1.8C90.6,5,116.8,16.4,134,26.6s39.7,27.7,47.6,34.2 c1.6,1.4,2.1,3.9,1,5.8l-47.9,80.5L27.7,83.3z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M45.5,115.2l-2.8,4.6l-0.4,0.7l-2.8,4.6c-0.7,0.9-0.4,2.2,0.3,2.9c3.2,3.1,11.9,11.2,23.4,18 c11.6,6.9,22.7,10.7,27,12c1,0.4,2.1,0,2.7-1l2.8-4.6l0.4-0.7l2.8-4.6c0.7-0.9,0.4-2.2-0.3-2.9c-3.2-3.1-11.8-11.1-23.4-18 c-11.6-6.9-22.7-10.7-27-12C47.2,113.9,46.1,114.3,45.5,115.2z"/> <path fill="rgb(235, 235, 235)" d="M5,42v107.4c0,2.4,0.9,4.7,2.5,6.6c8.7,10,21,22.2,33.5,27.1c18.4,7.3,51.5,7.1,64.8,6.7c2.1-0.1,3.9-1.1,5-2.9 l24-39.6l6.1-10H200v10h-53.6l-27.1,44.8c-2.8,4.7-7.8,7.6-13.2,7.7c-2.8,0.1-6.4,0.2-10.6,0.2c-16.7,0-42.1-1.2-58.2-7.5 C23,186.8,9.4,173.6,0,162.8l0-8.1L0,42H5z"/> </g> </svg>`,
+      6: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <polygon fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="4.1,43 67.1,43 115.6,188 81.1,197.7 27.7,182.8 3.3,161.5"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M145.8,138.9l53.6-3.3v42.5h-19.2c-0.5,0-1-0.2-1.5-0.5l-43-28.5L145.8,138.9z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M189.5,56.2c0.5-0.9,1.3-1.4,2.3-1.4l7.6-0.1v87.6l-63.1,1.6L189.5,56.2z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M6.1,119.6L29,81.1l107,63.7l-22.9,38.3c-0.9,1.5-2.6,2.4-4.4,2.1c-7.2-1-27.2-5.4-56-21.9 c-29.2-16.6-42.2-32.9-46.3-38.9C5.3,123,5.2,121.1,6.1,119.6L6.1,119.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M27.7,83.3L75.6,2.7c1.1-1.9,3.6-2.6,5.6-1.8C90.6,5,116.8,16.4,134,26.6s39.7,27.7,47.6,34.2 c1.6,1.4,2.1,3.9,1,5.8l-47.9,80.5L27.7,83.3z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M45.5,115.2l-2.8,4.6l-0.4,0.7l-2.8,4.6c-0.7,0.9-0.4,2.2,0.3,2.9c3.2,3.1,11.9,11.2,23.4,18 c11.6,6.9,22.7,10.7,27,12c1,0.4,2.1,0,2.7-1l2.8-4.6l0.4-0.7l2.8-4.6c0.7-0.9,0.4-2.2-0.3-2.9c-3.2-3.1-11.8-11.1-23.4-18 c-11.6-6.9-22.7-10.7-27-12C47.2,113.9,46.1,114.3,45.5,115.2z"/> <path fill="rgb(235, 235, 235)" d="M5,42v107.4c0,2.4,0.9,4.7,2.5,6.6c8.7,10,21,22.2,33.5,27.1c18.4,7.3,51.5,7.1,64.8,6.7c2.1-0.1,3.9-1.1,5-2.9 l24-39.6l6.1-10H200v10h-53.6l-27.1,44.8c-2.8,4.7-7.8,7.6-13.2,7.7c-2.8,0.1-6.4,0.2-10.6,0.2c-16.7,0-42.1-1.2-58.2-7.5 C23,186.8,9.4,173.6,0,162.8l0-8.1L0,42H5z"/> </g> </svg>`,
+      7: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 200" width="140" height="200"> <g class="seat"> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M3.2,139.6c-1.4,0-2.6-1.4-2.6-3.3V3.9c0-1.9,1.1-3.3,2.6-3.3h10.1c1.4,0,2.6,1.4,2.6,3.3v132.5 c0,1.8-1.1,3.3-2.6,3.3L3.2,139.6L3.2,139.6z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M126.7,139.6c-1.4,0-2.6-1.4-2.6-3.3V3.9c0-1.8,1.1-3.3,2.6-3.3h10.1c1.4,0,2.6,1.4,2.6,3.3v132.5 c0,1.8-1.1,3.3-2.6,3.3L126.7,139.6L126.7,139.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M123.9,98.4H15.8V17.3c0-1.9,1.4-3.5,3.4-3.8c8.8-1.2,33.3-4.3,50.7-4.3s42,3.2,50.8,4.3 c1.9,0.3,3.4,1.9,3.4,3.8L123.9,98.4C124,98.4,123.9,98.4,123.9,98.4z"/> <rect x="15.9" y="138.3" fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" width="108.1" height="39"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M123.9,188.2c0,1.6-1,3.1-2.5,3.5c-6.1,2.3-23.6,7.7-51.5,7.7s-45.4-5.4-51.5-7.7c-1.5-0.6-2.5-2-2.5-3.5v-11 H124L123.9,188.2L123.9,188.2z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M123.9,145c0,1.5-1,2.9-2.3,3.4c-5.7,2.7-22.7,9-51.8,8.4c-28.8-0.5-45.7-6.1-51.5-8.5c-1.4-0.6-2.4-2-2.4-3.5 V87.7H124L123.9,145L123.9,145z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M105.4,112.6c-5.3-1.2-19.2-4.2-35.4-4.2s-30.2,3-35.4,4.2c-1.2,0.3-2.2,1.4-2.2,2.8v6.5v1v6.5 c0,1.3,0.9,2.5,2.2,2.8c5.3,1.2,19.2,4.2,35.4,4.2s30.2-3,35.4-4.2c1.2-0.3,2.2-1.4,2.2-2.8v-6.5v-1v-6.5 C107.6,114,106.8,112.9,105.4,112.6z"/> </g> </svg>`,
+      8: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 200" width="150" height="200"> <g class="seat"> <polygon fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="108.7,161.8 138.7,170 149.3,130.6 149.3,29.8 145.5,28.8 "/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M57.8,146.8l81.5,21.3l-7.8,29c-0.3,1.2-1.3,2-2.6,2.1c-5.1,0.4-19.3,0.7-40.4-5.1s-33.2-13.3-37.2-16.2 c-1.1-0.7-1.5-2-1.2-3.1L57.8,146.8z"/> <polygon fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="0.6,130.7 0.6,30 29.5,38 12.1,133.8 "/> <path fill="rgb(235, 235, 235)" d="M38.3,2.4L0.8,128c-0.5,1.8,0.2,3.3,1.5,3.7l7.7,2.1l1.8,0.5l86.8,23.5l1.7,0.5l7.8,2.1 c1.4,0.4,2.9-0.7,3.4-2.4L149,32.4c0.5-1.8-0.2-3.3-1.5-3.7l-9.6-2.5c-1.4-0.4-2.9,0.7-3.4,2.4l-31,103.8l-81.8-22.2l31-103.8 c0.5-1.8-0.2-3.3-1.5-3.7l-9.6-2.6C40.3-0.4,38.8,0.7,38.3,2.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M21,115l12.4-41.6l81.4,22.3l-12.3,41.4c-0.4,1.2-1.4,2-2.6,2.1c-4.9,0.6-18.9,1.2-40.7-4.5 C37.1,129,25.7,121,22,117.9C21.1,117.2,20.7,116.1,21,115L21,115z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M33.3,73.6l17.2-58.9c0.4-1.4,1.9-2.2,3.4-2.1c6.9,1,26.1,3.8,39.2,7.3s31.8,10.8,38.2,13.6 c1.4,0.7,2.2,2,1.7,3.5l-18.3,58.8L33.3,73.6C33.3,73.6,33.2,73.5,33.3,73.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M39.7,96.9l-1.4,4.7l-0.2,0.7l-1.4,4.7c-0.4,1,0.2,2,1.1,2.5c3.7,2,13.4,7,25.7,10.3s23.3,4,27.6,4.2 c1.1,0,2-0.6,2.2-1.6l1.4-4.7l0.2-0.7l1.4-4.7c0.4-1-0.2-2-1.1-2.5c-3.6-2-13.4-7-25.6-10.3c-12.3-3.3-23.3-4-27.6-4.2 C41.1,95.3,40.2,96,39.7,96.9z"/> </g> </svg>`,
+      9: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 200" width="150" height="200"> <g class="seat" transform="scale(-1, 1) translate(-150,0)"> <polygon fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="108.7,161.8 138.7,170 149.3,130.6 149.3,29.8 145.5,28.8 "/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M57.8,146.8l81.5,21.3l-7.8,29c-0.3,1.2-1.3,2-2.6,2.1c-5.1,0.4-19.3,0.7-40.4-5.1s-33.2-13.3-37.2-16.2 c-1.1-0.7-1.5-2-1.2-3.1L57.8,146.8z"/> <polygon fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="0.6,130.7 0.6,30 29.5,38 12.1,133.8 "/> <path fill="rgb(235, 235, 235)" d="M38.3,2.4L0.8,128c-0.5,1.8,0.2,3.3,1.5,3.7l7.7,2.1l1.8,0.5l86.8,23.5l1.7,0.5l7.8,2.1 c1.4,0.4,2.9-0.7,3.4-2.4L149,32.4c0.5-1.8-0.2-3.3-1.5-3.7l-9.6-2.5c-1.4-0.4-2.9,0.7-3.4,2.4l-31,103.8l-81.8-22.2l31-103.8 c0.5-1.8-0.2-3.3-1.5-3.7l-9.6-2.6C40.3-0.4,38.8,0.7,38.3,2.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M21,115l12.4-41.6l81.4,22.3l-12.3,41.4c-0.4,1.2-1.4,2-2.6,2.1c-4.9,0.6-18.9,1.2-40.7-4.5 C37.1,129,25.7,121,22,117.9C21.1,117.2,20.7,116.1,21,115L21,115z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M33.3,73.6l17.2-58.9c0.4-1.4,1.9-2.2,3.4-2.1c6.9,1,26.1,3.8,39.2,7.3s31.8,10.8,38.2,13.6 c1.4,0.7,2.2,2,1.7,3.5l-18.3,58.8L33.3,73.6C33.3,73.6,33.2,73.5,33.3,73.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M39.7,96.9l-1.4,4.7l-0.2,0.7l-1.4,4.7c-0.4,1,0.2,2,1.1,2.5c3.7,2,13.4,7,25.7,10.3s23.3,4,27.6,4.2 c1.1,0,2-0.6,2.2-1.6l1.4-4.7l0.2-0.7l1.4-4.7c0.4-1-0.2-2-1.1-2.5c-3.6-2-13.4-7-25.6-10.3c-12.3-3.3-23.3-4-27.6-4.2 C41.1,95.3,40.2,96,39.7,96.9z"/> </g> </svg>`,
+      10: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="200" height="150"> <g class="seat"> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M31.8,3.2c-0.3-1.3-1.5-2.3-2.9-2.3L4,0.6V102h49.7L31.8,3.2z"/> <rect x="41.5" y="57.4" transform="matrix(2.089475e-03 -1 1 2.089475e-03 -56.8623 190.4811)" fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" width="51" height="132.6"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M55.7,100.5l22.6,25.2l39.7,21.6l40.1-11.3l41.3-26.7L199.3,43c0-1.7-1.3-3-3-3H44.2L55.7,100.5z"/> <path fill="rgb(235, 235, 235)" d="M98.7,146.2c-27.6-9.9-38.1-24.9-43.3-38.4c-6.3-16.4-16-68.3-16-68.3l10.3-0.2c0,0,10.2,49.5,15.3,65.6 c0.8,2.6,15.3,24,37.1,31.9c22.2,8,43.3-1.9,45.2-2.8l42.7-26.9V65.4c0-1.7,1.3-3,3-3h4c1.7,0,3,1.3,3,3v42.8 c0,2.8-1.4,5.3-3.7,6.8l-43.9,27.6l-0.3,0.2c-0.8,0.4-14,7.2-31.6,7.2C113.7,150,106.3,149,98.7,146.2z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M144.5,133.8c-0.5,1.1-1.5,1.8-2.5,1.9c-5,0.4-18.9,0.6-40-7.3c-20.9-7.9-31.7-16.3-35.3-19.6 c-0.9-0.8-1.2-2-0.8-3.1l16.5-46.2l78.6,28L144.5,133.8L144.5,133.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M81.3,62.6l21.4-60c0.5-1.5,1.9-2.2,3.4-1.9c6.7,1.4,25.4,5.5,37.9,10c12.6,4.5,29.7,13.2,35.8,16.3 c1.4,0.7,2,2.3,1.5,3.6l-21.4,60L81.3,62.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M136.8,108c-3.3-2.2-12.1-7.6-23.3-11.6c-11.1-4-21.5-5.4-25.4-5.8C87.2,90.5,86.3,91,86,92l-1.6,4.5l-0.3,0.7 l-1.6,4.5c-0.3,0.9,0,1.9,0.8,2.4c3.3,2.2,12.1,7.6,23.3,11.6s21.5,5.4,25.4,5.8c0.9,0.1,1.8-0.4,2.1-1.4l1.6-4.5l0.3-0.7l1.6-4.5 C137.9,109.6,137.6,108.5,136.8,108z"/> <rect fill="rgb(235, 235, 235)" width="5" height="150"/> </g> </svg>`,
+      11: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="200" height="150"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M31.8,3.2c-0.3-1.3-1.5-2.3-2.9-2.3L4,0.6V102h49.7L31.8,3.2z"/> <rect x="41.5" y="57.4" transform="matrix(2.089475e-03 -1 1 2.089475e-03 -56.8623 190.4811)" fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" width="51" height="132.6"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M55.7,100.5l22.6,25.2l39.7,21.6l40.1-11.3l41.3-26.7L199.3,43c0-1.7-1.3-3-3-3H44.2L55.7,100.5z"/> <g> <path fill="rgb(235, 235, 235)" d="M98.7,146.2c-27.6-9.9-38.1-24.9-43.3-38.4c-6.3-16.4-16-68.3-16-68.3l10.3-0.2c0,0,10.2,49.5,15.3,65.6 c0.8,2.6,15.3,24,37.1,31.9c22.2,8,43.3-1.9,45.2-2.8l42.7-26.9V65.4c0-1.7,1.3-3,3-3h4c1.7,0,3,1.3,3,3v42.8 c0,2.8-1.4,5.3-3.7,6.8l-43.9,27.6l-0.3,0.2c-0.8,0.4-14,7.2-31.6,7.2C113.7,150,106.3,149,98.7,146.2z"/> </g> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M144.5,133.8c-0.5,1.1-1.5,1.8-2.5,1.9c-5,0.4-18.9,0.6-40-7.3c-20.9-7.9-31.7-16.3-35.3-19.6 c-0.9-0.8-1.2-2-0.8-3.1l16.5-46.2l78.6,28L144.5,133.8L144.5,133.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M81.3,62.6l21.4-60c0.5-1.5,1.9-2.2,3.4-1.9c6.7,1.4,25.4,5.5,37.9,10c12.6,4.5,29.7,13.2,35.8,16.3 c1.4,0.7,2,2.3,1.5,3.6l-21.4,60L81.3,62.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M136.8,108c-3.3-2.2-12.1-7.6-23.3-11.6c-11.1-4-21.5-5.4-25.4-5.8C87.2,90.5,86.3,91,86,92l-1.6,4.5l-0.3,0.7 l-1.6,4.5c-0.3,0.9,0,1.9,0.8,2.4c3.3,2.2,12.1,7.6,23.3,11.6s21.5,5.4,25.4,5.8c0.9,0.1,1.8-0.4,2.1-1.4l1.6-4.5l0.3-0.7l1.6-4.5 C137.9,109.6,137.6,108.5,136.8,108z"/> <g> <rect fill="rgb(235, 235, 235)" width="5" height="150"/> </g> </g> </svg>`,
+      12: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 185" width="200" height="185"> <g class="seat"> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M3.6,116v63.2h65l31.4-15.7l35.4-88.1l64-40l-0.2-10.2c0,0-0.4-18.4-8.8-23.1s-17,2.8-17,2.8l-52.7,43.3 c-0.9,0.7-1.6,1.6-2.2,2.5L77.1,113L3.6,116z"/> <path fill="rgb(235, 235, 235)" d="M5,37v148H0V37c0-0.6,0.4-1,1-1h3C4.5,36,5,36.4,5,37z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M88.1,142.7L88.1,142.7c-0.1,1.2-0.8,2.2-1.8,2.7c-4.5,2-17.6,6.9-40.1,6.5c-22.3-0.4-35.3-4.7-39.8-6.6 c-1.1-0.5-1.8-1.5-1.8-2.7V93.5h83.5V142.7L88.1,142.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M4.6,96.9V33.2c0-1.5,1.1-2.7,2.6-2.9C14,29.4,33,27,46.3,27c13.4,0,32.4,2.4,39.2,3.3c1.5,0.2,2.6,1.5,2.6,2.9 v63.7H4.6L4.6,96.9z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M72.2,121.1c-3.9-0.9-14-3.1-25.9-3.1c-11.8,0-22.1,2.2-25.9,3.1c-0.9,0.2-1.5,1-1.5,2v4.7v0.8v4.7 c0,1,0.6,1.7,1.5,2c3.9,0.9,13.9,3.1,25.9,3.1s22.1-2.2,25.9-3.1c0.9-0.2,1.5-1,1.5-2v-4.7v-0.8v-4.7 C73.7,122.2,73.1,121.3,72.2,121.1z"/> <polygon fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="136.6,72.4 191.6,39.7 191.3,87.8 "/> <path fill="rgb(235, 235, 235)" d="M0,184.9v-9.5h62c9.4,0,31.7-8,34.8-16.8l32.6-78.4c2.5-7.5,10.6-11.9,18.3-9.8l42.8,12.4V39.7L200,34v51.4 c0,2.4-1,4.6-2.9,6s-4.3,1.9-6.5,1.3l-45.2-13.1c-2.8-0.8-5.9,0.9-6.8,3.7L106,161.8c-4.2,12.6-30.3,23.2-43.6,23.2L0,184.9 L0,184.9z"/> </g> </svg>`,
+      13: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 185" width="200" height="185"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M3.6,116v63.2h65l31.4-15.7l35.4-88.1l64-40l-0.2-10.2c0,0-0.4-18.4-8.8-23.1s-17,2.8-17,2.8l-52.7,43.3 c-0.9,0.7-1.6,1.6-2.2,2.5L77.1,113L3.6,116z"/> <path fill="rgb(235, 235, 235)" d="M5,37v148H0V37c0-0.6,0.4-1,1-1h3C4.5,36,5,36.4,5,37z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M88.1,142.7L88.1,142.7c-0.1,1.2-0.8,2.2-1.8,2.7c-4.5,2-17.6,6.9-40.1,6.5c-22.3-0.4-35.3-4.7-39.8-6.6 c-1.1-0.5-1.8-1.5-1.8-2.7V93.5h83.5V142.7L88.1,142.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M4.6,96.9V33.2c0-1.5,1.1-2.7,2.6-2.9C14,29.4,33,27,46.3,27c13.4,0,32.4,2.4,39.2,3.3c1.5,0.2,2.6,1.5,2.6,2.9 v63.7H4.6L4.6,96.9z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M72.2,121.1c-3.9-0.9-14-3.1-25.9-3.1c-11.8,0-22.1,2.2-25.9,3.1c-0.9,0.2-1.5,1-1.5,2v4.7v0.8v4.7 c0,1,0.6,1.7,1.5,2c3.9,0.9,13.9,3.1,25.9,3.1s22.1-2.2,25.9-3.1c0.9-0.2,1.5-1,1.5-2v-4.7v-0.8v-4.7 C73.7,122.2,73.1,121.3,72.2,121.1z"/> <polygon fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="136.6,72.4 191.6,39.7 191.3,87.8 "/> <path fill="rgb(235, 235, 235)" d="M0,184.9v-9.5h62c9.4,0,31.7-8,34.8-16.8l32.6-78.4c2.5-7.5,10.6-11.9,18.3-9.8l42.8,12.4V39.7L200,34v51.4 c0,2.4-1,4.6-2.9,6s-4.3,1.9-6.5,1.3l-45.2-13.1c-2.8-0.8-5.9,0.9-6.8,3.7L106,161.8c-4.2,12.6-30.3,23.2-43.6,23.2L0,184.9 L0,184.9z"/> </g> </svg>`,
+      14: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" width="120" height="150"> <g class="seat"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M115.6,129c0,0,6.3,20.4-55.5,20.4S4.6,129,4.6,129l5.8-42.7h99.4L115.6,129z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M90.9,109.6c-4.5-1.1-16.2-3.6-30-3.6s-25.7,2.5-30,3.6c-1.1,0.3-1.8,1.2-1.8,2.4v5.6v0.8v5.6 c0,1.2,0.8,2.1,1.8,2.4c4.5,1.1,16.2,3.6,30,3.6s25.7-2.5,30-3.6c1.1-0.3,1.8-1.2,1.8-2.4v-5.6v-0.8V112 C92.7,110.9,91.9,109.9,90.9,109.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M10.4,86.5V13.9c0-1.8,1.3-3.4,3.3-3.7c3.5-0.5,24.7-4.8,46.4-4.8c13,0,22.3,1.6,46.5,4.8 c1.8,0.3,3.2,1.8,3.2,3.7v72.6H10.4z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M2.4,81.7c-1.1,0-1.8-1-1.8-2.1V2.7c0-1.2,0-2.1,0-2.1H14c1.7,0,2.5,0.9,2.5,2v17.3l-3.4,9.7 l-0.9,49.9c0,1.2-1.7,2.2-2.8,2.2H2.4z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M110.6,81.7c-1.1,0-2.8-1.1-2.8-2.2 l-0.9-49.9l-3.4-9.7V2.6c0-1.2,0.9-2,2.5-2h13.4c0,0,0,1,0,2.1v77c0,1.2-0.8,2.1-1.8,2.1L110.6,81.7z"/> </g> </svg>`,
+      15: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 175" width="150" height="175"> <g class="seat"> <path fill="rgb(235, 235, 235)"  d="M150,135c0,0-5.1,40-57.5,40S35,135,35,135V18.4c0-1.7,1.2-3,2.8-3h109.5c1.6,0,2.8,1.3,2.8,3V135H150z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M138,136.8c0,1.3-0.7,2.7-1.9,3.2c-4.8,2.4-18.9,8.3-42.8,7.9c-23.8-0.5-37.8-5.8-42.6-7.9 c-1.2-0.5-2-1.9-2-3.4v-53H138V136.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M138,83.6H48.8V8.1c0-1.7,1.2-3.4,2.8-3.5c7.3-1.1,27.6-4,41.9-4s34.7,3,42,4c1.6,0.3,2.8,1.7,2.8,3.5L138,83.6 L138,83.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M122.6,106.7c-4.3-1.2-15.8-3.9-29.3-3.9s-24.9,2.8-29.3,3.9c-1.1,0.3-1.7,1.3-1.7,2.6v6v0.9v6 c0,1.2,0.7,2.3,1.7,2.6c4.3,1.2,15.8,3.9,29.3,3.9s24.9-2.8,29.3-3.9c1.1-0.3,1.7-1.3,1.7-2.6v-6v-0.9v-6 C124.4,108,123.7,107,122.6,106.7z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M34.4,108.6H0.6v-97c0-2.7,1.5-4.9,3.2-4.9h27.3c1.8,0,3.2,2.2,3.2,4.9C34.4,11.6,34.4,108.6,34.4,108.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M34.4,121.3c0,1.2-0.3,2.3-0.8,2.7c-1.9,1.7-7.3,5.8-16.1,5.8s-14.2-4-16.1-5.8c-0.5-0.4-0.8-1.5-0.8-2.7 v-12.6h33.8C34.4,108.7,34.4,121.3,34.4,121.3z"/> </g> </svg>`,
+      16: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 175" width="150" height="175"> <g class="seat" transform="scale(-1, 1) translate(-150,0)"> <path fill="rgb(235, 235, 235)"  d="M150,135c0,0-5.1,40-57.5,40S35,135,35,135V18.4c0-1.7,1.2-3,2.8-3h109.5c1.6,0,2.8,1.3,2.8,3V135H150z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M138,136.8c0,1.3-0.7,2.7-1.9,3.2c-4.8,2.4-18.9,8.3-42.8,7.9c-23.8-0.5-37.8-5.8-42.6-7.9 c-1.2-0.5-2-1.9-2-3.4v-53H138V136.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M138,83.6H48.8V8.1c0-1.7,1.2-3.4,2.8-3.5c7.3-1.1,27.6-4,41.9-4s34.7,3,42,4c1.6,0.3,2.8,1.7,2.8,3.5L138,83.6 L138,83.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M122.6,106.7c-4.3-1.2-15.8-3.9-29.3-3.9s-24.9,2.8-29.3,3.9c-1.1,0.3-1.7,1.3-1.7,2.6v6v0.9v6 c0,1.2,0.7,2.3,1.7,2.6c4.3,1.2,15.8,3.9,29.3,3.9s24.9-2.8,29.3-3.9c1.1-0.3,1.7-1.3,1.7-2.6v-6v-0.9v-6 C124.4,108,123.7,107,122.6,106.7z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M34.4,108.6H0.6v-97c0-2.7,1.5-4.9,3.2-4.9h27.3c1.8,0,3.2,2.2,3.2,4.9C34.4,11.6,34.4,108.6,34.4,108.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M34.4,121.3c0,1.2-0.3,2.3-0.8,2.7c-1.9,1.7-7.3,5.8-16.1,5.8s-14.2-4-16.1-5.8c-0.5-0.4-0.8-1.5-0.8-2.7 v-12.6h33.8C34.4,108.7,34.4,121.3,34.4,121.3z"/> </g> </svg>`,
+      17: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 175" width="185" height="175"> <g class="seat"> <path fill="rgb(235, 235, 235)" d="M185,135c0,0-5.1,40-57.5,40S70,135,70,135V18.4c0-1.7,1.2-3,2.8-3h109.5c1.6,0,2.8,1.3,2.8,3V135H185z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M173,136.8c0,1.3-0.7,2.7-1.9,3.2c-4.8,2.4-18.9,8.3-42.8,7.9c-23.8-0.5-37.8-5.8-42.6-7.9 c-1.2-0.5-2-1.9-2-3.4v-53H173V136.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M173,83.6H83.8V8.1c0-1.7,1.2-3.4,2.8-3.5c7.3-1.1,27.6-4,41.9-4s34.7,3,42,4c1.6,0.3,2.8,1.7,2.8,3.5L173,83.6 L173,83.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M157.6,106.7c-4.3-1.2-15.8-3.9-29.3-3.9s-24.9,2.8-29.3,3.9c-1.1,0.3-1.7,1.3-1.7,2.6v6v0.9v6 c0,1.2,0.7,2.3,1.7,2.6c4.3,1.2,15.8,3.9,29.3,3.9s24.9-2.8,29.3-3.9c1.1-0.3,1.7-1.3,1.7-2.6v-6v-0.9v-6 C159.4,108,158.7,107,157.6,106.7z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,108.6H0.6V12.2c0-3.1,2-5.5,4.6-5.5h59.6c2.6,0,4.6,2.4,4.6,5.5L69.3,108.6L69.3,108.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,121.3c0,1.2-0.8,2.3-1.7,2.7c-3.9,1.7-14.9,5.8-32.7,5.8s-28.8-4-32.7-5.8c-1-0.4-1.6-1.5-1.6-2.7v-12.6 h68.7V121.3z"/> </g> </svg>`,
+      18: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 175" width="185" height="175"> <g class="seat" transform="scale(-1, 1) translate(-185,0)"> <path fill="rgb(235, 235, 235)" d="M185,135c0,0-5.1,40-57.5,40S70,135,70,135V18.4c0-1.7,1.2-3,2.8-3h109.5c1.6,0,2.8,1.3,2.8,3V135H185z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M173,136.8c0,1.3-0.7,2.7-1.9,3.2c-4.8,2.4-18.9,8.3-42.8,7.9c-23.8-0.5-37.8-5.8-42.6-7.9 c-1.2-0.5-2-1.9-2-3.4v-53H173V136.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M173,83.6H83.8V8.1c0-1.7,1.2-3.4,2.8-3.5c7.3-1.1,27.6-4,41.9-4s34.7,3,42,4c1.6,0.3,2.8,1.7,2.8,3.5L173,83.6 L173,83.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M157.6,106.7c-4.3-1.2-15.8-3.9-29.3-3.9s-24.9,2.8-29.3,3.9c-1.1,0.3-1.7,1.3-1.7,2.6v6v0.9v6 c0,1.2,0.7,2.3,1.7,2.6c4.3,1.2,15.8,3.9,29.3,3.9s24.9-2.8,29.3-3.9c1.1-0.3,1.7-1.3,1.7-2.6v-6v-0.9v-6 C159.4,108,158.7,107,157.6,106.7z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,108.6H0.6V12.2c0-3.1,2-5.5,4.6-5.5h59.6c2.6,0,4.6,2.4,4.6,5.5L69.3,108.6L69.3,108.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,121.3c0,1.2-0.8,2.3-1.7,2.7c-3.9,1.7-14.9,5.8-32.7,5.8s-28.8-4-32.7-5.8c-1-0.4-1.6-1.5-1.6-2.7v-12.6 h68.7V121.3z"/> </g> </svg>`,
+      19: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255 175" width="255" height="175"> <g class="seat"> <path fill="rgb(235, 235, 235)" d="M185,135c0,0-5.1,40-57.5,40S70,135,70,135V18.4c0-1.7,1.2-3,2.8-3h109.5c1.6,0,2.8,1.3,2.8,3V135H185z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M173,136.8c0,1.3-0.7,2.7-1.9,3.2c-4.8,2.4-18.9,8.3-42.8,7.9c-23.8-0.5-37.8-5.8-42.6-7.9 c-1.2-0.5-2-1.9-2-3.4v-53H173V136.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M173,83.6H83.8V8.1c0-1.7,1.2-3.4,2.8-3.5c7.3-1.1,27.6-4,41.9-4s34.7,3,42,4c1.6,0.3,2.8,1.7,2.8,3.5L173,83.6 L173,83.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M157.6,106.7c-4.3-1.2-15.8-3.9-29.3-3.9s-24.9,2.8-29.3,3.9c-1.1,0.3-1.7,1.3-1.7,2.6v6v0.9v6 c0,1.2,0.7,2.3,1.7,2.6c4.3,1.2,15.8,3.9,29.3,3.9s24.9-2.8,29.3-3.9c1.1-0.3,1.7-1.3,1.7-2.6v-6v-0.9v-6 C159.4,108,158.7,107,157.6,106.7z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,108.6H0.6V12.2c0-3.1,2-5.5,4.6-5.5h59.6c2.6,0,4.6,2.4,4.6,5.5L69.3,108.6L69.3,108.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,121.3c0,1.2-0.8,2.3-1.7,2.7c-3.9,1.7-14.9,5.8-32.7,5.8s-28.8-4-32.7-5.8c-1-0.4-1.6-1.5-1.6-2.7v-12.6 h68.7V121.3z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M254.3,108.6h-68.7V12.2c0-3.1,2-5.5,4.6-5.5h59.6c2.6,0,4.6,2.4,4.6,5.5L254.3,108.6L254.3,108.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M254.3,121.3c0,1.2-0.8,2.3-1.7,2.7c-3.9,1.7-14.9,5.8-32.7,5.8s-28.8-4-32.7-5.8c-1-0.4-1.6-1.5-1.6-2.7v-12.6 h68.7V121.3z"/> </g> </svg>`,
+      20: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 330" width="130" height="330"> <g class="seat"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M119.3,307.9L119.3,307.9c0,1.4-0.9,2.7-2.2,3.4c-5.9,2.6-23,9-52.3,8.5c-29.2-0.5-46.2-6.2-52-8.6 c-1.4-0.6-2.3-1.9-2.3-3.5v-38h109L119.3,307.9L119.3,307.9L119.3,307.9z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M13.4,42.7V9h107.7v68.5H54.2c-0.9,0-1.8-0.4-2.6-1L13.4,42.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M119.3,269.8H10.4v-70.2c0-1.9,1.4-3.5,3.4-3.7c8.9-1.2,33.7-4.4,51-4.4c17.5,0,42.3,3.1,51.2,4.4 c1.9,0.3,3.4,1.9,3.4,3.7L119.3,269.8L119.3,269.8z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M91.2,286.6c-3.9-0.9-14.3-3.1-26.4-3.1c-12,0-22.5,2.2-26.4,3.1c-0.9,0.3-1.5,1-1.5,2.1v4.9v0.8v4.9 c0,1,0.6,1.8,1.5,2.1c3.9,0.9,14.3,3.1,26.4,3.1s22.5-2.2,26.4-3.1c0.9-0.3,1.5-1,1.5-2.1v-4.9v-0.8v-4.9 C92.8,287.8,92.1,286.9,91.2,286.6z"/> <path fill="rgb(235, 235, 235)" d="M0,330h130V0H0v7c0,1.7,1.3,3,3,3h117v310H10V189.2c0-1.7-1.3-3-3-3H3c-1.7,0-3,1.3-3,3V330z"/> </g> </svg>`,
+      21: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 330" width="130" height="330"> <g class="seat" transform="scale(-1, 1) translate(-130,0)"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M119.3,307.9L119.3,307.9c0,1.4-0.9,2.7-2.2,3.4c-5.9,2.6-23,9-52.3,8.5c-29.2-0.5-46.2-6.2-52-8.6 c-1.4-0.6-2.3-1.9-2.3-3.5v-38h109L119.3,307.9L119.3,307.9L119.3,307.9z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M13.4,42.7V9h107.7v68.5H54.2c-0.9,0-1.8-0.4-2.6-1L13.4,42.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M119.3,269.8H10.4v-70.2c0-1.9,1.4-3.5,3.4-3.7c8.9-1.2,33.7-4.4,51-4.4c17.5,0,42.3,3.1,51.2,4.4 c1.9,0.3,3.4,1.9,3.4,3.7L119.3,269.8L119.3,269.8z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M91.2,286.6c-3.9-0.9-14.3-3.1-26.4-3.1c-12,0-22.5,2.2-26.4,3.1c-0.9,0.3-1.5,1-1.5,2.1v4.9v0.8v4.9 c0,1,0.6,1.8,1.5,2.1c3.9,0.9,14.3,3.1,26.4,3.1s22.5-2.2,26.4-3.1c0.9-0.3,1.5-1,1.5-2.1v-4.9v-0.8v-4.9 C92.8,287.8,92.1,286.9,91.2,286.6z"/> <path fill="rgb(235, 235, 235)" d="M0,330h130V0H0v7c0,1.7,1.3,3,3,3h117v310H10V189.2c0-1.7-1.3-3-3-3H3c-1.7,0-3,1.3-3,3V330z"/> </g> </svg>`,
+      22: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="200" height="400"> <g class="seat"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M189.8,74.2c0,2.6-1.4,4.9-3.7,6c-9.7,4.4-38,15.5-86.6,14.6C51.4,94,23.3,84.2,13.5,80c-2.4-1.1-3.8-3.4-3.8-6 V8.6h180.4v65.7L189.8,74.2L189.8,74.2z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7,396h189V6h-24.1c0,0-20.7,141.1-20,152.3c0.9,14.4,14.1,50,12.9,50.2l-7.4,63.2L7,270.5V396z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M165,362.6c0,2.2-1.1,4-2.7,4.9c-7.1,3.6-27.9,12.5-63.6,11.8c-35.4-0.7-56-8.5-63.1-12 c-1.7-0.9-2.8-2.7-2.8-4.9v-52.9h132.4L165,362.6L165,362.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M165.2,309.5H32.7v-97.6c0-2.7,1.7-4.9,4.1-5.3c10.8-1.6,40.9-6,62-6c21.2,0,51.4,4.4,62.1,6 c2.4,0.4,4.1,2.7,4.1,5.3C165.2,211.9,165.2,309.5,165.2,309.5z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.6,333c-5.5-1.3-19.8-4.4-36.7-4.4c-16.7,0-31.3,3.1-36.7,4.4c-1.3,0.4-2.2,1.5-2.2,2.9v6.7v1.1v6.7 c0,1.5,0.9,2.5,2.2,2.9c5.5,1.3,19.8,4.4,36.7,4.4s31.3-3.1,36.7-4.4c1.3-0.4,2.2-1.5,2.2-2.9v-6.7v-1.1v-6.7 C137.8,334.6,136.9,333.3,135.6,333z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M34.4,348h3.7V230.9c0.1-3.9-2.1-6.9-5.8-7h-3.1c-8.8-0.2-9.2,6.9-9.2,15.8l-0.5,31.6 c-0.1,1.6,0.1,3.3,0.5,4.8l8,66.4C28.4,345.6,31.1,348,34.4,348z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M169.8,342.4l8-66.4c0.5-1.5,0.6-3.2,0.5-4.8l-0.5-31.6c-0.1-8.8-0.4-15.9-9.2-15.8h-3.1 c-3.7,0.1-5.9,3.1-5.8,7V348h3.7C166.7,348,169.4,345.6,169.8,342.4z"/> <path fill="rgb(235, 235, 235)" d="M200,400H0V208.1c0-1.7,1.3-3,3-3h4c1.7,0,3,1.3,3,3V390h180V10H10v78.5c0,1.7-1.3,3-3,3H3c-1.7,0-3-1.3-3-3V0 h200V400z"/> </g> </svg>`,
+      23: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="200" height="400"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M189.8,74.2c0,2.6-1.4,4.9-3.7,6c-9.7,4.4-38,15.5-86.6,14.6C51.4,94,23.3,84.2,13.5,80c-2.4-1.1-3.8-3.4-3.8-6 V8.6h180.4v65.7L189.8,74.2L189.8,74.2z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7,396h189V6h-24.1c0,0-20.7,141.1-20,152.3c0.9,14.4,14.1,50,12.9,50.2l-7.4,63.2L7,270.5V396z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M165,362.6c0,2.2-1.1,4-2.7,4.9c-7.1,3.6-27.9,12.5-63.6,11.8c-35.4-0.7-56-8.5-63.1-12 c-1.7-0.9-2.8-2.7-2.8-4.9v-52.9h132.4L165,362.6L165,362.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M165.2,309.5H32.7v-97.6c0-2.7,1.7-4.9,4.1-5.3c10.8-1.6,40.9-6,62-6c21.2,0,51.4,4.4,62.1,6 c2.4,0.4,4.1,2.7,4.1,5.3C165.2,211.9,165.2,309.5,165.2,309.5z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.6,333c-5.5-1.3-19.8-4.4-36.7-4.4c-16.7,0-31.3,3.1-36.7,4.4c-1.3,0.4-2.2,1.5-2.2,2.9v6.7v1.1v6.7 c0,1.5,0.9,2.5,2.2,2.9c5.5,1.3,19.8,4.4,36.7,4.4s31.3-3.1,36.7-4.4c1.3-0.4,2.2-1.5,2.2-2.9v-6.7v-1.1v-6.7 C137.8,334.6,136.9,333.3,135.6,333z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M34.4,348h3.7V230.9c0.1-3.9-2.1-6.9-5.8-7h-3.1c-8.8-0.2-9.2,6.9-9.2,15.8l-0.5,31.6 c-0.1,1.6,0.1,3.3,0.5,4.8l8,66.4C28.4,345.6,31.1,348,34.4,348z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M169.8,342.4l8-66.4c0.5-1.5,0.6-3.2,0.5-4.8l-0.5-31.6c-0.1-8.8-0.4-15.9-9.2-15.8h-3.1 c-3.7,0.1-5.9,3.1-5.8,7V348h3.7C166.7,348,169.4,345.6,169.8,342.4z"/> <path fill="rgb(235, 235, 235)" d="M200,400H0V208.1c0-1.7,1.3-3,3-3h4c1.7,0,3,1.3,3,3V390h180V10H10v78.5c0,1.7-1.3,3-3,3H3c-1.7,0-3-1.3-3-3V0 h200V400z"/> </g> </svg>`,
+      24: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 365" width="200" height="365"> <g class="seat"> <rect x="4" y="254.4" fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" width="190" height="105.6"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M8.2,304.5l1-72.9c0-1.8,0.3-3.7,0.6-5.4l8.5-33c2.4-9.2,11.8-14.7,21-12.5l3.3,0.8c4.1,1,6.5,4.8,5.5,8.9 L17.9,312.7l-3.8-1C10.5,310.9,8.2,308,8.2,304.5z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M181.8,111.1c-0.3,1.3-2,2.2-3.9,1.9c-8.9-1.3-33.7-4.5-50.6-8.3S86.9,93.2,78.5,90.5c-1.8-0.6-2.9-2.1-2.4-3.4 L93.4,6.3l101.1-0.7L181.8,111.1z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M65.9,112.4L6.9,99L7.7,6.8h121.8L70.5,110c-0.6,1.4-1.9,2.4-3.5,2.4C66.5,112.4,66.2,112.4,65.9,112.4z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M194.6,293.5l-72.8-18.2l10.4-62.2c0,0,41.2-27.1,45.8-47.1S167,5.5,167,5.5l27.5,0.1L194.6,293.5L194.6,293.5z "/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M32.5,253.8L142,281.1l-18.5,69.8c-0.4,1.7-1.7,2.8-3.3,3.1c-6.5,0.8-25.1,2.3-54.4-4.5 C36.2,342.7,20.6,332,15.5,328c-1.3-1-1.8-2.7-1.4-4.1L32.5,253.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M55.3,162.6c0.4-2,2.3-3.3,4.3-3.1c9.4,1,35,4.1,52.5,8.4c17.7,4.3,41.8,13.6,50.3,17.1 c1.8,0.8,2.8,2.7,2.4,4.7l-23.1,90.8L32.5,253.2L55.3,162.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M45.3,311.3l-1.3,4.8l-0.3,0.8l-1.3,4.8c-0.4,1,0.3,2,1,2.4c3.7,2,13.6,6.8,25.6,9.8 c12.2,3.1,23.2,3.4,27.3,3.4c1,0,2-0.6,2.3-1.7l1.3-4.8l0.3-0.8l1.3-4.8c0.4-1-0.3-2-1-2.4c-3.7-2-13.6-6.8-25.6-9.8 c-12.2-3.1-23.2-3.4-27.3-3.4C46.5,309.6,45.5,310.4,45.3,311.3z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M138.4,337.3l34.3-64.5c0.9-1.4,1.5-3.2,1.9-4.8l8.4-32.9c2.4-9.2-3.2-18.6-12.4-20.9l-3.2-0.9 c-3.8-0.9-8,1.3-9,5.4l-32,121.5l3.8,1C133.7,342.1,137.1,340.4,138.4,337.3z"/> <path fill="rgb(235, 235, 235)" d="M200,365H0V184.7c0-1.7,1.3-3,3-3h5c1.6,0,3,1.3,3,3V354h178.1V11H11v99.4c0,1.7-1.3,3-3,3H3c-1.6,0-3-1.3-3-3 V0h200V365z"/> </g> </svg>`,
+      25: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 365" width="200" height="365"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <rect x="4" y="254.4" fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" width="190" height="105.6"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M8.2,304.5l1-72.9c0-1.8,0.3-3.7,0.6-5.4l8.5-33c2.4-9.2,11.8-14.7,21-12.5l3.3,0.8c4.1,1,6.5,4.8,5.5,8.9 L17.9,312.7l-3.8-1C10.5,310.9,8.2,308,8.2,304.5z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M181.8,111.1c-0.3,1.3-2,2.2-3.9,1.9c-8.9-1.3-33.7-4.5-50.6-8.3S86.9,93.2,78.5,90.5c-1.8-0.6-2.9-2.1-2.4-3.4 L93.4,6.3l101.1-0.7L181.8,111.1z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M65.9,112.4L6.9,99L7.7,6.8h121.8L70.5,110c-0.6,1.4-1.9,2.4-3.5,2.4C66.5,112.4,66.2,112.4,65.9,112.4z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M194.6,293.5l-72.8-18.2l10.4-62.2c0,0,41.2-27.1,45.8-47.1S167,5.5,167,5.5l27.5,0.1L194.6,293.5L194.6,293.5z "/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M32.5,253.8L142,281.1l-18.5,69.8c-0.4,1.7-1.7,2.8-3.3,3.1c-6.5,0.8-25.1,2.3-54.4-4.5 C36.2,342.7,20.6,332,15.5,328c-1.3-1-1.8-2.7-1.4-4.1L32.5,253.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M55.3,162.6c0.4-2,2.3-3.3,4.3-3.1c9.4,1,35,4.1,52.5,8.4c17.7,4.3,41.8,13.6,50.3,17.1 c1.8,0.8,2.8,2.7,2.4,4.7l-23.1,90.8L32.5,253.2L55.3,162.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M45.3,311.3l-1.3,4.8l-0.3,0.8l-1.3,4.8c-0.4,1,0.3,2,1,2.4c3.7,2,13.6,6.8,25.6,9.8 c12.2,3.1,23.2,3.4,27.3,3.4c1,0,2-0.6,2.3-1.7l1.3-4.8l0.3-0.8l1.3-4.8c0.4-1-0.3-2-1-2.4c-3.7-2-13.6-6.8-25.6-9.8 c-12.2-3.1-23.2-3.4-27.3-3.4C46.5,309.6,45.5,310.4,45.3,311.3z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M138.4,337.3l34.3-64.5c0.9-1.4,1.5-3.2,1.9-4.8l8.4-32.9c2.4-9.2-3.2-18.6-12.4-20.9l-3.2-0.9 c-3.8-0.9-8,1.3-9,5.4l-32,121.5l3.8,1C133.7,342.1,137.1,340.4,138.4,337.3z"/> <path fill="rgb(235, 235, 235)" d="M200,365H0V184.7c0-1.7,1.3-3,3-3h5c1.6,0,3,1.3,3,3V354h178.1V11H11v99.4c0,1.7-1.3,3-3,3H3c-1.6,0-3-1.3-3-3 V0h200V365z"/> </g> </svg>`,
+      26: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat"> <rect x="9.9" y="83.4" fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" width="188.9" height="87.5"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.6,111.3l0-96.5c0-7.8,6.3-14.2,13.8-14.2h52v83.9L133.6,111.3z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M75,199.4c-1.1,0-2.1,0-3.3-0.1c-29.6-0.3-46.2-5.3-50.5-6.8c-1.3-0.4-2-1.4-2-2.4v-18.9h105v19.1 c0,0.9-0.8,2-2,2.4C115.6,195.2,100.2,199.4,75,199.4L75,199.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M12.1,152.9c-1.5-0.5-2.3-1.7-2.3-3.1v-39.5 h123.7v39.3c0,1.3-1.1,2.7-2.4,3.1c-6.8,2.5-26.1,8.3-59.5,8.7c-1.5,0-2.8,0-4.3,0C36.4,161.5,18.4,155.4,12.1,152.9z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M9.9,111.5V50.3c0-1.7,1.5-3.1,3.3-3.5c25.3-2.9,45.1-4.5,58.5-4.5c22.7,0,54.8,4,58.4,4.5 c2,0.3,3.5,1.7,3.5,3.5l0,61.2H9.9z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M40.5,129.4v4.8v0.7v4.8c0,1.1,0.8,1.9,1.9,2c4.3,0.9,16,3.1,29.3,3.1s24.9-2.3,29.3-3.1 c1.1-0.3,1.9-1.1,1.9-2v-4.8v-0.7v-4.8c0-1.1-0.8-1.9-1.9-2c-4.3-0.9-16-3.1-29.3-3.1s-24.9,2.3-29.3,3.1 C41.2,127.5,40.5,128.3,40.5,129.4z"/> <path fill="rgb(235, 235, 235)" d="M197,81.3h-4c-1.7,0-3,1.3-3,3v80h-84.5h-61H10 v-99c0-1.7-1.3-3-3-3H3c-1.7,0-3,1.3-3,3l0,109h44.1h61.8H200v-90C200,82.6,198.7,81.3,197,81.3z"/> </g> </svg>`,
+      27: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <rect x="9.9" y="83.4" fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" width="188.9" height="87.5"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.6,111.3l0-96.5c0-7.8,6.3-14.2,13.8-14.2h52v83.9L133.6,111.3z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M75,199.4c-1.1,0-2.1,0-3.3-0.1c-29.6-0.3-46.2-5.3-50.5-6.8c-1.3-0.4-2-1.4-2-2.4v-18.9h105v19.1 c0,0.9-0.8,2-2,2.4C115.6,195.2,100.2,199.4,75,199.4L75,199.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M12.1,152.9c-1.5-0.5-2.3-1.7-2.3-3.1v-39.5 h123.7v39.3c0,1.3-1.1,2.7-2.4,3.1c-6.8,2.5-26.1,8.3-59.5,8.7c-1.5,0-2.8,0-4.3,0C36.4,161.5,18.4,155.4,12.1,152.9z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M9.9,111.5V50.3c0-1.7,1.5-3.1,3.3-3.5c25.3-2.9,45.1-4.5,58.5-4.5c22.7,0,54.8,4,58.4,4.5 c2,0.3,3.5,1.7,3.5,3.5l0,61.2H9.9z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M40.5,129.4v4.8v0.7v4.8c0,1.1,0.8,1.9,1.9,2c4.3,0.9,16,3.1,29.3,3.1s24.9-2.3,29.3-3.1 c1.1-0.3,1.9-1.1,1.9-2v-4.8v-0.7v-4.8c0-1.1-0.8-1.9-1.9-2c-4.3-0.9-16-3.1-29.3-3.1s-24.9,2.3-29.3,3.1 C41.2,127.5,40.5,128.3,40.5,129.4z"/> <path fill="rgb(235, 235, 235)" d="M197,81.3h-4c-1.7,0-3,1.3-3,3v80h-84.5h-61H10 v-99c0-1.7-1.3-3-3-3H3c-1.7,0-3,1.3-3,3l0,109h44.1h61.8H200v-90C200,82.6,198.7,81.3,197,81.3z"/> </g> </svg>`,
+      28: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat"> <rect fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="0.6" y="115.3" width="198.8" height="84.1"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.4,80l-0.6,35.7l66.6,9.8V89.9c0,0-11.2-3.2-18-5C169.8,81.7,133.4,80,133.4,80z"/> <rect fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" x="0.6" y="0.6" width="105.4" height="16.1"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M101.1,1l2.3,39.8l96,6.5l-0.1-46.7H101L101.1,1z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.5,180.6L1,119.1c-0.3-1.4-0.5-3-0.4-4.4L1,85.4c0-8.2,0.3-14.8,7.4-14.6H11c3,0.1,4.8,2.9,4.7,6.5v108.4h-3C10,185.7,7.8,183.4,7.5,180.6L7.5,180.6z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.9,180.6l6.5-61.5c0.3-1.4,0.5-3,0.4-4.4l-0.4-29.2c0-8.2-0.3-14.8-7.4-14.6h-2.5c-3,0.1-4.8,2.9-4.7,6.5v108.4h3C133.4,185.7,135.6,183.4,135.9,180.6L135.9,180.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M24.4,0.9l-0.6,15.8L0.6,19.3V0.7l23.8-0.1V0.9z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M75.3,196.8c-1.3,0-2.5,0-3.9,0c-30.2-0.4-47.7-5.6-53.8-7.8c-1.2-0.4-2.2-1.6-2.2-2.8v-41.6h112v41.7c0,1.2-0.7,2.3-2.1,2.8C119.7,191.4,103.4,196.9,75.3,196.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M15.5,144.7V82.3c0-1.6,1.3-2.9,3.1-3.1c3.3-0.5,32.3-4.1,52.8-4.1c12.2,0,30,1.4,53,4.1c1.7,0.4,3,1.6,3,3.1v62.4L15.5,144.7L15.5,144.7z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M98,163c-4-0.7-14.5-2.8-26.5-2.8S48.8,162.1,45,163c-1,0.1-1.7,0.8-1.7,1.8v4.3v0.6v4.3c0,0.8,0.7,1.6,1.7,1.8c4,0.7,14.5,2.8,26.5,2.8s22.7-1.9,26.5-2.8c1-0.1,1.7-0.8,1.7-1.8v-4.3v-0.6v-4.3C99.7,163.9,99.1,163.2,98,163z"/> </g> </svg>`,
+      29: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <rect fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="0.6" y="115.3" width="198.8" height="84.1"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.4,80l-0.6,35.7l66.6,9.8V89.9c0,0-11.2-3.2-18-5C169.8,81.7,133.4,80,133.4,80z"/> <rect fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" x="0.6" y="0.6" width="105.4" height="16.1"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M101.1,1l2.3,39.8l96,6.5l-0.1-46.7H101L101.1,1z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.5,180.6L1,119.1c-0.3-1.4-0.5-3-0.4-4.4L1,85.4c0-8.2,0.3-14.8,7.4-14.6H11c3,0.1,4.8,2.9,4.7,6.5v108.4h-3C10,185.7,7.8,183.4,7.5,180.6L7.5,180.6z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.9,180.6l6.5-61.5c0.3-1.4,0.5-3,0.4-4.4l-0.4-29.2c0-8.2-0.3-14.8-7.4-14.6h-2.5c-3,0.1-4.8,2.9-4.7,6.5v108.4h3C133.4,185.7,135.6,183.4,135.9,180.6L135.9,180.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M24.4,0.9l-0.6,15.8L0.6,19.3V0.7l23.8-0.1V0.9z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M75.3,196.8c-1.3,0-2.5,0-3.9,0c-30.2-0.4-47.7-5.6-53.8-7.8c-1.2-0.4-2.2-1.6-2.2-2.8v-41.6h112v41.7c0,1.2-0.7,2.3-2.1,2.8C119.7,191.4,103.4,196.9,75.3,196.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M15.5,144.7V82.3c0-1.6,1.3-2.9,3.1-3.1c3.3-0.5,32.3-4.1,52.8-4.1c12.2,0,30,1.4,53,4.1c1.7,0.4,3,1.6,3,3.1v62.4L15.5,144.7L15.5,144.7z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M98,163c-4-0.7-14.5-2.8-26.5-2.8S48.8,162.1,45,163c-1,0.1-1.7,0.8-1.7,1.8v4.3v0.6v4.3c0,0.8,0.7,1.6,1.7,1.8c4,0.7,14.5,2.8,26.5,2.8s22.7-1.9,26.5-2.8c1-0.1,1.7-0.8,1.7-1.8v-4.3v-0.6v-4.3C99.7,163.9,99.1,163.2,98,163z"/> </g> </svg>`,
+      30: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 265" width="200" height="265"> <g class="seat"> <rect fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" x="0.6" y="0.6" width="105.4" height="66.9"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M103.4,91.6l96,6.5V0.6H99L103.4,91.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M26.4,0.6l-2.6,66.9L0.6,80.1V0.6H26.4z"/> <rect fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="0.6" y="180.3" width="198.8" height="84.1"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.4,145l-0.6,35.7l66.6,9.8v-35.6c0,0-11.2-3.2-18-5C169.8,146.7,133.4,145,133.4,145z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.5,245.6L1,184.1c-0.3-1.4-0.5-3-0.4-4.4L1,150.4c0-8.2,0.3-14.8,7.4-14.6H11c3,0.1,4.8,2.9,4.7,6.5v108.4h-3C10,250.7,7.8,248.4,7.5,245.6L7.5,245.6z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.9,245.6l6.5-61.5c0.3-1.4,0.5-3,0.4-4.4l-0.4-29.2c0-8.2-0.3-14.8-7.4-14.6h-2.5c-3,0.1-4.8,2.9-4.7,6.5v108.4h3C133.4,250.7,135.6,248.4,135.9,245.6L135.9,245.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M75.3,261.8c-1.3,0-2.5,0-3.9,0c-30.2-0.4-47.7-5.6-53.8-7.8c-1.2-0.4-2.2-1.6-2.2-2.8v-41.6h112v41.7c0,1.2-0.7,2.3-2.1,2.8C119.7,256.4,103.4,261.9,75.3,261.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M15.5,209.7v-62.4c0-1.6,1.3-2.9,3.1-3.1c3.3-0.5,32.3-4.1,52.8-4.1c12.2,0,30,1.4,53,4.1c1.7,0.4,3,1.6,3,3.1v62.4L15.5,209.7L15.5,209.7z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M98,228c-4-0.7-14.5-2.8-26.5-2.8S48.8,227.1,45,228c-1,0.1-1.7,0.8-1.7,1.8v4.3v0.6v4.3c0,0.8,0.7,1.6,1.7,1.8c4,0.7,14.5,2.8,26.5,2.8s22.7-1.9,26.5-2.8c1-0.1,1.7-0.8,1.7-1.8v-4.3v-0.6v-4.3C99.7,228.9,99.1,228.2,98,228z"/> </g> </svg>`,
+      31: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 265" width="200" height="265"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <rect fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" x="0.6" y="0.6" width="105.4" height="66.9"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M103.4,91.6l96,6.5V0.6H99L103.4,91.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M26.4,0.6l-2.6,66.9L0.6,80.1V0.6H26.4z"/> <rect fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="0.6" y="180.3" width="198.8" height="84.1"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.4,145l-0.6,35.7l66.6,9.8v-35.6c0,0-11.2-3.2-18-5C169.8,146.7,133.4,145,133.4,145z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.5,245.6L1,184.1c-0.3-1.4-0.5-3-0.4-4.4L1,150.4c0-8.2,0.3-14.8,7.4-14.6H11c3,0.1,4.8,2.9,4.7,6.5v108.4h-3C10,250.7,7.8,248.4,7.5,245.6L7.5,245.6z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.9,245.6l6.5-61.5c0.3-1.4,0.5-3,0.4-4.4l-0.4-29.2c0-8.2-0.3-14.8-7.4-14.6h-2.5c-3,0.1-4.8,2.9-4.7,6.5v108.4h3C133.4,250.7,135.6,248.4,135.9,245.6L135.9,245.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M75.3,261.8c-1.3,0-2.5,0-3.9,0c-30.2-0.4-47.7-5.6-53.8-7.8c-1.2-0.4-2.2-1.6-2.2-2.8v-41.6h112v41.7c0,1.2-0.7,2.3-2.1,2.8C119.7,256.4,103.4,261.9,75.3,261.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M15.5,209.7v-62.4c0-1.6,1.3-2.9,3.1-3.1c3.3-0.5,32.3-4.1,52.8-4.1c12.2,0,30,1.4,53,4.1c1.7,0.4,3,1.6,3,3.1v62.4L15.5,209.7L15.5,209.7z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M98,228c-4-0.7-14.5-2.8-26.5-2.8S48.8,227.1,45,228c-1,0.1-1.7,0.8-1.7,1.8v4.3v0.6v4.3c0,0.8,0.7,1.6,1.7,1.8c4,0.7,14.5,2.8,26.5,2.8s22.7-1.9,26.5-2.8c1-0.1,1.7-0.8,1.7-1.8v-4.3v-0.6v-4.3C99.7,228.9,99.1,228.2,98,228z"/> </g> </svg>`,
+      32: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 330" width="200" height="330"> <g class="seat"> <rect fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" x="0.6" y="0.6" width="105.4" height="66.9"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M103.4,91.6l96,6.5V0.6H99L103.4,91.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M26.4,0.6l-2.6,66.9L0.6,80.1V0.6H26.4z"/> <rect fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="0.6" y="213.4" width="198.8" height="116"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.4,181.6l-0.6,45.7l66.6,9.8v-45.6c0,0-11.2-3.2-18-5C169.8,183.3,133.4,181.6,133.4,181.6z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.5,289.5c0,0-7-64.4-6.9-65.9L1,174.4c0-8.2,0.3-14.8,7.4-14.6H11c3,0.1,4.8,2.9,4.7,6.5v128.4h-3C10,294.6,7.8,292.4,7.5,289.5L7.5,289.5z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.8,289.4c-0.3,2.9-2.5,5.1-5.2,5.1h-3V166.1c-0.1-3.6,1.7-6.4,4.7-6.5h2.5c7.1-0.2,7.4,6.4,7.4,14.6l0.4,49.2C142.7,225,135.8,289.4,135.8,289.4L135.8,289.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M75.5,307.7c-1.3,0-2.5,0-3.9,0c-30.2-0.4-47.7-5.6-53.8-7.8c-1.2-0.4-2.2-1.6-2.2-2.8v-41.6h112v41.7c0,1.2-0.7,2.3-2.1,2.8C119.9,302.2,103.6,307.8,75.5,307.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M15.6,255.5v-83.4c0-1.6,1.3-2.9,3.1-3.1c3.3-0.5,32.3-4.1,52.8-4.1c12.2,0,30,1.4,53,4.1c1.7,0.4,3,1.6,3,3.1v83.4H15.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M98.2,273.9c-4-0.7-14.5-2.8-26.5-2.8S49,273,45.2,273.9c-1,0.1-1.7,0.8-1.7,1.8v4.3v0.6v4.3c0,0.8,0.7,1.6,1.7,1.8c4,0.7,14.5,2.8,26.5,2.8s22.7-1.9,26.5-2.8c1-0.1,1.7-0.8,1.7-1.8v-4.3V280v-4.3C99.8,274.7,99.2,274,98.2,273.9z"/> </g> </svg>`,
+      33: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 330" width="200" height="330"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <rect fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" x="0.6" y="0.6" width="105.4" height="66.9"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M103.4,91.6l96,6.5V0.6H99L103.4,91.6z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M26.4,0.6l-2.6,66.9L0.6,80.1V0.6H26.4z"/> <rect fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="0.6" y="213.4" width="198.8" height="116"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M133.4,181.6l-0.6,45.7l66.6,9.8v-45.6c0,0-11.2-3.2-18-5C169.8,183.3,133.4,181.6,133.4,181.6z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.5,289.5c0,0-7-64.4-6.9-65.9L1,174.4c0-8.2,0.3-14.8,7.4-14.6H11c3,0.1,4.8,2.9,4.7,6.5v128.4h-3C10,294.6,7.8,292.4,7.5,289.5L7.5,289.5z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M135.8,289.4c-0.3,2.9-2.5,5.1-5.2,5.1h-3V166.1c-0.1-3.6,1.7-6.4,4.7-6.5h2.5c7.1-0.2,7.4,6.4,7.4,14.6l0.4,49.2C142.7,225,135.8,289.4,135.8,289.4L135.8,289.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M75.5,307.7c-1.3,0-2.5,0-3.9,0c-30.2-0.4-47.7-5.6-53.8-7.8c-1.2-0.4-2.2-1.6-2.2-2.8v-41.6h112v41.7c0,1.2-0.7,2.3-2.1,2.8C119.9,302.2,103.6,307.8,75.5,307.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M15.6,255.5v-83.4c0-1.6,1.3-2.9,3.1-3.1c3.3-0.5,32.3-4.1,52.8-4.1c12.2,0,30,1.4,53,4.1c1.7,0.4,3,1.6,3,3.1v83.4H15.6z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M98.2,273.9c-4-0.7-14.5-2.8-26.5-2.8S49,273,45.2,273.9c-1,0.1-1.7,0.8-1.7,1.8v4.3v0.6v4.3c0,0.8,0.7,1.6,1.7,1.8c4,0.7,14.5,2.8,26.5,2.8s22.7-1.9,26.5-2.8c1-0.1,1.7-0.8,1.7-1.8v-4.3V280v-4.3C99.8,274.7,99.2,274,98.2,273.9z"/> </g> </svg>`,
+      34: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <polygon fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="101,12.4 101,0.6 195,0.6 195,49.3 151.7,49.3 "/> <path fill="rgb(235, 235, 235)" d="M200,53.7h-44.7c-1.9,0-3.7-0.6-5.2-1.6L99.3,17.5c-2.7-1.9-4.3-5-4.3-8.4V0h9.5v9.1l50.8,34.6h35.1V0h9.5V53.7z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M197.4,89.1v73.2l-52.3,29.8l-80.4,5L5.2,118.7V39h7.1c1.2,0,2.4,0.9,2.8,2.1l15.3,40.1l95.8,7.9H197.4L197.4,89.1z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M154.4,152.7L154.4,152.7c0.6,1.4,0.4,2.9-0.5,3.9c-3.5,4.3-14.1,15.6-36.7,23.9c-22.4,8.2-37.5,7.9-42.9,7.3c-1.3-0.2-2.5-1.1-3.1-2.7l-14.3-36.4l83.2-32.7L154.4,152.7L154.4,152.7L154.4,152.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M140,116l-83.1,32.7L30.5,81.2c-0.7-1.8-0.3-3.8,1.2-4.6c6.4-3.9,24.1-14.3,37.3-19.5c13.3-5.3,33.4-9.7,40.7-11.2c1.5-0.3,3.3,0.8,4,2.6l26.5,67.4L140,116z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M124.9,140.6c-3.3,0.3-12,1.3-21.3,4.9c-9.2,3.6-16.3,8.8-19,10.9c-0.6,0.6-0.8,1.4-0.4,2.5l1.8,4.7l0.3,0.8l1.8,4.7c0.4,1,1.2,1.6,2,1.6c3.3-0.3,12-1.3,21.3-4.9s16.3-8.8,19-10.9c0.6-0.6,0.8-1.4,0.4-2.5l-1.8-4.7l-0.3-0.8l-1.8-4.7C126.6,141.3,125.7,140.6,124.9,140.6z"/> <path fill="rgb(235, 235, 235)" d="M0,38.4l0,77.3c0,1.7,0.5,3.4,1.6,4.8L62,200H135c4.6,0,9-1.2,12.9-3.6l52.1-31.6v-2.7l0,0V88.5h-5v67.6l-52.4,31.8c-2.3,1.5-5,2.2-7.7,2.2h-68l-57-75V38.4H0z"/> </g> </svg>`,
+      35: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat"> <polygon fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="101,12.4 101,0.6 195,0.6 195,49.3 151.7,49.3 "/> <path fill="rgb(235, 235, 235)" d="M200,53.7h-44.7c-1.9,0-3.7-0.6-5.2-1.6L99.3,17.5c-2.7-1.9-4.3-5-4.3-8.4V0h9.5v9.1l50.8,34.6h35.1V0h9.5V53.7z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M197.4,89.1v73.2l-52.3,29.8l-80.4,5L5.2,118.7V39h7.1c1.2,0,2.4,0.9,2.8,2.1l15.3,40.1l95.8,7.9H197.4L197.4,89.1z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M154.4,152.7L154.4,152.7c0.6,1.4,0.4,2.9-0.5,3.9c-3.5,4.3-14.1,15.6-36.7,23.9c-22.4,8.2-37.5,7.9-42.9,7.3c-1.3-0.2-2.5-1.1-3.1-2.7l-14.3-36.4l83.2-32.7L154.4,152.7L154.4,152.7L154.4,152.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M140,116l-83.1,32.7L30.5,81.2c-0.7-1.8-0.3-3.8,1.2-4.6c6.4-3.9,24.1-14.3,37.3-19.5c13.3-5.3,33.4-9.7,40.7-11.2c1.5-0.3,3.3,0.8,4,2.6l26.5,67.4L140,116z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M124.9,140.6c-3.3,0.3-12,1.3-21.3,4.9c-9.2,3.6-16.3,8.8-19,10.9c-0.6,0.6-0.8,1.4-0.4,2.5l1.8,4.7l0.3,0.8l1.8,4.7c0.4,1,1.2,1.6,2,1.6c3.3-0.3,12-1.3,21.3-4.9s16.3-8.8,19-10.9c0.6-0.6,0.8-1.4,0.4-2.5l-1.8-4.7l-0.3-0.8l-1.8-4.7C126.6,141.3,125.7,140.6,124.9,140.6z"/> <path fill="rgb(235, 235, 235)" d="M0,38.4l0,77.3c0,1.7,0.5,3.4,1.6,4.8L62,200H135c4.6,0,9-1.2,12.9-3.6l52.1-31.6v-2.7l0,0V88.5h-5v67.6l-52.4,31.8c-2.3,1.5-5,2.2-7.7,2.2h-68l-57-75V38.4H0z"/> </g> </svg>`,
+      36: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 435" width="550" height="435"> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.8,4.1h101l-0.1,147.5v47.5L87.8,280v150.5H7.9L7.8,4.1z"/> <rect fill="${e.fillColor}" x="46.3" y="6.9" width="67.2" height="145.6"/> <rect fill="${e.fillColor}" x="110.3" y="6.9" width="379.7" height="145.6"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M507.1,427c0,0-20.1-82.5-20.2-82.7c-1-0.3-59.1,1-98.5,15.1c-18.5,6.6-41.1,15.7-59.9,29.1V426L507.1,427z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M91.7,33.2c1.6,7.1,5.5,25.5,5.5,47.2c0,21.5-3.8,40.2-5.5,47.2c-0.5,1.7-1.9,2.8-3.6,2.8h-8.3h-1.4h-8.3c-1.9,0-3.1-1.2-3.6-2.8c-1.6-7.1-5.5-25.5-5.5-47.2s3.8-40.2,5.5-47.2c0.5-1.7,1.9-2.8,3.6-2.8h8.3h1.4h8.3C89.7,30.4,91.3,31.6,91.7,33.2z"/> <path fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M180.4,152.4l-70-74.8"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M148.2,390.8c0,2.2,1.1,4,2.7,4.9c7.1,3.6,27.9,12.5,63.6,11.8c35.4-0.7,56-8.5,63.1-12c1.7-0.9,2.8-2.7,2.8-4.9v-52.9H148L148.2,390.8L148.2,390.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M148,337.7h132.5v-97.6c0-2.7-1.7-4.9-4.1-5.3c-10.8-1.6-40.9-6-62-6c-21.2,0-51.4,4.4-62.1,6c-2.4,0.4-4.1,2.7-4.1,5.3C148,240.1,148,337.7,148,337.7z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M177.6,361.2c5.5-1.3,19.8-4.4,36.7-4.4c16.7,0,31.3,3.1,36.7,4.4c1.3,0.4,2.2,1.5,2.2,2.9v6.7v1.1v6.7c0,1.5-0.9,2.5-2.2,2.9c-5.5,1.3-19.8,4.4-36.7,4.4s-31.3-3.1-36.7-4.4c-1.3-0.4-2.2-1.5-2.2-2.9v-6.7v-1.1v-6.7C175.4,362.8,176.3,361.5,177.6,361.2z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M278.8,376.2h-3.7V259.1c-0.1-3.9,2.1-6.9,5.8-7h3.1c8.8-0.2,9.2,6.9,9.2,15.8l0.5,31.6c0.1,1.6-0.1,3.3-0.5,4.8l-8,66.4C284.8,373.8,282.1,376.2,278.8,376.2z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M143.4,370.6l-8-66.4c-0.5-1.5-0.6-3.2-0.5-4.8l0.5-31.6c0.1-8.8,0.4-15.9,9.2-15.8h3.1c3.7,0.1,5.9,3.1,5.8,7v117.2h-3.7C146.5,376.2,143.8,373.8,143.4,370.6z"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" x1="110.4" y1="5.6" x2="110.4" y2="151.9"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" x1="480.1" y1="5.6" x2="480.1" y2="151.9"/> <polyline fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" points="46.9,5.9 46.9,151.5 481.1,151.5"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M480.7,192.6h29.9h29.9V98.8V5h-29.9h-29.9v93.8V192.6z"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="480.7" y1="191.6" x2="543.5" y2="191.6"/> <path fill="rgb(235, 235, 235)" d="M543,400h4c1.7,0,3,1.3,3,3v32H200h-33.6H0V200v-27.3V0h180h20h350v220c0,1.7-1.3,3-3,3h-4c-1.7,0-3-1.3-3-3V10H197h-7H10v172.7v7.3v235h166.4H190h350v-22C540,401.3,541.3,400,543,400z"/> <path fill="rgb(235, 235, 235)" d="M533.4,105.9c-0.7-1.1-1.9-1.9-3.4-2l-18.9-3.4v-3.8c3-0.3,5.3-2.8,5.3-5.8c0-3.2-2.6-5.9-5.9-5.9s-5.9,2.6-5.9,5.9c0,0.3,0.3,0.6,0.6,0.6s0.6-0.3,0.6-0.6c0-2.6,2.1-4.7,4.7-4.7c2.6,0,4.7,2.1,4.7,4.7s-2.1,4.7-4.7,4.7c-0.3,0-0.6,0.3-0.6,0.6v4.3l-19.4,3.5c-1.5,0.2-2.8,1-3.4,2c-0.5,0.9-0.6,1.8-0.2,2.8l1.9,3.9h43l1.9-4C534,107.7,533.9,106.8,533.4,105.9z M532.6,108.2l-1.6,3.3h-41.5l-1.5-3.2c-0.3-0.7-0.1-1.3,0.2-1.7c0.5-0.8,1.4-1.3,2.6-1.5l19.5-3.5l19.6,3.5c1.1,0.1,2.1,0.7,2.5,1.5C532.6,106.9,532.8,107.5,532.6,108.2z"/> </svg>`,
+      37: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 435" width="550" height="435"> <g class="seat"> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M542.1,430.5h-79.9V280l-20.8-80.9v-47.5L441.3,4.1h101L542.1,430.5z"/> <polygon fill="${e.fillColor}" points="439.7,6.9 436.5,6.9 60,6.9 60,152.5 436.5,152.5 439.7,152.5 503.7,152.5 503.7,6.9 "/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M221.5,426v-37.5c-18.8-13.4-41.3-22.5-59.9-29.1c-39.4-14.1-97.6-15.5-98.5-15.1C63,344.5,42.9,427,42.9,427L221.5,426z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M461.9,30.4h8.3h1.4h8.3c1.7,0,3.1,1.2,3.6,2.8c1.6,6.9,5.5,25.5,5.5,47.2s-3.8,40.1-5.5,47.2c-0.5,1.7-1.7,2.8-3.6,2.8h-8.3h-1.4h-8.3c-1.7,0-3.1-1.2-3.6-2.8c-1.6-6.9-5.5-25.7-5.5-47.2c0-21.7,3.8-40.1,5.5-47.2C458.7,31.6,460.3,30.4,461.9,30.4z"/> <path fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M439.6,77.6l-70,74.8"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M401.8,390.8c0,2.2-1.1,4-2.7,4.9c-7.1,3.6-27.9,12.5-63.6,11.8c-35.4-0.7-56-8.5-63.1-12c-1.7-0.9-2.8-2.7-2.8-4.9v-52.9H402L401.8,390.8L401.8,390.8z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M402,337.7H269.5v-97.6c0-2.7,1.7-4.9,4.1-5.3c10.8-1.6,40.9-6,62-6c21.2,0,51.4,4.4,62.1,6c2.4,0.4,4.1,2.7,4.1,5.3C402,240.1,402,337.7,402,337.7z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M372.4,361.2c-5.5-1.3-19.8-4.4-36.7-4.4c-16.7,0-31.3,3.1-36.7,4.4c-1.3,0.4-2.2,1.5-2.2,2.9v6.7v1.1v6.7c0,1.5,0.9,2.5,2.2,2.9c5.5,1.3,19.8,4.4,36.7,4.4c16.9,0,31.3-3.1,36.7-4.4c1.3-0.4,2.2-1.5,2.2-2.9v-6.7v-1.1v-6.7C374.6,362.8,373.7,361.5,372.4,361.2z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M271.2,376.2h3.7V259.1c0.1-3.9-2.1-6.9-5.8-7H266c-8.8-0.2-9.2,6.9-9.2,15.8l-0.5,31.6c-0.1,1.6,0.1,3.3,0.5,4.8l8,66.4C265.2,373.8,267.9,376.2,271.2,376.2z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M406.6,370.6l8-66.4c0.5-1.5,0.6-3.2,0.5-4.8l-0.5-31.6c-0.1-8.8-0.4-15.9-9.2-15.8h-3.1c-3.7,0.1-5.9,3.1-5.8,7v117.2h3.7C403.5,376.2,406.2,373.8,406.6,370.6z"/> <line fill="none" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x1="439.6" y1="5.6" x2="439.6" y2="151.9"/> <line fill="none" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x1="69.9" y1="5.6" x2="69.9" y2="151.9"/> <polyline fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" points="503.1,5.9 503.1,151.5 68.9,151.5 "/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,98.8V5h-30H9.4v93.8v93.8h29.9h29.9V98.8H69.3z"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="69.3" y1="191.6" x2="6.5" y2="191.6"/> <path fill="rgb(235, 235, 235)" d="M7,400H3c-1.7,0-3,1.3-3,3v32h350h33.6H550V200v-27.3V0H370h-20H0v220c0,1.7,1.3,3,3,3h4c1.7,0,3-1.3,3-3V10h343h7h180v172.7v7.3v235H373.6H360H10v-22C10,401.3,8.7,400,7,400z"/> <path fill="rgb(235, 235, 235)" d="M62.9,105.9c-0.7-1.1-1.9-1.9-3.4-2l-18.9-3.4v-3.8c3-0.3,5.3-2.8,5.3-5.8c0-3.2-2.6-5.9-5.9-5.9 s-5.9,2.6-5.9,5.9c0,0.3,0.3,0.6,0.6,0.6s0.6-0.3,0.6-0.6c0-2.6,2.1-4.7,4.7-4.7s4.7,2.1,4.7,4.7s-2.1,4.7-4.7,4.7 c-0.3,0-0.6,0.3-0.6,0.6v4.3L20,103.9c-1.5,0.2-2.8,1-3.4,2c-0.5,0.9-0.6,1.8-0.2,2.8l1.9,3.9h43l1.9-4 C63.5,107.7,63.4,106.8,62.9,105.9z M62,108.2l-1.6,3.3H19l-1.5-3.2c-0.3-0.7-0.1-1.3,0.2-1.7c0.5-0.8,1.4-1.3,2.6-1.5l19.5-3.5 l19.6,3.5c1.1,0.1,2.1,0.7,2.5,1.5C62.1,106.9,62.3,107.5,62,108.2z"/> </g> </svg>`,
+      38: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 435" width="550" height="435"> <g class="seat"> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M7.9,4.5h79.9V155l20.8,80.9v47.5l0.1,147.5H7.8L7.9,4.5z"/> <polygon fill="${e.fillColor}" points="113.5,282.5 110.3,282.5 46.3,282.5 46.3,428.1 110.3,428.1 113.5,428.1 490,428.1 490,282.5 "/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M328.5,9v37.5c18.8,13.4,41.3,22.5,59.9,29.1c39.4,14.1,97.6,15.5,98.5,15.1C487,90.5,507.1,8,507.1,8L328.5,9z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M88.1,404.6h-8.3h-1.4h-8.3c-1.7,0-3.1-1.2-3.6-2.8c-1.6-6.9-5.5-25.5-5.5-47.2s3.8-40.1,5.5-47.2c0.5-1.7,1.7-2.8,3.6-2.8h8.3h1.4h8.3c1.7,0,3.1,1.2,3.6,2.8c1.6,6.9,5.5,25.7,5.5,47.2c0,21.7-3.8,40.1-5.5,47.2C91.3,403.4,89.7,404.6,88.1,404.6z"/> <path fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M110.4,357.4l70-74.8"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M280.4,239.5c0,2.2-1.1,4-2.7,4.9c-7.1,3.6-27.9,12.5-63.6,11.8c-35.4-0.7-56-8.5-63.1-12c-1.7-0.9-2.8-2.7-2.8-4.9v-52.9h132.4L280.4,239.5L280.4,239.5z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M280.6,186.4H148.1V88.8c0-2.7,1.7-4.9,4.1-5.3c10.8-1.6,40.9-6,62-6c21.2,0,51.4,4.4,62.1,6c2.4,0.4,4.1,2.7,4.1,5.3C280.6,88.8,280.6,186.4,280.6,186.4z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M251,209.9c-5.5-1.3-19.8-4.4-36.7-4.4c-16.7,0-31.3,3.1-36.7,4.4c-1.3,0.4-2.2,1.5-2.2,2.9v6.7v1.1v6.7c0,1.5,0.9,2.5,2.2,2.9c5.5,1.3,19.8,4.4,36.7,4.4s31.3-3.1,36.7-4.4c1.3-0.4,2.2-1.5,2.2-2.9v-6.7v-1.1v-6.7C253.2,211.5,252.3,210.2,251,209.9z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M149.8,224.9h3.7V107.8c0.1-3.9-2.1-6.9-5.8-7h-3.1c-8.8-0.2-9.2,6.9-9.2,15.8l-0.5,31.6c-0.1,1.6,0.1,3.3,0.5,4.8l8,66.4C143.8,222.5,146.5,224.9,149.8,224.9z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M285.2,219.3l8-66.4c0.5-1.5,0.6-3.2,0.5-4.8l-0.5-31.6c-0.1-8.8-0.4-15.9-9.2-15.8h-3.1c-3.7,0.1-5.9,3.1-5.8,7v117.2h3.7C282.1,224.9,284.8,222.5,285.2,219.3z"/> <line fill="none" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x1="110.4" y1="429.4" x2="110.4" y2="283.1"/> <line fill="none" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x1="480.1" y1="429.4" x2="480.1" y2="283.1"/> <polyline fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" points="46.9,429.1 46.9,283.5 481.1,283.5 "/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M480.7,336.2V430h29.9h29.9v-93.8v-93.8h-29.9h-29.9V336.2z"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="480.7" y1="243.4" x2="543.5" y2="243.4"/> <path fill="rgb(235, 235, 235)" d="M543,35h4c1.7,0,3-1.3,3-3V0H200h-33.6H0v235v27.3V435h180h20h350V215c0-1.7-1.3-3-3-3h-4c-1.7,0-3,1.3-3,3v210H197h-7H10V252.3V245V10h166.4H190h350v22C540,33.7,541.3,35,543,35z"/> <path fill="rgb(235, 235, 235)" d="M533.4,343.3c-0.7-1.1-1.9-1.9-3.4-2l-18.9-3.4v-3.8c3-0.3,5.3-2.8,5.3-5.8c0-3.2-2.6-5.9-5.9-5.9s-5.9,2.6-5.9,5.9c0,0.3,0.3,0.6,0.6,0.6s0.6-0.3,0.6-0.6c0-2.6,2.1-4.7,4.7-4.7c2.6,0,4.7,2.1,4.7,4.7s-2.1,4.7-4.7,4.7c-0.3,0-0.6,0.3-0.6,0.6v4.3l-19.4,3.5c-1.5,0.2-2.8,1-3.4,2c-0.5,0.9-0.6,1.8-0.2,2.8l1.9,3.9h43l1.9-4 C534,345.1,533.9,344.2,533.4,343.3z M532.6,345.6l-1.6,3.3h-41.5l-1.5-3.2c-0.3-0.7-0.1-1.3,0.2-1.7c0.5-0.8,1.4-1.3,2.6-1.5l19.5-3.5l19.6,3.5c1.1,0.1,2.1,0.7,2.5,1.5C532.6,344.3,532.8,344.9,532.6,345.6z"/> </g> </svg>`,
+      39: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 435" width="550" height="435"> <g class="seat"> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M542.2,430.9h-101l0.1-147.5v-47.5l20.8-80.9V4.5H542L542.2,430.9z"/> <polygon fill="${e.fillColor}" points="439.7,282.5 436.5,282.5 60,282.5 60,428.1 436.5,428.1 439.7,428.1 503.7,428.1 503.7,282.5 "/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M42.9,8c0,0,20.1,82.5,20.2,82.7c1,0.3,59.1-1,98.5-15.1c18.5-6.6,41.1-15.7,59.9-29.1V9L42.9,8z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M458.3,401.8c-1.6-7.1-5.5-25.5-5.5-47.2c0-21.5,3.8-40.2,5.5-47.2c0.5-1.7,1.9-2.8,3.6-2.8h8.3h1.4h8.3c1.9,0,3.1,1.2,3.6,2.8c1.6,7.1,5.5,25.5,5.5,47.2s-3.8,40.2-5.5,47.2c-0.5,1.7-1.9,2.8-3.6,2.8h-8.3h-1.4h-8.3C460.3,404.6,458.7,403.4,458.3,401.8z"/> <path fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M369.6,282.6l70,74.8"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M269.6,239.5c0,2.2,1.1,4,2.7,4.9c7.1,3.6,27.9,12.5,63.6,11.8c35.4-0.7,56-8.5,63.1-12c1.7-0.9,2.8-2.7,2.8-4.9v-52.9H269.4L269.6,239.5L269.6,239.5z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M269.4,186.4h132.5V88.8c0-2.7-1.7-4.9-4.1-5.3c-10.8-1.6-40.9-6-62-6c-21.2,0-51.4,4.4-62.1,6c-2.4,0.4-4.1,2.7-4.1,5.3C269.4,88.8,269.4,186.4,269.4,186.4z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M299,209.9c5.5-1.3,19.8-4.4,36.7-4.4c16.7,0,31.3,3.1,36.7,4.4c1.3,0.4,2.2,1.5,2.2,2.9v6.7v1.1v6.7c0,1.5-0.9,2.5-2.2,2.9c-5.5,1.3-19.8,4.4-36.7,4.4c-16.9,0-31.3-3.1-36.7-4.4c-1.3-0.4-2.2-1.5-2.2-2.9v-6.7v-1.1v-6.7C296.8,211.5,297.7,210.2,299,209.9z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M400.2,224.9h-3.7V107.8c-0.1-3.9,2.1-6.9,5.8-7h3.1c8.8-0.2,9.2,6.9,9.2,15.8l0.5,31.6c0.1,1.6-0.1,3.3-0.5,4.8l-8,66.4C406.2,222.5,403.5,224.9,400.2,224.9z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M264.8,219.3l-8-66.4c-0.5-1.5-0.6-3.2-0.5-4.8l0.5-31.6c0.1-8.8,0.4-15.9,9.2-15.8h3.1c3.7,0.1,5.9,3.1,5.8,7v117.2h-3.7C267.9,224.9,265.2,222.5,264.8,219.3z"/> <line fill="none" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x1="439.6" y1="429.4" x2="439.6" y2="283.1"/> <line fill="none" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x1="69.9" y1="429.4" x2="69.9" y2="283.1"/> <polyline fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" points="503.1,429.1 503.1,283.5 68.9,283.5 "/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M69.3,242.4h-30H9.4v93.8V430h29.9h29.9v-93.8v-93.8H69.3z"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="69.3" y1="243.4" x2="6.5" y2="243.4"/> <path fill="rgb(235, 235, 235)" d="M7,35H3c-1.7,0-3-1.3-3-3V0h350h33.6H550v235v27.3V435H370h-20H0V215c0-1.7,1.3-3,3-3h4c1.7,0,3,1.3,3,3v210h343h7h180V252.3V245V10H373.6H360H10v22C10,33.7,8.7,35,7,35z"/> <path fill="rgb(235, 235, 235)" d="M62.9,343.3c-0.7-1.1-1.9-1.9-3.4-2l-18.9-3.4v-3.8c3-0.3,5.3-2.8,5.3-5.8c0-3.2-2.6-5.9-5.9-5.9 s-5.9,2.6-5.9,5.9c0,0.3,0.3,0.6,0.6,0.6s0.6-0.3,0.6-0.6c0-2.6,2.1-4.7,4.7-4.7s4.7,2.1,4.7,4.7S42.6,333,40,333c-0.3,0-0.6,0.3-0.6,0.6v4.3L20,341.3c-1.5,0.2-2.8,1-3.4,2c-0.5,0.9-0.6,1.8-0.2,2.8l1.9,3.9h43l1.9-4 C63.5,345.1,63.4,344.2,62.9,343.3z M62,345.6l-1.6,3.3H19l-1.5-3.2c-0.3-0.7-0.1-1.3,0.2-1.7c0.5-0.8,1.4-1.3,2.6-1.5l19.5-3.5l19.6,3.5c1.1,0.1,2.1,0.7,2.5,1.5C62.1,344.3,62.3,344.9,62,345.6z"/> </g> </svg>`,
+      40: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275 1230" width="275" height="1230"> <g class="seat"> <polygon fill="${e.fillColor}" points="275,505 73,505 210.9,46.3 275,46.3 "/> <polygon fill="rgb(235, 235, 235)" points="275,513.8 70.9,513.8 70.9,503.8 275,503.8 \t"/> <polyline fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" points="275,983.4 38.8,983.4 38.8,912.2 275,912.2 "/> <path fill="rgb(235, 235, 235)" d="M50,691.8h225v10H48.4"/> <polyline fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="275,1179.3 38.5,1179.3 38.5,913.7 7.8,913.7 7.8,1225 275,1225 "/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M275,492.9H108.5c3.4-14.5,7.1-28.9,11-43.2c12.3-44.6,35.8-125.2,63-204.3c9.9-28.8,20.2-57.4,30.2-84.1H275"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M81.7,766.6l52.1,85.9l57.2-34.7c1.6-1,2.2-2.8,1.5-4.5c-3.3-7.6-12.6-28.7-20.9-42.3c-8.3-13.7-22.8-31.8-27.9-38.1c-1.2-1.4-3.2-1.7-4.7-0.8C138.9,731.9,81.7,766.6,81.7,766.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M66.8,775.8c-1.3,0.8-1.9,2.1-1.8,3.5c0.7,5.9,3.7,22.5,18.1,45.4c14.3,22.7,27,33.3,31.9,36.6c1.2,0.8,2.7,0.9,4,0.1l31-18.8l-52.1-85.8L66.8,775.8L66.8,775.8z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M275,907.2l-90.4-0.4v-41.4c0-3.5,1.9-6.8,4.9-8.6l45.6-26.9c1.5-0.9,3.3-1.4,5.1-1.4H275"/> <rect fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" x="91" y="535.5" width="159.1" height="140"/> <path fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" d="M179.1,605.5c0,4.2-3.7,7.7-8.3,7.8s-8.5-3.1-8.8-7.3s3.1-7.9,7.7-8.3c4.6-0.4,8.7,2.6,9.3,6.8L179.1,605.5z"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="177.2" y1="599.5" x2="250.3" y2="535.4"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="177.2" y1="611.4" x2="250.3" y2="675.5"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="164.1" y1="599.5" x2="90.9" y2="535.4"/> <line fill="none" stroke="rgb(147, 147, 147)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" x1="164.1" y1="611.4" x2="90.9" y2="675.5"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M80.2,1166.7h132.5v-97.6c0-2.7-1.7-4.9-4.1-5.3c-10.8-1.6-40.9-6-62-6c-21.2,0-51.4,4.4-62.1,6c-2.4,0.4-4.1,2.7-4.1,5.3C80.2,1069.1,80.2,1166.7,80.2,1166.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M80.4,1192.3c0,2.2,1.1,4,2.7,4.9c7.1,3.6,27.9,12.5,63.6,11.8c35.4-0.7,56-8.5,63.1-12c1.7-0.9,2.8-2.7,2.8-4.9v-52.9H80.2L80.4,1192.3L80.4,1192.3z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M109.8,1162.7c5.5-1.3,19.8-4.4,36.7-4.4c16.7,0,31.3,3.1,36.7,4.4c1.3,0.4,2.2,1.5,2.2,2.9v6.7v1.1v6.7c0,1.5-0.9,2.5-2.2,2.9c-5.5,1.3-19.8,4.4-36.7,4.4s-31.3-3.1-36.7-4.4c-1.3-0.4-2.2-1.5-2.2-2.9v-6.7v-1.1v-6.7C107.6,1164.3,108.5,1163,109.8,1162.7z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M211,1197.1h-3.7V1080c-0.1-3.9,2.1-6.9,5.8-7h3.1c8.8-0.2,9.2,6.9,9.2,15.8l0.5,31.6c0.1,1.6-0.1,3.3-0.5,4.8l-8,66.4C217,1194.7,214.3,1197.1,211,1197.1z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M75.6,1191.5l-8-66.4c-0.5-1.5-0.6-3.2-0.5-4.8l0.5-31.6c0.1-8.8,0.4-15.9,9.2-15.8h3.1c3.7,0.1,5.9,3.1,5.8,7v117.2H82C78.7,1197.1,76,1194.7,75.6,1191.5z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M275,50.2h-41.5c-16.2,46.2-47.1,119.3-73.2,195.3c-27.2,79.1-50.7,159.7-63,204.3C37.7,665.5,38.1,911.6,38.1,911.6l-30.3,2.1c0,0,15-320.5,42.1-396.7c11.8-33.2,25.9-102,45.8-169c25.9-86.9,57-170.8,57-170.8l67-171.3L275,5"/> <path fill="rgb(235, 235, 235)" d="M131.9,247.1C169.8,136.7,214.2,29.3,222.2,10H275V0h-59.4l-1.3,3.1c-0.5,1.2-50,119.2-91.8,240.8c-31.2,90.9-56.2,179.6-63.1,204.6C28.5,560.3,14,683.1,7.3,766.4C2.2,829.4,0.7,880,0.2,905H0v17v0.1V1230h275v-10H10V922.1V922c0-0.6,0-2.9,0.1-7H275v-10H10.2C11.4,844.1,19,632,69,451.1C75.9,426.2,100.8,337.7,131.9,247.1z"/> </g> </svg>`,
+      41: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275 1230" width="275" height="1230"> <g class="seat"> <polyline fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  points="0,983.4 128,983.4 128,912.2 0,912.2 "/> <polyline fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8"  points="0,1225 275,1225 275,1179.3 0,1179.3 "/> <path fill="rgb(235, 235, 235)" d="M0,1220h265v-118.2h10V1230H0"/> <polygon fill="${e.fillColor}" points="0,505 79.3,505 177.6,46.3 0,46.3 "/> <polyline fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8"  points="0,50.2 176.2,50.2 153.6,157.2 213.4,157.3 212,7.7 0,6.2 "/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M0,828.5h126.6c0,0-0.9,77.7,0,78.7L0,906.8"/> <polygon fill="rgb(235, 235, 235)" points="275,995.6 265,995.6 265,704.2 205.1,508.2 205.1,507.4 209.1,159.2 208.4,10 0,10 0,0 218.4,0 219.1,159.3 215.1,506.8 275,702.8 \t"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M80.2,1166.7h132.5v-97.6c0-2.7-1.7-4.9-4.1-5.3c-10.8-1.6-40.9-6-62-6c-21.2,0-51.4,4.4-62.1,6c-2.4,0.4-4.1,2.7-4.1,5.3C80.2,1069.1,80.2,1166.7,80.2,1166.7z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M80.4,1192.3c0,2.2,1.1,4,2.7,4.9c7.1,3.6,27.9,12.5,63.6,11.8c35.4-0.7,56-8.5,63.1-12c1.7-0.9,2.8-2.7,2.8-4.9v-52.9H80.2L80.4,1192.3L80.4,1192.3z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M109.8,1162.7c5.5-1.3,19.8-4.4,36.7-4.4c16.7,0,31.3,3.1,36.7,4.4c1.3,0.4,2.2,1.5,2.2,2.9v6.7v1.1v6.7c0,1.5-0.9,2.5-2.2,2.9c-5.5,1.3-19.8,4.4-36.7,4.4s-31.3-3.1-36.7-4.4c-1.3-0.4-2.2-1.5-2.2-2.9v-6.7v-1.1v-6.7C107.6,1164.3,108.5,1163,109.8,1162.7z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8"  d="M211,1197.1h-3.7V1080c-0.1-3.9,2.1-6.9,5.8-7h3.1c8.8-0.2,9.2,6.9,9.2,15.8l0.5,31.6c0.1,1.6-0.1,3.3-0.5,4.8l-8,66.4C217,1194.7,214.3,1197.1,211,1197.1z"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8"  d="M75.6,1191.5l-8-66.4c-0.5-1.5-0.6-3.2-0.5-4.8l0.5-31.6c0.1-8.8,0.4-15.9,9.2-15.8h3.1c3.7,0.1,5.9,3.1,5.8,7v117.2H82C78.7,1197.1,76,1194.7,75.6,1191.5z"/> <ellipse fill="rgb(235, 235, 235)" stroke="rgb(147, 147, 147)" stroke-width="1.2" stroke-miterlimit="4.8" cx="44.7" cy="878.8" rx="33.6" ry="27"/> <path fill="rgb(147, 147, 147)" d="M48.3,906.1h-7.2v-17.2c0-1.8,1.5-3.3,3.3-3.3h0.7c1.8,0,3.3,1.5,3.3,3.3L48.3,906.1L48.3,906.1z"/> <path fill="rgb(235, 235, 235)" d="M132,915H0v-10h132"/> <path fill="rgb(235, 235, 235)" d="M122.6,911.3v-99.1h10v99.1"/> <path fill="rgb(235, 235, 235)" d="M132.6,884.2v99.1h-10v-99.1"/> <polygon fill="rgb(235, 235, 235)" points="132,701.9 122,701.9 122,680.8 72.3,513.8 0,513.8 0,503.8 79.7,503.8 132,679.4"/> <polyline fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" points="0,492.9 59.8,492.9 133.3,161.3 0,161.3"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M97.8,119.4c-7.1,1.6-25.5,5.5-47.2,5.5c-21.5,0-40.2-3.8-47.2-5.5c-1.7-0.5-2.8-1.9-2.8-3.6v-8.3v-1.4v-8.3c0-1.9,1.2-3.1,2.8-3.6c7.1-1.6,25.5-5.5,47.2-5.5s40.2,3.8,47.2,5.5c1.7,0.5,2.8,1.9,2.8,3.6v8.3v1.4v8.3C100.6,117.4,99.4,119,97.8,119.4z"/> </g> </svg>`,
+      42: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 325" width="550" height="325"> <g class="seat"> <polyline fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" points="544.4,80.9 36.5,80.9 36.5,9.7 544.4,9.7 "/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M336.3,314.6h132.5V217c0-2.7-1.7-4.9-4.1-5.3c-10.8-1.6-40.9-6-62-6c-21.2,0-51.4,4.4-62.1,6c-2.4,0.4-4.1,2.7-4.1,5.3C336.3,217,336.3,314.6,336.3,314.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M468.7,320v-32.9H336.3"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M363.7,318v3.3v-1.1v-6.7c0-1.3,0.9-2.6,2.2-2.9c5.5-1.3,19.8-4.4,36.7-4.4c16.7,0,31.3,3.1,36.7,4.4c1.3,0.4,2.2,1.5,2.2,2.9v6.7v1.1V318"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M463.4,320v-92.1c-0.1-3.9,2.1-6.9,5.8-7h3.1c8.8-0.2,9.2,6.9,9.2,15.8l0.5,31.6c0.1,1.6-0.1,3.3-0.5,4.8l-5.6,46.9"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M329.2,318.7l-5.5-45.7c-0.5-1.5-0.6-3.2-0.5-4.8l0.5-31.6c0.1-8.8,0.4-15.9,9.2-15.8h3.1c3.7,0.1,5.9,3.1,5.8,7v91.3"/> <rect fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="8" y="5.4" width="32.4" height="220.4"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M487,117.9c-1.6-7.1-5.5-25.5-5.5-47.2c0-21.5,3.8-40.2,5.5-47.2c0.5-1.7,1.9-2.8,3.6-2.8h8.3h1.4h8.3c1.9,0,3.1,1.2,3.6,2.8 c1.6,7.1,5.5,25.5,5.5,47.2s-3.8,40.2-5.5,47.2c-0.5,1.7-1.9,2.8-3.6,2.8h-8.3h-1.4h-8.3C489,120.7,487.4,119.5,487,117.9z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M274.9,320.8H7.4V205.7h223.9c24.1,0,43.6,19.5,43.6,43.6V320.8z"/> <polygon fill="rgb(235, 235, 235)" points="550,129.2 550,0 548.8,0 1.2,0 0,0 0,2.8 0,322.2 0,325 1.2,325 548.8,325 550,325 550,202.8 540,202.8 540,315 10,315 10,10 540,10 540,129.2 "/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M398.2,128.3l46.5-47"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M546.2,128.4h-506"/> </g> </svg>`,
+      43: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 325" width="550" height="325"> <g class="seat" transform="scale(-1, 1) translate(-550,0)"> <polyline fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" points="544.4,80.9 36.5,80.9 36.5,9.7 544.4,9.7 "/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M336.3,314.6h132.5V217c0-2.7-1.7-4.9-4.1-5.3c-10.8-1.6-40.9-6-62-6c-21.2,0-51.4,4.4-62.1,6c-2.4,0.4-4.1,2.7-4.1,5.3C336.3,217,336.3,314.6,336.3,314.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M468.7,320v-32.9H336.3"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M363.7,318v3.3v-1.1v-6.7c0-1.3,0.9-2.6,2.2-2.9c5.5-1.3,19.8-4.4,36.7-4.4c16.7,0,31.3,3.1,36.7,4.4c1.3,0.4,2.2,1.5,2.2,2.9v6.7v1.1V318"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M463.4,320v-92.1c-0.1-3.9,2.1-6.9,5.8-7h3.1c8.8-0.2,9.2,6.9,9.2,15.8l0.5,31.6c0.1,1.6-0.1,3.3-0.5,4.8l-5.6,46.9"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M329.2,318.7l-5.5-45.7c-0.5-1.5-0.6-3.2-0.5-4.8l0.5-31.6c0.1-8.8,0.4-15.9,9.2-15.8h3.1c3.7,0.1,5.9,3.1,5.8,7v91.3"/> <rect fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="8" y="5.4" width="32.4" height="220.4"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M487,117.9c-1.6-7.1-5.5-25.5-5.5-47.2c0-21.5,3.8-40.2,5.5-47.2c0.5-1.7,1.9-2.8,3.6-2.8h8.3h1.4h8.3c1.9,0,3.1,1.2,3.6,2.8 c1.6,7.1,5.5,25.5,5.5,47.2s-3.8,40.2-5.5,47.2c-0.5,1.7-1.9,2.8-3.6,2.8h-8.3h-1.4h-8.3C489,120.7,487.4,119.5,487,117.9z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M274.9,320.8H7.4V205.7h223.9c24.1,0,43.6,19.5,43.6,43.6V320.8z"/> <polygon fill="rgb(235, 235, 235)" points="550,129.2 550,0 548.8,0 1.2,0 0,0 0,2.8 0,322.2 0,325 1.2,325 548.8,325 550,325 550,202.8 540,202.8 540,315 10,315 10,10 540,10 540,129.2 "/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M398.2,128.3l46.5-47"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M546.2,128.4h-506"/> </g> </svg>`,
+      44: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 325" width="550" height="325"> <g class="seat"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M213.7,10.4H81.2V108c0,2.7,1.7,4.9,4.1,5.3c10.8,1.6,40.9,6,62,6c21.2,0,51.4-4.4,62.1-6c2.4-0.4,4.1-2.7,4.1-5.3C213.7,108,213.7,10.4,213.7,10.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M81.3,5v32.9h132.4"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M186.3,7V3.7v1.1v6.7c0,1.3-0.9,2.6-2.2,2.9c-5.5,1.3-19.8,4.4-36.7,4.4c-16.7,0-31.3-3.1-36.7-4.4c-1.3-0.4-2.2-1.5-2.2-2.9V4.8V3.7V7"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M86.6,5v92.1c0.1,3.9-2.1,6.9-5.8,7h-3.1c-8.8,0.2-9.2-6.9-9.2-15.8L68,56.7c-0.1-1.6,0.1-3.3,0.5-4.8L74.1,5"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M220.8,6.3l5.5,45.7c0.5,1.5,0.6,3.2,0.5,4.8l-0.5,31.6c-0.1,8.8-0.4,15.9-9.2,15.8H214c-3.7-0.1-5.9-3.1-5.8-7V5.9"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M275.1,4.2h267.5v115.1H318.7c-24.1,0-43.6-19.5-43.6-43.6V4.2z"/> <polyline fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" points="543.2,244.1 35.3,244.1 35.3,315.3 543.2,315.3 "/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M489.4,204.3h8.3h1.4h8.3c1.7,0,3.1,1.1,3.6,2.8c1.7,7,5.5,25.5,5.5,47.2s-3.9,40.1-5.5,47.2c-0.5,1.6-1.7,2.8-3.6,2.8h-8.3h-1.4h-8.3c-1.7,0-3.1-1.1-3.6-2.8c-1.7-7-5.5-25.7-5.5-47.2c0-21.7,3.9-40.1,5.5-47.2C486.2,205.5,487.8,204.3,489.4,204.3z"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M443.5,243.8l-46.5-47"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M39,196.6h506"/> <rect  fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="8.5" y="6.6" width="32.4" height="313"/> <polygon fill="rgb(235, 235, 235)" points="550,195.8 550,325 548.8,325 1.2,325 0,325 0,322.2 0,2.8 0,0 1.2,0 548.8,0 550,0 550,120.2 540,120.2 540,10 10,10 10,315 540,315 540,195.8 "/> </g> </svg>`,
+      45: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 325" width="550" height="325"> <g class="seat" transform="scale(-1, 1) translate(-550,0)"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M213.7,10.4H81.2V108c0,2.7,1.7,4.9,4.1,5.3c10.8,1.6,40.9,6,62,6c21.2,0,51.4-4.4,62.1-6c2.4-0.4,4.1-2.7,4.1-5.3C213.7,108,213.7,10.4,213.7,10.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M81.3,5v32.9h132.4"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M186.3,7V3.7v1.1v6.7c0,1.3-0.9,2.6-2.2,2.9c-5.5,1.3-19.8,4.4-36.7,4.4c-16.7,0-31.3-3.1-36.7-4.4c-1.3-0.4-2.2-1.5-2.2-2.9V4.8V3.7V7"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M86.6,5v92.1c0.1,3.9-2.1,6.9-5.8,7h-3.1c-8.8,0.2-9.2-6.9-9.2-15.8L68,56.7c-0.1-1.6,0.1-3.3,0.5-4.8L74.1,5"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M220.8,6.3l5.5,45.7c0.5,1.5,0.6,3.2,0.5,4.8l-0.5,31.6c-0.1,8.8-0.4,15.9-9.2,15.8H214c-3.7-0.1-5.9-3.1-5.8-7V5.9"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M275.1,4.2h267.5v115.1H318.7c-24.1,0-43.6-19.5-43.6-43.6V4.2z"/> <polyline fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" points="543.2,244.1 35.3,244.1 35.3,315.3 543.2,315.3 "/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M489.4,204.3h8.3h1.4h8.3c1.7,0,3.1,1.1,3.6,2.8c1.7,7,5.5,25.5,5.5,47.2s-3.9,40.1-5.5,47.2c-0.5,1.6-1.7,2.8-3.6,2.8h-8.3h-1.4h-8.3c-1.7,0-3.1-1.1-3.6-2.8c-1.7-7-5.5-25.7-5.5-47.2c0-21.7,3.9-40.1,5.5-47.2C486.2,205.5,487.8,204.3,489.4,204.3z"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M443.5,243.8l-46.5-47"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M39,196.6h506"/> <rect  fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="8.5" y="6.6" width="32.4" height="313"/> <polygon fill="rgb(235, 235, 235)" points="550,195.8 550,325 548.8,325 1.2,325 0,325 0,322.2 0,2.8 0,0 1.2,0 548.8,0 550,0 550,120.2 540,120.2 540,10 10,10 10,315 540,315 540,195.8 "/> </g> </svg>`,
+    },
+    getTemplate(e, t) {
+      const r = (this._mapping[e] || (e => null))(t);
+      return r || st.getTemplate(e, t);
+    },
+  },
+  nt = ({ seatType: e, style: t }) => {
+    const l = Ke.sanitize(rt.getSeatIcon(e, t));
+    return r.default.createElement('div', { className: 'jets-seat-svg', dangerouslySetInnerHTML: { __html: l } });
+  };
+Je(
+  '.jets-seat-price{align-items:center;background:#fefefe;border-radius:12px;box-shadow:1px 1px 1px 1px rgba(0,0,0,.6);box-sizing:border-box;color:#000;display:flex;height:45px;justify-content:center;overflow:hidden;padding:5px 2px;position:absolute;top:-45px}.jets-seat-price .currency{font-size:21px;left:5px;line-height:1;position:absolute;top:11px}.jets-seat-price .priceValue{flex:1;font-size:28px;margin-left:16px;overflow:hidden;padding-left:3px;text-overflow:ellipsis;white-space:nowrap}'
+);
+const ct = ({ priceValue: e, currency: t, maxWidth: l }) => {
+  const i = `${t}${e}`,
+    o = (null == t ? void 0 : t.toString().charAt(0)) || '*';
+  return r.default.createElement(
+    'div',
+    { className: 'jets-seat-price', title: i, style: { maxWidth: l } },
+    r.default.createElement('strong', { className: 'currency' }, o),
+    r.default.createElement('span', { className: 'priceValue' }, e)
+  );
+};
+Je(
+  '.jets-seat{align-items:center;box-sizing:border-box;display:flex;float:left;justify-content:center;position:relative;z-index:10}.jets-unavailable{cursor:not-allowed;position:relative}.jets-available,.jets-selected{cursor:pointer;position:relative}.jets-selected{color:#fff}.jets-aisle,.jets-empty,.jets-index{pointer-events:none}.jets-seat-r-nw{transform:rotate(-20deg)}.jets-seat-r-nw>.jets-seat-number,.jets-seat-r-nw>.jets-seat-passenger,.jets-seat-r-nw>.jets-seat-price{transform:rotate(20deg)}.jets-seat-r-nw45{transform:rotate(-45deg)}.jets-seat-r-nw45>.jets-seat-number,.jets-seat-r-nw45>.jets-seat-passenger,.jets-seat-r-nw45>.jets-seat-price{transform:rotate(45deg)}.jets-seat-r-ne{transform:rotate(20deg)}.jets-seat-r-ne>.jets-seat-number,.jets-seat-r-ne>.jets-seat-passenger,.jets-seat-r-ne>.jets-seat-price{transform:rotate(-20deg)}.jets-seat-r-ne45{transform:rotate(45deg)}.jets-seat-r-ne45>.jets-seat-number,.jets-seat-r-ne45>.jets-seat-passenger,.jets-seat-r-ne45>.jets-seat-price{transform:rotate(-45deg)}.jets-seat-r-s{transform:rotate(180deg)}.jets-seat-r-s>.jets-seat-number,.jets-seat-r-s>.jets-seat-passenger,.jets-seat-r-s>.jets-seat-price{transform:rotate(-180deg)}.jets-seat-r-se{transform:scale(.8) rotate(160deg)}.jets-seat-r-se>.jets-seat-number,.jets-seat-r-se>.jets-seat-passenger,.jets-seat-r-se>.jets-seat-price{transform:rotate(-160deg)}.jets-seat-r-sw{transform:scale(.8) rotate(-160deg)}.jets-seat-r-sw>.jets-seat-number,.jets-seat-r-sw>.jets-seat-passenger,.jets-seat-r-sw>.jets-seat-price{transform:rotate(160deg)}.jets-seat-map svg{height:100%;width:100%}.jets-seat-passenger{align-items:center;border-radius:50%;display:flex;font-size:36px;justify-content:center;max-height:192px;max-width:192px;position:absolute;z-index:11}.jets-seat-svg{height:100%;width:100%}.jets-seat-number{color:#fff;font-size:30px;position:absolute;text-align:center;top:18%;z-index:1}.ST-5,.ST-6{top:28%}.ST-8{margin-left:12px}.ST-9{margin-right:12px}.ST-10{margin-left:60px}.ST-11{margin-right:60px}.ST-12{margin-right:106px;top:25%}.ST-13{margin-left:106px;top:25%}.ST-15{margin-left:38px}.ST-16{margin-right:38px}.ST-17{margin-left:72px}.ST-18{margin-right:72px}.ST-20,.ST-21{top:65%}.ST-22,.ST-23{top:60%}.ST-24,.ST-25{top:55%}.ST-26{margin-right:50px;top:30%}.ST-27{margin-left:50px;top:30%}.ST-28{margin-right:62px;top:45%}.ST-29{margin-left:62px;top:45%}.ST-30{margin-right:62px;top:60%}.ST-31{margin-left:62px;top:60%}.ST-32{margin-right:58px;top:60%}.ST-33{margin-left:58px;top:60%}.ST-34{margin-left:27px;top:40%}.ST-35{margin-right:27px;top:40%}.ST-36{margin-right:122px;top:62%}.ST-37{margin-left:122px;top:62%}.ST-38{margin-right:122px;top:28%}.ST-39{margin-left:122px;top:28%}.ST-42{margin-left:260px;top:70%}.ST-43{margin-right:242px;top:70%}.ST-44{margin-right:254px;top:18%}.ST-45{margin-left:260px;top:18%}'
+);
+const dt = ({ data: t }) => {
+  const {
+      onSeatClick: l,
+      showTooltip: i,
+      onTooltipClose: o,
+      seatLabelJumpTo: s,
+      resetSeatJumpTo: a,
+      params: n,
+      config: c,
+      colorTheme: d,
+    } = e.useContext(A),
+    {
+      letter: h,
+      type: g,
+      status: p,
+      size: m,
+      passenger: C,
+      color: u,
+      rotation: f,
+      seatType: k,
+      seatIconType: v,
+      topOffset: w,
+      leftOffset: b,
+      number: x,
+      price: M,
+      priceValue: z,
+      currency: y,
+      score: S,
+    } = t,
+    { index: T, aisle: E } = L,
+    H = `jets-seat jets-${g} jets-${p} ${f ? `jets-seat-r-${f}` : ''}`,
+    _ = M && (null == c ? void 0 : c.visibleSeatPriceLabels),
+    V = $.calculateSeatColorByScore(S, d.customSeatColorRanges) || u,
+    O = e.useRef(),
+    [B, I] = e.useState(() => ({
+      width: 0.8 * m.width,
+      height: 0.8 * m.width,
+      backgroundColor: d.defaultPassengerBadgeColor,
+      color: d.defaultPassengerBadgeLabelColor,
+      border: `1px solid ${d.defaultPassengerBadgeBorderColor}`,
+      transform: null == n ? void 0 : n.antiRotation,
+    })),
+    W = () => (g === T || g === E ? '' : C ? C.abbr || 'P' : '');
+  let R = '';
+  null == n || !n.isHorizontal || (g !== E && g !== T) || (R = n.rightToLeft ? '' : 'rotate(180deg)');
+  const P = { width: m.width, height: m.height, top: w, left: b, transform: R },
+    N = {
+      strokeColor: d.seatStrokeColor,
+      armrestColor: d.seatArmrestColor,
+      fillColor: V,
+      strokeWidth: d.seatStrokeWidth,
+    },
+    D = {
+      transform: `${null == n ? void 0 : n.antiRotation} scale(${n.antiScale})`,
+      color: d.seatLabelColor,
+      zIndex: 100,
+    };
+  e.useEffect(() => {
+    C &&
+      (() => {
+        if (!O.current) return;
+        if (!O.current.querySelector('.seat')) return;
+        const e = { ...B };
+        null != C && C.passengerColor && (e.backgroundColor = C.passengerColor), I(e);
+      })();
+  }, [C]),
+    e.useEffect(() => {
+      var e;
+      s &&
+        (null == x ? void 0 : x.toUpperCase()) === (null == s ? void 0 : s.toUpperCase()) &&
+        (null === (e = O.current) || void 0 === e || e.scrollIntoView(), i(t, O, { nativeEvent: null }), a());
+    }, [s]);
+  return r.default.createElement(
+    'div',
+    {
+      ref: O,
+      style: P,
+      className: H,
+      onClick: e => l(t, O, e),
+      onMouseEnter: n.tooltipOnHover ? e => i(t, O, e) : null,
+      onMouseLeave: n.tooltipOnHover
+        ? e =>
+            ((e, t, r) => {
+              var l;
+              (null != r &&
+                null !== (l = r.relatedTarget) &&
+                void 0 !== l &&
+                null !== (l = l.className) &&
+                void 0 !== l &&
+                l.includes('tooltip')) ||
+                o(e, t, r);
+            })(t, O, e)
+        : null,
+      'data-testid': 'jets-seat',
+    },
+    k && g !== T
+      ? r.default.createElement(
+          r.default.Fragment,
+          null,
+          _ && r.default.createElement(ct, { priceValue: z, currency: y, maxWidth: m.width }),
+          r.default.createElement('div', { className: `jets-seat-number ST-${v}` }, `${x}`),
+          r.default.createElement(nt, { seatType: k, style: N }),
+          C &&
+            r.default.createElement(
+              'div',
+              { className: 'jets-seat-passenger', style: B },
+              r.default.createElement(
+                'div',
+                {
+                  style: {
+                    transform: null == n || !n.isHorizontal || (null != n && n.rightToLeft) ? '' : 'rotate(180deg)',
+                  },
+                },
+                W()
+              )
+            )
+        )
+      : r.default.createElement('div', { style: D, 'data-testid': 'jets-seat-index' }, W())
+  );
+};
+Je('.jets-row{position:absolute}');
+const ht = ({ seats: t, top: l }) => {
+  var i;
+  const o = e.useRef(null),
+    { componentOverrides: s } = e.useContext(A),
+    a = null !== (i = null == s ? void 0 : s.JetsSeat) && void 0 !== i ? i : dt;
+  return r.default.createElement(
+    'div',
+    { className: 'jets-row', style: { top: l }, ref: o },
+    null == t ? void 0 : t.map(e => r.default.createElement(a, { key: e.uniqId, data: e }))
+  );
+};
+Je(
+  '.jets-cabin-title-container{position:absolute}.jets-cabin-title-hl-right{right:0}.jets-cabin-title-hl-left,.jets-cabin-title-hl-right{position:absolute;top:0;white-space:nowrap;width:60px}.jets-cabin-title-hl-left{left:0}.jets-cabin-title-label-left{right:0;transform-origin:bottom right}.jets-cabin-title-label-left,.jets-cabin-title-label-right{border-radius:3px;font-size:16px;padding:0 6px;position:absolute;top:0}.jets-cabin-title-label-right{left:0;transform-origin:bottom left}'
+);
+const gt = ({ top: t, height: l, lang: i, localeKey: o }) => {
+  const { params: s, colorTheme: a, config: n } = e.useContext(A),
+    c = e.useRef(null),
+    d = a.cabinTitlesHighlightColors,
+    h = n.customCabinTitles && n.customCabinTitles[o] ? n.customCabinTitles[o] : z[i][o],
+    g = { color: a.cabinTitlesLabelColor, top: t, height: l, width: s.innerWidth },
+    p = { transform: 'translateY(-50%) rotate(-90deg)', zoom: s.antiScale },
+    m = { transform: 'translateY(-50%) rotate(90deg)', zoom: s.antiScale },
+    C = { height: l, borderRight: `${3 * s.antiScale}px solid ${d[o]}` },
+    u = { height: l, borderLeft: `${3 * s.antiScale}px solid ${d[o]}` };
+  return r.default.createElement(
+    'div',
+    { className: 'jets-cabin-title-container', style: g, ref: c, 'data-testid': 'jets-cabin-title' },
+    r.default.createElement(
+      'div',
+      { className: 'jets-cabin-title-hl-left', style: C },
+      r.default.createElement('div', { className: 'jets-cabin-title-label-left', style: p }, h)
+    ),
+    r.default.createElement(
+      'div',
+      { className: 'jets-cabin-title-hl-right', style: u },
+      r.default.createElement('div', { className: 'jets-cabin-title-label-right', style: m }, h)
+    )
+  );
+};
+Je(
+  '.jets-deck{align-items:center;box-sizing:border-box;display:flex;flex-direction:column;height:100%;position:relative;transform-style:preserve-3d;width:100%}'
+);
+const pt = ({ deck: t, lang: l, exits: i, bulks: o, isSingleDeck: s }) => {
+  const { rows: a, number: n, height: c, width: d, wingsInfo: h } = t || {},
+    { params: g } = e.useContext(A),
+    p = e.useRef(null),
+    m = { height: c, padding: '0 10px 0 10px', margin: '0 auto' };
+  return r.default.createElement(
+    'div',
+    { className: 'jets-deck', style: m, ref: p },
+    (null == g ? void 0 : g.visibleCabinTitles) &&
+      a
+        .filter(e => e.isFirstInCabin)
+        .map(e =>
+          r.default.createElement(gt, {
+            key: e.classCode + e.uniqId,
+            top: e.topOffset,
+            height: e.cabinHeight,
+            lang: l,
+            localeKey: e.classCode,
+          })
+        ),
+    n && !s && r.default.createElement(tt, { number: n, lang: l, localeKey: 'deck' }),
+    a.map(e => r.default.createElement(ht, { key: e.uniqId, seats: e.seats, top: e.topOffset })),
+    i && i.length
+      ? i.map(({ topOffset: e, type: t, uniqId: l }, i) =>
+          r.default.createElement(et, { key: l, type: t, index: i, topOffset: e })
+        )
+      : null,
+    o && o.length
+      ? o.map(({ id: e, uniqId: t, type: l, align: i, width: o, height: s, iconType: a, xOffset: n, topOffset: c }) =>
+          r.default.createElement(Xe, {
+            id: e,
+            key: t,
+            type: l,
+            align: i,
+            width: o,
+            height: s,
+            iconType: a,
+            xOffset: n,
+            topOffset: c,
+          })
+        )
+      : null
+  );
+};
+Je(
+  '.jets-deck-selector{background-color:hsla(0,0%,50%,.5);border-radius:3px;height:40px;margin:5px;padding:5px;position:absolute;z-index:1000}'
+);
+const mt = ({ direction: t }) => {
+  const { params: l, colorTheme: i, switchDeck: o } = e.useContext(A),
+    s = e.useRef(null),
+    { deckSelectorStrokeColor: a, deckSelectorFillColor: n, deckSelectorSize: c } = i,
+    d = {
+      transform: `rotate(${180 * Number(t)}deg)`,
+      background: n,
+      height: c,
+      width: c,
+      left: null != l && l.rightToLeft ? 'auto' : 0,
+      right: null != l && l.rightToLeft ? 0 : 'auto',
+    };
+  return r.default.createElement('div', {
+    className: 'jets-deck-selector',
+    style: d,
+    ref: s,
+    onClick: e => o(),
+    dangerouslySetInnerHTML: {
+      __html:
+        ((h = a),
+        `\n<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 384.97 384.97" >\n<g>\n\t<g>\n\t\t<path fill="${h}" d="M360.909,0H24.061C10.767,0,0,10.767,0,24.061v336.848c0,13.293,10.767,24.061,24.061,24.061h336.848\n\t\t\tc13.281,0,24.061-10.767,24.061-24.061V24.061C384.97,10.767,374.191,0,360.909,0z M360.909,360.909H24.061V24.061h336.848\n\t\t\tV360.909z"/>\n\t\t<path fill="${h}" d="M59.935,240.666c0,6.785,5.883,12.151,12.56,11.97h239.92\n\t\t\tc10.671,0.289,16.602-12.872,8.927-20.476l-120.291-119.1c-4.74-4.692-12.403-4.523-17.191,0L63.664,232.065\n\t\t\tC61.379,234.242,59.935,237.274,59.935,240.666z M192.461,138.589l91.021,90.119H101.427L192.461,138.589z"/>\n\t</g>\n</g>\n</svg>\n`),
+    },
+  });
+  var h;
+};
+Je(
+  '.jets-no-data{align-items:center;display:flex;font-size:18px;font-weight:700;height:100%;height:100vh;justify-content:center;width:100%}'
+);
+const Ct = () => {
+  const { params: t } = e.useContext(A),
+    l = { transform: `scale(${null == t ? void 0 : t.antiScale})` };
+  return r.default.createElement(
+    'div',
+    { style: l, className: 'jets-no-data' },
+    'Seat map is not found for the flight'
+  );
+};
+Je('.jets-nose{position:relative}.jets-nose:not(.cut) .nose-dotted-line,.nose-dotted-line{stroke:none}');
+const ut = ({ isFull: t }) => {
+  const { params: l, colorTheme: i } = e.useContext(A),
+    [o, s] = e.useState(0),
+    a = e.useRef(null),
+    { fuselageFillColor: n, fuselageStrokeColor: c, fuselageWindowsColor: d, floorColor: h } = i,
+    g = i.fuselageStrokeWidth / (l.innerWidth / 200),
+    p = { hullColor: n, windowColor: d, outlineColor: c, straightFillColor: t ? n : h, strokeWidth: g };
+  e.useLayoutEffect(() => {
+    s(a.current.getBoundingClientRect().width);
+  }, []);
+  const m = (e =>
+      `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="214" viewBox="0 0 200 214">\n\n<style type="text/css">\n\t.nose-filling-straight{fill:${e.straightFillColor};}\n\t.nose-filling{fill:${e.hullColor};}\n\t.nose-outline{fill:none;stroke:${e.outlineColor};stroke-width:${e.strokeWidth};stroke-linejoin:round;stroke-miterlimit:10;}\n\t.nose-windows{fill:${e.windowColor};}\n\t.nose-dotted-line{fill:none;stroke:none;stroke-width:${e.strokeWidth};stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.9715,5.8292;}\n</style>\n\t\n<path class="nose-filling-straight" d="M1.5 213.5H198.5L198.3 189.5V189.5C198.432 183.009 197.551 176.63 195.513 170.466C183.455 134.002 137.233 2 100 2C62.7343 2.08626 16.4645 134.331 4.45578 170.661C2.43787 176.766 1.5 183.07 1.5 189.5V189.5L1.5 213.5Z" />\n<path class="nose-filling" d="M1.5 191C1.5 191 2.03703 191.308 3 191C9.75537 188.837 37.4722 179.675 47.8 179.5C61.1 179.4 86.8 190 100.1 190C113 190 137.9 179.5 150.8 179.6C163 179.7 197.1 191 197.1 191H198.5V189.4V189.4C198.5 182.97 197.562 176.666 195.544 170.561C183.535 134.232 137.266 2 100 2C62.7343 2.08626 16.4645 134.331 4.45578 170.661C2.43787 176.766 1.5 183.07 1.5 189.5V189.5V191Z" />\n<path class="nose-dotted-line" d="M5 190C14.0715 187.075 38.297 179.661 47.8 179.5C61.1 179.4 86.8 190 100.1 190C113 190 137.9 179.5 150.8 179.6C161.176 179.685 187.392 187.554 195 190"/>\n<path class="nose-outline" d="M198.5 213.5V190.435C198.5 183.385 197.47 176.464 195.252 169.772C182.801 132.214 136.97 2 100 2C63.0303 2 17.199 132.214 4.7484 169.772C2.53029 176.464 1.5 183.385 1.5 190.435V213.5" />\n<path class="nose-windows" d="M143 102.9L138.8 118.7C149.8 122 160 126.4 160 126.4C160 126 151 111.4 147.6 107.2C146.4 105.7 145 104.3 143 102.9Z" fill="white"/>\n<path class="nose-windows" d="M140.4 101.2C137.9 99.9 134.6 98.6 130 97.3C118.8 94.1 101 94 101 94V114.4C101 114.4 120.9 114.4 130 116.4C131.9 116.8 133.9 117.3 135.9 117.9L140.4 101.2Z" fill="white"/>\n<path class="nose-windows" d="M57 102.9C55 104.3 53.7 105.7 52.4 107.2C49 111.4 40 126 40 126.4C40 126.4 50.2 122 61.2 118.7L57 102.9Z" fill="white"/>\n<path class="nose-windows" d="M70.0001 97.3C65.4001 98.6 62.1001 99.9 59.6001 101.2L64.1001 117.8C66.1001 117.2 68.1001 116.7 70.0001 116.3C79.1001 114.3 98.0001 114.3 98.0001 114.3V94C98.0001 94 81.2001 94.1 70.0001 97.3Z" fill="white"/>\n</svg>\n`)(
+      p
+    ),
+    C = t || !0,
+    u = !(null != l && l.isHorizontal && (null == l || !l.rightToLeft)) && C,
+    f = !(null == l || !l.isHorizontal || (null != l && l.rightToLeft)) && C,
+    k = {
+      transform: `${null == l || !l.isHorizontal || (null != l && l.rightToLeft) ? '' : 'rotate(180deg)'} scale(${
+        (o + (1.5 - 0.5 * g) * (l.innerWidth / 200) * 0.5) / o
+      })`,
+      fill: c,
+      marginTop: f ? '-16px' : '',
+      marginBottom: u ? '-16px' : '',
+    };
+  return r.default.createElement('div', {
+    className: 'jets-nose ' + (t ? '' : 'cut'),
+    style: k,
+    ref: a,
+    dangerouslySetInnerHTML: { __html: m },
+    'data-testid': 'jets-nose',
+  });
+};
+Je(
+  '.jets-not-init{align-items:center;display:flex;font-size:18px;font-weight:700;height:100%;height:100vh;justify-content:center;width:100%}.jets-not-init--spinner{height:50px;width:50px}.lds-roller{display:inline-block;height:80px;position:relative;width:80px}.lds-roller div{animation:lds-roller 1.2s cubic-bezier(.5,0,.5,1) infinite;transform-origin:40px 40px}.lds-roller div:after{background:#000;border-radius:50%;content:" ";display:block;height:7px;margin:-4px 0 0 -4px;position:absolute;width:7px}.lds-roller div:first-child{animation-delay:-36ms}.lds-roller div:first-child:after{left:63px;top:63px}.lds-roller div:nth-child(2){animation-delay:-72ms}.lds-roller div:nth-child(2):after{left:56px;top:68px}.lds-roller div:nth-child(3){animation-delay:-.108s}.lds-roller div:nth-child(3):after{left:48px;top:71px}.lds-roller div:nth-child(4){animation-delay:-.144s}.lds-roller div:nth-child(4):after{left:40px;top:72px}.lds-roller div:nth-child(5){animation-delay:-.18s}.lds-roller div:nth-child(5):after{left:32px;top:71px}.lds-roller div:nth-child(6){animation-delay:-.216s}.lds-roller div:nth-child(6):after{left:24px;top:68px}.lds-roller div:nth-child(7){animation-delay:-.252s}.lds-roller div:nth-child(7):after{left:17px;top:63px}.lds-roller div:nth-child(8){animation-delay:-.288s}.lds-roller div:nth-child(8):after{left:12px;top:56px}@keyframes lds-roller{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}'
+);
+const ft = () =>
+  r.default.createElement(
+    'div',
+    { className: 'jets-not-init', 'data-testid': 'jets-not-init' },
+    r.default.createElement(
+      'div',
+      { className: 'lds-roller jets-not-init--spinner' },
+      r.default.createElement('div', null),
+      r.default.createElement('div', null),
+      r.default.createElement('div', null),
+      r.default.createElement('div', null),
+      r.default.createElement('div', null),
+      r.default.createElement('div', null),
+      r.default.createElement('div', null),
+      r.default.createElement('div', null)
+    )
+  );
+Je('.jets-deck-separator{mix-blend-mode:screen;position:relative;width:100%}');
+const kt = ({ width: t }) => {
+  const { params: l, colorTheme: i } = e.useContext(A),
+    o = e.useRef(null),
+    s = { height: i.deckSeparation, background: i.fuselageFillColor };
+  return r.default.createElement('div', {
+    className: 'jets-deck-separator',
+    'data-testid': 'jets-deck-separator',
+    style: s,
+    ref: o,
+  });
+};
+Je('.jets-tail{position:relative}.jets-tail:not(.cut) .tail-dotted-line,.tail-dotted-line{stroke:none}');
+const vt = ({ isFull: t }) => {
+  const { params: l, colorTheme: i } = e.useContext(A),
+    [o, s] = e.useState(0),
+    a = e.useRef(null),
+    { fuselageFillColor: n, fuselageStrokeColor: c, floorColor: d } = i,
+    h = i.fuselageStrokeWidth / (l.innerWidth / 200),
+    g = { hullColor: n, outlineColor: c, straightFillColor: t ? n : d, strokeWidth: h };
+  e.useLayoutEffect(() => {
+    s(a.current.getBoundingClientRect().width);
+  }, []);
+  const p = (e =>
+      `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 200 240">\n<style type="text/css">\n\t.tail-filling-straight{fill:${e.straightFillColor};stroke:${e.outlineColor};stroke-width:${e.strokeWidth};stroke-miterlimit:10;}\n\t.tail-filling{fill:${e.hullColor};}\n\t.tail-outline{fill:none;stroke:${e.outlineColor};stroke-width:${e.strokeWidth};stroke-miterlimit:10;}\n\t.tail-dotted-line{fill:none;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.9808,5.8847;}\n</style>\n<path class="tail-filling-straight" d="M2.3764 38.4678C1.77473 34.9207 1.5 31.332 1.5 27.7342V0H198.5V27.4086C198.5 31.2224 198.193 35.0136 197.521 38.7678C195.33 51.0122 189.575 81.2872 181.452 110.102C182.301 112.913 184.9 118.976 188.5 120.732C192.1 122.488 196.333 122.927 198 122.927V218.049L130.887 214.175C120.953 227.148 110.019 237.073 99.7 237.073C89.3766 237.073 78.4376 227.148 68.5 214.175L1.5 218.049V122.927C3.5 123.171 8.3 123.073 11.5 120.732C14.7 118.39 17.1667 112.669 18 110.102C9.94364 81.049 4.41928 50.5116 2.3764 38.4678Z"/>\n<path class="tail-filling" fill-rule="evenodd" clip-rule="evenodd" d="M124.773 31.1309C115.407 34.9612 106.068 38.7806 99.7 38.7806C93.0698 38.7806 83.4079 34.9465 73.7369 31.1086C64.0079 27.2479 54.2698 23.3834 47.6 23.4153C37.9662 23.5188 14.2876 27.4678 5.61475 28.9143C5.40053 28.95 5.19547 28.9842 5 29.0168H1.5V33.1388C1.5 33.1388 7.66764 72.8413 18 110.102C17.1667 112.669 14.7 118.39 11.5 120.732C8.3 123.073 3.5 123.171 1.5 122.927V218.049L68.5 214.175C78.4376 227.148 89.3766 237.073 99.7 237.073C110.019 237.073 120.953 227.148 130.887 214.175L198 218.049V122.927C196.333 122.927 192.1 122.488 188.5 120.732C184.9 118.976 182.301 112.913 181.452 110.102C191.956 72.8413 198.5 33.1388 198.5 33.1388V29.0168H194.897L194.408 28.9387C185.443 27.5034 160.229 23.4668 150.2 23.4147C143.718 23.383 134.232 27.2625 124.773 31.1309Z"/>\n<path class="tail-dotted-line" d="M5 29.0168C13.1094 27.6652 37.7283 23.5213 47.6 23.4152C60.9 23.3518 86.4 38.7806 99.7 38.7806C112.5 38.7806 137.3 23.3514 150.2 23.4147C160.417 23.4679 186.396 27.6566 194.897 29.0168" />\n<path class="tail-outline" d="M1.5 0V27.7342C1.5 31.332 1.77473 34.9207 2.3764 38.4678C4.41928 50.5116 9.94364 81.049 18 110.102M18 110.102C22.7259 127.145 28.3231 143.676 34.6 155.665C38.0428 162.218 51.8691 192.465 68.5 214.175M18 110.102C17.1667 112.669 14.7 118.39 11.5 120.732C8.3 123.073 3.5 123.171 1.5 122.927V218.049L68.5 214.175M198.5 0V27.4086C198.5 31.2224 198.193 35.0136 197.521 38.7678C195.33 51.0122 189.575 81.2872 181.452 110.102M181.452 110.102C176.647 127.145 171.014 143.676 164.8 155.665C161.356 162.18 147.524 192.451 130.887 214.175M181.452 110.102C182.301 112.913 184.9 118.976 188.5 120.732C192.1 122.488 196.833 122.927 198.5 122.927V218.049L130.887 214.175M68.5 214.175C78.4376 227.148 89.3766 237.073 99.7 237.073C110.019 237.073 120.953 227.148 130.887 214.175"/>\n</svg>`)(
+      g
+    ),
+    m = t || !0,
+    C = !(null == l || !l.isHorizontal || (null != l && l.rightToLeft)) && m,
+    u = !(null != l && l.isHorizontal && (null == l || !l.rightToLeft)) && m,
+    f = {
+      transform: `${null == l || !l.isHorizontal || (null != l && l.rightToLeft) ? '' : 'rotate(180deg)'} scale(${
+        (o + (1.5 - 0.5 * h) * (l.innerWidth / 200) * 0.5) / o
+      })`,
+      fill: c,
+      marginTop: u ? '-16px' : '',
+      marginBottom: C ? '-8px' : '',
+    };
+  return r.default.createElement('div', {
+    className: 'jets-tail ' + (t ? '' : 'cut'),
+    style: f,
+    ref: a,
+    dangerouslySetInnerHTML: { __html: p },
+    'data-testid': 'jets-tail',
+  });
+};
+Je(
+  '.jets-wings{box-sizing:border-box;overflow:hidden;position:absolute;transform:translateZ(-10px)}.jets-wings-alignment-wrapper{align-items:center;display:flex;flex-direction:column;position:absolute;width:100%;z-index:-1}.jets-wings .wing{height:100%;position:absolute;transform-origin:top center;width:50%}.jets-wings .wing.left{left:0}.jets-wings .wing.right{right:0}.jets-wings .wing-leading{height:30px;overflow:hidden;position:absolute;z-index:1}.jets-wings .wing-leading.left{clip-path:polygon(100% 10%,0 100%,0 0)}.jets-wings .wing-leading.right{clip-path:polygon(100% 0,100% 100%,-10% 0)}'
+);
+const wt = ({ wingsInfo: t }) => {
+  var l, i;
+  const { isWingLeadingVisible: o, style: s } = (t => {
+    const { colorTheme: r, params: l } = e.useContext(A),
+      i = () => {
+        if (null == r || !r.wingsWidth) return;
+        const e = {
+          width: `${(null == r ? void 0 : r.wingsWidth) + 8}px`,
+          top: '-3px',
+          background: (null == r ? void 0 : r.seatMapBackgroundColor) || '#fff',
+        };
+        return { left: { ...e, left: '-4px' }, right: { ...e, right: '-4px' } };
+      },
+      o = e.useMemo(
+        () => ({
+          wrapper: { top: t.start },
+          container: { height: t.length, width: l.innerWidth },
+          wing: { background: `${null == r ? void 0 : r.fuselageWingsColor}` },
+          leading: i(),
+        }),
+        [l, r, t]
+      );
+    return {
+      isWingLeadingVisible: Boolean(
+        (null == l ? void 0 : l.visibleWings) && (null == t ? void 0 : t.visibleWingsLeadings) && o.leading
+      ),
+      style: o,
+    };
+  })(t);
+  return r.default.createElement(
+    'div',
+    { className: 'jets-wings-alignment-wrapper', style: s.wrapper },
+    r.default.createElement(
+      'div',
+      { className: 'jets-wings', style: s.container, 'data-testid': 'jets-wings' },
+      o &&
+        r.default.createElement(
+          r.default.Fragment,
+          null,
+          r.default.createElement('div', {
+            className: 'wing-leading left',
+            style: null === (l = s.leading) || void 0 === l ? void 0 : l.left,
+          }),
+          r.default.createElement('div', {
+            className: 'wing-leading right',
+            style: null === (i = s.leading) || void 0 === i ? void 0 : i.right,
+          })
+        ),
+      r.default.createElement('div', { className: 'wing left', style: s.wing }),
+      r.default.createElement('div', { className: 'wing right', style: s.wing })
+    )
+  );
+};
+Je(
+  '.jets-plane-body{margin:0 auto}.jets-deck-wrapper{z-index:1}.deck-floor,.jets-deck-wrapper{position:relative;transform-style:preserve-3d}'
+);
+const bt = ({ activeDeck: t, content: l, exits: i, bulks: o, isSeatMapInited: s, config: a, showOneDeck: n }) => {
+    var c;
+    const { params: d, colorTheme: h, componentOverrides: g } = e.useContext(A),
+      p = e.useRef(new Array()),
+      m = null !== (c = null == g ? void 0 : g.JetsNotInit) && void 0 !== c ? c : ft,
+      { lang: C, visibleFuselage: u } = a,
+      {
+        deckHeightSpacing: f,
+        fuselageStrokeWidth: k,
+        fuselageStrokeColor: v,
+        floorColor: w,
+        wingsWidth: b,
+        fuselageFillColor: L,
+        cabinTitlesWidth: x,
+      } = h,
+      M = {
+        borderLeft: `${k}px solid ${v}`,
+        borderRight: `${k}px solid ${v}`,
+        transform: null != d && d.isHorizontal && !d.rightToLeft ? 'rotate(180deg)' : '',
+      },
+      z = { backgroundColor: w, padding: `${f}px 0`, borderLeft: `solid ${L}`, borderRight: `solid ${L}` },
+      y = l ? [...l] : [];
+    let S = t;
+    null == a || !a.horizontal || (null != a && a.rightToLeft) || (y.reverse(), (S = y.length - 1 - S));
+    const T = (null == d ? void 0 : d.isHorizontal) && !(null != d && d.rightToLeft),
+      E = null != d && d.visibleWings ? 2 * b : 0,
+      H = null != d && d.visibleCabinTitles ? 2 * x : 0,
+      _ = ((null == d ? void 0 : d.innerWidth) || 0) - Math.max(E, H),
+      $ = { width: _ || a.width },
+      V = 1 == (null == y ? void 0 : y.length);
+    return r.default.createElement(
+      'div',
+      { className: 'jets-plane-body', style: $ },
+      u && null != y && y.length
+        ? T
+          ? r.default.createElement(vt, { isFull: true })
+          : r.default.createElement(ut, { isFull: true })
+        : null,
+      null != y && y.length
+        ? r.default.createElement(
+            'div',
+            { className: 'jets-deck-wrapper', style: M },
+            null == y
+              ? void 0
+              : y.map((e, t) =>
+                  n && t != S
+                    ? null
+                    : r.default.createElement(
+                        r.default.Fragment,
+                        { key: e.uniqId + t },
+                        r.default.createElement(
+                          'div',
+                          {
+                            'data-testid': 'jets-plane-body-deck',
+                            ref: e => {
+                              p.current[t] = e;
+                            },
+                            className: 'deck-floor tooltip-holder',
+                            style: {
+                              ...z,
+                              height: e.height + f,
+                              borderWidth: `${Math.max(0.5 * (d.innerWidth - e.width) - k, k)}px`,
+                            },
+                          },
+                          r.default.createElement(pt, {
+                            deck: e,
+                            lang: C,
+                            key: e.uniqId,
+                            exits: i[e.number - 1],
+                            bulks: o[e.number - 1],
+                            style: { position: 'absolute' },
+                            isSingleDeck: V,
+                          })
+                        ),
+                        (null == d ? void 0 : d.visibleWings) &&
+                          r.default.createElement(wt, { wingsInfo: null == e ? void 0 : e.wingsInfo }),
+                        t < y.length - 1 && !n && r.default.createElement(kt, { key: t, width: _ })
+                      )
+                )
+          )
+        : s
+        ? r.default.createElement(Ct, null)
+        : r.default.createElement(m, null),
+      u && null != y && y.length
+        ? T
+          ? r.default.createElement(ut, { isFull: true })
+          : r.default.createElement(vt, { isFull: true })
+        : null
+    );
+  },
+  Lt = [
+    'AR',
+    'CN',
+    'CS',
+    'DA',
+    'DE',
+    'EN',
+    'EL',
+    'ES',
+    'ET',
+    'FR',
+    'HE',
+    'HU',
+    'ID',
+    'IT',
+    'JA',
+    'IW',
+    'KO',
+    'LT',
+    'LV',
+    'NL',
+    'NO',
+    'PL',
+    'PT',
+    'RO',
+    'RU',
+    'TR',
+    'UK',
+    'SV',
+  ];
+class xt extends _ {
+  constructor(e, t, r, i = null, o = 'Bearer', s = null) {
+    super(e, t, r, i, o, s),
+      l(this, 'getPlaneFeatures', async (e, t = 'EN', r = 'metric') => {
+        var l;
+        const i = {
+            flight: e,
+            lang: Lt.includes(t) ? t : 'EN',
+            units: r,
+            metadata: null !== (l = this._apiMetadata) && void 0 !== l ? l : void 0,
+          },
+          o = 'availabilityData',
+          s = await this.postData('flight/features/plane/seatmap', i),
+          a = { seatDetails: null },
+          n = ['F', 'B', 'P', 'E'];
+        for (const t of s)
+          switch (t.id) {
+            case e.id:
+              if (t && t.error) throw new Error(t.error);
+              if (e.cabinClass && n.includes(e.cabinClass)) {
+                const { id: r, cabin: l, entertainment: i, power: o, wifi: s, media: n } = t;
+                (a[e.cabinClass] = { cabin: l, entertainment: i, power: o, wifi: s }), n && (a.media = n);
+              }
+              a.seatDetails = t.seatDetails;
+              break;
+            case o: {
+              const { id: e, ...r } = t;
+              a.availabilityData = { ...r };
+              break;
+            }
+            default:
+              const { id: r, cabin: l, entertainment: i, power: s, wifi: c } = t,
+                d = r.split(':')[1];
+              d && n.includes(d) && (a[d] = { cabin: l, entertainment: i, power: s, wifi: c });
+          }
+        if (!a.seatDetails) throw new Error(`data is not found for the flight: ${e.id}`);
+        return a;
+      });
+  }
+}
+class Mt {
+  constructor(e) {
+    l(this, 'getPlaneFeatures', async (e, t, r) => await this._api.getPlaneFeatures(e, t, r)),
+      l(this, 'processPlaneFeatures', async (e, t, r, l) => {
+        let { content: i, params: o, exits: s, bulks: a } = this._preparer.prepareData(e, l);
+        t && (i = this.setAvailabilityHandler(i, t));
+        const n =
+          null == r
+            ? void 0
+            : r.find(e => {
+                var t;
+                return null === (t = e.seat) || void 0 === t ? void 0 : t.seatLabel;
+              });
+        return (
+          r && n && (i = this.setPassengersHandler(i, r)),
+          {
+            content: i,
+            params: o,
+            exits: s,
+            bulks: a,
+            availabilityData: null == e ? void 0 : e.availabilityData,
+            media: null == e ? void 0 : e.media,
+          }
+        );
+      }),
+      l(this, 'selectSeatHandler', (e, t, r) => {
+        const l = this.getNextPassenger(r),
+          i = r.map(e => {
+            if ((null == l ? void 0 : l.id) === e.id) {
+              const r = { price: t.price, seatLabel: t.number, currency: t.currency, priceValue: t.priceValue };
+              e.seat = r;
+            }
+            return e;
+          });
+        return { data: this.setPassengersHandler(e, i), passengers: i };
+      }),
+      l(this, 'unselectSeatHandler', (e, t, r) => {
+        const l = r.map(e => {
+          var r;
+          return (null === (r = t.passenger) || void 0 === r ? void 0 : r.id) === e.id && (e.seat = null), e;
+        });
+        return { data: this.setPassengersHandler(e, l), passengers: l };
+      }),
+      l(this, 'setAvailabilityHandler', (e, t) => {
+        const { selected: r, available: l, unavailable: i } = b,
+          o = null == t ? void 0 : t.find(e => '*' === e.label);
+        return (
+          e &&
+          e.map(e => {
+            const s = e.rows.map(e => {
+              const s = e.seats.map(e => {
+                const s = t.find(t => t.label === e.number),
+                  a =
+                    this._configuration.currencySign ||
+                    (null == s ? void 0 : s.currency) ||
+                    (null == o ? void 0 : o.currency),
+                  n = (null == s ? void 0 : s.price) || (null == o ? void 0 : o.price) || 0;
+                return (
+                  s
+                    ? ((e.status = e.status === r ? r : l),
+                      (e.price = `${a} ${n}` || ''),
+                      (e.priceValue = n),
+                      (e.currency = a),
+                      (e.passengerTypes = s.onlyForPassengerType || (null == o ? void 0 : o.onlyForPassengerType) || S),
+                      (e.additionalProps = [
+                        ...((null == s ? void 0 : s.additionalProps) || []),
+                        ...((null == o ? void 0 : o.additionalProps) || []),
+                      ]),
+                      (e.color = $.validateColor(
+                        (null == s ? void 0 : s.color) || (null == o ? void 0 : o.color),
+                        null == e ? void 0 : e.originalColor
+                      )))
+                    : e.type === L.seat &&
+                      ((e.status = o ? l : i),
+                      (e.price = o ? `${a} ${n}` : null),
+                      (e.priceValue = n),
+                      (e.currency = a),
+                      (e.passenger = null),
+                      (e.passengerTypes = (null == o ? void 0 : o.onlyForPassengerType) || S),
+                      (e.additionalProps = (null == o ? void 0 : o.additionalProps) || []),
+                      (e.color = $.validateColor(
+                        null == o ? void 0 : o.color,
+                        this._colorTheme.notAvailableSeatsColor
+                      ))),
+                  (e.additionalProps = this._preparer.prepareSeatAdditionalProps(e)),
+                  e
+                );
+              });
+              return { ...e, seats: s };
+            });
+            return { ...e, rows: s };
+          })
+        );
+      }),
+      l(this, 'setPassengersHandler', (e, t) => {
+        const { selected: r, available: l, unavailable: i } = b;
+        return e.map(e => {
+          const o = e.rows.map(e => {
+            const o = e.seats.map(e => {
+              const o = t.find(t => {
+                var r;
+                return (
+                  e.number && (null == t || null === (r = t.seat) || void 0 === r ? void 0 : r.seatLabel) === e.number
+                );
+              });
+              var s;
+              !o || (e.status !== l && e.status !== r)
+                ? o && e.status === i
+                  ? (o.seat = null)
+                  : o || e.status !== r || ((e.status = l), (e.passenger = null))
+                : ((e.status = r),
+                  (e.price = (null === (s = o.seat) || void 0 === s ? void 0 : s.price) || e.price),
+                  (e.passenger = o));
+              return e;
+            });
+            return { ...e, seats: o };
+          });
+          return { ...e, rows: o };
+        });
+      }),
+      l(this, 'calculateTooltipData', (e, t, r, l, i) => {
+        const { offsetTop: o, offsetLeft: s, clientWidth: a } = t,
+          n = r.getBoundingClientRect(),
+          c = t.closest('.tooltip-holder'),
+          d = i ? n.height : n.width,
+          h = i ? n.width : n.height,
+          g = o + e.size.height / 2;
+        return {
+          ...e,
+          top: g,
+          left: '2.500000000000002%',
+          antiScale: l,
+          width: '95%',
+          seatmapHeight: h,
+          seatmapWidth: d,
+          activeDeck: c,
+          seatNode: t,
+        };
+      }),
+      l(this, 'getNextPassenger', e =>
+        null == e
+          ? void 0
+          : e.find(e => {
+              var t;
+              return !((null !== (t = e.seat) && void 0 !== t && t.seatLabel) || e.readOnly);
+            })
+      ),
+      l(this, 'addAbbrToPassengers', e =>
+        null == e ? void 0 : e.map((e, t) => ((e.abbr = this._getPassengerAbbr(e, t + 1)), e))
+      ),
+      l(this, '_getPassengerAbbr', (e, t) => {
+        const { passengerLabel: r } = e;
+        if (!r) return `P${t}`;
+        const l = null == r ? void 0 : r.split(' ');
+        return l.length > 1
+          ? l
+              .slice(0, 2)
+              .map(e => e[0])
+              .join('')
+          : r.substring(0, 2).toUpperCase();
+      }),
+      l(this, 'findPassengerBySeatNumber', (e, t) =>
+        e.find(e => {
+          var r;
+          return (null === (r = e.seat) || void 0 === r ? void 0 : r.seatLabel) === t;
+        })
+      ),
+      l(this, 'getDeckIndexBySeatLabel', (e, t) =>
+        e && null != t && t.length
+          ? t.findIndex(
+              t =>
+                Array.isArray(t.rows) && t.rows.some(t => Array.isArray(t.seats) && t.seats.some(t => t.number === e))
+            )
+          : -1
+      ),
+      l(this, 'compareWithDecksSeatsInfo', (e, t) => {
+        if (!e || !t) return;
+        const r = e.map(e => e.toString().toUpperCase()),
+          l = t.flatMap(e => {
+            var t;
+            return null == e || null === (t = e.rows) || void 0 === t
+              ? void 0
+              : t.flatMap(e => {
+                  var t;
+                  return null == e || null === (t = e.seats) || void 0 === t
+                    ? void 0
+                    : t
+                        .filter(e => (null == e ? void 0 : e.type) === L.seat)
+                        .map(e => {
+                          var t;
+                          return null == e || null === (t = e.number) || void 0 === t ? void 0 : t.toUpperCase();
+                        });
+                });
+          });
+        return r.reduce((e, t) => (l.includes(t) ? e.existingSeatLabels.push(t) : e.nonExistingSeatLabels.push(t), e), {
+          existingSeatLabels: [],
+          nonExistingSeatLabels: [],
+        });
+      });
+    const { apiUrl: t, apiAppId: r, apiKey: i, colorTheme: o, apiAuthorizationScheme: s, apiMetadata: a } = e,
+      n = new R();
+    (this._api = new xt(r, i, t, n, s, a)),
+      (this._preparer = new W()),
+      (this._colorTheme = o),
+      (this._configuration = e);
+  }
+}
+Je(
+  '.jets-seat-map{font-family:sans-serif;font-weight:400;height:100%;position:relative;width:100%}.jets-seat-map.scale.vertical *{-webkit-font-smoothing:subpixel-antialiased;filter:blur(0);-webkit-filter:blur(0)}'
+);
+Je(
+  '.jets-tooltip{background:#fff;border-radius:2px;box-shadow:0 0 0 1px #c0cad5,0 0 4px 0 rgb(0 0 0/8%),0 8px 8px 0 rgb(0 0 0/8%),0 16px 16px 0 rgb(0 0 0/8%);box-sizing:border-box;font-size:12px;max-width:100%;outline:0;position:absolute;z-index:200}.jets-tooltip--content{padding:16px 16px 0}.jets-tooltip--body.no-buttons .jets-tooltip--content{padding:16px}.jets-tooltip--body.no-buttons .jets-tooltip--btns-block{display:none}.jets-tooltip--header{display:flex;font-size:16px;font-weight:700;justify-content:space-between;margin-bottom:8px;width:100%}.jets-tooltip--passenger-name{font-size:15px;font-weight:700;margin-bottom:8px}.jets-tooltip--features>ul{list-style:none;margin:0;padding:0;width:100%}.jets-tooltip--feature img{height:18px;width:18px}.jets-tooltip--feature .svg_span{height:18px;min-height:18px;min-width:18px;width:18px}.jets-tooltip--feature>span{display:block}.jets-tooltip--features>ul>li{align-items:center;color:#4f6f8f;display:flex;font-size:13px;line-height:1.4;margin-bottom:.6rem;width:100%}.jets-tooltip--features>ul>li>div{margin:0 5px}.jets-tooltip--btns-block{display:flex;width:100%}.jets-tooltip--btn{-webkit-font-smoothing:antialiased;border-radius:2px;border-style:solid;border-width:0;cursor:pointer;display:inline-block;font-family:inherit;font-size:14px;font-weight:700;line-height:1.5;margin:1%;padding:9.5px 18px;text-align:center;text-decoration:none;vertical-align:middle;width:48%}.jets-tooltip--arrow-pointer{border-width:14px 16px 0;margin:0 0 0 -16px;transform-origin:top}.jets-tooltip--arrow-pointer,.jets-tooltip--arrow-pointer-horizontal{border-color:#fff transparent transparent;border-style:solid;height:0;position:absolute;width:0}.jets-tooltip--arrow-pointer-horizontal{border-width:16px 14px 16px 0;margin:-16px 0 0 -14px;transform-origin:right}.jets-tooltip--measurements{grid-column-gap:3%;display:grid;grid-auto-columns:minmax(0,1fr);grid-auto-flow:column;margin:10px 0}.jets-tooltip--measurement{backface-visibility:hidden;border:1px solid #4f6f8f;border-radius:6px;box-sizing:border-box;padding:10px;transform:translateZ(0);transform-style:preserve-3d}.jets-tooltip--measurement svg{display:block;height:40px}.jets-tooltip--measurement-value{color:#4f6f8f;margin-top:10px;text-align:center}.horizontal .jets-tooltip--measurement{align-items:center;display:flex;justify-content:space-evenly}.horizontal .jets-tooltip--features{-moz-column-count:2;-webkit-column-count:2;column-count:2;-moz-column-gap:20px;-webkit-column-gap:20px;column-gap:20px}.horizontal .jets-tooltip--features>ul>li:nth-child(6){-webkit-column-break-after:always;break-after:always}.horizontal .jets-tooltip--measurements .svg_span{display:inline-block}.horizontal .jets-tooltip--measurement-value{display:inline-block;margin:0 4px}.horizontal .jets-tooltip--measurement svg{height:30px}'
+);
+const zt = ({
+    colorTheme: e,
+    data: t,
+    elementRef: l,
+    featureListStyle: i,
+    finalListOfFeatures: o,
+    headerStyle: s,
+    isSeatSelectDisabled: a,
+    params: n,
+    passengerLabel: c,
+    pointerStyle: d,
+    pointerStyleHorizontal: h,
+    shouldHideButtons: g,
+    rootStyle: p,
+    onSeatSelect: m,
+    onSeatUnselect: C,
+    onTooltipClose: u,
+  }) => {
+    var f;
+    const {
+        tooltipFontColor: k,
+        tooltipIconColor: v,
+        tooltipIconBorderColor: w,
+        tooltipIconBackgroundColor: b,
+        tooltipSelectButtonTextColor: L,
+        tooltipSelectButtonBackgroundColor: x,
+        tooltipCancelButtonTextColor: M,
+        tooltipCancelButtonBackgroundColor: y,
+      } = e,
+      { number: S, classType: T, measurements: E, price: H, passenger: _, lang: A, rowName: $, name: V } = t,
+      O = e => u(null, null, e);
+    return r.default.createElement(
+      'div',
+      {
+        style: p,
+        className: 'jets-tooltip ' + (null != n && n.isHorizontal ? 'horizontal' : ''),
+        ref: l,
+        onMouseLeave: n.tooltipOnHover ? O : null,
+      },
+      r.default.createElement('div', { className: 'jets-tooltip--arrow-pointer', style: d }),
+      r.default.createElement('div', { className: 'jets-tooltip--arrow-pointer-horizontal', style: h }),
+      r.default.createElement(
+        'div',
+        { className: 'jets-tooltip--body ' + (g ? 'no-buttons' : '') },
+        r.default.createElement(
+          'div',
+          { className: 'jets-tooltip--content' },
+          r.default.createElement(
+            'div',
+            { className: 'jets-tooltip--header', style: s },
+            r.default.createElement('div', { className: 'jets-tooltip--header-title' }, V || $ || T, ' ', S),
+            r.default.createElement('div', { className: 'jets-tooltip--header-price' }, H)
+          ),
+          r.default.createElement('div', { className: 'jets-tooltip--passenger-name', style: i }, c),
+          r.default.createElement(
+            'div',
+            { className: 'jets-tooltip--features', style: i },
+            r.default.createElement(
+              'ul',
+              null,
+              o.map(({ uniqId: e, title: t, icon: l, value: i, cssClass: o }) =>
+                r.default.createElement(
+                  'li',
+                  { className: `jets-tooltip--feature ${o || ''}`, key: e },
+                  l
+                    ? r.default.createElement('span', {
+                        className: 'svg_span ' + (o ? o + '-icon' : ''),
+                        dangerouslySetInnerHTML: { __html: l },
+                      })
+                    : r.default.createElement('span', null, t),
+                  r.default.createElement(
+                    'div',
+                    { className: '' + (o ? o + '-label' : ''), style: o ? {} : { color: k } },
+                    i
+                  )
+                )
+              ),
+              o.length % 2 == 1 && r.default.createElement('li', { className: 'jets-tooltip--feature' }, ' ')
+            )
+          ),
+          r.default.createElement(
+            'div',
+            { className: 'jets-tooltip--measurements' },
+            E.map(({ uniqId: e, title: t, icon: l, value: i }) =>
+              r.default.createElement(
+                'div',
+                { style: { borderColor: w, background: b }, className: 'jets-tooltip--measurement', key: e },
+                l
+                  ? r.default.createElement('span', {
+                      className: 'svg_span',
+                      style: { fill: v },
+                      dangerouslySetInnerHTML: { __html: l },
+                    })
+                  : r.default.createElement('span', null),
+                r.default.createElement(
+                  'div',
+                  { className: 'jets-tooltip--measurement-box' },
+                  r.default.createElement('div', { className: 'jets-tooltip--measurement-value' }, t),
+                  r.default.createElement('div', { className: 'jets-tooltip--measurement-value' }, i)
+                )
+              )
+            )
+          )
+        ),
+        r.default.createElement(
+          'div',
+          { className: 'jets-tooltip--btns-block' },
+          r.default.createElement(Qe, {
+            onClick: O,
+            content: z[A].cancel,
+            className: 'jets-btn jets-tooltip--btn',
+            style: { color: M, backgroundColor: y },
+          }),
+          _
+            ? r.default.createElement(Qe, {
+                disabled: null == t || null === (f = t.passenger) || void 0 === f ? void 0 : f.readOnly,
+                onClick: () => C(t),
+                content: z[A].unselect,
+                className: 'jets-btn jets-tooltip--btn ',
+                style: { color: L, backgroundColor: x },
+              })
+            : r.default.createElement(Qe, {
+                disabled: a,
+                onClick: () => m(t),
+                content: z[A].select,
+                className: 'jets-btn jets-tooltip--btn ',
+                style: { color: L, backgroundColor: x },
+              })
+        )
+      )
+    );
+  },
+  yt = ({ data: t }) => {
+    var l;
+    const {
+        componentOverrides: i,
+        isSeatSelectDisabled: o,
+        onTooltipClose: s,
+        onSeatSelect: a,
+        onSeatUnselect: n,
+        colorTheme: c,
+        params: d,
+      } = e.useContext(A),
+      { isSafari: h } = P(),
+      g = e.useRef(null),
+      [p, m] = e.useState(0),
+      [C, u] = e.useState(0),
+      [f, k] = e.useState(0),
+      { tooltipBackgroundColor: v, tooltipHeaderColor: b, tooltipBorderColor: L, tooltipFontColor: x } = c,
+      {
+        top: M,
+        left: y,
+        features: T,
+        passenger: E,
+        passengerTypes: H,
+        lang: _,
+        antiScale: $,
+        scaleType: V,
+        width: O,
+        seatmapHeight: B,
+        seatmapWidth: I,
+        seatmapElement: W,
+        seatNode: R,
+        additionalProps: N,
+      } = t,
+      D = t.size.height / $,
+      j = (t.size.width / $ - 16 - 8) / 2,
+      F = R.closest('.jets-row').getBoundingClientRect(),
+      Z = R.getBoundingClientRect(),
+      U = W.getBoundingClientRect(),
+      G = W.parentElement.getBoundingClientRect();
+    let K = Z.top - U.top,
+      q = Z.left - U.left,
+      J = Z.top - G.top;
+    if (h) {
+      const e = V === w.ZOOM ? $ : 1;
+      (K = Z.top / e - U.top), (q = Z.left / e - U.left), (J = Z.top / e - G.top);
+    }
+    const Y = null != d && d.isHorizontal ? 'left' : 'top',
+      X = null != d && d.isHorizontal ? 'width' : 'height',
+      Q = G[Y] + 0.5 * G[X],
+      ee = C < q,
+      te = F[Y] > Q,
+      re = Number(J > p),
+      le = Number(ee) * Number(te),
+      ie = p - K,
+      oe = Math.min(ie - 16, 0),
+      se = p - ie + oe - -16 / 6,
+      ae = q + D - (C + D + 14) * le,
+      ne = K + D - (p + D + 14) * re,
+      ce = {
+        maxHeight: null != d && d.isHorizontal ? B : 'auto',
+        maxWidth: null != d && d.isHorizontal ? 1.5 * I : 'auto',
+        width: null != d && d.isHorizontal ? 'auto' : O,
+        top: null != d && d.isHorizontal ? `calc(${y} - ${oe}px)` : ne,
+        left: null != d && d.isHorizontal ? ae : y,
+        background: v,
+        borderColor: L,
+        borderStyle: 'solid',
+        color: x,
+      },
+      de = {
+        top: re * p,
+        left: q + j,
+        transform: `rotate(${180 * (1 - re)}deg)`,
+        borderColor: `${L} transparent transparent transparent`,
+        display: null != d && d.isHorizontal ? 'none' : '',
+      },
+      he = {
+        left: 100 * le + '%',
+        top: se,
+        transform: `rotate(${180 * le}deg)`,
+        borderColor: `transparent ${L} transparent transparent`,
+        display: null != d && d.isHorizontal ? '' : 'none',
+      };
+    e.useLayoutEffect(() => {
+      k(g.current.getBoundingClientRect().top - document.body.getBoundingClientRect().top),
+        m(g.current.clientHeight),
+        u(g.current.clientWidth);
+    }, [t, p]);
+    const ge = { color: b, direction: d.rightToLeft ? 'rtl' : 'ltr' },
+      pe = { direction: d.rightToLeft ? 'rtl' : 'ltr' },
+      me = (null == d ? void 0 : d.tooltipOnHover) && !(null != d && d.isTouchDevice);
+    let Ce = '';
+    E && (Ce = (null == E ? void 0 : E.passengerLabel) || `${z[_].passenger} ${null == E ? void 0 : E.id}`);
+    let ue = '';
+    if (H) {
+      const e = S,
+        t = H.filter(t => e.includes(t));
+      let r = t.map(e => z[_][e]);
+      ue = t.length < e.length ? `${z[_].seatRestrictions}: ${r.join(', ')}` : '';
+    }
+    const fe = [...(T || []).filter(e => !d.hiddenSeatFeatures.includes(e.key)), ...(N || [])].slice(0, 12),
+      ke = null !== (l = null == i ? void 0 : i.JetsTooltipView) && void 0 !== l ? l : zt;
+    return r.default.createElement(ke, {
+      colorTheme: c,
+      data: t,
+      elementRef: g,
+      featureListStyle: pe,
+      finalListOfFeatures: fe,
+      headerStyle: ge,
+      isSeatSelectDisabled: o(t),
+      params: d,
+      passengerLabel: Ce.length ? Ce : ue,
+      pointerStyle: de,
+      pointerStyleHorizontal: he,
+      rootStyle: ce,
+      shouldHideButtons: me,
+      onTooltipClose: s,
+      onSeatSelect: a,
+      onSeatUnselect: n,
+    });
+  },
+  St = ({
+    flight: t,
+    availability: l,
+    passengers: i,
+    config: o,
+    currentDeckIndex: s,
+    seatJumpTo: a,
+    onSeatMapInited: n,
+    onSeatSelected: c,
+    onSeatUnselected: d,
+    onTooltipRequested: h,
+    onLayoutUpdated: g,
+    onSeatMouseLeave: p,
+    onSeatMouseClick: m,
+    onAvailabilityApplied: C,
+    componentOverrides: u,
+  }) => {
+    var f;
+    const { isFirefox: k } = P(),
+      v = $.mergeColorThemeWithConstraints(St.defaultProps.config.colorTheme, o.colorTheme);
+    (o.colorTheme = v), (o.lang = $.validateLanguage(o.lang));
+    const x = { ...St.defaultProps.config, ...o };
+    k && (x.scaleType = w.SCALE);
+    const M = x.width / 4;
+    x.colorTheme.wingsWidth > M && (x.colorTheme.wingsWidth = M);
+    const [z, y] = e.useState([]),
+      [S, T] = e.useState(!1),
+      [E, H] = e.useState([]),
+      [_, V] = e.useState(null),
+      [O, B] = e.useState(null),
+      [I, W] = e.useState(!1),
+      [R, N] = e.useState(0),
+      [D, j] = e.useState(null),
+      [F, Z] = e.useState([]),
+      [U, G] = e.useState([]),
+      [K, q] = e.useState(null),
+      J = e.useRef(!1),
+      Y = e.useRef(),
+      X = new Mt(x),
+      Q = (null == D ? void 0 : D.singleDeckMode) && z.length > 1,
+      ee = (null == D ? void 0 : D.builtInDeckSelector) && Q,
+      te = null !== (f = null == u ? void 0 : u.JetsTooltip) && void 0 !== f ? f : yt;
+    e.useEffect(() => {
+      let e = !0;
+      return (
+        null != t &&
+          t.id &&
+          X.getPlaneFeatures(t, x.lang, x.units)
+            .then(e => {
+              q(e);
+            })
+            .catch(t => {
+              e &&
+                n({
+                  heightInPx: void 0,
+                  widthInPx: void 0,
+                  scaleFactor: void 0,
+                  decksCount: void 0,
+                  currentDeckIndex: void 0,
+                  error: t.message,
+                });
+            }),
+        () => {
+          e = !1;
+        }
+      );
+    }, [t]),
+      e.useEffect(() => {
+        let e = !0;
+        return (
+          K &&
+            X.processPlaneFeatures(K, l, i, x).then(t => {
+              var r, l, i, o, s, a, c, d;
+              e &&
+                (j(t.params),
+                y(t.content),
+                Z(t.exits),
+                G(t.bulks),
+                T(!0),
+                n({
+                  heightInPx:
+                    null !== (r = t.params) && void 0 !== r && r.isHorizontal
+                      ? null === (l = t.params) || void 0 === l
+                        ? void 0
+                        : l.innerWidth
+                      : null === (i = t.params) || void 0 === i
+                      ? void 0
+                      : i.totalDecksHeight,
+                  widthInPx:
+                    null !== (o = t.params) && void 0 !== o && o.isHorizontal
+                      ? null === (s = t.params) || void 0 === s
+                        ? void 0
+                        : s.totalDecksHeight
+                      : null === (a = t.params) || void 0 === a
+                      ? void 0
+                      : a.innerWidth,
+                  scaleFactor: null === (c = t.params) || void 0 === c ? void 0 : c.scale,
+                  decksCount: null === (d = t.content) || void 0 === d ? void 0 : d.length,
+                  currentDeckIndex: R,
+                  availabilityData: null == t ? void 0 : t.availabilityData,
+                  media: null == t ? void 0 : t.media,
+                }),
+                (J.current = !1));
+            }),
+          () => {
+            e = !1;
+          }
+        );
+      }, [K, x.width]),
+      e.useEffect(() => {
+        if (!l) return;
+        const e = X.setAvailabilityHandler(z, l),
+          t = l.map(({ label: e }) => e),
+          r = X.compareWithDecksSeatsInfo(t, e);
+        se(), y(e), V(null), C(r);
+      }, [l]),
+      e.useEffect(() => {
+        se(), V(null);
+      }, [i]),
+      e.useEffect(() => {
+        !J.current && D && ((J.current = !0), oe(s), ie(), ae());
+      }, [D]),
+      e.useEffect(() => {
+        ie(), ae();
+      }, [R]),
+      e.useEffect(() => {
+        oe(s);
+      }, [s]),
+      e.useEffect(() => {
+        var e;
+        if (!a || null == z || !z.length) return;
+        const t = null == a || null === (e = a.seatLabel) || void 0 === e ? void 0 : e.toString().trim().toUpperCase(),
+          { nonExistingSeatLabels: r } = X.compareWithDecksSeatsInfo([t], z);
+        if (r.includes(t)) return V(null), void le();
+        const l = X.getDeckIndexBySeatLabel(t, z);
+        l !== R && oe(l), B(t);
+      }, [a]);
+    const re = e.useMemo(
+        () =>
+          `jets-seat-map ${null != D && D.isHorizontal ? 'horizontal' : 'vertical'} ${
+            x.scaleType === w.SCALE ? 'scale' : 'zoom'
+          }`,
+        [D, x]
+      ),
+      le = () => {
+        B(null);
+      },
+      ie = () => {
+        null != D &&
+          D.isHorizontal &&
+          null != D &&
+          D.rightToLeft &&
+          (Y.current.parentElement.scrollLeft = D.totalDecksHeight);
+      },
+      oe = e => {
+        if (!Q || z.length < 2) return;
+        let t = (R + 1) % z.length;
+        if (void 0 !== e) {
+          if (e < 0 || e > z.length - 1) return;
+          t = e;
+        }
+        const r = (null == D ? void 0 : D.separateDeckHeights[t]) * (D.scale || 1) + 'px',
+          l = null == D ? void 0 : D.separateDeckHeights[t];
+        j({ ...D, scaledTotalDecksHeight: r, totalDecksHeight: l }), N(t), V(null);
+      },
+      se = () => {
+        i = X.addAbbrToPassengers(i);
+        const e = X.setPassengersHandler(z, i || []);
+        y(e), H(i);
+      },
+      ae = () => {
+        if (!D) return;
+        const e = null == D ? void 0 : D.separateDeckHeights[R],
+          t = Q ? e : null == D ? void 0 : D.totalDecksHeight,
+          r = {
+            heightInPx: null != D && D.isHorizontal ? (null == D ? void 0 : D.innerWidth) : t,
+            widthInPx: null != D && D.isHorizontal ? t : null == D ? void 0 : D.innerWidth,
+            scaleFactor: null == D ? void 0 : D.scale,
+            decksCount: null == z ? void 0 : z.length,
+            currentDeckIndex: R,
+          };
+        g(r);
+      },
+      ne = e => {
+        const t = { ...e, label: e.number };
+        return delete t.number, delete t.leftOffset, delete t.topOffset, delete t.size, t;
+      },
+      ce = (e, t, r) => {
+        const l = ne(e);
+        if ((h({ seat: l, element: t.current, event: r.nativeEvent }), !D.builtInTooltip)) return;
+        if (e.type !== L.seat || (e.status !== b.available && e.status !== b.selected)) return;
+        const i = X.getNextPassenger(E),
+          o = X.calculateTooltipData(
+            e,
+            t.current,
+            Y.current,
+            null == D ? void 0 : D.antiScale,
+            null == D ? void 0 : D.isHorizontal
+          );
+        W(!!i), V({ ...o, nextPassenger: i, lang: x.lang, scaleType: x.scaleType, seatmapElement: Y.current });
+      },
+      de = e => {
+        const { data: t, passengers: r } = X.selectSeatHandler(z, e, E);
+        y(t), H(r), V(null), c(r);
+      },
+      he = e => {
+        const { data: t, passengers: r } = X.unselectSeatHandler(z, e, E);
+        y(t), H(r), V(null), d(r);
+      },
+      ge = e => {
+        var t, r;
+        const l = X.getNextPassenger(E);
+        return (
+          !l ||
+          ((null == l ? void 0 : l.passengerType) &&
+            (null === (t = e.passengerTypes) || void 0 === t ? void 0 : t.length) &&
+            !(null !== (r = e.passengerTypes) && void 0 !== r && r.includes(null == l ? void 0 : l.passengerType)))
+        );
+      },
+      pe = {
+        transform: ` ${null == D ? void 0 : D.rotation} ${null == D ? void 0 : D.offset} scale(${
+          null == D ? void 0 : D.scale
+        })`,
+        transformOrigin: 'top left',
+        width: null == D ? void 0 : D.innerWidth,
+        height: null == D ? void 0 : D.scaledTotalDecksHeight,
+      },
+      me = {
+        transform: ` ${null == D ? void 0 : D.rotation} ${null == D ? void 0 : D.offset}`,
+        transformOrigin: 'top left',
+        zoom: null == D ? void 0 : D.scale,
+        width: null == D ? void 0 : D.innerWidth,
+        height: null == D ? void 0 : D.scaledTotalDecksHeight,
+      },
+      Ce = {
+        onSeatClick: (e, t, r) => {
+          if ((null == D ? void 0 : D.tooltipOnHover) && !(null != D && D.isTouchDevice)) {
+            if (D.externalPassengerManagement) {
+              const l = ne(e);
+              return void m({ seat: l, element: t.current, event: r.nativeEvent });
+            }
+            if (null != e && e.passenger) {
+              var l;
+              if (null != e && null !== (l = e.passenger) && void 0 !== l && l.readOnly) return;
+              he(e);
+            } else {
+              if (ge(e)) return;
+              de(e);
+            }
+          } else ce(e, t, r);
+        },
+        showTooltip: ce,
+        onTooltipClose: (e, t, r) => {
+          if (e && t) {
+            const l = ne(e);
+            p({ seat: l, element: t.current, event: r.nativeEvent });
+          }
+          V(null);
+        },
+        onSeatSelect: de,
+        onSeatUnselect: he,
+        isSeatSelectDisabled: ge,
+        switchDeck: oe,
+        resetSeatJumpTo: le,
+        params: D,
+        config: x,
+        colorTheme: v,
+        activeTooltip: _,
+        seatLabelJumpTo: O,
+        componentOverrides: u,
+      };
+    return r.default.createElement(
+      A.Provider,
+      { value: Ce },
+      r.default.createElement(
+        'div',
+        {
+          ref: Y,
+          className: re,
+          style: {
+            width: x.horizontal ? (null == D ? void 0 : D.scaledTotalDecksHeight) : x.width,
+            height: x.horizontal ? x.width : null == D ? void 0 : D.scaledTotalDecksHeight,
+            fontFamily: v.fontFamily,
+            background: v.seatMapBackgroundColor,
+          },
+          'data-testid': 'jets-seat-map',
+        },
+        _ && r.default.createElement(te, { data: _ }),
+        ee && r.default.createElement(mt, { direction: !!R }),
+        r.default.createElement(
+          'div',
+          { style: x.scaleType === w.SCALE ? pe : me },
+          r.default.createElement(bt, {
+            showOneDeck: Q,
+            activeDeck: R,
+            content: z,
+            exits: F,
+            bulks: U,
+            isSeatMapInited: S,
+            config: x,
+          })
+        )
+      )
+    );
+  };
+(St.defaultProps = {
+  config: {
+    width: 350,
+    horizontal: false,
+    rightToLeft: false,
+    visibleFuselage: false,
+    visibleWings: false,
+    visibleCabinTitles: false,
+    builtInTooltip: true,
+    externalPassengerManagement: false,
+    builtInDeckSelector: true,
+    singleDeckMode: true,
+    tooltipOnHover: false,
+    lang: 'EN',
+    units: 'metric',
+    scaleType: y,
+    apiAuthorizationScheme: 'Bearer',
+    hiddenSeatFeatures: [],
+    colorTheme: {
+      seatMapBackgroundColor: 'rgb(255,255,255)',
+      deckLabelTitleColor: 'rgb(255,255,255)',
+      floorColor: 'rgb(30,60,90)',
+      seatLabelColor: 'rgb(255,255,255)',
+      seatStrokeColor: 'rgb(237, 237, 237)',
+      seatStrokeWidth: 1,
+      seatArmrestColor: 'rgb(185,186,186)',
+      notAvailableSeatsColor: 'dimgrey',
+      bulkBaseColor: 'rgb(186, 199, 213)',
+      bulkCutColor: 'rgb(148, 168, 190)',
+      bulkIconColor: 'rgb(70, 81, 94)',
+      bulkFloorIconColor: 'rgb(206, 216, 237)',
+      fuselageFillColor: 'lightgray',
+      fuselageStrokeColor: 'darkgrey',
+      fuselageStrokeWidth: 12,
+      fuselageWindowsColor: 'darkgrey',
+      fuselageWingsColor: 'darkgrey',
+      defaultPassengerBadgeColor: '#1157ce',
+      defaultPassengerBadgeLabelColor: 'rgb(255,255,255)',
+      defaultPassengerBadgeBorderColor: 'transparent',
+      fontFamily: 'Montserrat, sans-serif',
+      deckHeightSpacing: 200,
+      wingsWidth: 30,
+      deckSeparation: 50,
+      tooltipBackgroundColor: 'rgb(255,255,255)',
+      tooltipHeaderColor: '#4f6f8f',
+      tooltipBorderColor: 'rgb(255,255,255)',
+      tooltipFontColor: '#4f6f8f',
+      tooltipIconColor: '#4f6f8f',
+      tooltipIconBorderColor: '#4f6f8f',
+      tooltipIconBackgroundColor: '#f2f5f8',
+      tooltipSelectButtonTextColor: 'rgb(255, 255, 255)',
+      tooltipSelectButtonBackgroundColor: 'rgb(0, 122, 255)',
+      tooltipCancelButtonTextColor: 'rgb(0, 24, 51)',
+      tooltipCancelButtonBackgroundColor: 'rgb(237, 240, 243)',
+      deckSelectorStrokeColor: 'rgba(50, 50, 50, 0.5)',
+      deckSelectorFillColor: '#fff',
+      deckSelectorSize: 25,
+      exitIconUrlLeft: null,
+      exitIconUrlRight: null,
+      cabinTitlesWidth: 80,
+      cabinTitlesHighlightColors: H,
+      cabinTitlesLabelColor: '#00BFFF',
+    },
+  },
+  onSeatMapInited: e => {
+    console.log('JetsSeatMap initialized!', e);
+  },
+  onSeatSelected: e => {
+    console.log('Passenger boarded: ', e);
+  },
+  onSeatUnselected: e => {
+    console.log('Passenger unboarded: ', e);
+  },
+  onTooltipRequested: e => {
+    console.log('Tooltip requested: ', e);
+  },
+  onLayoutUpdated: e => {
+    console.log('Layout updated: ', e);
+  },
+  onSeatMouseLeave: e => {
+    console.log('Seat mouse leave: ', e);
+  },
+  onSeatMouseClick: e => {
+    console.log('Seat mouse click: ', e);
+  },
+  onAvailabilityApplied: e => {
+    console.log('Availability applied: ', e);
+  },
+}),
+  (exports.BULK_TEMPLATE_MAP = N),
+  (exports.CLASS_CODE_MAP = M),
+  (exports.DECK_ITEM_ALIGN_MAP = E),
+  (exports.DECK_LOCALE_KEY = 'deck'),
+  (exports.DEFAULT_AUTHORIZATION_SCHEME = 'Bearer'),
+  (exports.DEFAULT_BUILT_IN_TOOLTIP = true),
+  (exports.DEFAULT_DECK_PADDING_SIZE = 10),
+  (exports.DEFAULT_DECK_TITLE_HEIGHT = 80),
+  (exports.DEFAULT_EXTERNAL_PASSENGER_MANAGEMENT = false),
+  (exports.DEFAULT_FEATURES_RENDER_LIMIT = 12),
+  (exports.DEFAULT_HORIZONTAL_LAYOUT = false),
+  (exports.DEFAULT_INDEX_ROW_HEIGHT = 120),
+  (exports.DEFAULT_LANG = 'EN'),
+  (exports.DEFAULT_RTL = false),
+  (exports.DEFAULT_SCALE_TYPE = y),
+  (exports.DEFAULT_SEAT_CLASS = 'E'),
+  (exports.DEFAULT_SEAT_MAP_WIDTH = 350),
+  (exports.DEFAULT_SEAT_MARGIN = 3),
+  (exports.DEFAULT_SEAT_PASSENGER_TYPES = S),
+  (exports.DEFAULT_SEAT_SIZE = { width: 86, height: 100 }),
+  (exports.DEFAULT_SHOW_DECK_SELECTOR = true),
+  (exports.DEFAULT_SINGLE_DECK_MODE = true),
+  (exports.DEFAULT_STYLE_POSITION = 'auto'),
+  (exports.DEFAULT_TOOLTIP_ON_HOVER = false),
+  (exports.DEFAULT_TOOLTIP_WIDTH = 260),
+  (exports.DEFAULT_UNITS = 'metric'),
+  (exports.DEFAULT_VISIBLE_CABIN_TITLES = false),
+  (exports.DEFAULT_VISIBLE_HULL = false),
+  (exports.DEFAULT_VISIBLE_WINGS = false),
+  (exports.ENTITY_SCHEME_MAP = x),
+  (exports.ENTITY_STATUS_MAP = b),
+  (exports.ENTITY_TYPE_MAP = L),
+  (exports.ERROR_LOAD_DATA_MESSAGE = 'Error getting data from local storage. Message:'),
+  (exports.ERROR_SAVE_DATA_MESSAGE = 'Error saving data to local storage. Message:'),
+  (exports.FUSELAGE_HEIGHT_TO_WIDTH_RATIO = 2.4),
+  (exports.JetsApiService = _),
+  (exports.JetsBulk = Xe),
+  (exports.JetsButton = Qe),
+  (exports.JetsContentPreparer = W),
+  (exports.JetsContext = A),
+  (exports.JetsDataHelper = $),
+  (exports.JetsDeck = pt),
+  (exports.JetsDeckExit = et),
+  (exports.JetsDeckSelector = mt),
+  (exports.JetsLocalStorageService = R),
+  (exports.JetsNoData = Ct),
+  (exports.JetsNose = ut),
+  (exports.JetsNotInit = ft),
+  (exports.JetsPlaneBody = bt),
+  (exports.JetsRow = ht),
+  (exports.JetsSeat = dt),
+  (exports.JetsSeatMap = St),
+  (exports.JetsSeatMapApiService = xt),
+  (exports.JetsSeatMapService = Mt),
+  (exports.JetsTail = vt),
+  (exports.JetsTooltipGlobal = yt),
+  (exports.JetsWing = wt),
+  (exports.LOCALES_MAP = z),
+  (exports.LOCALE_AR = h),
+  (exports.LOCALE_CN = c),
+  (exports.LOCALE_CS = g),
+  (exports.LOCALE_DE = a),
+  (exports.LOCALE_EN = n),
+  (exports.LOCALE_ES = s),
+  (exports.LOCALE_FR = p),
+  (exports.LOCALE_IT = C),
+  (exports.LOCALE_JA = f),
+  (exports.LOCALE_KO = k),
+  (exports.LOCALE_PL = o),
+  (exports.LOCALE_PT = m),
+  (exports.LOCALE_RU = d),
+  (exports.LOCALE_TR = v),
+  (exports.LOCALE_UK = u),
+  (exports.SCALE_TYPES = w),
+  (exports.SEAT_FEATURES_ICONS = B),
+  (exports.SEAT_MAP_WIDTH_TO_WINGS_WIDTH_RATIO = 4),
+  (exports.SEAT_MEASUREMENTS_ICONS = I),
+  (exports.SEAT_SIZE_BY_TYPE = T),
+  (exports.STICKER_TEMPLATE_MAP = D),
+  (exports.SeatIcon = nt),
+  (exports.Sticker = qe),
+  (exports.THEME_BACKGROUND_COLOR = 'rgb(255,255,255)'),
+  (exports.THEME_BULK_BASE_COLOR = 'rgb(186, 199, 213)'),
+  (exports.THEME_BULK_CUT_COLOR = 'rgb(148, 168, 190)'),
+  (exports.THEME_BULK_ICON_COLOR = 'rgb(70, 81, 94)'),
+  (exports.THEME_CABIN_TITLES_HIGHLIGHT_COLORS = H),
+  (exports.THEME_CABIN_TITLES_LABEL_COLOR = '#00BFFF'),
+  (exports.THEME_CABIN_TITLES_WIDTH = 80),
+  (exports.THEME_DECK_HEIGHT_SPACING = 200),
+  (exports.THEME_DECK_LABEL_TITLE_COLOR = 'rgb(255,255,255)'),
+  (exports.THEME_DECK_SELECTOR_FILL_COLOR = '#fff'),
+  (exports.THEME_DECK_SELECTOR_SIZE = 25),
+  (exports.THEME_DECK_SELECTOR_STROKE_COLOR = 'rgba(50, 50, 50, 0.5)'),
+  (exports.THEME_DECK_SEPARATION = 50),
+  (exports.THEME_DEFAULT_FONT_FAMILY = 'Montserrat, sans-serif'),
+  (exports.THEME_DEFAULT_PASSENGER_BADGE_BORDER_COLOR = 'transparent'),
+  (exports.THEME_DEFAULT_PASSENGER_BADGE_COLOR = '#1157ce'),
+  (exports.THEME_DEFAULT_PASSENGER_BADGE_LABEL_COLOR = 'rgb(255,255,255)'),
+  (exports.THEME_FLOOR_BULK_ICON_COLOR = 'rgb(206, 216, 237)'),
+  (exports.THEME_FLOOR_COLOR = 'rgb(30,60,90)'),
+  (exports.THEME_FUSELAGE_FILL_COLOR = 'lightgray'),
+  (exports.THEME_FUSELAGE_OUTLINE_COLOR = 'darkgrey'),
+  (exports.THEME_FUSELAGE_OUTLINE_WIDTH = 12),
+  (exports.THEME_FUSELAGE_WINDOWS_COLOR = 'darkgrey'),
+  (exports.THEME_FUSELAGE_WINGS_COLOR = 'darkgrey'),
+  (exports.THEME_NOT_AVAILABLE_SEATS_COLOR = 'dimgrey'),
+  (exports.THEME_SEAT_ARMREST_COLOR = 'rgb(185,186,186)'),
+  (exports.THEME_SEAT_LABEL_COLOR = 'rgb(255,255,255)'),
+  (exports.THEME_SEAT_STROKE_COLOR = 'rgb(237, 237, 237)'),
+  (exports.THEME_SEAT_STROKE_WIDTH = 1),
+  (exports.THEME_TOOLTIP_BACKGROUND_COLOR = 'rgb(255,255,255)'),
+  (exports.THEME_TOOLTIP_BORDER_COLOR = 'rgb(255,255,255)'),
+  (exports.THEME_TOOLTIP_CANCEL_BUTTON_BACKGROUND_COLOR = 'rgb(237, 240, 243)'),
+  (exports.THEME_TOOLTIP_CANCEL_BUTTON_TEXT_COLOR = 'rgb(0, 24, 51)'),
+  (exports.THEME_TOOLTIP_FONT_COLOR = '#4f6f8f'),
+  (exports.THEME_TOOLTIP_HEADER_COLOR = '#4f6f8f'),
+  (exports.THEME_TOOLTIP_ICON_BACKGROUND_COLOR = '#f2f5f8'),
+  (exports.THEME_TOOLTIP_ICON_BORDER_COLOR = '#4f6f8f'),
+  (exports.THEME_TOOLTIP_ICON_COLOR = '#4f6f8f'),
+  (exports.THEME_TOOLTIP_SELECT_BUTTON_BACKGROUND_COLOR = 'rgb(0, 122, 255)'),
+  (exports.THEME_TOOLTIP_SELECT_BUTTON_TEXT_COLOR = 'rgb(255, 255, 255)'),
+  (exports.THEME_WINGS_WIDTH = 30),
+  (exports.Utils = O),
+  (exports.seatTemplateService = rt),
+  (exports.useEnvironmentInfo = P);
