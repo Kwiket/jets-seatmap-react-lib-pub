@@ -348,7 +348,7 @@ interface IConfig {
 
 type TUnit = 'metric' | 'imperials';
 
-type TLang = 'CN' | 'DE' | 'EN' | 'ES' | 'PL' | 'RU' | 'AR' | 'CS' | 'FR' | 'PT' | 'UK' | 'IT' | 'JA' | 'KO' | 'TR';
+type TLang = 'CN' | 'DE' | 'EN' | 'ES' | 'PL' | 'RU' | 'AR' | 'CS' | 'FR' | 'PT' | 'UK' | 'IT' | 'JA' | 'KO' | 'TR' | 'PT-BR';
 ```
 
 Minimal `config` could look like this:
