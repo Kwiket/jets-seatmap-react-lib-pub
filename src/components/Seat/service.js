@@ -237,7 +237,7 @@ const genericTemplates = {
       `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 110 112" width="110" height="112" xml:space="preserve"> <g class="seat" transform="scale(1.3)"> <path fill="${style.armrestColor}" d="M3,33.2h2.2c1.8,0,3,1.4,3,2.9v43.4c0,1.8-1.4,2.9-3,2.9H3c-1.8,0-3-1.4-3-2.9V36.1C0,34.5,1.4,33.2,3,33.2z" /> <path fill="${style.armrestColor}" d="M79.9,33.2h2.2c1.8,0,3,1.4,3,2.9v43.4c0,1.8-1.4,2.9-3,2.9h-2.2c-1.8,0-3-1.4-3-2.9V36.1 C76.7,34.5,78.1,33.2,79.9,33.2z"/> <path fill="${style.fillColor}" stroke="${style.strokeColor}" stroke-width="${style.strokeWidth}" d="M76.3,18.5C76.1,8,57.9,6,42,6C28.3,6,9,8,8.6,18.3c-0.1,2-0.2,12.9-0.2,16.4v34c0,4.5,3.7,8.2,8.4,8.2h51.4 c4.7,0,8.5-3.7,8.5-8.3V34.9C76.7,31.4,76.3,19.9,76.3,18.5z"/> <path fill="${style.fillColor}" stroke="${style.strokeColor}" stroke-width="${style.strokeWidth}" d="M72.5,84H11.8c-2.4,0-4.4-2-4.4-4.3v-5.1c0-2.3,2-4.3,4.4-4.3H12c10.4,1.4,20.6,2.2,31.2,2.2 s18.8-0.8,29.2-2.2h1.2c2.4,0,3.4,2,3.4,4.3v5.1C76.9,82,74.9,84,72.5,84z"/> <path fill="rgb(255, 255, 255)" d="M25.2,70.7h34.6c1.8,0,3.2,1.4,3.2,3.1V76c0,1.8-1.4,3.1-3.2,3.1H25.2c-1.8,0-3.2-1.4-3.2-3.1v-2.2 C22.2,72.1,23.6,70.7,25.2,70.7z"/> </g></svg>`,
   },
   getTemplate(seatType, style) {
-    const notFound = style => {};
+    const notFound = style => null;
 
     const svg = (this._mapping[seatType] || notFound)(style);
 
