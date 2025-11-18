@@ -228,6 +228,8 @@ export const THEME_FUSELAGE_OUTLINE_COLOR = 'darkgrey';
 export const THEME_FUSELAGE_WINDOWS_COLOR = 'darkgrey';
 export const THEME_FUSELAGE_WINGS_COLOR = 'darkgrey';
 
+export const THEME_FUSELAGE_NOSE_TYPE_DEFAULT = 'default';
+
 export const THEME_DEFAULT_PASSENGER_BADGE_COLOR = '#1157ce';
 export const THEME_DEFAULT_PASSENGER_BADGE_LABEL_COLOR = 'rgb(255,255,255)';
 export const THEME_DEFAULT_PASSENGER_BADGE_BORDER_COLOR = 'transparent';
