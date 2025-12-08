@@ -51,7 +51,7 @@ export class JetsContentPreparer {
   prepareData = (apiData, config) => {
     if (!apiData) return [];
 
-    const { seatDetails } = apiData;
+    const { seatDetails, plane } = apiData;
 
     const decks = seatDetails?.decks;
 
@@ -74,7 +74,7 @@ export class JetsContentPreparer {
 
     const finalDecks = preparedDecks.map(deck => this._updateDeckWithWings(deck, isWingsExist, config));
 
-    const params = this._dataHelper.getSeatMapParams(finalDecks, config);
+    const params = this._dataHelper.getSeatMapParams(finalDecks, config, plane);
 
     return {
       content: finalDecks,

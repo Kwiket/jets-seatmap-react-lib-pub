@@ -11,7 +11,7 @@ import {
 export class JetsDataHelper {
   constructor() {}
 
-  getSeatMapParams = (decks, config) => {
+  getSeatMapParams = (decks, config, plane) => {
     const decksWidths = decks.map(deck => deck.width);
     const maxDeckWidth = Math.max(...decksWidths) + config?.colorTheme?.fuselageStrokeWidth * 2 || 0;
 
@@ -60,6 +60,7 @@ export class JetsDataHelper {
       visibleCabinTitles: config.visibleCabinTitles,
       scaledTotalDecksHeight: totalDecksHeight ? `${totalDecksHeight * (scaleCoefs.scale || 1)}px` : '100%',
       hiddenSeatFeatures: config.hiddenSeatFeatures,
+      noseType: plane?.noseType || 'default',
     };
   };
 

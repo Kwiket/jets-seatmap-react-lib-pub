@@ -20,8 +20,7 @@ export class JetsSeatMapService {
   }
 
   getPlaneFeatures = async (flight, lang, units) => {
-    const planeFeatures = await this._api.getPlaneFeatures(flight, lang, units);
-    return planeFeatures;
+    return this._api.getPlaneFeatures(flight, lang, units);
   };
 
   processPlaneFeatures = async (planeFeatures, availability, passengers, config) => {

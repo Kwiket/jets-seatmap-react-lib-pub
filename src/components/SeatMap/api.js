@@ -69,6 +69,7 @@ export class JetsSeatMapApiService extends JetsApiService {
 
     const result = {
       seatDetails: null,
+      plane: null,
     };
 
     const cabinClasses = ['F', 'B', 'P', 'E'];
@@ -80,7 +81,7 @@ export class JetsSeatMapApiService extends JetsApiService {
             throw new Error(item.error);
           }
           if (flight.cabinClass && cabinClasses.includes(flight.cabinClass)) {
-            const { id, cabin, entertainment, power, wifi, media } = item;
+            const { id, cabin, entertainment, power, wifi, media, plane } = item;
 
             result[flight.cabinClass] = {
               cabin,
@@ -94,6 +95,7 @@ export class JetsSeatMapApiService extends JetsApiService {
             }
           }
           result.seatDetails = item.seatDetails;
+          result.plane = item.plane;
           break;
         case availabilityDataKey: {
           const { id, ...rest } = item;
