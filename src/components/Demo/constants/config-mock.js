@@ -72,6 +72,7 @@ const CONFIG_MOCK = {
 
     fuselageWindowsColor: 'darkgrey',
     fuselageWingsColor: 'rgba(55, 55, 55, 0.5)',
+    fuselageNoseType: 'by-type',
 
     exitIconUrlLeft: 'https://panorama.quicket.io/icons/exit-left.svg',
     exitIconUrlRight: 'https://panorama.quicket.io/icons/exit-right.svg',
