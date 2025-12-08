@@ -175,6 +175,9 @@ export const SEAT_SIZE_BY_TYPE = [
   [550, 325],
   [550, 325],
   [550, 325],
+  [100, 100],
+  [200, 200],
+  [200, 200],
 ];
 
 export const DEFAULT_SEAT_SIZE = {
