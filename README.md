@@ -125,6 +125,8 @@ interface IFlight {
   planeCode?: number;
   startRow?: string; // string [ 3 .. 24 ] characters
   endRow?: string; // string [ 3 .. 24 ] characters
+  exitRowsLeft?: number[]; // restriction by exit rows numbers
+  exitRowsRight?: number[]; // restriction by exit rows numbers
 }
 ```
 
@@ -152,6 +154,17 @@ The **departure** and **arrival** fields' values must be valid IATA airport code
 `endRow` - last of available row numbers and its letters, colon as divider, upper case, e.g. `32` or `32:ACDF`. If the `endRow` parameter is set, `startRow` also needs to be set, otherwise, it will be `ignored`.
 
 Also, it is possible to define flexible start/end rows params: `"startRow":"1:?FL","endRow":"18:?AL"` - here `?FL` means row's letters includes `FL`, `AFL` will match, `ACFJL` not
+
+`exitRowsLeft` and `exitRowsRight` are optional fields that allow you to specify restrictions for aircraft based on exit row numbers. These fields accept arrays of numbers, where each number corresponds to an exit row number. 
+
+For example:
+```typescript
+exitRowsLeft: [10, 20], // Restricts seats near exit rows 10 and 20 on the left side of the plane
+exitRowsRight: [10, 20], // Restricts seats near exit rows 15 and 25 on the right side of the plane
+```
+
+If these fields are provided, the API will try to find a seat map with such exit rows.
+It is acceptable to populate just one field, `exitRowsLeft` or `exitRowsRight`, with just 1 number of exit row.
 
 &nbsp;
 
@@ -450,6 +463,7 @@ The `full config` looks like this:
 
     fuselageWindowsColor: 'darkgrey',
     fuselageWingsColor: 'rgba(55, 55, 55, 0.5)',
+    fuselageNoseType: 'by-type', // 'default' to use basic nose section, 'by-type' - to use nose section designed for specific aircraft model 
 
     exitIconUrlLeft: 'https://panorama.quicket.io/icons/exit-left.svg', // URL to override built-in left exit icon, optional
     exitIconUrlRight: 'https://panorama.quicket.io/icons/exit-right.svg', // URL to override built-in right exit icon, optional
