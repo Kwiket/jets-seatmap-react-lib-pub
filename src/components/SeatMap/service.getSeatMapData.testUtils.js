@@ -216,6 +216,7 @@ export function createParams(overrides) {
     scaledTotalDecksHeight: `${rowHeight}px`,
     separateDeckHeights: [rowHeight],
     totalDecksHeight: rowHeight,
+    noseType: 'default',
     ...overrides,
   };
 }
