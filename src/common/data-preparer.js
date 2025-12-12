@@ -161,7 +161,7 @@ export class JetsContentPreparer {
     const cabinClassWidths = [];
     for (const rowGroup of rowGroups) {
       const biggestDeckRow = this._dataHelper.findBiggestDeckRow(rowGroup.rows);
-      const preparedBiggestDeckRow = this._prepareRow(biggestDeckRow, {}, config.lang);
+      const preparedBiggestDeckRow = this._prepareRow(biggestDeckRow, {}, config);
       cabinClassWidths.push(preparedBiggestDeckRow.width);
       // rowGroup.width = preparedBiggestDeckRow.width;
     }
@@ -174,7 +174,7 @@ export class JetsContentPreparer {
       const { cabin, entertainment, power, wifi, bluetooth } = apiData[rowGroup.classCode] || {};
       const cabinFeatures = this._mergeCabinFeatures(cabin, entertainment, power, wifi, bluetooth);
 
-      const rows = this._prepareRows(rowGroup.rows, cabinFeatures, config.lang, firstElementOffset, targetDeckWidth);
+      const rows = this._prepareRows(rowGroup.rows, cabinFeatures, config, firstElementOffset, targetDeckWidth);
 
       const firstCabinRow = rows.at(0);
       const lastCabinRow = rows.at(-1);
@@ -264,17 +264,17 @@ export class JetsContentPreparer {
     return intersection;
   }
 
-  _prepareRows = (rows, cabinFeatures, lang, offset, maxRowWidth = 0) => {
+  _prepareRows = (rows, cabinFeatures, config, offset, maxRowWidth = 0) => {
     if (!rows?.length) return [];
-    const prepared = rows.map(row => this._prepareRow(row, cabinFeatures, lang, offset, maxRowWidth));
+    const prepared = rows.map(row => this._prepareRow(row, cabinFeatures, config, offset, maxRowWidth));
 
     return prepared;
   };
 
-  _prepareRow = (row, cabinFeatures, lang, offset, maxRowWidth = 0) => {
+  _prepareRow = (row, cabinFeatures, config, offset, maxRowWidth = 0) => {
     const { number, topOffset, seatScheme, classCode, seatType } = row;
     const _topOffset = topOffset + offset;
-    const preparedSeats = this._prepareSeats(row, cabinFeatures, lang, maxRowWidth);
+    const preparedSeats = this._prepareSeats(row, cabinFeatures, config, maxRowWidth);
     const rowWidth = preparedSeats.map(seat => seat.size.width).reduce((a, b) => a + b, 0);
 
     return {
@@ -290,7 +290,7 @@ export class JetsContentPreparer {
     };
   };
 
-  _prepareSeats = (row, cabinFeatures, lang, maxRowWidth = 0) => {
+  _prepareSeats = (row, cabinFeatures, config, maxRowWidth = 0) => {
     const { seatScheme, seats, seatType } = row;
 
     if (!seats?.length) return [];
@@ -320,7 +320,7 @@ export class JetsContentPreparer {
       } else if (item === ENTITY_SCHEME_MAP.empty) {
         element = this._prepareEmpty(row);
       } else if (item === ENTITY_SCHEME_MAP.seat) {
-        element = this._prepareSeat(seats[seatsCounter], row, cabinFeatures, lang);
+        element = this._prepareSeat(seats[seatsCounter], row, cabinFeatures, config);
         seatsCounter++;
       }
 
@@ -353,9 +353,9 @@ export class JetsContentPreparer {
     return { ...row, number: '', seats, topOffset: row.topOffset };
   };
 
-  _prepareSeat = (seat, row, cabinFeatures, lang) => {
+  _prepareSeat = (seat, row, cabinFeatures, config) => {
     const { number, classCode, name: rowName, seatType: _rowSeatType } = row;
-    const prepared = this._prepareSeatFeatures(seat, cabinFeatures, lang);
+    const prepared = this._prepareSeatFeatures(seat, cabinFeatures, config.lang);
     const features = prepared.features;
     const measurements = prepared.measurements;
     const classType = CLASS_CODE_MAP[classCode.toLowerCase()] || '';
@@ -367,11 +367,13 @@ export class JetsContentPreparer {
 
     const [seatWidthByRow, seatHeightByRow] = SEAT_SIZE_BY_TYPE[_rowSeatType];
     const [seatWidth, seatHeight] = SEAT_SIZE_BY_TYPE[seatType];
+    const seatColor =
+      JetsDataHelper.calculateSeatColorByScore(seat?.score, config.colorTheme?.customSeatColorRanges) || seat?.color;
 
     return {
       uniqId: Utils.generateId(),
       ...seat,
-      originalColor: seat?.color,
+      originalColor: seatColor,
       features,
       measurements,
       status,
@@ -383,6 +385,7 @@ export class JetsContentPreparer {
       seatType: seatClassAndType,
       seatIconType: seatType,
       size: { width: Math.max(seatWidthByRow, seatWidth), height: seatHeight },
+      color: seatColor,
     };
   };
 
