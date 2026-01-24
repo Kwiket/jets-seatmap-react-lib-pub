@@ -7,7 +7,6 @@ on:
     branches:
       - version-3
 
-# Declare default permissions as read only.
 permissions: read-all
 
 jobs:
@@ -15,18 +14,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
-          node-version: 20.18
+          node-version: 20.19.6
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+        with:
+          run_install: false
+          cache: true
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
 
       - name: Test build-lib
-        run: npm run build-lib
+        run: pnpm run build-lib
 
       - name: Run Jest tests
-        run: npm run test:ci
+        run: pnpm run test:ci
