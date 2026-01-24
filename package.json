@@ -1,6 +1,6 @@
 {
   "name": "@seatmaps.com/react-lib",
-  "version": "3.0.62",
+  "version": "3.0.63",
   "description": "Jets seatmap react library.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -40,6 +40,17 @@
     "url": "https://github.com/Kwiket/jets-seatmap-react-lib-pub/issues"
   },
   "homepage": "https://github.com/Kwiket/jets-seatmap-react-lib-pub#readme",
+  "packageManager": "pnpm@10.27.0",
+  "engines": {
+    "node": "20.19.6"
+  },
+  "dependencies": {
+    "dompurify": "^3.2.3"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/plugin-transform-nullish-coalescing-operator": "^7.24.1",
@@ -80,11 +91,9 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2"
   },
-  "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  },
-  "dependencies": {
-    "dompurify": "^3.2.3"
+  "pnpm": {
+    "overrides": {
+      "@babel/runtime": "7.26.10"
+    }
   }
 }
