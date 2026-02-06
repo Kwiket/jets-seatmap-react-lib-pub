@@ -10,8 +10,8 @@
     "test:integration": "jest --testPathPattern='src/.*\\.integration\\.test\\.js$'",
     "test:coverage": "jest --coverage --coverageReporters=lcov --coverageReporters=text",
     "test:ci": "jest --ci --coverage --coverageReporters=text --verbose=false",
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
-    "build-storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
+    "dev": "storybook dev -p 6006",
+    "build-storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook build",
     "build-lib": "rollup -c",
     "prepare": "husky"
   },
@@ -56,14 +56,16 @@
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-transform-nullish-coalescing-operator": "^7.24.1",
     "@babel/plugin-transform-optional-chaining": "^7.24.1",
-    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-env": "7.28.6",
+    "@babel/preset-react": "^7.28.5",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^13.2.1",
-    "@storybook/addon-actions": "^6.5.15",
-    "@storybook/addon-essentials": "^6.5.15",
-    "@storybook/addon-interactions": "^6.5.15",
-    "@storybook/addon-links": "^6.5.15",
-    "@storybook/react": "^6.5.15",
+    "@storybook/addon-actions": "7.6.18",
+    "@storybook/addon-essentials": "7.6.18",
+    "@storybook/addon-interactions": "7.6.18",
+    "@storybook/addon-links": "7.6.18",
+    "@storybook/react": "7.6.18",
+    "@storybook/react-webpack5": "7.6.18",
     "@storybook/testing-library": "0.0.13",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
@@ -89,7 +91,8 @@
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "storybook": "7.6.18"
   },
   "pnpm": {
     "overrides": {
