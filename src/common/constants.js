@@ -16,6 +16,7 @@ import {
   LOCALE_TR,
   LOCALE_VI,
   LOCALE_PT_BR,
+  LOCALE_NL,
 } from './i18n.languages';
 
 export const SCALE_TYPES = {
@@ -76,6 +77,7 @@ export const LOCALES_MAP = {
   TR: LOCALE_TR,
   VI: LOCALE_VI,
   'PT-BR': LOCALE_PT_BR,
+  NL: LOCALE_NL,
 };
 
 //#endregion
