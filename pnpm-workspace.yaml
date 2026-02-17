@@ -1,0 +1,12 @@
+# legacy-peer-deps=true (closest equivalent in pnpm)
+strictPeerDependencies: false # (this is already pnpm's default)
+
+# pnpm controls this via savePrefix; empty string means “save exact” (no ^/~ prefix).
+savePrefix: ''
+nodeLinker: hoisted
+
+minimumReleaseAge: 20160 # 20 days
+minimumReleaseAgeExclude:
+  - 'babel-traverse@6.26.0'
+  - 'lodash@4.17.23'
+  - 'tar@7.5.4'
