@@ -13,6 +13,8 @@ const setup = ({
   configOverrides,
   onSeatMapInited,
   onAvailabilityApplied,
+  onSeatSelected,
+  onSeatUnselected,
   componentOverrides = {},
 }) => {
   const config = {
@@ -28,6 +30,8 @@ const setup = ({
       config={config}
       onSeatMapInited={onSeatMapInited}
       onAvailabilityApplied={onAvailabilityApplied}
+      onSeatSelected={onSeatSelected}
+      onSeatUnselected={onSeatUnselected}
       componentOverrides={componentOverrides}
     />
   );
@@ -184,6 +188,131 @@ describe('JetsSeatMap', () => {
         seat: { price: 'EUR 5', currency: 'EUR', priceValue: 5, seatLabel: '33A' },
       },
     ]);
+  });
+
+  it("should not allow selecting a seat that is not available", async () => {
+    const onSeatSelected = jest.fn();
+    const onSeatUnselected = jest.fn();
+
+    setup({
+      flight: flight,
+      availability: [],
+      passengers: [],
+      currentDeckIndex: 0,
+      onSeatSelected,
+      onSeatUnselected,
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText(/33A/)).toBeInTheDocument();
+    });
+
+    const seatWrappers = screen.getAllByTestId('jets-seat');
+    const seat33A = seatWrappers.find(el => el.textContent.match(/33A/));
+    expect(seat33A).toHaveClass('jets-unavailable');
+
+    fireEvent.click(screen.getByText(/33A/));
+
+    await waitFor(() => {
+      expect(screen.queryByText(/Select/)).not.toBeInTheDocument();
+    });
+
+    expect(onSeatSelected).not.toHaveBeenCalled();
+    expect(onSeatUnselected).not.toHaveBeenCalled();
+  });
+
+  it('should not allow the second passenger to select a seat already selected by the first passenger', async () => {
+    const passengers = [
+      {
+        id: '1',
+        seat: null,
+        passengerLabel: 'John Doe',
+        passengerColor: 'brown',
+        readOnly: false,
+      },
+      {
+        id: '2',
+        seat: null,
+        passengerLabel: 'Jane Smith',
+        passengerColor: 'blue',
+        readOnly: false,
+      },
+    ];
+
+    const availability = [
+      {
+        currency: 'EUR',
+        label: '33A',
+        price: 5,
+      },
+      {
+        currency: 'EUR',
+        label: '33B',
+        price: 10,
+      },
+    ];
+
+    const onSeatSelected = jest.fn();
+    const config = { ...CONFIG_MOCK };
+
+    const { rerender } = setup({
+      flight,
+      availability,
+      passengers,
+      currentDeckIndex: 0,
+      onSeatSelected,
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText(/33A/)).toBeInTheDocument();
+    });
+
+    fireEvent.click(screen.getByText(/33A/));
+    await waitFor(() => {
+      expect(screen.getByText(/Select/)).toBeInTheDocument();
+    });
+    fireEvent.click(screen.getByText(/Select/));
+
+    expect(onSeatSelected).toHaveBeenCalledTimes(1);
+    expect(onSeatSelected).toHaveBeenCalledWith([
+      expect.objectContaining({
+        id: '1',
+        passengerLabel: 'John Doe',
+        seat: expect.objectContaining({ seatLabel: '33A' }),
+      }),
+      expect.objectContaining({
+        id: '2',
+        passengerLabel: 'Jane Smith',
+        seat: null,
+      }),
+    ]);
+
+    // we can now use the passengers after the first select to rerender the component
+    const passengersAfterFirstSelect = onSeatSelected.mock.calls[0][0];
+    
+
+    rerender(
+      <JetsSeatMap
+        flight={flight}
+        passengers={passengersAfterFirstSelect}
+        availability={availability}
+        currentDeckIndex={0}
+        config={config}
+        onSeatSelected={onSeatSelected}
+      />
+    );
+
+    await waitFor(() => {
+      fireEvent.click(screen.getByText(/33A/));
+    });
+    // verify that the seat is not available to select, but can be unselected
+    await waitFor(() => {
+      expect(screen.getByText(/Unselect/)).toBeInTheDocument();
+      expect(screen.getByText(/John Doe/)).toBeInTheDocument();
+      expect(screen.queryByText(/Select/)).not.toBeInTheDocument();
+    });
+
+    expect(onSeatSelected).toHaveBeenCalledTimes(1);
   });
 
   it('should trigger onSeatUnselected when a passenger unselects a seat they just selected', async () => {
