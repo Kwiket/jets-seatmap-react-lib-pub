@@ -17,21 +17,9 @@ There are 2 ways to install the lib:
 
 Need to `clone` this repository and install dependencies:
 
-`npm i`
+`pnpm i`
 
-Here you have 2 options:
-
-1. rename _.env-sample_ to _.env_. Also, you need to get the `APP_ID` and `PRIVATE_KEY` from the `Quicket GmbH` support team
-   and put them into fields in _.env_ file.
-2. or directly change `config-mock.js`:
-
-```
-  apiUrl: process.env.JETS_BASE_API_URL,
-  apiAppId: process.env.JETS_APP_ID,
-  apiKey: process.env.JETS_PRIVATE_KEY,
-```
-
-replace reading of env-variables with your credentials.
+Set environment variables with your credentials: rename _.env-sample_ to _.env_. Also, you need to get the `APP_ID` and `PRIVATE_KEY` from the `Quicket GmbH` support team and put them into fields in _.env_ file.
 
 Run storybook:
 

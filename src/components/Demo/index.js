@@ -86,10 +86,7 @@ export const DemoComponent = () => {
   return (
     <div className="jets-demo">
       <div className="jets-demo--controllers">
-        <a
-          href="https://github.com/Kwiket/jets-seatmap-react-lib-pub/blob/version-3/SEATMAP-INTEGRATION.md"
-          target="_blank"
-        >
+        <a href="https://github.com/Kwiket/jets-seatmap-react-lib-pub/blob/version-3/README.md" target="_blank">
           REACT LIB SEATMAP INTEGRATION DOCUMENTATION
         </a>
         <div className="jets-demo--controller">

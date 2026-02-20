@@ -23,7 +23,7 @@ const FLIGHT_MOCK = {
   id: '1111',
   airlineCode: 'EK',
   flightNo: '2',
-  departureDate: '2025-12-19',
+  departureDate: '2026-12-19',
   departure: 'LHR',
   arrival: 'DXB',
   cabinClass: 'A',
