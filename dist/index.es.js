@@ -1,19 +1,19 @@
 import e, {
   useMemo as t,
-  useState as r,
+  useState as l,
   useRef as i,
-  useContext as l,
+  useContext as r,
   useEffect as o,
   useLayoutEffect as s,
 } from 'react';
-function a(e, t, r) {
+function n(e, t, l) {
   return (
     (t = (function (e) {
       var t = (function (e, t) {
         if ('object' != typeof e || !e) return e;
-        var r = e[Symbol.toPrimitive];
-        if (void 0 !== r) {
-          var i = r.call(e, t || 'default');
+        var l = e[Symbol.toPrimitive];
+        if (void 0 !== l) {
+          var i = l.call(e, t || 'default');
           if ('object' != typeof i) return i;
           throw new TypeError('@@toPrimitive must return a primitive value.');
         }
@@ -21,23 +21,23 @@ function a(e, t, r) {
       })(e, 'string');
       return 'symbol' == typeof t ? t : t + '';
     })(t)) in e
-      ? Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 })
-      : (e[t] = r),
+      ? Object.defineProperty(e, t, { value: l, enumerable: !0, configurable: !0, writable: !0 })
+      : (e[t] = l),
     e
   );
 }
-function n() {
+function a() {
   return (
-    (n = Object.assign
+    (a = Object.assign
       ? Object.assign.bind()
       : function (e) {
           for (var t = 1; t < arguments.length; t++) {
-            var r = arguments[t];
-            for (var i in r) ({}).hasOwnProperty.call(r, i) && (e[i] = r[i]);
+            var l = arguments[t];
+            for (var i in l) ({}).hasOwnProperty.call(l, i) && (e[i] = l[i]);
           }
           return e;
         }),
-    n.apply(null, arguments)
+    a.apply(null, arguments)
   );
 }
 const c = {
@@ -404,7 +404,7 @@ const c = {
     narrower: 'مقعد أضيق',
     exitRow: 'صف الخروج',
   },
-  k = {
+  v = {
     F: 'První třída',
     B: 'Třída Business',
     P: 'Třída Premium',
@@ -508,7 +508,7 @@ const c = {
     narrower: 'Siège plus étroit',
     exitRow: 'Rangée côté sortie',
   },
-  f = {
+  k = {
     F: 'Primeira classe',
     B: 'Classe executiva',
     P: 'Classe Premium',
@@ -560,7 +560,7 @@ const c = {
     narrower: 'Assento mais estreito',
     exitRow: 'Fila de saída',
   },
-  v = {
+  w = {
     F: 'Prima classe',
     B: 'Classe business',
     P: 'Classe Premium',
@@ -612,7 +612,7 @@ const c = {
     narrower: 'Sedile più stretto',
     exitRow: 'Fila di uscita',
   },
-  w = {
+  f = {
     F: 'Перший клас',
     B: 'Бізнес-клас',
     P: 'Преміум-клас',
@@ -820,8 +820,164 @@ const c = {
     narrower: 'Daha dar koltuk',
     exitRow: 'Çıkış sırası',
   },
-  z = { ZOOM: 'zoom', SCALE: 'scale' },
+  z = {
+    F: 'Hạng nhất',
+    B: 'Hạng thương gia',
+    P: 'Hạng Premium',
+    E: 'Hạng phổ thông',
+    ADT: 'người lớn',
+    audio_video_ondemand: 'Âm thanh và video theo yêu cầu',
+    audioVideo: 'Âm thanh và video theo yêu cầu',
+    babyBassinet: 'Có nôi cho trẻ sơ sinh',
+    bassinet: 'Có nôi cho trẻ sơ sinh',
+    bluetooth: 'Ghép đôi tai nghe',
+    cancel: 'Hủy',
+    CHD: 'trẻ em',
+    deck: 'Tầng',
+    doNotRecline: 'Không được ngả lưng, có thể đau lưng',
+    extraLegroom: 'Nhiều chỗ để chân',
+    getColdByExit: 'Gần cửa thoát hiểm, có gió lùa và lạnh',
+    INF: 'trẻ sơ sinh',
+    invertedSeat: 'Ghế quay về phía sau',
+    limitedOverheadStorage: 'Không gian để hành lý trên đầu hạn chế',
+    limitedRecline: 'Tựa lưng hạn chế, có thể đau lưng',
+    misalignedWindow: 'Cửa sổ bị lệch hoặc che khuất',
+    nearGalley: 'Gần khu vực phục vụ ăn uống',
+    nearLavatory: 'Gần nhà vệ sinh',
+    nearStairs: 'Gần cầu thang, khu vực đông',
+    noFloorStorage: 'Không có chỗ để đồ dưới ghế',
+    noOverheadStorage: 'Không gian để hành lý trên đầu hạn chế',
+    noWindow: 'Cửa sổ bị lệch hoặc che khuất',
+    personalTvInArmrest: 'TV cá nhân trong tựa tay',
+    passenger: 'Hành khách',
+    pitch: 'Khoảng để chân',
+    power: 'Ổ cắm điện',
+    powerPlug: 'Ổ cắm điện',
+    prereclinedSeat: 'Ghế đã được ngả sẵn',
+    recline: 'Ngả lưng',
+    reservedCrewSeat: 'Đã dành cho phi hành đoàn',
+    restrictedLegroom: 'Chỗ để chân hạn chế',
+    select: 'Chọn',
+    seatRestrictions: 'Ghế chỉ dành cho',
+    standardSeat: 'Ghế tiêu chuẩn',
+    storageBoxBetweenWall: 'Hộp đựng đồ giữa tường',
+    trayTableInArmrest: 'Bàn ăn trong tựa tay',
+    unselect: 'Bỏ chọn',
+    usbPlug: 'Cổng USB',
+    usbPowerPlug: 'Cổng USB và ổ cắm điện',
+    width: 'Chiều rộng',
+    wifi_enabled: 'Có Wi‑Fi',
+    wifiEnabled: 'Có Wi‑Fi',
+    wingInWindow: 'Cánh máy bay chắn tầm nhìn khỏi cửa sổ',
+    narrower: 'Ghế hẹp hơn',
+    exitRow: 'Hàng ghế thoát hiểm',
+  },
   x = {
+    F: 'Primeira classe',
+    B: 'Classe executiva',
+    P: 'Classe premium',
+    E: 'Classe econômica',
+    ADT: 'adultos',
+    audio_video_ondemand: 'Áudio e vídeo sob demanda',
+    audioVideo: 'Áudio e vídeo sob demanda',
+    babyBassinet: 'Berço para bebê disponível',
+    bassinet: 'Berço para bebê disponível',
+    bluetooth: 'Conecte seu fone de ouvido',
+    cancel: 'Cancelar',
+    CHD: 'crianças',
+    deck: 'Andar',
+    doNotRecline: 'Inclinação restrita, possível desconforto nas costas',
+    extraLegroom: 'Mais espaço para as pernas',
+    getColdByExit: 'Próximo à saída, correntes de ar e frio',
+    INF: 'bebês',
+    invertedSeat: 'Assento voltado para trás',
+    limitedOverheadStorage: 'Espaço de armazenamento limitado',
+    limitedRecline: 'Inclinação restrita, possível desconforto nas costas',
+    misalignedWindow: 'Vista parcial ou sem janela',
+    nearGalley: 'Próximo às cozinhas',
+    nearLavatory: 'Próximo aos banheiros',
+    nearStairs: 'Escadas, área de tráfego intenso',
+    noFloorStorage: 'Sem espaço sob o assento',
+    noOverheadStorage: 'Espaço de armazenamento limitado',
+    noWindow: 'Vista parcial ou sem janela',
+    personalTvInArmrest: 'TV pessoal no apoio de braço',
+    passenger: 'Passageiro',
+    pitch: 'Espaço',
+    recline: 'Inclinação',
+    power: 'Tomada de energia',
+    powerPlug: 'Tomada de energia',
+    prereclinedSeat: 'Assento pré-reclinado',
+    reservedCrewSeat: 'Reservado',
+    restrictedLegroom: 'Espaço para as pernas limitado',
+    select: 'Selecionar',
+    seatRestrictions: 'O assento é apenas para',
+    standardSeat: 'Assento padrão',
+    storageBoxBetweenWall: 'Caixa de armazenamento entre a parede',
+    trayTableInArmrest: 'Mesa dobrável no apoio de braço',
+    unselect: 'Desmarcar',
+    usbPlug: 'Entrada USB',
+    usbPowerPlug: 'Entrada USB e tomada de energia',
+    width: 'Largura',
+    wifi_enabled: 'Wi-Fi disponível',
+    wifiEnabled: 'Wi-Fi disponível',
+    wingInWindow: 'Vista da asa pela janela',
+    narrower: 'Assento mais estreito',
+    exitRow: 'Saída de emergência',
+  },
+  y = {
+    F: 'Eerste klasse',
+    B: 'Businessklasse',
+    P: 'Premiumklasse',
+    E: 'Economyklasse',
+    ADT: 'volwassenen',
+    audio_video_ondemand: 'Audio en video op aanvraag',
+    audioVideo: 'Audio en video op aanvraag',
+    babyBassinet: 'Babywieg beschikbaar',
+    bassinet: 'Babywieg beschikbaar',
+    bluetooth: 'Koppel uw headset',
+    cancel: 'Annuleren',
+    CHD: 'kinderen',
+    deck: 'Dek',
+    doNotRecline: 'Beperkte kanteling, kans op rugklachten',
+    extraLegroom: 'Extra beenruimte',
+    getColdByExit: 'Dicht bij de uitgang, tocht en kou mogelijk',
+    INF: 'baby’s',
+    invertedSeat: 'Achterwaarts gerichte stoel',
+    limitedOverheadStorage: 'Beperkte opbergruimte',
+    limitedRecline: 'Beperkte kanteling, kans op rugklachten',
+    misalignedWindow: 'Gedeeltelijk of geen uitzicht door het raam',
+    nearGalley: 'Dicht bij de kombuis',
+    nearLavatory: 'Dicht bij de toiletten',
+    nearStairs: 'Dicht bij de trap, druk gebied',
+    noFloorStorage: 'Geen opbergruimte onder de stoel',
+    noOverheadStorage: 'Beperkte opbergruimte',
+    noWindow: 'Gedeeltelijk of geen uitzicht door het raam',
+    personalTvInArmrest: 'Persoonlijke tv in de armleuning',
+    passenger: 'Passagier',
+    pitch: 'Stoelafstand',
+    power: 'Stroomaansluiting',
+    powerPlug: 'Stroomaansluiting',
+    prereclinedSeat: 'Vooraf gekantelde stoel',
+    recline: 'Kanteling',
+    reservedCrewSeat: 'Gereserveerd',
+    restrictedLegroom: 'Beperkte beenruimte',
+    select: 'Selecteren',
+    seatRestrictions: 'De stoel is alleen voor',
+    standardSeat: 'Standaardstoel',
+    storageBoxBetweenWall: 'Opbergvak tussen wand',
+    trayTableInArmrest: 'Tafeltje in de armleuning',
+    unselect: 'Deselecteren',
+    usbPlug: 'USB‑aansluiting',
+    usbPowerPlug: 'USB en stroomaansluiting',
+    width: 'Breedte',
+    wifi_enabled: 'Wi‑Fi beschikbaar',
+    wifiEnabled: 'Wi‑Fi beschikbaar',
+    wingInWindow: 'Vleugel zichtbaar vanuit het raam',
+    narrower: 'Smallere stoel',
+    exitRow: 'Nooduitgangrij',
+  },
+  S = { ZOOM: 'zoom', SCALE: 'scale' },
+  $ = {
     available: 'available',
     unavailable: 'unavailable',
     selected: 'selected',
@@ -829,32 +985,51 @@ const c = {
     extra: 'extra',
     disabled: 'disabled',
   },
-  y = { seat: 'seat', aisle: 'aisle', empty: 'empty', index: 'index' },
-  S = { seat: 'S', empty: 'E', aisle: '-' },
-  H = { f: 'First', b: 'Business', p: 'Premium economy', e: 'Economy' },
-  $ = { CN: p, DE: h, EN: g, ES: d, PL: c, RU: m, AR: C, CS: k, FR: u, PT: f, UK: w, IT: v, JA: b, KO: L, TR: M },
-  V = 'EN',
-  T = 'metric',
-  A = z.SCALE,
-  E = 'Bearer',
-  _ = 3,
-  B = 350,
-  W = !1,
-  P = !1,
-  I = !1,
+  H = { seat: 'seat', aisle: 'aisle', empty: 'empty', index: 'index' },
+  V = { seat: 'S', empty: 'E', aisle: '-' },
+  T = { f: 'First', b: 'Business', p: 'Premium economy', e: 'Economy' },
+  A = {
+    CN: p,
+    DE: h,
+    EN: g,
+    ES: d,
+    PL: c,
+    RU: m,
+    AR: C,
+    CS: v,
+    FR: u,
+    PT: k,
+    UK: f,
+    IT: w,
+    JA: b,
+    KO: L,
+    TR: M,
+    VI: z,
+    'PT-BR': x,
+    NL: y,
+  },
+  E = 'EN',
+  B = 'metric',
+  _ = S.SCALE,
+  W = 'Bearer',
+  P = 3,
+  I = 350,
   N = !1,
-  j = !0,
   D = !1,
-  R = !0,
+  R = !1,
+  j = !1,
   O = !0,
-  Z = !1,
   F = !1,
-  U = 260,
-  q = ['ADT', 'CHD', 'INF'],
-  G = 12,
-  K = 2.4,
-  Y = 4,
-  J = [
+  Z = !0,
+  U = !0,
+  G = !1,
+  q = !1,
+  K = 260,
+  Y = ['ADT', 'CHD', 'INF'],
+  J = 12,
+  X = 1.4,
+  Q = 4,
+  ee = [
     [100, 100],
     [122, 218],
     [150, 170],
@@ -901,103 +1076,108 @@ const c = {
     [550, 325],
     [550, 325],
     [550, 325],
+    [100, 100],
+    [200, 200],
+    [200, 200],
   ],
-  X = { width: 86, height: 100 },
-  Q = 'E',
-  ee = 10,
-  te = 80,
-  re = 120,
-  ie = { left: 'left', right: 'right', center: 'center' },
-  le = 'auto',
-  oe = 'rgb(30,60,90)',
-  se = 'rgb(255,255,255)',
-  ae = 'rgb(255,255,255)',
-  ne = 200,
-  ce = 30,
-  de = 50,
-  he = 'rgb(255,255,255)',
-  ge = 'rgb(185,186,186)',
-  pe = 1,
-  me = 'rgb(237, 237, 237)',
-  Ce = 'dimgrey',
-  ke = 'rgb(186, 199, 213)',
-  ue = 'rgb(148, 168, 190)',
-  fe = 'rgb(70, 81, 94)',
-  ve = 'rgb(206, 216, 237)',
-  we = 'lightgray',
-  be = 12,
-  Le = 'darkgrey',
-  Me = 'darkgrey',
-  ze = 'darkgrey',
-  xe = '#1157ce',
-  ye = 'rgb(255,255,255)',
-  Se = 'transparent',
-  He = 'Montserrat, sans-serif',
-  $e = 'rgb(255,255,255)',
-  Ve = '#4f6f8f',
-  Te = 'rgb(255,255,255)',
-  Ae = '#4f6f8f',
-  Ee = '#4f6f8f',
-  _e = '#4f6f8f',
-  Be = '#f2f5f8',
-  We = 'rgb(255, 255, 255)',
-  Pe = 'rgb(0, 122, 255)',
-  Ie = 'rgb(0, 24, 51)',
-  Ne = 'rgb(237, 240, 243)',
-  je = '#fff',
-  De = 'rgba(50, 50, 50, 0.5)',
-  Re = 25,
-  Oe = 80,
-  Ze = '#00BFFF',
-  Fe = { F: '#BDB76B', B: '#FF8C00', P: '#8FBC8F', E: '#1E90FF' };
-class Ue {
-  constructor(e, t, r, i, l = 'Bearer', o = null) {
-    a(this, 'getData', async (e, t = {}) => {
-      var r;
+  te = { width: 86, height: 100 },
+  le = 'E',
+  ie = 10,
+  re = 80,
+  oe = 120,
+  se = { left: 'left', right: 'right', center: 'center' },
+  ne = 'auto',
+  ae = 'rgb(30,60,90)',
+  ce = 'rgb(255,255,255)',
+  de = 'rgb(255,255,255)',
+  he = 200,
+  ge = 30,
+  pe = 50,
+  me = 'rgb(255,255,255)',
+  Ce = 'rgb(185,186,186)',
+  ve = 1,
+  ue = 'rgb(237, 237, 237)',
+  ke = 'dimgrey',
+  we = 'rgb(186, 199, 213)',
+  fe = 'rgb(148, 168, 190)',
+  be = 'rgb(70, 81, 94)',
+  Le = 'rgb(206, 216, 237)',
+  Me = 'lightgray',
+  ze = 12,
+  xe = 'darkgrey',
+  ye = 'darkgrey',
+  Se = 'darkgrey',
+  $e = 'default',
+  He = '#1157ce',
+  Ve = 'rgb(255,255,255)',
+  Te = 'transparent',
+  Ae = 'Montserrat, sans-serif',
+  Ee = 'rgb(255,255,255)',
+  Be = '#4f6f8f',
+  _e = 'rgb(255,255,255)',
+  We = '#4f6f8f',
+  Pe = '#4f6f8f',
+  Ie = '#4f6f8f',
+  Ne = '#f2f5f8',
+  De = 'rgb(255, 255, 255)',
+  Re = 'rgb(0, 122, 255)',
+  je = 'rgb(0, 24, 51)',
+  Oe = 'rgb(237, 240, 243)',
+  Fe = '#fff',
+  Ze = 'rgba(50, 50, 50, 0.5)',
+  Ue = 25,
+  Ge = 80,
+  qe = '#00BFFF',
+  Ke = { F: '#BDB76B', B: '#FF8C00', P: '#8FBC8F', E: '#1E90FF' },
+  Ye = 'jetsJwtToken';
+class Je {
+  constructor(e, t, l, i, r = W, o = null) {
+    n(this, 'getData', async (e, t = {}) => {
+      var l;
       let i = {};
-      (null != t && null !== (r = t.headers) && void 0 !== r && r.authorization) ||
+      (null != t && null !== (l = t.headers) && void 0 !== l && l.authorization) ||
         (i = await this._getRequestOptions());
-      const l = { ...t, ...i },
-        o = await fetch(`${this._apiUrl}/${e}`, l),
+      const r = { ...t, ...i },
+        o = await fetch(`${this._apiUrl}/${e}`, r),
         s = await o.json();
       if (!o.ok) throw new Error(`getData: ${o.status} - ${s.message}`);
       return await s;
     }),
-      a(this, 'postData', async (e, t, r = {}) => {
+      n(this, 'postData', async (e, t, l = {}) => {
         const i = await this._getRequestOptions(),
-          l = { ...r, method: 'post', body: JSON.stringify(t), ...i },
+          r = { ...l, method: 'post', body: JSON.stringify(t), ...i },
           o = `${this._apiUrl}/${e}`,
-          s = await fetch(o, l),
-          a = await s.json();
-        if (!s.ok) throw new Error(`postData: ${s.status} - ${a.message}`);
-        return a;
+          s = await fetch(o, r),
+          n = await s.json();
+        if (!s.ok) throw new Error(`postData: ${s.status} - ${n.message}`);
+        return n;
       }),
-      a(this, '_getRequestOptions', async () => {
+      n(this, '_getRequestOptions', async () => {
         const e = await this._getToken();
         return {
           headers: { 'content-type': 'application/json', authorization: `${this._apiAuthorizationScheme} ${e}` },
         };
       }),
-      a(this, '_getAuthRequestOptions', e => ({ headers: { authorization: `${this._apiAuthorizationScheme} ${e}` } })),
-      a(this, '_getToken', async () => {
-        const e = this._localStorage ? this._localStorage.getData('jetsJwtToken') : null;
+      n(this, '_getAuthRequestOptions', e => ({ headers: { authorization: `${this._apiAuthorizationScheme} ${e}` } })),
+      n(this, '_getToken', async () => {
+        const e = this._localStorage ? this._localStorage.getData(Ye) : null;
         if (e) return e;
         const t = `auth?appId=${this._appId}`,
-          { accessToken: r } = await this.getData(t, this._getAuthRequestOptions(this._apiKey));
-        if (!r) throw new Error('Unable to authenticate');
-        return this._saveToken(r), r;
+          { accessToken: l } = await this.getData(t, this._getAuthRequestOptions(this._apiKey));
+        if (!l) throw new Error('Unable to authenticate');
+        return this._saveToken(l), l;
       }),
-      a(this, '_saveToken', e => {
+      n(this, '_saveToken', e => {
         if (!e || !this._localStorage) return;
         const { exp: t } = this._parseJwt(e),
-          r = this._getTokenTTL(t);
-        this._localStorage.setData('jetsJwtToken', e, r);
+          l = this._getTokenTTL(t);
+        this._localStorage.setData(Ye, e, l);
       }),
       (this._appId = e),
       (this._apiKey = t),
-      (this._apiUrl = r),
+      (this._apiUrl = l),
       (this._localStorage = i),
-      (this._apiAuthorizationScheme = l),
+      (this._apiAuthorizationScheme = r),
       (this._apiMetadata = o);
   }
   _getTokenTTL(e) {
@@ -1005,7 +1185,7 @@ class Ue {
   }
   _parseJwt(e) {
     var t = e.split('.')[1].replace(/-/g, '+').replace(/_/g, '/'),
-      r = decodeURIComponent(
+      l = decodeURIComponent(
         atob(t)
           .split('')
           .map(function (e) {
@@ -1013,136 +1193,138 @@ class Ue {
           })
           .join('')
       );
-    return JSON.parse(r);
+    return JSON.parse(l);
   }
 }
-const qe = e.createContext();
-class Ge {
+const Xe = e.createContext();
+var Qe;
+class et {
   constructor() {
-    a(this, 'getSeatMapParams', (e, t) => {
-      var r, i, l;
-      const o = e.map(e => e.width),
-        s =
-          Math.max(...o) +
-            2 * (null == t || null === (r = t.colorTheme) || void 0 === r ? void 0 : r.fuselageStrokeWidth) || 0,
+    n(this, 'getSeatMapParams', (e, t, l) => {
+      var i, r, o;
+      const s = e.map(e => e.width),
+        n =
+          Math.max(...s) +
+            2 * (null == t || null === (i = t.colorTheme) || void 0 === i ? void 0 : i.fuselageStrokeWidth) || 0,
         a = e.map(e => e.wingsInfo.length),
-        n = Math.max(...a) > 0,
-        c = this._calculateSeatMapScale(s, t.width),
-        d = this._calculateSeatMapRotation(t.horizontal, t.rightToLeft, c.scale, t.scaleType),
-        h = t.visibleFuselage ? 2.4 * s : 0,
-        g =
-          (null == t || null === (i = t.colorTheme) || void 0 === i ? void 0 : i.deckHeightSpacing) * e.length * 2 || 0,
-        p = t.singleDeckMode
+        c = Math.max(...a) > 0,
+        d = this._calculateSeatMapScale(n, t.width),
+        h = this._calculateSeatMapRotation(t.horizontal, t.rightToLeft, d.scale, t.scaleType),
+        g = t.visibleFuselage ? 1.4 * n : 0,
+        p =
+          (null == t || null === (r = t.colorTheme) || void 0 === r ? void 0 : r.deckHeightSpacing) * e.length * 2 || 0,
+        m = t.singleDeckMode
           ? 0
           : (e.length - 1) *
-            ((null == t || null === (l = t.colorTheme) || void 0 === l ? void 0 : l.deckSeparation) || 0),
-        m = e.map(e => e.height).reduce((e, t) => e + t, 0) + h + p + g,
-        C = e.map(e => e.height + h + p + g),
-        k = navigator.maxTouchPoints || 'ontouchstart' in document.documentElement;
+            ((null == t || null === (o = t.colorTheme) || void 0 === o ? void 0 : o.deckSeparation) || 0),
+        C = e.map(e => e.height).reduce((e, t) => e + t, 0) + g + m + p,
+        v = e.map(e => e.height + g + m + p),
+        u = navigator.maxTouchPoints || 'ontouchstart' in document.documentElement;
       return {
-        ...c,
         ...d,
-        innerWidth: s,
-        isTouchDevice: k,
+        ...h,
+        innerWidth: n,
+        isTouchDevice: u,
         tooltipOnHover: t.tooltipOnHover,
         builtInTooltip: null == t ? void 0 : t.builtInTooltip,
         externalPassengerManagement: null == t ? void 0 : t.externalPassengerManagement,
         builtInDeckSelector: null == t ? void 0 : t.builtInDeckSelector,
         singleDeckMode: null == t ? void 0 : t.singleDeckMode,
-        totalDecksHeight: m,
-        separateDeckHeights: C,
+        totalDecksHeight: C,
+        separateDeckHeights: v,
         visibleFuselage: t.visibleFuselage,
-        visibleWings: t.visibleWings && n,
+        visibleWings: t.visibleWings && c,
         visibleCabinTitles: t.visibleCabinTitles,
-        scaledTotalDecksHeight: m ? m * (c.scale || 1) + 'px' : '100%',
+        scaledTotalDecksHeight: C ? C * (d.scale || 1) + 'px' : '100%',
         hiddenSeatFeatures: t.hiddenSeatFeatures,
+        noseType: (null == l ? void 0 : l.noseType) || 'default',
       };
     }),
-      a(this, 'findWidestDeckRow', e => [...e].filter(e => !!e.number).sort((e, t) => t.width - e.width)[0]),
-      a(this, 'findBiggestDeckRow', e => {
+      n(this, 'findWidestDeckRow', e => [...e].filter(e => !!e.number).sort((e, t) => t.width - e.width)[0]),
+      n(this, 'findBiggestDeckRow', e => {
         const t = [...e].sort((e, t) => {
-          const r = /S/g;
-          return t.seatScheme.match(r).length - e.seatScheme.match(r).length;
+          const l = /S/g;
+          return t.seatScheme.match(l).length - e.seatScheme.match(l).length;
         });
         return this.assignAllLettersForBiggestRow(t[0], e);
       }),
-      a(this, 'assignAllLettersForBiggestRow', (e, t) => {
-        const r = { ...e, seats: e.seats.map(e => ({ ...e })) };
+      n(this, 'assignAllLettersForBiggestRow', (e, t) => {
+        const l = { ...e, seats: e.seats.map(e => ({ ...e })) };
         try {
-          const e = this.rowLetters(r),
+          const e = this.rowLetters(l),
             i = t.find(t => {
-              if (t.seatScheme === r.seatScheme) {
-                const r = this.rowLetters(t);
-                if (e !== r) return t;
+              if (t.seatScheme === l.seatScheme) {
+                const l = this.rowLetters(t);
+                if (e !== l) return t;
               }
             });
           i &&
-            r.seats.forEach((e, t) => {
+            l.seats.forEach((e, t) => {
               e.letter = `${e.letter} - ${i.seats[t].letter}`;
             });
         } catch (e) {
           console.error('Error at assignAllLettersForBiggestRow', e);
         }
-        return r;
+        return l;
       }),
-      a(this, 'rowLetters', e => {
-        const t = { [y.aisle]: '-', [y.empty]: ' ' };
+      n(this, 'rowLetters', e => {
+        const t = { [H.aisle]: '-', [H.empty]: ' ' };
         return e.seats.map(e => t[e.type] || e.letter).join();
       }),
-      a(this, 'getDefaultSeatSizeByClass', e =>
+      n(this, 'getDefaultSeatSizeByClass', e =>
         e && SEAT_SIZE_BY_CLASS[e] ? SEAT_SIZE_BY_CLASS[e] : DEFAULT_SEAT_SIZE
       ),
-      a(this, '_calculateSeatMapRotation', (e, t, r, i) => {
-        let l = '',
+      n(this, '_calculateSeatMapRotation', (e, t, l, i) => {
+        let r = '',
           o = '',
           s = '';
         return (
           e &&
-            ((l = 'rotate(90deg)'),
-            (o = i === z.ZOOM ? `translateY(${-100 / r}%)` : 'translateY(-100%)'),
+            ((r = 'rotate(90deg)'),
+            (o = i === S.ZOOM ? `translateY(${-100 / l}%)` : 'translateY(-100%)'),
             (s = 'rotate(-90deg)')),
-          { rotation: l, offset: o, antiRotation: s, isHorizontal: e, rightToLeft: t }
+          { rotation: r, offset: o, antiRotation: s, isHorizontal: e, rightToLeft: t }
         );
       }),
-      a(this, '_calculateSeatMapScale', (e, t) => ({ scale: t / e || 1, antiScale: e / t || 1 })),
-      a(this, '_calculateDecksHeight', (e, t, r) =>
+      n(this, '_calculateSeatMapScale', (e, t) => ({ scale: t / e || 1, antiScale: e / t || 1 })),
+      n(this, '_calculateDecksHeight', (e, t, l) =>
         null == e
           ? void 0
           : e.map((e, i) => {
-              const l = t[i],
-                o = r[i];
-              return this.calculateDeckHeight(e.rows, l, o);
+              const r = t[i],
+                o = l[i];
+              return this.calculateDeckHeight(e.rows, r, o);
             })
       ),
-      a(this, 'calculateDeckHeight', (e, t, r) => {
+      n(this, 'calculateDeckHeight', (e, t, l) => {
         if (!e.length) return 0;
         const i = e[e.length - 1],
-          { topOffset: l, seats: o } = i,
+          { topOffset: r, seats: o } = i,
           s = this._findLowestSeat(o),
-          { height: a, topOffset: n } = this._calculateLastElementHeight(t),
-          { height: c, topOffset: d } = this._calculateLastElementHeight(r),
-          h = l + s.topOffset + s.size.height,
-          g = n + a,
+          { height: n, topOffset: a } = this._calculateLastElementHeight(t),
+          { height: c, topOffset: d } = this._calculateLastElementHeight(l),
+          h = r + s.topOffset + s.size.height,
+          g = a + n,
           p = d + c,
           m = Math.max(h, g, p);
         return Math.round(m);
       }),
-      a(this, '_findLowestSeat', e => {
+      n(this, '_findLowestSeat', e => {
         let t = 0;
-        const r = e.filter(e => e.letter && !Number.isInteger(e.letter));
-        let i = r[0];
-        for (const e of r) {
-          const { width: r, height: l } = e.size,
-            o = (e.topOffset || 0) + l;
+        const l = e.filter(e => e.letter && !Number.isInteger(e.letter));
+        let i = l[0];
+        for (const e of l) {
+          const { width: l, height: r } = e.size,
+            o = (e.topOffset || 0) + r;
           t < o && ((t = o), (i = e));
         }
         return i;
       }),
-      a(this, '_calculateLastElementHeight', e =>
+      n(this, '_calculateLastElementHeight', e =>
         null == e
           ? void 0
           : e.reduce(
-              (e, { topOffset: t, height: r }) => (t > e.topOffset && ((e.topOffset = t), (e.height = r || 150)), e),
+              (e, { topOffset: t, height: l }) => (t > e.topOffset && ((e.topOffset = t), (e.height = l || 150)), e),
               { topOffset: 0, height: 0 }
             )
       );
@@ -1150,10 +1332,10 @@ class Ge {
   getDeckInnerWidth(e, t) {
     return e + 20 + 24 || t.width;
   }
-  getDeckInnerWidthWithWings(e, t, r) {
-    const i = null != r && r.visibleWings && t ? r.colorTheme.wingsWidth : 0,
-      l = null != r && r.visibleCabinTitles ? r.colorTheme.cabinTitlesWidth : 0;
-    return e.width + 2 * Math.max(i, l);
+  getDeckInnerWidthWithWings(e, t, l) {
+    const i = null != l && l.visibleWings && t ? l.colorTheme.wingsWidth : 0,
+      r = null != l && l.visibleCabinTitles ? l.colorTheme.cabinTitlesWidth : 0;
+    return e.width + 2 * Math.max(i, r);
   }
   static validateColor(e, t) {
     return this._isColor(e) ? e : t;
@@ -1166,9 +1348,9 @@ class Ge {
     return Array.isArray(e) && e.length
       ? e.filter(e => {
           if (!e || !Array.isArray(e.range) || 2 !== e.range.length) return !1;
-          const [t, r] = e.range;
+          const [t, l] = e.range;
           return (
-            !('number' != typeof t || 'number' != typeof r || t > r) &&
+            !('number' != typeof t || 'number' != typeof l || t > l) &&
             !('string' != typeof e.color || !this._isColor(e.color))
           );
         })
@@ -1176,39 +1358,40 @@ class Ge {
   }
   static _filterInvalidColors(e) {
     return (
-      Object.keys(e).reduce((t, r) => {
-        if (!r.toLowerCase().endsWith('color')) return (t[r] = e[r]), t;
-        return this._isColor(e[r]) ? (t[r] = e[r]) : console.warn('config.colorTheme', r, 'has invalid color', e[r]), t;
+      Object.keys(e).reduce((t, l) => {
+        if (!l.toLowerCase().endsWith('color')) return (t[l] = e[l]), t;
+        return this._isColor(e[l]) ? (t[l] = e[l]) : console.warn('config.colorTheme', l, 'has invalid color', e[l]), t;
       }, {}),
       e
     );
   }
   static calculateSeatColorByScore(e, t) {
     if ('number' != typeof e || e < 1 || e > 10) return null;
-    const r = t.find(t => {
-      const [r, i] = t.range;
-      return e >= r && e <= i;
+    const l = t.find(t => {
+      const [l, i] = t.range;
+      return e >= l && e <= i;
     });
-    return (null == r ? void 0 : r.color) || null;
+    return (null == l ? void 0 : l.color) || null;
   }
 }
-a(Ge, 'validateLanguage', e => {
-  if (!e) return 'EN';
-  const t = e.toUpperCase();
-  return $[t] ? t : 'EN';
-}),
-  a(Ge, 'mergeColorThemeWithConstraints', (e, t) => {
-    let r = { ...e, ...Ge._filterInvalidColors(t) };
-    for (let e in Ke) r[e] = Ke[e](r[e]);
-    return (r.customSeatColorRanges = Ge._applyColorRangesConstraints(r.customSeatColorRanges)), r;
+(Qe = et),
+  n(et, 'validateLanguage', e => {
+    if (!e) return E;
+    const t = e.toUpperCase();
+    return A[t] ? t : E;
+  }),
+  n(et, 'mergeColorThemeWithConstraints', (e, t) => {
+    let l = { ...e, ...Qe._filterInvalidColors(t) };
+    for (let e in tt) l[e] = tt[e](l[e]);
+    return (l.customSeatColorRanges = Qe._applyColorRangesConstraints(l.customSeatColorRanges)), l;
   });
-const Ke = { fuselageStrokeWidth: e => Math.min(Math.max(10, e), 18) };
-class Ye {
+const tt = { fuselageStrokeWidth: e => Math.min(Math.max(10, e), 18) };
+class lt {
   static generateId() {
     return '_' + Math.random().toString(36).substring(2, 9);
   }
 }
-const Je = {
+const it = {
     '+': '<svg width="20" height="20" viewBox="-1 -1 22 22" xmlns="http://www.w3.org/2000/svg"><path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM7.29 14.29L3.7 10.7C3.31 10.31 3.31 9.68 3.7 9.29C4.09 8.9 4.72 8.9 5.11 9.29L8 12.17L14.88 5.29C15.27 4.9 15.9 4.9 16.29 5.29C16.68 5.68 16.68 6.31 16.29 6.7L8.7 14.29C8.32 14.68 7.68 14.68 7.29 14.29Z" fill="#11d900"></path></svg>',
     '-': '<svg width="20" height="20" viewBox="-1 -1 22 22" xmlns="http://www.w3.org/2000/svg"><path d="M11.89 6.7L10 8.59L8.11 6.7C7.72 6.31 7.09 6.31 6.7 6.7C6.31 7.09 6.31 7.72 6.7 8.11L8.59 10L6.7 11.89C6.31 12.28 6.31 12.91 6.7 13.3C7.09 13.69 7.72 13.69 8.11 13.3L10 11.41L11.89 13.3C12.28 13.69 12.91 13.69 13.3 13.3C13.69 12.91 13.69 12.28 13.3 11.89L11.41 10L13.3 8.11C13.69 7.72 13.69 7.09 13.3 6.7C12.91 6.32 12.27 6.32 11.89 6.7ZM10 0C4.47 0 0 4.47 0 10C0 15.53 4.47 20 10 20C15.53 20 20 15.53 20 10C20 4.47 15.53 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="red"></path></svg>',
     wifi: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.23 11"><title>wifi</title><path d="M6.62,9.91A1.08,1.08,0,1,0,7.7,8.82,1.08,1.08,0,0,0,6.62,9.91M7.7,7.64A2.24,2.24,0,0,1,9.84,9.26L11,8a3.76,3.76,0,0,0-6.65.09L5.54,9.32A2.25,2.25,0,0,1,7.7,7.64m0-3.06a5.25,5.25,0,0,1,4.37,2.35l1.08-1.15a6.75,6.75,0,0,0-11,.14L3.25,7A5.26,5.26,0,0,1,7.69,4.58m0-3a8.19,8.19,0,0,1,6.45,3.15l1.08-1.14A9.73,9.73,0,0,0,0,3.78L1.11,4.89A8.22,8.22,0,0,1,7.7,1.56" fill="#4f6f8f"/></svg>',
@@ -1224,7 +1407,7 @@ const Je = {
     bluetooth:
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148.000000 148.000000"> <g transform="translate(0, 148.000000) scale(0.1,-0.1)" fill="#4f6f8f" stroke="none"> <path d="M667 1459 l-27 -20 -2 -264 -3 -264 -117 115 c-96 94 -122 114 -147 114 -31 0 -71 -38 -71 -68 0 -9 71 -87 157 -174 l157 -158 -157 -158 c-86 -87 -157 -165 -157 -174 0 -30 40 -68 72 -68 25 0 50 20 149 117 l119 116 0 -266 0 -266 26 -20 c15 -12 35 -21 45 -21 21 0 431 338 455 375 9 14 13 32 9 45 -4 11 -85 86 -181 166 -96 80 -174 150 -174 154 0 4 78 74 174 154 96 80 177 155 181 166 4 13 0 31 -9 45 -24 37 -434 375 -455 375 -10 0 -30 -9 -44 -21z m229 -289 c56 -47 103 -88 103 -92 1 -7 -204 -181 -219 -186 -6 -2 -10 68 -10 183 0 132 3 186 11 183 6 -2 58 -42 115 -88z m-1 -673 c58 -49 105 -92 104 -95 0 -8 -203 -175 -218 -180 -8 -3 -11 51 -11 183 0 115 4 185 10 183 5 -1 57 -43 115 -91z"/> </g> </svg>',
   },
-  Xe = {
+  rt = {
     recline:
       '<svg width="48" height="51" viewBox="0 0 48 51" xmlns="http://www.w3.org/2000/svg"><g transform="scale(-1, 1) translate(-48,0)"><path d="M19.3954 30.8342C19.7952 31.1919 20.4265 30.8973 20.4265 30.3502C20.4265 30.1818 20.3424 30.0345 20.2161 29.9082L20.1319 29.8241L19.2902 29.1507L19.2691 29.1296C18.8272 28.7298 18.1538 29.1086 18.259 29.6978C18.2801 29.8451 18.3432 29.9503 18.4484 30.0345L18.4695 30.0555L19.3112 30.7289L19.3954 30.8131V30.8342Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5973 0.152473C13.2084 0.510215 12.051 1.49927 11.8616 3.2038V3.30902C11.4284 12.9854 11.4976 17.6783 12.4905 21.7889L11.967 21.091L11.946 21.0489C11.8197 20.8384 11.5672 20.7543 11.3357 20.7753C10.8938 20.8384 10.6833 21.3435 10.9148 21.7223L10.9359 21.7643L11.6303 22.6903L11.6724 22.7534L11.6934 22.7955C11.9769 23.1853 12.5288 23.0977 12.734 22.7212C12.8634 23.1823 13.0052 23.6402 13.1601 24.1013C13.1537 24.128 13.1488 24.1557 13.1454 24.1844C13.1244 24.3527 13.1875 24.5211 13.2927 24.6473L13.3138 24.6894L13.4099 24.8175C14.1463 26.8561 15.1378 29.0219 16.4364 31.8585L16.4492 31.8863C16.5014 32.0005 16.5542 32.1159 16.6075 32.2325C17.1074 33.3248 17.6558 34.5232 18.246 35.841C18.0278 35.9337 17.8592 36.149 17.8592 36.4318C17.8592 36.6001 17.9434 36.7474 18.0697 36.8737L18.8904 37.6944L18.9535 37.7365C19.0105 37.7891 19.073 37.828 19.1381 37.8543C19.2985 38.2206 19.4614 38.5951 19.6267 38.978C19.9424 39.7355 20.2581 40.2616 20.9735 40.6615C21.5838 40.9982 22.3624 41.1455 23.625 41.1665C24.8703 41.187 26.0681 41.2 27.2319 41.2077L29.5644 48.0056H22.8676C22.1942 48.0056 21.626 48.5527 21.626 49.2472C21.626 49.9206 22.1731 50.4888 22.8676 50.4888H31.1617C31.2508 50.4988 31.3418 50.499 31.433 50.4888H42.838C43.5114 50.4888 44.0795 49.9416 44.0795 49.2472C44.0795 48.5738 43.5324 48.0056 42.838 48.0056H32.1957L29.8663 41.2168C31.8256 41.2179 33.7121 41.2077 35.5976 41.1974C36.2285 41.194 36.8594 41.1906 37.4928 41.1876C38.3328 41.1876 39.1769 41.1835 40.1246 41.179C41.3371 41.1731 42.7192 41.1665 44.4793 41.1665C45.7419 41.1876 46.5836 40.3037 47.0045 39.1253C47.1518 38.7044 47.236 38.2415 47.257 37.7785C47.2781 37.3155 47.236 36.8315 47.1308 36.3896C46.8151 35.148 46.0155 34.1379 44.5845 34.0117C40.2916 33.6539 37.4297 33.4014 34.5888 33.1489C33.2553 33.0322 31.925 32.9122 30.6452 32.7968C28.6936 32.6208 26.859 32.4553 25.3085 32.3282C19.7951 20.3544 18.6166 17.5976 19.6057 3.43528C19.7109 1.96223 18.8481 0.910044 17.6486 0.383953C17.1857 0.173516 16.6806 0.0472546 16.1545 0.00516733C15.6285 -0.0158763 15.1024 0.026211 14.5973 0.152473ZM28.3161 38.6924C31.509 38.7099 34.4611 38.691 37.4717 38.6623C40.0812 38.6413 42.7116 38.6202 44.4582 38.6202H44.4793C44.4793 38.6202 44.5424 38.4729 44.6266 38.2625C44.6897 38.0731 44.7318 37.8416 44.7528 37.6101C44.7739 37.3787 44.7528 37.1472 44.6897 36.9367C44.6266 36.6632 44.5214 36.4738 44.353 36.4527C43.8105 36.4054 43.2248 36.3545 42.6047 36.3006C40.1945 36.0912 37.2654 35.8367 34.3362 35.5689L34.335 35.5688C31.4945 35.3163 28.6538 35.0638 24.3405 34.7061L23.625 34.643L23.3304 33.9906L23.2462 33.8223C23.1555 33.6256 23.0658 33.4313 22.9772 33.2392C22.7687 33.4555 22.4052 33.5083 22.1311 33.2752V33.2963L22.0469 33.2331L21.5419 32.8123L21.2052 32.4756C21.0789 32.3493 21.0158 32.223 20.9947 32.0547C20.9526 31.5075 21.605 31.1919 22.0048 31.5496L22.3415 31.8863L22.3617 31.9031C17.1874 20.6464 16.1038 17.4332 17.1015 3.24589C17.1226 2.97232 16.9121 2.76188 16.6175 2.63562C16.4281 2.55145 16.1966 2.48832 15.9441 2.46727C15.6916 2.44623 15.4391 2.46727 15.2076 2.5304L15.2286 2.55145C14.7867 2.67771 14.4079 2.97232 14.3448 3.45632C13.7423 17.155 14.1695 20.4518 16.9083 26.8319L17.5225 27.4461C17.7771 27.7007 17.767 28.0756 17.5559 28.3069C17.9026 29.0826 18.2795 29.9097 18.6886 30.8073L18.7008 30.8341C19.6057 32.7912 20.6579 35.0849 21.8995 37.9679C22.0047 38.2415 22.1099 38.4098 22.1941 38.4519C22.4045 38.5781 22.8254 38.6202 23.6461 38.6413C25.1362 38.6658 26.5566 38.6814 27.9307 38.6901C28.0607 38.6701 28.1906 38.6716 28.3161 38.6924Z"></path><path d="M0.140476 10.527L0.132009 10.5185L0.182563 10.6533L0.0983887 10.485V9.05399C0.140476 8.88564 0.245694 8.75938 0.371956 8.67521C0.834916 8.38059 1.42414 8.80147 1.29788 9.32756V10.1062L1.38205 10.3587C1.5504 10.7796 1.2137 11.2215 0.771785 11.2004C0.540305 11.1794 0.329869 11.0321 0.245694 10.8006L0.22465 10.7375L0.140476 10.527Z"></path><path d="M2.26588 12.6525C2.05545 12.1264 1.31892 12.1474 1.12953 12.6525C1.0664 12.7998 1.0664 12.9471 1.12953 13.0944L1.15057 13.1575L1.48727 13.9151L1.59249 14.2307C1.80292 14.7358 2.51841 14.7358 2.72884 14.2307C2.79197 14.0834 2.79197 13.9151 2.72884 13.7678L2.56049 13.2627L2.30797 12.6945L2.28693 12.6314L2.26588 12.6525Z"></path><path d="M3.63372 16.0405C3.42328 15.5354 2.7078 15.5354 2.49736 16.0405C2.43423 16.1878 2.43423 16.3561 2.49736 16.5034V16.5245L2.68676 17.0295L2.93928 17.6188V17.6398C3.17076 18.1659 3.90729 18.1238 4.07564 17.5977C4.11772 17.4504 4.11772 17.3031 4.05459 17.1558V17.1347L3.73894 16.3982L3.61268 16.0615V16.0405H3.63372Z"></path><path d="M5.08573 19.3864C4.83321 18.8393 4.05459 18.9445 3.92833 19.5337C3.90729 19.66 3.92833 19.7862 3.97042 19.9125V19.9336L4.51755 21.0278C4.62277 21.2383 4.85425 21.3856 5.08573 21.3856C5.52765 21.3645 5.80121 20.9016 5.61182 20.5017L5.06469 19.4075V19.3864H5.08573Z"></path><path d="M5.56973 22.7534C5.5066 22.9217 5.52765 23.0901 5.61182 23.2374L6.24313 24.2896L6.28522 24.3527C6.41148 24.5421 6.62192 24.6684 6.85339 24.6473C7.31636 24.6263 7.56888 24.1212 7.3374 23.7214L7.29531 23.6583L6.664 22.6061L6.68505 22.6482C6.43252 22.1852 5.73808 22.2273 5.56973 22.7534Z"></path><path d="M8.57897 25.6995C8.26332 25.2576 7.54784 25.4259 7.46366 25.9731C7.44262 26.1204 7.4847 26.2887 7.56888 26.415L8.32645 27.4251L8.34749 27.4461C8.68419 27.867 9.37863 27.6776 9.44176 27.1305C9.46281 26.9621 9.42072 26.8148 9.3155 26.6886L8.55793 25.6785L8.57897 25.6995Z"></path><path d="M10.8517 28.4773C10.7044 28.3089 10.4729 28.2458 10.2625 28.3089C9.7995 28.4141 9.63116 28.9823 9.96785 29.319L9.9889 29.3401L10.3677 29.8451L10.8306 30.3081C11.2094 30.6868 11.8828 30.4133 11.8828 29.8661C11.8828 29.6978 11.8197 29.5505 11.6934 29.4453L11.6513 29.4032L11.5251 29.2348L10.9359 28.6456L10.8517 28.4773Z"></path><path d="M13.4401 31.0235C13.0613 30.6658 12.451 30.9183 12.4089 31.4444C12.4089 31.6338 12.472 31.8022 12.5983 31.9284L13.4401 32.7702C13.8399 33.1279 14.4712 32.8333 14.4712 32.3072C14.4712 32.1389 14.387 31.9705 14.2608 31.8653L13.419 31.0235H13.4401Z"></path><path d="M16.1547 33.4857C15.7549 33.1279 15.1446 33.4225 15.1446 33.9486C15.1446 34.117 15.2288 34.2853 15.355 34.4116L16.2178 35.2744C16.3651 35.4217 16.5756 35.4638 16.786 35.4217C17.27 35.2954 17.4173 34.7062 17.0385 34.3695L16.1547 33.4857Z"></path><path d="M9.67324 19.6389C9.94681 20.1019 10.6202 20.0388 10.7886 19.5127C10.8306 19.3443 10.8306 19.176 10.7465 19.0287L10.3887 18.3132L10.3046 18.1028L10.2625 18.0186C10.031 17.5556 9.33654 17.5977 9.14715 18.0817C9.08402 18.2501 9.08402 18.4184 9.16819 18.5868L9.21028 18.6709L9.54698 19.5127L9.6522 19.7231L9.67324 19.6389Z"></path><path d="M8.0108 16.314C8.11601 16.5455 8.32645 16.6718 8.57897 16.6718C9.02089 16.6507 9.29446 16.2088 9.12611 15.809L8.78941 14.9673L8.74732 14.841L8.70523 14.7568C8.4948 14.2728 7.8214 14.2518 7.58992 14.7358C7.52679 14.9041 7.50575 15.0725 7.58992 15.2408L7.63201 15.325L7.80036 15.83L8.0108 16.3561V16.314Z"></path><path d="M6.57983 12.905C6.79026 13.4311 7.54784 13.41 7.73723 12.8839C7.77931 12.7366 7.77931 12.5893 7.73723 12.4631L7.71618 12.442L7.54784 11.937L7.4847 11.8107L7.29531 11.3688V11.3477C7.08488 10.8006 6.30626 10.8217 6.13791 11.3898C6.09582 11.5161 6.09582 11.6424 6.15896 11.7897V11.8107L6.47461 12.5472L6.664 12.926L6.68505 12.9471L6.57983 12.905Z"></path><path d="M5.27512 9.45382C5.48556 10.001 6.26417 9.97991 6.43252 9.43278C6.47461 9.30651 6.47461 9.18025 6.43252 9.05399L6.41148 8.99086L6.28522 8.69625L6.03269 8.02285L5.94852 7.8545L5.92748 7.83346C5.696 7.32841 4.95947 7.3705 4.79112 7.89659C4.74903 8.0439 4.74903 8.1912 4.81216 8.33851V8.44372L5.12782 9.28547L5.19095 9.43278L5.21199 9.49591L5.27512 9.45382Z"></path><path d="M3.44433 7.66511C3.97042 7.62302 4.2019 6.97067 3.82311 6.61293C3.69685 6.48667 3.5285 6.44458 3.36015 6.44458H2.28693L1.65562 6.76023H1.63457C1.40309 6.86545 1.27683 7.09693 1.27683 7.32841C1.29788 7.77033 1.73979 8.0439 2.13962 7.8545H3.00241L3.44433 7.66511Z"></path></g></svg>',
     width:
@@ -1232,83 +1415,83 @@ const Je = {
     pitch:
       '<svg width="74" height="51" viewBox="0 0 74 51" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.98892 0.152473C1.60004 0.510215 0.442636 1.49927 0.253243 3.2038V3.30902C-0.503624 20.2124 0.272842 21.9085 4.82805 31.8585L4.84076 31.8863L4.99918 32.2325L4.99924 32.2327L4.99927 32.2327C5.87007 34.1358 6.88816 36.3607 8.01834 38.978C8.334 39.7355 8.64965 40.2616 9.36514 40.6615C9.9754 40.9982 10.754 41.1455 12.0166 41.1665C13.2619 41.187 14.4597 41.2 15.6234 41.2077L17.9559 48.0057H11.2591C10.5857 48.0057 10.0175 48.5528 10.0175 49.2473C10.0175 49.9207 10.5646 50.4888 11.2591 50.4888H19.5541C19.6426 50.4987 19.7329 50.499 19.8235 50.4888H31.2295C31.9029 50.4888 32.471 49.9417 32.471 49.2473C32.471 48.5739 31.9239 48.0057 31.2295 48.0057H20.5872L18.2578 41.2168C20.2165 41.2179 22.1025 41.2077 23.9874 41.1974H23.9883H23.9892L23.992 41.1974L23.9947 41.1974C24.6238 41.194 25.2528 41.1906 25.8844 41.1876C26.7241 41.1876 27.5679 41.1835 28.5151 41.179H28.5156H28.5162C29.7287 41.1731 31.1108 41.1665 32.8709 41.1665C34.1335 41.1876 34.9752 40.3037 35.3961 39.1253C35.5434 38.7044 35.6276 38.2415 35.6486 37.7785C35.6697 37.3155 35.6276 36.8315 35.5224 36.3896C35.2067 35.148 34.4071 34.1379 32.9761 34.0117C28.6832 33.6539 25.8213 33.4014 22.9804 33.1489C21.6481 33.0323 20.3191 32.9124 19.0403 32.7971L19.0374 32.7968L19.0368 32.7968L19.0366 32.7968C17.085 32.6207 15.2506 32.4553 13.7001 32.3282C8.18669 20.3544 7.00825 17.5976 7.9973 3.43528C8.10252 1.96223 7.23973 0.910044 6.04024 0.383953C5.57728 0.173516 5.07224 0.0472546 4.54614 0.00516733C4.02005 -0.0158763 3.49396 0.026211 2.98892 0.152473ZM16.7077 38.6924C19.9006 38.7099 22.8527 38.691 25.8633 38.6623C28.4728 38.6413 31.1032 38.6202 32.8498 38.6202H32.8709C32.8709 38.6202 32.934 38.4729 33.0182 38.2625C33.0813 38.0731 33.1234 37.8416 33.1444 37.6101C33.1655 37.3787 33.1444 37.1472 33.0813 36.9367C33.0182 36.6632 32.913 36.4738 32.7446 36.4527C32.2021 36.4054 31.6163 36.3545 30.9963 36.3006L30.9954 36.3005C28.5853 36.0911 25.6566 35.8367 22.7278 35.5689L22.7265 35.5688L22.7256 35.5687L22.7244 35.5686C19.8846 35.3162 17.0443 35.0637 12.7321 34.7061L12.0166 34.643L11.722 33.9906L11.6378 33.8223C5.70355 20.9646 4.44093 18.2079 5.49311 3.24589C5.51415 2.97232 5.30371 2.76188 5.0091 2.63562C4.81971 2.55145 4.58823 2.48832 4.33571 2.46727C4.08319 2.44623 3.83066 2.46727 3.59918 2.5304L3.62022 2.55145C3.17831 2.67771 2.79952 2.97232 2.73639 3.45632C2.02158 19.7078 2.75606 21.3194 7.08023 30.8073L7.09242 30.8341C7.9973 32.7911 9.04948 35.0849 10.2911 37.9679C10.3963 38.2415 10.5015 38.4098 10.5857 38.4519C10.7961 38.5781 11.217 38.6202 12.0377 38.6413C13.5277 38.6658 14.948 38.6814 16.322 38.6901C16.4521 38.67 16.5821 38.6715 16.7077 38.6924ZM40.9889 0.152473C39.6 0.510215 38.4426 1.49927 38.2532 3.2038V3.30902C37.4964 20.2124 38.2728 21.9085 42.828 31.8585L42.8408 31.8863L42.9991 32.2323C43.8699 34.1355 44.8881 36.3605 46.0183 38.978C46.334 39.7355 46.6497 40.2616 47.3651 40.6615C47.9754 40.9982 48.754 41.1455 50.0166 41.1665C51.2619 41.187 52.4597 41.2 53.6234 41.2077L55.9559 48.0057H49.2591C48.5857 48.0057 48.0175 48.5528 48.0175 49.2473C48.0175 49.9207 48.5646 50.4888 49.2591 50.4888H57.5541C57.6426 50.4987 57.7329 50.499 57.8235 50.4888H69.2295C69.9029 50.4888 70.471 49.9417 70.471 49.2473C70.471 48.5739 69.9239 48.0057 69.2295 48.0057H58.5872L56.2578 41.2168C58.2165 41.2179 60.1025 41.2077 61.9874 41.1974H61.9883H61.9892C62.6201 41.194 63.251 41.1906 63.8844 41.1876C64.7241 41.1876 65.5679 41.1835 66.5151 41.179H66.5156H66.5162C67.7288 41.1731 69.1108 41.1665 70.8709 41.1665C72.1335 41.1876 72.9752 40.3037 73.3961 39.1253C73.5434 38.7044 73.6276 38.2415 73.6486 37.7785C73.6697 37.3155 73.6276 36.8315 73.5224 36.3896C73.2067 35.148 72.4071 34.1379 70.9761 34.0117C66.6832 33.6539 63.8213 33.4014 60.9804 33.1489C59.6486 33.0324 58.3201 32.9125 57.0417 32.7972L57.0376 32.7969L57.0368 32.7968L57.0366 32.7968L57.0361 32.7967C55.0847 32.6207 53.2505 32.4553 51.7001 32.3282C46.1867 20.3544 45.0083 17.5976 45.9973 3.43528C46.1025 1.96223 45.2397 0.910044 44.0402 0.383953C43.5773 0.173516 43.0722 0.0472546 42.5461 0.00516733C42.0201 -0.0158763 41.494 0.026211 40.9889 0.152473ZM54.7077 38.6924C57.9006 38.7099 60.8527 38.691 63.8633 38.6623C66.4728 38.6413 69.1032 38.6202 70.8498 38.6202H70.8709C70.8709 38.6202 70.934 38.4729 71.0182 38.2625C71.0813 38.0731 71.1234 37.8416 71.1444 37.6101C71.1655 37.3787 71.1444 37.1472 71.0813 36.9367C71.0182 36.6632 70.913 36.4738 70.7446 36.4527C70.2021 36.4054 69.6163 36.3545 68.9963 36.3006L68.9954 36.3005C66.5853 36.0911 63.6566 35.8367 60.7278 35.5689L60.7265 35.5688C57.886 35.3163 55.0454 35.0638 50.7321 34.7061L50.0166 34.643L49.722 33.9906L49.6378 33.8223C43.7035 20.9646 42.4409 18.2079 43.4931 3.24589C43.5142 2.97232 43.3037 2.76188 43.0091 2.63562C42.8197 2.55145 42.5882 2.48832 42.3357 2.46727C42.0832 2.44623 41.8307 2.46727 41.5992 2.5304L41.6202 2.55145C41.1783 2.67771 40.7995 2.97232 40.7364 3.45632C40.0216 19.7078 40.7561 21.3194 45.0802 30.8073L45.0924 30.8341C45.9973 32.7911 47.0495 35.0849 48.2911 37.9679C48.3963 38.2415 48.5015 38.4098 48.5857 38.4519C48.7961 38.5781 49.217 38.6202 50.0377 38.6413C51.5277 38.6658 52.948 38.6814 54.322 38.6901C54.4521 38.67 54.5821 38.6715 54.7077 38.6924Z"></path></svg>',
   };
-class Qe {
+class ot {
   constructor() {
-    a(this, '_dataHelper', null),
-      a(this, '_deckTitleHeight', 0),
-      a(this, 'prepareData', (e, t) => {
+    n(this, '_dataHelper', null),
+      n(this, '_deckTitleHeight', 0),
+      n(this, 'prepareData', (e, t) => {
         if (!e) return [];
-        const { seatDetails: r } = e,
-          i = null == r ? void 0 : r.decks,
-          l = i && i.length;
-        this._deckTitleHeight = i && i.length > 1 ? 80 : 0;
-        const o = l ? this._prepareBulks(i) : [],
-          s = l ? this._prepareExits(i) : [],
-          a = l
-            ? i.map((r, i) => {
-                const l = o[i],
-                  a = s[i];
-                return { ...this._prepareDeck(r, l, a, e, t), number: i + 1 };
+        const { seatDetails: l, plane: i } = e,
+          r = null == l ? void 0 : l.decks,
+          o = r && r.length;
+        this._deckTitleHeight = r && r.length > 1 ? 80 : 0;
+        const s = o ? this._prepareBulks(r) : [],
+          n = o ? this._prepareExits(r) : [],
+          a = o
+            ? r.map((l, i) => {
+                const r = s[i],
+                  o = n[i];
+                return { ...this._prepareDeck(l, r, o, e, t), number: i + 1 };
               })
             : [],
-          n = Math.max(...a.map(e => e.wingsInfo.length)) > 0,
-          c = a.map(e => this._updateDeckWithWings(e, n, t));
-        return { content: c, params: this._dataHelper.getSeatMapParams(c, t), exits: s, bulks: o };
+          c = Math.max(...a.map(e => e.wingsInfo.length)) > 0,
+          d = a.map(e => this._updateDeckWithWings(e, c, t));
+        return { content: d, params: this._dataHelper.getSeatMapParams(d, t, i), exits: n, bulks: s };
       }),
-      a(this, '_prepareRows', (e, t, r, i, l = 0) => {
+      n(this, '_prepareRows', (e, t, l, i, r = 0) => {
         if (null == e || !e.length) return [];
-        return e.map(e => this._prepareRow(e, t, r, i, l));
+        return e.map(e => this._prepareRow(e, t, l, i, r));
       }),
-      a(this, '_prepareRow', (e, t, r, i, l = 0) => {
-        const { number: o, topOffset: s, seatScheme: a, classCode: n, seatType: c } = e,
+      n(this, '_prepareRow', (e, t, l, i, r = 0) => {
+        const { number: o, topOffset: s, seatScheme: n, classCode: a, seatType: c } = e,
           d = s + i,
-          h = this._prepareSeats(e, t, r, l),
+          h = this._prepareSeats(e, t, l, r),
           g = h.map(e => e.size.width).reduce((e, t) => e + t, 0);
         return {
           seats: h,
-          uniqId: Ye.generateId(),
+          uniqId: lt.generateId(),
           number: o,
           topOffset: d,
           width: g,
           height: h.at(0).size.height,
-          seatScheme: a,
-          classCode: n,
+          seatScheme: n,
+          classCode: a,
           seatType: c,
         };
       }),
-      a(this, '_prepareSeats', (e, t, r, i = 0) => {
-        const { seatScheme: l, seats: o, seatType: s } = e;
+      n(this, '_prepareSeats', (e, t, l, i = 0) => {
+        const { seatScheme: r, seats: o, seatType: s } = e;
         if (null == o || !o.length) return [];
-        let a = 0;
-        const n = l.split('');
+        let n = 0;
+        const a = r.split('');
         let c = 0;
         if (i) {
           var d, h;
-          const [e] = J[s],
+          const [e] = ee[s],
             t =
-              (i - (null === (d = l.match(/S|E/g)) || void 0 === d ? void 0 : d.length) * e) /
-              ((null === (h = l.match(/-/g)) || void 0 === h ? void 0 : h.length) || 0);
+              (i - (null === (d = r.match(/S|E/g)) || void 0 === d ? void 0 : d.length) * e) /
+              ((null === (h = r.match(/-/g)) || void 0 === h ? void 0 : h.length) || 0);
           c = t > 0 ? Math.min(t, e) : 1;
         }
-        return n.reduce((i, l) => {
+        return a.reduce((i, r) => {
           let s = {};
           return (
-            l === S.aisle
+            r === V.aisle
               ? (s = this._prepareAisle(e, c))
-              : l === S.empty
+              : r === V.empty
               ? (s = this._prepareEmpty(e))
-              : l === S.seat && ((s = this._prepareSeat(o[a], e, t, r)), a++),
+              : r === V.seat && ((s = this._prepareSeat(o[n], e, t, l)), n++),
             i.push(s),
             i
           );
         }, []);
       }),
-      a(this, '_prepareIndexRow', e => {
+      n(this, '_prepareIndexRow', e => {
         const t = e.seats.map(
           t => (
-            (t.letter = t.type === y.aisle ? '' : t.letter),
-            (t.type = t.type === y.aisle ? y.empty : y.index),
-            (t.status = x.disabled),
+            (t.letter = t.type === H.aisle ? '' : t.letter),
+            (t.type = t.type === H.aisle ? H.empty : H.index),
+            (t.status = $.disabled),
             (t.topOffset = t.topOffset - t.size.height / 2),
             (t.number = ''),
             (t.size = { width: t.size.width, height: 50 }),
@@ -1319,99 +1502,106 @@ class Qe {
         );
         return { ...e, number: '', seats: t, topOffset: e.topOffset };
       }),
-      a(this, '_prepareSeat', (e, t, r, i) => {
-        const { number: l, classCode: o, name: s, seatType: a } = t,
-          n = this._prepareSeatFeatures(e, r, i),
-          c = n.features,
-          d = n.measurements,
-          h = H[o.toLowerCase()] || '',
-          g = l + (null == e ? void 0 : e.letter) || '',
-          p = y.seat,
-          m = x.available,
-          C = e.seatType || a,
-          k = `${o}-${C}`,
-          [u, f] = J[a],
-          [v, w] = J[C];
+      n(this, '_prepareSeat', (e, t, l, i) => {
+        var r;
+        const { number: o, classCode: s, name: n, seatType: a } = t,
+          c = this._prepareSeatFeatures(e, l, i.lang),
+          d = c.features,
+          h = c.measurements,
+          g = T[s.toLowerCase()] || '',
+          p = o + (null == e ? void 0 : e.letter) || '',
+          m = H.seat,
+          C = $.available,
+          v = e.seatType || a,
+          u = `${s}-${v}`,
+          [k, w] = ee[a],
+          [f, b] = ee[v],
+          L =
+            et.calculateSeatColorByScore(
+              null == e ? void 0 : e.score,
+              null === (r = i.colorTheme) || void 0 === r ? void 0 : r.customSeatColorRanges
+            ) || (null == e ? void 0 : e.color);
         return {
-          uniqId: Ye.generateId(),
+          uniqId: lt.generateId(),
           ...e,
-          originalColor: null == e ? void 0 : e.color,
-          features: c,
-          measurements: d,
-          status: m,
-          type: p,
-          number: g,
-          classType: h,
-          classCode: o,
-          rowName: s,
-          seatType: k,
-          seatIconType: C,
-          size: { width: Math.max(u, v), height: w },
+          originalColor: L,
+          features: d,
+          measurements: h,
+          status: C,
+          type: m,
+          number: p,
+          classType: g,
+          classCode: s,
+          rowName: n,
+          seatType: u,
+          seatIconType: v,
+          size: { width: Math.max(k, f), height: b },
+          color: L,
         };
       }),
-      a(this, '_prepareAisle', (e, t = 0) => {
-        const { number: r, seatType: i } = e,
-          [l, o] = J[i],
-          s = { width: t || l, height: o },
-          a = y.aisle,
-          n = x.disabled;
-        return { uniqId: Ye.generateId(), letter: r, type: a, status: n, size: s };
+      n(this, '_prepareAisle', (e, t = 0) => {
+        const { number: l, seatType: i } = e,
+          [r, o] = ee[i],
+          s = { width: t || r, height: o },
+          n = H.aisle,
+          a = $.disabled;
+        return { uniqId: lt.generateId(), letter: l, type: n, status: a, size: s };
       }),
-      a(this, '_prepareEmpty', e => {
-        const [t, r] = J[e.seatType],
-          i = { width: t, height: r },
-          l = y.empty,
-          o = x.disabled;
-        return { uniqId: Ye.generateId(), letter: '', status: o, type: l, size: i };
+      n(this, '_prepareEmpty', e => {
+        const [t, l] = ee[e.seatType],
+          i = { width: t, height: l },
+          r = H.empty,
+          o = $.disabled;
+        return { uniqId: lt.generateId(), letter: '', status: o, type: r, size: i };
       }),
-      a(this, '_prepareSeatFeatures', (e, t, r) => {
-        const { pitch: i, width: l, recline: o, audioVideo: s, power: a, wifi: n, bluetooth: c } = t,
+      n(this, '_prepareSeatFeatures', (e, t, l) => {
+        const { pitch: i, width: r, recline: o, audioVideo: s, power: n, wifi: a, bluetooth: c } = t,
           { pitch: d, width: h, recline: g } = e || {},
           p = Object.keys(e.features || {}),
           m = ['doNotRecline', 'limitedRecline', 'prereclinedSeat'],
           C = p.some(e => m.includes(e)),
-          k = { audioVideo: s, power: a, wifi: n, bluetooth: c, ...e.features },
-          u = { pitch: d || i, width: h || l, recline: C ? '- -' : g || o },
-          f = ['+', '-'];
+          v = { audioVideo: s, power: n, wifi: a, bluetooth: c, ...e.features },
+          u = { pitch: d || i, width: h || r, recline: C ? '- -' : g || o },
+          k = ['+', '-'];
         return {
-          features: Object.entries(k)
+          features: Object.entries(v)
             .filter(([e, t]) => !!t && !u[e])
             .map(([e, t]) => {
-              const i = Ye.generateId(),
-                l = $[r][e] || e;
-              if (f.includes(t)) {
-                return { uniqId: i, title: null, icon: Je[t] || '', value: l, key: e };
+              const i = lt.generateId(),
+                r = A[l][e] || e;
+              if (k.includes(t)) {
+                return { uniqId: i, title: null, icon: it[t] || '', value: r, key: e };
               }
-              return { uniqId: i, title: l, icon: Je[e] || '', value: t, key: e };
+              return { uniqId: i, title: r, icon: it[e] || '', value: t, key: e };
             }),
           measurements: Object.entries(u).map(([e, t]) => {
-            const i = $[r][e] || e,
-              l = Xe[e] || '';
-            return { uniqId: Ye.generateId(), title: i, icon: l, value: t, key: e };
+            const i = A[l][e] || e,
+              r = rt[e] || '';
+            return { uniqId: lt.generateId(), title: i, icon: r, value: t, key: e };
           }),
         };
       }),
-      a(this, 'prepareSeatAdditionalProps', e => {
+      n(this, 'prepareSeatAdditionalProps', e => {
         const { additionalProps: t } = e || {};
         return null == t
           ? void 0
           : t.map(e => ({
-              icon: Je[(null == e ? void 0 : e.icon) || 'dot'] || '',
+              icon: it[(null == e ? void 0 : e.icon) || 'dot'] || '',
               title: null,
-              uniqId: Ye.generateId(),
+              uniqId: lt.generateId(),
               value: null == e ? void 0 : e.label,
               cssClass: null == e ? void 0 : e.cssClass,
             }));
       }),
-      (this._dataHelper = new Ge());
+      (this._dataHelper = new et());
   }
-  _mergeCabinFeatures(e, t, r, i, l) {
+  _mergeCabinFeatures(e, t, l, i, r) {
     const o = { ...e };
     return (
       null != t && t.exists && null != t && t.summary && (o.audioVideo = t.summary),
-      null != r && r.exists && null != r && r.summary && (o.power = r.summary),
+      null != l && l.exists && null != l && l.summary && (o.power = l.summary),
       null != i && i.exists && null != i && i.summary && (o.wifi = i.summary),
-      null != l && l.exists && null != l && l.summary && (o.bluetooth = l.summary),
+      null != r && r.exists && null != r && r.summary && (o.bluetooth = r.summary),
       o
     );
   }
@@ -1423,43 +1613,43 @@ class Qe {
   }
   _getFirstElementDeckOffset(e) {
     const t = e.bulks.reduce((e, t) => (t.topOffset < e ? t.topOffset : e), 0),
-      r = e.exits.reduce((e, t) => (t.topOffset < e ? t.topOffset : e), 0),
+      l = e.exits.reduce((e, t) => (t.topOffset < e ? t.topOffset : e), 0),
       i = e.rows
         .sort((e, t) => {
           e.topOffset, t.topOffset;
         })
         .at(0)
         .seats.reduce((e, t) => (t.topOffset < e ? t.topOffset : e), 0),
-      l = Math.min(t, r, i);
-    return (l < 0 ? -l : l) + this._deckTitleHeight + 120;
+      r = Math.min(t, l, i);
+    return (r < 0 ? -r : r) + this._deckTitleHeight + 120;
   }
   _updateAllDeckItemsTopOffset(e, t) {
     return e.map(e => {
-      const r = this._getFirstElementDeckOffset(e);
-      return this._updateDeckItemsTopOffset(e, t, r);
+      const l = this._getFirstElementDeckOffset(e);
+      return this._updateDeckItemsTopOffset(e, t, l);
     });
   }
-  _updateDeckItemsTopOffset(e, t, r = 0) {
+  _updateDeckItemsTopOffset(e, t, l = 0) {
     return e[t].map(e => {
-      const t = { ...e, uniqId: Ye.generateId() },
-        i = t.topOffset + r;
+      const t = { ...e, uniqId: lt.generateId() },
+        i = t.topOffset + l;
       return (t.topOffset = i), t;
     });
   }
-  _prepareDeck(e, t, r, i, l) {
+  _prepareDeck(e, t, l, i, r) {
     const o = this._groupRowsByCabinClass(e.rows),
       s = [];
     for (const e of o) {
       const t = this._dataHelper.findBiggestDeckRow(e.rows),
-        r = this._prepareRow(t, {}, l.lang);
-      s.push(r.width);
+        l = this._prepareRow(t, {}, r);
+      s.push(l.width);
     }
-    const a = s.reduce((e, t) => e + t, 0) / s.length,
-      n = this._getFirstElementDeckOffset(e);
+    const n = s.reduce((e, t) => e + t, 0) / s.length,
+      a = this._getFirstElementDeckOffset(e);
     for (const e of o) {
-      const { cabin: t, entertainment: r, power: o, wifi: s, bluetooth: c } = i[e.classCode] || {},
-        d = this._mergeCabinFeatures(t, r, o, s, c),
-        h = this._prepareRows(e.rows, d, l.lang, n, a),
+      const { cabin: t, entertainment: l, power: o, wifi: s, bluetooth: c } = i[e.classCode] || {},
+        d = this._mergeCabinFeatures(t, l, o, s, c),
+        h = this._prepareRows(e.rows, d, r, a, n),
         g = h.at(0),
         p = h.at(-1);
       (g.isFirstInCabin = !0),
@@ -1467,395 +1657,393 @@ class Qe {
         (e.rows = h);
     }
     const c = o.flatMap(e => e.rows),
-      d = this._dataHelper.getDeckInnerWidth(a, l),
-      h = this._dataHelper.calculateDeckHeight(c, t, r),
+      d = this._dataHelper.getDeckInnerWidth(n, r),
+      h = this._dataHelper.calculateDeckHeight(c, t, l),
       g = this._prepareWingsForDeck(e.wingsInfo, c[0].topOffset, h);
-    return { uniqId: Ye.generateId(), width: d, height: h, level: e.level, rows: c, wingsInfo: g };
+    return { uniqId: lt.generateId(), width: d, height: h, level: e.level, rows: c, wingsInfo: g };
   }
   _groupRowsByCabinClass(e) {
     const t = [];
-    let r = null,
+    let l = null,
       i = null;
-    for (const l of e)
-      l.classCode !== r &&
-        ((r = l.classCode), (i = { rows: [], topOffset: l.topOffset, classCode: r, width: 0 }), t.push(i)),
-        i.rows.push(l);
+    for (const r of e)
+      r.classCode !== l &&
+        ((l = r.classCode), (i = { rows: [], topOffset: r.topOffset, classCode: l, width: 0 }), t.push(i)),
+        i.rows.push(r);
     return t;
   }
-  _updateDeckWithWings(e, t, r) {
-    return { ...e, width: this._dataHelper.getDeckInnerWidthWithWings(e, t, r) };
+  _updateDeckWithWings(e, t, l) {
+    return { ...e, width: this._dataHelper.getDeckInnerWidthWithWings(e, t, l) };
   }
-  _prepareWingsForDeck(e, t, r) {
+  _prepareWingsForDeck(e, t, l) {
     let i = { start: 0, finish: 0, length: 0 };
     if (!e) return i;
-    const l = t,
+    const r = t,
       { topOffset: o, height: s } = e,
-      a = l + o,
-      n = a + s,
-      c = r;
+      n = r + o,
+      a = n + s,
+      c = l;
     return (
-      (i.start = Math.max(0, a)),
-      (i.finish = Math.min(c, n)),
+      (i.start = Math.max(0, n)),
+      (i.finish = Math.min(c, a)),
       (i.length = Math.max(i.finish - i.start, 0)),
       (i.visibleWingsLeadings = !0),
       i
     );
   }
 }
-const et = 'Error saving data to local storage. Message:',
-  tt = 'Error getting data from local storage. Message:';
-class rt {
+const st = 'Error saving data to local storage. Message:',
+  nt = 'Error getting data from local storage. Message:';
+class at {
   getData(e) {
     try {
       const t = localStorage.getItem(e);
       if (!t) return null;
-      const { value: r, expiry: i } = JSON.parse(t),
-        l = new Date().getTime();
-      return !r || i < l ? (this.removeData(e), null) : r;
+      const { value: l, expiry: i } = JSON.parse(t),
+        r = new Date().getTime();
+      return !l || i < r ? (this.removeData(e), null) : l;
     } catch (e) {
-      return console.log('Error getting data from local storage. Message:', e), null;
+      return console.log(nt, e), null;
     }
   }
-  setData(e, t, r) {
+  setData(e, t, l) {
     try {
       const i = { value: t };
-      return r && (i.expiry = new Date().getTime() + r), localStorage.setItem(e, JSON.stringify(i)), !0;
+      return l && (i.expiry = new Date().getTime() + l), localStorage.setItem(e, JSON.stringify(i)), !0;
     } catch (e) {
-      return console.log('Error saving data to local storage. Message:', e), !1;
+      return console.log(st, e), !1;
     }
   }
   removeData(e) {
     localStorage.removeItem(e);
   }
 }
-const it = () => {
-    const [e, r, i, l] = t(() => {
+const ct = 'chrome',
+  dt = () => {
+    const [e, l, i, r] = t(() => {
       const e = navigator.userAgent.toLowerCase();
-      return [
-        e.includes('firefox'),
-        e.includes('chrome'),
-        e.includes('safari') && !e.includes('chrome'),
-        e.includes('edge'),
-      ];
+      return [e.includes('firefox'), e.includes(ct), e.includes('safari') && !e.includes(ct), e.includes('edge')];
     }, []);
-    return { isFirefox: e, isChrome: r, isSafari: i, isEdge: l };
+    return { isFirefox: e, isChrome: l, isSafari: i, isEdge: r };
   },
-  lt = new Map();
-lt.set('0', '\n  <svg id="bulk-0" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n  </svg>\n'),
-  lt.set(
+  ht = new Map();
+ht.set('0', '\n  <svg id="bulk-0" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n  </svg>\n'),
+  ht.set(
     '1',
     '\n  <svg\n    id="bulk-1"\n    viewBox="0 0 420 119"\n    xmlns="http://www.w3.org/2000/svg"\n  >\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,4V108.6A10.42,10.42,0,0,0,10.44,119H409.56A10.42,10.42,0,0,0,420,108.6V4Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M416.06,0H3.94A4,4,0,0,0,0,4,4,4,0,0,0,3.94,8H416.06A4,4,0,0,0,420,4,4,4,0,0,0,416.06,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '2',
     '\n  <svg id="bulk-2" viewBox="0 0 420 93" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,4.5V82.8A10.2,10.2,0,0,0,10.2,93H409.8A10.2,10.2,0,0,0,420,82.8V4.5Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M415.52,0H4.48A4.49,4.49,0,0,0,0,4.5C0,8,3,9,5.48,9h409C417,9,420,8.17,420,4.5A4.49,4.49,0,0,0,415.52,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '3',
     '\n  <svg id="bulk-3" viewBox="0 0 420 133" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,13.5v97.88A21.64,21.64,0,0,0,21.67,133H398.33A21.64,21.64,0,0,0,420,111.38V13.5Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.29,0H12.71C5.69,0,0,6,0,13.5,0,21.2,6.17,27,12.71,27H407.29C413.83,27,420,20.08,420,13.5,420,6,414.31,0,407.29,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '4',
     '\n  <svg id="bulk-4" viewBox="0 0 265 116" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,4.5V106.38A9.61,9.61,0,0,0,9.61,116H255.39a9.61,9.61,0,0,0,9.61-9.62V4.5Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M260.65,0H4.35A4.52,4.52,0,0,0,0,4.5,4.43,4.43,0,0,0,4.35,9h256.3A4.43,4.43,0,0,0,265,4.5,4.69,4.69,0,0,0,260.65,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '5',
     '\n  <svg id="bulk-5" viewBox="0 0 424 210" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,86V194.86A15.11,15.11,0,0,0,15.07,210H408.93A15.11,15.11,0,0,0,424,194.86V86Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.8,16.8,0,0,0,0,16.82V86a17.06,17.06,0,0,0,16.78,17.12H407.22A17.06,17.06,0,0,0,424,86V16.82A16.8,16.8,0,0,0,407.22,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '6',
     '\n  <svg id="bulk-6" viewBox="0 0 424 255" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,131V239.85A15.11,15.11,0,0,0,15.07,255H408.93A15.11,15.11,0,0,0,424,239.85V131Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.8,16.8,0,0,0,0,16.82V131c0,9.29,7.51,17.28,16.78,17.28H407.22c9.27,0,16.78-8,16.78-17.28V16.82A16.8,16.8,0,0,0,407.22,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '7',
     '\n  <svg id="bulk-7" viewBox="0 0 280 254" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,131V239a15,15,0,0,0,15,15H265a15,15,0,0,0,15-15V131Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M263.26,0H16.74A16.76,16.76,0,0,0,0,16.79V131a16.94,16.94,0,0,0,16.74,17H263.26A16.94,16.94,0,0,0,280,131V16.79A16.76,16.76,0,0,0,263.26,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '8',
     '\n  <svg id="bulk-8" viewBox="0 0 424 290" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base" \n      fill="$baseColor"\n      d="M0,166V275a15,15,0,0,0,15.07,15H408.93A15,15,0,0,0,424,275V166Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.79,16.79,0,0,0,0,16.8V166a17,17,0,0,0,16.78,\n      \n      17H407.22A17,17,0,0,0,424,166V16.8A16.79,16.79,0,0,0,407.22,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '9',
     '\n  <svg id="bulk-9" viewBox="0 0 352 328" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,205V313a15,15,0,0,0,15,15H337a15,15,0,0,0,15-15V205Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M335.25,0H16.75A16.75,16.75,0,0,0,0,16.75V205a17,17,0,0,0,16.75,17H335.25A17,17,0,0,0,352,205V16.75A16.75,16.75,0,0,0,335.25,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '10',
     '\n  <svg id="bulk-10" viewBox="0 0 424 329" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,205V314a15,15,0,0,0,15.07,15H408.93A15,15,0,0,0,424,314V205Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.77,16.77,0,0,0,0,16.75V205a17,17,0,0,0,16.78,17H407.22A17,17,0,0,0,424,205V16.75A16.77,16.77,0,0,0,407.22,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '11',
     '\n  <svg id="bulk-11" viewBox="0 0 282 329" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,205V314a15,15,0,0,0,15.08,15H266.92A15,15,0,0,0,282,314V205Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M265.21,0H16.79A16.77,16.77,0,0,0,0,16.75V205a17,17,0,0,0,16.79,17H265.21A17,17,0,0,0,282,205V16.75A16.77,16.77,0,0,0,265.21,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '12',
     '\n  <svg id="bulk-12" viewBox="0 0 424 371" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,247V356a15,15,0,0,0,15.07,15H408.93A15,15,0,0,0,424,356V247Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.78,16.78,0,0,0,0,16.77V247a17,17,0,0,0,16.78,17H407.22A17,17,0,0,0,424,247V16.77A16.78,16.78,0,0,0,407.22,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '13',
     '\n  <svg id="bulk-13" viewBox="0 0 352 371" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,247V356a15,15,0,0,0,15,15H337a15,15,0,0,0,15-15V247Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M335.25,0H16.75A16.73,16.73,0,0,0,0,16.72V247a17,17,0,0,0,16.75,17H335.25A17,17,0,0,0,352,247V16.72A16.73,16.73,0,0,0,335.25,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '14',
     '\n  <svg id="bulk-14" viewBox="0 0 424 450" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,328V435a15,15,0,0,0,15.07,15H408.93A15,15,0,0,0,424,435V328Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.79,16.79,0,0,0,0,16.8V328a17,17,0,0,0,16.78,17H407.22A17,17,0,0,0,424,328V16.8A16.79,16.79,0,0,0,407.22,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '15',
     '\n  <svg id="bulk-15" viewBox="0 0 424 527" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,403V512a15,15,0,0,0,15.07,15H408.93A15,15,0,0,0,424,512V403Z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M407.22,0H16.78A16.77,16.77,0,0,0,0,16.76V403a17,17,0,0,0,16.78,17H407.22A17,17,0,0,0,424,403V16.76A16.77,16.77,0,0,0,407.22,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '16',
     '\n  <svg id="bulk-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 313 106">\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M10.6,66.1C6,79.1,2.4,92.4,0,106h306.5c5,0,6.5-3.6,6.5-6.1V5C103.8,22.3,39.2-2.7,10.6,66.1z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M307.7,0L70.6,13.5c-45.5,3.5-60,52.6-60,52.6c22.5-33.3,36.2-41.4,60.6-42.7L308.3,9.9c2.6,0,4.7-2.1,4.7-4.7\n    c0-0.1,0-0.2,0-0.2C313.1,2.6,310.2-0.1,307.7,0z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '17',
     '\n  <svg\n    version="1.1"\n    id="bulk-17"\n    xmlns="http://www.w3.org/2000/svg"\n    xmlns:xlink="http://www.w3.org/1999/xlink"\n    x="0px"\n    y="0px"\n    viewBox="0 0 313 91"\n    style="enable-background:new 0 0 313 91;"\n    xml:space="preserve"\n  >\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M10.6,44.8C4.6,57,0,69.9,0,91h307c3.3,0,6-2.7,6-6V4C33.7-1,37.9-4.8,10.6,44.8z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M308.5,0H58.4C28.6,0,13.5,39.4,11.1,43.9c0,0,20.4-34.9,46.3-34.9h251.1c2.5,0,4.5-2.5,4.5-4.9S311,0,308.5,0z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '18',
     '\n  <svg\n    version="1.1"\n    id="bulk-18"\n    xmlns="http://www.w3.org/2000/svg"\n    xmlns:xlink="http://www.w3.org/1999/xlink"\n    x="0px"\n    y="0px"\n    viewBox="0 0 289 126"\n    style="enable-background:new 0 0 289 126;"\n    xml:space="preserve"\n  >\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M0,126h276c7.3,0,13-4,13-9.6V12C31.7,18.9,10.4,28.2,0,126z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M277.2,0C45.5,19.8,8.2-4.5,0,126C9.7,23.2,127.6,42.7,275.1,26c10.2-0.9,13.9-7.6,13.9-14\n    C289,5.3,284.2,0,277.2,0z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '19',
     '\n  <svg\n    id="bulk-19"\n    version="1.1"\n    viewBox="0 0 268 172"\n    xmlns="http://www.w3.org/2000/svg"\n  >\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M21,23.6C13.9,33.5,4.6,60.1,0,96.1c0,0,242.7,71.6,252.7,74.9c10,3.3,15.3-2,15.3-8.6V54\n    C268,54,54.7,5.7,45.7,6C35.1,6.3,25.7,17.8,21,23.6z"\n    />\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      d="M258.1,45.3c-7.3-2-139-33.6-184.7-44.3C60.5-1.8,38.6-0.1,21,23.6c2-2.5,10.4-11.6,21.1-9\n    c12.3,3,190.6,49.1,190.6,49.1C240,66,259.1,71,265.4,61c1.8-2.8,2.5-5.1,2.6-7C268.1,49.1,263.4,46.7,258.1,45.3z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '20',
     '\n  <svg\n    id="bulk-20"\n    version="1.1"\n    viewBox="0 0 286 197"\n    xmlns="http://www.w3.org/2000/svg"\n  >\n    <path \n      class="bulk-base" \n      fill="$baseColor"\n      d="M8,88L0,197h270c8.5,0,16-5.5,16-14V88H8z" />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M285.5,13c-0.8-7.7-4.2-13-14.5-13C258.7,0,115.7,11.8,90,14C19,20.1,0,69.8,0,111v86\n    c6.2-42.3,25.1-76.5,82-81.8c33.7-3.5,184-14.2,184-14.2c11.2,0,20-4.5,20-15C286,56.2,285.9,20.4,285.5,13z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '21',
     '\n  <svg\n    id="bulk-21"\n    version="1.1"\n    viewBox="0 0 287 235"\n    xmlns="http://www.w3.org/2000/svg"\n    icon-transform="scale(0.66) rotate(-4.5) translate(170 38)"\n  >\n    <path\n      class="bulk-base"\n      fill="$baseColor"\n      fill-opacity="1"\n      stroke-width="3"\n      d="M0,235h271c10,0,16-5.7,16-14V113H0V235z"\n    />\n    <path\n      class="bulk-cut" fill="$cutColor"\n      fill-opacity="1"\n      stroke-width="1"\n      d="M270,0C260.4,0,95.2,11.3,62,17S0,49,0,104v131c0,0,9.9-74.3,66-79s199-15,199-15c10.3,0,22-3.7,22-16V20\n      C287,6.2,278.3,0,270,0z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '22',
     '\n  <svg\n    id="bulk-22"\n    version="1.1"\n    viewBox="0 0 287 322"\n    xmlns="http://www.w3.org/2000/svg"\n  >\n    <path class="bulk-base" \n      d="M0,145v177h271c10,0,16-5.7,16-14V145H0z" \n      fill="$baseColor"/>\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M270,0C260.4,0,95.2,10.3,62,16S0,47,0,102v215c0,0,9.9-74.3,66-79s199-15,199-15c10.3,0,22-3.7,22-16V19\n    C287,6.9,278.8,0,270,0z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '23',
     '\n  <svg\n    version="1.1"\n    id="bulk-23"\n    xmlns="http://www.w3.org/2000/svg"\n    xmlns:xlink="http://www.w3.org/1999/xlink"\n    x="0px"\n    y="0px"\n    viewBox="0 0 287 357"\n    style="enable-background:new 0 0 287 357;"\n    xml:space="preserve"\n  >\n    <path \n      class="bulk-base" \n      d="M0,200l0.1,157H271c10,0,16-5.7,16-14V200H0z" \n      fill="$baseColor"/>\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M270,0C260.4,0,94.6,7.6,62,16C17.4,27.5,0,47.1,0,118v239c0,0,9.9-74.3,66-79s199-15,199-15\n    c10.3,0,22-3.7,22-16V19C287,7.6,279.6,0,270,0z"\n    />\n    <rect\n      x="36"\n      y="48"\n      transform="matrix(0.9989 -4.616482e-02 4.616482e-02 0.9989 -6.312 7.1897)"\n      class="st1"\n      width="233"\n      height="184.5"\n      fill-opacity="0"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '24',
     '\n  <svg\n    id="bulk-24"\n    version="1.1"\n    viewBox="0 0 287 437"\n    xmlns="http://www.w3.org/2000/svg"\n  >\n    <path class="bulk-base" d="M0,300v137h271c10,0,16-5.7,16-14V300H0z" fill="$baseColor"/>\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M270,0C260.4,0,95.2,10.3,62,16S0,47,0,102v335c0,0,9.9-74.3,66-79s199-15,199-15c10.3,0,22-3.7,22-16V19\n    C287,7.1,279.1,0,270,0z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '25',
     '\n  <svg id="bulk-25" viewBox="0 0 286 512" xmlns="http://www.w3.org/2000/svg">\n    <path class="bulk-base" d="M0,350V512H271c10,0,15-4.67,15-13V350Z" fill="$baseColor"/>\n    <path\n      class="bulk-cut" fill="$cutColor"\n      d="M267,0C257.42,0,94.18,10.33,61,16S0,45,0,102V512s8.9-73.33,65-78,200-15,200-15c10.26,0,21-3.67,21-16V19C286,3.63,278.19,0,267,0Z"\n    />\n  </svg>\n'
   ),
-  lt.set(
+  ht.set(
     '26',
     '\n  <svg id="bulk-26" viewBox="0 0 45 44" xmlns="http://www.w3.org/2000/svg">\n    <g transform="translate(0.0,44.00) scale(0.1,-0.1)" >\n      <path class="icon bulk" fill="$stickerColor" d="M181 414 c-25 -32 -26 -43 -5 -72 19 -27 64 -29 87 -4 24 26 21 68 -5 86 -32 23 -54 20 -77 -10z"/>\n      <path class="icon bulk" fill="$stickerColor" d="M105 254 c-29 -35 -35 -48 -25 -57 9 -9 19 -3 46 28 l34 40 0 -37 0 -38 65 0 65 0 0 33 1 32 28 -32 c28 -34 51 -43 51 -20 0 7 -16 32 -36 55 l-36 42 -78 0 -78 0 -37 -46z"/>\n      <path class="icon bulk" fill="$stickerColor" d="M125 130 c-18 -19 -25 -34 -21 -47 8 -26 74 -89 83 -79 6 6 2 21 -22 78 -5 12 1 21 21 31 l28 15 -31 15 c-29 16 -31 15 -58 -13z"/>\n      <path class="icon bulk" fill="$stickerColor" d="M270 148 c-36 -13 -37 -18 -12 -37 23 -17 23 -18 6 -54 -27 -57 -6 -68 40 -20 41 44 45 71 14 100 -18 17 -28 19 -48 11z"/>\n    </g>\n  </svg>\n  '
   ),
-  lt.set(
+  ht.set(
     '27',
     '\n  <svg id="bulk-27" viewBox="0 0 114 115" xmlns="http://www.w3.org/2000/svg">\n    <g clip-path="url(#clip0_1014_1377)">\n      <path class="icon bulk" fill="$stickerColor" d="M101.283 0.919922H12.7167C5.7 0.931322 0.0114 6.61992 0 13.6366V102.203C0.0114 109.22 5.7 114.909 12.7167 114.92H101.283C108.3 114.909 113.989 109.22 114 102.203V13.6366C113.989 6.61992 108.3 0.931322 101.283 0.919922ZM111.15 102.203C111.133 107.647 106.727 112.053 101.283 112.07H12.7167C7.2732 112.053 2.8671 107.647 2.85 102.203V13.6366C2.8671 8.19312 7.2732 3.78702 12.7167 3.76992H101.283C106.727 3.78702 111.133 8.19312 111.15 13.6366V102.203ZM70.9137 96.3037C63.6519 97.9738 48.1365 99.319 39.9798 95.4487C35.5053 93.3283 34.0347 88.8823 33.63 85.3027C33.2823 82.3615 31.4982 69.2059 33.003 56.8597C34.5135 44.485 41.7639 36.0889 41.7639 36.0889L42.6759 36.4537C43.0464 35.4391 43.4568 34.1566 43.662 32.9596C43.662 32.9596 42.1458 30.9532 40.413 28.2058C39.3072 26.4502 39.3072 22.882 40.641 20.716C42.978 16.9312 47.8116 15.6715 50.8725 17.2504C52.4628 18.0712 55.2729 19.1086 57.1083 24.6718C58.1172 27.727 58.6986 33.1762 57.0285 37.531C56.5098 38.8762 53.5971 38.1067 52.2405 37.0636C51.9327 37.0636 51.6762 37.0921 51.4881 37.1605C50.7186 37.4398 50.2626 38.557 50.0175 39.412L50.8896 39.7654L51.3285 42.6154C51.3285 42.6154 54.2469 48.0988 55.1532 54.5854C55.1988 54.9046 55.2444 55.2637 55.3014 55.6399C57.2736 58.0852 59.3313 59.8294 61.104 59.6698C63.5094 59.4532 70.4634 48.3097 70.4634 48.3097L70.9194 48.5947C71.0676 48.2185 71.3925 47.4889 71.9625 46.8277C72.7662 45.8929 75.3198 44.3026 75.9069 44.5534C76.494 44.8042 74.6301 46.537 74.6301 46.537C74.6301 46.537 76.6764 45.9613 77.1153 45.1291C77.5542 44.2969 77.4459 43.1455 77.9532 43.2538C78.4662 43.3621 78.4662 45.0835 78.2439 46.0468C78.0273 47.0044 77.5143 47.221 77.5143 47.221C77.5143 47.221 77.4402 47.6884 77.0754 48.1957C76.7106 48.703 74.4078 49.6606 73.9518 50.4757L74.6301 50.8975C74.6301 50.8975 68.8845 71.1268 59.1318 70.8019C58.539 70.7848 57.9405 70.6708 57.342 70.4941C57.6384 72.6544 58.5846 79.5571 58.6245 79.8706C58.6245 79.8706 83.1915 78.0922 84.7818 85.1374C84.7818 85.1488 84.7818 85.1545 84.7818 85.1659C86.4177 92.5303 78.1527 94.6165 70.9023 96.2866L70.9137 96.3037Z" />\n    </g>\n    <defs>\n      <clipPath id="clip0_1014_1377">\n        <rect width="114" height="114" transform="translate(0 0.919922)"/>\n      </clipPath>\n    </defs>\n  </svg>\n  '
   ),
-  lt.set(
+  ht.set(
     '28',
     '\n  <svg id="bulk-28" viewBox="0 0 114 115" xmlns="http://www.w3.org/2000/svg">\n    <g clip-path="url(#clip0_1014_1379)">\n      <path class="icon bulk" fill="$stickerColor" d="M101.283 0.0800781H12.7167C5.7 0.0914781 0.0114 5.78008 0 12.7968V101.363C0.0114 108.38 5.7 114.069 12.7167 114.08H101.283C108.3 114.069 113.989 108.38 114 101.363V12.7968C113.989 5.78008 108.3 0.0914781 101.283 0.0800781ZM111.15 101.363C111.133 106.807 106.727 111.213 101.283 111.23H12.7167C7.2732 111.213 2.8671 106.807 2.85 101.363V12.7968C2.8671 7.35328 7.2732 2.94718 12.7167 2.93008H101.283C106.727 2.94718 111.133 7.35328 111.15 12.7968V101.363ZM90.7782 29.2299L91.4508 26.8131L70.5717 21.1302L70.3836 21.0789L67.488 31.2306H35.4939L39.7803 84.5598C39.8145 87.1647 41.9577 89.2737 44.5911 89.2737H69.4602C72.0879 89.2737 74.2311 87.1704 74.271 84.5712L79.3041 31.2306H70.1214L72.1392 24.1569L90.7839 29.2356L90.7782 29.2299ZM38.4522 43.8789L37.6599 33.6702H66.7926L63.8856 43.8789H38.4579H38.4522ZM55.8828 57.6159L53.8593 63.3729L48.051 61.3665L50.0745 55.6095L55.8828 57.6159ZM50.8611 82.4337L44.6538 75.132L52.0182 68.976L58.2255 76.2777L50.8611 82.4337ZM67.146 73.7127L58.0488 70.572L61.2123 61.5546L70.3095 64.6953L67.146 73.7127ZM77.1381 33.6702L76.209 43.8789H66.5133L69.4203 33.6702H77.1381Z"/>\n    </g>\n    <defs>\n      <clipPath id="clip0_1014_1379">\n        <rect width="114" height="114" transform="translate(0 0.0800781)"/>\n      </clipPath>\n    </defs>\n  </svg>\n  '
   );
-const ot = new Map();
-ot.set(
+const gt = new Map();
+gt.set(
   'd',
   '\n  <svg>\n    <symbol\n      id="icon-d"\n    >{{!--\n      viewBox="0 0 200 200"\n    --}}<path\n        class="icon bulk" fill="$stickerColor"\n        d="M177.69,0H22.31A22.34,22.34,0,0,0,0,22.31V177.69A22.34,22.34,0,0,0,22.31,200H177.69A22.34,22.34,0,0,0,200,177.69V22.31A22.34,22.34,0,0,0,177.69,0ZM195,177.69A17.37,17.37,0,0,1,177.69,195H22.31A17.37,17.37,0,0,1,5,177.69V22.31A17.37,17.37,0,0,1,22.31,5H177.69A17.37,17.37,0,0,1,195,22.31ZM145.32,67.74h30.89V173H21.77V151.25H52.66V129.51H83.55V110.07h29.74V89.48h32ZM28.21,36.85h14.3V56.3H53.09L35.36,82.61,17.63,56.3H28.21ZM178.5,34.28a4.57,4.57,0,0,1-4.58,4.58H160.48c-6,0-8.72,1.22-14,4.89-5.6,3.92-117.45,86.89-118.58,87.72-1.39.9-5,.85-6.4-.95a4.57,4.57,0,0,1,.95-6.4c4.61-3.42,113.08-83.88,118.79-87.88,6.2-4.34,10.88-6.55,19.21-6.55h13.44A4.57,4.57,0,0,1,178.5,34.28Z"\n      />\n    </symbol>\n  </svg>\n'
 ),
-  ot.set(
+  gt.set(
     'e',
     '\n  <svg>\n    <symbol\n    id="icon-empty"\n  >{{!--\n    viewBox="0 0 200 200"\n  --}}</symbol>\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'f',
     '\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M177.7,0H22.3C10,0,0,10,0,22.3v155.4C0,190,10,200,22.3,200h155.4c12.3,0,22.3-10,22.3-22.3V22.3C200,10,190,0,177.7,0z M195,177.7c0,9.5-7.8,17.3-17.3,17.3H22.3C12.8,195,5,187.2,5,177.7V22.3C5,12.8,12.8,5,22.3,5h155.4c9.5,0,17.3,7.8,17.3,17.3 V177.7z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'g,g',
     '\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 138.5,238 c -33.7,-5.3 -66.3,8 -74.6,21.7 H 48.8 c 0,-4.3 -3.1,-7.7 -6.8,-7.7 -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 -0.1,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.8 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z M 66.6,358 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.2 -11.8,20.1 z m 111.1,44 H 22.3 C 10,402 0,392 0,379.7 V 224.3 C 0,212 10,202 22.3,202 h 155.4 c 12.3,0 22.3,10 22.3,22.3 V 379.7 C 200,392 190,402 177.7,402 Z M 22.3,207 C 12.8,207 5,214.8 5,224.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 224.3 C 195,214.8 187.2,207 177.7,207 Z M 138.5,36 C 104.8,30.7 72.2,44 63.9,57.7 H 48.8 C 48.8,53.4 45.7,50 42,50 c -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z m 10.9,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.1 -11.8,20.1 z M 177.7,200 H 22.3 C 10,200 0,190 0,177.7 V 22.3 C 0,10 10,0 22.3,0 H 177.7 C 190,0 200,10 200,22.3 V 177.7 C 200,190 190,200 177.7,200 Z M 22.3,5 C 12.8,5 5,12.8 5,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 195,12.8 187.2,5 177.7,5 Z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'g,l',
     '\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 145.2,255.4 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.3 -5,11.4 -11.3,11.3 z m -26.7,17.1 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 v -87.2 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 v -34.8 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,-0.1 -14.5,2.7 -14.5,14.7 z m -48,-28.3 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 h 0.1 c 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 364 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 364 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,262.2 72.9,257.7 64.6,257.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 v 0 0 c 3,0 5.5,-2.5 5.5,-5.5 v 0 -125.4 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 v 0 z m 101.8,16 V 224.3 C 200,212 190,202 177.7,202 H 22.3 C 10,202 0,212 0,224.3 V 379.7 C 0,392 10,402 22.3,402 H 177.7 C 190,402 200,392 200,379.7 Z M 177.7,207 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,397 5,389.2 5,379.7 V 224.3 C 5,214.8 12.8,207 22.3,207 Z M 138.5,36 C 104.8,30.7 72.2,44 63.9,57.7 H 48.8 C 48.8,53.4 45.7,50 42,50 c -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z m 10.9,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.1 -11.8,20.1 z M 177.7,200 H 22.3 C 10,200 0,190 0,177.7 V 22.3 C 0,10 10,0 22.3,0 H 177.7 C 190,0 200,10 200,22.3 V 177.7 C 200,190 190,200 177.7,200 Z M 22.3,5 C 12.8,5 5,12.8 5,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 195,12.8 187.2,5 177.7,5 Z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'g',
     '\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M138.49,36c-33.72-5.26-66.31,8-74.58,21.72H48.83C48.83,53.44,45.78,50,42,50s-6.82,3.44-6.82,7.69a7.77,7.77,0,0,0,4,7,7.24,7.24,0,0,0-4,6.57,6.83,6.83,0,1,0,13.64,0h15c7.07,13.29,33.64,25.4,74.71,21.12,6.69-.7,12.16-12.63,12.16-28.21S145.16,37,138.49,36Zm0,52.18c-5.71,0-10.33-10.73-10.33-24s4.62-24,10.33-24,10.33,10.73,10.33,24S144.2,88.13,138.49,88.13Zm3.72-24c0,4.77-1.66,8.63-3.72,8.63s-3.72-3.86-3.72-8.63,1.66-8.63,3.72-8.63S142.21,59.4,142.21,64.16ZM151.92,144a98.3,98.3,0,0,0-7.58-6.75,98.3,98.3,0,0,0,7.58-6.75c5-4.77,3.72-15.63,3.72-15.63l-20.22,17.91c-9.56-5.94-39.56-23.43-61.18-23.21-26,.26-40.49,26.75-40.49,26.75s15.08,28.6,39.87,28.6c26.58,0,49.49-16.69,59.5-25.25l22.52,20S156.88,148.78,151.92,144Zm-96.27-7.15c-2.17,0-3.93-2.25-3.93-5s1.76-5,3.93-5,3.93,2.25,3.93,5S57.82,136.87,55.65,136.87Zm10.95,19.2a36.83,36.83,0,0,0,6.82-20.26c.31-12.05-6.82-17.75-6.82-17.75s11.36-.13,11.78,18S66.6,156.07,66.6,156.07ZM177.69,200H22.31A22.34,22.34,0,0,1,0,177.69V22.31A22.34,22.34,0,0,1,22.31,0H177.69A22.34,22.34,0,0,1,200,22.31V177.69A22.34,22.34,0,0,1,177.69,200ZM22.31,5A17.37,17.37,0,0,0,5,22.31V177.69A17.37,17.37,0,0,0,22.31,195H177.69A17.37,17.37,0,0,0,195,177.69V22.31A17.37,17.37,0,0,0,177.69,5Z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'gg',
     '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 340.5,36 c -33.7,-5.3 -66.3,8 -74.6,21.7 h -15.1 c 0,-4.3 -3.1,-7.7 -6.8,-7.7 -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.3,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.2,0 3.9,2.2 3.9,5 0,2.8 -1.7,5 -3.9,5 z m 11,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.2 -11.8,20.1 -11.8,20.1 z M 379.7,200 H 224.3 C 212,200 202,190 202,177.7 V 22.3 C 202,10 212,0 224.3,0 H 379.7 C 392,0 402,10 402,22.3 V 177.7 C 402,190 392,200 379.7,200 Z M 224.3,5 C 214.8,5 207,12.8 207,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 397,12.8 389.2,5 379.7,5 Z M 138.5,36 C 104.8,30.7 72.2,44 63.9,57.7 H 48.8 C 48.8,53.4 45.7,50 42,50 c -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z m 10.9,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.1 -11.8,20.1 z M 177.7,200 H 22.3 C 10,200 0,190 0,177.7 V 22.3 C 0,10 10,0 22.3,0 H 177.7 C 190,0 200,10 200,22.3 V 177.7 C 200,190 190,200 177.7,200 Z M 22.3,5 C 12.8,5 5,12.8 5,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 195,12.8 187.2,5 177.7,5 Z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'gl',
     '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 347.2,53.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.4,-11.3 6.2,0 11.3,5.1 11.3,11.3 -0.1,6.2 -5.2,11.3 -11.4,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 335 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 0,0 0.1,0 0.1,0 6.3,0 11.3,-5.1 11.3,-11.3 0,-0.1 0,-0.1 0,0 z m -34,58.5 10.3,-29.3 h 1.2 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 h 11.7 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 280.5,60.1 274.9,55.7 266.6,55.7 H 256 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.6,61 c 0,3 2.4,5.5 5.5,5.5 0,0 0,0 0,0 v 0 c 3,0 5.5,-2.5 5.5,-5.5 0,0 0,0 0,0 V 36.3 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 0,0 0,0 0,0 z m 101.9,16 V 22.3 C 402,10 392,0 379.7,0 H 224.3 C 212,0 202,10 202,22.3 v 155.4 c 0,12.3 10,22.3 22.3,22.3 H 379.7 C 392,200 402,190 402,177.7 Z M 379.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 224.3 C 214.8,195 207,187.2 207,177.7 V 22.3 C 207,12.8 214.8,5 224.3,5 Z M 138.5,36 C 104.8,30.7 72.2,44 63.9,57.7 H 48.8 C 48.8,53.4 45.7,50 42,50 c -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z m 10.9,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.1 -11.8,20.1 z M 177.7,200 H 22.3 C 10,200 0,190 0,177.7 V 22.3 C 0,10 10,0 22.3,0 H 177.7 C 190,0 200,10 200,22.3 V 177.7 C 200,190 190,200 177.7,200 Z M 22.3,5 C 12.8,5 5,12.8 5,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 195,12.8 187.2,5 177.7,5 Z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'gs',
     '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 2.3684758e-15 0 10.000781 0 22.300781 L 0 177.69922 C 2.3684758e-15 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 0 177.69922 0 L 22.300781 0 z M 223.30078 0 C 211.00078 0 201 10.000781 201 22.300781 L 201 177.69922 C 201 189.99922 211.00078 200 223.30078 200 L 378.69922 200 C 390.99922 200 401 189.99922 401 177.69922 L 401 22.300781 C 401 10.000781 390.99922 2.3684758e-15 378.69922 0 L 223.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 223.30078 5 L 378.69922 5 C 388.19922 5 396 12.800781 396 22.300781 L 396 177.69922 C 396 187.19922 388.19922 195 378.69922 195 L 223.30078 195 C 213.80078 195 206 187.19922 206 177.69922 L 206 22.300781 C 206 12.800781 213.80078 5 223.30078 5 z M 361.40039 29.800781 C 353.10039 29.800781 348.39922 32.000781 342.19922 36.300781 C 336.49922 40.300781 228.00039 120.79922 223.40039 124.19922 C 221.40039 125.69922 221 128.59961 222.5 130.59961 C 224 132.59961 226.90039 133 228.90039 131.5 C 230.10039 130.7 341.9 47.700781 347.5 43.800781 C 352.8 40.100781 355.5 38.900391 361.5 38.900391 L 374.90039 38.900391 C 377.50039 38.900391 379.5 36.800781 379.5 34.300781 C 379.5 31.700781 377.40078 29.700781 374.80078 29.800781 L 361.40039 29.800781 z M 122.87305 34.808594 C 95.206616 34.866107 70.903516 46.139844 63.900391 57.699219 L 48.800781 57.699219 C 48.800781 53.399219 45.7 50 42 50 C 38.3 50 35.199219 53.399219 35.199219 57.699219 C 35.099219 60.599219 36.699219 63.299219 39.199219 64.699219 C 36.699219 65.899219 35.199219 68.500781 35.199219 71.300781 C 34.999219 75.100781 37.899219 78.3 41.699219 78.5 C 45.499219 78.7 48.700391 75.8 48.900391 72 L 48.900391 71.300781 L 63.900391 71.300781 C 71.000391 84.600781 97.499609 96.700391 138.59961 92.400391 C 145.29961 91.700391 150.80078 79.799219 150.80078 64.199219 C 150.80078 48.599219 145.2 37 138.5 36 C 133.23438 35.171875 127.99646 34.797943 122.87305 34.808594 z M 138.5 40.199219 C 144.2 40.199219 148.80078 50.899219 148.80078 64.199219 C 148.80078 77.499219 144.2 88.099219 138.5 88.199219 C 132.8 88.199219 128.19922 77.499219 128.19922 64.199219 C 128.19922 50.899219 132.8 40.199219 138.5 40.199219 z M 138.5 55.599609 C 136.5 55.599609 134.80078 59.499219 134.80078 64.199219 C 134.80078 68.899219 136.5 72.800781 138.5 72.800781 C 140.5 72.800781 142.19922 68.999219 142.19922 64.199219 C 142.19922 59.399219 140.5 55.599609 138.5 55.599609 z M 346.30078 67.699219 L 346.30078 89.5 L 314.30078 89.5 L 314.30078 110.09961 L 284.59961 110.09961 L 284.59961 129.5 L 253.69922 129.5 L 253.69922 151.19922 L 222.80078 151.19922 L 222.80078 173 L 377.19922 173 L 377.19922 67.699219 L 346.30078 67.699219 z M 74.199219 109.5 C 48.199219 109.8 33.699219 136.30078 33.699219 136.30078 C 33.699219 136.30078 48.799609 164.90039 73.599609 164.90039 C 100.19961 164.90039 123.09961 148.19922 133.09961 139.69922 L 155.59961 159.69922 C 155.59961 159.69922 156.90039 148.8 151.90039 144 C 149.50039 141.6 147.00078 139.39922 144.30078 137.19922 C 146.90078 135.09922 149.50039 132.80039 151.90039 130.40039 C 156.90039 125.60039 155.59961 114.80078 155.59961 114.80078 L 135.40039 132.69922 C 125.80039 126.79922 95.799219 109.3 74.199219 109.5 z M 66.599609 118 C 66.599609 118 78.000391 117.9 78.400391 136 C 78.800391 154.1 66.599609 156.09961 66.599609 156.09961 C 70.799609 150.19961 73.200391 143.10078 73.400391 135.80078 C 73.700391 123.70078 66.599609 118 66.599609 118 z M 55.699219 126.90039 C 57.799219 126.90039 59.599609 129.10039 59.599609 131.90039 C 59.599609 134.70039 57.799219 136.90039 55.699219 136.90039 C 53.499219 136.90039 51.800781 134.70039 51.800781 131.90039 C 51.800781 129.10039 53.599219 126.90039 55.699219 126.90039 z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'l,g',
     '\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 138.5,238 c -33.7,-5.3 -66.3,8 -74.6,21.7 H 48.8 c 0,-4.3 -3.1,-7.7 -6.8,-7.7 -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 -0.1,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.8 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.2,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.1,0 3.9,2.2 3.9,5 0,2.8 -1.8,5 -3.9,5 z M 66.6,358 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.1 -11.8,20.2 -11.8,20.1 z m 111.1,44 H 22.3 C 10,402 0,392 0,379.7 V 224.3 C 0,212 10,202 22.3,202 h 155.4 c 12.3,0 22.3,10 22.3,22.3 V 379.7 C 200,392 190,402 177.7,402 Z M 22.3,207 C 12.8,207 5,214.8 5,224.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 224.3 C 195,214.8 187.2,207 177.7,207 Z M 145.2,53.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.2 -5,11.3 -11.3,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 0,0 0.1,0 0.1,0 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,60.1 72.9,55.7 64.6,55.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 0,0 0,0 0,0 v 0 c 3,0 5.5,-2.5 5.5,-5.5 0,0 0,0 0,0 V 36.3 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 0,0 0,0 0,0 z m 101.8,16 V 22.3 C 200,10 190,0 177.7,0 H 22.3 C 10,0 0,10 0,22.3 V 177.7 C 0,190 10,200 22.3,200 H 177.7 C 190,200 200,190 200,177.7 Z M 177.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,195 5,187.2 5,177.7 V 22.3 C 5,12.8 12.8,5 22.3,5 Z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'l,l',
     '\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 145.2,255.4 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.3 -5.1,11.4 -11.3,11.3 z m -26.7,17.1 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 v -87.2 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 v -34.8 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,-0.1 -14.5,2.7 -14.5,14.7 z m -48,-28.3 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 0,0 0.1,0 0.1,0 6.3,0 11.3,-5.1 11.3,-11.3 0,-0.1 0,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 364 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 364 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,262.2 72.9,257.7 64.6,257.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 0,0 0,0 0,0 v 0 c 3,0 5.5,-2.5 5.5,-5.5 0,0 0,0 0,0 V 238.3 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 0,0 0,0 0,0 z m 101.8,16 V 224.3 C 200,212 190,202 177.7,202 H 22.3 C 10,202 0,212 0,224.3 V 379.7 C 0,392 10,402 22.3,402 H 177.7 C 190,402 200,392 200,379.7 Z M 177.7,207 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,397 5,389.2 5,379.7 V 224.3 C 5,214.8 12.8,207 22.3,207 Z M 145.2,53.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.2 -5,11.3 -11.3,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 0,0 0.1,0 0.1,0 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,60.1 72.9,55.7 64.6,55.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 0,0 0,0 0,0 v 0 c 3,0 5.5,-2.5 5.5,-5.5 0,0 0,0 0,0 V 36.3 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 0,0 0,0 0,0 z m 101.8,16 V 22.3 C 200,10 190,0 177.7,0 H 22.3 C 10,0 0,10 0,22.3 V 177.7 C 0,190 10,200 22.3,200 H 177.7 C 190,200 200,190 200,177.7 Z M 177.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,195 5,187.2 5,177.7 V 22.3 C 5,12.8 12.8,5 22.3,5 Z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'l,s',
     '\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 59.199219 30.800781 C 52.899219 30.800781 47.800781 35.799609 47.800781 42.099609 C 47.800781 48.399609 52.799609 53.5 59.099609 53.5 L 59.199219 53.5 C 65.499219 53.5 70.5 48.399219 70.5 42.199219 C 70.5 35.899219 65.499219 30.800781 59.199219 30.800781 z M 103.69922 30.800781 C 100.69922 30.800781 98.199219 33.200781 98.199219 36.300781 L 98.199219 161.69922 C 98.199219 164.69922 100.59922 167.19922 103.69922 167.19922 C 106.69922 167.19922 109.19922 164.69922 109.19922 161.69922 L 109.19922 36.300781 C 109.19922 33.300781 106.79922 30.800781 103.69922 30.800781 z M 145.19922 30.900391 C 138.99922 30.900391 133.90039 35.899219 133.90039 42.199219 C 133.90039 48.399219 138.89922 53.5 145.19922 53.5 C 151.49922 53.5 156.5 48.399219 156.5 42.199219 C 156.5 35.999219 151.39922 30.900391 145.19922 30.900391 z M 54 55.699219 C 45.8 55.699219 40.099219 60.200781 38.199219 65.800781 L 28.5 97.800781 C 26.4 104.70078 34.4 107.19922 36.5 100.69922 L 46.800781 71.400391 L 48 71.400391 C 48 71.400391 34.500391 123.80078 33.900391 125.80078 C 33.600391 126.80078 33.999609 127.5 35.099609 127.5 L 46.800781 127.5 L 46.800781 162 C 46.800781 169 57.300781 169 57.300781 162 L 57.300781 127.30078 L 61.300781 127.30078 L 61.300781 162 C 61.300781 169 71.800781 169 71.800781 162 L 71.800781 127.5 L 83.5 127.5 C 84.5 127.5 84.899219 126.80078 84.699219 125.80078 C 84.099219 123.80078 70.599609 71.400391 70.599609 71.400391 L 71.800781 71.400391 L 82.099609 100.69922 C 84.199609 107.09922 92.099609 104.70078 90.099609 97.800781 L 80.400391 65.800781 C 78.500391 60.100781 72.899609 55.699219 64.599609 55.699219 L 54 55.699219 z M 133 55.699219 C 122.1 55.699219 118.5 58.500391 118.5 70.400391 L 118.5 105.19922 C 118.5 111.99922 127.59961 111.99922 127.59961 105.19922 L 128.40039 73.400391 L 130.69922 73.400391 L 130.69922 160.59961 C 130.69922 169.59961 143.09961 169.39961 143.09961 160.59961 L 143.90039 110 L 146.40039 110 L 147.19922 160.59961 C 147.19922 169.39961 159.59961 169.59961 159.59961 160.59961 L 159.59961 73.400391 L 162 73.400391 L 162.80078 105.19922 C 162.80078 111.99922 171.90039 111.99922 171.90039 105.19922 L 171.90039 70.400391 C 171.90039 58.500391 168.30039 55.699219 157.40039 55.699219 L 133 55.699219 z M 22.300781 202 C 10.000781 202 2.3684758e-15 212.00078 0 224.30078 L 0 379.69922 C 0 391.99922 10.000781 402 22.300781 402 L 177.69922 402 C 189.99922 402 200 391.99922 200 379.69922 L 200 224.30078 C 200 212.00078 189.99922 202 177.69922 202 L 22.300781 202 z M 22.300781 207 L 177.69922 207 C 187.19922 207 195 214.80078 195 224.30078 L 195 379.69922 C 195 389.19922 187.19922 397 177.69922 397 L 22.300781 397 C 12.800781 397 5 389.19922 5 379.69922 L 5 224.30078 C 5 214.80078 12.800781 207 22.300781 207 z M 160.40039 231.80078 C 152.10039 231.80078 147.39922 234.00078 141.19922 238.30078 C 135.49922 242.30078 27.000391 322.79922 22.400391 326.19922 C 20.400391 327.69922 20 330.59961 21.5 332.59961 C 23 334.59961 25.900391 335 27.900391 333.5 C 29.100391 332.7 140.9 249.70078 146.5 245.80078 C 151.8 242.10078 154.5 240.90039 160.5 240.90039 L 173.90039 240.90039 C 176.50039 240.90039 178.5 238.80078 178.5 236.30078 C 178.5 233.70078 176.40078 231.70078 173.80078 231.80078 L 160.40039 231.80078 z M 145.30078 269.69922 L 145.30078 291.5 L 113.30078 291.5 L 113.30078 312.09961 L 83.599609 312.09961 L 83.599609 331.5 L 52.699219 331.5 L 52.699219 353.19922 L 21.800781 353.19922 L 21.800781 375 L 176.19922 375 L 176.19922 269.69922 L 145.30078 269.69922 z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'l',
     '\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M145.19,53.45a11.33,11.33,0,1,1,11.35-11.33A11.34,11.34,0,0,1,145.19,53.45Zm-26.67,17v34.8c0,6.76,9.11,6.76,9.11,0l.79-31.83h2.34v87.15c0,9,12.41,8.78,12.41,0l.78-50.59h2.46l.79,50.59c0,8.78,12.41,9,12.41,0V73.38H162l.79,31.83c0,6.76,9.12,6.76,9.12,0V70.4c0-11.91-3.56-14.72-14.49-14.72H133C122.08,55.68,118.53,58.49,118.53,70.4Zm-48-28.29A11.34,11.34,0,1,0,59.21,53.45,11.33,11.33,0,0,0,70.55,42.11ZM36.49,100.73,46.76,71.45h1.18s-13.49,52.42-14.06,54.39c-.29,1,.12,1.69,1.16,1.69H46.71V162c0,7,10.49,7,10.49,0v-34.7h4V162c0,7,10.49,7,10.49,0V127.53H83.39c1,0,1.45-.71,1.16-1.69-.56-2-14.06-54.39-14.06-54.39h1.17l10.28,29.28c2.08,6.43,10,4,8-2.9l-9.73-32c-1.88-5.65-7.53-10.12-15.8-10.12H54c-8.25,0-13.91,4.46-15.79,10.12l-9.74,32C26.44,104.72,34.39,107.16,36.49,100.73Zm61.67,61a5.48,5.48,0,0,0,5.48,5.49h0a5.48,5.48,0,0,0,5.47-5.49V36.26a5.47,5.47,0,0,0-5.47-5.47h0a5.47,5.47,0,0,0-5.48,5.47Zm101.85,16V22.31A22.34,22.34,0,0,0,177.69,0H22.31A22.34,22.34,0,0,0,0,22.31V177.69A22.34,22.34,0,0,0,22.31,200H177.69A22.34,22.34,0,0,0,200,177.69ZM177.69,5A17.37,17.37,0,0,1,195,22.31V177.69A17.37,17.37,0,0,1,177.69,195H22.31A17.37,17.37,0,0,1,5,177.69V22.31A17.37,17.37,0,0,1,22.31,5Z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'lg',
     '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 340.5,36 c -33.7,-5.3 -66.3,8 -74.6,21.7 h -15.1 c 0,-4.3 -3.1,-7.7 -6.8,-7.7 -3.7,0 -6.8,3.4 -6.8,7.7 -0.1,2.9 1.5,5.6 4,7 -2.5,1.2 -4,3.8 -4,6.6 -0.2,3.8 2.7,7 6.5,7.2 3.8,0.2 7,-2.7 7.2,-6.5 0,-0.2 0,-0.5 0,-0.7 h 15 c 7.1,13.3 33.6,25.4 74.7,21.1 6.7,-0.7 12.2,-12.6 12.2,-28.2 0,-15.6 -5.6,-27.2 -12.3,-28.2 z m 0,52.2 c -5.7,0 -10.3,-10.7 -10.3,-24 0,-13.3 4.6,-24 10.3,-24 5.7,0 10.3,10.7 10.3,24 0,13.3 -4.6,23.9 -10.3,24 z m 3.7,-24 c 0,4.8 -1.7,8.6 -3.7,8.6 -2,0 -3.7,-3.9 -3.7,-8.6 0,-4.7 1.7,-8.6 3.7,-8.6 2,0 3.7,3.8 3.7,8.6 z m 9.7,79.8 c -2.4,-2.4 -4.9,-4.6 -7.6,-6.8 2.6,-2.1 5.2,-4.4 7.6,-6.8 5,-4.8 3.7,-15.6 3.7,-15.6 l -20.2,17.9 c -9.6,-5.9 -39.6,-23.4 -61.2,-23.2 -26,0.3 -40.5,26.8 -40.5,26.8 0,0 15.1,28.6 39.9,28.6 26.6,0 49.5,-16.7 59.5,-25.2 l 22.5,20 c 0,0 1.3,-10.9 -3.7,-15.7 z m -96.3,-7.1 c -2.2,0 -3.9,-2.2 -3.9,-5 0,-2.8 1.8,-5 3.9,-5 2.2,0 3.9,2.2 3.9,5 0,2.8 -1.7,5 -3.9,5 z m 11,19.2 c 4.2,-5.9 6.6,-13 6.8,-20.3 0.3,-12.1 -6.8,-17.8 -6.8,-17.8 0,0 11.4,-0.1 11.8,18 0.4,18.2 -11.8,20.1 -11.8,20.1 z M 379.7,200 H 224.3 C 212,200 202,190 202,177.7 V 22.3 C 202,10 212,0 224.3,0 H 379.7 C 392,0 402,10 402,22.3 V 177.7 C 402,190 392,200 379.7,200 Z M 224.3,5 C 214.8,5 207,12.8 207,22.3 v 155.4 c 0,9.5 7.8,17.3 17.3,17.3 h 155.4 c 9.5,0 17.3,-7.8 17.3,-17.3 V 22.3 C 397,12.8 389.2,5 379.7,5 Z m -79.1,48.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.2 -5,11.3 -11.3,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 0,0 0.1,0 0.1,0 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,60.1 72.9,55.7 64.6,55.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 0,0 0,0 0,0 v 0 c 3,0 5.5,-2.5 5.5,-5.5 0,0 0,0 0,0 V 36.3 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 0,0 0,0 0,0 z m 101.8,16 V 22.3 C 200,10 190,0 177.7,0 H 22.3 C 10,0 0,10 0,22.3 V 177.7 C 0,190 10,200 22.3,200 H 177.7 C 190,200 200,190 200,177.7 Z M 177.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,195 5,187.2 5,177.7 V 22.3 C 5,12.8 12.8,5 22.3,5 Z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'll,g',
     '\n  <svg viewBox="0 0 402 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 224.30078 0 C 212.00078 0 202 10.000781 202 22.300781 L 202 177.69922 C 202 189.99922 212.00078 200 224.30078 200 L 379.69922 200 C 391.99922 200 402 189.99922 402 177.69922 L 402 22.300781 C 402 10.000781 391.99922 2.3684758e-15 379.69922 0 L 224.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 224.30078 5 L 379.69922 5 C 389.19922 5 397 12.800781 397 22.300781 L 397 177.69922 C 397 187.19922 389.19922 195 379.69922 195 L 224.30078 195 C 214.80078 195 207 187.19922 207 177.69922 L 207 22.300781 C 207 12.800781 214.80078 5 224.30078 5 z M 59.199219 30.800781 C 52.899219 30.800781 47.800781 35.799609 47.800781 42.099609 C 47.800781 48.399609 52.799609 53.5 59.099609 53.5 L 59.199219 53.5 C 65.499219 53.5 70.5 48.399219 70.5 42.199219 C 70.5 35.899219 65.499219 30.800781 59.199219 30.800781 z M 103.69922 30.800781 C 100.69922 30.800781 98.199219 33.200781 98.199219 36.300781 L 98.199219 161.69922 C 98.199219 164.69922 100.59922 167.19922 103.69922 167.19922 C 106.69922 167.19922 109.19922 164.69922 109.19922 161.69922 L 109.19922 36.300781 C 109.19922 33.300781 106.79922 30.800781 103.69922 30.800781 z M 261.19922 30.800781 C 254.89922 30.800781 249.80078 35.799609 249.80078 42.099609 C 249.80078 48.399609 254.79961 53.5 261.09961 53.5 L 261.19922 53.5 C 267.49922 53.5 272.5 48.399219 272.5 42.199219 C 272.5 35.899219 267.49922 30.800781 261.19922 30.800781 z M 305.59961 30.800781 C 302.59961 30.800781 300.09961 33.200781 300.09961 36.300781 L 300.09961 161.69922 C 300.09961 164.69922 302.49961 167.19922 305.59961 167.19922 C 308.59961 167.19922 311.09961 164.69922 311.09961 161.69922 L 311.09961 36.300781 C 311.09961 33.300781 308.69961 30.800781 305.59961 30.800781 z M 145.19922 30.900391 C 138.99922 30.900391 133.90039 35.899219 133.90039 42.199219 C 133.90039 48.399219 138.89922 53.5 145.19922 53.5 C 151.49922 53.5 156.5 48.399219 156.5 42.199219 C 156.5 35.999219 151.39922 30.900391 145.19922 30.900391 z M 347.30078 30.900391 C 341.00078 30.900391 335.90039 35.899219 335.90039 42.199219 C 335.90039 48.399219 340.89922 53.5 347.19922 53.5 C 353.39922 53.5 358.49961 48.399219 358.59961 42.199219 C 358.59961 35.999219 353.50078 30.900391 347.30078 30.900391 z M 54 55.699219 C 45.8 55.699219 40.099219 60.200781 38.199219 65.800781 L 28.5 97.800781 C 26.4 104.70078 34.4 107.19922 36.5 100.69922 L 46.800781 71.400391 L 48 71.400391 C 48 71.400391 34.500391 123.80078 33.900391 125.80078 C 33.600391 126.80078 33.999609 127.5 35.099609 127.5 L 46.800781 127.5 L 46.800781 162 C 46.800781 169 57.300781 169 57.300781 162 L 57.300781 127.30078 L 61.300781 127.30078 L 61.300781 162 C 61.300781 169 71.800781 169 71.800781 162 L 71.800781 127.5 L 83.5 127.5 C 84.5 127.5 84.899219 126.80078 84.699219 125.80078 C 84.099219 123.80078 70.599609 71.400391 70.599609 71.400391 L 71.800781 71.400391 L 82.099609 100.69922 C 84.199609 107.09922 92.099609 104.70078 90.099609 97.800781 L 80.400391 65.800781 C 78.500391 60.100781 72.899609 55.699219 64.599609 55.699219 L 54 55.699219 z M 133 55.699219 C 122.1 55.699219 118.5 58.500391 118.5 70.400391 L 118.5 105.19922 C 118.5 111.99922 127.59961 111.99922 127.59961 105.19922 L 128.40039 73.400391 L 130.69922 73.400391 L 130.69922 160.59961 C 130.69922 169.59961 143.09961 169.39961 143.09961 160.59961 L 143.90039 110 L 146.40039 110 L 147.19922 160.59961 C 147.19922 169.39961 159.59961 169.59961 159.59961 160.59961 L 159.59961 73.400391 L 162 73.400391 L 162.80078 105.19922 C 162.80078 111.99922 171.90039 111.99922 171.90039 105.19922 L 171.90039 70.400391 C 171.90039 58.500391 168.30039 55.699219 157.40039 55.699219 L 133 55.699219 z M 256 55.699219 C 247.8 55.699219 242.09922 60.200781 240.19922 65.800781 L 230.5 97.800781 C 228.4 104.70078 236.4 107.19922 238.5 100.69922 L 248.80078 71.400391 L 250 71.400391 C 250 71.400391 236.50039 123.80078 235.90039 125.80078 C 235.60039 126.80078 235.99961 127.5 237.09961 127.5 L 248.80078 127.5 L 248.80078 162 C 248.80078 169 259.30078 169 259.30078 162 L 259.30078 127.30078 L 263.30078 127.30078 L 263.30078 162 C 263.30078 169 273.80078 169 273.80078 162 L 273.80078 127.5 L 285.5 127.5 C 286.5 127.5 286.89922 126.80078 286.69922 125.80078 C 286.09922 123.80078 272.59961 71.400391 272.59961 71.400391 L 273.80078 71.400391 L 284.09961 100.69922 C 286.19961 107.09922 294.09961 104.70078 292.09961 97.800781 L 282.40039 65.800781 C 280.50039 60.100781 274.89961 55.699219 266.59961 55.699219 L 256 55.699219 z M 335 55.699219 C 324.1 55.699219 320.5 58.500391 320.5 70.400391 L 320.5 105.19922 C 320.5 111.99922 329.59961 111.99922 329.59961 105.19922 L 330.40039 73.400391 L 332.69922 73.400391 L 332.69922 160.59961 C 332.69922 169.59961 345.09961 169.39961 345.09961 160.59961 L 345.90039 110 L 348.40039 110 L 349.19922 160.59961 C 349.19922 169.39961 361.59961 169.59961 361.59961 160.59961 L 361.59961 73.400391 L 364 73.400391 L 364.80078 105.19922 C 364.80078 111.99922 373.90039 111.99922 373.90039 105.19922 L 373.90039 70.400391 C 373.90039 58.500391 370.30039 55.699219 359.40039 55.699219 L 335 55.699219 z M 124.30078 202 C 112.00078 202 102 212.00078 102 224.30078 L 102 379.69922 C 102 391.99922 112.00078 402 124.30078 402 L 279.69922 402 C 291.99922 402 302 391.99922 302 379.69922 L 302 224.30078 C 302 212.00078 291.99922 202 279.69922 202 L 124.30078 202 z M 124.30078 207 L 279.69922 207 C 289.19922 207 297 214.80078 297 224.30078 L 297 379.69922 C 297 389.19922 289.19922 397 279.69922 397 L 124.30078 397 C 114.80078 397 107 389.19922 107 379.69922 L 107 224.30078 C 107 214.80078 114.80078 207 124.30078 207 z M 224.87305 236.80859 C 197.20662 236.86611 172.90352 248.13984 165.90039 259.69922 L 150.80078 259.69922 C 150.80078 255.39922 147.7 252 144 252 C 140.3 252 137.19922 255.39922 137.19922 259.69922 C 137.09922 262.59922 138.69922 265.29922 141.19922 266.69922 C 138.69922 267.89922 137.19922 270.50078 137.19922 273.30078 C 136.99922 277.10078 139.89922 280.3 143.69922 280.5 C 147.49922 280.7 150.70039 277.8 150.90039 274 L 150.90039 273.30078 L 165.90039 273.30078 C 173.00039 286.60078 199.49961 298.70039 240.59961 294.40039 C 247.29961 293.70039 252.80078 281.79922 252.80078 266.19922 C 252.70078 250.59922 247.1 239 240.5 238 C 235.23438 237.17188 229.99646 236.79794 224.87305 236.80859 z M 240.5 242.19922 C 246.2 242.19922 250.80078 252.89922 250.80078 266.19922 C 250.80078 279.49922 246.2 290.09922 240.5 290.19922 C 234.8 290.19922 230.19922 279.49922 230.19922 266.19922 C 230.19922 252.89922 234.8 242.19922 240.5 242.19922 z M 240.5 257.59961 C 238.5 257.59961 236.80078 261.39922 236.80078 266.19922 C 236.80078 270.89922 238.5 274.80078 240.5 274.80078 C 242.5 274.80078 244.19922 270.99922 244.19922 266.19922 C 244.19922 261.39922 242.5 257.59961 240.5 257.59961 z M 176.19922 311.5 C 150.19922 311.8 135.69922 338.30078 135.69922 338.30078 C 135.69922 338.30078 150.79961 366.90039 175.59961 366.90039 C 202.19961 366.90039 225.09961 350.19922 235.09961 341.69922 L 257.59961 361.69922 C 257.59961 361.69922 258.90039 350.8 253.90039 346 C 251.50039 343.6 249.00078 341.39922 246.30078 339.19922 C 248.90078 337.09922 251.50039 334.80039 253.90039 332.40039 C 258.90039 327.60039 257.59961 316.80078 257.59961 316.80078 L 237.40039 334.69922 C 227.80039 328.79922 197.79922 311.3 176.19922 311.5 z M 168.59961 319.90039 C 168.59961 319.90039 180.00039 319.80039 180.40039 337.90039 C 180.80039 356.20039 168.59961 358.1 168.59961 358 C 172.79961 352.1 175.20039 344.99922 175.40039 337.69922 C 175.70039 325.59922 168.59961 319.90039 168.59961 319.90039 z M 157.59961 328.90039 C 159.79961 328.90039 161.5 331.10039 161.5 333.90039 C 161.5 336.70039 159.79961 338.90039 157.59961 338.90039 C 155.39961 338.90039 153.69922 336.70039 153.69922 333.90039 C 153.69922 331.10039 155.49961 328.90039 157.59961 328.90039 z "\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'll,ll',
     '\n  <svg viewBox="0 0 402 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="m 347.2,53.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.4,-11.3 6.2,0 11.3,5.1 11.3,11.3 -0.1,6.2 -5.1,11.3 -11.4,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 L 346,110 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 C 374,58.5 370.4,55.7 359.5,55.7 H 335 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 h 0.1 c 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 h 1.2 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 h 11.7 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 280.5,60.1 274.9,55.7 266.6,55.7 H 256 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 v 0 0 c 3,0 5.5,-2.5 5.5,-5.5 v 0 -125.4 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 v 0 z m 101.8,16 V 22.3 C 402,10 392,0 379.7,0 H 224.3 C 212,0 202,10 202,22.3 v 155.4 c 0,12.3 10,22.3 22.3,22.3 H 379.7 C 392,200 402,190 402,177.7 Z M 379.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 224.3 C 214.8,195 207,187.2 207,177.7 V 22.3 C 207,12.8 214.8,5 224.3,5 Z m -32.5,250.4 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.4,-11.3 6.2,0 11.3,5.1 11.3,11.3 -0.1,6.3 -5.1,11.4 -11.4,11.3 z m -26.7,17.1 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 L 346,312 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 v -87.2 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 v -34.8 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 335 c -10.9,0 -14.5,2.8 -14.5,14.8 z m -48,-28.3 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 h 0.1 c 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 h 1.2 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 h 11.7 V 364 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 364 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 c -1.9,-5.6 -7.5,-10.1 -15.8,-10.1 H 256 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 v 0 0 c 3,0 5.5,-2.5 5.5,-5.5 v 0 -125.4 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 v 0 z m 101.8,16 V 224.3 C 402,212 392,202 379.7,202 H 224.3 C 212,202 202,212 202,224.3 v 155.4 c 0,12.3 10,22.3 22.3,22.3 H 379.7 C 392,402 402,392 402,379.7 Z M 379.7,207 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 224.3 C 214.8,397 207,389.2 207,379.7 V 224.3 c 0,-9.5 7.8,-17.3 17.3,-17.3 z m -234.5,48.4 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.3 -5,11.4 -11.3,11.3 z m -26.7,17.1 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 v -87.2 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 v -34.8 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,-0.1 -14.5,2.7 -14.5,14.7 z m -48,-28.3 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 h 0.1 c 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 364 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 364 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,262.2 72.9,257.7 64.6,257.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 v 0 0 c 3,0 5.5,-2.5 5.5,-5.5 v 0 -125.4 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 v 0 z m 101.8,16 V 224.3 C 200,212 190,202 177.7,202 H 22.3 C 10,202 0,212 0,224.3 V 379.7 C 0,392 10,402 22.3,402 H 177.7 C 190,402 200,392 200,379.7 Z M 177.7,207 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,397 5,389.2 5,379.7 V 224.3 C 5,214.8 12.8,207 22.3,207 Z M 145.2,53.5 c -6.3,0 -11.3,-5.1 -11.3,-11.3 0,-6.3 5.1,-11.3 11.3,-11.3 6.2,0 11.3,5.1 11.3,11.3 0,6.2 -5,11.3 -11.3,11.3 z m -26.7,16.9 v 34.8 c 0,6.8 9.1,6.8 9.1,0 l 0.8,-31.8 h 2.3 v 87.2 c 0,9 12.4,8.8 12.4,0 l 0.8,-50.6 h 2.5 l 0.8,50.6 c 0,8.8 12.4,9 12.4,0 V 73.4 h 2.4 l 0.8,31.8 c 0,6.8 9.1,6.8 9.1,0 V 70.4 c 0,-11.9 -3.6,-14.7 -14.5,-14.7 H 133 c -10.9,0 -14.5,2.8 -14.5,14.7 z m -48,-28.2 c 0,-6.3 -5,-11.4 -11.3,-11.4 -6.3,0 -11.4,5 -11.4,11.3 0,6.3 5,11.4 11.3,11.4 h 0.1 c 6.3,0 11.3,-5.1 11.3,-11.3 0.1,-0.1 0.1,-0.1 0,0 z m -34,58.5 10.3,-29.3 H 48 c 0,0 -13.5,52.4 -14.1,54.4 -0.3,1 0.1,1.7 1.2,1.7 H 46.8 V 162 c 0,7 10.5,7 10.5,0 v -34.7 h 4 V 162 c 0,7 10.5,7 10.5,0 v -34.5 h 11.7 c 1,0 1.4,-0.7 1.2,-1.7 -0.6,-2 -14.1,-54.4 -14.1,-54.4 h 1.2 l 10.3,29.3 c 2.1,6.4 10,4 8,-2.9 l -9.7,-32 C 78.5,60.1 72.9,55.7 64.6,55.7 H 54 c -8.2,0 -13.9,4.5 -15.8,10.1 l -9.7,32 c -2.1,6.9 5.9,9.4 8,2.9 z m 61.7,61 c 0,3 2.4,5.5 5.5,5.5 v 0 0 c 3,0 5.5,-2.5 5.5,-5.5 v 0 -125.4 c 0,-3 -2.4,-5.5 -5.5,-5.5 v 0 0 c -3,0 -5.5,2.4 -5.5,5.5 v 0 z m 101.8,16 V 22.3 C 200,10 190,0 177.7,0 H 22.3 C 10,0 0,10 0,22.3 V 177.7 C 0,190 10,200 22.3,200 H 177.7 C 190,200 200,190 200,177.7 Z M 177.7,5 c 9.5,0 17.3,7.8 17.3,17.3 v 155.4 c 0,9.5 -7.8,17.3 -17.3,17.3 H 22.3 C 12.8,195 5,187.2 5,177.7 V 22.3 C 5,12.8 12.8,5 22.3,5 Z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'll,s',
     '\n  <svg viewBox="0 0 402 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 224.30078 0 C 212.00078 0 202 10.000781 202 22.300781 L 202 177.69922 C 202 189.99922 212.00078 200 224.30078 200 L 379.69922 200 C 391.99922 200 402 189.99922 402 177.69922 L 402 22.300781 C 402 10.000781 391.99922 2.3684758e-15 379.69922 0 L 224.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 224.30078 5 L 379.69922 5 C 389.19922 5 397 12.800781 397 22.300781 L 397 177.69922 C 397 187.19922 389.19922 195 379.69922 195 L 224.30078 195 C 214.80078 195 207 187.19922 207 177.69922 L 207 22.300781 C 207 12.800781 214.80078 5 224.30078 5 z M 59.199219 30.800781 C 52.899219 30.800781 47.800781 35.799609 47.800781 42.099609 C 47.800781 48.399609 52.799609 53.5 59.099609 53.5 L 59.199219 53.5 C 65.499219 53.5 70.5 48.399219 70.5 42.199219 C 70.5 35.899219 65.499219 30.800781 59.199219 30.800781 z M 103.69922 30.800781 C 100.69922 30.800781 98.199219 33.200781 98.199219 36.300781 L 98.199219 161.69922 C 98.199219 164.69922 100.59922 167.19922 103.69922 167.19922 C 106.69922 167.19922 109.19922 164.69922 109.19922 161.69922 L 109.19922 36.300781 C 109.19922 33.300781 106.79922 30.800781 103.69922 30.800781 z M 261.19922 30.800781 C 254.89922 30.800781 249.80078 35.799609 249.80078 42.099609 C 249.80078 48.399609 254.79961 53.5 261.09961 53.5 L 261.19922 53.5 C 267.49922 53.5 272.5 48.399219 272.5 42.199219 C 272.5 35.899219 267.49922 30.800781 261.19922 30.800781 z M 305.59961 30.800781 C 302.59961 30.800781 300.09961 33.200781 300.09961 36.300781 L 300.09961 161.69922 C 300.09961 164.69922 302.49961 167.19922 305.59961 167.19922 C 308.59961 167.19922 311.09961 164.69922 311.09961 161.69922 L 311.09961 36.300781 C 311.09961 33.300781 308.69961 30.800781 305.59961 30.800781 z M 145.19922 30.900391 C 138.99922 30.900391 133.90039 35.899219 133.90039 42.199219 C 133.90039 48.399219 138.89922 53.5 145.19922 53.5 C 151.49922 53.5 156.5 48.399219 156.5 42.199219 C 156.5 35.999219 151.39922 30.900391 145.19922 30.900391 z M 347.30078 30.900391 C 341.00078 30.900391 335.90039 35.899219 335.90039 42.199219 C 335.90039 48.399219 340.89922 53.5 347.19922 53.5 C 353.39922 53.5 358.49961 48.399219 358.59961 42.199219 C 358.59961 35.999219 353.50078 30.900391 347.30078 30.900391 z M 54 55.699219 C 45.8 55.699219 40.099219 60.200781 38.199219 65.800781 L 28.5 97.800781 C 26.4 104.70078 34.4 107.19922 36.5 100.69922 L 46.800781 71.400391 L 48 71.400391 C 48 71.400391 34.500391 123.80078 33.900391 125.80078 C 33.600391 126.80078 33.999609 127.5 35.099609 127.5 L 46.800781 127.5 L 46.800781 162 C 46.800781 169 57.300781 169 57.300781 162 L 57.300781 127.30078 L 61.300781 127.30078 L 61.300781 162 C 61.300781 169 71.800781 169 71.800781 162 L 71.800781 127.5 L 83.5 127.5 C 84.5 127.5 84.899219 126.80078 84.699219 125.80078 C 84.099219 123.80078 70.599609 71.400391 70.599609 71.400391 L 71.800781 71.400391 L 82.099609 100.69922 C 84.199609 107.09922 92.099609 104.70078 90.099609 97.800781 L 80.400391 65.800781 C 78.500391 60.100781 72.899609 55.699219 64.599609 55.699219 L 54 55.699219 z M 133 55.699219 C 122.1 55.699219 118.5 58.500391 118.5 70.400391 L 118.5 105.19922 C 118.5 111.99922 127.59961 111.99922 127.59961 105.19922 L 128.40039 73.400391 L 130.69922 73.400391 L 130.69922 160.59961 C 130.69922 169.59961 143.09961 169.39961 143.09961 160.59961 L 143.90039 110 L 146.40039 110 L 147.19922 160.59961 C 147.19922 169.39961 159.59961 169.59961 159.59961 160.59961 L 159.59961 73.400391 L 162 73.400391 L 162.80078 105.19922 C 162.80078 111.99922 171.90039 111.99922 171.90039 105.19922 L 171.90039 70.400391 C 171.90039 58.500391 168.30039 55.699219 157.40039 55.699219 L 133 55.699219 z M 256 55.699219 C 247.8 55.699219 242.09922 60.200781 240.19922 65.800781 L 230.5 97.800781 C 228.4 104.70078 236.4 107.19922 238.5 100.69922 L 248.80078 71.400391 L 250 71.400391 C 250 71.400391 236.50039 123.80078 235.90039 125.80078 C 235.60039 126.80078 235.99961 127.5 237.09961 127.5 L 248.80078 127.5 L 248.80078 162 C 248.80078 169 259.30078 169 259.30078 162 L 259.30078 127.30078 L 263.30078 127.30078 L 263.30078 162 C 263.30078 169 273.80078 169 273.80078 162 L 273.80078 127.5 L 285.5 127.5 C 286.5 127.5 286.89922 126.80078 286.69922 125.80078 C 286.09922 123.80078 272.59961 71.400391 272.59961 71.400391 L 273.80078 71.400391 L 284.09961 100.69922 C 286.19961 107.09922 294.09961 104.70078 292.09961 97.800781 L 282.40039 65.800781 C 280.50039 60.100781 274.89961 55.699219 266.59961 55.699219 L 256 55.699219 z M 335 55.699219 C 324.1 55.699219 320.5 58.500391 320.5 70.400391 L 320.5 105.19922 C 320.5 111.99922 329.59961 111.99922 329.59961 105.19922 L 330.40039 73.400391 L 332.69922 73.400391 L 332.69922 160.59961 C 332.69922 169.59961 345.09961 169.39961 345.09961 160.59961 L 345.90039 110 L 348.40039 110 L 349.19922 160.59961 C 349.19922 169.39961 361.59961 169.59961 361.59961 160.59961 L 361.59961 73.400391 L 364 73.400391 L 364.80078 105.19922 C 364.80078 111.99922 373.90039 111.99922 373.90039 105.19922 L 373.90039 70.400391 C 373.90039 58.500391 370.30039 55.699219 359.40039 55.699219 L 335 55.699219 z M 122.30078 202 C 110.00078 202 100 212.00078 100 224.30078 L 100 379.69922 C 100 391.99922 110.00078 402 122.30078 402 L 277.69922 402 C 289.99922 402 300 391.99922 300 379.69922 L 300 224.30078 C 300 212.00078 289.99922 202 277.69922 202 L 122.30078 202 z M 122.30078 207 L 277.69922 207 C 287.19922 207 295 214.80078 295 224.30078 L 295 379.69922 C 295 389.19922 287.19922 397 277.69922 397 L 122.30078 397 C 112.80078 397 105 389.19922 105 379.69922 L 105 224.30078 C 105 214.80078 112.80078 207 122.30078 207 z M 260.40039 231.80078 C 252.10039 231.80078 247.39922 234.00078 241.19922 238.30078 C 235.49922 242.30078 127.00039 322.79922 122.40039 326.19922 C 120.40039 327.69922 120 330.59961 121.5 332.59961 C 123 334.59961 125.90039 335 127.90039 333.5 C 129.10039 332.7 240.9 249.70078 246.5 245.80078 C 251.8 242.10078 254.5 240.90039 260.5 240.90039 L 273.90039 240.90039 C 276.50039 240.90039 278.5 238.80078 278.5 236.30078 C 278.5 233.70078 276.40078 231.70078 273.80078 231.80078 L 260.40039 231.80078 z M 245.30078 269.69922 L 245.30078 291.5 L 213.30078 291.5 L 213.30078 312.09961 L 183.59961 312.09961 L 183.59961 331.5 L 152.69922 331.5 L 152.69922 353.19922 L 121.80078 353.19922 L 121.80078 375 L 276.19922 375 L 276.19922 269.69922 L 245.30078 269.69922 z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'll',
     '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 224.30078 0 C 212.00078 0 202 10.000781 202 22.300781 L 202 177.69922 C 202 189.99922 212.00078 200 224.30078 200 L 379.69922 200 C 391.99922 200 402 189.99922 402 177.69922 L 402 22.300781 C 402 10.000781 391.99922 2.3684758e-15 379.69922 0 L 224.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 224.30078 5 L 379.69922 5 C 389.19922 5 397 12.800781 397 22.300781 L 397 177.69922 C 397 187.19922 389.19922 195 379.69922 195 L 224.30078 195 C 214.80078 195 207 187.19922 207 177.69922 L 207 22.300781 C 207 12.800781 214.80078 5 224.30078 5 z M 59.199219 30.800781 C 52.899219 30.800781 47.800781 35.799609 47.800781 42.099609 C 47.800781 48.399609 52.799609 53.5 59.099609 53.5 L 59.199219 53.5 C 65.499219 53.5 70.5 48.399219 70.5 42.199219 C 70.5 35.899219 65.499219 30.800781 59.199219 30.800781 z M 103.69922 30.800781 C 100.69922 30.800781 98.199219 33.200781 98.199219 36.300781 L 98.199219 161.69922 C 98.199219 164.69922 100.59922 167.19922 103.69922 167.19922 C 106.69922 167.19922 109.19922 164.69922 109.19922 161.69922 L 109.19922 36.300781 C 109.19922 33.300781 106.79922 30.800781 103.69922 30.800781 z M 261.19922 30.800781 C 254.89922 30.800781 249.80078 35.799609 249.80078 42.099609 C 249.80078 48.399609 254.79961 53.5 261.09961 53.5 L 261.19922 53.5 C 267.49922 53.5 272.5 48.399219 272.5 42.199219 C 272.5 35.899219 267.49922 30.800781 261.19922 30.800781 z M 305.59961 30.800781 C 302.59961 30.800781 300.09961 33.200781 300.09961 36.300781 L 300.09961 161.69922 C 300.09961 164.69922 302.49961 167.19922 305.59961 167.19922 C 308.59961 167.19922 311.09961 164.69922 311.09961 161.69922 L 311.09961 36.300781 C 311.09961 33.300781 308.69961 30.800781 305.59961 30.800781 z M 145.19922 30.900391 C 138.99922 30.900391 133.90039 35.899219 133.90039 42.199219 C 133.90039 48.399219 138.89922 53.5 145.19922 53.5 C 151.49922 53.5 156.5 48.399219 156.5 42.199219 C 156.5 35.999219 151.39922 30.900391 145.19922 30.900391 z M 347.30078 30.900391 C 341.00078 30.900391 335.90039 35.899219 335.90039 42.199219 C 335.90039 48.399219 340.89922 53.5 347.19922 53.5 C 353.39922 53.5 358.49961 48.399219 358.59961 42.199219 C 358.59961 35.999219 353.50078 30.900391 347.30078 30.900391 z M 54 55.699219 C 45.8 55.699219 40.099219 60.200781 38.199219 65.800781 L 28.5 97.800781 C 26.4 104.70078 34.4 107.19922 36.5 100.69922 L 46.800781 71.400391 L 48 71.400391 C 48 71.400391 34.500391 123.80078 33.900391 125.80078 C 33.600391 126.80078 33.999609 127.5 35.099609 127.5 L 46.800781 127.5 L 46.800781 162 C 46.800781 169 57.300781 169 57.300781 162 L 57.300781 127.30078 L 61.300781 127.30078 L 61.300781 162 C 61.300781 169 71.800781 169 71.800781 162 L 71.800781 127.5 L 83.5 127.5 C 84.5 127.5 84.899219 126.80078 84.699219 125.80078 C 84.099219 123.80078 70.599609 71.400391 70.599609 71.400391 L 71.800781 71.400391 L 82.099609 100.69922 C 84.199609 107.09922 92.099609 104.70078 90.099609 97.800781 L 80.400391 65.800781 C 78.500391 60.100781 72.899609 55.699219 64.599609 55.699219 L 54 55.699219 z M 133 55.699219 C 122.1 55.699219 118.5 58.500391 118.5 70.400391 L 118.5 105.19922 C 118.5 111.99922 127.59961 111.99922 127.59961 105.19922 L 128.40039 73.400391 L 130.69922 73.400391 L 130.69922 160.59961 C 130.69922 169.59961 143.09961 169.39961 143.09961 160.59961 L 143.90039 110 L 146.40039 110 L 147.19922 160.59961 C 147.19922 169.39961 159.59961 169.59961 159.59961 160.59961 L 159.59961 73.400391 L 162 73.400391 L 162.80078 105.19922 C 162.80078 111.99922 171.90039 111.99922 171.90039 105.19922 L 171.90039 70.400391 C 171.90039 58.500391 168.30039 55.699219 157.40039 55.699219 L 133 55.699219 z M 256 55.699219 C 247.8 55.699219 242.09922 60.200781 240.19922 65.800781 L 230.5 97.800781 C 228.4 104.70078 236.4 107.19922 238.5 100.69922 L 248.80078 71.400391 L 250 71.400391 C 250 71.400391 236.50039 123.80078 235.90039 125.80078 C 235.60039 126.80078 235.99961 127.5 237.09961 127.5 L 248.80078 127.5 L 248.80078 162 C 248.80078 169 259.30078 169 259.30078 162 L 259.30078 127.30078 L 263.30078 127.30078 L 263.30078 162 C 263.30078 169 273.80078 169 273.80078 162 L 273.80078 127.5 L 285.5 127.5 C 286.5 127.5 286.89922 126.80078 286.69922 125.80078 C 286.09922 123.80078 272.59961 71.400391 272.59961 71.400391 L 273.80078 71.400391 L 284.09961 100.69922 C 286.19961 107.09922 294.09961 104.70078 292.09961 97.800781 L 282.40039 65.800781 C 280.50039 60.100781 274.89961 55.699219 266.59961 55.699219 L 256 55.699219 z M 335 55.699219 C 324.1 55.699219 320.5 58.500391 320.5 70.400391 L 320.5 105.19922 C 320.5 111.99922 329.59961 111.99922 329.59961 105.19922 L 330.40039 73.400391 L 332.69922 73.400391 L 332.69922 160.59961 C 332.69922 169.59961 345.09961 169.39961 345.09961 160.59961 L 345.90039 110 L 348.40039 110 L 349.19922 160.59961 C 349.19922 169.39961 361.59961 169.59961 361.59961 160.59961 L 361.59961 73.400391 L 364 73.400391 L 364.80078 105.19922 C 364.80078 111.99922 373.90039 111.99922 373.90039 105.19922 L 373.90039 70.400391 C 373.90039 58.500391 370.30039 55.699219 359.40039 55.699219 L 335 55.699219 z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'ls',
     '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 224.30078 0 C 212.00078 0 202 10.000781 202 22.300781 L 202 177.69922 C 202 189.99922 212.00078 200 224.30078 200 L 379.69922 200 C 391.99922 200 402 189.99922 402 177.69922 L 402 22.300781 C 402 10.000781 391.99922 2.3684758e-15 379.69922 0 L 224.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 224.30078 5 L 379.69922 5 C 389.19922 5 397 12.800781 397 22.300781 L 397 177.69922 C 397 187.19922 389.19922 195 379.69922 195 L 224.30078 195 C 214.80078 195 207 187.19922 207 177.69922 L 207 22.300781 C 207 12.800781 214.80078 5 224.30078 5 z M 362.40039 29.800781 C 354.10039 29.800781 349.39922 32.000781 343.19922 36.300781 C 337.49922 40.300781 229.00039 120.79922 224.40039 124.19922 C 222.40039 125.69922 222 128.59961 223.5 130.59961 C 225 132.59961 227.90039 133 229.90039 131.5 C 231.10039 130.7 342.9 47.700781 348.5 43.800781 C 353.8 40.100781 356.5 38.900391 362.5 38.900391 L 375.90039 38.900391 C 378.50039 38.900391 380.5 36.800781 380.5 34.300781 C 380.5 31.700781 378.40078 29.700781 375.80078 29.800781 L 362.40039 29.800781 z M 59.199219 30.800781 C 52.899219 30.800781 47.800781 35.799609 47.800781 42.099609 C 47.800781 48.399609 52.799609 53.5 59.099609 53.5 L 59.199219 53.5 C 65.499219 53.5 70.5 48.399219 70.5 42.199219 C 70.5 35.899219 65.499219 30.800781 59.199219 30.800781 z M 103.69922 30.800781 C 100.69922 30.800781 98.199219 33.200781 98.199219 36.300781 L 98.199219 161.69922 C 98.199219 164.69922 100.59922 167.19922 103.69922 167.19922 C 106.69922 167.19922 109.19922 164.69922 109.19922 161.69922 L 109.19922 36.300781 C 109.19922 33.300781 106.79922 30.800781 103.69922 30.800781 z M 145.19922 30.900391 C 138.99922 30.900391 133.90039 35.899219 133.90039 42.199219 C 133.90039 48.399219 138.89922 53.5 145.19922 53.5 C 151.49922 53.5 156.5 48.399219 156.5 42.199219 C 156.5 35.999219 151.39922 30.900391 145.19922 30.900391 z M 54 55.699219 C 45.8 55.699219 40.099219 60.200781 38.199219 65.800781 L 28.5 97.800781 C 26.4 104.70078 34.4 107.19922 36.5 100.69922 L 46.800781 71.400391 L 48 71.400391 C 48 71.400391 34.500391 123.80078 33.900391 125.80078 C 33.600391 126.80078 33.999609 127.5 35.099609 127.5 L 46.800781 127.5 L 46.800781 162 C 46.800781 169 57.300781 169 57.300781 162 L 57.300781 127.30078 L 61.300781 127.30078 L 61.300781 162 C 61.300781 169 71.800781 169 71.800781 162 L 71.800781 127.5 L 83.5 127.5 C 84.5 127.5 84.899219 126.80078 84.699219 125.80078 C 84.099219 123.80078 70.599609 71.400391 70.599609 71.400391 L 71.800781 71.400391 L 82.099609 100.69922 C 84.199609 107.09922 92.099609 104.70078 90.099609 97.800781 L 80.400391 65.800781 C 78.500391 60.100781 72.899609 55.699219 64.599609 55.699219 L 54 55.699219 z M 133 55.699219 C 122.1 55.699219 118.5 58.500391 118.5 70.400391 L 118.5 105.19922 C 118.5 111.99922 127.59961 111.99922 127.59961 105.19922 L 128.40039 73.400391 L 130.69922 73.400391 L 130.69922 160.59961 C 130.69922 169.59961 143.09961 169.39961 143.09961 160.59961 L 143.90039 110 L 146.40039 110 L 147.19922 160.59961 C 147.19922 169.39961 159.59961 169.59961 159.59961 160.59961 L 159.59961 73.400391 L 162 73.400391 L 162.80078 105.19922 C 162.80078 111.99922 171.90039 111.99922 171.90039 105.19922 L 171.90039 70.400391 C 171.90039 58.500391 168.30039 55.699219 157.40039 55.699219 L 133 55.699219 z M 347.30078 67.699219 L 347.30078 89.5 L 315.30078 89.5 L 315.30078 110.09961 L 285.59961 110.09961 L 285.59961 129.5 L 254.69922 129.5 L 254.69922 151.19922 L 223.80078 151.19922 L 223.80078 173 L 378.19922 173 L 378.19922 67.699219 L 347.30078 67.699219 z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     's,g',
     '\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 160.40039 29.800781 C 152.10039 29.800781 147.39922 32.000781 141.19922 36.300781 C 135.49922 40.300781 27.000391 120.79922 22.400391 124.19922 C 20.400391 125.69922 20 128.59961 21.5 130.59961 C 23 132.59961 25.900391 133 27.900391 131.5 C 29.100391 130.7 140.9 47.700781 146.5 43.800781 C 151.8 40.100781 154.5 38.900391 160.5 38.900391 L 173.90039 38.900391 C 176.50039 38.900391 178.5 36.800781 178.5 34.300781 C 178.5 31.700781 176.40078 29.700781 173.80078 29.800781 L 160.40039 29.800781 z M 145.30078 67.699219 L 145.30078 89.5 L 113.30078 89.5 L 113.30078 110.09961 L 83.599609 110.09961 L 83.599609 129.5 L 52.699219 129.5 L 52.699219 151.19922 L 21.800781 151.19922 L 21.800781 173 L 176.19922 173 L 176.19922 67.699219 L 145.30078 67.699219 z M 22.300781 202 C 10.000781 202 0 212.00078 0 224.30078 L 0 379.69922 C 2.3684758e-15 391.99922 10.000781 402 22.300781 402 L 177.69922 402 C 189.99922 402 200 391.99922 200 379.69922 L 200 224.30078 C 200 212.00078 189.99922 202 177.69922 202 L 22.300781 202 z M 22.300781 207 L 177.69922 207 C 187.19922 207 195 214.80078 195 224.30078 L 195 379.69922 C 195 389.19922 187.19922 397 177.69922 397 L 22.300781 397 C 12.800781 397 5 389.19922 5 379.69922 L 5 224.30078 C 5 214.80078 12.800781 207 22.300781 207 z M 122.87305 236.80859 C 95.206616 236.86611 70.903516 248.13984 63.900391 259.69922 L 48.800781 259.69922 C 48.800781 255.39922 45.7 252 42 252 C 38.3 252 35.199219 255.39922 35.199219 259.69922 C 35.099219 262.59922 36.699219 265.29922 39.199219 266.69922 C 36.699219 267.89922 35.199219 270.50078 35.199219 273.30078 C 34.999219 277.10078 37.899219 280.3 41.699219 280.5 C 45.499219 280.7 48.700391 277.8 48.900391 274 L 48.900391 273.30078 L 63.900391 273.30078 C 71.000391 286.60078 97.499609 298.70039 138.59961 294.40039 C 145.29961 293.70039 150.80078 281.79922 150.80078 266.19922 C 150.80078 250.59922 145.2 239 138.5 238 C 133.23438 237.17188 127.99646 236.79794 122.87305 236.80859 z M 138.5 242.19922 C 144.2 242.19922 148.80078 252.89922 148.80078 266.19922 C 148.80078 279.49922 144.2 290.09922 138.5 290.19922 C 132.8 290.19922 128.19922 279.49922 128.19922 266.19922 C 128.19922 252.89922 132.8 242.19922 138.5 242.19922 z M 138.5 257.59961 C 136.5 257.59961 134.80078 261.49922 134.80078 266.19922 C 134.80078 270.89922 136.5 274.80078 138.5 274.80078 C 140.5 274.80078 142.19922 270.99922 142.19922 266.19922 C 142.19922 261.39922 140.5 257.59961 138.5 257.59961 z M 74.199219 311.5 C 48.199219 311.8 33.699219 338.30078 33.699219 338.30078 C 33.699219 338.30078 48.799609 366.90039 73.599609 366.90039 C 100.19961 366.90039 123.09961 350.19922 133.09961 341.69922 L 155.59961 361.69922 C 155.59961 361.69922 156.90039 350.8 151.90039 346 C 149.50039 343.6 147.00078 341.39922 144.30078 339.19922 C 146.90078 337.09922 149.50039 334.80039 151.90039 332.40039 C 156.90039 327.60039 155.59961 316.80078 155.59961 316.80078 L 135.40039 334.69922 C 125.80039 328.79922 95.799219 311.3 74.199219 311.5 z M 66.599609 320 C 66.599609 320 78.000391 319.9 78.400391 338 C 78.800391 356.2 66.599609 358.09961 66.599609 358.09961 C 70.799609 352.19961 73.200391 345.10078 73.400391 337.80078 C 73.700391 325.70078 66.599609 320 66.599609 320 z M 55.599609 328.90039 C 57.799609 328.90039 59.5 331.10039 59.5 333.90039 C 59.5 336.70039 57.799609 338.90039 55.599609 338.90039 C 53.399609 338.90039 51.699219 336.70039 51.699219 333.90039 C 51.699219 331.10039 53.499609 328.90039 55.599609 328.90039 z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     's,l,g',
     '\n  <svg viewBox="0 0 200 604" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 160.40039 29.800781 C 152.10039 29.800781 147.39922 32.000781 141.19922 36.300781 C 135.49922 40.300781 27.000391 120.79922 22.400391 124.19922 C 20.400391 125.69922 20 128.59961 21.5 130.59961 C 23 132.59961 25.900391 133 27.900391 131.5 C 29.100391 130.7 140.9 47.700781 146.5 43.800781 C 151.8 40.100781 154.5 38.900391 160.5 38.900391 L 173.90039 38.900391 C 176.50039 38.900391 178.5 36.800781 178.5 34.300781 C 178.5 31.700781 176.40078 29.700781 173.80078 29.800781 L 160.40039 29.800781 z M 145.30078 67.699219 L 145.30078 89.5 L 113.30078 89.5 L 113.30078 110.09961 L 83.599609 110.09961 L 83.599609 129.5 L 52.699219 129.5 L 52.699219 151.19922 L 21.800781 151.19922 L 21.800781 173 L 176.19922 173 L 176.19922 67.699219 L 145.30078 67.699219 z M 22.300781 202 C 10.000781 202 2.3684758e-15 212.00078 0 224.30078 L 0 379.69922 C 0 391.99922 10.000781 402 22.300781 402 L 177.69922 402 C 189.99922 402 200 391.99922 200 379.69922 L 200 224.30078 C 200 212.00078 189.99922 202 177.69922 202 L 22.300781 202 z M 22.300781 207 L 177.69922 207 C 187.19922 207 195 214.80078 195 224.30078 L 195 379.69922 C 195 389.19922 187.19922 397 177.69922 397 L 22.300781 397 C 12.800781 397 5 389.19922 5 379.69922 L 5 224.30078 C 5 214.80078 12.800781 207 22.300781 207 z M 59.199219 232.80078 C 52.899219 232.80078 47.800781 237.79961 47.800781 244.09961 C 47.800781 250.39961 52.799609 255.5 59.099609 255.5 L 59.199219 255.5 C 65.499219 255.5 70.5 250.39922 70.5 244.19922 C 70.5 237.89922 65.499219 232.80078 59.199219 232.80078 z M 103.69922 232.80078 C 100.69922 232.80078 98.199219 235.20078 98.199219 238.30078 L 98.199219 363.69922 C 98.199219 366.69922 100.59922 369.19922 103.69922 369.19922 C 106.69922 369.19922 109.19922 366.69922 109.19922 363.69922 L 109.19922 238.30078 C 109.19922 235.30078 106.79922 232.80078 103.69922 232.80078 z M 145.19922 232.80078 C 138.99922 232.80078 133.90039 237.79961 133.90039 244.09961 C 133.90039 250.29961 138.89922 255.40039 145.19922 255.40039 C 151.39922 255.50039 156.5 250.39961 156.5 244.09961 C 156.5 237.89961 151.39922 232.80078 145.19922 232.80078 z M 54 257.69922 C 45.8 257.69922 40.099219 262.20078 38.199219 267.80078 L 28.5 299.80078 C 26.4 306.70078 34.4 309.19922 36.5 302.69922 L 46.800781 273.40039 L 48 273.40039 C 48 273.40039 34.500391 325.80078 33.900391 327.80078 C 33.600391 328.80078 33.999609 329.5 35.099609 329.5 L 46.800781 329.5 L 46.800781 364 C 46.800781 371 57.300781 371 57.300781 364 L 57.300781 329.30078 L 61.300781 329.30078 L 61.300781 364 C 61.300781 371 71.800781 371 71.800781 364 L 71.800781 329.5 L 83.5 329.5 C 84.5 329.5 84.899219 328.80078 84.699219 327.80078 C 84.099219 325.80078 70.599609 273.40039 70.599609 273.40039 L 71.800781 273.40039 L 82.099609 302.69922 C 84.199609 309.09922 92.099609 306.70078 90.099609 299.80078 L 80.400391 267.80078 C 78.500391 262.20078 72.899609 257.69922 64.599609 257.69922 L 54 257.69922 z M 133 257.80078 C 122.1 257.70078 118.5 260.5 118.5 272.5 L 118.5 307.30078 C 118.5 314.10078 127.59961 314.10078 127.59961 307.30078 L 128.40039 275.5 L 130.69922 275.5 L 130.69922 362.69922 C 130.69922 371.69922 143.09961 371.49922 143.09961 362.69922 L 143.90039 312.09961 L 146.40039 312.09961 L 147.19922 362.69922 C 147.19922 371.49922 159.59961 371.69922 159.59961 362.69922 L 159.59961 275.5 L 162 275.5 L 162.80078 307.30078 C 162.80078 314.10078 171.90039 314.10078 171.90039 307.30078 L 171.90039 272.5 C 171.90039 260.6 168.30039 257.80078 157.40039 257.80078 L 133 257.80078 z M 22.300781 404 C 10.000781 404 0 414.00078 0 426.30078 L 0 581.69922 C 2.3684758e-15 593.99922 10.000781 604 22.300781 604 L 177.69922 604 C 189.99922 604 200 593.99922 200 581.69922 L 200 426.30078 C 200 414.00078 189.99922 404 177.69922 404 L 22.300781 404 z M 22.300781 409 L 177.69922 409 C 187.19922 409 195 416.80078 195 426.30078 L 195 581.69922 C 195 591.19922 187.19922 599 177.69922 599 L 22.300781 599 C 12.800781 599 5 591.19922 5 581.69922 L 5 426.30078 C 5 416.80078 12.800781 409 22.300781 409 z M 122.87305 438.80859 C 95.206616 438.86611 70.903516 450.13984 63.900391 461.69922 L 48.800781 461.69922 C 48.800781 457.39922 45.7 454 42 454 C 38.3 454 35.199219 457.39922 35.199219 461.69922 C 35.099219 464.59922 36.699219 467.29922 39.199219 468.69922 C 36.699219 469.89922 35.199219 472.50078 35.199219 475.30078 C 34.999219 479.10078 37.899219 482.3 41.699219 482.5 C 45.499219 482.7 48.700391 479.8 48.900391 476 L 48.900391 475.30078 L 63.900391 475.30078 C 71.000391 488.60078 97.499609 500.70039 138.59961 496.40039 C 145.29961 495.70039 150.80078 483.79922 150.80078 468.19922 C 150.70078 452.59922 145.2 441 138.5 440 C 133.23438 439.17188 127.99646 438.79794 122.87305 438.80859 z M 138.5 444.19922 C 144.2 444.19922 148.80078 454.89922 148.80078 468.19922 C 148.80078 481.49922 144.2 492.09922 138.5 492.19922 C 132.8 492.19922 128.19922 481.49922 128.19922 468.19922 C 128.19922 454.89922 132.8 444.19922 138.5 444.19922 z M 138.5 459.59961 C 136.5 459.59961 134.80078 463.39922 134.80078 468.19922 C 134.80078 472.89922 136.5 476.80078 138.5 476.80078 C 140.5 476.80078 142.19922 472.99922 142.19922 468.19922 C 142.19922 463.39922 140.5 459.59961 138.5 459.59961 z M 74.199219 513.5 C 48.199219 513.8 33.699219 540.30078 33.699219 540.30078 C 33.699219 540.30078 48.799609 568.90039 73.599609 568.90039 C 100.19961 568.90039 123.09961 552.19922 133.09961 543.69922 L 155.59961 563.69922 C 155.59961 563.69922 156.90039 552.8 151.90039 548 C 149.50039 545.6 147.00078 543.39922 144.30078 541.19922 C 146.90078 539.09922 149.50039 536.80039 151.90039 534.40039 C 156.90039 529.60039 155.59961 518.80078 155.59961 518.80078 L 135.40039 536.69922 C 125.80039 530.79922 95.799219 513.3 74.199219 513.5 z M 66.599609 521.90039 C 66.599609 521.90039 78.000391 521.80039 78.400391 539.90039 C 78.800391 558.00039 66.599609 560.1 66.599609 560 C 70.799609 554.1 73.200391 546.99922 73.400391 539.69922 C 73.700391 527.59922 66.599609 521.90039 66.599609 521.90039 z M 55.699219 530.80078 C 57.799219 530.80078 59.599609 533.00078 59.599609 535.80078 C 59.599609 538.60078 57.799219 540.90078 55.699219 540.80078 C 53.499219 540.80078 51.800781 538.60078 51.800781 535.80078 C 51.800781 533.00078 53.599219 530.80078 55.699219 530.80078 z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     's,l',
     '\n  <svg viewBox="0 0 200 402" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 160.40039 29.800781 C 152.10039 29.800781 147.39922 32.000781 141.19922 36.300781 C 135.49922 40.300781 27.000391 120.79922 22.400391 124.19922 C 20.400391 125.69922 20 128.59961 21.5 130.59961 C 23 132.59961 25.900391 133 27.900391 131.5 C 29.100391 130.7 140.9 47.700781 146.5 43.800781 C 151.8 40.100781 154.5 38.900391 160.5 38.900391 L 173.90039 38.900391 C 176.50039 38.900391 178.5 36.800781 178.5 34.300781 C 178.5 31.700781 176.40078 29.700781 173.80078 29.800781 L 160.40039 29.800781 z M 145.30078 67.699219 L 145.30078 89.5 L 113.30078 89.5 L 113.30078 110.09961 L 83.599609 110.09961 L 83.599609 129.5 L 52.699219 129.5 L 52.699219 151.19922 L 21.800781 151.19922 L 21.800781 173 L 176.19922 173 L 176.19922 67.699219 L 145.30078 67.699219 z M 22.300781 202 C 10.000781 202 2.3684758e-15 212.00078 0 224.30078 L 0 379.69922 C 0 391.99922 10.000781 402 22.300781 402 L 177.69922 402 C 189.99922 402 200 391.99922 200 379.69922 L 200 224.30078 C 200 212.00078 189.99922 202 177.69922 202 L 22.300781 202 z M 22.300781 207 L 177.69922 207 C 187.19922 207 195 214.80078 195 224.30078 L 195 379.69922 C 195 389.19922 187.19922 397 177.69922 397 L 22.300781 397 C 12.800781 397 5 389.19922 5 379.69922 L 5 224.30078 C 5 214.80078 12.800781 207 22.300781 207 z M 59.199219 232.80078 C 52.899219 232.80078 47.800781 237.79961 47.800781 244.09961 C 47.800781 250.39961 52.799609 255.5 59.099609 255.5 L 59.199219 255.5 C 65.499219 255.5 70.5 250.39922 70.5 244.19922 C 70.5 237.89922 65.499219 232.80078 59.199219 232.80078 z M 103.69922 232.80078 C 100.69922 232.80078 98.199219 235.20078 98.199219 238.30078 L 98.199219 363.69922 C 98.199219 366.69922 100.59922 369.19922 103.69922 369.19922 C 106.69922 369.19922 109.19922 366.69922 109.19922 363.69922 L 109.19922 238.30078 C 109.19922 235.30078 106.79922 232.80078 103.69922 232.80078 z M 145.19922 232.80078 C 138.99922 232.80078 133.90039 237.79961 133.90039 244.09961 C 133.90039 250.29961 138.89922 255.40039 145.19922 255.40039 C 151.49922 255.50039 156.5 250.39961 156.5 244.09961 C 156.5 237.89961 151.39922 232.80078 145.19922 232.80078 z M 54 257.69922 C 45.8 257.69922 40.099219 262.20078 38.199219 267.80078 L 28.5 299.80078 C 26.4 306.70078 34.4 309.19922 36.5 302.69922 L 46.800781 273.40039 L 48 273.40039 C 48 273.40039 34.500391 325.80078 33.900391 327.80078 C 33.600391 328.80078 33.999609 329.5 35.099609 329.5 L 46.800781 329.5 L 46.800781 364 C 46.800781 371 57.300781 371 57.300781 364 L 57.300781 329.30078 L 61.300781 329.30078 L 61.300781 364 C 61.300781 371 71.800781 371 71.800781 364 L 71.800781 329.5 L 83.5 329.5 C 84.5 329.5 84.899219 328.80078 84.699219 327.80078 C 84.099219 325.80078 70.599609 273.40039 70.599609 273.40039 L 71.800781 273.40039 L 82.099609 302.69922 C 84.199609 309.09922 92.099609 306.70078 90.099609 299.80078 L 80.400391 267.80078 C 78.500391 262.20078 72.899609 257.69922 64.599609 257.69922 L 54 257.69922 z M 133 257.80078 C 122.1 257.70078 118.5 260.5 118.5 272.5 L 118.5 307.30078 C 118.5 314.10078 127.59961 314.10078 127.59961 307.30078 L 128.40039 275.5 L 130.69922 275.5 L 130.69922 362.69922 C 130.69922 371.69922 143.09961 371.49922 143.09961 362.69922 L 143.90039 312.09961 L 146.40039 312.09961 L 147.19922 362.69922 C 147.19922 371.49922 159.59961 371.69922 159.59961 362.69922 L 159.59961 275.5 L 162 275.5 L 162.80078 307.30078 C 162.80078 314.10078 171.90039 314.10078 171.90039 307.30078 L 171.90039 272.5 C 171.90039 260.6 168.30039 257.80078 157.40039 257.80078 L 133 257.80078 z "\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     's',
     '\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M177.7,0H22.3C10,0,0,10,0,22.3v155.4C0,190,10,200,22.3,200h155.4c12.3,0,22.3-10,22.3-22.3V22.3C200,10,190,0,177.7,0z M195,177.7c0,9.5-7.8,17.3-17.3,17.3H22.3C12.8,195,5,187.2,5,177.7V22.3C5,12.8,12.8,5,22.3,5h155.4c9.5,0,17.3,7.8,17.3,17.3 V177.7z M145.3,67.7h30.9V173H21.8v-21.8h30.9v-21.7h30.9v-19.4h29.7V89.5h32L145.3,67.7z M178.5,34.3c0,2.5-2,4.6-4.6,4.6 c0,0,0,0,0,0h-13.4c-6,0-8.7,1.2-14,4.9c-5.6,3.9-117.4,86.9-118.6,87.7c-2,1.5-4.9,1.1-6.4-0.9s-1.1-4.9,0.9-6.4 c4.6-3.4,113.1-83.9,118.8-87.9c6.2-4.3,10.9-6.5,19.2-6.5h13.4C176.4,29.7,178.5,31.7,178.5,34.3C178.5,34.2,178.5,34.3,178.5,34.3z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'sg',
     '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 223.30078 0 C 211.00078 2.3684758e-15 201 10.000781 201 22.300781 L 201 177.69922 C 201 189.99922 211.00078 200 223.30078 200 L 378.69922 200 C 390.99922 200 401 189.99922 401 177.69922 L 401 22.300781 C 401 10.000781 390.99922 0 378.69922 0 L 223.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 223.30078 5 L 378.69922 5 C 388.19922 5 396 12.800781 396 22.300781 L 396 177.69922 C 396 187.19922 388.19922 195 378.69922 195 L 223.30078 195 C 213.80078 195 206 187.19922 206 177.69922 L 206 22.300781 C 206 12.800781 213.80078 5 223.30078 5 z M 160.40039 29.800781 C 152.10039 29.800781 147.39922 32.000781 141.19922 36.300781 C 135.49922 40.300781 27.000391 120.79922 22.400391 124.19922 C 20.400391 125.69922 20 128.59961 21.5 130.59961 C 23 132.59961 25.900391 133 27.900391 131.5 C 29.100391 130.7 140.9 47.700781 146.5 43.800781 C 151.8 40.100781 154.5 38.900391 160.5 38.900391 L 173.90039 38.900391 C 176.50039 38.900391 178.5 36.800781 178.5 34.300781 C 178.5 31.700781 176.40078 29.700781 173.80078 29.800781 L 160.40039 29.800781 z M 323.87305 34.808594 C 296.20662 34.866107 271.90352 46.139844 264.90039 57.699219 L 249.80078 57.699219 C 249.80078 53.399219 246.7 50 243 50 C 239.3 50 236.19922 53.399219 236.19922 57.699219 C 236.09922 60.599219 237.69922 63.299219 240.19922 64.699219 C 237.69922 65.899219 236.19922 68.500781 236.19922 71.300781 C 235.99922 75.100781 238.89922 78.3 242.69922 78.5 C 246.49922 78.7 249.70039 75.8 249.90039 72 L 249.90039 71.300781 L 264.90039 71.300781 C 272.00039 84.600781 298.49961 96.700391 339.59961 92.400391 C 346.29961 91.700391 351.80078 79.799219 351.80078 64.199219 C 351.80078 48.599219 346.2 37 339.5 36 C 334.23438 35.171875 328.99646 34.797943 323.87305 34.808594 z M 339.5 40.199219 C 345.2 40.199219 349.80078 50.899219 349.80078 64.199219 C 349.80078 77.499219 345.2 88.099219 339.5 88.199219 C 333.8 88.199219 329.19922 77.499219 329.19922 64.199219 C 329.19922 50.899219 333.8 40.199219 339.5 40.199219 z M 339.5 55.599609 C 337.5 55.599609 335.80078 59.499219 335.80078 64.199219 C 335.80078 68.899219 337.5 72.800781 339.5 72.800781 C 341.5 72.800781 343.19922 68.999219 343.19922 64.199219 C 343.19922 59.399219 341.5 55.599609 339.5 55.599609 z M 145.30078 67.699219 L 145.30078 89.5 L 113.30078 89.5 L 113.30078 110.09961 L 83.599609 110.09961 L 83.599609 129.5 L 52.699219 129.5 L 52.699219 151.19922 L 21.800781 151.19922 L 21.800781 173 L 176.19922 173 L 176.19922 67.699219 L 145.30078 67.699219 z M 275.19922 109.5 C 249.19922 109.8 234.69922 136.30078 234.69922 136.30078 C 234.69922 136.30078 249.79961 164.90039 274.59961 164.90039 C 301.19961 164.90039 324.09961 148.19922 334.09961 139.69922 L 356.59961 159.69922 C 356.59961 159.69922 357.90039 148.8 352.90039 144 C 350.50039 141.6 348.00078 139.39922 345.30078 137.19922 C 347.90078 135.09922 350.50039 132.80039 352.90039 130.40039 C 357.90039 125.60039 356.59961 114.80078 356.59961 114.80078 L 336.40039 132.69922 C 326.80039 126.79922 296.79922 109.3 275.19922 109.5 z M 267.59961 118 C 267.59961 118 279.00039 117.9 279.40039 136 C 279.80039 154.2 267.59961 156.09961 267.59961 156.09961 C 271.79961 150.19961 274.20039 143.10078 274.40039 135.80078 C 274.70039 123.70078 267.59961 118 267.59961 118 z M 256.59961 126.90039 C 258.79961 126.90039 260.5 129.10039 260.5 131.90039 C 260.5 134.70039 258.79961 136.90039 256.59961 136.90039 C 254.39961 136.90039 252.69922 134.70039 252.69922 131.90039 C 252.69922 129.10039 254.49961 126.90039 256.59961 126.90039 z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'sl',
     '\n  <svg viewBox="0 0 402 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M 22.300781 0 C 10.000781 0 2.3684758e-15 10.000781 0 22.300781 L 0 177.69922 C 0 189.99922 10.000781 200 22.300781 200 L 177.69922 200 C 189.99922 200 200 189.99922 200 177.69922 L 200 22.300781 C 200 10.000781 189.99922 2.3684758e-15 177.69922 0 L 22.300781 0 z M 223.30078 0 C 211.00078 0 201 10.000781 201 22.300781 L 201 177.69922 C 201 189.99922 211.00078 200 223.30078 200 L 378.69922 200 C 390.99922 200 401 189.99922 401 177.69922 L 401 22.300781 C 401 10.000781 390.99922 2.3684758e-15 378.69922 0 L 223.30078 0 z M 22.300781 5 L 177.69922 5 C 187.19922 5 195 12.800781 195 22.300781 L 195 177.69922 C 195 187.19922 187.19922 195 177.69922 195 L 22.300781 195 C 12.800781 195 5 187.19922 5 177.69922 L 5 22.300781 C 5 12.800781 12.800781 5 22.300781 5 z M 223.30078 5 L 378.69922 5 C 388.19922 5 396 12.800781 396 22.300781 L 396 177.69922 C 396 187.19922 388.19922 195 378.69922 195 L 223.30078 195 C 213.80078 195 206 187.19922 206 177.69922 L 206 22.300781 C 206 12.800781 213.80078 5 223.30078 5 z M 160.40039 29.800781 C 152.10039 29.800781 147.39922 32.000781 141.19922 36.300781 C 135.49922 40.300781 27.000391 120.79922 22.400391 124.19922 C 20.400391 125.69922 20 128.59961 21.5 130.59961 C 23 132.59961 25.900391 133 27.900391 131.5 C 29.100391 130.7 140.9 47.700781 146.5 43.800781 C 151.8 40.100781 154.5 38.900391 160.5 38.900391 L 173.90039 38.900391 C 176.50039 38.900391 178.5 36.800781 178.5 34.300781 C 178.5 31.700781 176.40078 29.700781 173.80078 29.800781 L 160.40039 29.800781 z M 260.19922 30.800781 C 253.89922 30.800781 248.80078 35.799609 248.80078 42.099609 C 248.80078 48.399609 253.79961 53.5 260.09961 53.5 L 260.19922 53.5 C 266.49922 53.5 271.5 48.399219 271.5 42.199219 C 271.5 35.899219 266.49922 30.800781 260.19922 30.800781 z M 304.69922 30.800781 C 301.69922 30.800781 299.19922 33.200781 299.19922 36.300781 L 299.19922 161.69922 C 299.19922 164.69922 301.59922 167.19922 304.69922 167.19922 C 307.69922 167.19922 310.19922 164.69922 310.19922 161.69922 L 310.19922 36.300781 C 310.19922 33.300781 307.79922 30.800781 304.69922 30.800781 z M 346.30078 30.900391 C 340.00078 30.900391 334.90039 35.899219 334.90039 42.199219 C 334.90039 48.399219 339.89922 53.5 346.19922 53.5 C 352.49922 53.5 357.49961 48.399219 357.59961 42.199219 C 357.59961 35.999219 352.50078 30.900391 346.30078 30.900391 z M 255 55.699219 C 246.8 55.699219 241.09922 60.200781 239.19922 65.800781 L 229.5 97.800781 C 227.4 104.70078 235.4 107.19922 237.5 100.69922 L 247.80078 71.400391 L 249 71.400391 C 249 71.400391 235.50039 123.80078 234.90039 125.80078 C 234.60039 126.80078 234.99961 127.5 236.09961 127.5 L 247.80078 127.5 L 247.80078 162 C 247.80078 169 258.30078 169 258.30078 162 L 258.30078 127.30078 L 262.30078 127.30078 L 262.30078 162 C 262.30078 169 272.80078 169 272.80078 162 L 272.80078 127.5 L 284.5 127.5 C 285.5 127.5 285.89922 126.80078 285.69922 125.80078 C 285.09922 123.80078 271.59961 71.400391 271.59961 71.400391 L 272.80078 71.400391 L 283.09961 100.69922 C 285.19961 107.09922 293.09961 104.70078 291.09961 97.800781 L 281.40039 65.800781 C 279.50039 60.100781 273.89961 55.699219 265.59961 55.699219 L 255 55.699219 z M 334 55.699219 C 323.1 55.699219 319.5 58.500391 319.5 70.400391 L 319.5 105.19922 C 319.5 111.99922 328.59961 111.99922 328.59961 105.19922 L 329.40039 73.400391 L 331.69922 73.400391 L 331.69922 160.59961 C 331.69922 169.59961 344.09961 169.39961 344.09961 160.59961 L 345 110 L 347.5 110 L 348.30078 160.59961 C 348.30078 169.39961 360.69922 169.59961 360.69922 160.59961 L 360.69922 73.400391 L 363.09961 73.400391 L 363.90039 105.19922 C 363.90039 111.99922 373 111.99922 373 105.19922 L 373 70.400391 C 373 58.500391 369.4 55.699219 358.5 55.699219 L 334 55.699219 z M 145.30078 67.699219 L 145.30078 89.5 L 113.30078 89.5 L 113.30078 110.09961 L 83.599609 110.09961 L 83.599609 129.5 L 52.699219 129.5 L 52.699219 151.19922 L 21.800781 151.19922 L 21.800781 173 L 176.19922 173 L 176.19922 67.699219 L 145.30078 67.699219 z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'u',
     '\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M177.69,0H22.31A22.34,22.34,0,0,0,0,22.31V177.69A22.34,22.34,0,0,0,22.31,200H177.69A22.34,22.34,0,0,0,200,177.69V22.31A22.34,22.34,0,0,0,177.69,0ZM195,177.69A17.37,17.37,0,0,1,177.69,195H22.31A17.37,17.37,0,0,1,5,177.69V22.31A17.37,17.37,0,0,1,22.31,5H177.69A17.37,17.37,0,0,1,195,22.31ZM145.32,67.74h30.89V173H21.77V151.25H52.66V129.51H83.55V110.07h29.74V89.48h32ZM28.21,63.16H17.63L35.36,36.85,53.09,63.16H42.51V82.61H28.21ZM178.5,34.28a4.57,4.57,0,0,1-4.58,4.58H160.48c-6,0-8.72,1.22-14,4.89-5.6,3.92-117.45,86.89-118.58,87.72a4.57,4.57,0,1,1-5.45-7.35c4.61-3.42,113.08-83.88,118.79-87.88,6.2-4.34,10.88-6.55,19.21-6.55h13.44A4.57,4.57,0,0,1,178.5,34.28Z"\n    />\n  </svg>\n'
   ),
-  ot.set(
+  gt.set(
     'upstairs',
     '\n  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">\n    <path\n      class="icon bulk" fill="$stickerColor"\n      d="M177.69,0H22.31A22.34,22.34,0,0,0,0,22.31V177.69A22.34,22.34,0,0,0,22.31,200H177.69A22.34,22.34,0,0,0,200,177.69V22.31A22.34,22.34,0,0,0,177.69,0ZM195,177.69A17.37,17.37,0,0,1,177.69,195H22.31A17.37,17.37,0,0,1,5,177.69V22.31A17.37,17.37,0,0,1,22.31,5H177.69A17.37,17.37,0,0,1,195,22.31ZM145.32,67.74h30.89V173H21.77V151.25H52.66V129.51H83.55V110.07h29.74V89.48h32ZM28.21,63.16H17.63L35.36,36.85,53.09,63.16H42.51V82.61H28.21ZM178.5,34.28a4.57,4.57,0,0,1-4.58,4.58H160.48c-6,0-8.72,1.22-14,4.89-5.6,3.92-117.45,86.89-118.58,87.72a4.57,4.57,0,1,1-5.45-7.35c4.61-3.42,113.08-83.88,118.79-87.88,6.2-4.34,10.88-6.55,19.21-6.55h13.44A4.57,4.57,0,0,1,178.5,34.28Z"\n    />\n  </svg>\n'
   );
-/*! @license DOMPurify 3.2.6 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/3.2.6/LICENSE */
-const { entries: st, setPrototypeOf: at, isFrozen: nt, getPrototypeOf: ct, getOwnPropertyDescriptor: dt } = Object;
-let { freeze: ht, seal: gt, create: pt } = Object,
-  { apply: mt, construct: Ct } = 'undefined' != typeof Reflect && Reflect;
-ht ||
-  (ht = function (e) {
+/*! @license DOMPurify 3.3.1 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/3.3.1/LICENSE */
+const { entries: pt, setPrototypeOf: mt, isFrozen: Ct, getPrototypeOf: vt, getOwnPropertyDescriptor: ut } = Object;
+let { freeze: kt, seal: wt, create: ft } = Object,
+  { apply: bt, construct: Lt } = 'undefined' != typeof Reflect && Reflect;
+kt ||
+  (kt = function (e) {
     return e;
   }),
-  gt ||
-    (gt = function (e) {
+  wt ||
+    (wt = function (e) {
       return e;
     }),
-  mt ||
-    (mt = function (e, t, r) {
-      return e.apply(t, r);
+  bt ||
+    (bt = function (e, t) {
+      for (var l = arguments.length, i = new Array(l > 2 ? l - 2 : 0), r = 2; r < l; r++) i[r - 2] = arguments[r];
+      return e.apply(t, i);
     }),
-  Ct ||
-    (Ct = function (e, t) {
-      return new e(...t);
+  Lt ||
+    (Lt = function (e) {
+      for (var t = arguments.length, l = new Array(t > 1 ? t - 1 : 0), i = 1; i < t; i++) l[i - 1] = arguments[i];
+      return new e(...l);
     });
-const kt = Tt(Array.prototype.forEach),
-  ut = Tt(Array.prototype.lastIndexOf),
-  ft = Tt(Array.prototype.pop),
-  vt = Tt(Array.prototype.push),
-  wt = Tt(Array.prototype.splice),
-  bt = Tt(String.prototype.toLowerCase),
-  Lt = Tt(String.prototype.toString),
-  Mt = Tt(String.prototype.match),
-  zt = Tt(String.prototype.replace),
-  xt = Tt(String.prototype.indexOf),
-  yt = Tt(String.prototype.trim),
-  St = Tt(Object.prototype.hasOwnProperty),
-  Ht = Tt(RegExp.prototype.test),
-  $t =
-    ((Vt = TypeError),
+const Mt = It(Array.prototype.forEach),
+  zt = It(Array.prototype.lastIndexOf),
+  xt = It(Array.prototype.pop),
+  yt = It(Array.prototype.push),
+  St = It(Array.prototype.splice),
+  $t = It(String.prototype.toLowerCase),
+  Ht = It(String.prototype.toString),
+  Vt = It(String.prototype.match),
+  Tt = It(String.prototype.replace),
+  At = It(String.prototype.indexOf),
+  Et = It(String.prototype.trim),
+  Bt = It(Object.prototype.hasOwnProperty),
+  _t = It(RegExp.prototype.test),
+  Wt =
+    ((Pt = TypeError),
     function () {
-      for (var e = arguments.length, t = new Array(e), r = 0; r < e; r++) t[r] = arguments[r];
-      return Ct(Vt, t);
+      for (var e = arguments.length, t = new Array(e), l = 0; l < e; l++) t[l] = arguments[l];
+      return Lt(Pt, t);
     });
-var Vt;
-function Tt(e) {
+var Pt;
+function It(e) {
   return function (t) {
     t instanceof RegExp && (t.lastIndex = 0);
-    for (var r = arguments.length, i = new Array(r > 1 ? r - 1 : 0), l = 1; l < r; l++) i[l - 1] = arguments[l];
-    return mt(e, t, i);
+    for (var l = arguments.length, i = new Array(l > 1 ? l - 1 : 0), r = 1; r < l; r++) i[r - 1] = arguments[r];
+    return bt(e, t, i);
   };
 }
-function At(e, t) {
-  let r = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : bt;
-  at && at(e, null);
+function Nt(e, t) {
+  let l = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : $t;
+  mt && mt(e, null);
   let i = t.length;
   for (; i--; ) {
-    let l = t[i];
-    if ('string' == typeof l) {
-      const e = r(l);
-      e !== l && (nt(t) || (t[i] = e), (l = e));
+    let r = t[i];
+    if ('string' == typeof r) {
+      const e = l(r);
+      e !== r && (Ct(t) || (t[i] = e), (r = e));
     }
-    e[l] = !0;
+    e[r] = !0;
   }
   return e;
 }
-function Et(e) {
+function Dt(e) {
   for (let t = 0; t < e.length; t++) {
-    St(e, t) || (e[t] = null);
+    Bt(e, t) || (e[t] = null);
   }
   return e;
 }
-function _t(e) {
-  const t = pt(null);
-  for (const [r, i] of st(e)) {
-    St(e, r) &&
+function Rt(e) {
+  const t = ft(null);
+  for (const [l, i] of pt(e)) {
+    Bt(e, l) &&
       (Array.isArray(i)
-        ? (t[r] = Et(i))
+        ? (t[l] = Dt(i))
         : i && 'object' == typeof i && i.constructor === Object
-        ? (t[r] = _t(i))
-        : (t[r] = i));
+        ? (t[l] = Rt(i))
+        : (t[l] = i));
   }
   return t;
 }
-function Bt(e, t) {
+function jt(e, t) {
   for (; null !== e; ) {
-    const r = dt(e, t);
-    if (r) {
-      if (r.get) return Tt(r.get);
-      if ('function' == typeof r.value) return Tt(r.value);
+    const l = ut(e, t);
+    if (l) {
+      if (l.get) return It(l.get);
+      if ('function' == typeof l.value) return It(l.value);
     }
-    e = ct(e);
+    e = vt(e);
   }
   return function () {
     return null;
   };
 }
-const Wt = ht([
+const Ot = kt([
     'a',
     'abbr',
     'acronym',
@@ -1943,9 +2131,11 @@ const Wt = ht([
     'ruby',
     's',
     'samp',
+    'search',
     'section',
     'select',
     'shadow',
+    'slot',
     'small',
     'source',
     'spacer',
@@ -1974,7 +2164,7 @@ const Wt = ht([
     'video',
     'wbr',
   ]),
-  Pt = ht([
+  Ft = kt([
     'svg',
     'a',
     'altglyph',
@@ -1988,6 +2178,8 @@ const Wt = ht([
     'defs',
     'desc',
     'ellipse',
+    'enterkeyhint',
+    'exportparts',
     'filter',
     'font',
     'g',
@@ -1995,12 +2187,14 @@ const Wt = ht([
     'glyphref',
     'hkern',
     'image',
+    'inputmode',
     'line',
     'lineargradient',
     'marker',
     'mask',
     'metadata',
     'mpath',
+    'part',
     'path',
     'pattern',
     'polygon',
@@ -2019,7 +2213,7 @@ const Wt = ht([
     'view',
     'vkern',
   ]),
-  It = ht([
+  Zt = kt([
     'feBlend',
     'feColorMatrix',
     'feComponentTransfer',
@@ -2046,7 +2240,7 @@ const Wt = ht([
     'feTile',
     'feTurbulence',
   ]),
-  Nt = ht([
+  Ut = kt([
     'animate',
     'color-profile',
     'cursor',
@@ -2070,7 +2264,7 @@ const Wt = ht([
     'unknown',
     'use',
   ]),
-  jt = ht([
+  Gt = kt([
     'math',
     'menclose',
     'merror',
@@ -2102,7 +2296,7 @@ const Wt = ht([
     'munderover',
     'mprescripts',
   ]),
-  Dt = ht([
+  qt = kt([
     'maction',
     'maligngroup',
     'malignmark',
@@ -2119,8 +2313,8 @@ const Wt = ht([
     'mprescripts',
     'none',
   ]),
-  Rt = ht(['#text']),
-  Ot = ht([
+  Kt = kt(['#text']),
+  Yt = kt([
     'accept',
     'action',
     'align',
@@ -2157,6 +2351,7 @@ const Wt = ht([
     'draggable',
     'enctype',
     'enterkeyhint',
+    'exportparts',
     'face',
     'for',
     'headers',
@@ -2166,6 +2361,7 @@ const Wt = ht([
     'href',
     'hreflang',
     'id',
+    'inert',
     'inputmode',
     'integrity',
     'ismap',
@@ -2191,6 +2387,7 @@ const Wt = ht([
     'nowrap',
     'open',
     'optimum',
+    'part',
     'pattern',
     'placeholder',
     'playsinline',
@@ -2215,6 +2412,7 @@ const Wt = ht([
     'shape',
     'size',
     'sizes',
+    'slot',
     'span',
     'srclang',
     'start',
@@ -2235,7 +2433,7 @@ const Wt = ht([
     'xmlns',
     'slot',
   ]),
-  Zt = ht([
+  Jt = kt([
     'accent-height',
     'accumulate',
     'additive',
@@ -2329,6 +2527,7 @@ const Wt = ht([
     'maskunits',
     'max',
     'mask',
+    'mask-type',
     'media',
     'method',
     'mode',
@@ -2424,7 +2623,7 @@ const Wt = ht([
     'z',
     'zoomandpan',
   ]),
-  Ft = ht([
+  Xt = kt([
     'accent',
     'accentunder',
     'align',
@@ -2479,62 +2678,50 @@ const Wt = ht([
     'width',
     'xmlns',
   ]),
-  Ut = ht(['xlink:href', 'xml:id', 'xlink:title', 'xml:space', 'xmlns:xlink']),
-  qt = gt(/\{\{[\w\W]*|[\w\W]*\}\}/gm),
-  Gt = gt(/<%[\w\W]*|[\w\W]*%>/gm),
-  Kt = gt(/\$\{[\w\W]*/gm),
-  Yt = gt(/^data-[\-\w.\u00B7-\uFFFF]+$/),
-  Jt = gt(/^aria-[\-\w]+$/),
-  Xt = gt(/^(?:(?:(?:f|ht)tps?|mailto|tel|callto|sms|cid|xmpp|matrix):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i),
-  Qt = gt(/^(?:\w+script|data):/i),
-  er = gt(/[\u0000-\u0020\u00A0\u1680\u180E\u2000-\u2029\u205F\u3000]/g),
-  tr = gt(/^html$/i),
-  rr = gt(/^[a-z][.\w]*(-[.\w]+)+$/i);
-var ir = Object.freeze({
+  Qt = kt(['xlink:href', 'xml:id', 'xlink:title', 'xml:space', 'xmlns:xlink']),
+  el = wt(/\{\{[\w\W]*|[\w\W]*\}\}/gm),
+  tl = wt(/<%[\w\W]*|[\w\W]*%>/gm),
+  ll = wt(/\$\{[\w\W]*/gm),
+  il = wt(/^data-[\-\w.\u00B7-\uFFFF]+$/),
+  rl = wt(/^aria-[\-\w]+$/),
+  ol = wt(/^(?:(?:(?:f|ht)tps?|mailto|tel|callto|sms|cid|xmpp|matrix):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i),
+  sl = wt(/^(?:\w+script|data):/i),
+  nl = wt(/[\u0000-\u0020\u00A0\u1680\u180E\u2000-\u2029\u205F\u3000]/g),
+  al = wt(/^html$/i),
+  cl = wt(/^[a-z][.\w]*(-[.\w]+)+$/i);
+var dl = Object.freeze({
   __proto__: null,
-  ARIA_ATTR: Jt,
-  ATTR_WHITESPACE: er,
-  CUSTOM_ELEMENT: rr,
-  DATA_ATTR: Yt,
-  DOCTYPE_NAME: tr,
-  ERB_EXPR: Gt,
-  IS_ALLOWED_URI: Xt,
-  IS_SCRIPT_OR_DATA: Qt,
-  MUSTACHE_EXPR: qt,
-  TMPLIT_EXPR: Kt,
+  ARIA_ATTR: rl,
+  ATTR_WHITESPACE: nl,
+  CUSTOM_ELEMENT: cl,
+  DATA_ATTR: il,
+  DOCTYPE_NAME: al,
+  ERB_EXPR: tl,
+  IS_ALLOWED_URI: ol,
+  IS_SCRIPT_OR_DATA: sl,
+  MUSTACHE_EXPR: el,
+  TMPLIT_EXPR: ll,
 });
-const lr = 1,
-  or = 3,
-  sr = 7,
-  ar = 8,
-  nr = 9,
-  cr = function () {
+const hl = 1,
+  gl = 3,
+  pl = 7,
+  ml = 8,
+  Cl = 9,
+  vl = function () {
     return 'undefined' == typeof window ? null : window;
-  },
-  dr = function (e, t) {
-    if ('object' != typeof e || 'function' != typeof e.createPolicy) return null;
-    let r = null;
-    const i = 'data-tt-policy-suffix';
-    t && t.hasAttribute(i) && (r = t.getAttribute(i));
-    const l = 'dompurify' + (r ? '#' + r : '');
-    try {
-      return e.createPolicy(l, { createHTML: e => e, createScriptURL: e => e });
-    } catch (e) {
-      return console.warn('TrustedTypes policy ' + l + ' could not be created.'), null;
-    }
   };
-var hr = (function e() {
-  let t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : cr();
-  const r = t => e(t);
-  if (((r.version = '3.2.6'), (r.removed = []), !t || !t.document || t.document.nodeType !== nr || !t.Element))
-    return (r.isSupported = !1), r;
+var ul = (function e() {
+  let t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : vl();
+  const l = t => e(t);
+  if (((l.version = '3.3.1'), (l.removed = []), !t || !t.document || t.document.nodeType !== Cl || !t.Element))
+    return (l.isSupported = !1), l;
   let { document: i } = t;
-  const l = i,
-    o = l.currentScript,
+  const r = i,
+    o = r.currentScript,
     {
       DocumentFragment: s,
-      HTMLTemplateElement: a,
-      Node: n,
+      HTMLTemplateElement: n,
+      Node: a,
       Element: c,
       NodeFilter: d,
       NamedNodeMap: h = t.NamedNodeMap || t.MozNamedAttrMap,
@@ -2543,20 +2730,20 @@ var hr = (function e() {
       trustedTypes: m,
     } = t,
     C = c.prototype,
-    k = Bt(C, 'cloneNode'),
-    u = Bt(C, 'remove'),
-    f = Bt(C, 'nextSibling'),
-    v = Bt(C, 'childNodes'),
-    w = Bt(C, 'parentNode');
-  if ('function' == typeof a) {
+    v = jt(C, 'cloneNode'),
+    u = jt(C, 'remove'),
+    k = jt(C, 'nextSibling'),
+    w = jt(C, 'childNodes'),
+    f = jt(C, 'parentNode');
+  if ('function' == typeof n) {
     const e = i.createElement('template');
     e.content && e.content.ownerDocument && (i = e.content.ownerDocument);
   }
   let b,
     L = '';
   const { implementation: M, createNodeIterator: z, createDocumentFragment: x, getElementsByTagName: y } = i,
-    { importNode: S } = l;
-  let H = {
+    { importNode: S } = r;
+  let $ = {
     afterSanitizeAttributes: [],
     afterSanitizeElements: [],
     afterSanitizeShadowDOM: [],
@@ -2567,51 +2754,56 @@ var hr = (function e() {
     uponSanitizeElement: [],
     uponSanitizeShadowNode: [],
   };
-  r.isSupported = 'function' == typeof st && 'function' == typeof w && M && void 0 !== M.createHTMLDocument;
+  l.isSupported = 'function' == typeof pt && 'function' == typeof f && M && void 0 !== M.createHTMLDocument;
   const {
-    MUSTACHE_EXPR: $,
+    MUSTACHE_EXPR: H,
     ERB_EXPR: V,
     TMPLIT_EXPR: T,
     DATA_ATTR: A,
     ARIA_ATTR: E,
-    IS_SCRIPT_OR_DATA: _,
-    ATTR_WHITESPACE: B,
+    IS_SCRIPT_OR_DATA: B,
+    ATTR_WHITESPACE: _,
     CUSTOM_ELEMENT: W,
-  } = ir;
-  let { IS_ALLOWED_URI: P } = ir,
+  } = dl;
+  let { IS_ALLOWED_URI: P } = dl,
     I = null;
-  const N = At({}, [...Wt, ...Pt, ...It, ...jt, ...Rt]);
-  let j = null;
-  const D = At({}, [...Ot, ...Zt, ...Ft, ...Ut]);
-  let R = Object.seal(
-      pt(null, {
+  const N = Nt({}, [...Ot, ...Ft, ...Zt, ...Gt, ...Kt]);
+  let D = null;
+  const R = Nt({}, [...Yt, ...Jt, ...Xt, ...Qt]);
+  let j = Object.seal(
+      ft(null, {
         tagNameCheck: { writable: !0, configurable: !1, enumerable: !0, value: null },
         attributeNameCheck: { writable: !0, configurable: !1, enumerable: !0, value: null },
         allowCustomizedBuiltInElements: { writable: !0, configurable: !1, enumerable: !0, value: !1 },
       })
     ),
     O = null,
-    Z = null,
-    F = !0,
-    U = !0,
-    q = !1,
+    F = null;
+  const Z = Object.seal(
+    ft(null, {
+      tagCheck: { writable: !0, configurable: !1, enumerable: !0, value: null },
+      attributeCheck: { writable: !0, configurable: !1, enumerable: !0, value: null },
+    })
+  );
+  let U = !0,
     G = !0,
-    K = !1,
-    Y = !0,
-    J = !1,
+    q = !1,
+    K = !0,
+    Y = !1,
+    J = !0,
     X = !1,
     Q = !1,
     ee = !1,
     te = !1,
-    re = !1,
-    ie = !0,
-    le = !1;
-  const oe = 'user-content-';
-  let se = !0,
-    ae = !1,
-    ne = {},
+    le = !1,
+    ie = !1,
+    re = !0,
+    oe = !1,
+    se = !0,
+    ne = !1,
+    ae = {},
     ce = null;
-  const de = At({}, [
+  const de = Nt({}, [
     'annotation-xml',
     'audio',
     'colgroup',
@@ -2639,9 +2831,9 @@ var hr = (function e() {
     'xmp',
   ]);
   let he = null;
-  const ge = At({}, ['audio', 'video', 'img', 'source', 'image', 'track']);
+  const ge = Nt({}, ['audio', 'video', 'img', 'source', 'image', 'track']);
   let pe = null;
-  const me = At({}, [
+  const me = Nt({}, [
       'alt',
       'class',
       'for',
@@ -2658,176 +2850,172 @@ var hr = (function e() {
       'xmlns',
     ]),
     Ce = 'http://www.w3.org/1998/Math/MathML',
-    ke = 'http://www.w3.org/2000/svg',
+    ve = 'http://www.w3.org/2000/svg',
     ue = 'http://www.w3.org/1999/xhtml';
-  let fe = ue,
-    ve = !1,
-    we = null;
-  const be = At({}, [Ce, ke, ue], Lt);
-  let Le = At({}, ['mi', 'mo', 'mn', 'ms', 'mtext']),
-    Me = At({}, ['annotation-xml']);
-  const ze = At({}, ['title', 'style', 'font', 'a', 'script']);
+  let ke = ue,
+    we = !1,
+    fe = null;
+  const be = Nt({}, [Ce, ve, ue], Ht);
+  let Le = Nt({}, ['mi', 'mo', 'mn', 'ms', 'mtext']),
+    Me = Nt({}, ['annotation-xml']);
+  const ze = Nt({}, ['title', 'style', 'font', 'a', 'script']);
   let xe = null;
-  const ye = ['application/xhtml+xml', 'text/html'],
-    Se = 'text/html';
-  let He = null,
+  const ye = ['application/xhtml+xml', 'text/html'];
+  let Se = null,
     $e = null;
-  const Ve = i.createElement('form'),
-    Te = function (e) {
+  const He = i.createElement('form'),
+    Ve = function (e) {
       return e instanceof RegExp || e instanceof Function;
     },
-    Ae = function () {
+    Te = function () {
       let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
       if (!$e || $e !== e) {
         if (
           ((e && 'object' == typeof e) || (e = {}),
-          (e = _t(e)),
-          (xe = -1 === ye.indexOf(e.PARSER_MEDIA_TYPE) ? Se : e.PARSER_MEDIA_TYPE),
-          (He = 'application/xhtml+xml' === xe ? Lt : bt),
-          (I = St(e, 'ALLOWED_TAGS') ? At({}, e.ALLOWED_TAGS, He) : N),
-          (j = St(e, 'ALLOWED_ATTR') ? At({}, e.ALLOWED_ATTR, He) : D),
-          (we = St(e, 'ALLOWED_NAMESPACES') ? At({}, e.ALLOWED_NAMESPACES, Lt) : be),
-          (pe = St(e, 'ADD_URI_SAFE_ATTR') ? At(_t(me), e.ADD_URI_SAFE_ATTR, He) : me),
-          (he = St(e, 'ADD_DATA_URI_TAGS') ? At(_t(ge), e.ADD_DATA_URI_TAGS, He) : ge),
-          (ce = St(e, 'FORBID_CONTENTS') ? At({}, e.FORBID_CONTENTS, He) : de),
-          (O = St(e, 'FORBID_TAGS') ? At({}, e.FORBID_TAGS, He) : _t({})),
-          (Z = St(e, 'FORBID_ATTR') ? At({}, e.FORBID_ATTR, He) : _t({})),
-          (ne = !!St(e, 'USE_PROFILES') && e.USE_PROFILES),
-          (F = !1 !== e.ALLOW_ARIA_ATTR),
-          (U = !1 !== e.ALLOW_DATA_ATTR),
+          (e = Rt(e)),
+          (xe = -1 === ye.indexOf(e.PARSER_MEDIA_TYPE) ? 'text/html' : e.PARSER_MEDIA_TYPE),
+          (Se = 'application/xhtml+xml' === xe ? Ht : $t),
+          (I = Bt(e, 'ALLOWED_TAGS') ? Nt({}, e.ALLOWED_TAGS, Se) : N),
+          (D = Bt(e, 'ALLOWED_ATTR') ? Nt({}, e.ALLOWED_ATTR, Se) : R),
+          (fe = Bt(e, 'ALLOWED_NAMESPACES') ? Nt({}, e.ALLOWED_NAMESPACES, Ht) : be),
+          (pe = Bt(e, 'ADD_URI_SAFE_ATTR') ? Nt(Rt(me), e.ADD_URI_SAFE_ATTR, Se) : me),
+          (he = Bt(e, 'ADD_DATA_URI_TAGS') ? Nt(Rt(ge), e.ADD_DATA_URI_TAGS, Se) : ge),
+          (ce = Bt(e, 'FORBID_CONTENTS') ? Nt({}, e.FORBID_CONTENTS, Se) : de),
+          (O = Bt(e, 'FORBID_TAGS') ? Nt({}, e.FORBID_TAGS, Se) : Rt({})),
+          (F = Bt(e, 'FORBID_ATTR') ? Nt({}, e.FORBID_ATTR, Se) : Rt({})),
+          (ae = !!Bt(e, 'USE_PROFILES') && e.USE_PROFILES),
+          (U = !1 !== e.ALLOW_ARIA_ATTR),
+          (G = !1 !== e.ALLOW_DATA_ATTR),
           (q = e.ALLOW_UNKNOWN_PROTOCOLS || !1),
-          (G = !1 !== e.ALLOW_SELF_CLOSE_IN_ATTR),
-          (K = e.SAFE_FOR_TEMPLATES || !1),
-          (Y = !1 !== e.SAFE_FOR_XML),
-          (J = e.WHOLE_DOCUMENT || !1),
-          (ee = e.RETURN_DOM || !1),
-          (te = e.RETURN_DOM_FRAGMENT || !1),
-          (re = e.RETURN_TRUSTED_TYPE || !1),
-          (Q = e.FORCE_BODY || !1),
-          (ie = !1 !== e.SANITIZE_DOM),
-          (le = e.SANITIZE_NAMED_PROPS || !1),
+          (K = !1 !== e.ALLOW_SELF_CLOSE_IN_ATTR),
+          (Y = e.SAFE_FOR_TEMPLATES || !1),
+          (J = !1 !== e.SAFE_FOR_XML),
+          (X = e.WHOLE_DOCUMENT || !1),
+          (te = e.RETURN_DOM || !1),
+          (le = e.RETURN_DOM_FRAGMENT || !1),
+          (ie = e.RETURN_TRUSTED_TYPE || !1),
+          (ee = e.FORCE_BODY || !1),
+          (re = !1 !== e.SANITIZE_DOM),
+          (oe = e.SANITIZE_NAMED_PROPS || !1),
           (se = !1 !== e.KEEP_CONTENT),
-          (ae = e.IN_PLACE || !1),
-          (P = e.ALLOWED_URI_REGEXP || Xt),
-          (fe = e.NAMESPACE || ue),
+          (ne = e.IN_PLACE || !1),
+          (P = e.ALLOWED_URI_REGEXP || ol),
+          (ke = e.NAMESPACE || ue),
           (Le = e.MATHML_TEXT_INTEGRATION_POINTS || Le),
           (Me = e.HTML_INTEGRATION_POINTS || Me),
-          (R = e.CUSTOM_ELEMENT_HANDLING || {}),
+          (j = e.CUSTOM_ELEMENT_HANDLING || {}),
           e.CUSTOM_ELEMENT_HANDLING &&
-            Te(e.CUSTOM_ELEMENT_HANDLING.tagNameCheck) &&
-            (R.tagNameCheck = e.CUSTOM_ELEMENT_HANDLING.tagNameCheck),
+            Ve(e.CUSTOM_ELEMENT_HANDLING.tagNameCheck) &&
+            (j.tagNameCheck = e.CUSTOM_ELEMENT_HANDLING.tagNameCheck),
           e.CUSTOM_ELEMENT_HANDLING &&
-            Te(e.CUSTOM_ELEMENT_HANDLING.attributeNameCheck) &&
-            (R.attributeNameCheck = e.CUSTOM_ELEMENT_HANDLING.attributeNameCheck),
+            Ve(e.CUSTOM_ELEMENT_HANDLING.attributeNameCheck) &&
+            (j.attributeNameCheck = e.CUSTOM_ELEMENT_HANDLING.attributeNameCheck),
           e.CUSTOM_ELEMENT_HANDLING &&
             'boolean' == typeof e.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements &&
-            (R.allowCustomizedBuiltInElements = e.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements),
-          K && (U = !1),
-          te && (ee = !0),
-          ne &&
-            ((I = At({}, Rt)),
-            (j = []),
-            !0 === ne.html && (At(I, Wt), At(j, Ot)),
-            !0 === ne.svg && (At(I, Pt), At(j, Zt), At(j, Ut)),
-            !0 === ne.svgFilters && (At(I, It), At(j, Zt), At(j, Ut)),
-            !0 === ne.mathMl && (At(I, jt), At(j, Ft), At(j, Ut))),
-          e.ADD_TAGS && (I === N && (I = _t(I)), At(I, e.ADD_TAGS, He)),
-          e.ADD_ATTR && (j === D && (j = _t(j)), At(j, e.ADD_ATTR, He)),
-          e.ADD_URI_SAFE_ATTR && At(pe, e.ADD_URI_SAFE_ATTR, He),
-          e.FORBID_CONTENTS && (ce === de && (ce = _t(ce)), At(ce, e.FORBID_CONTENTS, He)),
+            (j.allowCustomizedBuiltInElements = e.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements),
+          Y && (G = !1),
+          le && (te = !0),
+          ae &&
+            ((I = Nt({}, Kt)),
+            (D = []),
+            !0 === ae.html && (Nt(I, Ot), Nt(D, Yt)),
+            !0 === ae.svg && (Nt(I, Ft), Nt(D, Jt), Nt(D, Qt)),
+            !0 === ae.svgFilters && (Nt(I, Zt), Nt(D, Jt), Nt(D, Qt)),
+            !0 === ae.mathMl && (Nt(I, Gt), Nt(D, Xt), Nt(D, Qt))),
+          e.ADD_TAGS &&
+            ('function' == typeof e.ADD_TAGS
+              ? (Z.tagCheck = e.ADD_TAGS)
+              : (I === N && (I = Rt(I)), Nt(I, e.ADD_TAGS, Se))),
+          e.ADD_ATTR &&
+            ('function' == typeof e.ADD_ATTR
+              ? (Z.attributeCheck = e.ADD_ATTR)
+              : (D === R && (D = Rt(D)), Nt(D, e.ADD_ATTR, Se))),
+          e.ADD_URI_SAFE_ATTR && Nt(pe, e.ADD_URI_SAFE_ATTR, Se),
+          e.FORBID_CONTENTS && (ce === de && (ce = Rt(ce)), Nt(ce, e.FORBID_CONTENTS, Se)),
+          e.ADD_FORBID_CONTENTS && (ce === de && (ce = Rt(ce)), Nt(ce, e.ADD_FORBID_CONTENTS, Se)),
           se && (I['#text'] = !0),
-          J && At(I, ['html', 'head', 'body']),
-          I.table && (At(I, ['tbody']), delete O.tbody),
+          X && Nt(I, ['html', 'head', 'body']),
+          I.table && (Nt(I, ['tbody']), delete O.tbody),
           e.TRUSTED_TYPES_POLICY)
         ) {
           if ('function' != typeof e.TRUSTED_TYPES_POLICY.createHTML)
-            throw $t('TRUSTED_TYPES_POLICY configuration option must provide a "createHTML" hook.');
+            throw Wt('TRUSTED_TYPES_POLICY configuration option must provide a "createHTML" hook.');
           if ('function' != typeof e.TRUSTED_TYPES_POLICY.createScriptURL)
-            throw $t('TRUSTED_TYPES_POLICY configuration option must provide a "createScriptURL" hook.');
+            throw Wt('TRUSTED_TYPES_POLICY configuration option must provide a "createScriptURL" hook.');
           (b = e.TRUSTED_TYPES_POLICY), (L = b.createHTML(''));
-        } else void 0 === b && (b = dr(m, o)), null !== b && 'string' == typeof L && (L = b.createHTML(''));
-        ht && ht(e), ($e = e);
+        } else
+          void 0 === b &&
+            (b = (function (e, t) {
+              if ('object' != typeof e || 'function' != typeof e.createPolicy) return null;
+              let l = null;
+              const i = 'data-tt-policy-suffix';
+              t && t.hasAttribute(i) && (l = t.getAttribute(i));
+              const r = 'dompurify' + (l ? '#' + l : '');
+              try {
+                return e.createPolicy(r, { createHTML: e => e, createScriptURL: e => e });
+              } catch (e) {
+                return console.warn('TrustedTypes policy ' + r + ' could not be created.'), null;
+              }
+            })(m, o)),
+            null !== b && 'string' == typeof L && (L = b.createHTML(''));
+        kt && kt(e), ($e = e);
       }
     },
-    Ee = At({}, [...Pt, ...It, ...Nt]),
-    _e = At({}, [...jt, ...Dt]),
+    Ae = Nt({}, [...Ft, ...Zt, ...Ut]),
+    Ee = Nt({}, [...Gt, ...qt]),
     Be = function (e) {
-      let t = w(e);
-      (t && t.tagName) || (t = { namespaceURI: fe, tagName: 'template' });
-      const r = bt(e.tagName),
-        i = bt(t.tagName);
-      return (
-        !!we[e.namespaceURI] &&
-        (e.namespaceURI === ke
-          ? t.namespaceURI === ue
-            ? 'svg' === r
-            : t.namespaceURI === Ce
-            ? 'svg' === r && ('annotation-xml' === i || Le[i])
-            : Boolean(Ee[r])
-          : e.namespaceURI === Ce
-          ? t.namespaceURI === ue
-            ? 'math' === r
-            : t.namespaceURI === ke
-            ? 'math' === r && Me[i]
-            : Boolean(_e[r])
-          : e.namespaceURI === ue
-          ? !(t.namespaceURI === ke && !Me[i]) && !(t.namespaceURI === Ce && !Le[i]) && !_e[r] && (ze[r] || !Ee[r])
-          : !('application/xhtml+xml' !== xe || !we[e.namespaceURI]))
-      );
-    },
-    We = function (e) {
-      vt(r.removed, { element: e });
+      yt(l.removed, { element: e });
       try {
-        w(e).removeChild(e);
+        f(e).removeChild(e);
       } catch (t) {
         u(e);
       }
     },
-    Pe = function (e, t) {
+    _e = function (e, t) {
       try {
-        vt(r.removed, { attribute: t.getAttributeNode(e), from: t });
+        yt(l.removed, { attribute: t.getAttributeNode(e), from: t });
       } catch (e) {
-        vt(r.removed, { attribute: null, from: t });
+        yt(l.removed, { attribute: null, from: t });
       }
       if ((t.removeAttribute(e), 'is' === e))
-        if (ee || te)
+        if (te || le)
           try {
-            We(t);
+            Be(t);
           } catch (e) {}
         else
           try {
             t.setAttribute(e, '');
           } catch (e) {}
     },
-    Ie = function (e) {
+    We = function (e) {
       let t = null,
-        r = null;
-      if (Q) e = '<remove></remove>' + e;
+        l = null;
+      if (ee) e = '<remove></remove>' + e;
       else {
-        const t = Mt(e, /^[\r\n\t ]+/);
-        r = t && t[0];
+        const t = Vt(e, /^[\r\n\t ]+/);
+        l = t && t[0];
       }
       'application/xhtml+xml' === xe &&
-        fe === ue &&
+        ke === ue &&
         (e = '<html xmlns="http://www.w3.org/1999/xhtml"><head></head><body>' + e + '</body></html>');
-      const l = b ? b.createHTML(e) : e;
-      if (fe === ue)
+      const r = b ? b.createHTML(e) : e;
+      if (ke === ue)
         try {
-          t = new p().parseFromString(l, xe);
+          t = new p().parseFromString(r, xe);
         } catch (e) {}
       if (!t || !t.documentElement) {
-        t = M.createDocument(fe, 'template', null);
+        t = M.createDocument(ke, 'template', null);
         try {
-          t.documentElement.innerHTML = ve ? L : l;
+          t.documentElement.innerHTML = we ? L : r;
         } catch (e) {}
       }
       const o = t.body || t.documentElement;
       return (
-        e && r && o.insertBefore(i.createTextNode(r), o.childNodes[0] || null),
-        fe === ue ? y.call(t, J ? 'html' : 'body')[0] : J ? t.documentElement : o
+        e && l && o.insertBefore(i.createTextNode(l), o.childNodes[0] || null),
+        ke === ue ? y.call(t, X ? 'html' : 'body')[0] : X ? t.documentElement : o
       );
     },
-    Ne = function (e) {
+    Pe = function (e) {
       return z.call(
         e.ownerDocument || e,
         e,
@@ -2835,7 +3023,7 @@ var hr = (function e() {
         null
       );
     },
-    je = function (e) {
+    Ie = function (e) {
       return (
         e instanceof g &&
         ('string' != typeof e.nodeName ||
@@ -2849,137 +3037,166 @@ var hr = (function e() {
           'function' != typeof e.hasChildNodes)
       );
     },
-    De = function (e) {
-      return 'function' == typeof n && e instanceof n;
+    Ne = function (e) {
+      return 'function' == typeof a && e instanceof a;
     };
-  function Re(e, t, i) {
-    kt(e, e => {
-      e.call(r, t, i, $e);
+  function De(e, t, i) {
+    Mt(e, e => {
+      e.call(l, t, i, $e);
     });
   }
-  const Oe = function (e) {
+  const Re = function (e) {
       let t = null;
-      if ((Re(H.beforeSanitizeElements, e, null), je(e))) return We(e), !0;
-      const i = He(e.nodeName);
+      if ((De($.beforeSanitizeElements, e, null), Ie(e))) return Be(e), !0;
+      const i = Se(e.nodeName);
       if (
-        (Re(H.uponSanitizeElement, e, { tagName: i, allowedTags: I }),
-        Y &&
+        (De($.uponSanitizeElement, e, { tagName: i, allowedTags: I }),
+        J &&
           e.hasChildNodes() &&
-          !De(e.firstElementChild) &&
-          Ht(/<[/\w!]/g, e.innerHTML) &&
-          Ht(/<[/\w!]/g, e.textContent))
+          !Ne(e.firstElementChild) &&
+          _t(/<[/\w!]/g, e.innerHTML) &&
+          _t(/<[/\w!]/g, e.textContent))
       )
-        return We(e), !0;
-      if (e.nodeType === sr) return We(e), !0;
-      if (Y && e.nodeType === ar && Ht(/<[/\w]/g, e.data)) return We(e), !0;
-      if (!I[i] || O[i]) {
-        if (!O[i] && Fe(i)) {
-          if (R.tagNameCheck instanceof RegExp && Ht(R.tagNameCheck, i)) return !1;
-          if (R.tagNameCheck instanceof Function && R.tagNameCheck(i)) return !1;
+        return Be(e), !0;
+      if (e.nodeType === pl) return Be(e), !0;
+      if (J && e.nodeType === ml && _t(/<[/\w]/g, e.data)) return Be(e), !0;
+      if (!(Z.tagCheck instanceof Function && Z.tagCheck(i)) && (!I[i] || O[i])) {
+        if (!O[i] && Oe(i)) {
+          if (j.tagNameCheck instanceof RegExp && _t(j.tagNameCheck, i)) return !1;
+          if (j.tagNameCheck instanceof Function && j.tagNameCheck(i)) return !1;
         }
         if (se && !ce[i]) {
-          const t = w(e) || e.parentNode,
-            r = v(e) || e.childNodes;
-          if (r && t) {
-            for (let i = r.length - 1; i >= 0; --i) {
-              const l = k(r[i], !0);
-              (l.__removalCount = (e.__removalCount || 0) + 1), t.insertBefore(l, f(e));
+          const t = f(e) || e.parentNode,
+            l = w(e) || e.childNodes;
+          if (l && t) {
+            for (let i = l.length - 1; i >= 0; --i) {
+              const r = v(l[i], !0);
+              (r.__removalCount = (e.__removalCount || 0) + 1), t.insertBefore(r, k(e));
             }
           }
         }
-        return We(e), !0;
+        return Be(e), !0;
       }
-      return e instanceof c && !Be(e)
-        ? (We(e), !0)
-        : ('noscript' !== i && 'noembed' !== i && 'noframes' !== i) || !Ht(/<\/no(script|embed|frames)/i, e.innerHTML)
-        ? (K &&
-            e.nodeType === or &&
+      return e instanceof c &&
+        !(function (e) {
+          let t = f(e);
+          (t && t.tagName) || (t = { namespaceURI: ke, tagName: 'template' });
+          const l = $t(e.tagName),
+            i = $t(t.tagName);
+          return (
+            !!fe[e.namespaceURI] &&
+            (e.namespaceURI === ve
+              ? t.namespaceURI === ue
+                ? 'svg' === l
+                : t.namespaceURI === Ce
+                ? 'svg' === l && ('annotation-xml' === i || Le[i])
+                : Boolean(Ae[l])
+              : e.namespaceURI === Ce
+              ? t.namespaceURI === ue
+                ? 'math' === l
+                : t.namespaceURI === ve
+                ? 'math' === l && Me[i]
+                : Boolean(Ee[l])
+              : e.namespaceURI === ue
+              ? !(t.namespaceURI === ve && !Me[i]) && !(t.namespaceURI === Ce && !Le[i]) && !Ee[l] && (ze[l] || !Ae[l])
+              : !('application/xhtml+xml' !== xe || !fe[e.namespaceURI]))
+          );
+        })(e)
+        ? (Be(e), !0)
+        : ('noscript' !== i && 'noembed' !== i && 'noframes' !== i) || !_t(/<\/no(script|embed|frames)/i, e.innerHTML)
+        ? (Y &&
+            e.nodeType === gl &&
             ((t = e.textContent),
-            kt([$, V, T], e => {
-              t = zt(t, e, ' ');
+            Mt([H, V, T], e => {
+              t = Tt(t, e, ' ');
             }),
-            e.textContent !== t && (vt(r.removed, { element: e.cloneNode() }), (e.textContent = t))),
-          Re(H.afterSanitizeElements, e, null),
+            e.textContent !== t && (yt(l.removed, { element: e.cloneNode() }), (e.textContent = t))),
+          De($.afterSanitizeElements, e, null),
           !1)
-        : (We(e), !0);
+        : (Be(e), !0);
     },
-    Ze = function (e, t, r) {
-      if (ie && ('id' === t || 'name' === t) && (r in i || r in Ve)) return !1;
-      if (U && !Z[t] && Ht(A, t));
-      else if (F && Ht(E, t));
-      else if (!j[t] || Z[t]) {
+    je = function (e, t, l) {
+      if (re && ('id' === t || 'name' === t) && (l in i || l in He)) return !1;
+      if (G && !F[t] && _t(A, t));
+      else if (U && _t(E, t));
+      else if (Z.attributeCheck instanceof Function && Z.attributeCheck(t, e));
+      else if (!D[t] || F[t]) {
         if (
           !(
-            (Fe(e) &&
-              ((R.tagNameCheck instanceof RegExp && Ht(R.tagNameCheck, e)) ||
-                (R.tagNameCheck instanceof Function && R.tagNameCheck(e))) &&
-              ((R.attributeNameCheck instanceof RegExp && Ht(R.attributeNameCheck, t)) ||
-                (R.attributeNameCheck instanceof Function && R.attributeNameCheck(t)))) ||
+            (Oe(e) &&
+              ((j.tagNameCheck instanceof RegExp && _t(j.tagNameCheck, e)) ||
+                (j.tagNameCheck instanceof Function && j.tagNameCheck(e))) &&
+              ((j.attributeNameCheck instanceof RegExp && _t(j.attributeNameCheck, t)) ||
+                (j.attributeNameCheck instanceof Function && j.attributeNameCheck(t, e)))) ||
             ('is' === t &&
-              R.allowCustomizedBuiltInElements &&
-              ((R.tagNameCheck instanceof RegExp && Ht(R.tagNameCheck, r)) ||
-                (R.tagNameCheck instanceof Function && R.tagNameCheck(r))))
+              j.allowCustomizedBuiltInElements &&
+              ((j.tagNameCheck instanceof RegExp && _t(j.tagNameCheck, l)) ||
+                (j.tagNameCheck instanceof Function && j.tagNameCheck(l))))
           )
         )
           return !1;
       } else if (pe[t]);
-      else if (Ht(P, zt(r, B, '')));
+      else if (_t(P, Tt(l, _, '')));
       else if (
         ('src' !== t && 'xlink:href' !== t && 'href' !== t) ||
         'script' === e ||
-        0 !== xt(r, 'data:') ||
+        0 !== At(l, 'data:') ||
         !he[e]
       ) {
-        if (q && !Ht(_, zt(r, B, '')));
-        else if (r) return !1;
+        if (q && !_t(B, Tt(l, _, '')));
+        else if (l) return !1;
       } else;
       return !0;
     },
-    Fe = function (e) {
-      return 'annotation-xml' !== e && Mt(e, W);
+    Oe = function (e) {
+      return 'annotation-xml' !== e && Vt(e, W);
     },
-    Ue = function (e) {
-      Re(H.beforeSanitizeAttributes, e, null);
+    Fe = function (e) {
+      De($.beforeSanitizeAttributes, e, null);
       const { attributes: t } = e;
-      if (!t || je(e)) return;
-      const i = { attrName: '', attrValue: '', keepAttr: !0, allowedAttributes: j, forceKeepAttr: void 0 };
-      let l = t.length;
-      for (; l--; ) {
-        const o = t[l],
-          { name: s, namespaceURI: a, value: n } = o,
-          c = He(s),
-          d = n;
-        let h = 'value' === s ? d : yt(d);
+      if (!t || Ie(e)) return;
+      const i = { attrName: '', attrValue: '', keepAttr: !0, allowedAttributes: D, forceKeepAttr: void 0 };
+      let r = t.length;
+      for (; r--; ) {
+        const o = t[r],
+          { name: s, namespaceURI: n, value: a } = o,
+          c = Se(s),
+          d = a;
+        let h = 'value' === s ? d : Et(d);
         if (
           ((i.attrName = c),
           (i.attrValue = h),
           (i.keepAttr = !0),
           (i.forceKeepAttr = void 0),
-          Re(H.uponSanitizeAttribute, e, i),
+          De($.uponSanitizeAttribute, e, i),
           (h = i.attrValue),
-          !le || ('id' !== c && 'name' !== c) || (Pe(s, e), (h = oe + h)),
-          Y && Ht(/((--!?|])>)|<\/(style|title)/i, h))
+          !oe || ('id' !== c && 'name' !== c) || (_e(s, e), (h = 'user-content-' + h)),
+          J && _t(/((--!?|])>)|<\/(style|title|textarea)/i, h))
         ) {
-          Pe(s, e);
+          _e(s, e);
+          continue;
+        }
+        if ('attributename' === c && Vt(h, 'href')) {
+          _e(s, e);
           continue;
         }
         if (i.forceKeepAttr) continue;
         if (!i.keepAttr) {
-          Pe(s, e);
+          _e(s, e);
           continue;
         }
-        if (!G && Ht(/\/>/i, h)) {
-          Pe(s, e);
+        if (!K && _t(/\/>/i, h)) {
+          _e(s, e);
           continue;
         }
-        K &&
-          kt([$, V, T], e => {
-            h = zt(h, e, ' ');
+        Y &&
+          Mt([H, V, T], e => {
+            h = Tt(h, e, ' ');
           });
-        const g = He(e.nodeName);
-        if (Ze(g, c, h)) {
+        const g = Se(e.nodeName);
+        if (je(g, c, h)) {
           if (b && 'object' == typeof m && 'function' == typeof m.getAttributeType)
-            if (a);
+            if (n);
             else
               switch (m.getAttributeType(g, c)) {
                 case 'TrustedHTML':
@@ -2990,99 +3207,98 @@ var hr = (function e() {
               }
           if (h !== d)
             try {
-              a ? e.setAttributeNS(a, s, h) : e.setAttribute(s, h), je(e) ? We(e) : ft(r.removed);
+              n ? e.setAttributeNS(n, s, h) : e.setAttribute(s, h), Ie(e) ? Be(e) : xt(l.removed);
             } catch (t) {
-              Pe(s, e);
+              _e(s, e);
             }
-        } else Pe(s, e);
+        } else _e(s, e);
       }
-      Re(H.afterSanitizeAttributes, e, null);
+      De($.afterSanitizeAttributes, e, null);
     },
-    qe = function e(t) {
-      let r = null;
-      const i = Ne(t);
-      for (Re(H.beforeSanitizeShadowDOM, t, null); (r = i.nextNode()); )
-        Re(H.uponSanitizeShadowNode, r, null), Oe(r), Ue(r), r.content instanceof s && e(r.content);
-      Re(H.afterSanitizeShadowDOM, t, null);
+    Ze = function e(t) {
+      let l = null;
+      const i = Pe(t);
+      for (De($.beforeSanitizeShadowDOM, t, null); (l = i.nextNode()); )
+        De($.uponSanitizeShadowNode, l, null), Re(l), Fe(l), l.content instanceof s && e(l.content);
+      De($.afterSanitizeShadowDOM, t, null);
     };
   return (
-    (r.sanitize = function (e) {
+    (l.sanitize = function (e) {
       let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
         i = null,
         o = null,
-        a = null,
+        n = null,
         c = null;
-      if (((ve = !e), ve && (e = '\x3c!--\x3e'), 'string' != typeof e && !De(e))) {
-        if ('function' != typeof e.toString) throw $t('toString is not a function');
-        if ('string' != typeof (e = e.toString())) throw $t('dirty is not a string, aborting');
+      if (((we = !e), we && (e = '\x3c!--\x3e'), 'string' != typeof e && !Ne(e))) {
+        if ('function' != typeof e.toString) throw Wt('toString is not a function');
+        if ('string' != typeof (e = e.toString())) throw Wt('dirty is not a string, aborting');
       }
-      if (!r.isSupported) return e;
-      if ((X || Ae(t), (r.removed = []), 'string' == typeof e && (ae = !1), ae)) {
+      if (!l.isSupported) return e;
+      if ((Q || Te(t), (l.removed = []), 'string' == typeof e && (ne = !1), ne)) {
         if (e.nodeName) {
-          const t = He(e.nodeName);
-          if (!I[t] || O[t]) throw $t('root node is forbidden and cannot be sanitized in-place');
+          const t = Se(e.nodeName);
+          if (!I[t] || O[t]) throw Wt('root node is forbidden and cannot be sanitized in-place');
         }
-      } else if (e instanceof n)
-        (i = Ie('\x3c!----\x3e')),
+      } else if (e instanceof a)
+        (i = We('\x3c!----\x3e')),
           (o = i.ownerDocument.importNode(e, !0)),
-          (o.nodeType === lr && 'BODY' === o.nodeName) || 'HTML' === o.nodeName ? (i = o) : i.appendChild(o);
+          (o.nodeType === hl && 'BODY' === o.nodeName) || 'HTML' === o.nodeName ? (i = o) : i.appendChild(o);
       else {
-        if (!ee && !K && !J && -1 === e.indexOf('<')) return b && re ? b.createHTML(e) : e;
-        if (((i = Ie(e)), !i)) return ee ? null : re ? L : '';
+        if (!te && !Y && !X && -1 === e.indexOf('<')) return b && ie ? b.createHTML(e) : e;
+        if (((i = We(e)), !i)) return te ? null : ie ? L : '';
       }
-      i && Q && We(i.firstChild);
-      const d = Ne(ae ? e : i);
-      for (; (a = d.nextNode()); ) Oe(a), Ue(a), a.content instanceof s && qe(a.content);
-      if (ae) return e;
-      if (ee) {
-        if (te) for (c = x.call(i.ownerDocument); i.firstChild; ) c.appendChild(i.firstChild);
+      i && ee && Be(i.firstChild);
+      const d = Pe(ne ? e : i);
+      for (; (n = d.nextNode()); ) Re(n), Fe(n), n.content instanceof s && Ze(n.content);
+      if (ne) return e;
+      if (te) {
+        if (le) for (c = x.call(i.ownerDocument); i.firstChild; ) c.appendChild(i.firstChild);
         else c = i;
-        return (j.shadowroot || j.shadowrootmode) && (c = S.call(l, c, !0)), c;
+        return (D.shadowroot || D.shadowrootmode) && (c = S.call(r, c, !0)), c;
       }
-      let h = J ? i.outerHTML : i.innerHTML;
+      let h = X ? i.outerHTML : i.innerHTML;
       return (
-        J &&
+        X &&
           I['!doctype'] &&
           i.ownerDocument &&
           i.ownerDocument.doctype &&
           i.ownerDocument.doctype.name &&
-          Ht(tr, i.ownerDocument.doctype.name) &&
+          _t(al, i.ownerDocument.doctype.name) &&
           (h = '<!DOCTYPE ' + i.ownerDocument.doctype.name + '>\n' + h),
-        K &&
-          kt([$, V, T], e => {
-            h = zt(h, e, ' ');
+        Y &&
+          Mt([H, V, T], e => {
+            h = Tt(h, e, ' ');
           }),
-        b && re ? b.createHTML(h) : h
+        b && ie ? b.createHTML(h) : h
       );
     }),
-    (r.setConfig = function () {
-      let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
-      Ae(e), (X = !0);
+    (l.setConfig = function () {
+      Te(arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}), (Q = !0);
     }),
-    (r.clearConfig = function () {
-      ($e = null), (X = !1);
+    (l.clearConfig = function () {
+      ($e = null), (Q = !1);
     }),
-    (r.isValidAttribute = function (e, t, r) {
-      $e || Ae({});
-      const i = He(e),
-        l = He(t);
-      return Ze(i, l, r);
+    (l.isValidAttribute = function (e, t, l) {
+      $e || Te({});
+      const i = Se(e),
+        r = Se(t);
+      return je(i, r, l);
     }),
-    (r.addHook = function (e, t) {
-      'function' == typeof t && vt(H[e], t);
+    (l.addHook = function (e, t) {
+      'function' == typeof t && yt($[e], t);
     }),
-    (r.removeHook = function (e, t) {
+    (l.removeHook = function (e, t) {
       if (void 0 !== t) {
-        const r = ut(H[e], t);
-        return -1 === r ? void 0 : wt(H[e], r, 1)[0];
+        const l = zt($[e], t);
+        return -1 === l ? void 0 : St($[e], l, 1)[0];
       }
-      return ft(H[e]);
+      return xt($[e]);
     }),
-    (r.removeHooks = function (e) {
-      H[e] = [];
+    (l.removeHooks = function (e) {
+      $[e] = [];
     }),
-    (r.removeAllHooks = function () {
-      H = {
+    (l.removeAllHooks = function () {
+      $ = {
         afterSanitizeAttributes: [],
         afterSanitizeElements: [],
         afterSanitizeShadowDOM: [],
@@ -3094,128 +3310,128 @@ var hr = (function e() {
         uponSanitizeShadowNode: [],
       };
     }),
-    r
+    l
   );
 })();
-const gr = ({ iconType: t }) => {
+const kl = ({ iconType: t }) => {
   var s;
-  const [a, n] = r(''),
+  const [n, a] = l(''),
     c = i(),
-    { params: d, colorTheme: h, config: g } = l(qe),
+    { params: d, colorTheme: h, config: g } = r(Xe),
     { bulkIconColor: p } = h,
     m = t ? t.toLowerCase().trim() : '';
   o(() => {
     (() => {
       if (!c.current) return;
       const { width: e, height: t } = c.current.getBoundingClientRect(),
-        r = null != d && d.isHorizontal ? t > e : e > t;
-      n(r ? 'bulk__sticker--album' : 'bulk__sticker--portrait');
+        l = null != d && d.isHorizontal ? t > e : e > t;
+      a(l ? 'bulk__sticker--album' : 'bulk__sticker--portrait');
     })();
   }, []);
-  let C = ot.get(m);
+  let C = gt.get(m);
   C = m && (null === (s = C) || void 0 === s ? void 0 : s.replace('$stickerColor', p));
-  const k = hr.sanitize(C),
-    u = g.scaleType === z.ZOOM ? 'zoomed_bulk__sticker' : 'bulk__sticker';
+  const v = ul.sanitize(C),
+    u = g.scaleType === S.ZOOM ? 'zoomed_bulk__sticker' : 'bulk__sticker';
   return e.createElement(
     'div',
-    { className: `${u} ${a}`, ref: c },
-    m && e.createElement('div', { className: 'bulk__icon', dangerouslySetInnerHTML: { __html: k } })
+    { className: `${u} ${n}`, ref: c },
+    m && e.createElement('div', { className: 'bulk__icon', dangerouslySetInnerHTML: { __html: v } })
   );
 };
-function pr(e, t) {
+function wl(e, t) {
   void 0 === t && (t = {});
-  var r = t.insertAt;
+  var l = t.insertAt;
   if (e && 'undefined' != typeof document) {
     var i = document.head || document.getElementsByTagName('head')[0],
-      l = document.createElement('style');
-    (l.type = 'text/css'),
-      'top' === r && i.firstChild ? i.insertBefore(l, i.firstChild) : i.appendChild(l),
-      l.styleSheet ? (l.styleSheet.cssText = e) : l.appendChild(document.createTextNode(e));
+      r = document.createElement('style');
+    (r.type = 'text/css'),
+      'top' === l && i.firstChild ? i.insertBefore(r, i.firstChild) : i.appendChild(r),
+      r.styleSheet ? (r.styleSheet.cssText = e) : r.appendChild(document.createTextNode(e));
   }
 }
-pr(
+wl(
   '.bulk{position:absolute;transform-style:preserve-3d}.bulk__icon{display:block;height:100%;object-fit:contain;width:100%}.bulk__sticker_wrap{left:0;position:absolute;top:0;width:100%}.bulk__sticker,.zoomed_bulk__sticker{left:50%;position:absolute;top:50%;transform:translate(-50%,-50%)}.bulk__sticker--album{height:2em;width:4em}.bulk__sticker--portrait{height:4em;width:2em}'
 );
-const mr = { 26: 1, 27: 1, 28: 1 },
-  Cr = ({ id: t, type: s, align: a, width: n, height: c, iconType: d, xOffset: h, topOffset: g }) => {
+const fl = { 26: 1, 27: 1, 28: 1 },
+  bl = ({ id: t, type: s, align: n, width: a, height: c, iconType: d, xOffset: h, topOffset: g }) => {
     var p, m, C;
-    const { params: k, config: u, colorTheme: f } = l(qe),
-      { bulkBaseColor: v, bulkCutColor: w, bulkIconColor: b, bulkFloorIconColor: L } = f,
-      [M, x] = r(0),
-      y = i(null),
-      { isSafari: S } = it(),
-      [H, $] = r(() => {
-        const e = mr[t] || 0.7,
-          r = Math.floor(n * e),
+    const { params: v, config: u, colorTheme: k } = r(Xe),
+      { bulkBaseColor: w, bulkCutColor: f, bulkIconColor: b, bulkFloorIconColor: L } = k,
+      [M, z] = l(0),
+      x = i(null),
+      { isSafari: y } = dt(),
+      [$, H] = l(() => {
+        const e = fl[t] || 0.7,
+          l = Math.floor(a * e),
           i = Math.floor(c * e),
-          l = a === ie.left ? Math.max(h, 0) : 'auto',
-          o = a === ie.right ? Math.max(h, 0) : 'auto',
-          s = k.visibleWings ? f.wingsWidth : 0,
-          d = k.visibleCabinTitles ? f.cabinTitlesWidth : 0,
-          p = k.innerWidth / 2 - Math.max(s, d) - f.fuselageStrokeWidth,
-          m = (0.775 * n) / 2,
-          C = a === ie.center && h ? Math.floor(h + p - m) : 'auto';
+          r = n === se.left ? Math.max(h, 0) : ne,
+          o = n === se.right ? Math.max(h, 0) : ne,
+          s = v.visibleWings ? k.wingsWidth : 0,
+          d = v.visibleCabinTitles ? k.cabinTitlesWidth : 0,
+          p = v.innerWidth / 2 - Math.max(s, d) - k.fuselageStrokeWidth,
+          m = (0.775 * a) / 2,
+          C = n === se.center && h ? Math.floor(h + p - m) : ne;
         return {
           top: g,
-          left: a === ie.left ? l : C,
+          left: n === se.left ? r : C,
           right: o,
-          width: r,
+          width: l,
           height: i,
-          transform: a === ie.right ? 'scaleX(-1)' : '',
+          transform: n === se.right ? 'scaleX(-1)' : '',
         };
       });
     o(() => {
       (() => {
-        const e = H.width > H.height ? H.width / 10 : H.height / 10,
-          t = { ...H };
-        (t.fontSize = `${Math.round(e)}px`), $(t);
+        const e = $.width > $.height ? $.width / 10 : $.height / 10,
+          t = { ...$ };
+        (t.fontSize = `${Math.round(e)}px`), H(t);
       })(),
         (() => {
-          if (!y.current) return;
-          const e = y.current.querySelector('.bulk-base');
+          if (!x.current) return;
+          const e = x.current.querySelector('.bulk-base');
           if (!e) return;
           const t = e.getBoundingClientRect(),
-            r = null != k && k.isHorizontal ? t.width : t.height,
-            i = S && (null == u ? void 0 : u.scaleType) === z.ZOOM ? r : r * (null == k ? void 0 : k.antiScale),
-            l = Math.round(H.height - 0.7 * i);
-          x(l);
+            l = null != v && v.isHorizontal ? t.width : t.height,
+            i = y && (null == u ? void 0 : u.scaleType) === S.ZOOM ? l : l * (null == v ? void 0 : v.antiScale),
+            r = Math.round($.height - 0.7 * i);
+          z(r);
         })();
     }, []);
-    let V = lt.get(t);
-    if (!V) return e.createElement('div', { className: 'bulk', ref: y });
-    (V = null === (p = V) || void 0 === p ? void 0 : p.replace('$baseColor', v)),
-      (V = null === (m = V) || void 0 === m ? void 0 : m.replace('$cutColor', w)),
+    let V = ht.get(t);
+    if (!V) return e.createElement('div', { className: 'bulk', ref: x });
+    (V = null === (p = V) || void 0 === p ? void 0 : p.replace('$baseColor', w)),
+      (V = null === (m = V) || void 0 === m ? void 0 : m.replace('$cutColor', f)),
       (V = null === (C = V) || void 0 === C ? void 0 : C.split('$stickerColor').join(L || b));
-    const T = hr.sanitize(V);
+    const T = ul.sanitize(V);
     return e.createElement(
       'div',
-      { className: 'bulk', style: H, ref: y, 'data-testid': 'jets-bulk' },
+      { className: 'bulk', style: $, ref: x, 'data-testid': 'jets-bulk' },
       e.createElement('div', { className: 'bulk__icon', dangerouslySetInnerHTML: { __html: T } }),
       e.createElement(
         'div',
         { className: 'bulk__sticker_wrap', style: { height: `${M}px` } },
-        e.createElement(gr, { iconType: d })
+        e.createElement(kl, { iconType: d })
       )
     );
   };
-pr(
+wl(
   '.jets-btn{-webkit-font-smoothing:antialiased;background-color:#4071b9;border:1px solid #ccc;border-radius:2px;color:#fff;cursor:pointer;display:inline-block;font-family:inherit;font-size:14px;font-weight:600;height:40px;line-height:1.5;padding:9.5px 18px;text-align:center;text-decoration:none;vertical-align:middle}.jets-btn:disabled{background-color:#ccc!important;color:#000!important;cursor:not-allowed}'
 );
-const kr = ({ content: t, onClick: r, className: i, disabled: l, active: o, ...s }) =>
-  e.createElement('button', n({}, s, { className: i, onClick: r, disabled: l }), t);
-kr.defaultProps = { content: 'Btn', className: 'jets-btn', disabled: !1, active: !1, onClick: () => {} };
-pr(
+const Ll = ({ content: t, onClick: l, className: i, disabled: r, active: o, ...s }) =>
+  e.createElement('button', a({}, s, { className: i, onClick: l, disabled: r }), t);
+Ll.defaultProps = { content: 'Btn', className: 'jets-btn', disabled: !1, active: !1, onClick: () => {} };
+wl(
   '.deck-exit{height:72px;position:absolute;width:72px;z-index:-1}.deck-bulk__image{display:block;height:100%;object-fit:contain;width:100%}'
 );
-const ur = ({ type: t, topOffset: i }) => {
-  const { colorTheme: o } = l(qe),
-    { exitIconUrlLeft: s, exitIconUrlRight: a } = o,
-    n = !s || !a,
-    [c, d] = r(() => ({ top: i, left: 'left' === t ? 0 : 'auto', right: 'right' === t ? 0 : 'auto' }));
+const Ml = ({ type: t, topOffset: i }) => {
+  const { colorTheme: o } = r(Xe),
+    { exitIconUrlLeft: s, exitIconUrlRight: n } = o,
+    a = !s || !n,
+    [c, d] = l(() => ({ top: i, left: 'left' === t ? 0 : ne, right: 'right' === t ? 0 : ne }));
   return e.createElement(
     'div',
     { className: 'deck-exit', style: c, 'data-testid': 'jets-exit' },
-    n
+    a
       ? e.createElement('span', {
           className: 'deck-exit__image',
           dangerouslySetInnerHTML: {
@@ -3225,43 +3441,43 @@ const ur = ({ type: t, topOffset: i }) => {
                 : '<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="114pt" height="114pt" viewBox="0 0 114 114" preserveAspectRatio="xMidYMid meet"><g transform="translate(0,114) scale(0.1,-0.1)" fill="#d00434" stroke="none"><path d="M290 950 l0 -129 -95 54 -95 54 0 -354 0 -354 95 54 95 54 0 -129 0 -129 344 252 c334 245 343 252 322 268 -11 9 -166 122 -343 252 l-323 236 0 -129z"/></g></svg>',
           },
         })
-      : e.createElement('img', { className: 'deck-exit__image', src: 'left' === t ? s : a })
+      : e.createElement('img', { className: 'deck-exit__image', src: 'left' === t ? s : n })
   );
 };
-pr('.jets-deck--title{font-size:18px;font-weight:700;position:absolute;top:0}');
-const fr = ({ number: t, lang: r, localeKey: o }) => {
-    const { config: s, params: a, colorTheme: n } = l(qe),
+wl('.jets-deck--title{font-size:18px;font-weight:700;position:absolute;top:0}');
+const zl = ({ number: t, lang: l, localeKey: o }) => {
+    const { config: s, params: n, colorTheme: a } = r(Xe),
       c = i(null),
-      { isSafari: d } = it(),
-      h = d && (null == s ? void 0 : s.scaleType) === z.ZOOM,
+      { isSafari: d } = dt(),
+      h = d && (null == s ? void 0 : s.scaleType) === S.ZOOM,
       g = {
-        transform: h ? void 0 : `scale(${a.antiScale}) translateY(30px)`,
-        zoom: h ? a.antiScale : void 0,
+        transform: h ? void 0 : `scale(${n.antiScale}) translateY(30px)`,
+        zoom: h ? n.antiScale : void 0,
         height: '80px',
-        color: n.deckLabelTitleColor,
+        color: a.deckLabelTitleColor,
       };
-    return e.createElement('div', { className: 'jets-deck--title', style: g, ref: c }, $[r][o], ': ', t);
+    return e.createElement('div', { className: 'jets-deck--title', style: g, ref: c }, A[l][o], ': ', t);
   },
-  vr = {
+  xl = {
     getSeatIcon(e, t) {
       if (!e) return;
-      const [r, i] = e.split('-'),
-        l = parseInt(i, 10);
-      if (l <= 4)
-        switch (r) {
+      const [l, i] = e.split('-'),
+        r = parseInt(i, 10);
+      if (r <= 4)
+        switch (l) {
           case 'F':
-            return wr.getTemplate(l, t);
+            return yl.getTemplate(r, t);
           case 'B':
-            return br.getTemplate(l, t);
+            return Sl.getTemplate(r, t);
           case 'P':
-            return Lr.getTemplate(t);
+            return $l.getTemplate(t);
           default:
-            return Mr.getTemplate(l, t);
+            return Hl.getTemplate(r, t);
         }
-      return zr.getTemplate(l, t);
+      return Vl.getTemplate(r, t);
     },
   },
-  wr = {
+  yl = {
     getTemplate(e, t) {
       return 1 === e ? this._type1(t) : 2 === e ? this._type2(t) : 3 === e ? this._type3(t) : this._default(t);
     },
@@ -3274,7 +3490,7 @@ const fr = ({ number: t, lang: r, localeKey: o }) => {
     _default: e =>
       `<svg version="1.1" baseProfile="full" viewBox="0 0 150 220" xmlns="http://www.w3.org/2000/svg">\n      <g class="seat" transform="scale(1.2)">\n      <path class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M89.24,20c-.34-7.62-6.46-6.61-9.52-10.33S78.71.5,70.55.5H29.75c-8.16,0-6.12,5.42-9.18,9.15S11.4,12.37,11.06,20s0,13.74,0,13.74H89.24S89.58,27.61,89.24,20Z"></path>\n      <path class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M85,72.8H16.81a6.89,6.89,0,0,1-6.88-6.86V37.14a6.89,6.89,0,0,1,6.88-6.86,326.72,326.72,0,0,1,34.08-1.9A313.07,313.07,0,0,1,85,30.27a6.89,6.89,0,0,1,6.88,6.86v28.8A6.89,6.89,0,0,1,85,72.8Z"></path>\n      <rect class="bd" fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" x="9.93" y="71.69" width="81.91" height="60.75" rx="7.59" ry="7.59"></rect>\n      <path class="bc" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.armrestColor}" d="M9,142.15H3.08A3.09,3.09,0,0,1,0,139.07V84.52a3.09,3.09,0,0,1,3.08-3.08H9a3.09,3.09,0,0,1,3.08,3.08v54.55A3.09,3.09,0,0,1,9,142.15Zm91-3.08V84.52a3.09,3.09,0,0,0-3.08-3.08H91.29a3.09,3.09,0,0,0-3.08,3.08v54.55a3.09,3.09,0,0,0,3.08,3.08h5.63A3.09,3.09,0,0,0,100,139.07Z"></path>\n      <path class="bd" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" fill="${e.fillColor}" d="M84.71,145.5H14.9c-2.74,0-5-2.8-5-6.23V132c0-3.44,2.23-6.23,5-6.23l.19,0a195.67,195.67,0,0,0,34.71,3,210.38,210.38,0,0,0,34.72-3l.18,0c2.74,0,5,2.8,5,6.23v7.25C89.67,142.7,87.44,145.5,84.71,145.5Z"></path>\n      <path class="cf" fill="white" stroke="white" d="M67.32,141.13h-35a2.94,2.94,0,0,1-2.95-2.94V128.06a2.93,2.93,0,0,1,.08-.66L32,116.12a3,3,0,0,1,2.87-2.28H64.35a3,3,0,0,1,2.85,2.2l3,11.31a2.93,2.93,0,0,1,.1.74v10.09A2.94,2.94,0,0,1,67.32,141.13Z"></path>\n      </g></svg>`,
   },
-  br = {
+  Sl = {
     getTemplate(e, t) {
       return 1 === e ? this._type1(t) : 4 === e ? this._type4(t) : this._default(t);
     },
@@ -3285,11 +3501,11 @@ const fr = ({ number: t, lang: r, localeKey: o }) => {
     _default: e =>
       `<svg version="1.1" baseProfile="full" viewBox="0 0 110 100" xmlns="http://www.w3.org/2000/svg">\n        <g class="seat" transform="scale(2)">\n          <rect fill="${e.armrestColor}" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n          <rect fill="${e.armrestColor}" x="49.02" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" /><path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M44.94,1.07C40.15.71,33.1,0,26.87,0,21.37,0,13.66.47,9.35.93A4.41,4.41,0,0,0,5.41,5.31V33H49V5.47A4.41,4.41,0,0,0,44.94,1.07Z" />\n          <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M47.56,37.58h-40a2.85,2.85,0,0,1-2.85-2.85V31.43a2.85,2.85,0,0,1,2.85-2.85h.11A139.86,139.86,0,0,0,27.56,30a150.41,150.41,0,0,0,19.9-1.38h.1a2.85,2.85,0,0,1,2.85,2.85v3.31A2.85,2.85,0,0,1,47.56,37.58Z" />\n          <rect fill="rgb(255, 255, 255)" x="19.25" y="28.88" width="15.92" height="5.47" rx="2.02" ry="2.02" />\n      </g></svg>`,
   },
-  Lr = {
+  $l = {
     getTemplate: e =>
       `<svg version="1.1" baseProfile="full" viewBox="0 -3 110 100" width="110" height="100" xmlns="http://www.w3.org/2000/svg">\n        <g class="seat" transform="scale(2)"><rect fill="${e.armrestColor}" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <rect fill="${e.armrestColor}" x="49.02" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M44.94,1.07C40.15.71,33.1,0,26.87,0,21.37,0,13.66.47,9.35.93A4.41,4.41,0,0,0,5.41,5.31V33H49V5.47A4.41,4.41,0,0,0,44.94,1.07Z" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M47.56,37.58h-40a2.85,2.85,0,0,1-2.85-2.85V31.43a2.85,2.85,0,0,1,2.85-2.85h.11A139.86,139.86,0,0,0,27.56,30a150.41,150.41,0,0,0,19.9-1.38h.1a2.85,2.85,0,0,1,2.85,2.85v3.31A2.85,2.85,0,0,1,47.56,37.58Z" />\n        <rect fill="rgb(255, 255, 255)" x="19.25" y="28.88" width="15.92" height="5.47" rx="2.02" ry="2.02" />\n        </g></svg>`,
   },
-  Mr = {
+  Hl = {
     getTemplate(e, t) {
       return 4 === e ? this._type4(t) : this._default(t);
     },
@@ -3298,7 +3514,7 @@ const fr = ({ number: t, lang: r, localeKey: o }) => {
     _default: e =>
       `<svg version="1.1" baseProfile="full" viewBox="0 -3 110 100" width="86" height="100" xmlns="http://www.w3.org/2000/svg">\n        <g class="seat" transform="scale(2)">\n        <rect fill="${e.armrestColor}" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <rect fill="${e.armrestColor}" x="49.02" y="4.3" width="5.36" height="32.29" rx="1.97" ry="1.97" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M44.94,1.07C40.15.71,33.1,0,26.87,0,21.37,0,13.66.47,9.35.93A4.41,4.41,0,0,0,5.41,5.31V33H49V5.47A4.41,4.41,0,0,0,44.94,1.07Z" />\n        <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M47.56,37.58h-40a2.85,2.85,0,0,1-2.85-2.85V31.43a2.85,2.85,0,0,1,2.85-2.85h.11A139.86,139.86,0,0,0,27.56,30a150.41,150.41,0,0,0,19.9-1.38h.1a2.85,2.85,0,0,1,2.85,2.85v3.31A2.85,2.85,0,0,1,47.56,37.58Z" />\n        <rect fill="rgb(255, 255, 255)" x="19.25" y="28.88" width="15.92" height="5.47" rx="2.02" ry="2.02" />\n        </g></svg>`,
   },
-  zr = {
+  Vl = {
     _mapping: {
       5: e =>
         `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"> <g class="seat"> <polygon fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" points="4.1,43 67.1,43 115.6,188 81.1,197.7 27.7,182.8 3.3,161.5"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M145.8,138.9l53.6-3.3v42.5h-19.2c-0.5,0-1-0.2-1.5-0.5l-43-28.5L145.8,138.9z"/> <path fill="rgb(169, 169, 169)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M189.5,56.2c0.5-0.9,1.3-1.4,2.3-1.4l7.6-0.1v87.6l-63.1,1.6L189.5,56.2z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M6.1,119.6L29,81.1l107,63.7l-22.9,38.3c-0.9,1.5-2.6,2.4-4.4,2.1c-7.2-1-27.2-5.4-56-21.9 c-29.2-16.6-42.2-32.9-46.3-38.9C5.3,123,5.2,121.1,6.1,119.6L6.1,119.6z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8"  d="M27.7,83.3L75.6,2.7c1.1-1.9,3.6-2.6,5.6-1.8C90.6,5,116.8,16.4,134,26.6s39.7,27.7,47.6,34.2 c1.6,1.4,2.1,3.9,1,5.8l-47.9,80.5L27.7,83.3z"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M45.5,115.2l-2.8,4.6l-0.4,0.7l-2.8,4.6c-0.7,0.9-0.4,2.2,0.3,2.9c3.2,3.1,11.9,11.2,23.4,18 c11.6,6.9,22.7,10.7,27,12c1,0.4,2.1,0,2.7-1l2.8-4.6l0.4-0.7l2.8-4.6c0.7-0.9,0.4-2.2-0.3-2.9c-3.2-3.1-11.8-11.1-23.4-18 c-11.6-6.9-22.7-10.7-27-12C47.2,113.9,46.1,114.3,45.5,115.2z"/> <path fill="rgb(235, 235, 235)" d="M5,42v107.4c0,2.4,0.9,4.7,2.5,6.6c8.7,10,21,22.2,33.5,27.1c18.4,7.3,51.5,7.1,64.8,6.7c2.1-0.1,3.9-1.1,5-2.9 l24-39.6l6.1-10H200v10h-53.6l-27.1,44.8c-2.8,4.7-7.8,7.6-13.2,7.7c-2.8,0.1-6.4,0.2-10.6,0.2c-16.7,0-42.1-1.2-58.2-7.5 C23,186.8,9.4,173.6,0,162.8l0-8.1L0,42H5z"/> </g> </svg>`,
@@ -3382,67 +3598,71 @@ const fr = ({ number: t, lang: r, localeKey: o }) => {
         `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 325" width="550" height="325"> <g class="seat"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M213.7,10.4H81.2V108c0,2.7,1.7,4.9,4.1,5.3c10.8,1.6,40.9,6,62,6c21.2,0,51.4-4.4,62.1-6c2.4-0.4,4.1-2.7,4.1-5.3C213.7,108,213.7,10.4,213.7,10.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M81.3,5v32.9h132.4"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M186.3,7V3.7v1.1v6.7c0,1.3-0.9,2.6-2.2,2.9c-5.5,1.3-19.8,4.4-36.7,4.4c-16.7,0-31.3-3.1-36.7-4.4c-1.3-0.4-2.2-1.5-2.2-2.9V4.8V3.7V7"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M86.6,5v92.1c0.1,3.9-2.1,6.9-5.8,7h-3.1c-8.8,0.2-9.2-6.9-9.2-15.8L68,56.7c-0.1-1.6,0.1-3.3,0.5-4.8L74.1,5"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M220.8,6.3l5.5,45.7c0.5,1.5,0.6,3.2,0.5,4.8l-0.5,31.6c-0.1,8.8-0.4,15.9-9.2,15.8H214c-3.7-0.1-5.9-3.1-5.8-7V5.9"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M275.1,4.2h267.5v115.1H318.7c-24.1,0-43.6-19.5-43.6-43.6V4.2z"/> <polyline fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" points="543.2,244.1 35.3,244.1 35.3,315.3 543.2,315.3 "/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M489.4,204.3h8.3h1.4h8.3c1.7,0,3.1,1.1,3.6,2.8c1.7,7,5.5,25.5,5.5,47.2s-3.9,40.1-5.5,47.2c-0.5,1.6-1.7,2.8-3.6,2.8h-8.3h-1.4h-8.3c-1.7,0-3.1-1.1-3.6-2.8c-1.7-7-5.5-25.7-5.5-47.2c0-21.7,3.9-40.1,5.5-47.2C486.2,205.5,487.8,204.3,489.4,204.3z"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M443.5,243.8l-46.5-47"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M39,196.6h506"/> <rect  fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="8.5" y="6.6" width="32.4" height="313"/> <polygon fill="rgb(235, 235, 235)" points="550,195.8 550,325 548.8,325 1.2,325 0,325 0,322.2 0,2.8 0,0 1.2,0 548.8,0 550,0 550,120.2 540,120.2 540,10 10,10 10,315 540,315 540,195.8 "/> </g> </svg>`,
       45: e =>
         `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 325" width="550" height="325"> <g class="seat" transform="scale(-1, 1) translate(-550,0)"> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M213.7,10.4H81.2V108c0,2.7,1.7,4.9,4.1,5.3c10.8,1.6,40.9,6,62,6c21.2,0,51.4-4.4,62.1-6c2.4-0.4,4.1-2.7,4.1-5.3C213.7,108,213.7,10.4,213.7,10.4z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" d="M81.3,5v32.9h132.4"/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M186.3,7V3.7v1.1v6.7c0,1.3-0.9,2.6-2.2,2.9c-5.5,1.3-19.8,4.4-36.7,4.4c-16.7,0-31.3-3.1-36.7-4.4c-1.3-0.4-2.2-1.5-2.2-2.9V4.8V3.7V7"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M86.6,5v92.1c0.1,3.9-2.1,6.9-5.8,7h-3.1c-8.8,0.2-9.2-6.9-9.2-15.8L68,56.7c-0.1-1.6,0.1-3.3,0.5-4.8L74.1,5"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M220.8,6.3l5.5,45.7c0.5,1.5,0.6,3.2,0.5,4.8l-0.5,31.6c-0.1,8.8-0.4,15.9-9.2,15.8H214c-3.7-0.1-5.9-3.1-5.8-7V5.9"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M275.1,4.2h267.5v115.1H318.7c-24.1,0-43.6-19.5-43.6-43.6V4.2z"/> <polyline fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" stroke-miterlimit="4.8" points="543.2,244.1 35.3,244.1 35.3,315.3 543.2,315.3 "/> <path fill="rgb(255, 255, 255)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M489.4,204.3h8.3h1.4h8.3c1.7,0,3.1,1.1,3.6,2.8c1.7,7,5.5,25.5,5.5,47.2s-3.9,40.1-5.5,47.2c-0.5,1.6-1.7,2.8-3.6,2.8h-8.3h-1.4h-8.3c-1.7,0-3.1-1.1-3.6-2.8c-1.7-7-5.5-25.7-5.5-47.2c0-21.7,3.9-40.1,5.5-47.2C486.2,205.5,487.8,204.3,489.4,204.3z"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M443.5,243.8l-46.5-47"/> <path fill="none" stroke="rgb(235, 235, 235)" stroke-width="2" stroke-miterlimit="4.8" stroke-dasharray="4.4" d="M39,196.6h506"/> <rect  fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="8.5" y="6.6" width="32.4" height="313"/> <polygon fill="rgb(235, 235, 235)" points="550,195.8 550,325 548.8,325 1.2,325 0,325 0,322.2 0,2.8 0,0 1.2,0 548.8,0 550,0 550,120.2 540,120.2 540,10 10,10 10,315 540,315 540,195.8 "/> </g> </svg>`,
+      46: e =>
+        `<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 110 112" width="110" height="112" xml:space="preserve"> <g class="seat" transform="scale(1.3)"> <path fill="${e.armrestColor}" d="M3,33.2h2.2c1.8,0,3,1.4,3,2.9v43.4c0,1.8-1.4,2.9-3,2.9H3c-1.8,0-3-1.4-3-2.9V36.1C0,34.5,1.4,33.2,3,33.2z" /> <path fill="${e.armrestColor}" d="M79.9,33.2h2.2c1.8,0,3,1.4,3,2.9v43.4c0,1.8-1.4,2.9-3,2.9h-2.2c-1.8,0-3-1.4-3-2.9V36.1 C76.7,34.5,78.1,33.2,79.9,33.2z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M76.3,18.5C76.1,8,57.9,6,42,6C28.3,6,9,8,8.6,18.3c-0.1,2-0.2,12.9-0.2,16.4v34c0,4.5,3.7,8.2,8.4,8.2h51.4 c4.7,0,8.5-3.7,8.5-8.3V34.9C76.7,31.4,76.3,19.9,76.3,18.5z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M72.5,84H11.8c-2.4,0-4.4-2-4.4-4.3v-5.1c0-2.3,2-4.3,4.4-4.3H12c10.4,1.4,20.6,2.2,31.2,2.2 s18.8-0.8,29.2-2.2h1.2c2.4,0,3.4,2,3.4,4.3v5.1C76.9,82,74.9,84,72.5,84z"/> <path fill="rgb(255, 255, 255)" d="M25.2,70.7h34.6c1.8,0,3.2,1.4,3.2,3.1V76c0,1.8-1.4,3.1-3.2,3.1H25.2c-1.8,0-3.2-1.4-3.2-3.1v-2.2 C22.2,72.1,23.6,70.7,25.2,70.7z"/> </g></svg>`,
+      47: e =>
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"> <g class="seat" transform="scale(-1, 1) translate(-200,0)"> <rect fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="1.2" y="83.4" width="188.9" height="87.5"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M79.92,111.3V14.8c0-7.8-6.18-14.2-13.53-14.2H.72s0,83.9,0,83.9l79.2,26.8Z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M43.15,199.4c.73,0,1.39,0,2.18-.1,19.58-.3,30.57-5.3,33.41-6.8.86-.4,1.32-1.4,1.32-2.4v-18.9s-69.47,0-69.47,0v19.1c0,.9.53,2,1.32,2.4,4.37,2.5,14.55,6.7,31.23,6.7h0Z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M188.02,152.9c1.33-.5,2.05-1.7,2.05-3.1v-39.5s-110,0-110,0v39.3c0,1.3.98,2.7,2.13,3.1,6.05,2.5,23.21,8.3,52.91,8.7h3.82c27.48.1,43.48-6,49.09-8.5Z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M190.06,111.5v-61.2c0-1.7-1.33-3.1-2.93-3.5-22.5-2.9-40.11-4.5-52.02-4.5-20.19,0-48.73,4-51.93,4.5-1.78.3-3.11,1.7-3.11,3.5v61.2s110,0,110,0Z"/> <path fill="rgb(235, 235, 235)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M162.94,129.4v4.8s0,.7,0,.7v4.8c0,1.1-.71,1.9-1.7,2-3.84.9-14.3,3.1-26.18,3.1-11.89,0-22.25-2.3-26.18-3.1-.98-.3-1.7-1.1-1.7-2v-4.8s0-.7,0-.7v-4.8c0-1.1.71-1.9,1.7-2,3.84-.9,14.3-3.1,26.18-3.1,11.89,0,22.25,2.3,26.18,3.1,1.07.1,1.7.9,1.7,2Z"/> <path fill="rgb(235, 235, 235)" d="M3,81.3h4c1.7,0,3,1.3,3,3v80s84.5,0,84.5,0h61s34.5,0,34.5,0v-99c0-1.7,1.3-3,3-3h4c1.7,0,3,1.3,3,3v109h-44.1s-61.8,0-61.8,0H0v-90c0-1.7,1.3-3,3-3Z"/> </g> </svg>`,
+      48: e =>
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"> <g class="seat"> <rect fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" x="1.2" y="83.4" width="188.9" height="87.5"/> <path fill="rgb(184, 184, 184)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M79.92,111.3V14.8c0-7.8-6.18-14.2-13.53-14.2H.72s0,83.9,0,83.9l79.2,26.8Z"/> <path fill="rgb(147, 147, 147)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M43.15,199.4c.73,0,1.39,0,2.18-.1,19.58-.3,30.57-5.3,33.41-6.8.86-.4,1.32-1.4,1.32-2.4v-18.9s-69.47,0-69.47,0v19.1c0,.9.53,2,1.32,2.4,4.37,2.5,14.55,6.7,31.23,6.7h0Z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M188.02,152.9c1.33-.5,2.05-1.7,2.05-3.1v-39.5s-110,0-110,0v39.3c0,1.3.98,2.7,2.13,3.1,6.05,2.5,23.21,8.3,52.91,8.7h3.82c27.48.1,43.48-6,49.09-8.5Z"/> <path fill="${e.fillColor}" stroke="${e.strokeColor}" stroke-width="${e.strokeWidth}" d="M190.06,111.5v-61.2c0-1.7-1.33-3.1-2.93-3.5-22.5-2.9-40.11-4.5-52.02-4.5-20.19,0-48.73,4-51.93,4.5-1.78.3-3.11,1.7-3.11,3.5v61.2s110,0,110,0Z"/> <path fill="rgb(235, 235, 235)" stroke="rgb(235, 235, 235)" stroke-width="1.2" stroke-miterlimit="4.8" d="M162.94,129.4v4.8s0,.7,0,.7v4.8c0,1.1-.71,1.9-1.7,2-3.84.9-14.3,3.1-26.18,3.1-11.89,0-22.25-2.3-26.18-3.1-.98-.3-1.7-1.1-1.7-2v-4.8s0-.7,0-.7v-4.8c0-1.1.71-1.9,1.7-2,3.84-.9,14.3-3.1,26.18-3.1,11.89,0,22.25,2.3,26.18,3.1,1.07.1,1.7.9,1.7,2Z"/> <path fill="rgb(235, 235, 235)" d="M3,81.3h4c1.7,0,3,1.3,3,3v80s84.5,0,84.5,0h61s34.5,0,34.5,0v-99c0-1.7,1.3-3,3-3h4c1.7,0,3,1.3,3,3v109h-44.1s-61.8,0-61.8,0H0v-90c0-1.7,1.3-3,3-3Z"/> </g> </svg>`,
     },
     getTemplate(e, t) {
-      const r = (this._mapping[e] || (e => null))(t);
-      return r || Mr.getTemplate(e, t);
+      const l = (this._mapping[e] || (e => null))(t);
+      return l || Hl.getTemplate(e, t);
     },
   },
-  xr = ({ seatType: t, style: r }) => {
-    const i = hr.sanitize(vr.getSeatIcon(t, r));
+  Tl = ({ seatType: t, style: l }) => {
+    const i = ul.sanitize(xl.getSeatIcon(t, l));
     return e.createElement('div', { className: 'jets-seat-svg', dangerouslySetInnerHTML: { __html: i } });
   };
-pr(
+wl(
   '.jets-seat-price{align-items:center;background:#fefefe;border-radius:12px;box-shadow:1px 1px 1px 1px rgba(0,0,0,.6);box-sizing:border-box;color:#000;display:flex;height:45px;justify-content:center;overflow:hidden;padding:5px 2px;position:absolute;top:-45px}.jets-seat-price .currency{font-size:21px;left:5px;line-height:1;position:absolute;top:11px}.jets-seat-price .priceValue{flex:1;font-size:28px;margin-left:16px;overflow:hidden;padding-left:3px;text-overflow:ellipsis;white-space:nowrap}'
 );
-const yr = ({ priceValue: t, currency: r, maxWidth: i }) => {
-  const l = `${r}${t}`,
-    o = (null == r ? void 0 : r.toString().charAt(0)) || '*';
+const Al = ({ priceValue: t, currency: l, maxWidth: i }) => {
+  const r = `${l}${t}`,
+    o = (null == l ? void 0 : l.toString().charAt(0)) || '*';
   return e.createElement(
     'div',
-    { className: 'jets-seat-price', title: l, style: { maxWidth: i } },
+    { className: 'jets-seat-price', title: r, style: { maxWidth: i } },
     e.createElement('strong', { className: 'currency' }, o),
     e.createElement('span', { className: 'priceValue' }, t)
   );
 };
-pr(
-  '.jets-seat{align-items:center;box-sizing:border-box;display:flex;float:left;justify-content:center;position:relative;z-index:10}.jets-unavailable{cursor:not-allowed;position:relative}.jets-available,.jets-selected{cursor:pointer;position:relative}.jets-selected{color:#fff}.jets-aisle,.jets-empty,.jets-index{pointer-events:none}.jets-seat-r-nw{transform:rotate(-20deg)}.jets-seat-r-nw>.jets-seat-number,.jets-seat-r-nw>.jets-seat-passenger,.jets-seat-r-nw>.jets-seat-price{transform:rotate(20deg)}.jets-seat-r-nw45{transform:rotate(-45deg)}.jets-seat-r-nw45>.jets-seat-number,.jets-seat-r-nw45>.jets-seat-passenger,.jets-seat-r-nw45>.jets-seat-price{transform:rotate(45deg)}.jets-seat-r-ne{transform:rotate(20deg)}.jets-seat-r-ne>.jets-seat-number,.jets-seat-r-ne>.jets-seat-passenger,.jets-seat-r-ne>.jets-seat-price{transform:rotate(-20deg)}.jets-seat-r-ne45{transform:rotate(45deg)}.jets-seat-r-ne45>.jets-seat-number,.jets-seat-r-ne45>.jets-seat-passenger,.jets-seat-r-ne45>.jets-seat-price{transform:rotate(-45deg)}.jets-seat-r-s{transform:rotate(180deg)}.jets-seat-r-s>.jets-seat-number,.jets-seat-r-s>.jets-seat-passenger,.jets-seat-r-s>.jets-seat-price{transform:rotate(-180deg)}.jets-seat-r-se{transform:scale(.8) rotate(160deg)}.jets-seat-r-se>.jets-seat-number,.jets-seat-r-se>.jets-seat-passenger,.jets-seat-r-se>.jets-seat-price{transform:rotate(-160deg)}.jets-seat-r-sw{transform:scale(.8) rotate(-160deg)}.jets-seat-r-sw>.jets-seat-number,.jets-seat-r-sw>.jets-seat-passenger,.jets-seat-r-sw>.jets-seat-price{transform:rotate(160deg)}.jets-seat-map svg{height:100%;width:100%}.jets-seat-passenger{align-items:center;border-radius:50%;display:flex;font-size:36px;justify-content:center;max-height:192px;max-width:192px;position:absolute;z-index:11}.jets-seat-svg{height:100%;width:100%}.jets-seat-number{color:#fff;font-size:30px;position:absolute;text-align:center;top:18%;z-index:1}.ST-5,.ST-6{top:28%}.ST-8{margin-left:12px}.ST-9{margin-right:12px}.ST-10{margin-left:60px}.ST-11{margin-right:60px}.ST-12{margin-right:106px;top:25%}.ST-13{margin-left:106px;top:25%}.ST-15{margin-left:38px}.ST-16{margin-right:38px}.ST-17{margin-left:72px}.ST-18{margin-right:72px}.ST-20,.ST-21{top:65%}.ST-22,.ST-23{top:60%}.ST-24,.ST-25{top:55%}.ST-26{margin-right:50px;top:30%}.ST-27{margin-left:50px;top:30%}.ST-28{margin-right:62px;top:45%}.ST-29{margin-left:62px;top:45%}.ST-30{margin-right:62px;top:60%}.ST-31{margin-left:62px;top:60%}.ST-32{margin-right:58px;top:60%}.ST-33{margin-left:58px;top:60%}.ST-34{margin-left:27px;top:40%}.ST-35{margin-right:27px;top:40%}.ST-36{margin-right:122px;top:62%}.ST-37{margin-left:122px;top:62%}.ST-38{margin-right:122px;top:28%}.ST-39{margin-left:122px;top:28%}.ST-42{margin-left:260px;top:70%}.ST-43{margin-right:242px;top:70%}.ST-44{margin-right:254px;top:18%}.ST-45{margin-left:260px;top:18%}'
+wl(
+  '.jets-seat{align-items:center;box-sizing:border-box;display:flex;float:left;justify-content:center;position:relative;z-index:10}.jets-unavailable{cursor:not-allowed;position:relative}.jets-available,.jets-selected{cursor:pointer;position:relative}.jets-selected{color:#fff}.jets-aisle,.jets-empty,.jets-index{pointer-events:none}.jets-seat-r-nw{transform:rotate(-20deg)}.jets-seat-r-nw>.jets-seat-number,.jets-seat-r-nw>.jets-seat-passenger,.jets-seat-r-nw>.jets-seat-price{transform:rotate(20deg)}.jets-seat-r-nw45{transform:rotate(-45deg)}.jets-seat-r-nw45>.jets-seat-number,.jets-seat-r-nw45>.jets-seat-passenger,.jets-seat-r-nw45>.jets-seat-price{transform:rotate(45deg)}.jets-seat-r-ne{transform:rotate(20deg)}.jets-seat-r-ne>.jets-seat-number,.jets-seat-r-ne>.jets-seat-passenger,.jets-seat-r-ne>.jets-seat-price{transform:rotate(-20deg)}.jets-seat-r-ne45{transform:rotate(45deg)}.jets-seat-r-ne45>.jets-seat-number,.jets-seat-r-ne45>.jets-seat-passenger,.jets-seat-r-ne45>.jets-seat-price{transform:rotate(-45deg)}.jets-seat-r-s{transform:rotate(180deg)}.jets-seat-r-s>.jets-seat-number,.jets-seat-r-s>.jets-seat-passenger,.jets-seat-r-s>.jets-seat-price{transform:rotate(-180deg)}.jets-seat-r-se{transform:scale(.8) rotate(160deg)}.jets-seat-r-se>.jets-seat-number,.jets-seat-r-se>.jets-seat-passenger,.jets-seat-r-se>.jets-seat-price{transform:rotate(-160deg)}.jets-seat-r-sw{transform:scale(.8) rotate(-160deg)}.jets-seat-r-sw>.jets-seat-number,.jets-seat-r-sw>.jets-seat-passenger,.jets-seat-r-sw>.jets-seat-price{transform:rotate(160deg)}.jets-seat-map svg{height:100%;width:100%}.jets-seat-passenger{align-items:center;border-radius:50%;display:flex;font-size:36px;justify-content:center;max-height:192px;max-width:192px;position:absolute;z-index:11}.jets-seat-svg{height:100%;width:100%}.jets-seat-number{color:#fff;font-size:30px;position:absolute;text-align:center;top:18%;z-index:1}.ST-5,.ST-6{top:28%}.ST-8{margin-left:12px}.ST-9{margin-right:12px}.ST-10{margin-left:60px}.ST-11{margin-right:60px}.ST-12{margin-right:106px;top:25%}.ST-13{margin-left:106px;top:25%}.ST-15{margin-left:38px}.ST-16{margin-right:38px}.ST-17{margin-left:72px}.ST-18{margin-right:72px}.ST-20,.ST-21{top:65%}.ST-22,.ST-23{top:60%}.ST-24,.ST-25{top:55%}.ST-26{margin-right:50px;top:30%}.ST-27{margin-left:50px;top:30%}.ST-28{margin-right:62px;top:45%}.ST-29{margin-left:62px;top:45%}.ST-30{margin-right:62px;top:60%}.ST-31{margin-left:62px;top:60%}.ST-32{margin-right:58px;top:60%}.ST-33{margin-left:58px;top:60%}.ST-34{margin-left:27px;top:40%}.ST-35{margin-right:27px;top:40%}.ST-36{margin-right:122px;top:62%}.ST-37{margin-left:122px;top:62%}.ST-38{margin-right:122px;top:28%}.ST-39{margin-left:122px;top:28%}.ST-42{margin-left:260px;top:70%}.ST-43{margin-right:242px;top:70%}.ST-44{margin-right:254px;top:18%}.ST-45{margin-left:260px;top:18%}.ST-46,.ST-47{top:30%}.ST-47{margin-right:72px}.ST-48{margin-left:72px;top:30%}'
 );
-const Sr = ({ data: t }) => {
+const El = ({ data: t }) => {
   const {
       onSeatClick: s,
-      showTooltip: a,
-      onTooltipClose: n,
+      showTooltip: n,
+      onTooltipClose: a,
       seatLabelJumpTo: c,
       resetSeatJumpTo: d,
       params: h,
       config: g,
       colorTheme: p,
-    } = l(qe),
+    } = r(Xe),
     {
       letter: m,
       type: C,
-      status: k,
+      status: v,
       size: u,
-      passenger: f,
-      color: v,
-      rotation: w,
+      passenger: k,
+      color: w,
+      rotation: f,
       seatType: b,
       seatIconType: L,
       topOffset: M,
       leftOffset: z,
       number: x,
-      price: S,
-      priceValue: H,
+      price: y,
+      priceValue: S,
       currency: $,
-      score: V,
     } = t,
-    { index: T, aisle: A } = y,
-    E = `jets-seat jets-${C} jets-${k} ${w ? `jets-seat-r-${w}` : ''}`,
-    _ = S && (null == g ? void 0 : g.visibleSeatPriceLabels),
-    B = Ge.calculateSeatColorByScore(V, p.customSeatColorRanges) || v,
-    W = i(),
-    [P, I] = r(() => ({
+    { index: V, aisle: T } = H,
+    A = `jets-seat jets-${C} jets-${v} ${f ? `jets-seat-r-${f}` : ''}`,
+    E = y && (null == g ? void 0 : g.visibleSeatPriceLabels),
+    B = i(),
+    [_, W] = l(() => ({
       width: 0.8 * u.width,
       height: 0.8 * u.width,
       backgroundColor: p.defaultPassengerBadgeColor,
@@ -3450,70 +3670,70 @@ const Sr = ({ data: t }) => {
       border: `1px solid ${p.defaultPassengerBadgeBorderColor}`,
       transform: null == h ? void 0 : h.antiRotation,
     })),
-    N = () => (C === T || C === A ? '' : f ? f.abbr || 'P' : '');
-  let j = '';
-  null == h || !h.isHorizontal || (C !== A && C !== T) || (j = h.rightToLeft ? '' : 'rotate(180deg)');
-  const D = { width: u.width, height: u.height, top: M, left: z, transform: j },
-    R = {
+    P = () => (C === V || C === T ? '' : k ? k.abbr || 'P' : '');
+  let I = '';
+  null == h || !h.isHorizontal || (C !== T && C !== V) || (I = h.rightToLeft ? '' : 'rotate(180deg)');
+  const N = { width: u.width, height: u.height, top: M, left: z, transform: I },
+    D = {
       strokeColor: p.seatStrokeColor,
       armrestColor: p.seatArmrestColor,
-      fillColor: B,
+      fillColor: w,
       strokeWidth: p.seatStrokeWidth,
     },
-    O = {
+    R = {
       transform: `${null == h ? void 0 : h.antiRotation} scale(${h.antiScale})`,
       color: p.seatLabelColor,
       zIndex: 100,
     };
   o(() => {
-    f &&
+    k &&
       (() => {
-        if (!W.current) return;
-        if (!W.current.querySelector('.seat')) return;
-        const e = { ...P };
-        null != f && f.passengerColor && (e.backgroundColor = f.passengerColor), I(e);
+        if (!B.current) return;
+        if (!B.current.querySelector('.seat')) return;
+        const e = { ..._ };
+        null != k && k.passengerColor && (e.backgroundColor = k.passengerColor), W(e);
       })();
-  }, [f]),
+  }, [k]),
     o(() => {
       var e;
       c &&
         (null == x ? void 0 : x.toUpperCase()) === (null == c ? void 0 : c.toUpperCase()) &&
-        (null === (e = W.current) || void 0 === e || e.scrollIntoView(), a(t, W, { nativeEvent: null }), d());
+        (null === (e = B.current) || void 0 === e || e.scrollIntoView(), n(t, B, { nativeEvent: null }), d());
     }, [c]);
   return e.createElement(
     'div',
     {
-      ref: W,
-      style: D,
-      className: E,
-      onClick: e => s(t, W, e),
-      onMouseEnter: h.tooltipOnHover ? e => a(t, W, e) : null,
+      ref: B,
+      style: N,
+      className: A,
+      onClick: e => s(t, B, e),
+      onMouseEnter: h.tooltipOnHover ? e => n(t, B, e) : null,
       onMouseLeave: h.tooltipOnHover
         ? e =>
-            ((e, t, r) => {
+            ((e, t, l) => {
               var i;
-              (null != r &&
-                null !== (i = r.relatedTarget) &&
+              (null != l &&
+                null !== (i = l.relatedTarget) &&
                 void 0 !== i &&
                 null !== (i = i.className) &&
                 void 0 !== i &&
                 i.includes('tooltip')) ||
-                n(e, t, r);
-            })(t, W, e)
+                a(e, t, l);
+            })(t, B, e)
         : null,
       'data-testid': 'jets-seat',
     },
-    b && C !== T
+    b && C !== V
       ? e.createElement(
           e.Fragment,
           null,
-          _ && e.createElement(yr, { priceValue: H, currency: $, maxWidth: u.width }),
+          E && e.createElement(Al, { priceValue: S, currency: $, maxWidth: u.width }),
           e.createElement('div', { className: `jets-seat-number ST-${L}` }, `${x}`),
-          e.createElement(xr, { seatType: b, style: R }),
-          f &&
+          e.createElement(Tl, { seatType: b, style: D }),
+          k &&
             e.createElement(
               'div',
-              { className: 'jets-seat-passenger', style: P },
+              { className: 'jets-seat-passenger', style: _ },
               e.createElement(
                 'div',
                 {
@@ -3521,44 +3741,44 @@ const Sr = ({ data: t }) => {
                     transform: null == h || !h.isHorizontal || (null != h && h.rightToLeft) ? '' : 'rotate(180deg)',
                   },
                 },
-                N()
+                P()
               )
             )
         )
-      : e.createElement('div', { style: O, 'data-testid': 'jets-seat-index' }, N())
+      : e.createElement('div', { style: R, 'data-testid': 'jets-seat-index' }, P())
   );
 };
-pr('.jets-row{position:absolute}');
-const Hr = ({ seats: t, top: r }) => {
+wl('.jets-row{position:absolute}');
+const Bl = ({ seats: t, top: l }) => {
   var o;
   const s = i(null),
-    { componentOverrides: a } = l(qe),
-    n = null !== (o = null == a ? void 0 : a.JetsSeat) && void 0 !== o ? o : Sr;
+    { componentOverrides: n } = r(Xe),
+    a = null !== (o = null == n ? void 0 : n.JetsSeat) && void 0 !== o ? o : El;
   return e.createElement(
     'div',
-    { className: 'jets-row', style: { top: r }, ref: s },
-    null == t ? void 0 : t.map(t => e.createElement(n, { key: t.uniqId, data: t }))
+    { className: 'jets-row', style: { top: l }, ref: s },
+    null == t ? void 0 : t.map(t => e.createElement(a, { key: t.uniqId, data: t }))
   );
 };
-pr(
+wl(
   '.jets-cabin-title-container{position:absolute}.jets-cabin-title-hl-right{right:0}.jets-cabin-title-hl-left,.jets-cabin-title-hl-right{position:absolute;top:0;white-space:nowrap;width:60px}.jets-cabin-title-hl-left{left:0}.jets-cabin-title-label-left{right:0;transform-origin:bottom right}.jets-cabin-title-label-left,.jets-cabin-title-label-right{border-radius:3px;font-size:16px;padding:0 6px;position:absolute;top:0}.jets-cabin-title-label-right{left:0;transform-origin:bottom left}'
 );
-const $r = ({ top: t, height: r, lang: o, localeKey: s }) => {
-  const { params: a, colorTheme: n, config: c } = l(qe),
+const _l = ({ top: t, height: l, lang: o, localeKey: s }) => {
+  const { params: n, colorTheme: a, config: c } = r(Xe),
     d = i(null),
-    h = n.cabinTitlesHighlightColors,
-    g = c.customCabinTitles && c.customCabinTitles[s] ? c.customCabinTitles[s] : $[o][s],
-    p = { color: n.cabinTitlesLabelColor, top: t, height: r, width: a.innerWidth },
-    m = { transform: 'translateY(-50%) rotate(-90deg)', zoom: a.antiScale },
-    C = { transform: 'translateY(-50%) rotate(90deg)', zoom: a.antiScale },
-    k = { height: r, borderRight: `${3 * a.antiScale}px solid ${h[s]}` },
-    u = { height: r, borderLeft: `${3 * a.antiScale}px solid ${h[s]}` };
+    h = a.cabinTitlesHighlightColors,
+    g = c.customCabinTitles && c.customCabinTitles[s] ? c.customCabinTitles[s] : A[o][s],
+    p = { color: a.cabinTitlesLabelColor, top: t, height: l, width: n.innerWidth },
+    m = { transform: 'translateY(-50%) rotate(-90deg)', zoom: n.antiScale },
+    C = { transform: 'translateY(-50%) rotate(90deg)', zoom: n.antiScale },
+    v = { height: l, borderRight: `${3 * n.antiScale}px solid ${h[s]}` },
+    u = { height: l, borderLeft: `${3 * n.antiScale}px solid ${h[s]}` };
   return e.createElement(
     'div',
     { className: 'jets-cabin-title-container', style: p, ref: d, 'data-testid': 'jets-cabin-title' },
     e.createElement(
       'div',
-      { className: 'jets-cabin-title-hl-left', style: k },
+      { className: 'jets-cabin-title-hl-left', style: v },
       e.createElement('div', { className: 'jets-cabin-title-label-left', style: m }, g)
     ),
     e.createElement(
@@ -3568,128 +3788,197 @@ const $r = ({ top: t, height: r, lang: o, localeKey: s }) => {
     )
   );
 };
-pr(
+wl(
   '.jets-deck{align-items:center;box-sizing:border-box;display:flex;flex-direction:column;height:100%;position:relative;transform-style:preserve-3d;width:100%}'
 );
-const Vr = 'deck',
-  Tr = ({ deck: t, lang: r, exits: o, bulks: s, isSingleDeck: a }) => {
-    const { rows: n, number: c, height: d, width: h, wingsInfo: g } = t || {},
-      { params: p } = l(qe),
+const Wl = 'deck',
+  Pl = ({ deck: t, lang: l, exits: o, bulks: s, isSingleDeck: n }) => {
+    const { rows: a, number: c, height: d, width: h, wingsInfo: g } = t || {},
+      { params: p } = r(Xe),
       m = i(null),
       C = { height: d, padding: '0 10px 0 10px', margin: '0 auto' };
     return e.createElement(
       'div',
       { className: 'jets-deck', style: C, ref: m },
       (null == p ? void 0 : p.visibleCabinTitles) &&
-        n
+        a
           .filter(e => e.isFirstInCabin)
           .map(t =>
-            e.createElement($r, {
+            e.createElement(_l, {
               key: t.classCode + t.uniqId,
               top: t.topOffset,
               height: t.cabinHeight,
-              lang: r,
+              lang: l,
               localeKey: t.classCode,
             })
           ),
-      c && !a && e.createElement(fr, { number: c, lang: r, localeKey: 'deck' }),
-      n.map(t => e.createElement(Hr, { key: t.uniqId, seats: t.seats, top: t.topOffset })),
+      c && !n && e.createElement(zl, { number: c, lang: l, localeKey: Wl }),
+      a.map(t => e.createElement(Bl, { key: t.uniqId, seats: t.seats, top: t.topOffset })),
       o && o.length
-        ? o.map(({ topOffset: t, type: r, uniqId: i }, l) =>
-            e.createElement(ur, { key: i, type: r, index: l, topOffset: t })
+        ? o.map(({ topOffset: t, type: l, uniqId: i }, r) =>
+            e.createElement(Ml, { key: i, type: l, index: r, topOffset: t })
           )
         : null,
       s && s.length
-        ? s.map(({ id: t, uniqId: r, type: i, align: l, width: o, height: s, iconType: a, xOffset: n, topOffset: c }) =>
-            e.createElement(Cr, {
+        ? s.map(({ id: t, uniqId: l, type: i, align: r, width: o, height: s, iconType: n, xOffset: a, topOffset: c }) =>
+            e.createElement(bl, {
               id: t,
-              key: r,
+              key: l,
               type: i,
-              align: l,
+              align: r,
               width: o,
               height: s,
-              iconType: a,
-              xOffset: n,
+              iconType: n,
+              xOffset: a,
               topOffset: c,
             })
           )
         : null
     );
   };
-pr(
+wl(
   '.jets-deck-selector{background-color:hsla(0,0%,50%,.5);border-radius:3px;height:40px;margin:5px;padding:5px;position:absolute;z-index:1000}'
 );
-const Ar = ({ direction: t }) => {
-  const { params: r, colorTheme: o, switchDeck: s } = l(qe),
-    a = i(null),
-    { deckSelectorStrokeColor: n, deckSelectorFillColor: c, deckSelectorSize: d } = o,
+const Il = ({ direction: t }) => {
+  const { params: l, colorTheme: o, switchDeck: s } = r(Xe),
+    n = i(null),
+    { deckSelectorStrokeColor: a, deckSelectorFillColor: c, deckSelectorSize: d } = o,
     h = {
       transform: `rotate(${180 * Number(t)}deg)`,
       background: c,
       height: d,
       width: d,
-      left: null != r && r.rightToLeft ? 'auto' : 0,
-      right: null != r && r.rightToLeft ? 0 : 'auto',
+      left: null != l && l.rightToLeft ? 'auto' : 0,
+      right: null != l && l.rightToLeft ? 0 : 'auto',
     };
   return e.createElement('div', {
     className: 'jets-deck-selector',
     style: h,
-    ref: a,
+    ref: n,
     onClick: e => s(),
     dangerouslySetInnerHTML: {
       __html:
-        ((g = n),
+        ((g = a),
         `\n<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 384.97 384.97" >\n<g>\n\t<g>\n\t\t<path fill="${g}" d="M360.909,0H24.061C10.767,0,0,10.767,0,24.061v336.848c0,13.293,10.767,24.061,24.061,24.061h336.848\n\t\t\tc13.281,0,24.061-10.767,24.061-24.061V24.061C384.97,10.767,374.191,0,360.909,0z M360.909,360.909H24.061V24.061h336.848\n\t\t\tV360.909z"/>\n\t\t<path fill="${g}" d="M59.935,240.666c0,6.785,5.883,12.151,12.56,11.97h239.92\n\t\t\tc10.671,0.289,16.602-12.872,8.927-20.476l-120.291-119.1c-4.74-4.692-12.403-4.523-17.191,0L63.664,232.065\n\t\t\tC61.379,234.242,59.935,237.274,59.935,240.666z M192.461,138.589l91.021,90.119H101.427L192.461,138.589z"/>\n\t</g>\n</g>\n</svg>\n`),
     },
   });
   var g;
 };
-pr(
+wl(
   '.jets-no-data{align-items:center;display:flex;font-size:18px;font-weight:700;height:100%;height:100vh;justify-content:center;width:100%}'
 );
-const Er = () => {
-  const { params: t } = l(qe),
-    r = { transform: `scale(${null == t ? void 0 : t.antiScale})` };
-  return e.createElement('div', { style: r, className: 'jets-no-data' }, 'Seat map is not found for the flight');
-};
-pr('.jets-nose{position:relative}.jets-nose:not(.cut) .nose-dotted-line,.nose-dotted-line{stroke:none}');
-const _r = ({ isFull: t }) => {
-  const { params: o, colorTheme: a } = l(qe),
-    [n, c] = r(0),
+const Nl = () => {
+    const { params: t } = r(Xe),
+      l = { transform: `scale(${null == t ? void 0 : t.antiScale})` };
+    return e.createElement('div', { style: l, className: 'jets-no-data' }, 'Seat map is not found for the flight');
+  },
+  Dl = {
+    _mapping: {
+      A220: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="214" viewBox="0 0 200 214">\n    ${e}\n<path class="nose-filling-straight" d="M1.5,213.5h197l-0.2-24l0,0c0.1-6.5-0.8-12.9-2.8-19C183.5,134,137.2,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7\n\tc-2,6.1-3,12.4-3,18.8l0,0V213.5z"/>\n<path class="nose-filling" d="M1.5,191c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5s37.8-10.5,50.7-10.4\n\tc12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4-0.9-12.7-3-18.8C183.5,134.2,137.3,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7\n\tc-2,6.1-3,12.4-3,18.8l0,0V191z"/>\n<path class="nose-dotted-line" d="M5,190c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5s37.8-10.5,50.7-10.4c10.4,0.1,36.6,7.9,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,213.5v-23.1c0-7.1-1-14-3.2-20.7C182.8,132.2,137,2,100,2S17.2,132.2,4.8,169.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M15.2,176.5c2.6-22.4,6.6-33.8,18.8-46.2c0.8-1.1,4.2-1.5,5.4-0.9c0.3,0.2,0.6,0.5,0.8,0.8l4.9,20.3\n\tc0.6,2.4-1.3,5.5-1.3,5.5c-8.2,15.1-7.4,15.5-11.5,22.7c-1.1,1.9-2.9,3.1-4.8,3.1h-8.2c-1.8,0-4.2-1.4-4.1-3.1\n\tC15.2,178.7,15.2,176.5,15.2,176.5z M95.7,113.1V78.7c0-1-2.1-3.6-3.6-3.6c-0.3,0-12.7,1.1-13,1.2c-8.7,3.4-14.1,11-33.4,34\n\tc-1.2,1.5-0.7,5.3-0.4,7.1l5.8,23.9c0.8,1.4,2.7,1.8,4.1,1c0.2-0.1,0.4-0.2,0.5-0.4c9.5-8.9,23-17.4,35-21.9\n\tC93,119.1,95.7,115.4,95.7,113.1L95.7,113.1L95.7,113.1z M183,176.5c-1.1-22.4-5.4-33.8-17.8-46.2c-1-1.1-4.2-1.5-5.4-0.9\n\tc-0.4,0.2-0.6,0.5-0.9,0.8l-4.9,20.3c-0.6,2.4,1.3,5.5,1.3,5.5c7.7,15.5,7.5,15.3,11.5,22.7c1.6,2.1,2.9,3.1,4.8,3.1h8.2\n\tc1.8,0,3.2-1.4,3.1-3.1C183,178.7,183,176.5,183,176.5L183,176.5z M108.5,120c12.3,4.7,25.5,13,35,21.9c1.2,1.1,3.1,1.1,4.2-0.1\n\tc0.2-0.2,0.3-0.3,0.4-0.5l5.8-23.9c0.6-1.7,0.8-5.6-0.4-7.1c-19.2-23-23.7-30.6-32.4-34c-1.3-0.5-13.6-1.2-14-1.2\n\tc-1.3,0-3.6,2.5-3.6,3.5v34.4C103.6,115.4,106.2,119.4,108.5,120L108.5,120L108.5,120z" fill="white"/>\n</svg>`,
+      A320: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="214" viewBox="0 0 200 214">\n${e}\n<path class="nose-filling-straight" d="M1.5,213.5h197l-0.2-24l0,0c0.1-6.5-0.7-12.9-2.8-19C183.5,134,137.2,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7\n\tc-2,6.1-3,12.4-3,18.8l0,0V213.5z"/>\n<path class="nose-filling" d="M1.5,191c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4\n\tc12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4-0.9-12.7-3-18.8C183.5,134.2,137.3,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7\n\tc-2,6.1-3,12.4-3,18.8l0,0V191z"/>\n<path class="nose-dotted-line" d="M5,190c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,213.5v-23.1c0-7.1-1-14-3.2-20.7C182.8,132.2,137,2,100,2S17.2,132.2,4.7,169.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M130.5,90.8c8.4,5.5,16.5,12.1,17.4,12.8c1.5,1.3,1.6,2,0.8,4c-0.8,1.8-3.3,10.2-3.7,11.6\n\tc-0.6,1.7-2.5,7.5-2.5,7.5c-9.1-6.8-29.1-16.8-32-18.2c-2.7-1.4-7.4-3.1-7.4-3.1v-27c1.9,0,5.9,0,5.9,0c1.2,0.9,6.8,3.8,9.2,5.3\n\tC119.2,84.1,125,87.2,130.5,90.8z M149.7,119.7c-0.9,2.4-2.6,6.9-3.4,10.2c0,0,3.9,7.9,6.3,12.8c0,0,2.2,3.1,2.8,4\n\tc2.9,0.3,17.1,0.8,19.3,0.8l0.5-2.8c-0.5-1.7-1.1-3.9-1.7-5.2c-0.7-1.7-6.2-12-7.6-14c-1.4-2-9.2-12.7-11.2-15.1l-2.1,0.6\n\tC152.6,111.1,150.3,118,149.7,119.7z M82.8,83.5c2.4-1.4,7.9-4.4,9.2-5.3c0,0,4,0,5.9,0v27c0,0-4.7,1.7-7.4,3.1\n\tc-2.8,1.4-22.9,11.4-32,18.2c0,0-1.9-5.8-2.5-7.5c-0.5-1.4-3-9.7-3.7-11.6c-0.8-2-0.6-2.7,0.8-4c0.9-0.8,9-7.4,17.4-12.8\n\tC76.1,87.2,81.9,84.1,82.8,83.5z M177.9,152.1c0,0-15.3-0.9-17.6-0.9c-3.6,0-3,0.9-2.4,2.5c0.7,1.8,3,7.2,3.9,9.3\n\tc1.4,3.2,4.3,10.8,4.3,10.8s6.3,6.2,7.1,7l11.7-0.4l2-2c-1.1-6.3-7.3-21.9-7.3-21.9L177.9,152.1z M48.6,111.1l-2.1-0.6\n\tc-2,2.5-9.7,13.1-11.2,15.1c-1.4,2-6.9,12.3-7.6,14c-0.6,1.3-1.2,3.4-1.7,5.2l0.5,2.8c2.2,0,16.4-0.6,19.3-0.8c0.6-0.9,1.8-4,1.8-4\n\tC50.1,137.9,55,130,55,130c-0.8-3.3-2.5-7.8-3.4-10.2C50.9,118,48.6,111.1,48.6,111.1z M12.9,178.4l2,2l11.7,0.4\n\tc0.8-0.8,7.1-7,7.1-7s3.1-7.8,4.3-10.8c0.9-2.3,3.7-7.4,3.9-9.3c0.3-1.9,0.7-2.6-2.4-2.4c-2.3,0.1-17.6,0.9-17.6,0.9\n\ts-1.2,2.3-1.9,4.4C20.2,156.5,14.1,172.2,12.9,178.4z" fill="white"/>\n</svg>`,
+      A330: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="214" viewBox="0 0 200 214">\n${e}\n<path class="nose-filling-straight" d="M1.5,213.5h197l-0.2-24l0,0c0.1-6.5-0.7-12.9-2.8-19C183.5,134,137.2,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7\n\tc-2,6.1-3,12.4-3,18.8l0,0V213.5z"/>\n<path class="nose-filling" d="M1.5,191c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4\n\tc12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4-0.9-12.7-3-18.8C183.5,134.2,137.3,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7\n\tc-2,6.1-3,12.4-3,18.8l0,0V191z"/>\n<path class="nose-dotted-line" d="M5,190c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,213.5v-23.1c0-7.1-1-14-3.2-20.7C182.8,132.2,137,2,100,2S17.2,132.2,4.7,169.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M168,166.6c-1.2,0-1.4,0.2-2.5-0.9c-1-1.1-7.1-7-8.7-8.4c-1.6-1.5-2.9-2.5-3.5-3.5\n\tc-0.8-1.5-5.1-13-5.5-14s-1.2-3.1,0-3.2c1.2-0.1,15.1,0.1,16.3,0.1s1.6-0.2,2.5,2.3c0.9,2.5,7.5,20.6,9.2,25.9\n\tc0.2,0.8-0.3,1.6-1.1,1.6L168,166.6z M163.1,129.9l-13.1-27.6c-0.3-0.6-1-0.9-1.6-0.6c-1.2,0.5-3.2,1.2-4.4,1.7\n\tc-0.4,0.1-0.7,0.5-0.8,0.9c0,0-2.8,7.9-2.9,9.9c-0.2,2.9,0.2,4,1.1,6.9c0,0,0,0.1,0.1,0.1l4.7,10.5c0.2,0.5,0.7,0.8,1.2,0.8\n\tl14.6-0.6C162.9,131.7,163.4,130.8,163.1,129.9z M142.2,92l-36.4-20.2c-0.7-0.6-1.8-0.1-1.8,0.9v18c0,0.7,0.4,1.3,0.9,1.6l30.4,18.4\n\tc0.8,0.5,1.8,0.3,2.4-0.6C137.7,110.1,142.8,92.6,142.2,92z M25.3,166.6c-0.8,0-1.4-0.8-1.1-1.6c1.8-5.4,8.4-23.4,9.2-25.9\n\tc0.9-2.5,1.2-2.3,2.5-2.3c1.2,0,15.1-0.1,16.3-0.1c1.2,0.1,0.4,2.1,0,3.2s-4.6,12.5-5.5,14c-0.5,1-1.8,2-3.5,3.5s-7.7,7.4-8.7,8.4\n\ts-1.2,0.9-2.5,0.9L25.3,166.6z M38.1,131.8l14.6,0.6c0.5,0,1-0.3,1.2-0.8l4.7-10.5c0,0,0-0.1,0.1-0.1c1-2.9,1.3-4,1.1-6.9\n\tc-0.1-1.9-2.9-9.9-2.9-9.9c-0.1-0.4-0.4-0.7-0.8-0.9c-1.2-0.4-3.1-1.2-4.4-1.7c-0.6-0.2-1.3,0-1.6,0.6l-13.1,27.6\n\tC36.6,130.8,37.1,131.8,38.1,131.8z M62.3,110.1c0.6,0.9,1.6,1.1,2.4,0.6l30.4-18.4c0.5-0.3,0.9-0.9,0.9-1.6v-18\n\tc0-1-1.1-1.5-1.8-0.9L57.8,92C57.2,92.6,62.3,110.1,62.3,110.1z" fill="white"/>\n</svg>`,
+      A350: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="214" viewBox="0 0 200 214">\n${e}\n<path class="nose-filling-straight" d="M1.5,213.5h197l-0.2-24l0,0c0.1-6.5-0.7-12.9-2.8-19C183.5,134,137.2,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7\n\tc-2,6.1-3,12.4-3,18.8l0,0V213.5z"/>\n<path class="nose-filling" d="M1.5,191c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4\n\tc12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4-0.9-12.7-3-18.8C183.5,134.2,137.3,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7\n\tc-2,6.1-3,12.4-3,18.8l0,0V191z"/>\n<path class="nose-dotted-line" d="M5,190c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,213.5v-23.1c0-7.1-1-14-3.2-20.7C182.8,132.2,137,2,100,2S17.2,132.2,4.7,169.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M95,95.9v14.5c0.6,5.9-0.4,6.6-4.4,8.2c-4.5,1.8-15.7,7.1-19.3,9.9c-3.6,2.8-6.7,3.6-8.8,0.5\n\tc-2.1-3.1-4.5-6.9-6.5-9.7c-2-2.9-3.6-4.3,2.5-10.2c5.5-5.3,11.1-8.8,17.8-12.6c1.5-0.8,6.7-2.9,8.7-3.5\n\tC89.1,91.7,95.1,92.7,95,95.9z M53,122.9c-0.9-1.3-2.7-6.1-9.3,1.2c-5.7,6.2-10.5,14.2-11.6,16.5c-3.6,7.5-5.5,8.6,1.1,8.7\n\tc6.7,0.1,8.2,0.1,11-0.1c3.1-0.2,5.5-0.4,7.7-2.6c2.3-2.4,5.4-5.1,7.2-7.9c1.2-1.9,2.5-3.6,0.3-6.7C59.4,132.1,53.9,124.2,53,122.9z\n\t M20,171.3c-1,3.9,0.6,11.2,8,5.6c5.5-4.2,12.1-11.2,16.3-19.4c1.1-2.1,1.5-4.1-2.2-4.7c-3.8-0.2-7.8,0-11.8-0.2\n\tc-4.3-0.2-4.4,0.9-5.8,4.7C22.8,161.9,21.3,166.6,20,171.3z M115.1,93.1c2,0.6,7.2,2.7,8.7,3.5c6.6,3.7,12.3,7.3,17.8,12.6\n\tc6,5.9,4.4,7.3,2.5,10.2c-2,2.9-4.4,6.6-6.5,9.7c-2.1,3.1-5.2,2.3-8.8-0.5c-3.6-2.8-14.9-8.1-19.3-9.9c-4-1.7-5-2.3-4.4-8.2V95.9\n\tC104.9,92.7,110.9,91.7,115.1,93.1z M140.6,132.1c-2.1,3.1-0.9,4.9,0.3,6.7c1.8,2.8,4.9,5.4,7.2,7.9c2.3,2.3,4.6,2.4,7.7,2.6\n\tc2.8,0.2,4.3,0.2,11,0.1c6.6-0.1,4.7-1.2,1.1-8.7c-1.1-2.3-5.9-10.3-11.6-16.5c-6.7-7.3-8.5-2.5-9.3-1.2\n\tC146.1,124.2,140.6,132.1,140.6,132.1z M175.4,157.3c-1.4-3.8-1.5-4.8-5.8-4.7c-3.9,0.1-8,0-11.8,0.2c-3.6,0.6-3.2,2.6-2.2,4.7\n\tc4.2,8.2,10.9,15.2,16.3,19.4c7.4,5.7,8.9-1.7,8-5.6C178.7,166.6,177.2,161.9,175.4,157.3z" fill="white"/>\n</svg>`,
+      A380: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="214" viewBox="0 0 200 214">\n${e}\n<path class="nose-filling-straight" d="M1.5,213.5h197l-0.2-24l0,0c0.1-6.5-0.7-12.9-2.8-19C183.5,134,137.2,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7\n\tc-2,6.1-3,12.4-3,18.8l0,0V213.5z"/>\n<path class="nose-filling" d="M1.5,191c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4\n\tc12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4-0.9-12.7-3-18.8C183.5,134.2,137.3,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7\n\tc-2,6.1-3,12.4-3,18.8l0,0V191z"/>\n<path class="nose-dotted-line" d="M5,190c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,213.5v-23.1c0-7.1-1-14-3.2-20.7C182.8,132.2,137,2,100,2S17.2,132.2,4.7,169.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M68,83.9l23.2-14.3l4.7,0.3l-0.1,12.4L74.1,95L68,83.9z M63.2,107l5.3-6.8c0.1-0.2,0.2-0.5,0.2-0.7\n\tc0.1-0.3,0-0.6-0.1-0.9l-6.2-11.1l-5.5,3.6L48,101.6c-0.6,0.6-1,1.3-1.4,2.1c-0.2,0.5-0.4,1-0.4,1.5c0,0,0.3,1.1,0.9,1.5\n\tc0.4,0.3,0.9,0.5,1.4,0.5l12.9,0.7c0.3,0,0.7-0.1,0.9-0.3C62.7,107.4,63,107.2,63.2,107z M58.8,112.2l-15.5-0.8\n\tc-0.5,0-0.6,0.1-1,0.4c-0.4,0.3-0.6,0.6-0.8,1.1l-8,16.4c-0.3,0.7,0.1,1,0.5,1.3c0.4,0.2,0.8,0.2,1.2,0l18.4-9.4\n\tc0.5-0.3,1-0.6,1.5-1c0.5-0.4,0.9-0.9,1.2-1.5l2.8-5c0.1-0.2,0.1-0.4,0.1-0.6C59.2,112.7,59.1,112.4,58.8,112.2L58.8,112.2z\n\tM132,83.9l-23.2-14.3l-4.7,0.3l0.1,12.4L125.9,95L132,83.9z M136.8,107l-5.3-6.8c-0.1-0.2-0.2-0.5-0.2-0.7c-0.1-0.3,0-0.6,0.1-0.9\n\tl6.2-11.1l5.5,3.6l8.9,10.5c0.6,0.6,1,1.3,1.4,2.1c0.2,0.5,0.4,1,0.4,1.5c0,0-0.4,1.1-0.9,1.5c-0.4,0.3-0.9,0.5-1.4,0.5l-12.9,0.7\n\tc-0.3,0-0.7-0.1-0.9-0.3C137.3,107.4,137,107.2,136.8,107L136.8,107z M141.2,112.2l15.5-0.8c0.5,0,0.6,0.1,1,0.4\n\tc0.4,0.3,0.6,0.6,0.8,1.1l8,16.4c0.3,0.7-0.1,1-0.5,1.3c-0.4,0.2-0.8,0.2-1.2,0l-18.4-9.4c-0.5-0.3-1-0.6-1.5-1\n\tc-0.5-0.4-0.9-0.9-1.2-1.5l-2.8-5c-0.1-0.2-0.1-0.4-0.1-0.6C140.8,112.7,140.9,112.4,141.2,112.2L141.2,112.2z" fill="white"/>\n</svg>`,
+      ATR: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="214" viewBox="0 0 200 214">\n${e}\n<path class="nose-filling-straight" d="M1.5,213.5h197l-0.2-24l0,0c0.1-6.5-0.7-12.9-2.8-19C183.5,134,137.2,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7\n\tc-2,6.1-3,12.4-3,18.8l0,0V213.5z"/>\n<path class="nose-filling" d="M1.5,191c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4\n\tc12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4-0.9-12.7-3-18.8C183.5,134.2,137.3,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7\n\tc-2,6.1-3,12.4-3,18.8l0,0V191z"/>\n<path class="nose-dotted-line" d="M5,190c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,213.5v-23.1c0-7.1-1-14-3.2-20.7C182.8,132.2,137,2,100,2S17.2,132.2,4.7,169.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M97.7,82.8v27.4c-24.5,10-37.1,21.9-37.1,21.9s-10.8-22.6-10.8-22.6C73.3,91.8,95.1,84.5,97.7,82.8z\n\tM57.2,134.4L47,111.5c-21.4,17.9-26.8,41.3-26.8,41.3l21.8,0.1C42,152.9,44.9,146,57.2,134.4z M13.8,183.7l5.1-0.1l15.8-10.3\n\tc2.4-9.8,6.2-17.4,6.2-17.4l-21.7,0C19.2,155.9,15.3,164.8,13.8,183.7z M150.1,109.4c0,0-10.8,22.6-10.8,22.6s-12.6-12-37.1-21.9\n\tV82.8C104.9,84.6,126.7,91.9,150.1,109.4z M158,153l21.8-0.1c0,0-5.4-23.4-26.8-41.3l-10.2,22.8C155.1,146.1,158,153,158,153z\n\tM180.8,156l-21.7,0c0,0,3.8,7.7,6.2,17.4l15.8,10.3l5.1,0.1C184.7,164.8,180.8,156,180.8,156z" fill="white"/>\n</svg>`,
+      B717: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="214" viewBox="0 0 200 214">\n${e}\n<path class="nose-filling-straight" d="M1.5,213.5h197l-0.2-24l0,0c0.1-6.5-0.7-12.9-2.8-19C183.5,134,137.2,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7\n\tc-2,6.1-3,12.4-3,18.8l0,0V213.5z"/>\n<path class="nose-filling" d="M1.5,191c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4\n\tc12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4-0.9-12.7-3-18.8C183.5,134.2,137.3,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7\n\tc-2,6.1-3,12.4-3,18.8l0,0V191z"/>\n<path class="nose-dotted-line" d="M5,190c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,213.5v-23.1c0-7.1-1-14-3.2-20.7C182.8,132.2,137,2,100,2S17.2,132.2,4.7,169.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M114.5,108.9c0,1-0.9,1.8-2,1.8H87.4c-1.1,0-2-0.8-2-1.8V93.5c0-1,0.9-1.8,2-1.8h25.1\n\tc1.1,0,2,0.8,2,1.8L114.5,108.9z M59.4,129.7l20.7-15.9c0,0,2.5-2,2.5-6.9v-7.7c0,0-2.3-4.7-4.4-2.8S53,116.3,53,116.3s-4,2.2-1.6,6\n\ts4.7,6.8,4.7,6.8S57.1,131.4,59.4,129.7L59.4,129.7z M23.5,141.2c-3.4,2.9,0,5,0,5l11,5.5c4.9,2.4,7-0.6,7-0.6L53,135.9\n\tc2.1-2.8,0.2-5,0.2-5l-4-6.6c-2.6-4.2-6.3,0-6.3,0L23.5,141.2z M17.6,152.3l-3.7,27.1c-0.4,3.1,2.6,3.4,2.6,3.4h4.1\n\tc2.3,0,3.3-2,3.3-2l11.6-20.6c2-3.5-1.3-5-1.3-5l-12.5-6.5C18.1,146.9,17.6,152.3,17.6,152.3z M44.7,152.3c-2.1,2.9-0.4,4.2-0.4,4.2\n\tl12.7,5.8c2.4,1.1,4.3-0.7,4.3-0.7l9-10.4c2.1-2.4-0.7-4.3-0.7-4.3l-9.6-8.5c-3.8-3.3-5.7,0.6-5.7,0.6L44.7,152.3z M143.9,129\n\tc0,0,2.3-2.9,4.7-6.8s-1.6-6-1.6-6s-23-17.8-25.1-19.8c-2.1-1.9-4.4,2.8-4.4,2.8v7.7c0,4.9,2.5,6.9,2.5,6.9l20.7,15.9\n\tC142.9,131.4,143.9,129,143.9,129L143.9,129z M157.1,124.3c0,0-3.7-4.2-6.3,0l-4,6.6c0,0-1.9,2.3,0.2,5l11.5,15.2c0,0,2.1,3,7,0.6\n\tl11-5.5c0,0,3.4-2.1,0-5L157.1,124.3z M178.4,148.7l-12.5,6.5c0,0-3.2,1.5-1.3,5l11.6,20.6c0,0,1,2,3.3,2h4.1c0,0,3-0.2,2.6-3.4\n\tl-3.7-27.1C182.4,152.3,181.9,146.9,178.4,148.7z M145.7,139.2c0,0-1.9-4-5.7-0.6l-9.6,8.5c0,0-2.8,1.8-0.7,4.3l9,10.4\n\tc0,0,1.9,1.8,4.3,0.7l12.7-5.8c0,0,1.7-1.3-0.4-4.2L145.7,139.2z" fill="white"/>\n</svg>`,
+      B737: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="254" viewBox="0 0 200 254">\n${e}\n<path class="nose-filling-straight" d="M1.5,253.2h197l-0.2-28.5l0,0c0.1-7.7-0.7-15.3-2.8-22.6C183.5,158.7,137.2,1.9,100,1.9C62.7,2.1,16.5,159.1,4.5,202.3\n\tc-2,7.2-3,14.7-3,22.3l0,0V253.2z"/>\n<path class="nose-filling" d="M1.5,233.7c0,0,0.5,0.4,1.5,0c6.8-2.7,34.5-10.4,44.8-10.7c13.3-0.1,39,9.8,52.3,9.8c12.9,0,37.8-9.8,50.7-9.7\n\tc12.2,0.1,46.3,10.5,46.3,10.5h1.4v-2l0,0c0-7.8-0.9-15.6-3-23C183.5,164,137.3,1.9,100,1.9C62.7,2.1,16.5,164.1,4.5,208.7\n\tc-2,7.4-3,15.2-3,23l0,0V233.7z"/>\n<path class="nose-dotted-line" d="M5,232.8c9.1-3,33.3-10.6,42.8-10.8c13.3-0.1,39,10.8,52.3,10.8c12.9,0,37.8-10.8,50.7-10.7c10.4,0.1,36.6,8.2,44.2,10.7"/>\n<path class="nose-outline" d="M198.5,253.2v-27.4c0-8.4-1-16.6-3.2-24.6C182.8,156.6,137,1.9,100,1.9S17.2,156.6,4.7,201.3c-2.2,8-3.2,16.2-3.2,24.6v27.4\n\t"/>\n<path class="nose-windows" d="M96.4,127.1l-46,25.2l-1.1-22.6L96.2,104L96.4,127.1z M23.6,166.1l9.7,17.7L44,157l-1.9-18.5L23.6,166.1z\n\tM10.1,211c-0.4,1.5,0.6,5,2.3,5.4c0.2,0.1,0.6,0.1,0.9,0.1h3.9c2.3-0.1,4.4-1.4,5.2-3.4l9.4-23.8l-8.7-14.1\n\tc-1.5-1.5-3.9-1.2-4.4,0.8L10.1,211z M103.7,104.2l46.9,25.7l-1.1,22.6l-46-25.2L103.7,104.2z M157.9,138.7l-1.9,18.5l10.8,26.8\n\tl9.7-17.7L157.9,138.7z M181.3,176.1c-0.5-2-3-2.3-4.4-0.8l-8.7,14.1l9.4,23.8c0.9,2,2.9,3.3,5.2,3.4h3.9c0.2,0,0.6,0,0.9-0.1\n\tc1.7-0.3,2.7-3.9,2.3-5.4L181.3,176.1z" fill="white"/>\n</svg>`,
+      B747: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="264" viewBox="0 0 200 264">\n${e}\n<path class="nose-filling-straight" d="M1.5,264.6h197l-0.2-29.9l0,0c0.1-8.1-0.7-16.1-2.8-23.7C183.5,165.5,137.2,1.1,100,1.1C62.7,1.2,16.5,165.9,4.5,211.2c-2,7.6-3,15.4-3,23.4l0,0V264.6z"/>\n<path class="nose-filling" d="M1.5,244.5c0,0,0.5,0.4,1.5,0c6.8-2.7,34.5-14.1,44.8-14.3c13.3-0.1,39,13.1,52.3,13.1c12.9,0,37.8-13.1,50.7-13c12.2,0.1,46.3,14.2,46.3,14.2h1.4v-2l0,0c0-8-0.9-23.8-3-31.4c-12-45.3-58.2-210-95.5-210C62.7,1.2,16.5,165.9,4.5,211.2c-2,7.6-3,23.4-3,31.4l0,0V244.5z"/>\n<path class="nose-dotted-line" d="M5,243.3c9.1-3.6,33.3-12.8,42.8-13.1c13.3-0.1,39,13.1,52.3,13.1c12.9,0,37.8-13.1,50.7-13c10.4,0.1,36.6,10,44.2,13"/>\n<path class="nose-outline" d="M198.5,264.6v-28.8c0-8.8-1-17.4-3.2-25.8C182.8,163.3,137,1.1,100,1.1s-82.8,162.2-95.3,209c-2.2,8.3-3.2,16.9-3.2,25.8v28.8"/>\n<path class="nose-windows" d="M126.4,205.4l7.8-15.4l9,21.9l-14.6,0.1L126.4,205.4z M129.1,214c1.3,3.4,3.9,12.8,4.3,14.3\n\tc1.2,0,15.6,0,15.6,0l-5.1-14.4L129.1,214z M101.7,160.7v25.5c0,0,13.9-0.3,23.9,16.4l7-14.8c0,0-7.4-16.4-20.5-26.5\n\tC112,161.3,110.2,160.1,101.7,160.7z M71.4,212l-14.6-0.1l9-21.9l7.8,15.4L71.4,212z M56.1,213.9L51,228.4c0,0,14.4,0,15.6,0\n\tc0.5-1.5,3-10.9,4.3-14.3L56.1,213.9z M88,161.3c-13.1,10.1-20.5,26.5-20.5,26.5l7,14.8c10-16.6,23.9-16.4,23.9-16.4v-25.5C89.8,160.1,88,161.3,88,161.3z" fill="white"/>\n</svg>`,
+      B757: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="206" viewBox="0 0 200 206">\n${e}\n<path class="nose-filling-straight" d="M1.5,205.5h197l-0.2-23.1l0,0c0.1-6.3-0.7-12.4-2.8-18.3C183.5,128.9,137.2,1.8,100,1.8C62.7,1.9,16.5,129.2,4.5,164.3c-2,5.9-3,11.9-3,18.1l0,0V205.5z"/>\n<path class="nose-filling" d="M1.5,183.8c0,0,0.5,0.3,1.5,0c6.8-2.1,34.5-10.9,44.8-11.1c13.3-0.1,39,10.1,52.3,10.1c12.9,0,37.8-10.1,50.7-10c12.2,0.1,46.3,11,46.3,11h1.4v-1.5l0,0c0-6.2-0.9-12.2-3-18.1C183.5,129.1,137.3,1.8,100,1.8C62.7,1.9,16.5,129.2,4.5,164.3c-2,5.9-3,11.9-3,18.1l0,0V183.8z"/>\n<path class="nose-dotted-line" d="M5,182.9c9.1-2.8,33.3-9.9,42.8-10.1c13.3-0.1,39,10.1,52.3,10.1c12.9,0,37.8-10.1,50.7-10c10.4,0.1,36.6,7.7,44.2,10"/>\n<path class="nose-outline" d="M198.5,205.5v-22.2c0-6.8-1-13.5-3.2-19.9C182.8,127.2,137,1.8,100,1.8S17.2,127.2,4.7,163.4c-2.2,6.5-3.2,13.1-3.2,19.9v22.2"/>\n<path class="nose-windows" d="M97.1,82.9c-26.3,14-38.5,23-38.5,23L47.8,91.4c0,0,24.5-19.9,49.3-31.8C97.1,59.6,97.1,82.9,97.1,82.9z\n\tM26.9,125.3l10.4,8.4c0,0,5.3-8.6,18.7-24.6L45.1,94.6C44.7,92.6,25.5,123.6,26.9,125.3z M13.7,163.1l11.9-4.2l10.3-23.2L25.4,128\n\tC25.4,128,16.3,147.4,13.7,163.1z M102.9,59.6c24.8,11.9,49.3,31.8,49.3,31.8l-10.8,14.5c0,0-12.2-9-38.5-23\n\tC102.9,82.9,102.9,59.6,102.9,59.6z M154.9,94.6L144,109.1c13.4,16,18.7,24.6,18.7,24.6l10.4-8.4C174.5,123.6,155.3,92.6,154.9,94.6\n\tz M174.6,128l-10.5,7.7l10.3,23.2l11.9,4.2C183.7,147.4,174.6,128,174.6,128z" fill="white"/>\n</svg>`,
+      B767: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="198" viewBox="0 0 200 198">\n${e}\n<path class="nose-filling-straight" d="M1.5,197.5h197l-0.2-21.9l0,0c0.1-5.9-0.7-11.8-2.8-17.4C183.5,124.9,137.2,4.3,100,4.3C62.7,4.4,16.5,125.2,4.5,158.4\n\tc-2,5.6-3,11.3-3,17.2l0,0V197.5z"/>\n<path class="nose-filling" d="M1.5,177c0,0,0.5,0.3,1.5,0c6.8-2,34.5-10.3,44.8-10.5c13.3-0.1,39,9.6,52.3,9.6c12.9,0,37.8-9.6,50.7-9.5\n\tc12.2,0.1,46.3,10.4,46.3,10.4h1.4v-1.5l0,0c0-5.8-0.9-11.6-3-17.2c-12-33.3-58.2-154-95.5-154C62.7,4.4,16.5,125.2,4.5,158.4\n\tc-2,5.6-3,11.3-3,17.2l0,0V177z"/>\n<path class="nose-dotted-line" d="M5,176c9.1-2.6,33.3-9.4,42.8-9.6c13.3-0.1,39,9.6,52.3,9.6c12.9,0,37.8-9.6,50.7-9.5c10.4,0.1,36.6,7.3,44.2,9.5"/>\n<path class="nose-outline" d="M198.5,197.5v-21.1c0-6.5-1-12.8-3.2-18.9C182.8,123.2,137,4.3,100,4.3S17.2,123.2,4.7,157.6c-2.2,6.1-3.2,12.4-3.2,18.9\n\tv21.1"/>\n<path class="nose-windows" d="M60.4,111.9c-12.5,12.8-18.2,22-18.2,22c-2-1.5-17.3-9.7-17.3-9.7l22.2-27.8L60.4,111.9z M13.1,155.2\n\tc0,0,16.4-1.1,18.6-1.1l9.6-17.7c-1.7-0.8-17.7-9.2-17.7-9.2L13.1,155.2z M98.2,64.5C72.8,75.9,56.7,88,51.7,92.6L63.6,108\n\tC79.9,94.5,98,86.8,98,86.8L98.2,64.5z M152.9,96.3l22.2,27.8c0,0-15.3,8.2-17.3,9.7c0,0-5.7-9.2-18.2-22L152.9,96.3z M176.4,127.3\n\tc0,0-16,8.4-17.7,9.2l9.6,17.7c2.2,0,18.6,1.1,18.6,1.1L176.4,127.3z M102,86.8c0,0,18.2,7.7,34.4,21.2l11.9-15.4\n\tc-5-4.6-21.1-16.7-46.5-28.1L102,86.8z" fill="white"/>\n</svg>`,
+      B777: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="190" viewBox="0 0 200 190">\n${e}\n<path class="nose-filling-straight" d="M1.5,189.5h197l-0.2-24l0,0c0.1-6.5-0.7-12.9-2.8-19C183.5,110,137.2,3,100,3C62.7,3.1,16.5,110.3,4.5,146.7c-2,6.1-3,12.4-3,18.8l0,0V189.5z"/>\n<path class="nose-filling" d="M1.5,167c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4-0.9-12.7-3-18.8C183.5,110.2,137.3,3,100,3C62.7,3.1,16.5,110.3,4.5,146.7c-2,6.1-3,12.4-3,18.8l0,0V167z"/>\n<path class="nose-dotted-line" d="M5,166c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,189.5v-23.1c0-7.1-1-14-3.2-20.7C182.8,108.2,137,3,100,3S17.2,108.2,4.7,145.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M97.9,92C84.1,96.7,66,112,66,112L54,95.8c0,0,21.2-16.6,43.9-25.4V92z M30.5,124.9l12.6,11.4\n\tc0,0,9.9-13.1,19.7-21.5L50.2,99.7C50.2,99.7,34,118.9,30.5,124.9z M16.7,157.8l12.1,0.3l11.5-17.9l-12.6-10.7L16.7,157.8z\n\tM103.3,70.4c22.7,8.8,43.9,25.4,43.9,25.4l-12,16.2c0,0-18.1-15.3-31.9-20C103.3,92,103.3,70.4,103.3,70.4z M151,99.7l-12.6,15.1\nc9.8,8.5,19.7,21.5,19.7,21.5l12.6-11.4C167.2,118.9,151,99.7,151,99.7z M173.5,129.6l-12.6,10.7l11.5,17.9l12.1-0.3L173.5,129.6z" fill="white"/>\n</svg>`,
+      B787: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="214" viewBox="0 0 200 214">\n${e}\n<path class="nose-filling-straight" d="M1.5,213.5h197l-0.2-24l0,0c0.1-6.5-0.7-12.9-2.8-19C183.5,134,137.2,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7c-2,6.1-3,12.4-3,18.8l0,0V213.5z"/>\n<path class="nose-filling" d="M1.5,191c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4-0.9-12.7-3-18.8C183.5,134.2,137.3,2,100,2C62.7,2.1,16.5,134.3,4.5,170.7c-2,6.1-3,12.4-3,18.8l0,0V191z"/>\n<path class="nose-dotted-line" d="M5,190c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,213.5v-23.1c0-7.1-1-14-3.2-20.7C182.8,132.2,137,2,100,2S17.2,132.2,4.7,169.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M59.5,111.2c0.2,4.5-0.5,5.9-2.6,8.3c-1.7,1.9-8.5,11.8-9.8,13.4c-1.3,1.6-3.5,4.2-6.1,6\n\tc-1.8,1.3-3.6,2.1-7.8,3.3c-1.7,0.5,0.1-11.8,2.5-18.2c5.7-15.3,16-27.2,18.2-29.7c1.9-2.2,2.4-2.3,3-1.7c0.7,0.7,1.1,1.7,1.2,2.8\n\tL59.5,111.2z M97.1,63.2c-0.1-2-3.3-1.7-4.5-1.6c-11.5,1.3-23.2,14.2-24.3,15.4c-1.2,1.2-6.2,7-6.4,8.5c-0.2,1.7,0.4,22.5,1.3,23.3\n\tc1,0.8,2.1,1.9,3.6,0.1c11.3-13.2,26.4-19,28.6-20.6c2.2-1.7,1.7-3.8,1.7-3.8S97.3,65.1,97.1,63.2L97.1,63.2L97.1,63.2z M141.8,95.8\n\tc0.1-1,0.5-2,1.2-2.8c0.6-0.6,1.1-0.5,3,1.7c2.2,2.5,12.5,14.5,18.2,29.7c2.4,6.4,4.2,18.7,2.5,18.2c-4.2-1.2-5.9-2-7.8-3.3\n\tc-2.5-1.8-4.7-4.3-6.1-6c-1.3-1.6-8.1-11.5-9.8-13.4c-2.1-2.4-2.7-3.8-2.6-8.3L141.8,95.8z M102.9,63.5L102.9,63.5\n\tc-0.2,2,0.1,21.3,0.1,21.3s-0.5,2.1,1.7,3.8c2.2,1.7,17.2,7.5,28.6,20.6c1.5,1.8,2.6,0.7,3.6-0.1c1-0.8,1.5-21.6,1.3-23.3\n\tc-0.2-1.5-5.3-7.3-6.4-8.5c-1.2-1.2-12.8-14.1-24.3-15.4C106.2,61.8,103,61.6,102.9,63.5L102.9,63.5z" fill="white"/>\n</svg>`,
+      BAe146: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="256" viewBox="0 0 200 256">\n${e}\n<path class="nose-filling-straight" d="M1.5,255.5h197l-0.2-24l0,0c0.1-6.5-0.7-12.9-2.8-19C183.5,176,132,2,100,2C67.2,2,16.5,176.3,4.5,212.7c-2,6.1-3,12.4-3,18.8l0,0V255.5z"/>\n<path class="nose-filling" d="M1.5,233c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4-0.9-12.7-3-18.8C183.5,176.2,132,2,100,2C67.2,2,16.5,176.3,4.5,212.7c-2,6.1-3,12.4-3,18.8l0,0V233z"/>\n<path class="nose-dotted-line" d="M5,232c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,255.5v-23.1c0-7.1-1-14-3.2-20.7C182.8,174.2,131.6,2,100,2C67.5,2,17.2,174.2,4.7,211.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M20.1,186.4c0-0.2,0.1-0.5,0.2-0.7c0.8-1.9,1.7-5,2.9-3.9c0.4,0.3,11.8,9,11.8,9c2.2,1.2,3.4,4.8,3.7,7\n\tc0.1,0.7,0,1.4-0.3,2.1L32.8,214c-0.2,1.2-4.1,4.3-5.6,4.4l-7.7,0.1c-1.9-0.1-3.4-3.4-3.4-5.3c0-0.1,0-0.2,0-0.2\n\tC16.3,211.1,19.5,189.4,20.1,186.4z M37.9,186.7c1.1,0.7,4.3,3.3,5.1,1.9c0,0,9.2-21.1,8.4-23.7c0,0-4.6-20.2-5.9-18.2l-18,25\n\tc-1.2,1.7-2.9,3.9-1.8,5.2L37.9,186.7z M54,158.2c1.4,2.2,6.3,1.8,9.1,1.6c1,0,1.9-0.3,2.7-0.8l28.5-16.5c1-0.7,3.5-4.5,3.5-5.9\n\tv-18.5c0-3.1,0-3.1-1.6-3.3c-0.9-0.1-2,0-3.2,0.2c-0.3,0.1-0.7,0.2-1,0.4l-41.2,27.4c-1.5,1.2-0.6,2.2-0.4,3.5L54,158.2z M183.9,213\n\tc0,0.1,0,0.2,0,0.2c0,1.8-1.5,5.2-3.4,5.3l-7.7-0.1c-1.5-0.1-5.4-3.2-5.6-4.4l-5.6-14.1c-0.3-0.7-0.4-1.4-0.3-2.1\n\tc0.3-2.2,1.6-5.8,3.7-7c0,0,11.3-8.7,11.8-9c1.2-1.2,2.2,2,2.9,3.9c0.1,0.2,0.1,0.4,0.2,0.7C180.5,189.4,183.7,211.1,183.9,213z\n\tM174.4,176.9c1.1-1.3-0.6-3.4-1.8-5.2l-18-25c-1.3-2-5.9,18.2-5.9,18.2c-0.8,2.6,8.4,23.7,8.4,23.7c0.8,1.4,3.9-1.2,5.1-1.9\n\tL174.4,176.9z M149.6,146.3c0.2-1.3,1.1-2.3-0.4-3.5L108,115.4c-0.3-0.2-0.6-0.3-1-0.4c-1.2-0.3-2.3-0.3-3.2-0.2\n\tc-1.6,0.2-1.6,0.2-1.6,3.3v18.6c0,1.3,2.5,5.2,3.5,5.9l28.5,16.5c0.8,0.5,1.8,0.8,2.7,0.8c2.9,0.1,7.8,0.6,9.1-1.6L149.6,146.3z" fill="white"/>\n</svg>`,
+      Beechcraft1900: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="389" viewBox="0 0 200 389">\n${e}\n<path class="nose-filling-straight" d="M1.5,388.4h197l-0.2-36.5l0,0c0.1-9.9-0.4-19-0.8-28.9C197,269.9,161.5,2.8,100,2.8C40.3,2.8,3,269.9,2.5,323.3c-0.4,9.6-1,18.9-1,28.6l0,0V388.4z"/>\n<path class="nose-filling" d="M1.5,367.2c0,0,0.5,0.5,1.5,0c6.8-3.3,34.5-12.2,44.8-12.5c13.3-0.2,39,10.3,52.3,10.3c12.9,0,37.8-10.3,50.7-10.1c12.2,0.2,46.3,12.3,46.3,12.3h1.4v-2.4v-13c0-9.7-0.5-18.9-1-28.6C197,269.9,161.5,2.8,100,2.8C40.3,2.8,3,269.9,2.5,323.3c-0.5,9.6-1,31.9-1,41.6v-13V367.2z"/>\n<path class="nose-dotted-line" d="M5,365c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,388.4v-35.1c0-10.8-0.8-20.4-1.2-31.5c-0.3-51.9-35.8-319-97.3-319C40.3,2.8,2.9,269.9,2.6,322c-0.6,10.8-1.1,20.7-1.1,31.5v35.1"/>\n<path class="nose-windows" d="M12.6,305.2c5.8,0,9.4-1,9.7,4.6s0.3,18.2,0,25.6s-4.4,19.7-6.9,19.7s-5.3-4.6-5.5-15.1\n\tC9.6,329.5,12.6,305.2,12.6,305.2L12.6,305.2z M14.3,295.2c1.7,0,6.1,0.3,8.2,0c2.2-0.3,0.6-4.9,0-7.4c-0.6-2.6-4.4-19.5-4.4-19.5\n\tS12.6,295.2,14.3,295.2L14.3,295.2z M22.2,249.3c-2,1.1-3.1,3.3-2.7,5.5c2.1,10.4,8.3,40.8,8.1,40.5c-0.3-0.4,10.3-14.5,33.6-15.2\n\ts28-1,30.8-1s3.3-4.6,3.3-8.2s0.3-27.7,0-30.7c-0.3-3.1-2.5-3.1-5.8-3.1S46.6,235.7,22.2,249.3L22.2,249.3z M187.4,305.3\n\tc-5.8,0-9.4-1-9.7,4.6s-0.3,18.2,0,25.6s4.4,19.7,6.9,19.7s5.3-4.6,5.5-15.1C190.4,329.6,187.4,305.3,187.4,305.3L187.4,305.3z\n\tM181.9,268.4c0,0-3.7,16.9-4.4,19.5c-0.6,2.6-2.2,7.2,0,7.4c2.2,0.3,6.6,0,8.2,0C187.4,295.3,181.9,268.4,181.9,268.4L181.9,268.4z\n\tM110.6,237.2c-3.3,0-5.5,0-5.8,3.1s0,27.1,0,30.7s0.6,8.2,3.3,8.2s7.5,0.3,30.8,1c23.3,0.8,33.8,14.9,33.6,15.2\n\tc-0.2,0.3,6-30.1,8.1-40.5c0.4-2.2-0.6-4.3-2.7-5.5C153.4,235.8,113.8,237.2,110.6,237.2L110.6,237.2z" fill="white"/>\n</svg>`,
+      Cessna208: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="346" viewBox="0 0 200 346">\n${e}\n<path class="nose-filling-straight" d="M1.5,345.4h197l-0.2-38.9l0,0c0.1-10.5-0.7-20.9-2.8-30.8C183.5,216.7,170.8,3,100,3C35.5,3,16.5,217.2,4.5,276.1c-2,9.9-3,20.1-3,30.4l0,0V345.4z"/>\n<path class="nose-filling" d="M1.5,324c0,0,0.5,0.5,1.5,0c6.8-3.6,34.5-11.3,44.8-11.6c13.3-0.2,39,9.6,52.3,9.6c12.9,0,37.8-9.6,50.7-9.4c12.2,0.2,46.3,11.5,46.3,11.5h1.4v-2.6v-15c0-10.4-0.9-20.6-3-30.4C183.5,217.1,170.8,3,100,3C35.5,3,16.5,217.2,4.5,276.1c-2,9.9-3,35.1-3,45.4v-15V324z"/>\n<path class="nose-dotted-line" d="M5,322c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,345.4V308c0-11.5-1-22.7-3.2-33.5C182.8,213.8,170.8,3,100,3C35.9,3,17.2,213.8,4.7,274.7c-2.2,10.8-3.2,22-3.2,33.5v37.4"/>\n<path class="nose-windows" d="M23.9,212.8c19.9-19.5,54.2-25.4,69.5-26.1c1.9-0.1,3.5,2.5,3.5,4.9v85.2c-29.7,0-74.7,16.3-87.6,36.9\n\tC9.1,314.1,23.8,212.9,23.9,212.8L23.9,212.8z M175.5,212.8c-20.1-19.8-55.1-25.6-70.2-26.2c-1.6-0.1-2.9,2.1-2.9,4.2v86c29.7,0,75.3,16.3,88.2,36.9C190.9,314.1,175.7,212.9,175.5,212.8L175.5,212.8z" fill="white"/>\n</svg>`,
+      COMAC909: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="214" viewBox="0 0 200 214">\n${e}\n<path class="nose-filling-straight" d="M1.5,213.5h197l-0.2-24l0,0c0.1-6.5-0.7-12.9-2.8-19C183.5,134,144.9,2,100,2C55.5,2,16.5,134.3,4.5,170.7c-2,6.1-3,12.4-3,18.8l0,0V213.5z"/>\n<path class="nose-filling" d="M1.5,207c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4,0.1-25.7-2-31.8C184.5,137.2,144.9,2,100,2C55.5,2,15.5,137.3,3.5,173.7c-2,6.1-2,25.4-2,31.8l0,0V207z"/>\n<path class="nose-dotted-line" d="M5,206c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,213.5v-23.1c0-7.1-1-14-3.2-20.7C182.8,132.2,144.7,2,100,2C55.5,2,17.2,132.2,4.7,169.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M103.6,120.7l-0.1-28.5c14.7,9.2,35.2,18.8,52,38.8l-10.2,13.8C128.8,133.2,112.5,128.2,103.6,120.7z\n\tM167,167.8l11.8-5.4c1.2-0.5,1.5-3.3,0.7-4.5l-19.1-21.3c-0.7-0.6-2.6-0.5-3-0.1l-7.2,9.9c-0.2,0.2-0.1,1.6,0.3,2.2l13.3,18.9\n\tC164.2,168.2,166.4,168.1,167,167.8z M176.7,197c0.9,1.8,1.7,2.3,2.6,2.3h10.2c1.6,0,2.4-2.2,2.1-3.7l-3.5-23.4\n\tc-0.2-2.3-3.6-4.1-4.9-3.4l-13.8,6.4c-0.8,0.4-0.9,2-0.3,3.2C169.4,178.8,176.7,197,176.7,197z M54.7,144.7l-10.2-13.8\n\tc16.8-19.9,37.3-29.6,52-38.8l-0.1,28.5C87.5,128.2,71.2,133.2,54.7,144.7z M36.4,167.5l13.3-18.9c0.4-0.6,0.5-2,0.3-2.2l-7.2-9.9\n\tc-0.5-0.5-2.4-0.6-3,0.1l-19.1,21.3c-0.8,1.2-0.5,4.1,0.7,4.5l11.8,5.4C33.6,168.1,35.8,168.2,36.4,167.5z M30.8,178.5\n\tc0.6-1.2,0.5-2.7-0.3-3.2l-13.8-6.4c-1.3-0.7-4.7,1.1-4.9,3.4l-3.5,23.4c-0.2,1.5,0.5,3.7,2.1,3.7h10.2c0.9,0,1.7-0.5,2.6-2.3\n\tC23.3,197,30.6,178.8,30.8,178.5z" fill="white"/>\n</svg>`,
+      COMAC919: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">\n${e}\n<path class="nose-filling-straight" d="M1.5,199.5h197l-0.2-24l0,0c0.1-6.5-0.7-12.9-2.8-19C183.5,120,144.2,3,100,3C56.5,3,16.5,120.3,4.5,156.7c-2,6.1-3,12.4-3,18.8l0,0V199.5z"/>\n<path class="nose-filling" d="M1.5,177c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4-0.9-12.7-3-18.8C183.5,120.2,144.2,3,100,3C56.5,3,16.5,120.3,4.5,156.7c-2,6.1-3,12.4-3,18.8l0,0V177z"/>\n<path class="nose-dotted-line" d="M5,176c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,199.4v-23.1c0-7.1-1-14-3.2-20.7C182.8,118.1,144.1,2.9,100,2.9c-43.5,0-82.8,115.2-95.3,152.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M150.4,125.9c2.7,2.7,14.1,21.3,15.6,24.4c1.5,3,3,3.4,4.9,4.3s11.2,6.8,12.3,7.5c1.2,0.8,3.4,1.1,3.1-2.5\n\tc-0.3-3.7-3.8-21.8-9.5-34c-5.8-12.2-16.4-25.5-17.6-27s-6.2-3.3-6.6-0.8c-0.5,2.8-3.5,19.9-3.5,19.9\n\tC147.7,122.6,148.8,124.4,150.4,125.9z M104.1,81.4c0,5.2,0.2,5.2,2,6.7s3.9,1.8,14.6,9.1s14.2,11.7,18.2,15.2c1.1,1,2.4,0.7,4,0.7\n\tc0.8,0,1.6-0.5,1.8-1.4c0.8-3.9,3.1-15.1,4.1-19.6c0.5-2.2,0.5-5.2-2.8-8.8c-5.2-5.7-25.1-22.8-28.2-24.6c-1.8-1.1-3.5-2-4.6-2.5\n\tc-0.7-0.3-1.5-0.5-2.2-0.5c-3.1-0.1-6.9-0.2-6.8,3.8C104.2,59.7,104.1,76.3,104.1,81.4z M51.1,117.7c0,0-3-17.1-3.5-19.9\n\tc-0.4-2.5-5.4-0.8-6.6,0.8c-1.2,1.5-11.8,14.8-17.6,27s-9.2,30.3-9.5,34s2,3.3,3.1,2.5c1.1-0.7,10.5-6.6,12.3-7.5s3.3-1.2,4.9-4.3\n\tc1.5-3,12.8-21.6,15.6-24.4C51.2,124.4,52.3,122.6,51.1,117.7z M95.8,59.7c0.1-4-3.7-3.9-6.8-3.8c-0.8,0-1.5,0.2-2.2,0.5\n\tc-1.1,0.5-2.8,1.4-4.6,2.5c-3,1.8-23,18.9-28.2,24.6c-3.3,3.7-3.3,6.6-2.8,8.8c1,4.5,3.3,15.7,4.1,19.6c0.2,0.8,0.9,1.4,1.8,1.4\n\tc1.6,0,2.9,0.3,4-0.7c4-3.5,7.6-7.9,18.2-15.2s12.8-7.6,14.6-9.1c1.8-1.5,2-1.5,2-6.7C95.9,76.3,95.8,59.7,95.8,59.7z" fill="white"/>\n</svg>`,
+      CRJ: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="277" viewBox="0 0 200 277">\n${e}\n<path class="nose-filling-straight" d="M1.5,276.5h197l-0.2-30.5l0,0c0.1-8.3-2-25.1-2-25.1c-4.6-48-67-218.4-96.3-218.4C71.7,2.5,9,172.9,3.8,221c0,0-2.3,16.9-2.3,25l0,0V276.5z"/>\n<path class="nose-filling" d="M1.5,264.3c0,0,0.5,0.4,1.5,0c6.8-2.8,36.8-11.8,44.8-11.8c13.4,0,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c12.2,0.1,46.3,11.7,46.3,11.7h1.1v-2.1v-1c-0.2-11.4-0.9-36.3-0.9-36.3c-4.6-48-68-222.4-97.3-222.4C71.7,2.5,8,176.9,2.8,225c0,0-1.3,31-1.3,37.4v0.8V264.3z"/>\n<path class="nose-dotted-line" d="M5,263c9.4-3.5,34.2-10.5,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,276.5v-29.3c0-9-2.2-26.3-2.2-26.3c-4.6-48-67-218.4-96.3-218.4C71.9,2.5,9,172.9,3.8,221c0,0-2.3,18.2-2.3,26.3v29.3"/>\n<path class="nose-windows" d="M7.9,255.4c2-29.9,9.9-56.6,19.5-75.5l18,23.3c-11.9,17-18.4,42.2-20,52.2H7.9z M96.2,168.6v-48.1c-36,13.8-52.1,30-65.1,52.4L50,197.6C59.4,188.3,71.2,175.4,96.2,168.6z M174.3,255.4c-1.6-10-8.1-35.1-20-52.2l18-23.3c9.7,18.9,17.6,45.6,19.5,75.5H174.3z M149.7,197.6l18.9-24.8c-13.1-22.4-29.1-38.6-65.1-52.4v48.1C128.4,175.4,140.2,188.3,149.7,197.6z" fill="white"/>\n</svg>`,
+      Dash8: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="264" viewBox="0 0 200 264">\n${e}\n<path class="nose-filling-straight" d="M1.5,263.5h197l-0.2-29.7l0,0c0.1-8-0.7-15.9-2.8-23.5C181,152.8,126.5,2.1,100,2.1c-27.3,0-81.1,150.7-95.5,208.5c-2,7.5-3,15.3-3,23.2l0,0V263.5z"/>\n<path class="nose-filling" d="M1.5,252.7c0,0,0.5,0.4,1.5,0c6.8-2.7,36.6-12.1,44.8-12.2c13.4,0,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c12.2,0.1,46.3,12.1,46.3,12.1h1.4v-2l0,0c0-7.9-0.9-32.7-3-40.2C181.3,152.8,126.5,2.1,100,2.1c-27.3,0-81.7,150.7-95.5,208.5c-2,7.5-3,32.3-3,40.2l0,0V252.7z"/>\n<path class="nose-dotted-line" d="M5,251c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,263.5V235c0-8.8-1-17.3-3.2-25.6C181.5,152.8,126.5,2.1,100,2.1c-27.3,0-81.9,150.7-95.3,207.4c-2.2,8.3-3.2,16.8-3.2,25.6v28.5"/>\n<path class="nose-windows" d="M28.5,168.9l17.7,22.5c-11.5,18-17,33-19.6,51.4H9.4C10.6,212.3,19.8,185.4,28.5,168.9z M96.3,109.6C84.6,115,48.2,128.3,32,161.8c0,0,18.4,24.7,18.6,24.5c21.5-23.3,45.9-28.2,45.9-28.2L96.3,109.6z M190.6,242.9h-17.2c-2.6-18.5-8.1-33.5-19.6-51.4l17.7-22.5C180.2,185.4,189.4,212.3,190.6,242.9z M103.4,158.2c0,0,24.5,4.9,45.9,28.2c0.2,0.2,18.6-24.5,18.6-24.5c-16.1-33.5-52.5-46.8-64.3-52.2L103.4,158.2z" fill="white"/>\n</svg>`,
+      Dornier328: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="274" viewBox="0 0 200 274">\n${e}\n<path class="nose-filling-straight" d="M1.5,273.5h197l-0.2-30.6l0,0c0.1-8.3-0.3-16.3-0.8-24.3c-0.3-51.5-45-215.1-97.5-215.1C49.3,3.5,2.7,167.1,2.5,218.8c-0.4,8.3-1,15.8-1,24l0,0V273.5z"/>\n<path class="nose-filling" d="M1.5,251.6c0,0,0.5,0.4,1.5,0c6.8-2.8,34.5-11.4,44.8-11.7c13.3-0.1,39,10.1,52.3,10.1c12.9,0,37.8-10.1,50.7-9.9c12.2,0.1,46.3,11.6,46.3,11.6h1.4v-2v-7c0-8.2-0.7-16.3-1-24c-0.3-51.5-45-215.2-97.5-215.2C49.3,3.5,2.7,167.2,2.5,218.8c-0.5,8.4-1,22.8-1,31v-7V251.6z"/>\n<path class="nose-dotted-line" d="M5,250c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,273.5V244c0-9.1-0.7-16.7-1-25.4C197.2,167.1,152.2,3.5,100,3.5C49.3,3.5,2.7,167.1,2.5,218.8c-0.6,9.1-1,16.2-1,25.3v29.5"/>\n<path class="nose-windows" d="M44.4,187L34,157.9C55.7,133,96.1,99.7,96.1,99.7l0.1,40.3C64.8,162,44.4,187,44.4,187z M6.3,229.3l24.8-4.1c0,0,2.8-13.2,10.8-33.8l-10.8-30.9C11,193.3,6.8,222.6,6.3,229.3z M103.8,140l0.1-40.3c0,0,40.4,33.2,62.1,58.2L155.6,187C155.6,187,135.2,162,103.8,140z M168.9,160.5l-10.8,30.9c8,20.6,10.8,33.8,10.8,33.8l24.8,4.1C193.2,222.6,189,193.3,168.9,160.5z" fill="white"/>\n</svg>`,
+      EmbraerERJ: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="314" viewBox="0 0 200 314">\n${e}\n<path class="nose-filling-straight" d="M1.5,313.5h197l-0.2-24l0,0c0.1-6.5-0.7-12.9-2.8-19C183.5,234,137.2,2,100,2C62.7,2.1,16.5,234.3,4.5,270.7c-2,6.1-3,12.4-3,18.8l0,0V313.5z"/>\n<path class="nose-filling" d="M1.5,299c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4-0.9-20.7-3-26.8C183.5,234.2,137.3,2,100,2C62.7,2.1,16.5,234.3,4.5,270.7c-2,6.1-3,20.4-3,26.8l0,0V299z"/>\n<path class="nose-dotted-line" d="M5,298c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,313.5v-23.1c0-7.1-1-14-3.2-20.7C182.8,232.2,137,2,100,2S17.2,232.2,4.7,269.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M105.6,183.3l0.6,46.3c0,0,23.6,0.3,40.8,17.7c1.7,1.2,7.3,3.4,10.1-1.4l13.1-27.6l-3.2-6.5c-13.1-17-35.8-29.5-58.5-30.8C107.8,180.8,105.6,183.3,105.6,183.3z M159.3,258.3c0,0,8.2,16.2,13.2,31.6h17.3c0-20-4.7-36.6-11.6-58.9c-0.4-0.4-3.9-2.3-4.6-2.4L159.3,258.3z M91.3,181c-22.6,1.4-45.4,13.8-58.5,30.8l-3.2,6.5l13.1,27.6c2.7,4.8,8.3,2.6,10.1,1.4c17.2-17.4,40.8-17.7,40.8-17.7l0.6-46.3C94.4,183.3,92.2,180.8,91.3,181z M26.3,228.7c-0.6,0.1-4.1,2-4.6,2.4c-6.9,22.3-11.6,38.8-11.6,58.9h17.3c5-15.4,13.2-31.6,13.2-31.6L26.3,228.7z" fill="white"/>\n</svg>`,
+      EmbraerE: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="248" viewBox="0 0 200 248">\n${e}\n<path class="nose-filling-straight" d="M1.5,247.5h197l-0.2-27.8l0,0c0.1-7.5-0.7-14.9-2.8-22C170.6,69.9,137.2,2.8,100,2.8C62.7,3,29.3,69.9,4.5,198c-2,7.1-3,14.3-3,21.7l0,0V247.5z"/>\n<path class="nose-filling" d="M1.5,239.5c0,0,0.5,0.3,1.5,0c6.8-2.5,34.5-11.7,44.8-12c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c12.2,0.1,46.3,11.9,46.3,11.9h1.4v-1.9l0,0c0-7.4,0.1-28.7-2-35.7c-24.9-128-59.2-199-96.5-199C62.7,3,28.3,73.9,3.5,202c-2,7.1-2,28.3-2,35.7l0,0V239.5z"/>\n<path class="nose-dotted-line" d="M5,238c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,247.5v-26.7c0-8.2-1-16.2-3.2-23.9C170.6,69.9,137,2.9,100,2.9s-70.7,67-95.3,194c-2.2,7.7-3.2,15.7-3.2,23.9v26.7"/>\n<path class="nose-windows" d="M69.6,126.5c-5.8,2.7-11.1,6.3-15.9,10.7c-5.9,5.4-10.1,11.9-14.7,19.7c-0.6,1,9,30.4,9,30.4c0.6,0,1.2,0,1.8,0c0.8,0,1.8-0.2,2.3-0.9c4-5.5,22.3-20.6,44.7-22.7l0.1-42.3c0,0-3-0.1-7.3,0C84.1,121.5,76.6,123,69.6,126.5z M32.6,173c-1.8,0-2.9,0.5-3.4,1.2c-6.8,9-15.3,46.5-16,53.3c-0.1,1.7,2,3.1,3.3,3.1c2.7,0,10.7-0.1,10.7-0.1l3.7-4.7c4.4-16.9,15-28,14.4-29l-9-22.2C35.7,173.7,34.4,173,32.6,173z M110.4,121.4c-4.3-0.1-7.3,0-7.3,0l0.1,42.3c22.5,2.1,40.7,17.2,44.7,22.7c0.5,0.7,1.4,0.9,2.3,0.9c0.5,0,1.1,0,1.8,0c0,0,9.5-29.5,9-30.4c-4.5-7.8-8.8-14.4-14.7-19.7c-4.8-4.4-10.1-8-15.9-10.7C123.3,123,115.8,121.5,110.4,121.4z M163.6,174.6l-9,22.2c-0.6,1,10,12.1,14.4,29l3.7,4.7c0,0,8,0.1,10.7,0.1c1.3,0,3.5-1.4,3.3-3.1c-0.7-6.8-9.2-44.4-16-53.3c-0.6-0.7-1.6-1.2-3.4-1.2C165.5,173,164.2,173.7,163.6,174.6z" fill="white"/>\n</svg>`,
+      F50: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="310" viewBox="0 0 200 310">\n${e}\n<path class="nose-filling-straight" d="M1.5,309.5h197l-0.2-34.7l0,0c0.1-9.4-0.7-18.6-2.8-27.5C183.5,194.6,137.2,3.9,100,3.9C62.7,4,16.5,195,4.5,247.6c-2,8.8-3,17.9-3,27.2l0,0V309.5z"/>\n<path class="nose-filling" d="M1.5,287.9c0,0,0.5,0.4,1.5,0c6.8-3.2,34.5-11.7,44.8-12c13.3-0.1,39,10.1,52.3,10.1c12.9,0,37.8-9.7,50.7-9.5c12.2,0.1,39.1,7.9,46.3,11.5c0.8,0.4,1.4,0,1.4,0v-2.3v-11c0-9.2-0.9-18.3-3-27.2C183.5,194.9,137.3,3.9,100,3.9C62.7,4,16.5,195,4.5,247.6c-2,8.8-3,28.9-3,38.2V287.9L1.5,287.9z"/>\n<path class="nose-dotted-line" d="M5,286c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,309.5v-33.4c0-10.3-1-20.2-3.2-29.9C182.8,192,137,3.9,100,3.9S17.2,192,4.7,246.3C2.5,256,1.5,266,1.5,276.2v33.4"/>\n<path class="nose-windows" d="M38.6,182.9c4.5-2.2,59.3-28.2,59.3-28.2v22.4l-52.2,23.6L38.6,182.9z M42.1,203.4L34.8,186l-7.1,8.5l7.8,18.4L42.1,203.4z M14.8,241.1l11.6,7.1l7.7-31.4l-8.4-16.6L14.8,241.1z M154.3,200.7L102,177.1v-22.4c0,0,54.8,26,59.3,28.2L154.3,200.7z M164.5,212.8l7.8-18.4l-7.1-8.5l-7.4,17.4L164.5,212.8z M174.2,200.3l-8.4,16.6l7.7,31.4l11.6-7.1L174.2,200.3z" fill="white"/>\n</svg>`,
+      F100: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">\n${e}\n<path class="nose-filling-straight" d="M1.5,199.5h197l-0.2-24l0,0c0.1-6.5-0.7-12.9-2.8-19C163.2,63.4,139.9,2,100,2C60,2,37.5,63.5,4.5,156.7c-2,6.1-3,12.4-3,18.8l0,0V199.5z"/>\n<path class="nose-filling" d="M1.5,198c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4,0.1-30.7-2-36.8C164.4,66.5,139.9,2,100,2C60,2,36.8,66.5,3.5,159.7c-2,6.1-2,30.4-2,36.8l0,0V198z"/>\n<path class="nose-dotted-line" d="M5,197c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,199.5v-23.1c0-7.1-1-14-3.2-20.7C163.4,63.5,139.9,2,100,2C60,2,37.8,63.5,4.7,155.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M102.2,118.4l0.3-22.1c0,0,30.8,16.4,47.4,26.3l-1.1,21.5C142.9,140.9,111.6,124,102.2,118.4z M181.9,165.8c0,0-9-22.1-29.7-41.5l-1,22.5l13,23.3L181.9,165.8z M169.2,184.1c0.3,1.1,3.9,4.2,6.9,5.7c2.3,1.2,5.4,1.1,7.8,0c1.9-0.9,3.5-2.7,3.3-3.7l-4.6-18.6l-17,5.5L169.2,184.1z M51.2,144.1l-1.1-21.5c16.6-9.9,47.4-26.3,47.4-26.3l0.3,22.1C88.4,124,57.1,140.9,51.2,144.1z M35.8,170l13-23.3l-1-22.5c-20.8,19.4-29.7,41.5-29.7,41.5L35.8,170z M34.4,173l-17-5.5l-4.6,18.6c-0.2,0.9,1.4,2.8,3.3,3.7c2.4,1.1,5.5,1.2,7.8,0c2.9-1.5,6.6-4.6,6.9-5.7L34.4,173z" fill="white"/>\n</svg>`,
+      Saab2000: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="287" viewBox="0 0 200 287">\n${e}\n<path class="nose-filling-straight" d="M1.5,286.5h197l-0.2-32.1l0,0c0.1-8.7-0.3-16.5-0.8-25.4c-3.2-62.3-36-225-97.5-225C41,4,5.4,166.8,2.5,229.3c-0.6,8.6-1,16.6-1,25.1l0,0V286.5z"/>\n<path class="nose-filling" d="M1.5,265.4c0,0,0.5,0.4,1.5,0c6.8-2.9,34.5-12.1,44.8-12.4c13.3-0.1,39,9.9,52.3,9.9c12.9,0,37.8-9.9,50.7-9.8c12.2,0.1,46.3,12.2,46.3,12.2h1.4v-2.1v-9c0-8.5-0.6-16.4-1-25.1c-3.2-62.4-36-225-97.5-225.2C41,4,5.4,166.8,2.5,229.3c-0.8,8.6-1,25.6-1,34.1v-9V265.4z"/>\n<path class="nose-dotted-line" d="M5,263c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,286.5v-30.9c0-9.5-1-17.7-1.2-27.6c-3-61.2-36.2-224-97.3-224C41,4,5.4,166.8,2.7,228.1c-0.8,8.7-1.2,18.2-1.2,27.6v30.9"/>\n<path class="nose-windows" d="M102.8,158.4v-46.8c0,0,37.7,9.5,68.2,46.6l-15,38.3C126.2,169.4,102.8,158.4,102.8,158.4z M173.8,160.9L159,199.8c0,0,12.1,19.4,12.9,41.3l24.7,7.9C196.6,199.3,173.8,160.9,173.8,160.9z M43.9,196.5L29,158.2c30.5-37,68.2-46.6,68.2-46.6v46.8C97.1,158.4,73.8,169.4,43.9,196.5z M3.3,249l24.7-7.9c0.8-21.9,12.9-41.3,12.9-41.3l-14.8-38.9C26.1,160.9,3.3,199.3,3.3,249z" fill="white"/>\n</svg>`,
+      SSJ: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="238" viewBox="0 0 200 238">\n${e}\n<path class="nose-filling-straight" d="M1.5,237.5h197l-0.2-26.5l0,0c0.1-7.2-0.7-14.2-2.8-21C183.5,149.7,151.4,4,100,4C47.9,4,16.5,150,4.5,190.2c-2,6.7-3,13.7-3,20.7l0,0V237.5z"/>\n<path class="nose-filling" d="M1.5,216.7c0,0,0.5,0.3,1.5,0c6.8-2.4,34.5-12.5,44.8-12.7c13.3-0.1,39,10,52.3,10c12.9,0,37.8-10,50.7-9.9c12.2,0.1,46.3,12.6,46.3,12.6h1.4v-1.8v-4c0-7.1-0.9-14-3-20.7C183.5,150,151.4,4.1,100,4.1C47.9,4,16.5,150.1,4.5,190.3c-2,6.7-3,17.7-3,24.7v-4V216.7z"/>\n<path class="nose-dotted-line" d="M5,214c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,237.5V212c0-7.8-1-15.5-3.2-22.8C182.8,147.8,151.2,4.1,100,4.1c-52.1,0-82.8,143.7-95.3,185.2c-2.2,7.4-3.2,15-3.2,22.8v25.5"/>\n<path class="nose-windows" d="M81.2,81.8l13.4-0.1c1.3,0,2.4,1.1,2.4,2.4l-0.2,38.2c0,1.4,0.2,3.4-2.5,3.5c-5.7,0.1-9.3,1.1-9.3,1.1\n\tc-7.1,2.4-17.6,10.5-17.6,10.5c-2.1,1.3-4.1,0-4.9-1.8l-10.7-22.1c-0.1-0.1-0.1-0.2-0.1-0.4c-0.8-1.3-0.8-2.6-0.3-4\n\tc0,0,6.3-10,27.4-26.3C79.3,82.5,80.3,81.8,81.2,81.8z M58.8,148.9c1.1-1.1,2-2.1,1.5-3.6c0-0.1-0.6-1.6-0.7-1.7l-11.5-23.3\n\tc-0.7-1.3-2.7-2.5-3.9-1.4c-15.9,15.7-22.6,33-26,45.4c-0.4,1.6-0.3,2.9,1.2,3.4l23.9,0.2c1.4,0.1,2.3-0.8,3.3-1.9\n\tC47.1,165.5,49.5,158,58.8,148.9z M11,203.6c-0.3,1.9,25.6-16.6,29.1-23.9c0.8-1.8,1.7-6.9-0.5-6.9H20.9c-2.3,0.1-5.1,1.2-5.7,3\n\tC12.4,183.6,11,203.6,11,203.6z M121.2,82.4c21.1,16.3,27.4,26.3,27.4,26.3c0.5,1.3,0.5,2.6-0.3,4c-0.1,0.1-0.1,0.2-0.1,0.4\n\tl-10.7,22.1c-0.8,1.8-2.8,3.1-4.9,1.8c0,0-10.6-8.2-17.6-10.5c0,0-3.6-1-9.3-1.1c-2.6-0.1-2.4-2.1-2.5-3.5L103,83.7\n\tc0-1.3,1.1-2.4,2.4-2.4l13.4,0.1C119.7,81.3,120.7,82,121.2,82.4z M153.3,165.5c1,1.2,1.9,2,3.3,1.9l23.9-0.2\n\tc1.5-0.4,1.6-1.8,1.2-3.4c-3.4-12.4-10.1-29.7-26-45.4c-1.1-1.1-3.2,0-3.9,1.4l-11.5,23.3c-0.1,0.1-0.6,1.6-0.7,1.7\n\tc-0.4,1.5,0.4,2.5,1.5,3.6C150.5,157.5,152.9,165,153.3,165.5z M184.8,175.3c-0.7-1.8-3.4-2.9-5.7-3h-18.7c-2.2,0-1.4,5.1-0.5,6.9\n\tc3.5,7.3,29.4,25.8,29.1,23.9C189,203.1,187.6,183.1,184.8,175.3z" fill="white"/>\n</svg>`,
+      Tecnam: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="346" viewBox="0 0 200 346">\n${e}\n<path class="nose-filling-straight" d="M1.5,345.4h197l-0.2-38.9l0,0c0.1-10.5-0.7-20.9-2.8-30.8C183.5,216.7,170.8,3,100,3C35.5,3,16.5,217.2,4.5,276.1c-2,9.9-3,20.1-3,30.4l0,0V345.4z"/>\n<path class="nose-filling" d="M1.5,324c0,0,0.5,0.5,1.5,0c6.8-3.6,34.5-11.3,44.8-11.6c13.3-0.2,39,9.6,52.3,9.6c12.9,0,37.8-9.6,50.7-9.4c12.2,0.2,46.3,11.5,46.3,11.5h1.4v-2.6v-15c0-10.4-0.9-20.6-3-30.4C183.5,217.1,170.8,3,100,3C35.5,3,16.5,217.2,4.5,276.1c-2,9.9-3,35.1-3,45.4v-15V324z"/>\n<path class="nose-dotted-line" d="M5,322c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,345.4V308c0-11.5-1-22.7-3.2-33.5C182.8,213.8,170.8,3,100,3C35.9,3,17.2,213.8,4.7,274.7c-2.2,10.8-3.2,22-3.2,33.5v37.4"/>\n<path class="nose-windows" d="M94.3,292.5c0,0-50.5,0.5-63,7c-11.8,6.1-14.2,0-14.2,0L17,239.7C16.9,222,26.5,211,26.5,211s12.4-15.7,31-16.7c13.2-0.7,36.9-0.4,36.9-0.4v48.3C94.5,251.8,94.3,292.5,94.3,292.5z M105.7,292.2c0,0,53.3,1.4,64.7,7.8s14.3,0,14.3,0l-0.8-59.8c0.8-16.4-11.2-29.8-11.2-29.8s-10.7-15.5-27.4-16.1c-13.4-0.4-39.2-0.4-39.2-0.4v48.3C106.1,251.8,105.7,292.2,105.7,292.2z" fill="white"/>\n</svg>`,
+      TU204: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="214" viewBox="0 0 200 214">\n${e}\n<path class="nose-filling-straight" d="M1.5,213.5h197l-0.2-24l0,0c0.1-6.5-0.7-12.9-2.8-19C183.5,134,145.8,2,100,2C55.4,2,16.5,134.3,4.5,170.7c-2,6.1-3,12.4-3,18.8l0,0V213.5z"/>\n<path class="nose-filling" d="M1.5,191c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4-0.9-12.7-3-18.8C183.5,134.2,145.8,2,100,2C55.4,2,16.5,134.3,4.5,170.7c-2,6.1-3,12.4-3,18.8l0,0V191z"/>\n<path class="nose-dotted-line" d="M5,190c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,213.5v-23.1c0-7.1-1-14-3.2-20.7C182.8,132.2,145.8,2,100,2C55.4,2,17.2,132.2,4.7,169.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M96.5,97.4c0,1.7-0.5,3.4-3,3.5c-12.6,0.6-24.7,9.3-28.2,12c-0.7,0.6-1.8,1.1-2.3,1.1\n\tc-0.5,0-1.2,0-2-0.4c-0.9-0.5-1.7-1.5-2.1-2.4L53.2,99c-0.5-1.1,0.1-3.2,2.9-5.2c0,0,20.2-13.5,35.6-16.3c2.9-0.5,4.8,0.4,4.8,2\n\tV97.4z M28.1,130.1c-1.3,2.6-1.1,5,0.9,5.5l9.7,3.1c2.3,0.5,4.1,0.5,4.9-0.6c6.4-9.9,11.8-15.8,11.8-15.8c0.8-1.3,0.9-3.7,0-5.3\n\tl-7-12.1c-0.9-1.4-2.4-1.8-3.4-0.6C44.9,104.1,34.3,117.5,28.1,130.1z M18.1,156.8c-1.2,3.6,0.7,5,2.5,5h6.6c2,0,5.1-1.3,5.8-3\n\tl5.1-11.9c0.6-1.6-0.4-3.8-2.3-4.3l-6.6-1.4c-0.9-0.2-5.2-0.6-5.5,1.1L18.1,156.8z M104.7,79.5c0-1.6,2-2.5,4.8-2\n\tc15.4,2.7,35.6,16.3,35.6,16.3c2.8,2,3.4,4.1,2.9,5.2l-5.7,12.2c-0.4,0.9-1.2,1.9-2.1,2.4c-0.8,0.4-1.5,0.4-2,0.4\n\tc-0.6,0-1.6-0.6-2.3-1.1c-3.6-2.7-15.6-11.4-28.2-12c-2.5-0.1-3-1.8-3-3.5V79.5z M156.3,104.1c-1-1.2-2.6-0.8-3.4,0.6l-7,12.1\n\tc-0.9,1.6-0.8,4,0,5.3c0,0,5.4,5.9,11.8,15.8c0.7,1.1,2.6,1.2,4.9,0.6l9.7-3.1c2.1-0.5,2.2-2.9,0.9-5.5\n\tC167,117.5,156.3,104.1,156.3,104.1z M177.6,142.3c-0.4-1.7-4.7-1.3-5.5-1.1l-6.6,1.4c-1.9,0.5-2.9,2.6-2.3,4.3l5.1,11.9\n\tc0.6,1.6,3.7,3,5.8,3h6.6c1.8,0,3.7-1.4,2.5-5L177.6,142.3z" fill="white"/>\n</svg>`,
+      TwinOtter: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="314" viewBox="0 0 200 314">\n${e}\n<path class="nose-filling-straight" d="M1.5,313.5h197l-0.2-24l0,0c0.1-6.5-0.7-12.9-2.8-19C183.5,234,137.2,2,100,2C62.7,2.1,16.5,234.3,4.5,270.7c-2,6.1-3,12.4-3,18.8l0,0V313.5z"/>\n<path class="nose-filling" d="M1.5,305c0,0,0.5,0.3,1.5,0c6.8-2.2,34.5-11.3,44.8-11.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c12.2,0.1,46.3,11.4,46.3,11.4h1.4v-1.6l0,0c0-6.4,0.1-24.7-2-30.8C184.5,236.2,137.3,2,100,2C62.7,2.1,15.5,236.3,3.5,272.7c-2,6.1-2,24.4-2,30.8l0,0V305z"/>\n<path class="nose-dotted-line" d="M5,304c9.1-2.9,33.3-10.3,42.8-10.5c13.3-0.1,39,10.5,52.3,10.5c12.9,0,37.8-10.5,50.7-10.4c10.4,0.1,36.6,8,44.2,10.4"/>\n<path class="nose-outline" d="M198.5,313.5v-23.1c0-7.1-1-14-3.2-20.7C182.8,232.2,137,2,100,2S17.2,232.2,4.7,269.8c-2.2,6.7-3.2,13.6-3.2,20.7v23.1"/>\n<path class="nose-windows" d="M37.1,228.8c17.1-10.6,39.2-15.7,59-16.2v24.6c-22.5,2.9-40.7,8.9-55.1,19.7C40.8,257.2,37,228.8,37.1,228.8zM34.3,233.3l-2.4,0.7c0,0-4.6,12.9-4.4,13.3c0.2,0.5,8.9,5.3,8.9,5.3C36.4,250.6,34.3,233.3,34.3,233.3z M17.4,296.5h7.2c0,0,1.7-9,4.1-15.9c5.5-15.2,8.6-17.7,8.6-19.6s-0.6-5.5-0.6-5.5c-1.8-1.1-10.2-5.8-10.2-5.8S19.5,272.6,17.4,296.5z M159,257c-14.4-10.8-32.6-16.8-55.1-19.7v-24.6c19.8,0.5,41.9,5.6,59,16.2C163,228.8,159.2,257.2,159,257z M163.7,252.6c0,0,8.7-4.8,8.9-5.3s-4.4-13.3-4.4-13.3l-2.4-0.7C165.7,233.3,163.6,250.6,163.7,252.6z M173.4,249.7c0,0-8.4,4.7-10.2,5.8c0,0-0.6,3.6-0.6,5.5s3.2,4.5,8.6,19.6c2.4,6.8,4.1,15.9,4.1,15.9h7.2C180.5,272.6,173.4,249.7,173.4,249.7z" fill="white"/>\n</svg>`,
+      default: e =>
+        `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="214" viewBox="0 0 200 214">\n    ${e}\n<path class="nose-filling-straight" d="M1.5 213.5H198.5L198.3 189.5V189.5C198.432 183.009 197.551 176.63 195.513 170.466C183.455 134.002 137.233 2 100 2C62.7343 2.08626 16.4645 134.331 4.45578 170.661C2.43787 176.766 1.5 183.07 1.5 189.5V189.5L1.5 213.5Z" />\n<path class="nose-filling" d="M1.5 191C1.5 191 2.03703 191.308 3 191C9.75537 188.837 37.4722 179.675 47.8 179.5C61.1 179.4 86.8 190 100.1 190C113 190 137.9 179.5 150.8 179.6C163 179.7 197.1 191 197.1 191H198.5V189.4V189.4C198.5 182.97 197.562 176.666 195.544 170.561C183.535 134.232 137.266 2 100 2C62.7343 2.08626 16.4645 134.331 4.45578 170.661C2.43787 176.766 1.5 183.07 1.5 189.5V189.5V191Z" />\n<path class="nose-dotted-line" d="M5 190C14.0715 187.075 38.297 179.661 47.8 179.5C61.1 179.4 86.8 190 100.1 190C113 190 137.9 179.5 150.8 179.6C161.176 179.685 187.392 187.554 195 190"/>\n<path class="nose-outline" d="M198.5 213.5V190.435C198.5 183.385 197.47 176.464 195.252 169.772C182.801 132.214 136.97 2 100 2C63.0303 2 17.199 132.214 4.7484 169.772C2.53029 176.464 1.5 183.385 1.5 190.435V213.5" />\n<path class="nose-windows" d="M143 102.9L138.8 118.7C149.8 122 160 126.4 160 126.4C160 126 151 111.4 147.6 107.2C146.4 105.7 145 104.3 143 102.9Z" fill="white"/>\n<path class="nose-windows" d="M140.4 101.2C137.9 99.9 134.6 98.6 130 97.3C118.8 94.1 101 94 101 94V114.4C101 114.4 120.9 114.4 130 116.4C131.9 116.8 133.9 117.3 135.9 117.9L140.4 101.2Z" fill="white"/>\n<path class="nose-windows" d="M57 102.9C55 104.3 53.7 105.7 52.4 107.2C49 111.4 40 126 40 126.4C40 126.4 50.2 122 61.2 118.7L57 102.9Z" fill="white"/>\n<path class="nose-windows" d="M70.0001 97.3C65.4001 98.6 62.1001 99.9 59.6001 101.2L64.1001 117.8C66.1001 117.2 68.1001 116.7 70.0001 116.3C79.1001 114.3 98.0001 114.3 98.0001 114.3V94C98.0001 94 81.2001 94.1 70.0001 97.3Z" fill="white"/>\n</svg>`,
+    },
+    getNoseImage(e, t) {
+      const l = `<style type="text/css">\n\t.nose-filling-straight{fill:${t.straightFillColor};}\n\t.nose-filling{fill:${t.hullColor};}\n\t.nose-outline{fill:none;stroke:${t.outlineColor};stroke-width:${t.strokeWidth};stroke-linejoin:round;stroke-miterlimit:10;}\n\t.nose-windows{fill:${t.windowColor};}\n\t.nose-dotted-line{fill:none;stroke:none;stroke-width:${t.strokeWidth};stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.9715,5.8292;}\n</style>`;
+      return (this._mapping[e] || this._mapping.default)(l);
+    },
+  };
+wl('.jets-nose{position:relative}.jets-nose:not(.cut) .nose-dotted-line,.nose-dotted-line{stroke:none}');
+const Rl = ({ isFull: t }) => {
+  const { params: o, colorTheme: n } = r(Xe),
+    [a, c] = l(0),
     d = i(null),
-    { fuselageFillColor: h, fuselageStrokeColor: g, fuselageWindowsColor: p, floorColor: m } = a,
-    C = a.fuselageStrokeWidth / (o.innerWidth / 200),
-    k = { hullColor: h, windowColor: p, outlineColor: g, straightFillColor: t ? h : m, strokeWidth: C };
+    { fuselageFillColor: h, fuselageStrokeColor: g, fuselageWindowsColor: p, floorColor: m, fuselageNoseType: C } = n,
+    v = n.fuselageStrokeWidth / (o.innerWidth / 200),
+    u = { hullColor: h, windowColor: p, outlineColor: g, straightFillColor: t ? h : m, strokeWidth: v };
   s(() => {
     c(d.current.getBoundingClientRect().width);
   }, []);
-  const u = (e =>
-      `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="214" viewBox="0 0 200 214">\n\n<style type="text/css">\n\t.nose-filling-straight{fill:${e.straightFillColor};}\n\t.nose-filling{fill:${e.hullColor};}\n\t.nose-outline{fill:none;stroke:${e.outlineColor};stroke-width:${e.strokeWidth};stroke-linejoin:round;stroke-miterlimit:10;}\n\t.nose-windows{fill:${e.windowColor};}\n\t.nose-dotted-line{fill:none;stroke:none;stroke-width:${e.strokeWidth};stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.9715,5.8292;}\n</style>\n\t\n<path class="nose-filling-straight" d="M1.5 213.5H198.5L198.3 189.5V189.5C198.432 183.009 197.551 176.63 195.513 170.466C183.455 134.002 137.233 2 100 2C62.7343 2.08626 16.4645 134.331 4.45578 170.661C2.43787 176.766 1.5 183.07 1.5 189.5V189.5L1.5 213.5Z" />\n<path class="nose-filling" d="M1.5 191C1.5 191 2.03703 191.308 3 191C9.75537 188.837 37.4722 179.675 47.8 179.5C61.1 179.4 86.8 190 100.1 190C113 190 137.9 179.5 150.8 179.6C163 179.7 197.1 191 197.1 191H198.5V189.4V189.4C198.5 182.97 197.562 176.666 195.544 170.561C183.535 134.232 137.266 2 100 2C62.7343 2.08626 16.4645 134.331 4.45578 170.661C2.43787 176.766 1.5 183.07 1.5 189.5V189.5V191Z" />\n<path class="nose-dotted-line" d="M5 190C14.0715 187.075 38.297 179.661 47.8 179.5C61.1 179.4 86.8 190 100.1 190C113 190 137.9 179.5 150.8 179.6C161.176 179.685 187.392 187.554 195 190"/>\n<path class="nose-outline" d="M198.5 213.5V190.435C198.5 183.385 197.47 176.464 195.252 169.772C182.801 132.214 136.97 2 100 2C63.0303 2 17.199 132.214 4.7484 169.772C2.53029 176.464 1.5 183.385 1.5 190.435V213.5" />\n<path class="nose-windows" d="M143 102.9L138.8 118.7C149.8 122 160 126.4 160 126.4C160 126 151 111.4 147.6 107.2C146.4 105.7 145 104.3 143 102.9Z" fill="white"/>\n<path class="nose-windows" d="M140.4 101.2C137.9 99.9 134.6 98.6 130 97.3C118.8 94.1 101 94 101 94V114.4C101 114.4 120.9 114.4 130 116.4C131.9 116.8 133.9 117.3 135.9 117.9L140.4 101.2Z" fill="white"/>\n<path class="nose-windows" d="M57 102.9C55 104.3 53.7 105.7 52.4 107.2C49 111.4 40 126 40 126.4C40 126.4 50.2 122 61.2 118.7L57 102.9Z" fill="white"/>\n<path class="nose-windows" d="M70.0001 97.3C65.4001 98.6 62.1001 99.9 59.6001 101.2L64.1001 117.8C66.1001 117.2 68.1001 116.7 70.0001 116.3C79.1001 114.3 98.0001 114.3 98.0001 114.3V94C98.0001 94 81.2001 94.1 70.0001 97.3Z" fill="white"/>\n</svg>\n`)(
-      k
-    ),
-    f = t || !0,
-    v = !(null != o && o.isHorizontal && (null == o || !o.rightToLeft)) && f,
-    w = !(null == o || !o.isHorizontal || (null != o && o.rightToLeft)) && f,
-    b = {
+  const k = C === $e ? $e : o.noseType,
+    w = Dl.getNoseImage(k, u),
+    f = !1,
+    b = t || !0,
+    L = null == o || !o.isHorizontal || (null != o && o.rightToLeft) ? b : f,
+    M = null == o || !o.isHorizontal || (null != o && o.rightToLeft) ? f : b,
+    z = {
       transform: `${null == o || !o.isHorizontal || (null != o && o.rightToLeft) ? '' : 'rotate(180deg)'} scale(${
-        (n + (1.5 - 0.5 * C) * (o.innerWidth / 200) * 0.5) / n
+        (a + (1.5 - 0.5 * v) * (o.innerWidth / 200) * 0.5) / a
       })`,
       fill: g,
-      marginTop: w ? '-16px' : '',
-      marginBottom: v ? '-16px' : '',
+      marginTop: M ? '-16px' : '',
+      marginBottom: L ? '-16px' : '',
     };
   return e.createElement('div', {
     className: 'jets-nose ' + (t ? '' : 'cut'),
-    style: b,
+    style: z,
     ref: d,
-    dangerouslySetInnerHTML: { __html: u },
+    dangerouslySetInnerHTML: { __html: w },
     'data-testid': 'jets-nose',
   });
 };
-pr(
+wl(
   '.jets-not-init{align-items:center;display:flex;font-size:18px;font-weight:700;height:100%;height:100vh;justify-content:center;width:100%}.jets-not-init--spinner{height:50px;width:50px}.lds-roller{display:inline-block;height:80px;position:relative;width:80px}.lds-roller div{animation:lds-roller 1.2s cubic-bezier(.5,0,.5,1) infinite;transform-origin:40px 40px}.lds-roller div:after{background:#000;border-radius:50%;content:" ";display:block;height:7px;margin:-4px 0 0 -4px;position:absolute;width:7px}.lds-roller div:first-child{animation-delay:-36ms}.lds-roller div:first-child:after{left:63px;top:63px}.lds-roller div:nth-child(2){animation-delay:-72ms}.lds-roller div:nth-child(2):after{left:56px;top:68px}.lds-roller div:nth-child(3){animation-delay:-.108s}.lds-roller div:nth-child(3):after{left:48px;top:71px}.lds-roller div:nth-child(4){animation-delay:-.144s}.lds-roller div:nth-child(4):after{left:40px;top:72px}.lds-roller div:nth-child(5){animation-delay:-.18s}.lds-roller div:nth-child(5):after{left:32px;top:71px}.lds-roller div:nth-child(6){animation-delay:-.216s}.lds-roller div:nth-child(6):after{left:24px;top:68px}.lds-roller div:nth-child(7){animation-delay:-.252s}.lds-roller div:nth-child(7):after{left:17px;top:63px}.lds-roller div:nth-child(8){animation-delay:-.288s}.lds-roller div:nth-child(8):after{left:12px;top:56px}@keyframes lds-roller{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}'
 );
-const Br = () =>
+const jl = () =>
   e.createElement(
     'div',
     { className: 'jets-not-init', 'data-testid': 'jets-not-init' },
@@ -3706,65 +3995,66 @@ const Br = () =>
       e.createElement('div', null)
     )
   );
-pr('.jets-deck-separator{mix-blend-mode:screen;position:relative;width:100%}');
-const Wr = ({ width: t }) => {
-  const { params: r, colorTheme: o } = l(qe),
+wl('.jets-deck-separator{mix-blend-mode:screen;position:relative;width:100%}');
+const Ol = ({ width: t }) => {
+  const { params: l, colorTheme: o } = r(Xe),
     s = i(null),
-    a = { height: o.deckSeparation, background: o.fuselageFillColor };
+    n = { height: o.deckSeparation, background: o.fuselageFillColor };
   return e.createElement('div', {
     className: 'jets-deck-separator',
     'data-testid': 'jets-deck-separator',
-    style: a,
+    style: n,
     ref: s,
   });
 };
-pr('.jets-tail{position:relative}.jets-tail:not(.cut) .tail-dotted-line,.tail-dotted-line{stroke:none}');
-const Pr = ({ isFull: t }) => {
-  const { params: o, colorTheme: a } = l(qe),
-    [n, c] = r(0),
+wl('.jets-tail{position:relative}.jets-tail:not(.cut) .tail-dotted-line,.tail-dotted-line{stroke:none}');
+const Fl = ({ isFull: t }) => {
+  const { params: o, colorTheme: n } = r(Xe),
+    [a, c] = l(0),
     d = i(null),
-    { fuselageFillColor: h, fuselageStrokeColor: g, floorColor: p } = a,
-    m = a.fuselageStrokeWidth / (o.innerWidth / 200),
+    { fuselageFillColor: h, fuselageStrokeColor: g, floorColor: p } = n,
+    m = n.fuselageStrokeWidth / (o.innerWidth / 200),
     C = { hullColor: h, outlineColor: g, straightFillColor: t ? h : p, strokeWidth: m };
   s(() => {
     c(d.current.getBoundingClientRect().width);
   }, []);
-  const k = (e =>
-      `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 200 240">\n<style type="text/css">\n\t.tail-filling-straight{fill:${e.straightFillColor};stroke:${e.outlineColor};stroke-width:${e.strokeWidth};stroke-miterlimit:10;}\n\t.tail-filling{fill:${e.hullColor};}\n\t.tail-outline{fill:none;stroke:${e.outlineColor};stroke-width:${e.strokeWidth};stroke-miterlimit:10;}\n\t.tail-dotted-line{fill:none;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.9808,5.8847;}\n</style>\n<path class="tail-filling-straight" d="M2.3764 38.4678C1.77473 34.9207 1.5 31.332 1.5 27.7342V0H198.5V27.4086C198.5 31.2224 198.193 35.0136 197.521 38.7678C195.33 51.0122 189.575 81.2872 181.452 110.102C182.301 112.913 184.9 118.976 188.5 120.732C192.1 122.488 196.333 122.927 198 122.927V218.049L130.887 214.175C120.953 227.148 110.019 237.073 99.7 237.073C89.3766 237.073 78.4376 227.148 68.5 214.175L1.5 218.049V122.927C3.5 123.171 8.3 123.073 11.5 120.732C14.7 118.39 17.1667 112.669 18 110.102C9.94364 81.049 4.41928 50.5116 2.3764 38.4678Z"/>\n<path class="tail-filling" fill-rule="evenodd" clip-rule="evenodd" d="M124.773 31.1309C115.407 34.9612 106.068 38.7806 99.7 38.7806C93.0698 38.7806 83.4079 34.9465 73.7369 31.1086C64.0079 27.2479 54.2698 23.3834 47.6 23.4153C37.9662 23.5188 14.2876 27.4678 5.61475 28.9143C5.40053 28.95 5.19547 28.9842 5 29.0168H1.5V33.1388C1.5 33.1388 7.66764 72.8413 18 110.102C17.1667 112.669 14.7 118.39 11.5 120.732C8.3 123.073 3.5 123.171 1.5 122.927V218.049L68.5 214.175C78.4376 227.148 89.3766 237.073 99.7 237.073C110.019 237.073 120.953 227.148 130.887 214.175L198 218.049V122.927C196.333 122.927 192.1 122.488 188.5 120.732C184.9 118.976 182.301 112.913 181.452 110.102C191.956 72.8413 198.5 33.1388 198.5 33.1388V29.0168H194.897L194.408 28.9387C185.443 27.5034 160.229 23.4668 150.2 23.4147C143.718 23.383 134.232 27.2625 124.773 31.1309Z"/>\n<path class="tail-dotted-line" d="M5 29.0168C13.1094 27.6652 37.7283 23.5213 47.6 23.4152C60.9 23.3518 86.4 38.7806 99.7 38.7806C112.5 38.7806 137.3 23.3514 150.2 23.4147C160.417 23.4679 186.396 27.6566 194.897 29.0168" />\n<path class="tail-outline" d="M1.5 0V27.7342C1.5 31.332 1.77473 34.9207 2.3764 38.4678C4.41928 50.5116 9.94364 81.049 18 110.102M18 110.102C22.7259 127.145 28.3231 143.676 34.6 155.665C38.0428 162.218 51.8691 192.465 68.5 214.175M18 110.102C17.1667 112.669 14.7 118.39 11.5 120.732C8.3 123.073 3.5 123.171 1.5 122.927V218.049L68.5 214.175M198.5 0V27.4086C198.5 31.2224 198.193 35.0136 197.521 38.7678C195.33 51.0122 189.575 81.2872 181.452 110.102M181.452 110.102C176.647 127.145 171.014 143.676 164.8 155.665C161.356 162.18 147.524 192.451 130.887 214.175M181.452 110.102C182.301 112.913 184.9 118.976 188.5 120.732C192.1 122.488 196.833 122.927 198.5 122.927V218.049L130.887 214.175M68.5 214.175C78.4376 227.148 89.3766 237.073 99.7 237.073C110.019 237.073 120.953 227.148 130.887 214.175"/>\n</svg>`)(
+  const v = (e =>
+      `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 80">\n<style type="text/css">\n\t.tail-filling-straight{fill:${e.straightFillColor};stroke:${e.outlineColor};stroke-width:${e.strokeWidth};stroke-miterlimit:10;}\n\t.tail-filling{fill:${e.hullColor};}\n\t.tail-outline{fill:none;stroke:${e.outlineColor};stroke-width:${e.strokeWidth};stroke-miterlimit:10;}\n\t.tail-dotted-line{fill:none;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.9808,5.8847;}\n</style>\n<path class="tail-filling-straight" d="M2.4,38.5c-0.6-3.5-0.9-7.1-0.9-10.7V0h197v27.4c0,3.8-0.3,7.6-1,11.4c-1.3,7.4-3.9,21.3-7.6,37.5H9.7\n\tC6.1,59.8,3.6,45.8,2.4,38.5z"/>\n<path class="tail-filling" fill-rule="evenodd" clip-rule="evenodd" d="M9.7,76.3C4.5,52.2,1.5,33.1,1.5,33.1V29H5c0.2,0,0.4-0.1,0.6-0.1c8.7-1.4,32.4-5.4,42-5.5\n\tc6.7,0,16.4,3.8,26.1,7.7c9.7,3.8,19.3,7.7,26,7.7c6.4,0,15.7-3.8,25.1-7.6c9.5-3.9,18.9-7.7,25.4-7.7c10,0.1,35.2,4.1,44.2,5.5\n\tl0.5,0.1h3.6v4.1c0,0-3.1,19-8.6,43.1H9.7z"/>\n<path class="tail-dotted-line" d="M5,29c8.1-1.4,32.7-5.5,42.6-5.6c13.3-0.1,38.8,15.4,52.1,15.4c12.8,0,37.6-15.4,50.5-15.4c10.2,0.1,36.2,4.2,44.7,5.6"/>\n<path class="tail-outline" d="M9.7,76.1h180.2"/>\n<path class="tail-outline" d="M12.9,76.3H9.7C6.1,59.8,3.6,45.8,2.4,38.5c-0.6-3.5-0.9-7.1-0.9-10.7V0 M186.7,76.3h3.3c3.6-16.2,6.3-30.1,7.6-37.5\n\tc0.7-3.8,1-7.5,1-11.4V0"/>\n</svg>`)(
       C
     ),
     u = t || !0,
-    f = !(null == o || !o.isHorizontal || (null != o && o.rightToLeft)) && u,
-    v = !(null != o && o.isHorizontal && (null == o || !o.rightToLeft)) && u,
-    w = {
+    k = !1,
+    w = null == o || !o.isHorizontal || (null != o && o.rightToLeft) ? k : u,
+    f = null == o || !o.isHorizontal || (null != o && o.rightToLeft) ? u : k,
+    b = {
       transform: `${null == o || !o.isHorizontal || (null != o && o.rightToLeft) ? '' : 'rotate(180deg)'} scale(${
-        (n + (1.5 - 0.5 * m) * (o.innerWidth / 200) * 0.5) / n
+        (a + (1.5 - 0.5 * m) * (o.innerWidth / 200) * 0.5) / a
       })`,
       fill: g,
-      marginTop: v ? '-16px' : '',
-      marginBottom: f ? '-8px' : '',
+      marginTop: f ? '-16px' : '',
+      marginBottom: w ? '-8px' : '',
     };
   return e.createElement('div', {
     className: 'jets-tail ' + (t ? '' : 'cut'),
-    style: w,
+    style: b,
     ref: d,
-    dangerouslySetInnerHTML: { __html: k },
+    dangerouslySetInnerHTML: { __html: v },
     'data-testid': 'jets-tail',
   });
 };
-pr(
+wl(
   '.jets-wings{box-sizing:border-box;overflow:hidden;position:absolute;transform:translateZ(-10px)}.jets-wings-alignment-wrapper{align-items:center;display:flex;flex-direction:column;position:absolute;width:100%;z-index:-1}.jets-wings .wing{height:100%;position:absolute;transform-origin:top center;width:50%}.jets-wings .wing.left{left:0}.jets-wings .wing.right{right:0}.jets-wings .wing-leading{height:30px;overflow:hidden;position:absolute;z-index:1}.jets-wings .wing-leading.left{clip-path:polygon(100% 10%,0 100%,0 0)}.jets-wings .wing-leading.right{clip-path:polygon(100% 0,100% 100%,-10% 0)}'
 );
-const Ir = ({ wingsInfo: r }) => {
+const Zl = ({ wingsInfo: l }) => {
   var i, o;
-  const { isWingLeadingVisible: s, style: a } = (e => {
-    const { colorTheme: r, params: i } = l(qe),
+  const { isWingLeadingVisible: s, style: n } = (e => {
+    const { colorTheme: l, params: i } = r(Xe),
       o = () => {
-        if (null == r || !r.wingsWidth) return;
+        if (null == l || !l.wingsWidth) return;
         const e = {
-          width: `${(null == r ? void 0 : r.wingsWidth) + 8}px`,
+          width: `${(null == l ? void 0 : l.wingsWidth) + 8}px`,
           top: '-3px',
-          background: (null == r ? void 0 : r.seatMapBackgroundColor) || '#fff',
+          background: (null == l ? void 0 : l.seatMapBackgroundColor) || '#fff',
         };
         return { left: { ...e, left: '-4px' }, right: { ...e, right: '-4px' } };
       },
@@ -3772,10 +4062,10 @@ const Ir = ({ wingsInfo: r }) => {
         () => ({
           wrapper: { top: e.start },
           container: { height: e.length, width: i.innerWidth },
-          wing: { background: `${null == r ? void 0 : r.fuselageWingsColor}` },
+          wing: { background: `${null == l ? void 0 : l.fuselageWingsColor}` },
           leading: o(),
         }),
-        [i, r, e]
+        [i, l, e]
       );
     return {
       isWingLeadingVisible: Boolean(
@@ -3783,125 +4073,119 @@ const Ir = ({ wingsInfo: r }) => {
       ),
       style: s,
     };
-  })(r);
+  })(l);
   return e.createElement(
     'div',
-    { className: 'jets-wings-alignment-wrapper', style: a.wrapper },
+    { className: 'jets-wings-alignment-wrapper', style: n.wrapper },
     e.createElement(
       'div',
-      { className: 'jets-wings', style: a.container, 'data-testid': 'jets-wings' },
+      { className: 'jets-wings', style: n.container, 'data-testid': 'jets-wings' },
       s &&
         e.createElement(
           e.Fragment,
           null,
           e.createElement('div', {
             className: 'wing-leading left',
-            style: null === (i = a.leading) || void 0 === i ? void 0 : i.left,
+            style: null === (i = n.leading) || void 0 === i ? void 0 : i.left,
           }),
           e.createElement('div', {
             className: 'wing-leading right',
-            style: null === (o = a.leading) || void 0 === o ? void 0 : o.right,
+            style: null === (o = n.leading) || void 0 === o ? void 0 : o.right,
           })
         ),
-      e.createElement('div', { className: 'wing left', style: a.wing }),
-      e.createElement('div', { className: 'wing right', style: a.wing })
+      e.createElement('div', { className: 'wing left', style: n.wing }),
+      e.createElement('div', { className: 'wing right', style: n.wing })
     )
   );
 };
-pr(
+wl(
   '.jets-plane-body{margin:0 auto}.jets-deck-wrapper{z-index:1}.deck-floor,.jets-deck-wrapper{position:relative;transform-style:preserve-3d}'
 );
-const Nr = ({ activeDeck: t, content: r, exits: o, bulks: s, isSeatMapInited: a, config: n, showOneDeck: c }) => {
+const Ul = ({ activeDeck: t, content: l, exits: o, bulks: s, isSeatMapInited: n, config: a, showOneDeck: c }) => {
     var d;
-    const { params: h, colorTheme: g, componentOverrides: p } = l(qe),
+    const { params: h, colorTheme: g, componentOverrides: p } = r(Xe),
       m = i(new Array()),
-      C = null !== (d = null == p ? void 0 : p.JetsNotInit) && void 0 !== d ? d : Br,
-      { lang: k, visibleFuselage: u } = n,
+      C = null !== (d = null == p ? void 0 : p.JetsNotInit) && void 0 !== d ? d : jl,
+      { lang: v, visibleFuselage: u } = a,
       {
-        deckHeightSpacing: f,
-        fuselageStrokeWidth: v,
-        fuselageStrokeColor: w,
+        deckHeightSpacing: k,
+        fuselageStrokeWidth: w,
+        fuselageStrokeColor: f,
         floorColor: b,
         wingsWidth: L,
         fuselageFillColor: M,
         cabinTitlesWidth: z,
       } = g,
       x = {
-        borderLeft: `${v}px solid ${w}`,
-        borderRight: `${v}px solid ${w}`,
+        borderLeft: `${w}px solid ${f}`,
+        borderRight: `${w}px solid ${f}`,
         transform: null != h && h.isHorizontal && !h.rightToLeft ? 'rotate(180deg)' : '',
       },
-      y = { backgroundColor: b, padding: `${f}px 0`, borderLeft: `solid ${M}`, borderRight: `solid ${M}` },
-      S = r ? [...r] : [];
-    let H = t;
-    null == n || !n.horizontal || (null != n && n.rightToLeft) || (S.reverse(), (H = S.length - 1 - H));
-    const $ = (null == h ? void 0 : h.isHorizontal) && !(null != h && h.rightToLeft),
+      y = { backgroundColor: b, padding: `${k}px 0`, borderLeft: `solid ${M}`, borderRight: `solid ${M}` },
+      S = l ? [...l] : [];
+    let $ = t;
+    null == a || !a.horizontal || (null != a && a.rightToLeft) || (S.reverse(), ($ = S.length - 1 - $));
+    const H = (null == h ? void 0 : h.isHorizontal) && !(null != h && h.rightToLeft),
       V = null != h && h.visibleWings ? 2 * L : 0,
       T = null != h && h.visibleCabinTitles ? 2 * z : 0,
       A = ((null == h ? void 0 : h.innerWidth) || 0) - Math.max(V, T),
-      E = { width: A || n.width },
-      _ = 1 == (null == S ? void 0 : S.length);
+      E = { width: A || a.width },
+      B = !0,
+      _ = !0,
+      W = 1 == (null == S ? void 0 : S.length);
     return e.createElement(
       'div',
       { className: 'jets-plane-body', style: E },
-      u && null != S && S.length
-        ? $
-          ? e.createElement(Pr, { isFull: true })
-          : e.createElement(_r, { isFull: true })
-        : null,
+      u && null != S && S.length ? (H ? e.createElement(Fl, { isFull: B }) : e.createElement(Rl, { isFull: _ })) : null,
       null != S && S.length
         ? e.createElement(
             'div',
             { className: 'jets-deck-wrapper', style: x },
             null == S
               ? void 0
-              : S.map((t, r) =>
-                  c && r != H
+              : S.map((t, l) =>
+                  c && l != $
                     ? null
                     : e.createElement(
                         e.Fragment,
-                        { key: t.uniqId + r },
+                        { key: t.uniqId + l },
                         e.createElement(
                           'div',
                           {
                             'data-testid': 'jets-plane-body-deck',
                             ref: e => {
-                              m.current[r] = e;
+                              m.current[l] = e;
                             },
                             className: 'deck-floor tooltip-holder',
                             style: {
                               ...y,
-                              height: t.height + f,
-                              borderWidth: `${Math.max(0.5 * (h.innerWidth - t.width) - v, v)}px`,
+                              height: t.height + k,
+                              borderWidth: `${Math.max(0.5 * (h.innerWidth - t.width) - w, w)}px`,
                             },
                           },
-                          e.createElement(Tr, {
+                          e.createElement(Pl, {
                             deck: t,
-                            lang: k,
+                            lang: v,
                             key: t.uniqId,
                             exits: o[t.number - 1],
                             bulks: s[t.number - 1],
                             style: { position: 'absolute' },
-                            isSingleDeck: _,
+                            isSingleDeck: W,
                           })
                         ),
                         (null == h ? void 0 : h.visibleWings) &&
-                          e.createElement(Ir, { wingsInfo: null == t ? void 0 : t.wingsInfo }),
-                        r < S.length - 1 && !c && e.createElement(Wr, { key: r, width: A })
+                          e.createElement(Zl, { wingsInfo: null == t ? void 0 : t.wingsInfo }),
+                        l < S.length - 1 && !c && e.createElement(Ol, { key: l, width: A })
                       )
                 )
           )
-        : a
-        ? e.createElement(Er, null)
+        : n
+        ? e.createElement(Nl, null)
         : e.createElement(C, null),
-      u && null != S && S.length
-        ? $
-          ? e.createElement(_r, { isFull: true })
-          : e.createElement(Pr, { isFull: true })
-        : null
+      u && null != S && S.length ? (H ? e.createElement(Rl, { isFull: _ }) : e.createElement(Fl, { isFull: B })) : null
     );
   },
-  jr = [
+  Gl = [
     'AR',
     'CN',
     'CS',
@@ -3930,92 +4214,97 @@ const Nr = ({ activeDeck: t, content: r, exits: o, bulks: s, isSeatMapInited: a,
     'TR',
     'UK',
     'SV',
+    'VI',
+    'PT-BR',
+    'NL',
   ];
-class Dr extends Ue {
-  constructor(e, t, r, i = null, l = 'Bearer', o = null) {
-    super(e, t, r, i, l, o),
-      a(this, 'getPlaneFeatures', async (e, t = 'EN', r = 'metric') => {
+class ql extends Je {
+  constructor(e, t, l, i = null, r = W, o = null) {
+    super(e, t, l, i, r, o),
+      n(this, 'getPlaneFeatures', async (e, t = E, l = B) => {
         var i;
-        const l = {
+        const r = ee.length - 1,
+          o = {
             flight: e,
-            lang: jr.includes(t) ? t : 'EN',
-            units: r,
+            lang: Gl.includes(t) ? t : E,
+            units: l,
+            supportedSeatTypesCount: r,
             metadata: null !== (i = this._apiMetadata) && void 0 !== i ? i : void 0,
           },
-          o = 'availabilityData',
-          s = await this.postData('flight/features/plane/seatmap', l),
-          a = { seatDetails: null },
-          n = ['F', 'B', 'P', 'E'];
-        for (const t of s)
+          s = 'availabilityData',
+          n = await this.postData('flight/features/plane/seatmap', o),
+          a = { seatDetails: null, plane: null },
+          c = ['F', 'B', 'P', 'E'];
+        for (const t of n)
           switch (t.id) {
             case e.id:
               if (t && t.error) throw new Error(t.error);
-              if (e.cabinClass && n.includes(e.cabinClass)) {
-                const { id: r, cabin: i, entertainment: l, power: o, wifi: s, media: n } = t;
-                (a[e.cabinClass] = { cabin: i, entertainment: l, power: o, wifi: s }), n && (a.media = n);
+              if (e.cabinClass && c.includes(e.cabinClass)) {
+                const { id: l, cabin: i, entertainment: r, power: o, wifi: s, media: n, plane: c } = t;
+                (a[e.cabinClass] = { cabin: i, entertainment: r, power: o, wifi: s }), n && (a.media = n);
               }
-              a.seatDetails = t.seatDetails;
+              (a.seatDetails = t.seatDetails), (a.plane = t.plane);
               break;
-            case o: {
-              const { id: e, ...r } = t;
-              a.availabilityData = { ...r };
+            case s: {
+              const { id: e, ...l } = t;
+              a[s] = { ...l };
               break;
             }
             default:
-              const { id: r, cabin: i, entertainment: l, power: s, wifi: c } = t,
-                d = r.split(':')[1];
-              d && n.includes(d) && (a[d] = { cabin: i, entertainment: l, power: s, wifi: c });
+              const { id: l, cabin: i, entertainment: r, power: o, wifi: n } = t,
+                d = l.split(':')[1];
+              d && c.includes(d) && (a[d] = { cabin: i, entertainment: r, power: o, wifi: n });
           }
         if (!a.seatDetails) throw new Error(`data is not found for the flight: ${e.id}`);
         return a;
       });
   }
 }
-class Rr {
+class Kl {
   constructor(e) {
-    a(this, 'getPlaneFeatures', async (e, t, r) => await this._api.getPlaneFeatures(e, t, r)),
-      a(this, 'processPlaneFeatures', async (e, t, r, i) => {
-        let { content: l, params: o, exits: s, bulks: a } = this._preparer.prepareData(e, i);
-        t && (l = this.setAvailabilityHandler(l, t));
-        const n =
-          null == r
+    n(this, 'getPlaneFeatures', async (e, t, l) => this._api.getPlaneFeatures(e, t, l)),
+      n(this, 'processPlaneFeatures', async (e, t, l, i) => {
+        let { content: r, params: o, exits: s, bulks: n } = this._preparer.prepareData(e, i);
+        t && (r = this.setAvailabilityHandler(r, t));
+        const a =
+          null == l
             ? void 0
-            : r.find(e => {
+            : l.find(e => {
                 var t;
                 return null === (t = e.seat) || void 0 === t ? void 0 : t.seatLabel;
               });
         return (
-          r && n && (l = this.setPassengersHandler(l, r)),
+          l && a && (r = this.setPassengersHandler(r, l)),
           {
-            content: l,
+            content: r,
             params: o,
             exits: s,
-            bulks: a,
+            bulks: n,
             availabilityData: null == e ? void 0 : e.availabilityData,
             media: null == e ? void 0 : e.media,
           }
         );
       }),
-      a(this, 'selectSeatHandler', (e, t, r) => {
-        const i = this.getNextPassenger(r),
-          l = r.map(e => {
+      n(this, 'selectSeatHandler', (e, t, l) => {
+        const i = this.getNextPassenger(l),
+          r = l.map(e => {
             if ((null == i ? void 0 : i.id) === e.id) {
-              const r = { price: t.price, seatLabel: t.number, currency: t.currency, priceValue: t.priceValue };
-              e.seat = r;
+              const l = { price: t.price, seatLabel: t.number, currency: t.currency, priceValue: t.priceValue };
+              e.seat = l;
             }
             return e;
           });
-        return { data: this.setPassengersHandler(e, l), passengers: l };
+        return { data: this.setPassengersHandler(e, r), passengers: r };
       }),
-      a(this, 'unselectSeatHandler', (e, t, r) => {
-        const i = r.map(e => {
-          var r;
-          return (null === (r = t.passenger) || void 0 === r ? void 0 : r.id) === e.id && (e.seat = null), e;
+      n(this, 'unselectSeatHandler', (e, t, l) => {
+        const i = l.map(e => {
+          var l;
+          return (null === (l = t.passenger) || void 0 === l ? void 0 : l.id) === e.id && (e.seat = null), e;
         });
         return { data: this.setPassengersHandler(e, i), passengers: i };
       }),
-      a(this, 'setAvailabilityHandler', (e, t) => {
-        const { selected: r, available: i, unavailable: l } = x,
+      n(this, 'setAvailabilityHandler', (e, t) => {
+        const { selected: l, available: i, unavailable: r } = $,
           o = null == t ? void 0 : t.find(e => '*' === e.label);
         return (
           e &&
@@ -4023,35 +4312,35 @@ class Rr {
             const s = e.rows.map(e => {
               const s = e.seats.map(e => {
                 const s = t.find(t => t.label === e.number),
-                  a =
+                  n =
                     this._configuration.currencySign ||
                     (null == s ? void 0 : s.currency) ||
                     (null == o ? void 0 : o.currency),
-                  n = (null == s ? void 0 : s.price) || (null == o ? void 0 : o.price) || 0;
+                  a = (null == s ? void 0 : s.price) || (null == o ? void 0 : o.price) || 0;
                 return (
                   s
-                    ? ((e.status = e.status === r ? r : i),
-                      (e.price = `${a} ${n}` || ''),
-                      (e.priceValue = n),
-                      (e.currency = a),
-                      (e.passengerTypes = s.onlyForPassengerType || (null == o ? void 0 : o.onlyForPassengerType) || q),
+                    ? ((e.status = e.status === l ? l : i),
+                      (e.price = `${n} ${a}` || ''),
+                      (e.priceValue = a),
+                      (e.currency = n),
+                      (e.passengerTypes = s.onlyForPassengerType || (null == o ? void 0 : o.onlyForPassengerType) || Y),
                       (e.additionalProps = [
                         ...((null == s ? void 0 : s.additionalProps) || []),
                         ...((null == o ? void 0 : o.additionalProps) || []),
                       ]),
-                      (e.color = Ge.validateColor(
+                      (e.color = et.validateColor(
                         (null == s ? void 0 : s.color) || (null == o ? void 0 : o.color),
                         null == e ? void 0 : e.originalColor
                       )))
-                    : e.type === y.seat &&
-                      ((e.status = o ? i : l),
-                      (e.price = o ? `${a} ${n}` : null),
-                      (e.priceValue = n),
-                      (e.currency = a),
+                    : e.type === H.seat &&
+                      ((e.status = o ? i : r),
+                      (e.price = o ? `${n} ${a}` : null),
+                      (e.priceValue = a),
+                      (e.currency = n),
                       (e.passenger = null),
-                      (e.passengerTypes = (null == o ? void 0 : o.onlyForPassengerType) || q),
+                      (e.passengerTypes = (null == o ? void 0 : o.onlyForPassengerType) || Y),
                       (e.additionalProps = (null == o ? void 0 : o.additionalProps) || []),
-                      (e.color = Ge.validateColor(
+                      (e.color = et.validateColor(
                         null == o ? void 0 : o.color,
                         this._colorTheme.notAvailableSeatsColor
                       ))),
@@ -4065,23 +4354,23 @@ class Rr {
           })
         );
       }),
-      a(this, 'setPassengersHandler', (e, t) => {
-        const { selected: r, available: i, unavailable: l } = x;
+      n(this, 'setPassengersHandler', (e, t) => {
+        const { selected: l, available: i, unavailable: r } = $;
         return e.map(e => {
           const o = e.rows.map(e => {
             const o = e.seats.map(e => {
               const o = t.find(t => {
-                var r;
+                var l;
                 return (
-                  e.number && (null == t || null === (r = t.seat) || void 0 === r ? void 0 : r.seatLabel) === e.number
+                  e.number && (null == t || null === (l = t.seat) || void 0 === l ? void 0 : l.seatLabel) === e.number
                 );
               });
               var s;
-              !o || (e.status !== i && e.status !== r)
-                ? o && e.status === l
+              !o || (e.status !== i && e.status !== l)
+                ? o && e.status === r
                   ? (o.seat = null)
-                  : o || e.status !== r || ((e.status = i), (e.passenger = null))
-                : ((e.status = r),
+                  : o || e.status !== l || ((e.status = i), (e.passenger = null))
+                : ((e.status = l),
                   (e.price = (null === (s = o.seat) || void 0 === s ? void 0 : s.price) || e.price),
                   (e.passenger = o));
               return e;
@@ -4091,12 +4380,12 @@ class Rr {
           return { ...e, rows: o };
         });
       }),
-      a(this, 'calculateTooltipData', (e, t, r, i, l) => {
-        const { offsetTop: o, offsetLeft: s, clientWidth: a } = t,
-          n = r.getBoundingClientRect(),
+      n(this, 'calculateTooltipData', (e, t, l, i, r) => {
+        const { offsetTop: o, offsetLeft: s, clientWidth: n } = t,
+          a = l.getBoundingClientRect(),
           c = t.closest('.tooltip-holder'),
-          d = l ? n.height : n.width,
-          h = l ? n.width : n.height,
+          d = r ? a.height : a.width,
+          h = r ? a.width : a.height,
           g = o + e.size.height / 2;
         return {
           ...e,
@@ -4110,7 +4399,7 @@ class Rr {
           seatNode: t,
         };
       }),
-      a(this, 'getNextPassenger', e =>
+      n(this, 'getNextPassenger', e =>
         null == e
           ? void 0
           : e.find(e => {
@@ -4118,27 +4407,27 @@ class Rr {
               return !((null !== (t = e.seat) && void 0 !== t && t.seatLabel) || e.readOnly);
             })
       ),
-      a(this, 'addAbbrToPassengers', e =>
+      n(this, 'addAbbrToPassengers', e =>
         null == e ? void 0 : e.map((e, t) => ((e.abbr = this._getPassengerAbbr(e, t + 1)), e))
       ),
-      a(this, '_getPassengerAbbr', (e, t) => {
-        const { passengerLabel: r } = e;
-        if (!r) return `P${t}`;
-        const i = null == r ? void 0 : r.split(' ');
+      n(this, '_getPassengerAbbr', (e, t) => {
+        const { passengerLabel: l } = e;
+        if (!l) return `P${t}`;
+        const i = null == l ? void 0 : l.split(' ');
         return i.length > 1
           ? i
               .slice(0, 2)
               .map(e => e[0])
               .join('')
-          : r.substring(0, 2).toUpperCase();
+          : l.substring(0, 2).toUpperCase();
       }),
-      a(this, 'findPassengerBySeatNumber', (e, t) =>
+      n(this, 'findPassengerBySeatNumber', (e, t) =>
         e.find(e => {
-          var r;
-          return (null === (r = e.seat) || void 0 === r ? void 0 : r.seatLabel) === t;
+          var l;
+          return (null === (l = e.seat) || void 0 === l ? void 0 : l.seatLabel) === t;
         })
       ),
-      a(this, 'getDeckIndexBySeatLabel', (e, t) =>
+      n(this, 'getDeckIndexBySeatLabel', (e, t) =>
         e && null != t && t.length
           ? t.findIndex(
               t =>
@@ -4146,9 +4435,9 @@ class Rr {
             )
           : -1
       ),
-      a(this, 'compareWithDecksSeatsInfo', (e, t) => {
+      n(this, 'compareWithDecksSeatsInfo', (e, t) => {
         if (!e || !t) return;
-        const r = e.map(e => e.toString().toUpperCase()),
+        const l = e.map(e => e.toString().toUpperCase()),
           i = t.flatMap(e => {
             var t;
             return null == e || null === (t = e.rows) || void 0 === t
@@ -4158,41 +4447,41 @@ class Rr {
                   return null == e || null === (t = e.seats) || void 0 === t
                     ? void 0
                     : t
-                        .filter(e => (null == e ? void 0 : e.type) === y.seat)
+                        .filter(e => (null == e ? void 0 : e.type) === H.seat)
                         .map(e => {
                           var t;
                           return null == e || null === (t = e.number) || void 0 === t ? void 0 : t.toUpperCase();
                         });
                 });
           });
-        return r.reduce((e, t) => (i.includes(t) ? e.existingSeatLabels.push(t) : e.nonExistingSeatLabels.push(t), e), {
+        return l.reduce((e, t) => (i.includes(t) ? e.existingSeatLabels.push(t) : e.nonExistingSeatLabels.push(t), e), {
           existingSeatLabels: [],
           nonExistingSeatLabels: [],
         });
       });
-    const { apiUrl: t, apiAppId: r, apiKey: i, colorTheme: l, apiAuthorizationScheme: o, apiMetadata: s } = e,
-      n = new rt();
-    (this._api = new Dr(r, i, t, n, o, s)),
-      (this._preparer = new Qe()),
-      (this._colorTheme = l),
+    const { apiUrl: t, apiAppId: l, apiKey: i, colorTheme: r, apiAuthorizationScheme: o, apiMetadata: s } = e,
+      a = new at();
+    (this._api = new ql(l, i, t, a, o, s)),
+      (this._preparer = new ot()),
+      (this._colorTheme = r),
       (this._configuration = e);
   }
 }
-pr(
+wl(
   '.jets-seat-map{font-family:sans-serif;font-weight:400;height:100%;position:relative;width:100%}.jets-seat-map.scale.vertical *{-webkit-font-smoothing:subpixel-antialiased;filter:blur(0);-webkit-filter:blur(0)}'
 );
-pr(
-  '.jets-tooltip{background:#fff;border-radius:2px;box-shadow:0 0 0 1px #c0cad5,0 0 4px 0 rgb(0 0 0/8%),0 8px 8px 0 rgb(0 0 0/8%),0 16px 16px 0 rgb(0 0 0/8%);box-sizing:border-box;font-size:12px;max-width:100%;outline:0;position:absolute;z-index:200}.jets-tooltip--content{padding:16px 16px 0}.jets-tooltip--body.no-buttons .jets-tooltip--content{padding:16px}.jets-tooltip--body.no-buttons .jets-tooltip--btns-block{display:none}.jets-tooltip--header{display:flex;font-size:16px;font-weight:700;justify-content:space-between;margin-bottom:8px;width:100%}.jets-tooltip--passenger-name{font-size:15px;font-weight:700;margin-bottom:8px}.jets-tooltip--features>ul{list-style:none;margin:0;padding:0;width:100%}.jets-tooltip--feature img{height:18px;width:18px}.jets-tooltip--feature .svg_span{height:18px;min-height:18px;min-width:18px;width:18px}.jets-tooltip--feature>span{display:block}.jets-tooltip--features>ul>li{align-items:center;color:#4f6f8f;display:flex;font-size:13px;line-height:1.4;margin-bottom:.6rem;width:100%}.jets-tooltip--features>ul>li>div{margin:0 5px}.jets-tooltip--btns-block{display:flex;width:100%}.jets-tooltip--btn{-webkit-font-smoothing:antialiased;border-radius:2px;border-style:solid;border-width:0;cursor:pointer;display:inline-block;font-family:inherit;font-size:14px;font-weight:700;line-height:1.5;margin:1%;padding:9.5px 18px;text-align:center;text-decoration:none;vertical-align:middle;width:48%}.jets-tooltip--arrow-pointer{border-width:14px 16px 0;margin:0 0 0 -16px;transform-origin:top}.jets-tooltip--arrow-pointer,.jets-tooltip--arrow-pointer-horizontal{border-color:#fff transparent transparent;border-style:solid;height:0;position:absolute;width:0}.jets-tooltip--arrow-pointer-horizontal{border-width:16px 14px 16px 0;margin:-16px 0 0 -14px;transform-origin:right}.jets-tooltip--measurements{grid-column-gap:3%;display:grid;grid-auto-columns:minmax(0,1fr);grid-auto-flow:column;margin:10px 0}.jets-tooltip--measurement{backface-visibility:hidden;border:1px solid #4f6f8f;border-radius:6px;box-sizing:border-box;padding:10px;transform:translateZ(0);transform-style:preserve-3d}.jets-tooltip--measurement svg{display:block;height:40px}.jets-tooltip--measurement-value{color:#4f6f8f;margin-top:10px;text-align:center}.horizontal .jets-tooltip--measurement{align-items:center;display:flex;justify-content:space-evenly}.horizontal .jets-tooltip--features{-moz-column-count:2;-webkit-column-count:2;column-count:2;-moz-column-gap:20px;-webkit-column-gap:20px;column-gap:20px}.horizontal .jets-tooltip--features>ul>li:nth-child(6){-webkit-column-break-after:always;break-after:always}.horizontal .jets-tooltip--measurements .svg_span{display:inline-block}.horizontal .jets-tooltip--measurement-value{display:inline-block;margin:0 4px}.horizontal .jets-tooltip--measurement svg{height:30px}'
+wl(
+  '.jets-tooltip{background:#fff;border-radius:2px;box-shadow:0 0 0 1px #c0cad5,0 0 4px 0 rgb(0 0 0/8%),0 8px 8px 0 rgb(0 0 0/8%),0 16px 16px 0 rgb(0 0 0/8%);box-sizing:border-box;font-size:12px;max-width:100%;outline:0;position:absolute;z-index:200}.jets-tooltip--content{padding:16px 16px 0}.jets-tooltip--body.no-buttons .jets-tooltip--content{padding:16px}.jets-tooltip--body.no-buttons .jets-tooltip--btns-block{display:none}.jets-tooltip--header{display:flex;font-size:16px;font-weight:700;justify-content:space-between;margin-bottom:8px;width:100%}.jets-tooltip--passenger-name{font-size:15px;font-weight:700;margin-bottom:8px}.jets-tooltip--features>ul{list-style:none;margin:0;padding:0;width:100%}.jets-tooltip--feature img{height:18px;width:18px}.jets-tooltip--feature .svg_span{height:18px;min-height:18px;min-width:18px;width:18px}.jets-tooltip--feature>span{display:block}.jets-tooltip--features>ul>li{align-items:center;color:#4f6f8f;display:flex;font-size:13px;line-height:1.4;margin-bottom:.6rem;width:100%}.jets-tooltip--features>ul>li>div{margin:0 5px}.jets-tooltip--btns-block{display:flex;width:100%}.jets-tooltip--btn{-webkit-font-smoothing:antialiased;border-radius:2px;border-style:solid;border-width:0;cursor:pointer;display:inline-block;font-family:inherit;font-size:14px;font-weight:700;line-height:1.5;margin:1%;padding:9.5px 18px;text-align:center;text-decoration:none;vertical-align:middle;width:48%}.jets-tooltip--arrow-pointer{border-color:#fff transparent transparent;border-style:solid;border-width:14px 16px 0;height:0;margin:0 0 0 -16px;position:absolute;transform-origin:top;width:0}.jets-tooltip--arrow-pointer-horizontal{border-color:#fff transparent transparent;border-style:solid;border-width:16px 14px 16px 0;height:0;margin:-16px 0 0 -14px;position:absolute;transform-origin:right;width:0}.jets-tooltip--measurements{grid-column-gap:3%;display:grid;grid-auto-columns:minmax(0,1fr);grid-auto-flow:column;margin:10px 0}.jets-tooltip--measurement{backface-visibility:hidden;border:1px solid #4f6f8f;border-radius:6px;box-sizing:border-box;padding:10px;transform:translateZ(0);transform-style:preserve-3d}.jets-tooltip--measurement svg{display:block;height:40px}.jets-tooltip--measurement-value{color:#4f6f8f;margin-top:10px;text-align:center}.horizontal .jets-tooltip--measurement{align-items:center;display:flex;justify-content:space-evenly}.horizontal .jets-tooltip--features{-moz-column-count:2;-webkit-column-count:2;column-count:2;-moz-column-gap:20px;-webkit-column-gap:20px;column-gap:20px}.horizontal .jets-tooltip--features>ul>li:nth-child(6){-webkit-column-break-after:always;break-after:always}.horizontal .jets-tooltip--measurements .svg_span{display:inline-block}.horizontal .jets-tooltip--measurement-value{display:inline-block;margin:0 4px}.horizontal .jets-tooltip--measurement svg{height:30px}'
 );
-const Or = ({
+const Yl = ({
     colorTheme: t,
-    data: r,
+    data: l,
     elementRef: i,
-    featureListStyle: l,
+    featureListStyle: r,
     finalListOfFeatures: o,
     headerStyle: s,
-    isSeatSelectDisabled: a,
-    params: n,
+    isSeatSelectDisabled: n,
+    params: a,
     passengerLabel: c,
     pointerStyle: d,
     pointerStyleHorizontal: h,
@@ -4200,28 +4489,28 @@ const Or = ({
     rootStyle: p,
     onSeatSelect: m,
     onSeatUnselect: C,
-    onTooltipClose: k,
+    onTooltipClose: v,
   }) => {
     var u;
     const {
-        tooltipFontColor: f,
-        tooltipIconColor: v,
-        tooltipIconBorderColor: w,
+        tooltipFontColor: k,
+        tooltipIconColor: w,
+        tooltipIconBorderColor: f,
         tooltipIconBackgroundColor: b,
         tooltipSelectButtonTextColor: L,
         tooltipSelectButtonBackgroundColor: M,
         tooltipCancelButtonTextColor: z,
         tooltipCancelButtonBackgroundColor: x,
       } = t,
-      { number: y, classType: S, measurements: H, price: V, passenger: T, lang: A, rowName: E, name: _ } = r,
-      B = e => k(null, null, e);
+      { number: y, classType: S, measurements: $, price: H, passenger: V, lang: T, rowName: E, name: B } = l,
+      _ = e => v(null, null, e);
     return e.createElement(
       'div',
       {
         style: p,
-        className: 'jets-tooltip ' + (null != n && n.isHorizontal ? 'horizontal' : ''),
+        className: 'jets-tooltip ' + (null != a && a.isHorizontal ? 'horizontal' : ''),
         ref: i,
-        onMouseLeave: n.tooltipOnHover ? B : null,
+        onMouseLeave: a.tooltipOnHover ? _ : null,
       },
       e.createElement('div', { className: 'jets-tooltip--arrow-pointer', style: d }),
       e.createElement('div', { className: 'jets-tooltip--arrow-pointer-horizontal', style: h }),
@@ -4234,17 +4523,17 @@ const Or = ({
           e.createElement(
             'div',
             { className: 'jets-tooltip--header', style: s },
-            e.createElement('div', { className: 'jets-tooltip--header-title' }, _ || E || S, ' ', y),
-            e.createElement('div', { className: 'jets-tooltip--header-price' }, V)
+            e.createElement('div', { className: 'jets-tooltip--header-title' }, B || E || S, ' ', y),
+            e.createElement('div', { className: 'jets-tooltip--header-price' }, H)
           ),
-          e.createElement('div', { className: 'jets-tooltip--passenger-name', style: l }, c),
+          e.createElement('div', { className: 'jets-tooltip--passenger-name', style: r }, c),
           e.createElement(
             'div',
-            { className: 'jets-tooltip--features', style: l },
+            { className: 'jets-tooltip--features', style: r },
             e.createElement(
               'ul',
               null,
-              o.map(({ uniqId: t, title: r, icon: i, value: l, cssClass: o }) =>
+              o.map(({ uniqId: t, title: l, icon: i, value: r, cssClass: o }) =>
                 e.createElement(
                   'li',
                   { className: `jets-tooltip--feature ${o || ''}`, key: t },
@@ -4253,8 +4542,8 @@ const Or = ({
                         className: 'svg_span ' + (o ? o + '-icon' : ''),
                         dangerouslySetInnerHTML: { __html: i },
                       })
-                    : e.createElement('span', null, r),
-                  e.createElement('div', { className: '' + (o ? o + '-label' : ''), style: o ? {} : { color: f } }, l)
+                    : e.createElement('span', null, l),
+                  e.createElement('div', { className: '' + (o ? o + '-label' : ''), style: o ? {} : { color: k } }, r)
                 )
               ),
               o.length % 2 == 1 && e.createElement('li', { className: 'jets-tooltip--feature' }, ' ')
@@ -4263,22 +4552,22 @@ const Or = ({
           e.createElement(
             'div',
             { className: 'jets-tooltip--measurements' },
-            H.map(({ uniqId: t, title: r, icon: i, value: l }) =>
+            $.map(({ uniqId: t, title: l, icon: i, value: r }) =>
               e.createElement(
                 'div',
-                { style: { borderColor: w, background: b }, className: 'jets-tooltip--measurement', key: t },
+                { style: { borderColor: f, background: b }, className: 'jets-tooltip--measurement', key: t },
                 i
                   ? e.createElement('span', {
                       className: 'svg_span',
-                      style: { fill: v },
+                      style: { fill: w },
                       dangerouslySetInnerHTML: { __html: i },
                     })
                   : e.createElement('span', null),
                 e.createElement(
                   'div',
                   { className: 'jets-tooltip--measurement-box' },
-                  e.createElement('div', { className: 'jets-tooltip--measurement-value' }, r),
-                  e.createElement('div', { className: 'jets-tooltip--measurement-value' }, l)
+                  e.createElement('div', { className: 'jets-tooltip--measurement-value' }, l),
+                  e.createElement('div', { className: 'jets-tooltip--measurement-value' }, r)
                 )
               )
             )
@@ -4287,24 +4576,24 @@ const Or = ({
         e.createElement(
           'div',
           { className: 'jets-tooltip--btns-block' },
-          e.createElement(kr, {
-            onClick: B,
-            content: $[A].cancel,
+          e.createElement(Ll, {
+            onClick: _,
+            content: A[T].cancel,
             className: 'jets-btn jets-tooltip--btn',
             style: { color: z, backgroundColor: x },
           }),
-          T
-            ? e.createElement(kr, {
-                disabled: null == r || null === (u = r.passenger) || void 0 === u ? void 0 : u.readOnly,
-                onClick: () => C(r),
-                content: $[A].unselect,
+          V
+            ? e.createElement(Ll, {
+                disabled: null == l || null === (u = l.passenger) || void 0 === u ? void 0 : u.readOnly,
+                onClick: () => C(l),
+                content: A[T].unselect,
                 className: 'jets-btn jets-tooltip--btn ',
                 style: { color: L, backgroundColor: M },
               })
-            : e.createElement(kr, {
-                disabled: a,
-                onClick: () => m(r),
-                content: $[A].select,
+            : e.createElement(Ll, {
+                disabled: n,
+                onClick: () => m(l),
+                content: A[T].select,
                 className: 'jets-btn jets-tooltip--btn ',
                 style: { color: L, backgroundColor: M },
               })
@@ -4312,118 +4601,118 @@ const Or = ({
       )
     );
   },
-  Zr = ({ data: t }) => {
+  Jl = ({ data: t }) => {
     var o;
     const {
-        componentOverrides: a,
-        isSeatSelectDisabled: n,
+        componentOverrides: n,
+        isSeatSelectDisabled: a,
         onTooltipClose: c,
         onSeatSelect: d,
         onSeatUnselect: h,
         colorTheme: g,
         params: p,
-      } = l(qe),
-      { isSafari: m } = it(),
+      } = r(Xe),
+      { isSafari: m } = dt(),
       C = i(null),
-      [k, u] = r(0),
-      [f, v] = r(0),
-      [w, b] = r(0),
-      { tooltipBackgroundColor: L, tooltipHeaderColor: M, tooltipBorderColor: x, tooltipFontColor: y } = g,
+      [v, u] = l(0),
+      [k, w] = l(0),
+      [f, b] = l(0),
+      { tooltipBackgroundColor: L, tooltipHeaderColor: M, tooltipBorderColor: z, tooltipFontColor: x } = g,
       {
-        top: S,
-        left: H,
-        features: V,
-        passenger: T,
-        passengerTypes: A,
+        top: y,
+        left: $,
+        features: H,
+        passenger: V,
+        passengerTypes: T,
         lang: E,
-        antiScale: _,
-        scaleType: B,
+        antiScale: B,
+        scaleType: _,
         width: W,
         seatmapHeight: P,
         seatmapWidth: I,
         seatmapElement: N,
-        seatNode: j,
-        additionalProps: D,
+        seatNode: D,
+        additionalProps: R,
       } = t,
-      R = t.size.height / _,
-      O = (t.size.width / _ - 16 - 8) / 2,
-      Z = j.closest('.jets-row').getBoundingClientRect(),
-      F = j.getBoundingClientRect(),
+      j = t.size.height / B,
+      O = (t.size.width / B - 16 - 8) / 2,
+      F = D.closest('.jets-row').getBoundingClientRect(),
+      Z = D.getBoundingClientRect(),
       U = N.getBoundingClientRect(),
       G = N.parentElement.getBoundingClientRect();
-    let K = F.top - U.top,
-      Y = F.left - U.left,
-      J = F.top - G.top;
+    let q = Z.top - U.top,
+      K = Z.left - U.left,
+      J = Z.top - G.top;
     if (m) {
-      const e = B === z.ZOOM ? _ : 1;
-      (K = F.top / e - U.top), (Y = F.left / e - U.left), (J = F.top / e - G.top);
+      const e = _ === S.ZOOM ? B : 1;
+      (q = Z.top / e - U.top), (K = Z.left / e - U.left), (J = Z.top / e - G.top);
     }
     const X = null != p && p.isHorizontal ? 'left' : 'top',
       Q = null != p && p.isHorizontal ? 'width' : 'height',
       ee = G[X] + 0.5 * G[Q],
-      te = f < Y,
-      re = Z[X] > ee,
-      ie = Number(J > k),
-      le = Number(te) * Number(re),
-      oe = k - K,
+      te = k < K,
+      le = F[X] > ee,
+      ie = Number(J > v),
+      re = Number(te) * Number(le),
+      oe = v - q,
       se = Math.min(oe - 16, 0),
-      ae = k - oe + se - -16 / 6,
-      ne = Y + R - (f + R + 14) * le,
-      ce = K + R - (k + R + 14) * ie,
+      ne = v - oe + se - -16 / 6,
+      ae = K + j - (k + j + 14) * re,
+      ce = q + j - (v + j + 14) * ie,
       de = {
         maxHeight: null != p && p.isHorizontal ? P : 'auto',
         maxWidth: null != p && p.isHorizontal ? 1.5 * I : 'auto',
         width: null != p && p.isHorizontal ? 'auto' : W,
-        top: null != p && p.isHorizontal ? `calc(${H} - ${se}px)` : ce,
-        left: null != p && p.isHorizontal ? ne : H,
+        top: null != p && p.isHorizontal ? `calc(${$} - ${se}px)` : ce,
+        left: null != p && p.isHorizontal ? ae : $,
         background: L,
-        borderColor: x,
+        borderColor: z,
         borderStyle: 'solid',
-        color: y,
+        color: x,
       },
       he = {
-        top: ie * k,
-        left: Y + O,
+        top: ie * v,
+        left: K + O,
         transform: `rotate(${180 * (1 - ie)}deg)`,
-        borderColor: `${x} transparent transparent transparent`,
+        borderColor: `${z} transparent transparent transparent`,
         display: null != p && p.isHorizontal ? 'none' : '',
       },
       ge = {
-        left: 100 * le + '%',
-        top: ae,
-        transform: `rotate(${180 * le}deg)`,
-        borderColor: `transparent ${x} transparent transparent`,
+        left: 100 * re + '%',
+        top: ne,
+        transform: `rotate(${180 * re}deg)`,
+        borderColor: `transparent ${z} transparent transparent`,
         display: null != p && p.isHorizontal ? '' : 'none',
       };
     s(() => {
       b(C.current.getBoundingClientRect().top - document.body.getBoundingClientRect().top),
         u(C.current.clientHeight),
-        v(C.current.clientWidth);
-    }, [t, k]);
+        w(C.current.clientWidth);
+    }, [t, v]);
     const pe = { color: M, direction: p.rightToLeft ? 'rtl' : 'ltr' },
       me = { direction: p.rightToLeft ? 'rtl' : 'ltr' },
       Ce = (null == p ? void 0 : p.tooltipOnHover) && !(null != p && p.isTouchDevice);
-    let ke = '';
-    T && (ke = (null == T ? void 0 : T.passengerLabel) || `${$[E].passenger} ${null == T ? void 0 : T.id}`);
+    let ve = '';
+    V && (ve = (null == V ? void 0 : V.passengerLabel) || `${A[E].passenger} ${null == V ? void 0 : V.id}`);
     let ue = '';
-    if (A) {
-      const e = q,
-        t = A.filter(t => e.includes(t));
-      let r = t.map(e => $[E][e]);
-      ue = t.length < e.length ? `${$[E].seatRestrictions}: ${r.join(', ')}` : '';
+    if (T) {
+      const e = Y,
+        t = T.filter(t => e.includes(t));
+      let l = t.map(e => A[E][e]);
+      ue = t.length < e.length ? `${A[E].seatRestrictions}: ${l.join(', ')}` : '';
     }
-    const fe = [...(V || []).filter(e => !p.hiddenSeatFeatures.includes(e.key)), ...(D || [])].slice(0, 12),
-      ve = null !== (o = null == a ? void 0 : a.JetsTooltipView) && void 0 !== o ? o : Or;
-    return e.createElement(ve, {
+    const ke = [...(H || []).filter(e => !p.hiddenSeatFeatures.includes(e.key)), ...(R || [])].slice(0, 12),
+      we = null !== (o = null == n ? void 0 : n.JetsTooltipView) && void 0 !== o ? o : Yl;
+    return e.createElement(we, {
       colorTheme: g,
       data: t,
       elementRef: C,
       featureListStyle: me,
-      finalListOfFeatures: fe,
+      finalListOfFeatures: ke,
       headerStyle: pe,
-      isSeatSelectDisabled: n(t),
+      isSeatSelectDisabled: a(t),
       params: p,
-      passengerLabel: ke.length ? ke : ue,
+      passengerLabel: ve.length ? ve : ue,
       pointerStyle: he,
       pointerStyleHorizontal: ge,
       rootStyle: de,
@@ -4433,11 +4722,11 @@ const Or = ({
       onSeatUnselect: h,
     });
   },
-  Fr = ({
-    flight: l,
+  Xl = ({
+    flight: r,
     availability: s,
-    passengers: a,
-    config: n,
+    passengers: n,
+    config: a,
     currentDeckIndex: c,
     seatJumpTo: d,
     onSeatMapInited: h,
@@ -4445,42 +4734,42 @@ const Or = ({
     onSeatUnselected: p,
     onTooltipRequested: m,
     onLayoutUpdated: C,
-    onSeatMouseLeave: k,
+    onSeatMouseLeave: v,
     onSeatMouseClick: u,
-    onAvailabilityApplied: f,
-    componentOverrides: v,
+    onAvailabilityApplied: k,
+    componentOverrides: w,
   }) => {
-    var w;
-    const { isFirefox: b } = it(),
-      L = Ge.mergeColorThemeWithConstraints(Fr.defaultProps.config.colorTheme, n.colorTheme);
-    (n.colorTheme = L), (n.lang = Ge.validateLanguage(n.lang));
-    const M = { ...Fr.defaultProps.config, ...n };
-    b && (M.scaleType = z.SCALE);
-    const S = M.width / 4;
-    M.colorTheme.wingsWidth > S && (M.colorTheme.wingsWidth = S);
-    const [H, $] = r([]),
-      [V, T] = r(!1),
-      [A, E] = r([]),
-      [_, B] = r(null),
-      [W, P] = r(null),
-      [I, N] = r(!1),
-      [j, D] = r(0),
-      [R, O] = r(null),
-      [Z, F] = r([]),
-      [U, q] = r([]),
-      [G, K] = r(null),
+    var f;
+    const { isFirefox: b } = dt(),
+      L = et.mergeColorThemeWithConstraints(Xl.defaultProps.config.colorTheme, a.colorTheme);
+    (a.colorTheme = L), (a.lang = et.validateLanguage(a.lang));
+    const M = { ...Xl.defaultProps.config, ...a };
+    b && (M.scaleType = S.SCALE);
+    const z = M.width / 4;
+    M.colorTheme.wingsWidth > z && (M.colorTheme.wingsWidth = z);
+    const [x, y] = l([]),
+      [V, T] = l(!1),
+      [A, E] = l([]),
+      [B, _] = l(null),
+      [W, P] = l(null),
+      [I, N] = l(!1),
+      [D, R] = l(0),
+      [j, O] = l(null),
+      [F, Z] = l([]),
+      [U, G] = l([]),
+      [q, K] = l(null),
       Y = i(!1),
       J = i(),
-      X = new Rr(M),
-      Q = (null == R ? void 0 : R.singleDeckMode) && H.length > 1,
-      ee = (null == R ? void 0 : R.builtInDeckSelector) && Q,
-      te = null !== (w = null == v ? void 0 : v.JetsTooltip) && void 0 !== w ? w : Zr;
+      X = new Kl(M),
+      Q = (null == j ? void 0 : j.singleDeckMode) && x.length > 1,
+      ee = (null == j ? void 0 : j.builtInDeckSelector) && Q,
+      te = null !== (f = null == w ? void 0 : w.JetsTooltip) && void 0 !== f ? f : Jl;
     o(() => {
       let e = !0;
       return (
-        null != l &&
-          l.id &&
-          X.getPlaneFeatures(l, M.lang, M.units)
+        null != r &&
+          r.id &&
+          X.getPlaneFeatures(r, M.lang, M.units)
             .then(e => {
               K(e);
             })
@@ -4499,39 +4788,39 @@ const Or = ({
           e = !1;
         }
       );
-    }, [l]),
+    }, [r]),
       o(() => {
         let e = !0;
         return (
-          G &&
-            X.processPlaneFeatures(G, s, a, M).then(t => {
-              var r, i, l, o, s, a, n, c;
+          q &&
+            X.processPlaneFeatures(q, s, n, M).then(t => {
+              var l, i, r, o, s, n, a, c;
               e &&
                 (O(t.params),
-                $(t.content),
-                F(t.exits),
-                q(t.bulks),
+                y(t.content),
+                Z(t.exits),
+                G(t.bulks),
                 T(!0),
                 h({
                   heightInPx:
-                    null !== (r = t.params) && void 0 !== r && r.isHorizontal
+                    null !== (l = t.params) && void 0 !== l && l.isHorizontal
                       ? null === (i = t.params) || void 0 === i
                         ? void 0
                         : i.innerWidth
-                      : null === (l = t.params) || void 0 === l
+                      : null === (r = t.params) || void 0 === r
                       ? void 0
-                      : l.totalDecksHeight,
+                      : r.totalDecksHeight,
                   widthInPx:
                     null !== (o = t.params) && void 0 !== o && o.isHorizontal
                       ? null === (s = t.params) || void 0 === s
                         ? void 0
                         : s.totalDecksHeight
-                      : null === (a = t.params) || void 0 === a
+                      : null === (n = t.params) || void 0 === n
                       ? void 0
-                      : a.innerWidth,
-                  scaleFactor: null === (n = t.params) || void 0 === n ? void 0 : n.scale,
+                      : n.innerWidth,
+                  scaleFactor: null === (a = t.params) || void 0 === a ? void 0 : a.scale,
                   decksCount: null === (c = t.content) || void 0 === c ? void 0 : c.length,
-                  currentDeckIndex: j,
+                  currentDeckIndex: D,
                   availabilityData: null == t ? void 0 : t.availabilityData,
                   media: null == t ? void 0 : t.media,
                 }),
@@ -4541,138 +4830,138 @@ const Or = ({
             e = !1;
           }
         );
-      }, [G, M.width]),
+      }, [q, M.width]),
       o(() => {
         if (!s) return;
-        const e = X.setAvailabilityHandler(H, s),
+        const e = X.setAvailabilityHandler(x, s),
           t = s.map(({ label: e }) => e),
-          r = X.compareWithDecksSeatsInfo(t, e);
-        se(), $(e), B(null), f(r);
+          l = X.compareWithDecksSeatsInfo(t, e);
+        se(), y(e), _(null), k(l);
       }, [s]),
       o(() => {
-        se(), B(null);
-      }, [a]),
+        se(), _(null);
+      }, [n]),
       o(() => {
-        !Y.current && R && ((Y.current = !0), oe(c), le(), ae());
-      }, [R]),
-      o(() => {
-        le(), ae();
+        !Y.current && j && ((Y.current = !0), oe(c), re(), ne());
       }, [j]),
+      o(() => {
+        re(), ne();
+      }, [D]),
       o(() => {
         oe(c);
       }, [c]),
       o(() => {
         var e;
-        if (!d || null == H || !H.length) return;
+        if (!d || null == x || !x.length) return;
         const t = null == d || null === (e = d.seatLabel) || void 0 === e ? void 0 : e.toString().trim().toUpperCase(),
-          { nonExistingSeatLabels: r } = X.compareWithDecksSeatsInfo([t], H);
-        if (r.includes(t)) return B(null), void ie();
-        const i = X.getDeckIndexBySeatLabel(t, H);
-        i !== j && oe(i), P(t);
+          { nonExistingSeatLabels: l } = X.compareWithDecksSeatsInfo([t], x);
+        if (l.includes(t)) return _(null), void ie();
+        const i = X.getDeckIndexBySeatLabel(t, x);
+        i !== D && oe(i), P(t);
       }, [d]);
-    const re = t(
+    const le = t(
         () =>
-          `jets-seat-map ${null != R && R.isHorizontal ? 'horizontal' : 'vertical'} ${
-            M.scaleType === z.SCALE ? 'scale' : 'zoom'
+          `jets-seat-map ${null != j && j.isHorizontal ? 'horizontal' : 'vertical'} ${
+            M.scaleType === S.SCALE ? 'scale' : 'zoom'
           }`,
-        [R, M]
+        [j, M]
       ),
       ie = () => {
         P(null);
       },
-      le = () => {
-        null != R &&
-          R.isHorizontal &&
-          null != R &&
-          R.rightToLeft &&
-          (J.current.parentElement.scrollLeft = R.totalDecksHeight);
+      re = () => {
+        null != j &&
+          j.isHorizontal &&
+          null != j &&
+          j.rightToLeft &&
+          (J.current.parentElement.scrollLeft = j.totalDecksHeight);
       },
       oe = e => {
-        if (!Q || H.length < 2) return;
-        let t = (j + 1) % H.length;
+        if (!Q || x.length < 2) return;
+        let t = (D + 1) % x.length;
         if (void 0 !== e) {
-          if (e < 0 || e > H.length - 1) return;
+          if (e < 0 || e > x.length - 1) return;
           t = e;
         }
-        const r = (null == R ? void 0 : R.separateDeckHeights[t]) * (R.scale || 1) + 'px',
-          i = null == R ? void 0 : R.separateDeckHeights[t];
-        O({ ...R, scaledTotalDecksHeight: r, totalDecksHeight: i }), D(t), B(null);
+        const l = (null == j ? void 0 : j.separateDeckHeights[t]) * (j.scale || 1) + 'px',
+          i = null == j ? void 0 : j.separateDeckHeights[t];
+        O({ ...j, scaledTotalDecksHeight: l, totalDecksHeight: i }), R(t), _(null);
       },
       se = () => {
-        a = X.addAbbrToPassengers(a);
-        const e = X.setPassengersHandler(H, a || []);
-        $(e), E(a);
+        n = X.addAbbrToPassengers(n);
+        const e = X.setPassengersHandler(x, n || []);
+        y(e), E(n);
       },
-      ae = () => {
-        if (!R) return;
-        const e = null == R ? void 0 : R.separateDeckHeights[j],
-          t = Q ? e : null == R ? void 0 : R.totalDecksHeight,
-          r = {
-            heightInPx: null != R && R.isHorizontal ? (null == R ? void 0 : R.innerWidth) : t,
-            widthInPx: null != R && R.isHorizontal ? t : null == R ? void 0 : R.innerWidth,
-            scaleFactor: null == R ? void 0 : R.scale,
-            decksCount: null == H ? void 0 : H.length,
-            currentDeckIndex: j,
+      ne = () => {
+        if (!j) return;
+        const e = null == j ? void 0 : j.separateDeckHeights[D],
+          t = Q ? e : null == j ? void 0 : j.totalDecksHeight,
+          l = {
+            heightInPx: null != j && j.isHorizontal ? (null == j ? void 0 : j.innerWidth) : t,
+            widthInPx: null != j && j.isHorizontal ? t : null == j ? void 0 : j.innerWidth,
+            scaleFactor: null == j ? void 0 : j.scale,
+            decksCount: null == x ? void 0 : x.length,
+            currentDeckIndex: D,
           };
-        C(r);
+        C(l);
       },
-      ne = e => {
+      ae = e => {
         const t = { ...e, label: e.number };
         return delete t.number, delete t.leftOffset, delete t.topOffset, delete t.size, t;
       },
-      ce = (e, t, r) => {
-        const i = ne(e);
-        if ((m({ seat: i, element: t.current, event: r.nativeEvent }), !R.builtInTooltip)) return;
-        if (e.type !== y.seat || (e.status !== x.available && e.status !== x.selected)) return;
-        const l = X.getNextPassenger(A),
+      ce = (e, t, l) => {
+        const i = ae(e);
+        if ((m({ seat: i, element: t.current, event: l.nativeEvent }), !j.builtInTooltip)) return;
+        if (e.type !== H.seat || (e.status !== $.available && e.status !== $.selected)) return;
+        const r = X.getNextPassenger(A),
           o = X.calculateTooltipData(
             e,
             t.current,
             J.current,
-            null == R ? void 0 : R.antiScale,
-            null == R ? void 0 : R.isHorizontal
+            null == j ? void 0 : j.antiScale,
+            null == j ? void 0 : j.isHorizontal
           );
-        N(!!l), B({ ...o, nextPassenger: l, lang: M.lang, scaleType: M.scaleType, seatmapElement: J.current });
+        N(!!r), _({ ...o, nextPassenger: r, lang: M.lang, scaleType: M.scaleType, seatmapElement: J.current });
       },
       de = e => {
-        const { data: t, passengers: r } = X.selectSeatHandler(H, e, A);
-        $(t), E(r), B(null), g(r);
+        const { data: t, passengers: l } = X.selectSeatHandler(x, e, A);
+        y(t), E(l), _(null), g(l);
       },
       he = e => {
-        const { data: t, passengers: r } = X.unselectSeatHandler(H, e, A);
-        $(t), E(r), B(null), p(r);
+        const { data: t, passengers: l } = X.unselectSeatHandler(x, e, A);
+        y(t), E(l), _(null), p(l);
       },
       ge = e => {
-        var t, r;
+        var t, l;
         const i = X.getNextPassenger(A);
         return (
           !i ||
           ((null == i ? void 0 : i.passengerType) &&
             (null === (t = e.passengerTypes) || void 0 === t ? void 0 : t.length) &&
-            !(null !== (r = e.passengerTypes) && void 0 !== r && r.includes(null == i ? void 0 : i.passengerType)))
+            !(null !== (l = e.passengerTypes) && void 0 !== l && l.includes(null == i ? void 0 : i.passengerType)))
         );
       },
       pe = {
-        transform: ` ${null == R ? void 0 : R.rotation} ${null == R ? void 0 : R.offset} scale(${
-          null == R ? void 0 : R.scale
+        transform: ` ${null == j ? void 0 : j.rotation} ${null == j ? void 0 : j.offset} scale(${
+          null == j ? void 0 : j.scale
         })`,
         transformOrigin: 'top left',
-        width: null == R ? void 0 : R.innerWidth,
-        height: null == R ? void 0 : R.scaledTotalDecksHeight,
+        width: null == j ? void 0 : j.innerWidth,
+        height: null == j ? void 0 : j.scaledTotalDecksHeight,
       },
       me = {
-        transform: ` ${null == R ? void 0 : R.rotation} ${null == R ? void 0 : R.offset}`,
+        transform: ` ${null == j ? void 0 : j.rotation} ${null == j ? void 0 : j.offset}`,
         transformOrigin: 'top left',
-        zoom: null == R ? void 0 : R.scale,
-        width: null == R ? void 0 : R.innerWidth,
-        height: null == R ? void 0 : R.scaledTotalDecksHeight,
+        zoom: null == j ? void 0 : j.scale,
+        width: null == j ? void 0 : j.innerWidth,
+        height: null == j ? void 0 : j.scaledTotalDecksHeight,
       },
       Ce = {
-        onSeatClick: (e, t, r) => {
-          if ((null == R ? void 0 : R.tooltipOnHover) && !(null != R && R.isTouchDevice)) {
-            if (R.externalPassengerManagement) {
-              const i = ne(e);
-              return void u({ seat: i, element: t.current, event: r.nativeEvent });
+        onSeatClick: (e, t, l) => {
+          if ((null == j ? void 0 : j.tooltipOnHover) && !(null != j && j.isTouchDevice)) {
+            if (j.externalPassengerManagement) {
+              const i = ae(e);
+              return void u({ seat: i, element: t.current, event: l.nativeEvent });
             }
             if (null != e && e.passenger) {
               var i;
@@ -4682,54 +4971,54 @@ const Or = ({
               if (ge(e)) return;
               de(e);
             }
-          } else ce(e, t, r);
+          } else ce(e, t, l);
         },
         showTooltip: ce,
-        onTooltipClose: (e, t, r) => {
+        onTooltipClose: (e, t, l) => {
           if (e && t) {
-            const i = ne(e);
-            k({ seat: i, element: t.current, event: r.nativeEvent });
+            const i = ae(e);
+            v({ seat: i, element: t.current, event: l.nativeEvent });
           }
-          B(null);
+          _(null);
         },
         onSeatSelect: de,
         onSeatUnselect: he,
         isSeatSelectDisabled: ge,
         switchDeck: oe,
         resetSeatJumpTo: ie,
-        params: R,
+        params: j,
         config: M,
         colorTheme: L,
-        activeTooltip: _,
+        activeTooltip: B,
         seatLabelJumpTo: W,
-        componentOverrides: v,
+        componentOverrides: w,
       };
     return e.createElement(
-      qe.Provider,
+      Xe.Provider,
       { value: Ce },
       e.createElement(
         'div',
         {
           ref: J,
-          className: re,
+          className: le,
           style: {
-            width: M.horizontal ? (null == R ? void 0 : R.scaledTotalDecksHeight) : M.width,
-            height: M.horizontal ? M.width : null == R ? void 0 : R.scaledTotalDecksHeight,
+            width: M.horizontal ? (null == j ? void 0 : j.scaledTotalDecksHeight) : M.width,
+            height: M.horizontal ? M.width : null == j ? void 0 : j.scaledTotalDecksHeight,
             fontFamily: L.fontFamily,
             background: L.seatMapBackgroundColor,
           },
           'data-testid': 'jets-seat-map',
         },
-        _ && e.createElement(te, { data: _ }),
-        ee && e.createElement(Ar, { direction: !!j }),
+        B && e.createElement(te, { data: B }),
+        ee && e.createElement(Il, { direction: !!D }),
         e.createElement(
           'div',
-          { style: M.scaleType === z.SCALE ? pe : me },
-          e.createElement(Nr, {
+          { style: M.scaleType === S.SCALE ? pe : me },
+          e.createElement(Ul, {
             showOneDeck: Q,
-            activeDeck: j,
-            content: H,
-            exits: Z,
+            activeDeck: D,
+            content: x,
+            exits: F,
             bulks: U,
             isSeatMapInited: V,
             config: M,
@@ -4738,68 +5027,69 @@ const Or = ({
       )
     );
   };
-Fr.defaultProps = {
+Xl.defaultProps = {
   config: {
     width: 350,
-    horizontal: false,
-    rightToLeft: false,
-    visibleFuselage: false,
-    visibleWings: false,
-    visibleCabinTitles: false,
-    builtInTooltip: true,
-    externalPassengerManagement: false,
-    builtInDeckSelector: true,
-    singleDeckMode: true,
-    tooltipOnHover: false,
-    lang: 'EN',
-    units: 'metric',
-    scaleType: A,
-    apiAuthorizationScheme: 'Bearer',
+    horizontal: N,
+    rightToLeft: q,
+    visibleFuselage: D,
+    visibleWings: R,
+    visibleCabinTitles: j,
+    builtInTooltip: O,
+    externalPassengerManagement: F,
+    builtInDeckSelector: Z,
+    singleDeckMode: U,
+    tooltipOnHover: G,
+    lang: E,
+    units: B,
+    scaleType: _,
+    apiAuthorizationScheme: W,
     hiddenSeatFeatures: [],
     colorTheme: {
-      seatMapBackgroundColor: 'rgb(255,255,255)',
-      deckLabelTitleColor: 'rgb(255,255,255)',
-      floorColor: 'rgb(30,60,90)',
-      seatLabelColor: 'rgb(255,255,255)',
-      seatStrokeColor: 'rgb(237, 237, 237)',
+      seatMapBackgroundColor: ce,
+      deckLabelTitleColor: de,
+      floorColor: ae,
+      seatLabelColor: me,
+      seatStrokeColor: ue,
       seatStrokeWidth: 1,
-      seatArmrestColor: 'rgb(185,186,186)',
-      notAvailableSeatsColor: 'dimgrey',
-      bulkBaseColor: 'rgb(186, 199, 213)',
-      bulkCutColor: 'rgb(148, 168, 190)',
-      bulkIconColor: 'rgb(70, 81, 94)',
-      bulkFloorIconColor: 'rgb(206, 216, 237)',
-      fuselageFillColor: 'lightgray',
-      fuselageStrokeColor: 'darkgrey',
+      seatArmrestColor: Ce,
+      notAvailableSeatsColor: ke,
+      bulkBaseColor: we,
+      bulkCutColor: fe,
+      bulkIconColor: be,
+      bulkFloorIconColor: Le,
+      fuselageFillColor: Me,
+      fuselageStrokeColor: xe,
       fuselageStrokeWidth: 12,
-      fuselageWindowsColor: 'darkgrey',
-      fuselageWingsColor: 'darkgrey',
-      defaultPassengerBadgeColor: '#1157ce',
-      defaultPassengerBadgeLabelColor: 'rgb(255,255,255)',
-      defaultPassengerBadgeBorderColor: 'transparent',
-      fontFamily: 'Montserrat, sans-serif',
+      fuselageWindowsColor: ye,
+      fuselageWingsColor: Se,
+      fuselageNoseType: $e,
+      defaultPassengerBadgeColor: He,
+      defaultPassengerBadgeLabelColor: Ve,
+      defaultPassengerBadgeBorderColor: Te,
+      fontFamily: Ae,
       deckHeightSpacing: 200,
       wingsWidth: 30,
       deckSeparation: 50,
-      tooltipBackgroundColor: 'rgb(255,255,255)',
-      tooltipHeaderColor: '#4f6f8f',
-      tooltipBorderColor: 'rgb(255,255,255)',
-      tooltipFontColor: '#4f6f8f',
-      tooltipIconColor: '#4f6f8f',
-      tooltipIconBorderColor: '#4f6f8f',
-      tooltipIconBackgroundColor: '#f2f5f8',
-      tooltipSelectButtonTextColor: 'rgb(255, 255, 255)',
-      tooltipSelectButtonBackgroundColor: 'rgb(0, 122, 255)',
-      tooltipCancelButtonTextColor: 'rgb(0, 24, 51)',
-      tooltipCancelButtonBackgroundColor: 'rgb(237, 240, 243)',
-      deckSelectorStrokeColor: 'rgba(50, 50, 50, 0.5)',
-      deckSelectorFillColor: '#fff',
+      tooltipBackgroundColor: Ee,
+      tooltipHeaderColor: Be,
+      tooltipBorderColor: _e,
+      tooltipFontColor: We,
+      tooltipIconColor: Pe,
+      tooltipIconBorderColor: Ie,
+      tooltipIconBackgroundColor: Ne,
+      tooltipSelectButtonTextColor: De,
+      tooltipSelectButtonBackgroundColor: Re,
+      tooltipCancelButtonTextColor: je,
+      tooltipCancelButtonBackgroundColor: Oe,
+      deckSelectorStrokeColor: Ze,
+      deckSelectorFillColor: Fe,
       deckSelectorSize: 25,
       exitIconUrlLeft: null,
       exitIconUrlRight: null,
       cabinTitlesWidth: 80,
-      cabinTitlesHighlightColors: Fe,
-      cabinTitlesLabelColor: '#00BFFF',
+      cabinTitlesHighlightColors: Ke,
+      cabinTitlesLabelColor: qe,
     },
   },
   onSeatMapInited: e => {
@@ -4828,129 +5118,133 @@ Fr.defaultProps = {
   },
 };
 export {
-  lt as BULK_TEMPLATE_MAP,
-  H as CLASS_CODE_MAP,
-  ie as DECK_ITEM_ALIGN_MAP,
-  Vr as DECK_LOCALE_KEY,
-  E as DEFAULT_AUTHORIZATION_SCHEME,
-  j as DEFAULT_BUILT_IN_TOOLTIP,
-  ee as DEFAULT_DECK_PADDING_SIZE,
-  te as DEFAULT_DECK_TITLE_HEIGHT,
-  D as DEFAULT_EXTERNAL_PASSENGER_MANAGEMENT,
-  G as DEFAULT_FEATURES_RENDER_LIMIT,
-  W as DEFAULT_HORIZONTAL_LAYOUT,
-  re as DEFAULT_INDEX_ROW_HEIGHT,
-  V as DEFAULT_LANG,
-  F as DEFAULT_RTL,
-  A as DEFAULT_SCALE_TYPE,
-  Q as DEFAULT_SEAT_CLASS,
-  B as DEFAULT_SEAT_MAP_WIDTH,
-  _ as DEFAULT_SEAT_MARGIN,
-  q as DEFAULT_SEAT_PASSENGER_TYPES,
-  X as DEFAULT_SEAT_SIZE,
-  R as DEFAULT_SHOW_DECK_SELECTOR,
-  O as DEFAULT_SINGLE_DECK_MODE,
-  le as DEFAULT_STYLE_POSITION,
-  Z as DEFAULT_TOOLTIP_ON_HOVER,
-  U as DEFAULT_TOOLTIP_WIDTH,
-  T as DEFAULT_UNITS,
-  N as DEFAULT_VISIBLE_CABIN_TITLES,
-  P as DEFAULT_VISIBLE_HULL,
-  I as DEFAULT_VISIBLE_WINGS,
-  S as ENTITY_SCHEME_MAP,
-  x as ENTITY_STATUS_MAP,
-  y as ENTITY_TYPE_MAP,
-  tt as ERROR_LOAD_DATA_MESSAGE,
-  et as ERROR_SAVE_DATA_MESSAGE,
-  K as FUSELAGE_HEIGHT_TO_WIDTH_RATIO,
-  Ue as JetsApiService,
-  Cr as JetsBulk,
-  kr as JetsButton,
-  Qe as JetsContentPreparer,
-  qe as JetsContext,
-  Ge as JetsDataHelper,
-  Tr as JetsDeck,
-  ur as JetsDeckExit,
-  Ar as JetsDeckSelector,
-  rt as JetsLocalStorageService,
-  Er as JetsNoData,
-  _r as JetsNose,
-  Br as JetsNotInit,
-  Nr as JetsPlaneBody,
-  Hr as JetsRow,
-  Sr as JetsSeat,
-  Fr as JetsSeatMap,
-  Dr as JetsSeatMapApiService,
-  Rr as JetsSeatMapService,
-  Pr as JetsTail,
-  Zr as JetsTooltipGlobal,
-  Ir as JetsWing,
-  $ as LOCALES_MAP,
+  ht as BULK_TEMPLATE_MAP,
+  T as CLASS_CODE_MAP,
+  se as DECK_ITEM_ALIGN_MAP,
+  Wl as DECK_LOCALE_KEY,
+  W as DEFAULT_AUTHORIZATION_SCHEME,
+  O as DEFAULT_BUILT_IN_TOOLTIP,
+  ie as DEFAULT_DECK_PADDING_SIZE,
+  re as DEFAULT_DECK_TITLE_HEIGHT,
+  F as DEFAULT_EXTERNAL_PASSENGER_MANAGEMENT,
+  J as DEFAULT_FEATURES_RENDER_LIMIT,
+  N as DEFAULT_HORIZONTAL_LAYOUT,
+  oe as DEFAULT_INDEX_ROW_HEIGHT,
+  E as DEFAULT_LANG,
+  q as DEFAULT_RTL,
+  _ as DEFAULT_SCALE_TYPE,
+  le as DEFAULT_SEAT_CLASS,
+  I as DEFAULT_SEAT_MAP_WIDTH,
+  P as DEFAULT_SEAT_MARGIN,
+  Y as DEFAULT_SEAT_PASSENGER_TYPES,
+  te as DEFAULT_SEAT_SIZE,
+  Z as DEFAULT_SHOW_DECK_SELECTOR,
+  U as DEFAULT_SINGLE_DECK_MODE,
+  ne as DEFAULT_STYLE_POSITION,
+  G as DEFAULT_TOOLTIP_ON_HOVER,
+  K as DEFAULT_TOOLTIP_WIDTH,
+  B as DEFAULT_UNITS,
+  j as DEFAULT_VISIBLE_CABIN_TITLES,
+  D as DEFAULT_VISIBLE_HULL,
+  R as DEFAULT_VISIBLE_WINGS,
+  V as ENTITY_SCHEME_MAP,
+  $ as ENTITY_STATUS_MAP,
+  H as ENTITY_TYPE_MAP,
+  nt as ERROR_LOAD_DATA_MESSAGE,
+  st as ERROR_SAVE_DATA_MESSAGE,
+  X as FUSELAGE_HEIGHT_TO_WIDTH_RATIO,
+  Je as JetsApiService,
+  bl as JetsBulk,
+  Ll as JetsButton,
+  ot as JetsContentPreparer,
+  Xe as JetsContext,
+  et as JetsDataHelper,
+  Pl as JetsDeck,
+  Ml as JetsDeckExit,
+  Il as JetsDeckSelector,
+  at as JetsLocalStorageService,
+  Nl as JetsNoData,
+  Rl as JetsNose,
+  jl as JetsNotInit,
+  Ul as JetsPlaneBody,
+  Bl as JetsRow,
+  El as JetsSeat,
+  Xl as JetsSeatMap,
+  ql as JetsSeatMapApiService,
+  Kl as JetsSeatMapService,
+  Fl as JetsTail,
+  Jl as JetsTooltipGlobal,
+  Zl as JetsWing,
+  A as LOCALES_MAP,
   C as LOCALE_AR,
   p as LOCALE_CN,
-  k as LOCALE_CS,
+  v as LOCALE_CS,
   h as LOCALE_DE,
   g as LOCALE_EN,
   d as LOCALE_ES,
   u as LOCALE_FR,
-  v as LOCALE_IT,
+  w as LOCALE_IT,
   b as LOCALE_JA,
   L as LOCALE_KO,
+  y as LOCALE_NL,
   c as LOCALE_PL,
-  f as LOCALE_PT,
+  k as LOCALE_PT,
+  x as LOCALE_PT_BR,
   m as LOCALE_RU,
   M as LOCALE_TR,
-  w as LOCALE_UK,
-  z as SCALE_TYPES,
-  Je as SEAT_FEATURES_ICONS,
-  Y as SEAT_MAP_WIDTH_TO_WINGS_WIDTH_RATIO,
-  Xe as SEAT_MEASUREMENTS_ICONS,
-  J as SEAT_SIZE_BY_TYPE,
-  ot as STICKER_TEMPLATE_MAP,
-  xr as SeatIcon,
-  gr as Sticker,
-  se as THEME_BACKGROUND_COLOR,
-  ke as THEME_BULK_BASE_COLOR,
-  ue as THEME_BULK_CUT_COLOR,
-  fe as THEME_BULK_ICON_COLOR,
-  Fe as THEME_CABIN_TITLES_HIGHLIGHT_COLORS,
-  Ze as THEME_CABIN_TITLES_LABEL_COLOR,
-  Oe as THEME_CABIN_TITLES_WIDTH,
-  ne as THEME_DECK_HEIGHT_SPACING,
-  ae as THEME_DECK_LABEL_TITLE_COLOR,
-  je as THEME_DECK_SELECTOR_FILL_COLOR,
-  Re as THEME_DECK_SELECTOR_SIZE,
-  De as THEME_DECK_SELECTOR_STROKE_COLOR,
-  de as THEME_DECK_SEPARATION,
-  He as THEME_DEFAULT_FONT_FAMILY,
-  Se as THEME_DEFAULT_PASSENGER_BADGE_BORDER_COLOR,
-  xe as THEME_DEFAULT_PASSENGER_BADGE_COLOR,
-  ye as THEME_DEFAULT_PASSENGER_BADGE_LABEL_COLOR,
-  ve as THEME_FLOOR_BULK_ICON_COLOR,
-  oe as THEME_FLOOR_COLOR,
-  we as THEME_FUSELAGE_FILL_COLOR,
-  Le as THEME_FUSELAGE_OUTLINE_COLOR,
-  be as THEME_FUSELAGE_OUTLINE_WIDTH,
-  Me as THEME_FUSELAGE_WINDOWS_COLOR,
-  ze as THEME_FUSELAGE_WINGS_COLOR,
-  Ce as THEME_NOT_AVAILABLE_SEATS_COLOR,
-  ge as THEME_SEAT_ARMREST_COLOR,
-  he as THEME_SEAT_LABEL_COLOR,
-  me as THEME_SEAT_STROKE_COLOR,
-  pe as THEME_SEAT_STROKE_WIDTH,
-  $e as THEME_TOOLTIP_BACKGROUND_COLOR,
-  Te as THEME_TOOLTIP_BORDER_COLOR,
-  Ne as THEME_TOOLTIP_CANCEL_BUTTON_BACKGROUND_COLOR,
-  Ie as THEME_TOOLTIP_CANCEL_BUTTON_TEXT_COLOR,
-  Ae as THEME_TOOLTIP_FONT_COLOR,
-  Ve as THEME_TOOLTIP_HEADER_COLOR,
-  Be as THEME_TOOLTIP_ICON_BACKGROUND_COLOR,
-  _e as THEME_TOOLTIP_ICON_BORDER_COLOR,
-  Ee as THEME_TOOLTIP_ICON_COLOR,
-  Pe as THEME_TOOLTIP_SELECT_BUTTON_BACKGROUND_COLOR,
-  We as THEME_TOOLTIP_SELECT_BUTTON_TEXT_COLOR,
-  ce as THEME_WINGS_WIDTH,
-  Ye as Utils,
-  vr as seatTemplateService,
-  it as useEnvironmentInfo,
+  f as LOCALE_UK,
+  z as LOCALE_VI,
+  S as SCALE_TYPES,
+  it as SEAT_FEATURES_ICONS,
+  Q as SEAT_MAP_WIDTH_TO_WINGS_WIDTH_RATIO,
+  rt as SEAT_MEASUREMENTS_ICONS,
+  ee as SEAT_SIZE_BY_TYPE,
+  gt as STICKER_TEMPLATE_MAP,
+  Tl as SeatIcon,
+  kl as Sticker,
+  ce as THEME_BACKGROUND_COLOR,
+  we as THEME_BULK_BASE_COLOR,
+  fe as THEME_BULK_CUT_COLOR,
+  be as THEME_BULK_ICON_COLOR,
+  Ke as THEME_CABIN_TITLES_HIGHLIGHT_COLORS,
+  qe as THEME_CABIN_TITLES_LABEL_COLOR,
+  Ge as THEME_CABIN_TITLES_WIDTH,
+  he as THEME_DECK_HEIGHT_SPACING,
+  de as THEME_DECK_LABEL_TITLE_COLOR,
+  Fe as THEME_DECK_SELECTOR_FILL_COLOR,
+  Ue as THEME_DECK_SELECTOR_SIZE,
+  Ze as THEME_DECK_SELECTOR_STROKE_COLOR,
+  pe as THEME_DECK_SEPARATION,
+  Ae as THEME_DEFAULT_FONT_FAMILY,
+  Te as THEME_DEFAULT_PASSENGER_BADGE_BORDER_COLOR,
+  He as THEME_DEFAULT_PASSENGER_BADGE_COLOR,
+  Ve as THEME_DEFAULT_PASSENGER_BADGE_LABEL_COLOR,
+  Le as THEME_FLOOR_BULK_ICON_COLOR,
+  ae as THEME_FLOOR_COLOR,
+  Me as THEME_FUSELAGE_FILL_COLOR,
+  $e as THEME_FUSELAGE_NOSE_TYPE_DEFAULT,
+  xe as THEME_FUSELAGE_OUTLINE_COLOR,
+  ze as THEME_FUSELAGE_OUTLINE_WIDTH,
+  ye as THEME_FUSELAGE_WINDOWS_COLOR,
+  Se as THEME_FUSELAGE_WINGS_COLOR,
+  ke as THEME_NOT_AVAILABLE_SEATS_COLOR,
+  Ce as THEME_SEAT_ARMREST_COLOR,
+  me as THEME_SEAT_LABEL_COLOR,
+  ue as THEME_SEAT_STROKE_COLOR,
+  ve as THEME_SEAT_STROKE_WIDTH,
+  Ee as THEME_TOOLTIP_BACKGROUND_COLOR,
+  _e as THEME_TOOLTIP_BORDER_COLOR,
+  Oe as THEME_TOOLTIP_CANCEL_BUTTON_BACKGROUND_COLOR,
+  je as THEME_TOOLTIP_CANCEL_BUTTON_TEXT_COLOR,
+  We as THEME_TOOLTIP_FONT_COLOR,
+  Be as THEME_TOOLTIP_HEADER_COLOR,
+  Ne as THEME_TOOLTIP_ICON_BACKGROUND_COLOR,
+  Ie as THEME_TOOLTIP_ICON_BORDER_COLOR,
+  Pe as THEME_TOOLTIP_ICON_COLOR,
+  Re as THEME_TOOLTIP_SELECT_BUTTON_BACKGROUND_COLOR,
+  De as THEME_TOOLTIP_SELECT_BUTTON_TEXT_COLOR,
+  ge as THEME_WINGS_WIDTH,
+  lt as Utils,
+  xl as seatTemplateService,
+  dt as useEnvironmentInfo,
 };

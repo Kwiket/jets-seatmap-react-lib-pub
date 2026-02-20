@@ -33,9 +33,9 @@ export const DemoComponent = () => {
     const incomingConfig = JSON.parse(defaultConfig);
     setConfig({
       ...incomingConfig,
-      apiUrl: process.env.JETS_BASE_API_URL,
-      apiAppId: process.env.JETS_APP_ID,
-      apiKey: process.env.JETS_PRIVATE_KEY,
+      apiUrl: incomingConfig.apiUrl || process.env.STORYBOOK_JETS_BASE_API_URL,
+      apiAppId: incomingConfig.apiAppId || process.env.STORYBOOK_JETS_APP_ID,
+      apiKey: incomingConfig.apiKey || process.env.STORYBOOK_JETS_PRIVATE_KEY,
     });
   };
 

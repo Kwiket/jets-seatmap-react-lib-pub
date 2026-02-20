@@ -18,9 +18,9 @@ const CONFIG_MOCK = {
 
   lang: 'EN',
 
-  apiUrl: process.env.JETS_BASE_API_URL,
-  apiAppId: process.env.JETS_APP_ID,
-  apiKey: process.env.JETS_PRIVATE_KEY,
+  apiUrl: process.env.STORYBOOK_JETS_BASE_API_URL,
+  apiAppId: process.env.STORYBOOK_JETS_APP_ID,
+  apiKey: process.env.STORYBOOK_JETS_PRIVATE_KEY,
 
   scaleType: 'zoom',
 
