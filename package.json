@@ -60,13 +60,14 @@
     "@babel/preset-react": "^7.28.5",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^13.2.1",
-    "@storybook/addon-actions": "7.6.21",
-    "@storybook/addon-essentials": "7.6.21",
-    "@storybook/addon-interactions": "7.6.21",
-    "@storybook/addon-links": "7.6.21",
-    "@storybook/react": "7.6.21",
-    "@storybook/react-webpack5": "7.6.21",
-    "@storybook/testing-library": "0.2.2",
+    "@storybook/addon-actions": "8.6.17",
+    "@storybook/addon-essentials": "8.6.17",
+    "@storybook/addon-interactions": "8.6.17",
+    "@storybook/addon-links": "8.6.17",
+    "@storybook/addon-webpack5-compiler-babel": "4.0.0",
+    "@storybook/react": "8.6.17",
+    "@storybook/react-webpack5": "8.6.17",
+    "@storybook/test": "8.6.17",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
@@ -92,7 +93,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
-    "storybook": "7.6.21"
+    "storybook": "8.6.17"
   },
   "pnpm": {
     "overrides": {
