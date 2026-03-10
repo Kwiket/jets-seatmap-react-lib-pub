@@ -59,6 +59,7 @@ importers:
         version: 8.6.17(storybook@8.6.17(prettier@2.8.8))
       '@storybook/addon-links':
         specifier: 8.6.17
+
         version: 8.6.17(react@19.2.4)(storybook@8.6.17(prettier@2.8.8))
       '@storybook/addon-webpack5-compiler-babel':
         specifier: 4.0.0
