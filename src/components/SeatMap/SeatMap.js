@@ -73,32 +73,129 @@ import { JetsPlaneBody } from '../PlaneBody';
 import { JetsDeckSelector } from '../DeckSelector';
 import { JetsTooltipGlobal } from '../TooltipGlobal';
 
+const JETS_SEATMAP_DEFAULT_CONFIG = {
+  width: DEFAULT_SEAT_MAP_WIDTH,
+  horizontal: DEFAULT_HORIZONTAL_LAYOUT,
+  rightToLeft: DEFAULT_RTL,
+  visibleFuselage: DEFAULT_VISIBLE_HULL,
+  visibleWings: DEFAULT_VISIBLE_WINGS,
+  visibleCabinTitles: DEFAULT_VISIBLE_CABIN_TITLES,
+
+  builtInTooltip: DEFAULT_BUILT_IN_TOOLTIP,
+  externalPassengerManagement: DEFAULT_EXTERNAL_PASSENGER_MANAGEMENT,
+
+  builtInDeckSelector: DEFAULT_SHOW_DECK_SELECTOR,
+  singleDeckMode: DEFAULT_SINGLE_DECK_MODE,
+
+  tooltipOnHover: DEFAULT_TOOLTIP_ON_HOVER,
+  lang: DEFAULT_LANG,
+  units: DEFAULT_UNITS,
+  scaleType: DEFAULT_SCALE_TYPE,
+
+  apiAuthorizationScheme: DEFAULT_AUTHORIZATION_SCHEME,
+
+  hiddenSeatFeatures: [],
+  colorTheme: {
+    seatMapBackgroundColor: THEME_BACKGROUND_COLOR,
+
+    deckLabelTitleColor: THEME_DECK_LABEL_TITLE_COLOR,
+    floorColor: THEME_FLOOR_COLOR,
+
+    seatLabelColor: THEME_SEAT_LABEL_COLOR,
+    seatStrokeColor: THEME_SEAT_STROKE_COLOR,
+    seatStrokeWidth: THEME_SEAT_STROKE_WIDTH,
+    seatArmrestColor: THEME_SEAT_ARMREST_COLOR,
+
+    notAvailableSeatsColor: THEME_NOT_AVAILABLE_SEATS_COLOR,
+
+    bulkBaseColor: THEME_BULK_BASE_COLOR,
+    bulkCutColor: THEME_BULK_CUT_COLOR,
+    bulkIconColor: THEME_BULK_ICON_COLOR,
+    bulkFloorIconColor: THEME_FLOOR_BULK_ICON_COLOR,
+
+    fuselageFillColor: THEME_FUSELAGE_FILL_COLOR,
+    fuselageStrokeColor: THEME_FUSELAGE_OUTLINE_COLOR,
+    fuselageStrokeWidth: THEME_FUSELAGE_OUTLINE_WIDTH,
+    fuselageWindowsColor: THEME_FUSELAGE_WINDOWS_COLOR,
+    fuselageWingsColor: THEME_FUSELAGE_WINGS_COLOR,
+    fuselageNoseType: THEME_FUSELAGE_NOSE_TYPE_DEFAULT,
+
+    defaultPassengerBadgeColor: THEME_DEFAULT_PASSENGER_BADGE_COLOR,
+    defaultPassengerBadgeLabelColor: THEME_DEFAULT_PASSENGER_BADGE_LABEL_COLOR,
+    defaultPassengerBadgeBorderColor: THEME_DEFAULT_PASSENGER_BADGE_BORDER_COLOR,
+    fontFamily: THEME_DEFAULT_FONT_FAMILY,
+
+    deckHeightSpacing: THEME_DECK_HEIGHT_SPACING,
+
+    wingsWidth: THEME_WINGS_WIDTH,
+    deckSeparation: THEME_DECK_SEPARATION,
+
+    tooltipBackgroundColor: THEME_TOOLTIP_BACKGROUND_COLOR,
+    tooltipHeaderColor: THEME_TOOLTIP_HEADER_COLOR,
+    tooltipBorderColor: THEME_TOOLTIP_BORDER_COLOR,
+    tooltipFontColor: THEME_TOOLTIP_FONT_COLOR,
+    tooltipIconColor: THEME_TOOLTIP_ICON_COLOR,
+    tooltipIconBorderColor: THEME_TOOLTIP_ICON_BORDER_COLOR,
+    tooltipIconBackgroundColor: THEME_TOOLTIP_ICON_BACKGROUND_COLOR,
+    tooltipSelectButtonTextColor: THEME_TOOLTIP_SELECT_BUTTON_TEXT_COLOR,
+    tooltipSelectButtonBackgroundColor: THEME_TOOLTIP_SELECT_BUTTON_BACKGROUND_COLOR,
+    tooltipCancelButtonTextColor: THEME_TOOLTIP_CANCEL_BUTTON_TEXT_COLOR,
+    tooltipCancelButtonBackgroundColor: THEME_TOOLTIP_CANCEL_BUTTON_BACKGROUND_COLOR,
+
+    deckSelectorStrokeColor: THEME_DECK_SELECTOR_STROKE_COLOR,
+    deckSelectorFillColor: THEME_DECK_SELECTOR_FILL_COLOR,
+    deckSelectorSize: THEME_DECK_SELECTOR_SIZE,
+    exitIconUrlLeft: null,
+    exitIconUrlRight: null,
+
+    cabinTitlesWidth: THEME_CABIN_TITLES_WIDTH,
+    cabinTitlesHighlightColors: THEME_CABIN_TITLES_HIGHLIGHT_COLORS,
+    cabinTitlesLabelColor: THEME_CABIN_TITLES_LABEL_COLOR,
+  },
+};
+
 export const JetsSeatMap = ({
   flight,
   availability,
   passengers,
-  config,
+  config = JETS_SEATMAP_DEFAULT_CONFIG,
   currentDeckIndex,
   seatJumpTo,
-  onSeatMapInited,
-  onSeatSelected,
-  onSeatUnselected,
-  onTooltipRequested,
-  onLayoutUpdated,
-  onSeatMouseLeave,
-  onSeatMouseClick,
-  onAvailabilityApplied,
+  onSeatMapInited = data => {
+    console.log('JetsSeatMap initialized!', data);
+  },
+  onSeatSelected = passenger => {
+    console.log('Passenger boarded: ', passenger);
+  },
+  onSeatUnselected = passenger => {
+    console.log('Passenger unboarded: ', passenger);
+  },
+  onTooltipRequested = data => {
+    console.log('Tooltip requested: ', data);
+  },
+  onLayoutUpdated = data => {
+    console.log('Layout updated: ', data);
+  },
+  onSeatMouseLeave = data => {
+    console.log('Seat mouse leave: ', data);
+  },
+  onSeatMouseClick = data => {
+    console.log('Seat mouse click: ', data);
+  },
+  onAvailabilityApplied = data => {
+    console.log('Availability applied: ', data);
+  },
   componentOverrides,
 }) => {
   const { isFirefox } = useEnvironmentInfo();
 
   const colorTheme = JetsDataHelper.mergeColorThemeWithConstraints(
-    JetsSeatMap.defaultProps.config.colorTheme,
+    JETS_SEATMAP_DEFAULT_CONFIG.colorTheme,
     config.colorTheme
   );
   config.colorTheme = colorTheme;
   config.lang = JetsDataHelper.validateLanguage(config.lang);
-  const configuration = { ...JetsSeatMap.defaultProps.config, ...config };
+  const configuration = { ...JETS_SEATMAP_DEFAULT_CONFIG, ...config };
 
   // SCALE_TYPES.ZOOM is not fully supported by FF
   if (isFirefox) {
@@ -484,111 +581,4 @@ export const JetsSeatMap = ({
       </div>
     </JetsContext.Provider>
   );
-};
-
-JetsSeatMap.defaultProps = {
-  config: {
-    width: DEFAULT_SEAT_MAP_WIDTH,
-    horizontal: DEFAULT_HORIZONTAL_LAYOUT,
-    rightToLeft: DEFAULT_RTL,
-    visibleFuselage: DEFAULT_VISIBLE_HULL,
-    visibleWings: DEFAULT_VISIBLE_WINGS,
-    visibleCabinTitles: DEFAULT_VISIBLE_CABIN_TITLES,
-
-    builtInTooltip: DEFAULT_BUILT_IN_TOOLTIP,
-    externalPassengerManagement: DEFAULT_EXTERNAL_PASSENGER_MANAGEMENT,
-
-    builtInDeckSelector: DEFAULT_SHOW_DECK_SELECTOR,
-    singleDeckMode: DEFAULT_SINGLE_DECK_MODE,
-
-    tooltipOnHover: DEFAULT_TOOLTIP_ON_HOVER,
-    lang: DEFAULT_LANG,
-    units: DEFAULT_UNITS,
-    scaleType: DEFAULT_SCALE_TYPE,
-
-    apiAuthorizationScheme: DEFAULT_AUTHORIZATION_SCHEME,
-
-    hiddenSeatFeatures: [],
-    colorTheme: {
-      seatMapBackgroundColor: THEME_BACKGROUND_COLOR,
-
-      deckLabelTitleColor: THEME_DECK_LABEL_TITLE_COLOR,
-      floorColor: THEME_FLOOR_COLOR,
-
-      seatLabelColor: THEME_SEAT_LABEL_COLOR,
-      seatStrokeColor: THEME_SEAT_STROKE_COLOR,
-      seatStrokeWidth: THEME_SEAT_STROKE_WIDTH,
-      seatArmrestColor: THEME_SEAT_ARMREST_COLOR,
-
-      notAvailableSeatsColor: THEME_NOT_AVAILABLE_SEATS_COLOR,
-
-      bulkBaseColor: THEME_BULK_BASE_COLOR,
-      bulkCutColor: THEME_BULK_CUT_COLOR,
-      bulkIconColor: THEME_BULK_ICON_COLOR,
-      bulkFloorIconColor: THEME_FLOOR_BULK_ICON_COLOR,
-
-      fuselageFillColor: THEME_FUSELAGE_FILL_COLOR,
-      fuselageStrokeColor: THEME_FUSELAGE_OUTLINE_COLOR,
-      fuselageStrokeWidth: THEME_FUSELAGE_OUTLINE_WIDTH,
-      fuselageWindowsColor: THEME_FUSELAGE_WINDOWS_COLOR,
-      fuselageWingsColor: THEME_FUSELAGE_WINGS_COLOR,
-      fuselageNoseType: THEME_FUSELAGE_NOSE_TYPE_DEFAULT,
-
-      defaultPassengerBadgeColor: THEME_DEFAULT_PASSENGER_BADGE_COLOR,
-      defaultPassengerBadgeLabelColor: THEME_DEFAULT_PASSENGER_BADGE_LABEL_COLOR,
-      defaultPassengerBadgeBorderColor: THEME_DEFAULT_PASSENGER_BADGE_BORDER_COLOR,
-      fontFamily: THEME_DEFAULT_FONT_FAMILY,
-
-      deckHeightSpacing: THEME_DECK_HEIGHT_SPACING,
-
-      wingsWidth: THEME_WINGS_WIDTH,
-      deckSeparation: THEME_DECK_SEPARATION,
-
-      tooltipBackgroundColor: THEME_TOOLTIP_BACKGROUND_COLOR,
-      tooltipHeaderColor: THEME_TOOLTIP_HEADER_COLOR,
-      tooltipBorderColor: THEME_TOOLTIP_BORDER_COLOR,
-      tooltipFontColor: THEME_TOOLTIP_FONT_COLOR,
-      tooltipIconColor: THEME_TOOLTIP_ICON_COLOR,
-      tooltipIconBorderColor: THEME_TOOLTIP_ICON_BORDER_COLOR,
-      tooltipIconBackgroundColor: THEME_TOOLTIP_ICON_BACKGROUND_COLOR,
-      tooltipSelectButtonTextColor: THEME_TOOLTIP_SELECT_BUTTON_TEXT_COLOR,
-      tooltipSelectButtonBackgroundColor: THEME_TOOLTIP_SELECT_BUTTON_BACKGROUND_COLOR,
-      tooltipCancelButtonTextColor: THEME_TOOLTIP_CANCEL_BUTTON_TEXT_COLOR,
-      tooltipCancelButtonBackgroundColor: THEME_TOOLTIP_CANCEL_BUTTON_BACKGROUND_COLOR,
-
-      deckSelectorStrokeColor: THEME_DECK_SELECTOR_STROKE_COLOR,
-      deckSelectorFillColor: THEME_DECK_SELECTOR_FILL_COLOR,
-      deckSelectorSize: THEME_DECK_SELECTOR_SIZE,
-      exitIconUrlLeft: null,
-      exitIconUrlRight: null,
-
-      cabinTitlesWidth: THEME_CABIN_TITLES_WIDTH,
-      cabinTitlesHighlightColors: THEME_CABIN_TITLES_HIGHLIGHT_COLORS,
-      cabinTitlesLabelColor: THEME_CABIN_TITLES_LABEL_COLOR,
-    },
-  },
-  onSeatMapInited: data => {
-    console.log('JetsSeatMap initialized!', data);
-  },
-  onSeatSelected: passenger => {
-    console.log('Passenger boarded: ', passenger);
-  },
-  onSeatUnselected: passenger => {
-    console.log('Passenger unboarded: ', passenger);
-  },
-  onTooltipRequested: data => {
-    console.log('Tooltip requested: ', data);
-  },
-  onLayoutUpdated: data => {
-    console.log('Layout updated: ', data);
-  },
-  onSeatMouseLeave: data => {
-    console.log('Seat mouse leave: ', data);
-  },
-  onSeatMouseClick: data => {
-    console.log('Seat mouse click: ', data);
-  },
-  onAvailabilityApplied: data => {
-    console.log('Availability applied: ', data);
-  },
 };
