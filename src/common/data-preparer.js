@@ -11,8 +11,8 @@ import {
 } from './constants';
 import { Utils } from './utils';
 
-const DEFAULT_INDEX_ROW_SEAT_TOP_OFFSET = 50;
-const DEFAULT_INDEX_ROW_SEAT_HEIGHT = 50;
+const SEAT_FEATURES_QUALITY_SIGNS = ['+', '-'];
+const SEAT_FEATURES_NO_RECLINE_KEYS = ['doNotRecline', 'limitedRecline', 'prereclinedSeat'];
 
 export const SEAT_FEATURES_ICONS = {
   '+': '<svg width="20" height="20" viewBox="-1 -1 22 22" xmlns="http://www.w3.org/2000/svg"><path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM7.29 14.29L3.7 10.7C3.31 10.31 3.31 9.68 3.7 9.29C4.09 8.9 4.72 8.9 5.11 9.29L8 12.17L14.88 5.29C15.27 4.9 15.9 4.9 16.29 5.29C16.68 5.68 16.68 6.31 16.29 6.7L8.7 14.29C8.32 14.68 7.68 14.68 7.29 14.29Z" fill="#11d900"></path></svg>',
@@ -54,6 +54,7 @@ export class JetsContentPreparer {
     const { seatDetails, plane } = apiData;
 
     const decks = seatDetails?.decks;
+    decks?.forEach(deck => deck.rows.sort((a, b) => a.topOffset - b.topOffset));
 
     const isDeckExist = decks && decks.length;
     this._deckTitleHeight = decks && decks.length > 1 ? DEFAULT_DECK_TITLE_HEIGHT : 0;
@@ -122,11 +123,7 @@ export class JetsContentPreparer {
       return item.topOffset < minimum ? item.topOffset : minimum;
     }, 0);
 
-    const firstRow = deck.rows
-      .sort((a, b) => {
-        a.topOffset - b.topOffset;
-      })
-      .at(0);
+    const firstRow = deck.rows.at(0);
 
     const seatsMinOffset = firstRow.seats.reduce((minimum, item) => {
       return item.topOffset < minimum ? item.topOffset : minimum;
@@ -146,12 +143,7 @@ export class JetsContentPreparer {
 
   _updateDeckItemsTopOffset(deck, itemsName, offset = 0) {
     return deck[itemsName].map(deckItem => {
-      const updatedItem = { ...deckItem, uniqId: Utils.generateId() };
-      const updatedTopOffset = updatedItem.topOffset + offset;
-
-      updatedItem.topOffset = updatedTopOffset;
-
-      return updatedItem;
+      return { ...deckItem, uniqId: Utils.generateId(), topOffset: deckItem.topOffset + offset };
     });
   }
 
@@ -163,11 +155,10 @@ export class JetsContentPreparer {
       const biggestDeckRow = this._dataHelper.findBiggestDeckRow(rowGroup.rows);
       const preparedBiggestDeckRow = this._prepareRow(biggestDeckRow, {}, config);
       cabinClassWidths.push(preparedBiggestDeckRow.width);
-      // rowGroup.width = preparedBiggestDeckRow.width;
     }
 
     const sum = cabinClassWidths.reduce((acc, d) => acc + d, 0);
-    const targetDeckWidth = sum / cabinClassWidths.length; // Math.avg(...cabinClassWidths);
+    const targetDeckWidth = sum / cabinClassWidths.length;
     const firstElementOffset = this._getFirstElementDeckOffset(deck);
 
     for (const rowGroup of rowGroups) {
@@ -239,26 +230,19 @@ export class JetsContentPreparer {
       return intersection;
     }
 
-    const deckOffset = offset;
-
     const { topOffset, height } = wingsInfo;
 
-    const wingA = deckOffset + topOffset;
+    const wingA = offset + topOffset;
     const wingB = wingA + height;
 
     const deckA = 0;
     const deckB = deckHeight;
 
-    // const min1 = Math.min(wingA, wingB);
-    // const max1 = Math.max(wingA, wingB);
-    // const min2 = Math.min(deckA, deckB);
-    // const max2 = Math.min(deckA, deckB);
-
     intersection.start = Math.max(deckA, wingA);
     intersection.finish = Math.min(deckB, wingB);
     intersection.length = Math.max(intersection.finish - intersection.start, 0);
 
-    // TODO: replace it with the real data source
+    // TODO: replace it with the config option when the feature will be ready
     intersection.visibleWingsLeadings = true;
 
     return intersection;
@@ -275,7 +259,7 @@ export class JetsContentPreparer {
     const { number, topOffset, seatScheme, classCode, seatType } = row;
     const _topOffset = topOffset + offset;
     const preparedSeats = this._prepareSeats(row, cabinFeatures, config, maxRowWidth);
-    const rowWidth = preparedSeats.map(seat => seat.size.width).reduce((a, b) => a + b, 0);
+    const rowWidth = preparedSeats.reduce((sum, seat) => sum + seat.size.width, 0);
 
     return {
       seats: preparedSeats,
@@ -332,34 +316,13 @@ export class JetsContentPreparer {
     return result;
   };
 
-  _prepareIndexRow = row => {
-    const seats = row.seats.map(element => {
-      element.letter = element.type === ENTITY_TYPE_MAP.aisle ? '' : element.letter;
-      element.type = element.type === ENTITY_TYPE_MAP.aisle ? ENTITY_TYPE_MAP.empty : ENTITY_TYPE_MAP.index;
-      element.status = ENTITY_STATUS_MAP.disabled;
-      element.topOffset = element.topOffset - element.size.height / 2;
-      element.number = '';
-      element.size = {
-        width: element.size.width,
-        height: DEFAULT_INDEX_ROW_SEAT_HEIGHT,
-      };
-      element.seatScheme = row.seatScheme;
-
-      element.rotation = ''; // resetting rotation for the case when biggest row has rotated seats
-
-      return element;
-    });
-
-    return { ...row, number: '', seats, topOffset: row.topOffset };
-  };
-
   _prepareSeat = (seat, row, cabinFeatures, config) => {
     const { number, classCode, name: rowName, seatType: _rowSeatType } = row;
     const prepared = this._prepareSeatFeatures(seat, cabinFeatures, config.lang);
     const features = prepared.features;
     const measurements = prepared.measurements;
     const classType = CLASS_CODE_MAP[classCode.toLowerCase()] || '';
-    const seatNumber = number + seat?.letter || '';
+    const seatNumber = number + (seat?.letter || '');
     const type = ENTITY_TYPE_MAP.seat;
     const status = ENTITY_STATUS_MAP.available;
     const seatType = seat.seatType || _rowSeatType;
@@ -384,7 +347,7 @@ export class JetsContentPreparer {
       rowName,
       seatType: seatClassAndType,
       seatIconType: seatType,
-      size: { width: Math.max(seatWidthByRow, seatWidth), height: seatHeight },
+      size: { width: Math.max(seatWidthByRow, seatWidth), height: Math.max(seatHeightByRow, seatHeight) },
       color: seatColor,
     };
   };
@@ -421,8 +384,7 @@ export class JetsContentPreparer {
     const { pitch: seatPitch, width: seatWidth, recline: seatRecline } = seat || {};
 
     const seatFeaturesKeys = Object.keys(seat.features || {});
-    const noReclineKeys = ['doNotRecline', 'limitedRecline', 'prereclinedSeat'];
-    const isSeatWithoutRecline = seatFeaturesKeys.some(key => noReclineKeys.includes(key));
+    const isSeatWithoutRecline = seatFeaturesKeys.some(key => SEAT_FEATURES_NO_RECLINE_KEYS.includes(key));
 
     const features = { audioVideo, power, wifi, bluetooth, ...seat.features };
     const measurements = {
@@ -431,14 +393,12 @@ export class JetsContentPreparer {
       recline: isSeatWithoutRecline ? '- -' : seatRecline || cabinSeatRecline,
     };
 
-    const prosOrCons = ['+', '-'];
-
     const preparedFeatures = Object.entries(features)
       .filter(([key, value]) => !!value && !measurements[key])
       .map(([key, value]) => {
         const uniqId = Utils.generateId();
         const localized = LOCALES_MAP[lang][key] || key;
-        if (prosOrCons.includes(value)) {
+        if (SEAT_FEATURES_QUALITY_SIGNS.includes(value)) {
           // swap key-value for pros-cons features
           const icon = SEAT_FEATURES_ICONS[value] || '';
 
