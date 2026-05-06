@@ -17,6 +17,15 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Verify tag is on version-3 branch
+        run: |
+          if ! git branch -r --contains "$GITHUB_SHA" | grep -q 'origin/version-3'; then
+            echo "Tag is not on version-3 branch. Aborting publish."
+            exit 1
+          fi
 
       - name: Use Node.js
         uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
