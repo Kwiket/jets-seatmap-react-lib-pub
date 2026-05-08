@@ -129,3 +129,6 @@ yarn-error.log*
 /storybook-static
 
 .idea
+playwright
+.playwright-mcp
+.claude
