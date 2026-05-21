@@ -42,7 +42,7 @@
   "homepage": "https://github.com/Kwiket/jets-seatmap-react-lib-pub#readme",
   "packageManager": "pnpm@10.27.0",
   "engines": {
-    "node": "20.19.6"
+    "node": "22.22.3"
   },
   "dependencies": {
     "dompurify": "^3.4.0"
