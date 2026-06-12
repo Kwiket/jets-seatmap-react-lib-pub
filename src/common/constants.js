@@ -206,6 +206,8 @@ export const DECK_ITEM_ALIGN_MAP = {
 
 export const DEFAULT_STYLE_POSITION = 'auto';
 
+export const BULK_FLOOR_ICONS = ['26', '27', '28'];
+
 //#endregion
 
 //#region Theme

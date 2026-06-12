@@ -5,13 +5,13 @@ import { Sticker } from './ui/Sticker';
 
 import './index.css';
 
-import { DECK_ITEM_ALIGN_MAP, DEFAULT_STYLE_POSITION, SCALE_TYPES } from '../../common/constants';
+import { BULK_FLOOR_ICONS, DECK_ITEM_ALIGN_MAP, DEFAULT_STYLE_POSITION, SCALE_TYPES } from '../../common/constants';
 import { BULK_TEMPLATE_MAP } from './constants';
 import { JetsContext, useEnvironmentInfo } from '../../common';
 
 const SVG_WIDTH_SCALE_BULK_COEFF = 0.775;
 const DEFAULT_SCALE_BULK_COEFF = 0.7;
-const SCALE_TO_BULK_COEFF_MAP = { 26: 1, 27: 1, 28: 1 };
+const FLOOR_ICON_BULK_COEFF = 1;
 
 export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, topOffset }) => {
   const { params, config, colorTheme } = useContext(JetsContext);
@@ -22,7 +22,7 @@ export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, to
   const { isSafari } = useEnvironmentInfo();
 
   const [style, setStyle] = useState(() => {
-    const scaleBulkCoeff = SCALE_TO_BULK_COEFF_MAP[id] || DEFAULT_SCALE_BULK_COEFF;
+    const scaleBulkCoeff = BULK_FLOOR_ICONS.includes(id) ? FLOOR_ICON_BULK_COEFF : DEFAULT_SCALE_BULK_COEFF;
 
     const updatedWidth = Math.floor(width * scaleBulkCoeff);
     const updatedHeight = Math.floor(height * scaleBulkCoeff);
@@ -96,7 +96,13 @@ export const JetsBulk = ({ id, type, align, width, height, iconType, xOffset, to
   }
   coloredBulkSVG = coloredBulkSVG?.replace('$baseColor', bulkBaseColor);
   coloredBulkSVG = coloredBulkSVG?.replace('$cutColor', bulkCutColor);
-  coloredBulkSVG = coloredBulkSVG?.split('$stickerColor').join(bulkFloorIconColor || bulkIconColor);
+
+  if (BULK_FLOOR_ICONS.includes(id)) {
+    coloredBulkSVG = coloredBulkSVG?.split('$stickerColor').join(bulkFloorIconColor || bulkIconColor);
+  } else {
+    coloredBulkSVG = coloredBulkSVG?.split('$stickerColor').join(bulkIconColor);
+  }
+
   const sanitizedColoredBulkSVG = DOMPurify.sanitize(coloredBulkSVG);
 
   return (
