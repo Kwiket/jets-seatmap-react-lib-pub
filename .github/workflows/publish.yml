@@ -1,31 +1,42 @@
 name: Publish to npm
 
 on:
-  push:
-    tags:
-      - 'v*.*.*'
+  release:
+    types: [published]
+  # Manual fallback for re-publishing if the release-triggered run fails.
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag to publish (e.g. v0.1.0)'
+        required: true
+        type: string
 
+# Default read-only. id-token is widened on the job for OIDC exchange with npm.
 permissions:
   contents: read
 
-env:
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
 jobs:
   publish:
+    name: Publish @seatmaps.com/react-lib
     runs-on: ubuntu-latest
-    steps:
-      - name: Check out repo
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-        with:
-          fetch-depth: 0
+    timeout-minutes: 15
 
-      - name: Verify tag is on version-3 branch
-        run: |
-          if ! git branch -r --contains "$GITHUB_SHA" | grep -q 'origin/version-3'; then
-            echo "Tag is not on version-3 branch. Aborting publish."
-            exit 1
-          fi
+    # Approval gate. Reviewers are configured in Settings -> Environments -> npm-publish.
+    environment:
+      name: npm-publish
+      url: https://www.npmjs.com/package/@seatmaps.com/react-lib
+
+    permissions:
+      contents: read
+      id-token: write # required for OIDC exchange with npm
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+        with:
+          # workflow_dispatch: check out the explicit tag input.
+          # release event: check out the release ref (default).
+          ref: ${{ inputs.tag || github.ref }}
 
       - name: Use Node.js
         uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
@@ -38,16 +49,27 @@ jobs:
         with:
           run_install: false
 
+      - name: Verify package.json version matches release tag
+        # Tag name comes from the release event (github.ref_name = 'v0.1.0')
+        # or from the workflow_dispatch input. Passed via env (not inlined
+        # into the script) so untrusted context data can't inject shell code.
+        env:
+          TAG_NAME: ${{ inputs.tag || github.ref_name }}
+        run: |
+          TAG_VERSION="${TAG_NAME#v}"
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          echo "Tag version:     $TAG_VERSION"
+          echo "Package version: $PKG_VERSION"
+          if [ "$PKG_VERSION" != "$TAG_VERSION" ]; then
+            echo "::error::package.json version ($PKG_VERSION) does not match release tag ($TAG_VERSION). Bump the library version and re-tag."
+            exit 1
+          fi
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Build lib
         run: pnpm run build-lib
 
-      - name: Set deployment token
-        run: pnpm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
-
-      - name: Publish to npm
-        run: pnpm publish --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish to npm with provenance
+        run: pnpm publish --provenance --access public --no-git-checks
