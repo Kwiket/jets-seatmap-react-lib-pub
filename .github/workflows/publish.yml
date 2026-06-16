@@ -50,10 +50,12 @@ jobs:
           run_install: false
 
       - name: Verify package.json version matches release tag
+        # Tag name comes from the release event (github.ref_name = 'v0.1.0')
+        # or from the workflow_dispatch input. Passed via env (not inlined
+        # into the script) so untrusted context data can't inject shell code.
+        env:
+          TAG_NAME: ${{ inputs.tag || github.ref_name }}
         run: |
-          # Tag name comes from the release event (github.ref_name = 'v0.1.0')
-          # or from the workflow_dispatch input.
-          TAG_NAME="${{ inputs.tag || github.ref_name }}"
           TAG_VERSION="${TAG_NAME#v}"
           PKG_VERSION=$(node -p "require('./package.json').version")
           echo "Tag version:     $TAG_VERSION"
