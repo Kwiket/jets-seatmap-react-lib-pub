@@ -17,7 +17,7 @@ export const activeTooltipData = (overrides = {}) => ({
       key: 'noFloorStorage',
       title: null,
       uniqId: '_il7lhgv',
-      value: 'No underseat storage',
+      value: 'No floor storage allowed',
     },
     {
       icon: '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-testid="exit_row"></svg>',

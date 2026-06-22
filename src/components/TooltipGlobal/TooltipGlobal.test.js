@@ -80,7 +80,7 @@ describe('JetsTooltipGlobal', () => {
 
       expect(screen.getByText(/free on demand entertainment/)).toBeInTheDocument();
       expect(screen.getByTestId('audio_video')).toBeInTheDocument();
-      expect(screen.getByText(/No underseat storage/)).toBeInTheDocument();
+      expect(screen.getByText(/No floor storage allowed/)).toBeInTheDocument();
       expect(screen.getByTestId('no_storage')).toBeInTheDocument();
       expect(screen.getByText(/Exit row/)).toBeInTheDocument();
       expect(screen.getByTestId('exit_row')).toBeInTheDocument();
