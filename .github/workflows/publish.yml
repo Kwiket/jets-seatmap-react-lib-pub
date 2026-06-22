@@ -71,5 +71,15 @@ jobs:
       - name: Build lib
         run: pnpm run build-lib
 
+      - name: Upgrade npm to >= 11.5.1 (required for OIDC trusted publishing)
+        # Node 22 ships npm 10, which cannot exchange the OIDC token. pnpm does
+        # not perform the exchange at all, so publishing must go through npm.
+        run: |
+          npm install -g npm@latest
+          npm --version
+
       - name: Publish to npm with provenance
-        run: pnpm publish --provenance --access public --no-git-checks
+        # npm (>= 11.5.1) auto-detects the GitHub Actions OIDC token and
+        # exchanges it for a short-lived registry token. --provenance adds the
+        # build attestation; --access public publishes the scoped package.
+        run: npm publish --provenance --access public
