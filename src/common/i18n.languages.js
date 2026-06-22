@@ -49,6 +49,16 @@ export const LOCALE_PL = {
   passenger: 'Pasażer',
   personalTvInArmrest: 'Telewizor osobisty w podłokietniku',
   invertedSeat: 'Fotel montowany tyłem do kierunku jazdy',
+  extraRoomSideStorage: 'Dodatkowe miejsce z boku',
+  nearBassinetLocation: 'W pobliżu łóżeczka dziecięcego',
+  noisyPlace: 'Hałaśliwe miejsce',
+  sideArmrestOnDoor: 'Podłokietnik przy drzwiach wyjściowych',
+  storageBinUnderWindow: 'Schowek pod oknem',
+  extraPrivacy: 'Dodatkowa prywatność',
+  additionalSpace: 'Dodatkowa przestrzeń',
+  additionalStorage: 'Dodatkowe miejsce na bagaż',
+  minibar: 'Minibar',
+  rowConvertsToBed: 'Rząd zmienia się w łóżko',
 };
 
 export const LOCALE_ES = {
@@ -102,6 +112,16 @@ export const LOCALE_ES = {
   passenger: 'Pasajeros',
   personalTvInArmrest: 'TV personal en el reposabrazos',
   invertedSeat: 'Asiento orientado hacia atrás',
+  extraRoomSideStorage: 'Espacio extra al lado',
+  nearBassinetLocation: 'Cerca del moisés para bebé',
+  noisyPlace: 'Zona ruidosa',
+  sideArmrestOnDoor: 'Reposabrazos en la puerta de salida',
+  storageBinUnderWindow: 'Compartimento bajo la ventana',
+  extraPrivacy: 'Privacidad adicional',
+  additionalSpace: 'Espacio adicional',
+  additionalStorage: 'Almacenamiento adicional',
+  minibar: 'Minibar',
+  rowConvertsToBed: 'La fila se convierte en cama',
 };
 
 export const LOCALE_DE = {
@@ -155,6 +175,16 @@ export const LOCALE_DE = {
   seatRestrictions: 'Der Sitz ist nur für',
   passenger: 'Passagier',
   personalTvInArmrest: 'Personal TV in der Armlehne',
+  extraRoomSideStorage: 'Zusätzlicher Platz an der Seite',
+  nearBassinetLocation: 'In der Nähe der Babywiege',
+  noisyPlace: 'Lauter Bereich',
+  sideArmrestOnDoor: 'Armlehne an der Ausgangstür',
+  storageBinUnderWindow: 'Staufach unter dem Fenster',
+  extraPrivacy: 'Zusätzliche Privatsphäre',
+  additionalSpace: 'Zusätzlicher Platz',
+  additionalStorage: 'Zusätzlicher Stauraum',
+  minibar: 'Minibar',
+  rowConvertsToBed: 'Reihe lässt sich zum Bett umbauen',
 };
 
 export const LOCALE_EN = {
@@ -208,6 +238,16 @@ export const LOCALE_EN = {
   wingInWindow: 'Wing from window view',
   narrower: 'Narrower seat',
   exitRow: 'Exit row',
+  extraRoomSideStorage: 'Extra space on side',
+  nearBassinetLocation: 'Near baby bassinet',
+  noisyPlace: 'Noisy area',
+  sideArmrestOnDoor: 'Armrest on exit door',
+  storageBinUnderWindow: 'Storage bin under window',
+  extraPrivacy: 'Extra privacy',
+  additionalSpace: 'Additional space',
+  additionalStorage: 'Additional storage',
+  minibar: 'Minibar',
+  rowConvertsToBed: 'Row converts to bed',
 };
 
 export const LOCALE_CN = {
@@ -261,6 +301,16 @@ export const LOCALE_CN = {
   seatRestrictions: '该座位仅用于',
   passenger: '乘客',
   prereclinedSeat: '预倾斜座椅',
+  extraRoomSideStorage: '侧边有额外空间',
+  nearBassinetLocation: '靠近婴儿摇篮',
+  noisyPlace: '嘈杂区域',
+  sideArmrestOnDoor: '扶手在出口舱门上',
+  storageBinUnderWindow: '窗下储物箱',
+  extraPrivacy: '更佳私密性',
+  additionalSpace: '额外空间',
+  additionalStorage: '额外储物空间',
+  minibar: '迷你吧',
+  rowConvertsToBed: '整排可变成床',
 };
 
 export const LOCALE_RU = {
@@ -314,6 +364,16 @@ export const LOCALE_RU = {
   seatRestrictions: 'Сиденье только для',
   passenger: 'Пассажир',
   prereclinedSeat: 'Предварительно откинутое сиденье',
+  extraRoomSideStorage: 'Дополнительное место сбоку',
+  nearBassinetLocation: 'Рядом с детской люлькой',
+  noisyPlace: 'Шумное место',
+  sideArmrestOnDoor: 'Подлокотник у двери выхода',
+  storageBinUnderWindow: 'Багажный отсек под окном',
+  extraPrivacy: 'Больше приватности',
+  additionalSpace: 'Дополнительное пространство',
+  additionalStorage: 'Дополнительное место для хранения',
+  minibar: 'Мини-бар',
+  rowConvertsToBed: 'Ряд трансформируется в кровать',
 };
 
 export const LOCALE_AR = {
@@ -367,6 +427,16 @@ export const LOCALE_AR = {
   wingInWindow: 'جناح من نافذة العرض',
   narrower: 'مقعد أضيق',
   exitRow: 'صف الخروج',
+  extraRoomSideStorage: 'مساحة إضافية على الجانب',
+  nearBassinetLocation: 'بالقرب من سرير الرضع',
+  noisyPlace: 'منطقة صاخبة',
+  sideArmrestOnDoor: 'مسند ذراع على باب الخروج',
+  storageBinUnderWindow: 'صندوق تخزين تحت النافذة',
+  extraPrivacy: 'خصوصية إضافية',
+  additionalSpace: 'مساحة إضافية',
+  additionalStorage: 'تخزين إضافي',
+  minibar: 'ميني بار',
+  rowConvertsToBed: 'يتحول الصف إلى سرير',
 };
 
 export const LOCALE_CS = {
@@ -420,6 +490,16 @@ export const LOCALE_CS = {
   wingInWindow: 'Křídlo z okenního výhledu',
   narrower: 'Užší sedadlo',
   exitRow: 'Výstupní řada',
+  extraRoomSideStorage: 'Místo navíc po straně',
+  nearBassinetLocation: 'Blízko dětské postýlky',
+  noisyPlace: 'Hlučné místo',
+  sideArmrestOnDoor: 'Loketní opěrka na únikových dveřích',
+  storageBinUnderWindow: 'Úložný box pod oknem',
+  extraPrivacy: 'Více soukromí',
+  additionalSpace: 'Prostor navíc',
+  additionalStorage: 'Úložný prostor navíc',
+  minibar: 'Minibar',
+  rowConvertsToBed: 'Řada se mění v lůžko',
 };
 
 export const LOCALE_FR = {
@@ -473,6 +553,16 @@ export const LOCALE_FR = {
   wingInWindow: 'Vue de l’aile par le hublot',
   narrower: 'Siège plus étroit',
   exitRow: 'Rangée côté sortie',
+  extraRoomSideStorage: 'Espace supplémentaire sur le côté',
+  nearBassinetLocation: 'Près du lit bébé',
+  noisyPlace: 'Zone bruyante',
+  sideArmrestOnDoor: 'Accoudoir sur la porte de sortie',
+  storageBinUnderWindow: 'Compartiment de rangement sous le hublot',
+  extraPrivacy: 'Intimité supplémentaire',
+  additionalSpace: 'Espace supplémentaire',
+  additionalStorage: 'Rangement supplémentaire',
+  minibar: 'Minibar',
+  rowConvertsToBed: 'La rangée se transforme en lit',
 };
 
 export const LOCALE_PT = {
@@ -526,6 +616,16 @@ export const LOCALE_PT = {
   wingInWindow: 'Vista da asa da janela',
   narrower: 'Assento mais estreito',
   exitRow: 'Fila de saída',
+  extraRoomSideStorage: 'Espaço extra ao lado',
+  nearBassinetLocation: 'Perto do berço para bebé',
+  noisyPlace: 'Zona ruidosa',
+  sideArmrestOnDoor: 'Apoio de braço na porta de saída',
+  storageBinUnderWindow: 'Compartimento de arrumação sob a janela',
+  extraPrivacy: 'Privacidade adicional',
+  additionalSpace: 'Espaço adicional',
+  additionalStorage: 'Arrumação adicional',
+  minibar: 'Minibar',
+  rowConvertsToBed: 'A fila converte-se em cama',
 };
 
 export const LOCALE_IT = {
@@ -579,6 +679,16 @@ export const LOCALE_IT = {
   wingInWindow: 'Vista ala da finestrino',
   narrower: 'Sedile più stretto',
   exitRow: 'Fila di uscita',
+  extraRoomSideStorage: 'Spazio extra di lato',
+  nearBassinetLocation: 'Vicino alla culla per neonati',
+  noisyPlace: 'Zona rumorosa',
+  sideArmrestOnDoor: 'Bracciolo sulla porta di uscita',
+  storageBinUnderWindow: 'Vano portaoggetti sotto il finestrino',
+  extraPrivacy: 'Maggiore privacy',
+  additionalSpace: 'Spazio aggiuntivo',
+  additionalStorage: 'Spazio di stivaggio aggiuntivo',
+  minibar: 'Minibar',
+  rowConvertsToBed: 'La fila si trasforma in letto',
 };
 
 export const LOCALE_UK = {
@@ -632,6 +742,16 @@ export const LOCALE_UK = {
   wingInWindow: 'Вигляд крила з вікна',
   narrower: 'Вужче сидіння',
   exitRow: 'Ряд біля виходу',
+  extraRoomSideStorage: 'Додаткове місце збоку',
+  nearBassinetLocation: 'Поряд з дитячою люлькою',
+  noisyPlace: 'Шумне місце',
+  sideArmrestOnDoor: 'Підлокітник на дверях виходу',
+  storageBinUnderWindow: 'Багажний відсік під вікном',
+  extraPrivacy: 'Більше приватності',
+  additionalSpace: 'Додатковий простір',
+  additionalStorage: 'Додаткове місце для зберігання',
+  minibar: 'Міні-бар',
+  rowConvertsToBed: 'Ряд трансформується в ліжко',
 };
 
 export const LOCALE_JA = {
@@ -685,6 +805,16 @@ export const LOCALE_JA = {
   wingInWindow: '窓からの翼の眺め',
   narrower: '狭いシート',
   exitRow: '出口列',
+  extraRoomSideStorage: 'サイドに追加スペース',
+  nearBassinetLocation: 'ベビーベッドの近く',
+  noisyPlace: '騒がしいエリア',
+  sideArmrestOnDoor: '出口ドアのアームレスト',
+  storageBinUnderWindow: '窓下の収納ボックス',
+  extraPrivacy: '追加のプライバシー',
+  additionalSpace: '追加スペース',
+  additionalStorage: '追加の収納スペース',
+  minibar: 'ミニバー',
+  rowConvertsToBed: '列がベッドに変わる',
 };
 
 export const LOCALE_KO = {
@@ -738,6 +868,16 @@ export const LOCALE_KO = {
   wingInWindow: '창에서 날개 뷰',
   narrower: '좁은 좌석',
   exitRow: '행 종료',
+  extraRoomSideStorage: '측면 추가 공간',
+  nearBassinetLocation: '아기 바스켓 근처',
+  noisyPlace: '소음이 있는 구역',
+  sideArmrestOnDoor: '출구 도어의 팔걸이',
+  storageBinUnderWindow: '창문 아래 수납함',
+  extraPrivacy: '추가 프라이버시',
+  additionalSpace: '추가 공간',
+  additionalStorage: '추가 수납공간',
+  minibar: '미니바',
+  rowConvertsToBed: '열이 침대로 전환됨',
 };
 
 export const LOCALE_TR = {
@@ -791,6 +931,16 @@ export const LOCALE_TR = {
   wingInWindow: 'Pencereden kanat görünümü',
   narrower: 'Daha dar koltuk',
   exitRow: 'Çıkış sırası',
+  extraRoomSideStorage: 'Yan tarafta ekstra alan',
+  nearBassinetLocation: 'Bebek beşiğine yakın',
+  noisyPlace: 'Gürültülü alan',
+  sideArmrestOnDoor: 'Çıkış kapısında kol dayama',
+  storageBinUnderWindow: 'Pencere altında saklama bölmesi',
+  extraPrivacy: 'Ekstra mahremiyet',
+  additionalSpace: 'Ek alan',
+  additionalStorage: 'Ek depolama alanı',
+  minibar: 'Minibar',
+  rowConvertsToBed: 'Sıra yatağa dönüşür',
 };
 
 export const LOCALE_VI = {
@@ -844,6 +994,16 @@ export const LOCALE_VI = {
   wingInWindow: 'Cánh máy bay chắn tầm nhìn khỏi cửa sổ',
   narrower: 'Ghế hẹp hơn',
   exitRow: 'Hàng ghế thoát hiểm',
+  extraRoomSideStorage: 'Thêm không gian ở bên cạnh',
+  nearBassinetLocation: 'Gần nôi cho trẻ sơ sinh',
+  noisyPlace: 'Khu vực ồn ào',
+  sideArmrestOnDoor: 'Tựa tay trên cửa thoát hiểm',
+  storageBinUnderWindow: 'Hộc đựng đồ dưới cửa sổ',
+  extraPrivacy: 'Riêng tư hơn',
+  additionalSpace: 'Không gian bổ sung',
+  additionalStorage: 'Chỗ để đồ bổ sung',
+  minibar: 'Minibar',
+  rowConvertsToBed: 'Hàng ghế chuyển thành giường',
 };
 
 export const LOCALE_PT_BR = {
@@ -897,6 +1057,16 @@ export const LOCALE_PT_BR = {
   wingInWindow: 'Vista da asa pela janela',
   narrower: 'Assento mais estreito',
   exitRow: 'Saída de emergência',
+  extraRoomSideStorage: 'Espaço extra na lateral',
+  nearBassinetLocation: 'Perto do berço para bebê',
+  noisyPlace: 'Área barulhenta',
+  sideArmrestOnDoor: 'Apoio de braço na porta de saída',
+  storageBinUnderWindow: 'Compartimento sob a janela',
+  extraPrivacy: 'Privacidade adicional',
+  additionalSpace: 'Espaço adicional',
+  additionalStorage: 'Armazenamento adicional',
+  minibar: 'Frigobar',
+  rowConvertsToBed: 'A fileira se transforma em cama',
 };
 
 export const LOCALE_NL = {
@@ -950,6 +1120,16 @@ export const LOCALE_NL = {
   wingInWindow: 'Vleugel zichtbaar vanuit het raam',
   narrower: 'Smallere stoel',
   exitRow: 'Nooduitgangrij',
+  extraRoomSideStorage: 'Extra ruimte aan de zijkant',
+  nearBassinetLocation: 'Dicht bij de babywieg',
+  noisyPlace: 'Lawaaierige zone',
+  sideArmrestOnDoor: 'Armleuning aan de uitgangsdeur',
+  storageBinUnderWindow: 'Opbergvak onder het raam',
+  extraPrivacy: 'Extra privacy',
+  additionalSpace: 'Extra ruimte',
+  additionalStorage: 'Extra opbergruimte',
+  minibar: 'Minibar',
+  rowConvertsToBed: 'Rij wordt een bed',
 };
 
 export const LOCALE_FR_CA = {
@@ -1003,4 +1183,14 @@ export const LOCALE_FR_CA = {
   wingInWindow: 'Vue de l’aile par la fenêtre',
   narrower: 'Siège plus étroit',
   exitRow: 'Rangée de sortie de secours',
+  extraRoomSideStorage: 'Espace supplémentaire sur le côté',
+  nearBassinetLocation: 'Près du moïse',
+  noisyPlace: 'Zone bruyante',
+  sideArmrestOnDoor: 'Accoudoir sur la porte de sortie',
+  storageBinUnderWindow: 'Compartiment de rangement sous le hublot',
+  extraPrivacy: 'Intimité supplémentaire',
+  additionalSpace: 'Espace supplémentaire',
+  additionalStorage: 'Rangement supplémentaire',
+  minibar: 'Minibar',
+  rowConvertsToBed: 'La rangée se transforme en lit',
 };

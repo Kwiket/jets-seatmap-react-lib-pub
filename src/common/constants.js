@@ -216,6 +216,16 @@ export const DEFAULT_SUPPORTED_FEATURES = [
   'usbPowerPlug',
   'wifiEnabled',
   'wingInWindow',
+  'extraRoomSideStorage',
+  'nearBassinetLocation',
+  'noisyPlace',
+  'sideArmrestOnDoor',
+  'storageBinUnderWindow',
+  'extraPrivacy',
+  'additionalSpace',
+  'additionalStorage',
+  'minibar',
+  'rowConvertsToBed',
 ];
 
 export const DEFAULT_SEAT_SIZE = {
