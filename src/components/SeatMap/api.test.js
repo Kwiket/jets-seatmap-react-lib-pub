@@ -1,7 +1,8 @@
 import { JetsSeatMapApiService } from './api';
 import { cabin, entertainment, power, wifi, seatDetails, cabinItem } from './__fixtures__/seatMapApiPostDataResponse';
 import { flightDetails } from './__fixtures__/seatMapApiGetPlaneFeatures';
-import { SEAT_SIZE_BY_TYPE } from '../../common/constants';
+import { SEAT_SIZE_BY_TYPE, DEFAULT_SUPPORTED_FEATURES } from '../../common/constants';
+import { SUPPORTED_BULKS_COUNT } from '../Bulk/constants';
 
 jest.mock('./api', () => {
   const module = jest.requireActual('./api');
@@ -14,7 +15,11 @@ jest.mock('./api', () => {
 });
 
 const api = new JetsSeatMapApiService('appId', 'key', 'url');
-const supportedSeatTypesCount = SEAT_SIZE_BY_TYPE.length - 1; // Exclude zero index
+const capabilities = {
+  supportedSeatTypesCount: SEAT_SIZE_BY_TYPE.length - 1, // Exclude zero index
+  supportedBulksCount: SUPPORTED_BULKS_COUNT,
+  supportedFeatures: DEFAULT_SUPPORTED_FEATURES,
+};
 
 describe('JetsSeatMapApiService', () => {
   describe('when the getPlaneFeatures function is called', () => {
@@ -41,7 +46,7 @@ describe('JetsSeatMapApiService', () => {
         flight: flightFixture,
         lang: 'EN',
         units: 'metric',
-        supportedSeatTypesCount,
+        capabilities,
       });
     });
 
@@ -54,7 +59,7 @@ describe('JetsSeatMapApiService', () => {
         flight: flightFixture,
         lang: 'EN',
         units: 'metric',
-        supportedSeatTypesCount,
+        capabilities,
       });
     });
 
@@ -83,8 +88,8 @@ describe('JetsSeatMapApiService', () => {
         flight: flightFixture,
         lang: 'EN',
         units: 'metric',
+        capabilities,
         metadata: apiMetadata,
-        supportedSeatTypesCount,
       });
     });
   });

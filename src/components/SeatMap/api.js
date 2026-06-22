@@ -4,7 +4,9 @@ import {
   DEFAULT_AUTHORIZATION_SCHEME,
   JetsApiService,
   SEAT_SIZE_BY_TYPE,
+  DEFAULT_SUPPORTED_FEATURES,
 } from '../../common';
+import { SUPPORTED_BULKS_COUNT } from '../Bulk/constants';
 
 const API_SUPPORTED_LANGUAGES = [
   'AR',
@@ -54,14 +56,20 @@ export class JetsSeatMapApiService extends JetsApiService {
   }
 
   getPlaneFeatures = async (flight, lang = DEFAULT_LANG, units = DEFAULT_UNITS) => {
-    const supportedSeatTypesCount = SEAT_SIZE_BY_TYPE.length - 1; // Exclude zero index
     const language = API_SUPPORTED_LANGUAGES.includes(lang) ? lang : DEFAULT_LANG;
+
+    // Declares what this client can render so the API can recode/filter anything newer for backward compatibility.
+    const capabilities = {
+      supportedSeatTypesCount: SEAT_SIZE_BY_TYPE.length - 1, // Exclude zero index
+      supportedBulksCount: SUPPORTED_BULKS_COUNT,
+      supportedFeatures: DEFAULT_SUPPORTED_FEATURES,
+    };
 
     const data = {
       flight,
       lang: language,
       units,
-      supportedSeatTypesCount,
+      capabilities,
       metadata: this._apiMetadata ?? undefined, // If there's no metadata, omit the property entirely
     };
 
