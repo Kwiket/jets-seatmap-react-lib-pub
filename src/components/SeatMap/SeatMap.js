@@ -67,6 +67,7 @@ import {
   THEME_CABIN_TITLES_LABEL_COLOR,
   SEAT_MAP_WIDTH_TO_WINGS_WIDTH_RATIO,
   useEnvironmentInfo,
+  getWcagFlags,
 } from '../../common';
 import './index.css';
 import { JetsPlaneBody } from '../PlaneBody';
@@ -196,6 +197,8 @@ export const JetsSeatMap = ({
   config.colorTheme = colorTheme;
   config.lang = JetsDataHelper.validateLanguage(config.lang);
   const configuration = { ...JETS_SEATMAP_DEFAULT_CONFIG, ...config };
+
+  const wcagFlags = getWcagFlags(configuration);
 
   // SCALE_TYPES.ZOOM is not fully supported by FF
   if (isFirefox) {
@@ -547,6 +550,7 @@ export const JetsSeatMap = ({
     resetSeatJumpTo,
     params,
     config: configuration,
+    wcagFlags,
     colorTheme,
     activeTooltip,
     seatLabelJumpTo,
