@@ -241,7 +241,7 @@ Port `computeSeatPosition` and `buildSeatAriaLabel` from the Angular `utils/a11y
 - Create: `src/common/a11y.js`
 - Test: `src/common/a11y.test.js`
 - Modify: `src/common/index.js` (add re-export)
-- Modify: `src/common/i18n.languages.js` (add a11y keys to all 18 `LOCALE_*` objects)
+- Modify: `src/common/i18n.languages.js` (add a11y keys to all 19 `LOCALE_*` objects — the file also carries `LOCALE_FR_CA`, which `i18n.test.js` requires to match `LOCALE_EN`'s key set)
 
 **Interfaces:**
 - Consumes: seat objects as produced by `data-preparer.js` (fields used: `type`, `status`, `number`, `name`, `rowName`, `letter`, `id`, `passenger`, `price`, `currency`, `features`, `additionalProps`, `measurements`, `passengerTypes`); row objects with a `seats` array; a `locale` map (`LOCALES_MAP[lang]`).
@@ -575,9 +575,9 @@ In `src/common/i18n.languages.js`, inside the `LOCALE_EN` object, before its clo
   action: 'Action',
 ```
 
-- [ ] **Step 7: Port the same 22 keys into the other 17 locales**
+- [ ] **Step 7: Port the same 22 keys into the other 18 locales**
 
-Translations already exist in the sibling Angular repo. For each language block in `src/common/i18n.languages.js` (`LOCALE_RU`, `LOCALE_CN`, `LOCALE_DE`, `LOCALE_ES`, `LOCALE_PL`, `LOCALE_AR`, `LOCALE_CS`, `LOCALE_FR`, `LOCALE_PT`, `LOCALE_IT`, `LOCALE_UK`, `LOCALE_JA`, `LOCALE_KO`, `LOCALE_TR`, `LOCALE_VI`, `LOCALE_PT_BR`, `LOCALE_NL`), copy that language's a11y block from the Angular source of truth:
+Translations already exist in the sibling Angular repo. For each language block in `src/common/i18n.languages.js` (`LOCALE_RU`, `LOCALE_CN`, `LOCALE_DE`, `LOCALE_ES`, `LOCALE_PL`, `LOCALE_AR`, `LOCALE_CS`, `LOCALE_FR`, `LOCALE_FR_CA`, `LOCALE_PT`, `LOCALE_IT`, `LOCALE_UK`, `LOCALE_JA`, `LOCALE_KO`, `LOCALE_TR`, `LOCALE_VI`, `LOCALE_PT_BR`, `LOCALE_NL`), copy that language's a11y block from the Angular source of truth:
 
 `/Users/andrey.vilchinsky/work/seatmaps/Angular/jets-seatmap-angular-lib/.claude/worktrees/starry-frolicking-goose/projects/seatmap-lib/src/lib/constants.ts`
 
@@ -603,7 +603,7 @@ Sanity-check every locale gained the anchor key:
 grep -c "seatPositionWindow" src/common/i18n.languages.js
 ```
 
-Expected: `18` (one per locale).
+Expected: `19` (one per locale — `LOCALES_MAP` has 19 entries including `FR-CA`).
 
 - [ ] **Step 9: Commit**
 

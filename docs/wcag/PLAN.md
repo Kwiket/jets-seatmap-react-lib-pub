@@ -14,8 +14,8 @@
 
 ## Status
 
-- **Last updated:** 2026-07-13 — plan drafted and approved. Implementation not started. The `WCAG` branch contains only this document.
-- **Current wave:** Wave 0 (foundation) — next to execute.
+- **Last updated:** 2026-07-13 — Wave 0 (foundation) complete: commits 1–2 landed (`90b2ecd`, `5b94009`), full suite 703/703 green, whole-branch review clean (ready to merge).
+- **Current wave:** Wave A (always-on: decorative `aria-hidden`, reduced-motion, forced-colors) — next to execute.
 - **Scope:** full parity with Angular (all 17 commits), grouped into waves 0 / A–G. Implementation is incremental — the document is meant to be returned to and finished wave by wave.
 - **Blockers:** none.
 
@@ -165,7 +165,7 @@ Full parity — 17 logical commits, grouped into waves by dependency. Implementa
 | # | Commit | Content |
 |---|---|---|
 | 1 | `feat(a11y): config.wcag flags + getWcagFlags resolver` | `src/common/wcag-flags.js` + `.test.js`; `config.wcag` in defaultProps (`SeatMap.js`); resolved flags passed into `JetsContext`. |
-| 2 | `feat(a11y): accessible-name builder + locale keys` | `src/common/a11y.js` + `.test.js`; ARIA keys across all 18 locales in `i18n.languages.js`. |
+| 2 | `feat(a11y): accessible-name builder + locale keys` | `src/common/a11y.js` + `.test.js`; ARIA keys across all 19 locales in `i18n.languages.js` (incl. `FR-CA`). |
 
 ### Wave A — always-on "free"
 | # | Commit | Content |
@@ -224,7 +224,7 @@ Full parity — 17 logical commits, grouped into waves by dependency. Implementa
 - `src/components/DeckSelector/index.js` — switch/tablist semantics.
 - `src/components/PlaneBody/index.js`, `Nose/`, `Tail/`, `Wing` (if present), `DeckSeparator/`, `Bulk/JetsBulk.js`, `DeckExit/` — `aria-hidden`, replace hardcoded SVG fill.
 - `src/common/constants.js` — `WCAG_COLOR_THEME`, ARIA constants.
-- `src/common/i18n.languages.js` — ARIA keys across all 18 locales.
+- `src/common/i18n.languages.js` — ARIA keys across all 19 locales (incl. `FR-CA`).
 - `src/common/context.js` — carry the resolved flags.
 - `src/index.js` — export `JetsSeatList`.
 
@@ -278,8 +278,8 @@ After the series:
 | # | Wave | Commit | Status | SHA | Date | Notes |
 |---|---|---|---|---|---|---|
 | 0 | — | Plan copy in `docs/wcag/PLAN.md` | [ ] | — | 2026-07-13 | this document |
-| 1 | 0 | `config.wcag flags + getWcagFlags` | [ ] | — | — | |
-| 2 | 0 | `accessible-name builder + locale keys` | [ ] | — | — | |
+| 1 | 0 | `config.wcag flags + getWcagFlags` | [x] | `90b2ecd` | 2026-07-13 | resolver + JetsContext wiring; 6/6 unit; review clean |
+| 2 | 0 | `accessible-name builder + locale keys` | [x] | `5b94009` | 2026-07-13 | a11y.js + 22 keys × 19 locales (incl. FR-CA); review clean |
 | 3 | A | `hide decorative graphics from AT` | [ ] | — | — | always-on |
 | 4 | A | `prefers-reduced-motion` | [ ] | — | — | always-on |
 | 5 | A | `forced-colors / Windows High Contrast` | [ ] | — | — | always-on |
