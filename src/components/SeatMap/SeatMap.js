@@ -68,6 +68,10 @@ import {
   SEAT_MAP_WIDTH_TO_WINGS_WIDTH_RATIO,
   useEnvironmentInfo,
   getWcagFlags,
+  classifyKey,
+  remapForOrientation,
+  move,
+  initialCell,
 } from '../../common';
 import './index.css';
 import { JetsPlaneBody } from '../PlaneBody';
@@ -220,6 +224,9 @@ export const JetsSeatMap = ({
   const [isSelectAvailable, setSelectAvailable] = useState(false);
   const [activeDeck, setActiveDeck] = useState(0);
   const [params, setParams] = useState(null);
+  const [focusedCell, setFocusedCell] = useState({ deckIdx: 0, rowIdx: 0, colIdx: 0 });
+  const focusedCellRef = useRef(focusedCell);
+  focusedCellRef.current = focusedCell;
 
   const [exits, setExits] = useState([]);
   const [bulks, setBulks] = useState([]);
@@ -347,6 +354,16 @@ export const JetsSeatMap = ({
 
     setSeatLabelJumpTo(_providedSeatLabel);
   }, [seatJumpTo]);
+
+  useEffect(() => {
+    if (!wcagFlags?.keyboardNavigation) return;
+    if (!content?.length) return;
+    const seed = initialCell(activeDeck, content);
+    focusedCellRef.current = seed;
+    setFocusedCell(seed);
+    const id = setTimeout(() => applyRovingTabindex(seed), 0);
+    return () => clearTimeout(id);
+  }, [content, activeDeck, wcagFlags?.keyboardNavigation]);
 
   const seatMapClassName = useMemo(() => {
     const _viewModeClassName = params?.isHorizontal ? 'horizontal' : 'vertical';
@@ -539,6 +556,69 @@ export const JetsSeatMap = ({
     height: params?.scaledTotalDecksHeight,
   };
 
+  const applyRovingTabindex = pos => {
+    const container = seatMapRef.current;
+    if (!container) return;
+    const focusedRow = String(pos.rowIdx + 1);
+    const focusedCol = String(pos.colIdx + 1);
+    container.querySelectorAll('[role="gridcell"]').forEach(cell => {
+      const isFocused =
+        cell.getAttribute('aria-rowindex') === focusedRow && cell.getAttribute('aria-colindex') === focusedCol;
+      cell.setAttribute('tabindex', isFocused ? '0' : '-1');
+    });
+  };
+
+  const focusCell = pos => {
+    const container = seatMapRef.current;
+    if (!container) return;
+    const el = container.querySelector(
+      `[role="gridcell"][aria-rowindex="${pos.rowIdx + 1}"][aria-colindex="${pos.colIdx + 1}"]`
+    );
+    el?.focus?.();
+  };
+
+  const onGridKeydown = event => {
+    if (wcagFlags?.keyboardNavigation && event.key === 'Escape' && activeTooltip) {
+      onTooltipClose();
+      event.preventDefault();
+      return;
+    }
+    if (!wcagFlags?.keyboardNavigation) return;
+
+    const rawKey = classifyKey(event.nativeEvent ?? event);
+    if (!rawKey) return;
+
+    const key = remapForOrientation(rawKey, configuration.horizontal ?? false, configuration.rightToLeft ?? false);
+    const from = focusedCellRef.current;
+    const next = move(from, key, content);
+    if (next === from) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+    focusedCellRef.current = next;
+    setFocusedCell(next);
+    applyRovingTabindex(next);
+    focusCell(next);
+  };
+
+  const onGridFocusin = event => {
+    if (!wcagFlags?.keyboardNavigation) return;
+    const el = event.target;
+    const rowAttr = el?.getAttribute?.('aria-rowindex');
+    const colAttr = el?.getAttribute?.('aria-colindex');
+    if (rowAttr == null || colAttr == null) return;
+    const rowIdx = parseInt(rowAttr, 10) - 1;
+    const colIdx = parseInt(colAttr, 10) - 1;
+    if (isNaN(rowIdx) || isNaN(colIdx)) return;
+    const deckAttr = el.closest?.('[data-deck-index]')?.getAttribute('data-deck-index');
+    const parsedDeck = deckAttr != null ? parseInt(deckAttr, 10) : NaN;
+    const deckIdx = !isNaN(parsedDeck) ? parsedDeck : activeDeck;
+    const next = { deckIdx, rowIdx, colIdx };
+    focusedCellRef.current = next;
+    setFocusedCell(next);
+    applyRovingTabindex(next);
+  };
+
   const providerValue = {
     onSeatClick,
     showTooltip,
@@ -569,6 +649,8 @@ export const JetsSeatMap = ({
           background: colorTheme.seatMapBackgroundColor,
         }}
         data-testid="jets-seat-map"
+        onKeyDown={onGridKeydown}
+        onFocus={onGridFocusin}
       >
         {activeTooltip && <ResolvedTooltip data={activeTooltip} />}
         {shouldShowBuiltInDeckSelector && <JetsDeckSelector direction={!!activeDeck}></JetsDeckSelector>}
