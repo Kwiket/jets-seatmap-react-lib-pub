@@ -1,6 +1,7 @@
 export * from './api';
 export * from './constants';
 export * from './wcag-flags';
+export * from './a11y';
 export * from './context';
 export * from './data-helper';
 export * from './data-preparer';
