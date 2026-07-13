@@ -148,7 +148,10 @@ function seatName(seat) {
 function hasFeatureMatching(seat, predicate) {
   const lists = [seat.features, seat.additionalProps, seat.measurements];
   for (const list of lists) {
-    if (!list) continue;
+    // Prepared seat data carries features/measurements as arrays of {key, title} objects
+    // (see data-preparer.js `_prepareSeatFeatures`). Guard against other shapes (e.g. a raw,
+    // not-yet-prepared features map) so accessible-name building never throws mid-render.
+    if (!Array.isArray(list)) continue;
     for (const feature of list) {
       if (predicate(feature)) return true;
     }

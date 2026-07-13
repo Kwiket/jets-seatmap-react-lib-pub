@@ -75,11 +75,16 @@ export const JetsPlaneBody = ({ activeDeck, content, exits, bulks, isSeatMapInit
 
       {decks?.length ? (
         <div className={'jets-deck-wrapper'} style={decksWrapperStyle}>
-          {decks?.map((deck, index) =>
-            !showOneDeck || index == deckToShow ? (
+          {decks?.map((deck, index) => {
+            if (showOneDeck && index != deckToShow) return null;
+
+            const originalDeckIndex = config?.horizontal && !config?.rightToLeft ? decks.length - 1 - index : index;
+
+            return (
               <React.Fragment key={deck.uniqId + index}>
                 <div
                   data-testid="jets-plane-body-deck"
+                  data-deck-index={originalDeckIndex}
                   ref={element => {
                     elementRefs.current[index] = element;
                   }}
@@ -108,8 +113,8 @@ export const JetsPlaneBody = ({ activeDeck, content, exits, bulks, isSeatMapInit
 
                 {index < decks.length - 1 && !showOneDeck && <JetsDeckSeparator key={index} width={bodyWidth} />}
               </React.Fragment>
-            ) : null
-          )}
+            );
+          })}
         </div>
       ) : isSeatMapInited ? (
         <JetsNoData />
