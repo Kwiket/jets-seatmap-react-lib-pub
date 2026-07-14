@@ -112,6 +112,12 @@ export const JetsSeat = ({ data, colIndex, rowIndex, rowSeats }) => {
 
   const handleClick = e => {
     if (gridOn && isSeatType && !isInteractiveSeat) return;
+    // Safari/Firefox on macOS do NOT move keyboard focus to a <button> on
+    // click (only Chrome does). Focus it explicitly so keyboard navigation can
+    // start from a clicked seat. preventScroll avoids a page jump.
+    if (gridOn && isSeatType) {
+      $component.current?.focus?.({ preventScroll: true });
+    }
     onSeatClick(data, $component, e);
   };
 

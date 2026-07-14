@@ -224,9 +224,15 @@ export const JetsSeatMap = ({
   const [isSelectAvailable, setSelectAvailable] = useState(false);
   const [activeDeck, setActiveDeck] = useState(0);
   const [params, setParams] = useState(null);
-  const [focusedCell, setFocusedCell] = useState({ deckIdx: 0, rowIdx: 0, colIdx: 0 });
-  const focusedCellRef = useRef(focusedCell);
-  focusedCellRef.current = focusedCell;
+  // Focused cell for roving tabindex + keyboard navigation. Kept in a REF, not
+  // state, on purpose: mutating it must NOT trigger a React re-render. A
+  // re-render between a seat button's mousedown and mouseup rebuilds the seat
+  // DOM and cancels the native click, which would force a double-click to open
+  // the tooltip. All reads go through focusedCellRef.current.
+  const focusedCellRef = useRef({ deckIdx: 0, rowIdx: 0, colIdx: 0 });
+  // Which deck the roving anchor was last seeded for; lets the seeding effect
+  // re-assert roving on content changes without resetting the user's position.
+  const seededDeckRef = useRef(null);
 
   const [exits, setExits] = useState([]);
   const [bulks, setBulks] = useState([]);
@@ -356,12 +362,29 @@ export const JetsSeatMap = ({
   }, [seatJumpTo]);
 
   useEffect(() => {
-    if (!wcagFlags?.keyboardNavigation) return;
-    if (!content?.length) return;
-    const seed = initialCell(activeDeck, content);
-    focusedCellRef.current = seed;
-    setFocusedCell(seed);
-    const id = setTimeout(() => applyRovingTabindex(seed), 0);
+    if (!wcagFlags?.keyboardNavigation) {
+      seededDeckRef.current = null;
+      return;
+    }
+    if (!content?.length) {
+      seededDeckRef.current = null;
+      return;
+    }
+    // Seed the roving anchor to the first interactive seat only on the initial
+    // load or when the active deck changes. On plain content mutations (a
+    // select/unselect within the same deck) keep the current focused cell — a
+    // React re-render there resets each seat's rendered tabindex, so we only
+    // need to re-assert the roving tabindex at the existing position, NOT jump
+    // the user back to the first seat.
+    let pos;
+    if (seededDeckRef.current !== activeDeck) {
+      seededDeckRef.current = activeDeck;
+      pos = initialCell(activeDeck, content);
+      focusedCellRef.current = pos;
+    } else {
+      pos = focusedCellRef.current;
+    }
+    const id = setTimeout(() => applyRovingTabindex(pos), 0);
     return () => clearTimeout(id);
   }, [content, activeDeck, wcagFlags?.keyboardNavigation]);
 
@@ -503,6 +526,16 @@ export const JetsSeatMap = ({
     });
   };
 
+  // When the built-in dialog tooltip closes via a button (Cancel/Select/
+  // Unselect) or Escape, keyboard focus would otherwise vanish with the removed
+  // tooltip. Return it to the trigger seat so grid navigation resumes. Deferred
+  // so the close re-render (content/tooltip) settles before we query the seat.
+  // Hover tooltips are excluded.
+  const returnFocusToTriggerSeat = () => {
+    if (!wcagFlags?.keyboardNavigation || configuration.tooltipOnHover) return;
+    setTimeout(() => focusCell(focusedCellRef.current), 0);
+  };
+
   const onSeatSelect = seat => {
     const { data, passengers: newPassengers } = service.selectSeatHandler(content, seat, passengersList);
 
@@ -511,6 +544,7 @@ export const JetsSeatMap = ({
     setActiveTooltip(null);
 
     onSeatSelected(newPassengers);
+    returnFocusToTriggerSeat();
   };
 
   const onSeatUnselect = seat => {
@@ -521,6 +555,7 @@ export const JetsSeatMap = ({
     setActiveTooltip(null);
 
     onSeatUnselected(newPassengers);
+    returnFocusToTriggerSeat();
   };
 
   const onTooltipClose = (data, element, event) => {
@@ -529,6 +564,7 @@ export const JetsSeatMap = ({
       onSeatMouseLeave({ seat, element: element.current, event: event.nativeEvent });
     }
     setActiveTooltip(null);
+    returnFocusToTriggerSeat();
   };
 
   const isSeatSelectDisabled = seatData => {
@@ -576,16 +612,27 @@ export const JetsSeatMap = ({
     const el = container.querySelector(
       `[role="gridcell"][aria-rowindex="${pos.rowIdx + 1}"][aria-colindex="${pos.colIdx + 1}"]`
     );
-    el?.focus?.();
+    // Focus without the browser's default (jarring) scroll-to-top, then bring
+    // the focused seat into view minimally so keyboard users can SEE where the
+    // focus ring moved. `block/inline: 'nearest'` scrolls only when the seat is
+    // off-screen, and only just enough — no full-page jump.
+    el?.focus?.({ preventScroll: true });
+    el?.scrollIntoView?.({ block: 'nearest', inline: 'nearest' });
   };
 
   const onGridKeydown = event => {
     if (wcagFlags?.keyboardNavigation && event.key === 'Escape' && activeTooltip) {
+      // onTooltipClose returns focus to the trigger seat (resumes seat nav).
       onTooltipClose();
       event.preventDefault();
       return;
     }
     if (!wcagFlags?.keyboardNavigation) return;
+
+    // While the built-in dialog tooltip is open (click/Enter, not hover) it owns
+    // the keyboard — its own handler roves between the action buttons. Pause
+    // seat-to-seat navigation until it closes.
+    if (wcagFlags?.tooltipDialog && activeTooltip && !configuration.tooltipOnHover) return;
 
     const rawKey = classifyKey(event.nativeEvent ?? event);
     if (!rawKey) return;
@@ -598,7 +645,6 @@ export const JetsSeatMap = ({
     event.preventDefault();
     event.stopPropagation();
     focusedCellRef.current = next;
-    setFocusedCell(next);
     applyRovingTabindex(next);
     focusCell(next);
   };
@@ -617,7 +663,6 @@ export const JetsSeatMap = ({
     const deckIdx = !isNaN(parsedDeck) ? parsedDeck : activeDeck;
     const next = { deckIdx, rowIdx, colIdx };
     focusedCellRef.current = next;
-    setFocusedCell(next);
     applyRovingTabindex(next);
   };
 
