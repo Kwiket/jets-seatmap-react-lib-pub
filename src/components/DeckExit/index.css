@@ -12,3 +12,14 @@
 
   object-fit: contain;
 }
+
+/* Windows High Contrast / forced-colors mode.
+   The built-in exit arrow SVGs use a hardcoded fill colour that the browser
+   strips under forced-colors, leaving an invisible marker. Force CanvasText
+   so the exit indicator stays visible. */
+@media (forced-colors: active) {
+  .deck-exit__image svg,
+  .deck-exit__image path {
+    fill: CanvasText !important;
+  }
+}
