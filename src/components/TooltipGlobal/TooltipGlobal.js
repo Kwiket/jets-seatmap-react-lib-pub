@@ -16,6 +16,7 @@ export const JetsTooltipGlobal = ({ data }) => {
   const {
     componentOverrides,
     isSeatSelectDisabled,
+    getSelectDisabledReason,
     onTooltipClose,
     onSeatSelect,
     onSeatUnselect,
@@ -215,6 +216,17 @@ export const JetsTooltipGlobal = ({ data }) => {
   const filteredFeatures = (features || []).filter(f => !params.hiddenSeatFeatures.includes(f.key));
   const finalListOfFeatures = [...filteredFeatures, ...(additionalProps || [])].slice(0, DEFAULT_FEATURES_RENDER_LIMIT);
 
+  const isSelectDisabled = isSeatSelectDisabled(data);
+
+  // WCAG 3.3.1 / 3.3.3: visible "why is Select disabled" line, wired to the
+  // Select button via aria-describedby. Only applies to the select case (no
+  // passenger assigned yet) — the unselect button is never disabled for this
+  // reason. Fully gated behind wcagFlags.visibleRestrictionReason: when the
+  // flag is off, selectRestrictionReason is '' and nothing renders.
+  const showSelectRestrictionReason = !!wcagFlags?.visibleRestrictionReason && !passenger && isSelectDisabled;
+  const selectRestrictionReason = showSelectRestrictionReason ? getSelectDisabledReason(data) : '';
+  const selectRestrictionReasonId = 'jets-tooltip-restriction';
+
   const ResolvedTooltip = componentOverrides?.JetsTooltipView ?? JetsTooltipGlobalView;
 
   return (
@@ -225,13 +237,15 @@ export const JetsTooltipGlobal = ({ data }) => {
       featureListStyle={featureListStyle}
       finalListOfFeatures={finalListOfFeatures}
       headerStyle={headerStyle}
-      isSeatSelectDisabled={isSeatSelectDisabled(data)}
+      isSeatSelectDisabled={isSelectDisabled}
       params={params}
       passengerLabel={passengerLabel.length ? passengerLabel : restrictionsLabel}
       pointerStyle={pointerStyle}
       pointerStyleHorizontal={pointerStyleHorizontal}
       rootStyle={style}
       shouldHideButtons={shouldHideButtons}
+      selectRestrictionReason={selectRestrictionReason}
+      selectRestrictionReasonId={selectRestrictionReasonId}
       onTooltipClose={onTooltipClose}
       onSeatSelect={onSeatSelect}
       onSeatUnselect={onSeatUnselect}

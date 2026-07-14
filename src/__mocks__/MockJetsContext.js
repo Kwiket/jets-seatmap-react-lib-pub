@@ -31,6 +31,7 @@ const MockJetsContextProvider = ({
         colorTheme: mergedConfig.colorTheme,
         componentOverrides,
         isSeatSelectDisabled: () => false,
+        getSelectDisabledReason: () => '',
         params: {
           ...paramsData(params),
           // config should take precedent over passed param data

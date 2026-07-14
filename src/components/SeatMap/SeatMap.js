@@ -72,6 +72,8 @@ import {
   remapForOrientation,
   move,
   initialCell,
+  LOCALES_MAP,
+  DEFAULT_SEAT_PASSENGER_TYPES,
 } from '../../common';
 import './index.css';
 import { JetsPlaneBody } from '../PlaneBody';
@@ -577,6 +579,33 @@ export const JetsSeatMap = ({
     );
   };
 
+  // WCAG 3.3.1 / 3.3.3: localized, human-readable explanation for why the
+  // Select button is disabled. Mirrors isSeatSelectDisabled's own logic so the
+  // two never disagree, but returns a message string (or '' when selectable)
+  // instead of a boolean. Consumed by the tooltip only when
+  // wcagFlags.visibleRestrictionReason is on.
+  const getSelectDisabledReason = seatData => {
+    const locale = LOCALES_MAP[configuration.lang] || LOCALES_MAP[DEFAULT_LANG];
+    const nextPassenger = service.getNextPassenger(passengersList);
+
+    if (!nextPassenger) {
+      return locale['noPassengerToSelect'];
+    }
+
+    if (
+      nextPassenger?.passengerType &&
+      seatData.passengerTypes?.length &&
+      !seatData.passengerTypes?.includes(nextPassenger?.passengerType)
+    ) {
+      const allowedTypes = DEFAULT_SEAT_PASSENGER_TYPES;
+      const filteredPassengerTypes = seatData.passengerTypes.filter(type => allowedTypes.includes(type));
+      const typeStrings = filteredPassengerTypes.map(type => locale[type]);
+      return `${locale['seatRestrictions']}: ${typeStrings.join(', ')}`;
+    }
+
+    return '';
+  };
+
   const scaleWrapStyle = {
     transform: ` ${params?.rotation} ${params?.offset} scale(${params?.scale})`,
     transformOrigin: 'top left',
@@ -673,6 +702,7 @@ export const JetsSeatMap = ({
     onSeatSelect,
     onSeatUnselect,
     isSeatSelectDisabled,
+    getSelectDisabledReason,
     switchDeck,
     resetSeatJumpTo,
     params,

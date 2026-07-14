@@ -5,9 +5,15 @@ import { MockJetsContextProvider } from '../../__mocks__/MockJetsContext';
 import { JetsTooltipGlobal } from './index';
 import { activeTooltipData } from './__fixtures__';
 
-const setup = ({ data = {}, componentOverrides = {}, config = {}, params = {}, events = {} } = {}) => ({
+const setup = ({ data = {}, componentOverrides = {}, config = {}, params = {}, events = {}, wcagFlags } = {}) => ({
   ...render(
-    <MockJetsContextProvider componentOverrides={componentOverrides} config={config} params={params} events={events}>
+    <MockJetsContextProvider
+      componentOverrides={componentOverrides}
+      config={config}
+      params={params}
+      events={events}
+      wcagFlags={wcagFlags}
+    >
       <JetsTooltipGlobal data={{ ...activeTooltipData(data) }} />
     </MockJetsContextProvider>
   ),
@@ -253,6 +259,53 @@ describe('JetsTooltipGlobal', () => {
     it('should display the fallback passenger label if none passed (FR)', () => {
       setup({ data: { lang: 'FR', passenger: { id: '2' } } });
       expect(screen.getByText(/Passager 2/)).toBeInTheDocument();
+    });
+  });
+
+  describe('when wcagFlags.visibleRestrictionReason is off (default)', () => {
+    it('should not render a restriction reason line or aria-describedby, even when Select is disabled', () => {
+      setup({
+        events: { isSeatSelectDisabled: () => true, getSelectDisabledReason: () => 'No passenger available to select' },
+      });
+
+      expect(screen.queryByText(/No passenger available to select/)).not.toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Select/ })).not.toHaveAttribute('aria-describedby');
+    });
+
+    it('should not render a restriction reason line when Select is enabled', () => {
+      setup({ wcagFlags: { visibleRestrictionReason: true } });
+
+      expect(screen.getByRole('button', { name: /Select/ })).not.toHaveAttribute('aria-describedby');
+    });
+  });
+
+  describe('when wcagFlags.visibleRestrictionReason is on', () => {
+    it('should render the reason line and wire it to Select via aria-describedby when Select is disabled', () => {
+      setup({
+        wcagFlags: { visibleRestrictionReason: true },
+        events: { isSeatSelectDisabled: () => true, getSelectDisabledReason: () => 'No passenger available to select' },
+      });
+
+      const reason = screen.getByText(/No passenger available to select/);
+      expect(reason).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Select/ })).toHaveAttribute('aria-describedby', reason.id);
+    });
+
+    it('should not render a reason line when Select is enabled', () => {
+      setup({ wcagFlags: { visibleRestrictionReason: true }, events: { isSeatSelectDisabled: () => false } });
+
+      expect(screen.getByRole('button', { name: /Select/ })).not.toHaveAttribute('aria-describedby');
+    });
+
+    it('should not render a reason line for the unselect (already-selected) case', () => {
+      setup({
+        wcagFlags: { visibleRestrictionReason: true },
+        data: { passenger: { passengerLabel: 'Dave Smith' } },
+        events: { isSeatSelectDisabled: () => true, getSelectDisabledReason: () => 'No passenger available to select' },
+      });
+
+      expect(screen.queryByText(/No passenger available to select/)).not.toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Unselect/ })).not.toHaveAttribute('aria-describedby');
     });
   });
 });

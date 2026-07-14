@@ -24,6 +24,8 @@ export const JetsTooltipGlobalView = ({
   pointerStyleHorizontal,
   shouldHideButtons,
   rootStyle,
+  selectRestrictionReason,
+  selectRestrictionReasonId,
   onSeatSelect,
   onSeatUnselect,
   onTooltipClose,
@@ -145,9 +147,15 @@ export const JetsTooltipGlobalView = ({
               content={LOCALES_MAP[lang][SELECT_BTN_KEY]}
               className="jets-btn jets-tooltip--btn "
               style={{ color: tooltipSelectButtonTextColor, backgroundColor: tooltipSelectButtonBackgroundColor }}
+              aria-describedby={selectRestrictionReason ? selectRestrictionReasonId : undefined}
             />
           )}
         </div>
+        {selectRestrictionReason && (
+          <p id={selectRestrictionReasonId} className="jets-tooltip--restriction" style={featureListStyle}>
+            {selectRestrictionReason}
+          </p>
+        )}
       </div>
     </div>
   );
