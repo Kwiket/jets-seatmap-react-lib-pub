@@ -8,6 +8,50 @@
   z-index: 10;
 }
 
+/* WCAG grid semantics: the 'seat' branch renders a native <button>, which
+   carries browser-default chrome (background, border, padding, appearance,
+   font). Strip it with a narrow reset so the button looks identical to the
+   old <div>. `color` is intentionally NOT reset here so the status classes
+   (e.g. .jets-selected) keep control of the label colour. */
+button.jets-seat {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Keyboard focus ring for the seat button (uses :focus-visible so a mouse
+   click does not show the ring). A thick, high-contrast ring that stays
+   visible on both the light seat fill and the dark deck floor; the seat map
+   is CSS-scaled down, so a 3px outline is needed to read clearly. z-index
+   lifts the focused seat above neighbours whose overflow-visible SVGs would
+   otherwise cover the ring. */
+.jets-seat:focus-visible {
+  outline: none;
+  /* Two-tone ring (white inner + dark navy outer). A single colour can't
+     contrast every seat fill (blue/green/yellow/grey) AND the dark deck
+     floor, so we stack two rings that together stay visible on any of them.
+     The map is CSS-scaled down, so generous widths are needed to read. */
+  box-shadow:
+    0 0 0 3px #ffffff,
+    0 0 0 7px #d81b60;
+  border-radius: 3px;
+  z-index: 20;
+}
+
+@media (forced-colors: active) {
+  /* Highlight is the system token reserved for focus/selection surfaces, so
+     the ring stays visible in Windows High Contrast even when fills flatten. */
+  .jets-seat:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+}
+
 .jets-unavailable {
   position: relative;
   cursor: not-allowed;
