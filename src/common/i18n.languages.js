@@ -87,6 +87,21 @@ export const LOCALE_PL = {
   action: 'Akcja',
   skipSeatMap: 'Pomiń mapę miejsc',
   switchDeck: 'Zmień piętro',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'Okno',
+  filterAisle: 'Przejście',
+  filterExtraLegroom: 'Dodatkowa przestrzeń na nogi',
+  filterExitRow: 'Rząd wyjściowy',
+  filters: 'Filtry',
+  allPositions: 'Wszystkie',
+  sortBy: 'Sortuj według',
+  sortByRow: 'Rząd',
+  sortByPriceAsc: 'Cena rosnąco',
+  sortByPriceDesc: 'Cena malejąco',
+  free: 'bezpłatnie',
+  unavailable: 'Niedostępne',
+  viewAsList: 'Widok listy',
+  viewAsMap: 'Widok mapy',
 };
 
 export const LOCALE_ES = {
@@ -178,6 +193,21 @@ export const LOCALE_ES = {
   action: 'Acción',
   skipSeatMap: 'Saltar el mapa de asientos',
   switchDeck: 'Cambiar de suelo',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'Ventana',
+  filterAisle: 'Pasillo',
+  filterExtraLegroom: 'Espacio extra para las piernas',
+  filterExitRow: 'Fila de salida',
+  filters: 'Filtros',
+  allPositions: 'Todas',
+  sortBy: 'Ordenar por',
+  sortByRow: 'Fila',
+  sortByPriceAsc: 'Precio ascendente',
+  sortByPriceDesc: 'Precio descendente',
+  free: 'gratis',
+  unavailable: 'No disponible',
+  viewAsList: 'Ver como lista',
+  viewAsMap: 'Ver como mapa',
 };
 
 export const LOCALE_DE = {
@@ -269,6 +299,21 @@ export const LOCALE_DE = {
   action: 'Aktion',
   skipSeatMap: 'Sitzplan überspringen',
   switchDeck: 'Deck wechseln',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'Fenster',
+  filterAisle: 'Gang',
+  filterExtraLegroom: 'Mehr Beinfreiheit',
+  filterExitRow: 'Ausstiegsreihe',
+  filters: 'Filter',
+  allPositions: 'Alle',
+  sortBy: 'Sortieren nach',
+  sortByRow: 'Reihe',
+  sortByPriceAsc: 'Preis aufsteigend',
+  sortByPriceDesc: 'Preis absteigend',
+  free: 'kostenlos',
+  unavailable: 'Nicht verfügbar',
+  viewAsList: 'Als Liste anzeigen',
+  viewAsMap: 'Als Karte anzeigen',
 };
 
 export const LOCALE_EN = {
@@ -360,6 +405,21 @@ export const LOCALE_EN = {
   action: 'Action',
   skipSeatMap: 'Skip seat map',
   switchDeck: 'Switch deck',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'Window',
+  filterAisle: 'Aisle',
+  filterExtraLegroom: 'Extra legroom',
+  filterExitRow: 'Exit row',
+  filters: 'Filters',
+  allPositions: 'All',
+  sortBy: 'Sort by',
+  sortByRow: 'Row',
+  sortByPriceAsc: 'Price ascending',
+  sortByPriceDesc: 'Price descending',
+  free: 'free',
+  unavailable: 'Unavailable',
+  viewAsList: 'View as list',
+  viewAsMap: 'View as map',
 };
 
 export const LOCALE_CN = {
@@ -451,6 +511,21 @@ export const LOCALE_CN = {
   action: '操作',
   skipSeatMap: '跳过座位图',
   switchDeck: '切换甲板',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: '靠窗',
+  filterAisle: '靠过道',
+  filterExtraLegroom: '腿部空间较大',
+  filterExitRow: '出口行',
+  filters: '筛选',
+  allPositions: '全部',
+  sortBy: '排序方式',
+  sortByRow: '排',
+  sortByPriceAsc: '价格从低到高',
+  sortByPriceDesc: '价格从高到低',
+  free: '免费',
+  unavailable: '不可用',
+  viewAsList: '以列表查看',
+  viewAsMap: '以地图查看',
 };
 
 export const LOCALE_RU = {
@@ -542,6 +617,21 @@ export const LOCALE_RU = {
   action: 'Действие',
   skipSeatMap: 'Пропустить схему мест',
   switchDeck: 'Переключить палубу',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'У окна',
+  filterAisle: 'У прохода',
+  filterExtraLegroom: 'Дополнительное пространство для ног',
+  filterExitRow: 'Ряд у выхода',
+  filters: 'Фильтры',
+  allPositions: 'Все',
+  sortBy: 'Сортировать по',
+  sortByRow: 'Ряду',
+  sortByPriceAsc: 'Цене по возрастанию',
+  sortByPriceDesc: 'Цене по убыванию',
+  free: 'бесплатно',
+  unavailable: 'Недоступно',
+  viewAsList: 'Показать списком',
+  viewAsMap: 'Показать картой',
 };
 
 export const LOCALE_AR = {
@@ -633,6 +723,21 @@ export const LOCALE_AR = {
   action: 'إجراء',
   skipSeatMap: 'تخطي خريطة المقاعد',
   switchDeck: 'تبديل سطح السفينة',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'نافذة',
+  filterAisle: 'ممر',
+  filterExtraLegroom: 'مساحة إضافية للساقين',
+  filterExitRow: 'صف الخروج',
+  filters: 'عوامل التصفية',
+  allPositions: 'الكل',
+  sortBy: 'الترتيب حسب',
+  sortByRow: 'الصف',
+  sortByPriceAsc: 'السعر تصاعديًا',
+  sortByPriceDesc: 'السعر تنازليًا',
+  free: 'مجانًا',
+  unavailable: 'غير متاح',
+  viewAsList: 'عرض كقائمة',
+  viewAsMap: 'عرض كخريطة',
 };
 
 export const LOCALE_CS = {
@@ -724,6 +829,21 @@ export const LOCALE_CS = {
   action: 'Akce',
   skipSeatMap: 'Přeskočit plánek sedadel',
   switchDeck: 'Přepnout palubu',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'U okna',
+  filterAisle: 'U uličky',
+  filterExtraLegroom: 'Více místa na nohy',
+  filterExitRow: 'Řada u východu',
+  filters: 'Filtry',
+  allPositions: 'Vše',
+  sortBy: 'Řadit podle',
+  sortByRow: 'Řady',
+  sortByPriceAsc: 'Ceny vzestupně',
+  sortByPriceDesc: 'Ceny sestupně',
+  free: 'zdarma',
+  unavailable: 'Nedostupné',
+  viewAsList: 'Zobrazit jako seznam',
+  viewAsMap: 'Zobrazit jako mapu',
 };
 
 export const LOCALE_FR = {
@@ -815,6 +935,21 @@ export const LOCALE_FR = {
   action: 'Action',
   skipSeatMap: 'Passer le plan des sièges',
   switchDeck: 'Changer de pont',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'Hublot',
+  filterAisle: 'Couloir',
+  filterExtraLegroom: 'Espace supplémentaire pour les jambes',
+  filterExitRow: 'Rangée de sortie',
+  filters: 'Filtres',
+  allPositions: 'Tous',
+  sortBy: 'Trier par',
+  sortByRow: 'Rangée',
+  sortByPriceAsc: 'Prix croissant',
+  sortByPriceDesc: 'Prix décroissant',
+  free: 'gratuit',
+  unavailable: 'Indisponible',
+  viewAsList: 'Afficher en liste',
+  viewAsMap: 'Afficher sur la carte',
 };
 
 export const LOCALE_PT = {
@@ -906,6 +1041,21 @@ export const LOCALE_PT = {
   action: 'Ação',
   skipSeatMap: 'Saltar o mapa de lugares',
   switchDeck: 'Mudar de convés',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'Janela',
+  filterAisle: 'Corredor',
+  filterExtraLegroom: 'Espaço extra para as pernas',
+  filterExitRow: 'Fila de saída',
+  filters: 'Filtros',
+  allPositions: 'Todos',
+  sortBy: 'Ordenar por',
+  sortByRow: 'Fila',
+  sortByPriceAsc: 'Preço crescente',
+  sortByPriceDesc: 'Preço decrescente',
+  free: 'grátis',
+  unavailable: 'Indisponível',
+  viewAsList: 'Ver como lista',
+  viewAsMap: 'Ver como mapa',
 };
 
 export const LOCALE_IT = {
@@ -997,6 +1147,21 @@ export const LOCALE_IT = {
   action: 'Azione',
   skipSeatMap: 'Salta la mappa dei posti',
   switchDeck: 'Cambia ponte',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'Finestrino',
+  filterAisle: 'Corridoio',
+  filterExtraLegroom: 'Spazio extra per le gambe',
+  filterExitRow: 'Fila di uscita',
+  filters: 'Filtri',
+  allPositions: 'Tutti',
+  sortBy: 'Ordina per',
+  sortByRow: 'Fila',
+  sortByPriceAsc: 'Prezzo crescente',
+  sortByPriceDesc: 'Prezzo decrescente',
+  free: 'gratuito',
+  unavailable: 'Non disponibile',
+  viewAsList: 'Vedi come elenco',
+  viewAsMap: 'Vedi come mappa',
 };
 
 export const LOCALE_UK = {
@@ -1088,6 +1253,21 @@ export const LOCALE_UK = {
   action: 'Дія',
   skipSeatMap: 'Пропустити схему місць',
   switchDeck: 'Перемкнути палубу',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'Біля вікна',
+  filterAisle: 'Біля проходу',
+  filterExtraLegroom: 'Додатковий простір для ніг',
+  filterExitRow: 'Ряд біля виходу',
+  filters: 'Фільтри',
+  allPositions: 'Усі',
+  sortBy: 'Сортувати за',
+  sortByRow: 'Рядом',
+  sortByPriceAsc: 'Ціною за зростанням',
+  sortByPriceDesc: 'Ціною за спаданням',
+  free: 'безкоштовно',
+  unavailable: 'Недоступно',
+  viewAsList: 'Показати списком',
+  viewAsMap: 'Показати картою',
 };
 
 export const LOCALE_JA = {
@@ -1179,6 +1359,21 @@ export const LOCALE_JA = {
   action: '操作',
   skipSeatMap: '座席マップをスキップ',
   switchDeck: 'デッキを切り替え',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: '窓側',
+  filterAisle: '通路側',
+  filterExtraLegroom: 'レッグルーム拡大',
+  filterExitRow: '非常口の列',
+  filters: 'フィルター',
+  allPositions: 'すべて',
+  sortBy: '並び替え',
+  sortByRow: '列',
+  sortByPriceAsc: '価格が安い順',
+  sortByPriceDesc: '価格が高い順',
+  free: '無料',
+  unavailable: '利用不可',
+  viewAsList: 'リスト表示',
+  viewAsMap: 'マップ表示',
 };
 
 export const LOCALE_KO = {
@@ -1270,6 +1465,21 @@ export const LOCALE_KO = {
   action: '작업',
   skipSeatMap: '좌석 맵 건너뛰기',
   switchDeck: '데크 전환',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: '창가',
+  filterAisle: '통로',
+  filterExtraLegroom: '다리 공간 추가',
+  filterExitRow: '비상구 열',
+  filters: '필터',
+  allPositions: '전체',
+  sortBy: '정렬 기준',
+  sortByRow: '열',
+  sortByPriceAsc: '가격 낮은순',
+  sortByPriceDesc: '가격 높은순',
+  free: '무료',
+  unavailable: '이용 불가',
+  viewAsList: '목록으로 보기',
+  viewAsMap: '지도로 보기',
 };
 
 export const LOCALE_TR = {
@@ -1361,6 +1571,21 @@ export const LOCALE_TR = {
   action: 'İşlem',
   skipSeatMap: 'Koltuk haritasını atla',
   switchDeck: 'Güverte değiştir',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'Pencere kenarı',
+  filterAisle: 'Koridor kenarı',
+  filterExtraLegroom: 'Ekstra diz mesafesi',
+  filterExitRow: 'Çıkış sırası',
+  filters: 'Filtreler',
+  allPositions: 'Tümü',
+  sortBy: 'Sıralama ölçütü',
+  sortByRow: 'Sıra',
+  sortByPriceAsc: 'Artan fiyat',
+  sortByPriceDesc: 'Azalan fiyat',
+  free: 'ücretsiz',
+  unavailable: 'Uygun değil',
+  viewAsList: 'Liste olarak görüntüle',
+  viewAsMap: 'Harita olarak görüntüle',
 };
 
 export const LOCALE_VI = {
@@ -1452,6 +1677,21 @@ export const LOCALE_VI = {
   action: 'Hành động',
   skipSeatMap: 'Bỏ qua sơ đồ ghế',
   switchDeck: 'Chuyển tầng',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'Cạnh cửa sổ',
+  filterAisle: 'Cạnh lối đi',
+  filterExtraLegroom: 'Thêm khoảng để chân',
+  filterExitRow: 'Hàng ghế lối thoát hiểm',
+  filters: 'Bộ lọc',
+  allPositions: 'Tất cả',
+  sortBy: 'Sắp xếp theo',
+  sortByRow: 'Hàng',
+  sortByPriceAsc: 'Giá tăng dần',
+  sortByPriceDesc: 'Giá giảm dần',
+  free: 'miễn phí',
+  unavailable: 'Không khả dụng',
+  viewAsList: 'Xem dạng danh sách',
+  viewAsMap: 'Xem dạng bản đồ',
 };
 
 export const LOCALE_PT_BR = {
@@ -1543,6 +1783,21 @@ export const LOCALE_PT_BR = {
   action: 'Ação',
   skipSeatMap: 'Pular o mapa de assentos',
   switchDeck: 'Trocar de andar',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'Janela',
+  filterAisle: 'Corredor',
+  filterExtraLegroom: 'Espaço extra para as pernas',
+  filterExitRow: 'Fileira de saída',
+  filters: 'Filtros',
+  allPositions: 'Todos',
+  sortBy: 'Ordenar por',
+  sortByRow: 'Fileira',
+  sortByPriceAsc: 'Preço crescente',
+  sortByPriceDesc: 'Preço decrescente',
+  free: 'grátis',
+  unavailable: 'Indisponível',
+  viewAsList: 'Ver como lista',
+  viewAsMap: 'Ver como mapa',
 };
 
 export const LOCALE_NL = {
@@ -1634,6 +1889,21 @@ export const LOCALE_NL = {
   action: 'Actie',
   skipSeatMap: 'Stoelplan overslaan',
   switchDeck: 'Dek wisselen',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'Raam',
+  filterAisle: 'Gangpad',
+  filterExtraLegroom: 'Extra beenruimte',
+  filterExitRow: 'Nooduitgangsrij',
+  filters: 'Filters',
+  allPositions: 'Alle',
+  sortBy: 'Sorteren op',
+  sortByRow: 'Rij',
+  sortByPriceAsc: 'Prijs oplopend',
+  sortByPriceDesc: 'Prijs aflopend',
+  free: 'gratis',
+  unavailable: 'Niet beschikbaar',
+  viewAsList: 'Weergeven als lijst',
+  viewAsMap: 'Weergeven als kaart',
 };
 
 export const LOCALE_FR_CA = {
@@ -1725,4 +1995,19 @@ export const LOCALE_FR_CA = {
   action: 'Action',
   skipSeatMap: 'Passer le plan des sièges',
   switchDeck: 'Changer de pont',
+  // Wave F: list-view filters, sort, and view-toggle labels
+  filterWindow: 'Hublot',
+  filterAisle: 'Couloir',
+  filterExtraLegroom: 'Espace supplémentaire pour les jambes',
+  filterExitRow: 'Rangée de sortie',
+  filters: 'Filtres',
+  allPositions: 'Tous',
+  sortBy: 'Trier par',
+  sortByRow: 'Rangée',
+  sortByPriceAsc: 'Prix croissant',
+  sortByPriceDesc: 'Prix décroissant',
+  free: 'gratuit',
+  unavailable: 'Indisponible',
+  viewAsList: 'Afficher en liste',
+  viewAsMap: 'Afficher sur la carte',
 };

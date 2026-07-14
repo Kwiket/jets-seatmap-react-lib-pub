@@ -9,6 +9,7 @@ export * from './NotInit';
 export * from './PlaneBody';
 export * from './Row';
 export * from './Seat';
+export * from './SeatList';
 export * from './SeatMap';
 export * from './Tail';
 export * from './TooltipGlobal';

@@ -1,0 +1,132 @@
+.jets-seat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.jets-seat-list__filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 0;
+}
+
+.jets-seat-list__filter,
+.jets-seat-list__sort,
+.jets-seat-list__select {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.jets-seat-list__sort select,
+.jets-seat-list__select select {
+  font-size: 13px;
+  padding: 4px 6px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+/* WCAG 2.4.7 Focus Visible for the filter controls above the table. */
+.jets-seat-list__sort select:focus-visible,
+.jets-seat-list__select select:focus-visible,
+.jets-seat-list__filter input:focus-visible {
+  outline: 2px solid #0277bd;
+  outline-offset: 2px;
+}
+
+/* Horizontal-scroll guard: keeps the table inside the seat-map box instead of
+   bleeding under adjacent page content when the available width is tight. */
+.jets-seat-list__table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.jets-seat-list__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+/* Row number is short — never wrap it onto two lines. */
+.jets-seat-list__table .jets-seat-list__col-row {
+  white-space: nowrap;
+}
+
+.jets-seat-list__table th,
+.jets-seat-list__table td {
+  border-bottom: 1px solid #eeeeee;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.jets-seat-list__table thead th {
+  background: #fafafa;
+  font-weight: 600;
+  color: #333333;
+}
+
+.jets-seat-list__table tbody tr:hover {
+  background: #f7fbff;
+}
+
+.jets-seat-list__action {
+  font: inherit;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #0277bd;
+  color: #ffffff;
+}
+
+/* WCAG 2.4.7 Focus Visible — keyboard focus ring (offset so it reads even on
+   the filled blue Select button). Mirrors the grid seat focus ring. */
+.jets-seat-list__action:focus-visible {
+  outline: 2px solid #0277bd;
+  outline-offset: 2px;
+}
+
+.jets-seat-list__action--unselect {
+  background: #ffffff;
+  color: #0277bd;
+  border-color: #0277bd;
+}
+
+/* Unavailable seats: a muted, non-actionable control that carries the
+   status text instead of a separate Status column. */
+.jets-seat-list__action--unavailable {
+  background: #f0f0f0;
+  color: #757575;
+  border-color: #e0e0e0;
+  cursor: not-allowed;
+  white-space: nowrap;
+}
+
+/* Keep the available/paid Select button from breaking the price onto two
+   lines (e.g. "EUR 33"). */
+.jets-seat-list__action--select {
+  white-space: nowrap;
+}
+
+.jets-seat-list__action[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* The unavailable button is intentionally muted already — don't double-dim it. */
+.jets-seat-list__action--unavailable[disabled] {
+  opacity: 1;
+}

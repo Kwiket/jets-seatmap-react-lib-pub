@@ -80,6 +80,11 @@ import './index.css';
 import { JetsPlaneBody } from '../PlaneBody';
 import { JetsDeckSelector } from '../DeckSelector';
 import { JetsTooltipGlobal } from '../TooltipGlobal';
+import { JetsSeatList } from '../SeatList';
+
+// wcagFlags.alternativeView: media query used by the 'auto' mode to switch
+// the default render to the list view on narrow viewports.
+const NARROW_VIEWPORT_QUERY = '(max-width: 480px)';
 
 const JETS_SEATMAP_DEFAULT_CONFIG = {
   width: DEFAULT_SEAT_MAP_WIDTH,
@@ -258,12 +263,61 @@ export const JetsSeatMap = ({
   const [bulks, setBulks] = useState([]);
   const [planeFeatures, setPlaneFeatures] = useState(null);
 
+  // wcagFlags.alternativeView: user toggle override. `null` means "follow
+  // config / viewport". Set when the user clicks the toggle button so a
+  // viewport resize doesn't fight the user's intent.
+  const [viewOverride, setViewOverride] = useState(null);
+  // Tracks `matchMedia('(max-width: 480px)').matches` for 'auto' mode.
+  const [viewportNarrow, setViewportNarrow] = useState(false);
+
   const hasReceivedFirstParams = useRef(false);
   const seatMapRef = useRef();
   const service = new JetsSeatMapService(configuration);
 
   const shouldShowOnlyOneDeck = params?.singleDeckMode && content.length > 1;
   const shouldShowBuiltInDeckSelector = params?.builtInDeckSelector && shouldShowOnlyOneDeck;
+
+  // ─── Alternative-view (list vs grid) ────────────────────────────────────
+  //
+  // Resolved render mode. Reads `wcagFlags.alternativeView` — `viewOverride`
+  // (set by the toggle button) wins over it. `'auto'` follows the live
+  // `viewportNarrow` flag (`matchMedia('(max-width: 480px)')`).
+  const effectiveView = viewOverride
+    ? viewOverride
+    : wcagFlags.alternativeView === 'list'
+    ? 'list'
+    : wcagFlags.alternativeView === 'auto'
+    ? viewportNarrow
+      ? 'list'
+      : 'grid'
+    : 'grid';
+
+  // The toggle button only renders when the host explicitly opted into
+  // 'auto' — pinning 'grid' / 'list' (or leaving the config alone, in which
+  // case getWcagFlags returns the 'grid' default) means the host picked a
+  // mode and the toggle stays hidden entirely (not just hidden via CSS).
+  const showViewToggle = wcagFlags.alternativeView === 'auto';
+
+  const viewToggleLabel =
+    effectiveView === 'list'
+      ? LOCALES_MAP[configuration.lang]?.['viewAsMap'] || 'View as map'
+      : LOCALES_MAP[configuration.lang]?.['viewAsList'] || 'View as list';
+
+  const toggleView = () => {
+    setViewOverride(effectiveView === 'list' ? 'grid' : 'list');
+  };
+
+  useEffect(() => {
+    if (wcagFlags.alternativeView !== 'auto') return;
+    if (typeof window === 'undefined' || !window.matchMedia) return;
+
+    const mql = window.matchMedia(NARROW_VIEWPORT_QUERY);
+    setViewportNarrow(mql.matches);
+
+    const listener = e => setViewportNarrow(e.matches);
+    mql.addEventListener('change', listener);
+    return () => mql.removeEventListener('change', listener);
+  }, [wcagFlags.alternativeView]);
 
   const ResolvedTooltip = componentOverrides?.JetsTooltip ?? JetsTooltipGlobal;
 
@@ -823,8 +877,18 @@ export const JetsSeatMap = ({
           ref={seatMapRef}
           className={seatMapClassName}
           style={{
-            width: configuration.horizontal ? params?.scaledTotalDecksHeight : configuration.width,
-            height: configuration.horizontal ? configuration.width : params?.scaledTotalDecksHeight,
+            width:
+              effectiveView === 'list'
+                ? null
+                : configuration.horizontal
+                ? params?.scaledTotalDecksHeight
+                : configuration.width,
+            height:
+              effectiveView === 'list'
+                ? null
+                : configuration.horizontal
+                ? configuration.width
+                : params?.scaledTotalDecksHeight,
             fontFamily: colorTheme.fontFamily,
             background: colorTheme.seatMapBackgroundColor,
           }}
@@ -835,17 +899,28 @@ export const JetsSeatMap = ({
           {wcagFlags?.liveAnnouncer && <LiveRegion />}
           {activeTooltip && <ResolvedTooltip data={activeTooltip} />}
           {shouldShowBuiltInDeckSelector && <JetsDeckSelector direction={!!activeDeck}></JetsDeckSelector>}
-          <div style={configuration.scaleType === SCALE_TYPES.SCALE ? scaleWrapStyle : zoomWrapStyle}>
-            <JetsPlaneBody
-              showOneDeck={shouldShowOnlyOneDeck}
-              activeDeck={activeDeck}
-              content={content}
-              exits={exits}
-              bulks={bulks}
-              isSeatMapInited={isSeatMapInited}
-              config={configuration}
-            />
-          </div>
+          {/* wcagFlags.alternativeView: toggle button renders only when the
+              config is 'auto' — pinned 'grid'/'list' modes never show it. */}
+          {content?.length > 0 && showViewToggle && (
+            <button type="button" className="jets-seat-map__view-toggle" onClick={toggleView}>
+              {viewToggleLabel}
+            </button>
+          )}
+          {content?.length > 0 && effectiveView === 'list' ? (
+            <JetsSeatList content={content} lang={configuration.lang} />
+          ) : (
+            <div style={configuration.scaleType === SCALE_TYPES.SCALE ? scaleWrapStyle : zoomWrapStyle}>
+              <JetsPlaneBody
+                showOneDeck={shouldShowOnlyOneDeck}
+                activeDeck={activeDeck}
+                content={content}
+                exits={exits}
+                bulks={bulks}
+                isSeatMapInited={isSeatMapInited}
+                config={configuration}
+              />
+            </div>
+          )}
         </div>
         {landmarksOn && <span id={skipTargetId} tabIndex={-1}></span>}
       </RegionWrapper>

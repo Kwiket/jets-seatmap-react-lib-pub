@@ -72,3 +72,22 @@
   border-radius: 3px;
   z-index: 2000;
 }
+
+/* wcagFlags.alternativeView: 'auto' mode toggle button, switches between the
+   grid and the semantic list view. Only rendered at all in 'auto' mode. */
+.jets-seat-map__view-toggle {
+  font: inherit;
+  font-size: 13px;
+  padding: 6px 12px;
+  margin: 8px 0;
+  border: 1px solid #0277bd;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #ffffff;
+  color: #0277bd;
+}
+
+.jets-seat-map__view-toggle:focus-visible {
+  outline: 2px solid #0277bd;
+  outline-offset: 2px;
+}
