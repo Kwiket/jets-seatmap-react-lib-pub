@@ -11,7 +11,7 @@ import { JetsWing } from '../Wing';
 import './index.css';
 
 export const JetsPlaneBody = ({ activeDeck, content, exits, bulks, isSeatMapInited, config, showOneDeck }) => {
-  const { params, colorTheme, componentOverrides } = useContext(JetsContext);
+  const { params, colorTheme, componentOverrides, wcagFlags } = useContext(JetsContext);
   const elementRefs = useRef(new Array());
   const ResolvedJetsNotInit = componentOverrides?.JetsNotInit ?? JetsNotInit;
 
@@ -84,7 +84,7 @@ export const JetsPlaneBody = ({ activeDeck, content, exits, bulks, isSeatMapInit
               <React.Fragment key={deck.uniqId + index}>
                 <div
                   data-testid="jets-plane-body-deck"
-                  data-deck-index={originalDeckIndex}
+                  {...(wcagFlags?.gridSemantics ? { 'data-deck-index': originalDeckIndex } : {})}
                   ref={element => {
                     elementRefs.current[index] = element;
                   }}

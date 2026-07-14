@@ -86,6 +86,9 @@ export const JetsSeat = ({ data, colIndex, rowIndex, rowSeats }) => {
   // Roving tabindex: when keyboard nav is on, every cell starts at -1 and the
   // SeatMap roving effect promotes exactly one to 0. When grid semantics are on
   // but keyboard nav is off, a real seat stays an individual tab stop.
+  // INVARIANT: keep this a constant -1 when keyboardNavigation is on — SeatMap applies the
+  // focused cell's tabindex=0 imperatively (see applyRovingTabindex). Making this depend on
+  // focus state would let React clobber the imperative value.
   const rovingTabIndex = keyboardOn ? -1 : isSeatType ? 0 : -1;
 
   const gridAttrs = gridOn

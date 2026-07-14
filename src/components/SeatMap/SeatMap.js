@@ -556,6 +556,8 @@ export const JetsSeatMap = ({
     height: params?.scaledTotalDecksHeight,
   };
 
+  // Imperatively overrides the seats' rendered tabIndex; relies on JetsSeat's rovingTabIndex
+  // staying a constant -1 while keyboard nav is on, otherwise React would clobber this on re-render.
   const applyRovingTabindex = pos => {
     const container = seatMapRef.current;
     if (!container) return;
