@@ -192,3 +192,10 @@
 .horizontal .jets-tooltip--measurement svg {
   height: 30px;
 }
+
+/* WCAG: clear keyboard focus ring on the tooltip action buttons so users can
+   see which of Cancel / Select is focused while roving with the arrow keys. */
+.jets-tooltip--btn:focus-visible {
+  outline: 3px solid #d81b60;
+  outline-offset: 2px;
+}

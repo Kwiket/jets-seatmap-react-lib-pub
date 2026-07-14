@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useLayoutEffect, useState } from 'react';
+import React, { useContext, useRef, useLayoutEffect, useEffect, useState } from 'react';
 import {
   DEFAULT_SEAT_PASSENGER_TYPES,
   JetsContext,
@@ -13,8 +13,16 @@ const PASSENGER_KEY = 'passenger';
 const RESTRICTION_KEY = 'seatRestrictions';
 
 export const JetsTooltipGlobal = ({ data }) => {
-  const { componentOverrides, isSeatSelectDisabled, onTooltipClose, onSeatSelect, onSeatUnselect, colorTheme, params } =
-    useContext(JetsContext);
+  const {
+    componentOverrides,
+    isSeatSelectDisabled,
+    onTooltipClose,
+    onSeatSelect,
+    onSeatUnselect,
+    colorTheme,
+    params,
+    wcagFlags,
+  } = useContext(JetsContext);
 
   const { isSafari } = useEnvironmentInfo();
 
@@ -138,6 +146,57 @@ export const JetsTooltipGlobal = ({ data }) => {
   };
 
   const shouldHideButtons = params?.tooltipOnHover && !params?.isTouchDevice;
+
+  // WCAG dialog behaviour (gated on wcag.tooltipDialog). When a click/Enter
+  // tooltip opens: mark it a dialog, auto-focus the primary action, and let
+  // Left/Right (and Home/End) rove between its buttons — stopPropagation keeps
+  // the grid's arrow navigation from moving seats while the dialog is open.
+  // Escape is intentionally allowed to bubble to the seat map, which closes the
+  // tooltip and returns focus to the trigger seat. Hover tooltips (no buttons)
+  // are excluded.
+  const dialogOn = !!wcagFlags?.tooltipDialog && !shouldHideButtons;
+  useEffect(() => {
+    if (!dialogOn) return;
+    const root = elementRef.current;
+    if (!root) return;
+
+    root.setAttribute('role', 'dialog');
+    root.setAttribute('aria-modal', 'false');
+    const title = root.querySelector('.jets-tooltip--header-title')?.textContent?.trim();
+    if (title) root.setAttribute('aria-label', title);
+
+    const enabledButtons = () =>
+      Array.from(root.querySelectorAll('.jets-tooltip--btns-block button')).filter(btn => !btn.disabled);
+
+    const buttons = enabledButtons();
+    // Primary action is the last button (Select / Unselect); fall back to the
+    // first enabled one (Cancel) when Select is disabled.
+    const primary = buttons[buttons.length - 1] || buttons[0];
+    primary?.focus?.({ preventScroll: true });
+
+    const onKeyDown = event => {
+      const items = enabledButtons();
+      if (items.length === 0) return;
+      const current = items.indexOf(document.activeElement);
+      let nextIndex = null;
+      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+        nextIndex = (Math.max(current, 0) + 1) % items.length;
+      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+        nextIndex = (Math.max(current, 0) - 1 + items.length) % items.length;
+      } else if (event.key === 'Home') {
+        nextIndex = 0;
+      } else if (event.key === 'End') {
+        nextIndex = items.length - 1;
+      }
+      if (nextIndex === null) return;
+      event.preventDefault();
+      event.stopPropagation();
+      items[nextIndex].focus({ preventScroll: true });
+    };
+
+    root.addEventListener('keydown', onKeyDown);
+    return () => root.removeEventListener('keydown', onKeyDown);
+  }, [dialogOn, data]);
 
   let passengerLabel = '';
   if (passenger) {
