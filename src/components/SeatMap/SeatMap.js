@@ -67,6 +67,7 @@ import {
   THEME_CABIN_TITLES_LABEL_COLOR,
   SEAT_MAP_WIDTH_TO_WINGS_WIDTH_RATIO,
   useEnvironmentInfo,
+  useLiveAnnouncer,
   getWcagFlags,
   classifyKey,
   remapForOrientation,
@@ -195,6 +196,7 @@ export const JetsSeatMap = ({
   componentOverrides,
 }) => {
   const { isFirefox } = useEnvironmentInfo();
+  const { announce, LiveRegion } = useLiveAnnouncer();
 
   const colorTheme = JetsDataHelper.mergeColorThemeWithConstraints(
     JETS_SEATMAP_DEFAULT_CONFIG.colorTheme,
@@ -538,7 +540,53 @@ export const JetsSeatMap = ({
     setTimeout(() => focusCell(focusedCellRef.current), 0);
   };
 
+  // ─── A11y live announcements ────────────────────────────────────────────
+  //
+  // All announcements use `polite` politeness — the seat-map is not an
+  // emergency UI, so assertive would over-interrupt the screen reader user.
+  // Strings are pulled from LOCALES_MAP with an English fallback so missing
+  // keys never silently swallow announcements. Gated strictly behind
+  // `wcagFlags.liveAnnouncer` so there is zero behavior/DOM change when the
+  // flag is off (see `LiveRegion` render gate below).
+
+  const a11yLocale = () => LOCALES_MAP[configuration.lang] || LOCALES_MAP['EN'] || {};
+
+  const announceIfEnabled = message => {
+    if (!wcagFlags?.liveAnnouncer) return;
+    announce(message);
+  };
+
+  const passengerAnnounceLabel = passenger => passenger?.passengerLabel?.trim() || passenger?.abbr?.trim() || '';
+
+  const announceSeatSelected = (seat, passenger) => {
+    const locale = a11yLocale();
+    const seatWord = locale['seat'] || 'Seat';
+    const selectedFor = locale['seatSelectedFor'] || 'selected for';
+    const number = seat?.number ?? '';
+    const passengerLabel = passengerAnnounceLabel(passenger);
+    const currency = seat?.currency ?? '';
+    const price = seat?.price;
+    const pricePart = price != null ? `, ${currency}${price}` : '';
+    announceIfEnabled(`${seatWord} ${number} ${selectedFor} ${passengerLabel}${pricePart}`.trim());
+  };
+
+  const announceSeatCleared = seat => {
+    const locale = a11yLocale();
+    const seatWord = locale['seat'] || 'Seat';
+    const clearedWord = locale['seatCleared'] || 'cleared';
+    const number = seat?.number ?? '';
+    announceIfEnabled(`${seatWord} ${number} ${clearedWord}`.trim());
+  };
+
+  const announceMovedToSeat = seat => {
+    const locale = a11yLocale();
+    const movedTo = locale['movedToSeat'] || locale['moveToSeat'] || 'Moved to seat';
+    const number = seat?.number ?? '';
+    announceIfEnabled(`${movedTo} ${number}`.trim());
+  };
+
   const onSeatSelect = seat => {
+    const nextPassenger = service.getNextPassenger(passengersList);
     const { data, passengers: newPassengers } = service.selectSeatHandler(content, seat, passengersList);
 
     setContent(data);
@@ -546,6 +594,7 @@ export const JetsSeatMap = ({
     setActiveTooltip(null);
 
     onSeatSelected(newPassengers);
+    announceSeatSelected(seat, nextPassenger);
     returnFocusToTriggerSeat();
   };
 
@@ -557,6 +606,7 @@ export const JetsSeatMap = ({
     setActiveTooltip(null);
 
     onSeatUnselected(newPassengers);
+    announceSeatCleared(seat);
     returnFocusToTriggerSeat();
   };
 
@@ -705,6 +755,7 @@ export const JetsSeatMap = ({
     getSelectDisabledReason,
     switchDeck,
     resetSeatJumpTo,
+    announceMovedToSeat,
     params,
     config: configuration,
     wcagFlags,
@@ -729,6 +780,7 @@ export const JetsSeatMap = ({
         onKeyDown={onGridKeydown}
         onFocus={onGridFocusin}
       >
+        {wcagFlags?.liveAnnouncer && <LiveRegion />}
         {activeTooltip && <ResolvedTooltip data={activeTooltip} />}
         {shouldShowBuiltInDeckSelector && <JetsDeckSelector direction={!!activeDeck}></JetsDeckSelector>}
         <div style={configuration.scaleType === SCALE_TYPES.SCALE ? scaleWrapStyle : zoomWrapStyle}>

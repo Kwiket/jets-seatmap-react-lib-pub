@@ -23,6 +23,7 @@ export const JetsSeat = ({ data, colIndex, rowIndex, rowSeats }) => {
     onTooltipClose,
     seatLabelJumpTo,
     resetSeatJumpTo,
+    announceMovedToSeat,
     params,
     config,
     colorTheme,
@@ -200,6 +201,7 @@ export const JetsSeat = ({ data, colIndex, rowIndex, rowSeats }) => {
     $component.current?.scrollIntoView();
 
     showTooltip(data, $component, { nativeEvent: null });
+    announceMovedToSeat?.(data);
     resetSeatJumpTo();
   }, [seatLabelJumpTo]);
 
