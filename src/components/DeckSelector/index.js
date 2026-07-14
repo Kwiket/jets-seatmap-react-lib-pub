@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react';
-import { JetsContext } from '../../common';
+import { JetsContext, LOCALES_MAP, DEFAULT_LANG } from '../../common';
 
 import './index.css';
 
@@ -19,7 +19,7 @@ const buttonSVG = stroke => `
 `;
 
 export const JetsDeckSelector = ({ direction }) => {
-  const { params, colorTheme, switchDeck } = useContext(JetsContext);
+  const { params, config, wcagFlags, colorTheme, switchDeck } = useContext(JetsContext);
   const elementRef = useRef(null);
 
   const { deckSelectorStrokeColor, deckSelectorFillColor, deckSelectorSize } = colorTheme;
@@ -33,8 +33,22 @@ export const JetsDeckSelector = ({ direction }) => {
     right: params?.rightToLeft ? 0 : 'auto',
   };
 
+  // wcagFlags.landmarksAndSkipLink: minimal role=switch semantics for the
+  // common 2-deck toggle case. `direction` already carries the "is a
+  // non-default deck active" signal (SeatMap passes `!!activeDeck`), so it
+  // doubles as the checked state. Full tablist semantics for 3+ decks is out
+  // of scope here and should be a follow-up.
+  const switchOn = !!wcagFlags?.landmarksAndSkipLink;
+  const switchAttrs = switchOn
+    ? {
+        role: 'switch',
+        'aria-checked': !!direction,
+        'aria-label': (LOCALES_MAP[config?.lang] || LOCALES_MAP[DEFAULT_LANG])['switchDeck'] || 'Switch deck',
+      }
+    : {};
+
   return (
-    <div className={`jets-deck-selector`} style={style} ref={elementRef} onClick={e => switchDeck()}>
+    <div className={`jets-deck-selector`} style={style} ref={elementRef} onClick={e => switchDeck()} {...switchAttrs}>
       <span
         aria-hidden="true"
         style={{ display: 'contents' }}

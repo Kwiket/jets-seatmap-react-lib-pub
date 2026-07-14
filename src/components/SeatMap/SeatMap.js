@@ -162,6 +162,11 @@ const JETS_SEATMAP_DEFAULT_CONFIG = {
   },
 };
 
+// Module-level counter so multiple JetsSeatMap instances on the same page
+// (wcagFlags.landmarksAndSkipLink) get distinct ids for the landmark heading
+// and the skip-link's jump target.
+let landmarkIdCounter = 0;
+
 export const JetsSeatMap = ({
   flight,
   availability,
@@ -228,6 +233,17 @@ export const JetsSeatMap = ({
   const [isSelectAvailable, setSelectAvailable] = useState(false);
   const [activeDeck, setActiveDeck] = useState(0);
   const [params, setParams] = useState(null);
+  // wcagFlags.landmarksAndSkipLink: stable ids for the region heading and the
+  // skip-link's jump target, generated once per mounted instance.
+  const landmarkIdsRef = useRef(null);
+  if (landmarkIdsRef.current === null) {
+    landmarkIdCounter += 1;
+    landmarkIdsRef.current = {
+      headingId: `jets-seat-map-heading-${landmarkIdCounter}`,
+      skipTargetId: `jets-seat-map-content-${landmarkIdCounter}`,
+    };
+  }
+  const { headingId, skipTargetId } = landmarkIdsRef.current;
   // Focused cell for roving tabindex + keyboard navigation. Kept in a REF, not
   // state, on purpose: mutating it must NOT trigger a React re-render. A
   // re-render between a seat button's mousedown and mouseup rebuilds the seat
@@ -745,6 +761,18 @@ export const JetsSeatMap = ({
     applyRovingTabindex(next);
   };
 
+  // wcagFlags.landmarksAndSkipLink: jump keyboard focus straight past the
+  // seat-map content to the target span rendered right after it. Native
+  // anchor href jump behavior alone doesn't reliably move focus in every
+  // browser, so we do it explicitly and keep href only as a semantic fallback.
+  const onSkipLinkClick = event => {
+    event.preventDefault();
+    const target = document.getElementById(skipTargetId);
+    if (!target) return;
+    target.focus({ preventScroll: true });
+    target.scrollIntoView?.({ block: 'nearest', behavior: 'auto' });
+  };
+
   const providerValue = {
     onSeatClick,
     showTooltip,
@@ -765,36 +793,62 @@ export const JetsSeatMap = ({
     componentOverrides,
   };
 
+  // wcagFlags.landmarksAndSkipLink: zero DOM change when off — the seat-map
+  // root div renders exactly as it does today, unwrapped. When on, the div is
+  // wrapped in a <section role="region"> landmark (transparent via
+  // display:contents so it never affects the parent's layout of the existing
+  // percentage-sized root), preceded by a visually-hidden heading and a skip
+  // link, and followed by the skip link's jump target.
+  const landmarksOn = !!wcagFlags?.landmarksAndSkipLink;
+  const locale = LOCALES_MAP[configuration.lang] || LOCALES_MAP[DEFAULT_LANG];
+  const RegionWrapper = landmarksOn ? 'section' : React.Fragment;
+  const regionProps = landmarksOn
+    ? { className: 'jets-seat-map-region', role: 'region', 'aria-labelledby': headingId }
+    : {};
+
   return (
     <JetsContext.Provider value={providerValue}>
-      <div
-        ref={seatMapRef}
-        className={seatMapClassName}
-        style={{
-          width: configuration.horizontal ? params?.scaledTotalDecksHeight : configuration.width,
-          height: configuration.horizontal ? configuration.width : params?.scaledTotalDecksHeight,
-          fontFamily: colorTheme.fontFamily,
-          background: colorTheme.seatMapBackgroundColor,
-        }}
-        data-testid="jets-seat-map"
-        onKeyDown={onGridKeydown}
-        onFocus={onGridFocusin}
-      >
-        {wcagFlags?.liveAnnouncer && <LiveRegion />}
-        {activeTooltip && <ResolvedTooltip data={activeTooltip} />}
-        {shouldShowBuiltInDeckSelector && <JetsDeckSelector direction={!!activeDeck}></JetsDeckSelector>}
-        <div style={configuration.scaleType === SCALE_TYPES.SCALE ? scaleWrapStyle : zoomWrapStyle}>
-          <JetsPlaneBody
-            showOneDeck={shouldShowOnlyOneDeck}
-            activeDeck={activeDeck}
-            content={content}
-            exits={exits}
-            bulks={bulks}
-            isSeatMapInited={isSeatMapInited}
-            config={configuration}
-          />
+      <RegionWrapper {...regionProps}>
+        {landmarksOn && (
+          <h2 id={headingId} className="jets-visually-hidden">
+            {locale['gridLabel'] || 'Seat map'}
+          </h2>
+        )}
+        {landmarksOn && (
+          <a href={`#${skipTargetId}`} className="jets-skip-link" onClick={onSkipLinkClick}>
+            {locale['skipSeatMap'] || 'Skip seat map'}
+          </a>
+        )}
+        <div
+          ref={seatMapRef}
+          className={seatMapClassName}
+          style={{
+            width: configuration.horizontal ? params?.scaledTotalDecksHeight : configuration.width,
+            height: configuration.horizontal ? configuration.width : params?.scaledTotalDecksHeight,
+            fontFamily: colorTheme.fontFamily,
+            background: colorTheme.seatMapBackgroundColor,
+          }}
+          data-testid="jets-seat-map"
+          onKeyDown={onGridKeydown}
+          onFocus={onGridFocusin}
+        >
+          {wcagFlags?.liveAnnouncer && <LiveRegion />}
+          {activeTooltip && <ResolvedTooltip data={activeTooltip} />}
+          {shouldShowBuiltInDeckSelector && <JetsDeckSelector direction={!!activeDeck}></JetsDeckSelector>}
+          <div style={configuration.scaleType === SCALE_TYPES.SCALE ? scaleWrapStyle : zoomWrapStyle}>
+            <JetsPlaneBody
+              showOneDeck={shouldShowOnlyOneDeck}
+              activeDeck={activeDeck}
+              content={content}
+              exits={exits}
+              bulks={bulks}
+              isSeatMapInited={isSeatMapInited}
+              config={configuration}
+            />
+          </div>
         </div>
-      </div>
+        {landmarksOn && <span id={skipTargetId} tabIndex={-1}></span>}
+      </RegionWrapper>
     </JetsContext.Provider>
   );
 };

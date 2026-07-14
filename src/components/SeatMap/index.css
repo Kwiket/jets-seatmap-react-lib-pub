@@ -14,3 +14,61 @@
   -webkit-filter: blur(0);
   -webkit-font-smoothing: subpixel-antialiased;
 }
+
+/* wcagFlags.landmarksAndSkipLink: transparent passthrough so the wrapping
+   <section role="region"> never introduces a layout box of its own. The
+   host app sizes .jets-seat-map via width/height:100% of its own container,
+   so an extra block box here could break percentage-height resolution. */
+.jets-seat-map-region {
+  display: contents;
+}
+
+/* Visually-hidden but still exposed to the accessibility tree. Same
+   clip/sr-only pattern the WCAG heading and skip link both rely on. */
+.jets-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link: hidden by the same clip pattern until keyboard-focused, then
+   revealed at a fixed, readable position since the map may sit mid-page. */
+.jets-skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.jets-skip-link:focus,
+.jets-skip-link:focus-visible {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 8px 12px;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 3px;
+  z-index: 2000;
+}

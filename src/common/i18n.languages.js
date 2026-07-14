@@ -85,6 +85,8 @@ export const LOCALE_PL = {
   price: 'Cena',
   status: 'Status',
   action: 'Akcja',
+  skipSeatMap: 'Pomiń mapę miejsc',
+  switchDeck: 'Zmień piętro',
 };
 
 export const LOCALE_ES = {
@@ -174,6 +176,8 @@ export const LOCALE_ES = {
   price: 'Precio',
   status: 'Estado',
   action: 'Acción',
+  skipSeatMap: 'Saltar el mapa de asientos',
+  switchDeck: 'Cambiar de suelo',
 };
 
 export const LOCALE_DE = {
@@ -263,6 +267,8 @@ export const LOCALE_DE = {
   price: 'Preis',
   status: 'Status',
   action: 'Aktion',
+  skipSeatMap: 'Sitzplan überspringen',
+  switchDeck: 'Deck wechseln',
 };
 
 export const LOCALE_EN = {
@@ -352,6 +358,8 @@ export const LOCALE_EN = {
   price: 'Price',
   status: 'Status',
   action: 'Action',
+  skipSeatMap: 'Skip seat map',
+  switchDeck: 'Switch deck',
 };
 
 export const LOCALE_CN = {
@@ -441,6 +449,8 @@ export const LOCALE_CN = {
   price: '价格',
   status: '状态',
   action: '操作',
+  skipSeatMap: '跳过座位图',
+  switchDeck: '切换甲板',
 };
 
 export const LOCALE_RU = {
@@ -530,6 +540,8 @@ export const LOCALE_RU = {
   price: 'Цена',
   status: 'Статус',
   action: 'Действие',
+  skipSeatMap: 'Пропустить схему мест',
+  switchDeck: 'Переключить палубу',
 };
 
 export const LOCALE_AR = {
@@ -619,6 +631,8 @@ export const LOCALE_AR = {
   price: 'السعر',
   status: 'الحالة',
   action: 'إجراء',
+  skipSeatMap: 'تخطي خريطة المقاعد',
+  switchDeck: 'تبديل سطح السفينة',
 };
 
 export const LOCALE_CS = {
@@ -708,6 +722,8 @@ export const LOCALE_CS = {
   price: 'Cena',
   status: 'Stav',
   action: 'Akce',
+  skipSeatMap: 'Přeskočit plánek sedadel',
+  switchDeck: 'Přepnout palubu',
 };
 
 export const LOCALE_FR = {
@@ -797,6 +813,8 @@ export const LOCALE_FR = {
   price: 'Prix',
   status: 'Statut',
   action: 'Action',
+  skipSeatMap: 'Passer le plan des sièges',
+  switchDeck: 'Changer de pont',
 };
 
 export const LOCALE_PT = {
@@ -886,6 +904,8 @@ export const LOCALE_PT = {
   price: 'Preço',
   status: 'Estado',
   action: 'Ação',
+  skipSeatMap: 'Saltar o mapa de lugares',
+  switchDeck: 'Mudar de convés',
 };
 
 export const LOCALE_IT = {
@@ -975,6 +995,8 @@ export const LOCALE_IT = {
   price: 'Prezzo',
   status: 'Stato',
   action: 'Azione',
+  skipSeatMap: 'Salta la mappa dei posti',
+  switchDeck: 'Cambia ponte',
 };
 
 export const LOCALE_UK = {
@@ -1064,6 +1086,8 @@ export const LOCALE_UK = {
   price: 'Ціна',
   status: 'Статус',
   action: 'Дія',
+  skipSeatMap: 'Пропустити схему місць',
+  switchDeck: 'Перемкнути палубу',
 };
 
 export const LOCALE_JA = {
@@ -1153,6 +1177,8 @@ export const LOCALE_JA = {
   price: '価格',
   status: '状態',
   action: '操作',
+  skipSeatMap: '座席マップをスキップ',
+  switchDeck: 'デッキを切り替え',
 };
 
 export const LOCALE_KO = {
@@ -1242,6 +1268,8 @@ export const LOCALE_KO = {
   price: '가격',
   status: '상태',
   action: '작업',
+  skipSeatMap: '좌석 맵 건너뛰기',
+  switchDeck: '데크 전환',
 };
 
 export const LOCALE_TR = {
@@ -1331,6 +1359,8 @@ export const LOCALE_TR = {
   price: 'Fiyat',
   status: 'Durum',
   action: 'İşlem',
+  skipSeatMap: 'Koltuk haritasını atla',
+  switchDeck: 'Güverte değiştir',
 };
 
 export const LOCALE_VI = {
@@ -1420,6 +1450,8 @@ export const LOCALE_VI = {
   price: 'Giá',
   status: 'Trạng thái',
   action: 'Hành động',
+  skipSeatMap: 'Bỏ qua sơ đồ ghế',
+  switchDeck: 'Chuyển tầng',
 };
 
 export const LOCALE_PT_BR = {
@@ -1509,6 +1541,8 @@ export const LOCALE_PT_BR = {
   price: 'Preço',
   status: 'Status',
   action: 'Ação',
+  skipSeatMap: 'Pular o mapa de assentos',
+  switchDeck: 'Trocar de andar',
 };
 
 export const LOCALE_NL = {
@@ -1598,6 +1632,8 @@ export const LOCALE_NL = {
   price: 'Prijs',
   status: 'Status',
   action: 'Actie',
+  skipSeatMap: 'Stoelplan overslaan',
+  switchDeck: 'Dek wisselen',
 };
 
 export const LOCALE_FR_CA = {
@@ -1687,4 +1723,6 @@ export const LOCALE_FR_CA = {
   price: 'Prix',
   status: 'Statut',
   action: 'Action',
+  skipSeatMap: 'Passer le plan des sièges',
+  switchDeck: 'Changer de pont',
 };
