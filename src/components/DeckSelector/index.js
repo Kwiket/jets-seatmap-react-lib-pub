@@ -34,14 +34,14 @@ export const JetsDeckSelector = ({ direction }) => {
   };
 
   return (
-    <div
-      className={`jets-deck-selector`}
-      style={style}
-      ref={elementRef}
-      onClick={e => switchDeck()}
-      dangerouslySetInnerHTML={{
-        __html: buttonSVG(deckSelectorStrokeColor),
-      }}
-    ></div>
+    <div className={`jets-deck-selector`} style={style} ref={elementRef} onClick={e => switchDeck()}>
+      <span
+        aria-hidden="true"
+        style={{ display: 'contents' }}
+        dangerouslySetInnerHTML={{
+          __html: buttonSVG(deckSelectorStrokeColor),
+        }}
+      ></span>
+    </div>
   );
 };

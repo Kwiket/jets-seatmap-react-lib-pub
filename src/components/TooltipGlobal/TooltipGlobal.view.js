@@ -75,6 +75,7 @@ export const JetsTooltipGlobalView = ({
                   {icon ? (
                     <span
                       className={`svg_span ${cssClass ? cssClass + '-icon' : ''}`}
+                      aria-hidden="true"
                       dangerouslySetInnerHTML={{
                         __html: icon,
                       }}
@@ -105,6 +106,7 @@ export const JetsTooltipGlobalView = ({
                   <span
                     className="svg_span"
                     style={{ fill: tooltipIconColor }}
+                    aria-hidden="true"
                     dangerouslySetInnerHTML={{
                       __html: icon,
                     }}
