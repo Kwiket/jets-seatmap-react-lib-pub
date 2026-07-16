@@ -8,11 +8,12 @@
   z-index: 1000;
 }
 
-/* Visible keyboard focus for the deck switch (WCAG 2.4.7). Only applies when
-   the control is a focusable switch; mouse clicks do not trigger it. */
+/* Visible keyboard focus for the deck switch (WCAG 2.4.7). A two-tone
+   white+magenta ring so it stays legible on any seat colour or the deck floor
+   (mirrors the seat focus ring). Only applies to keyboard focus, not clicks. */
 .jets-deck-selector:focus-visible {
-  outline: 3px solid #1565c0;
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 5px #d81b60;
 }
 
 /* Windows High Contrast / forced-colors mode.
