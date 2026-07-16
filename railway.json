@@ -1,0 +1,11 @@
+{
+  "$schema": "https://railway.com/railway.schema.json",
+  "build": {
+    "buildCommand": "pnpm build-storybook"
+  },
+  "deploy": {
+    "startCommand": "npx --yes http-server storybook-static -p 3000 -a 0.0.0.0",
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 3
+  }
+}
