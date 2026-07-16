@@ -59,4 +59,39 @@ describe('JetsDeckSelector', () => {
     fireEvent.click(selector);
     expect(switchDeck).toHaveBeenCalledTimes(1);
   });
+
+  it('is a keyboard tab stop (tabindex=0) when the switch semantics are on', () => {
+    setup({ direction: false, wcagFlags: { enabled: true, landmarksAndSkipLink: true } });
+
+    const selector = screen.getByRole('switch');
+    expect(selector.getAttribute('tabindex')).toBe('0');
+  });
+
+  it('toggles the deck on Enter and Space, calling switchDeck with no argument (toggle, not jump-to-index)', () => {
+    const switchDeck = jest.fn();
+    setup({
+      direction: false,
+      wcagFlags: { enabled: true, landmarksAndSkipLink: true },
+      events: { switchDeck },
+    });
+
+    const selector = screen.getByRole('switch');
+    fireEvent.keyDown(selector, { key: 'Enter' });
+    fireEvent.keyDown(selector, { key: ' ' });
+
+    expect(switchDeck).toHaveBeenCalledTimes(2);
+    expect(switchDeck).toHaveBeenNthCalledWith(1);
+    expect(switchDeck).toHaveBeenNthCalledWith(2);
+  });
+
+  it('is not a tab stop and ignores keyboard when the flag is off (zero-change)', () => {
+    const switchDeck = jest.fn();
+    setup({ direction: false, wcagFlags: undefined, events: { switchDeck } });
+
+    const selector = document.querySelector('.jets-deck-selector');
+    expect(selector.getAttribute('tabindex')).toBeNull();
+
+    fireEvent.keyDown(selector, { key: 'Enter' });
+    expect(switchDeck).not.toHaveBeenCalled();
+  });
 });

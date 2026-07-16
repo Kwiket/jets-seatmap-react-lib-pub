@@ -8,6 +8,13 @@
   z-index: 1000;
 }
 
+/* Visible keyboard focus for the deck switch (WCAG 2.4.7). Only applies when
+   the control is a focusable switch; mouse clicks do not trigger it. */
+.jets-deck-selector:focus-visible {
+  outline: 3px solid #1565c0;
+  outline-offset: 2px;
+}
+
 /* Windows High Contrast / forced-colors mode.
    The inline SVG icon uses a parameterised fill that the browser strips
    under forced-colors, leaving an invisible clickable area. Render the

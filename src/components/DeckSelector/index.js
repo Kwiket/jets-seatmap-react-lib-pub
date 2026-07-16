@@ -39,11 +39,23 @@ export const JetsDeckSelector = ({ direction }) => {
   // doubles as the checked state. Full tablist semantics for 3+ decks is out
   // of scope here and should be a follow-up.
   const switchOn = !!wcagFlags?.landmarksAndSkipLink;
+  // Once it is exposed as a switch it must also be keyboard-operable (WCAG
+  // 2.1.1 Keyboard): make it a tab stop and toggle the deck on Enter/Space.
+  // switchDeck() is called with NO argument so it toggles — passing a truthy
+  // value would be read as an explicit deck index.
+  const onSwitchKeyDown = e => {
+    if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+      e.preventDefault();
+      switchDeck();
+    }
+  };
   const switchAttrs = switchOn
     ? {
         role: 'switch',
         'aria-checked': !!direction,
         'aria-label': (LOCALES_MAP[config?.lang] || LOCALES_MAP[DEFAULT_LANG])['switchDeck'] || 'Switch deck',
+        tabIndex: 0,
+        onKeyDown: onSwitchKeyDown,
       }
     : {};
 
