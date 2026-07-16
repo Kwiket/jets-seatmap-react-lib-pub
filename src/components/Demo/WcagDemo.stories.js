@@ -40,3 +40,32 @@ export const KeyboardEnabled = () => (
     </div>
   </div>
 );
+KeyboardEnabled.storyName = 'Grid + keyboard (alternativeView: grid)';
+
+// Pinned list view: a semantic <table> of every seat instead of the diagram.
+// No toggle button in this mode — the table is always shown.
+export const ListView = () => (
+  <div style={{ padding: 24 }}>
+    <JetsSeatMap
+      flight={flight}
+      config={{ ...config, wcag: { enabled: true, alternativeView: 'list' } }}
+      passengers={PASSENGERS_MOCK}
+    />
+  </div>
+);
+ListView.storyName = 'List view (alternativeView: list)';
+
+// Auto view: renders the grid above 480px and the table below it, AND shows a
+// "View as list / View as map" toggle button so the choice can be overridden.
+export const AutoView = () => (
+  <div style={{ padding: 24 }}>
+    <div style={{ height: '80vh', overflow: 'auto', border: '1px solid #d0d0d0', display: 'inline-block' }}>
+      <JetsSeatMap
+        flight={flight}
+        config={{ ...config, wcag: { enabled: true, alternativeView: 'auto' } }}
+        passengers={PASSENGERS_MOCK}
+      />
+    </div>
+  </div>
+);
+AutoView.storyName = 'Auto view + toggle button (alternativeView: auto)';
