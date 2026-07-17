@@ -107,6 +107,22 @@ describe('JetsSeatList', () => {
     expect(button).toBeDisabled();
   });
 
+  it('exposes a select-disabled reason via aria-label, not a native title tooltip', () => {
+    const content = [deck({ rows: [row({ seats: [seatDataPremium({ number: '33A', status: 'available' })] })] })];
+
+    setup({
+      content,
+      events: {
+        isSeatSelectDisabled: () => true,
+        getSelectDisabledReason: () => 'Not available for infants',
+      },
+    });
+
+    const button = screen.getByRole('button', { name: 'Select, Not available for infants' });
+    expect(button).toBeDisabled();
+    expect(button).not.toHaveAttribute('title');
+  });
+
   it('filters seats by position (window)', () => {
     // Three-seat row: first/last are 'window', the middle one is neither
     // window nor aisle-adjacent (computeSeatPosition → 'middle').

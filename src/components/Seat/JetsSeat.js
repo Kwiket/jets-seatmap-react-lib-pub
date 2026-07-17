@@ -224,7 +224,9 @@ export const JetsSeat = ({ data, colIndex, rowIndex, rowSeats }) => {
     >
       {seatType && type !== index ? (
         <>
-          {showSeatPriceLabel && <SeatPriceLabel priceValue={priceValue} currency={currency} maxWidth={size.width} />}
+          {showSeatPriceLabel && (
+            <SeatPriceLabel priceValue={priceValue} currency={currency} maxWidth={size.width} wcag={gridOn} />
+          )}
           <div className={`jets-seat-number ST-${seatIconType}`}>{`${number}`}</div>
           <SeatIcon seatType={seatType} style={svgStyle} />
           {passenger && (

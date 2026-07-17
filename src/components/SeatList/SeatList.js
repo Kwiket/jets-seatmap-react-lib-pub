@@ -209,16 +209,22 @@ export const JetsSeatList = ({ content = [], lang = DEFAULT_LANG, showActions = 
 
     const disabled = isSeatSelectDisabled(seat);
     const reason = disabled ? getSelectDisabledReason(seat) : '';
+    const label = selectButtonLabel(seat, loc);
 
+    // Expose the disabled reason through the accessible name rather than a
+    // native `title`: a title tooltip is not keyboard/touch reachable and its
+    // screen-reader support is inconsistent (a11yproject "Remove title
+    // attribute tooltips"). An aria-label is announced even for a disabled
+    // button in screen-reader browse mode.
     return (
       <button
         type="button"
         className="jets-seat-list__action jets-seat-list__action--select"
         disabled={disabled}
-        title={reason || undefined}
+        aria-label={reason ? `${label}, ${reason}` : undefined}
         onClick={() => onSelectClick(seat)}
       >
-        {selectButtonLabel(seat, loc)}
+        {label}
       </button>
     );
   };
