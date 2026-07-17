@@ -13,10 +13,10 @@ const locale = lang => LOCALES_MAP[lang] || LOCALES_MAP[DEFAULT_LANG] || {};
 
 const t = (loc, key, fallback) => loc[key] || fallback;
 
-/** Flatten `content` (decks → rows → seats) into real seats only, tagged with row/position info. */
+/** Flatten `content` (decks → rows → seats) into real seats only, tagged with row/position/deck info. */
 const flattenSeats = content => {
   const result = [];
-  for (const deck of content || []) {
+  (content || []).forEach((deck, deckIndex) => {
     for (const row of deck.rows || []) {
       for (const seat of row.seats || []) {
         if (seat.type !== ENTITY_TYPE_MAP.seat) continue;
@@ -25,12 +25,20 @@ const flattenSeats = content => {
           row,
           rowNumber: rowNumber(seat),
           position: computeSeatPosition(seat, row),
+          deckIndex,
         });
       }
     }
-  }
+  });
   return result;
 };
+
+/** Options for the deck `<select>`: one per deck, labelled by its own number when present. */
+const deckOptions = (content, loc) =>
+  (content || []).map((deck, i) => ({
+    value: String(i),
+    label: `${t(loc, 'deck', 'Deck')} ${deck.number ?? i + 1}`,
+  }));
 
 /**
  * Passenger-facing row number for the Row column — the numeric prefix of the
@@ -145,6 +153,7 @@ const priceKey = seat => {
 export const JetsSeatList = ({ content = [], lang = DEFAULT_LANG, showActions = true }) => {
   const { onSeatSelect, onSeatUnselect, isSeatSelectDisabled, getSelectDisabledReason } = useContext(JetsContext);
 
+  const [deckFilter, setDeckFilter] = useState('all');
   const [positionFilter, setPositionFilter] = useState('all');
   const [filterExtraLegroom, setFilterExtraLegroom] = useState(false);
   const [filterExitRow, setFilterExitRow] = useState(false);
@@ -154,10 +163,15 @@ export const JetsSeatList = ({ content = [], lang = DEFAULT_LANG, showActions = 
 
   const flatSeats = useMemo(() => flattenSeats(content), [content]);
 
+  // The deck filter (and the whole deck control) only makes sense on a
+  // multi-deck aircraft; a single-deck plane shows no deck column or filter.
+  const decks = useMemo(() => (content.length > 1 ? deckOptions(content, loc) : []), [content, loc]);
+
   const showFeaturesColumn = useMemo(() => flatSeats.some(entry => featuresLabel(entry.seat) !== '—'), [flatSeats]);
 
   const filteredAndSortedSeats = useMemo(() => {
     const filtered = flatSeats.filter(entry => {
+      if (deckFilter !== 'all' && String(entry.deckIndex) !== deckFilter) return false;
       if (positionFilter === 'window' && entry.position !== 'window') return false;
       if (positionFilter === 'aisle' && entry.position !== 'aisle') return false;
       if (filterExtraLegroom && !hasExtraLegroom(entry.seat)) return false;
@@ -173,7 +187,7 @@ export const JetsSeatList = ({ content = [], lang = DEFAULT_LANG, showActions = 
     }
     // 'row': stable, preserves the natural deck/row/seat order from flatSeats.
     return filtered;
-  }, [flatSeats, positionFilter, filterExtraLegroom, filterExitRow, sortKey]);
+  }, [flatSeats, deckFilter, positionFilter, filterExtraLegroom, filterExitRow, sortKey]);
 
   const onSelectClick = seat => {
     if (isSeatSelectDisabled(seat)) return;
@@ -234,6 +248,20 @@ export const JetsSeatList = ({ content = [], lang = DEFAULT_LANG, showActions = 
       <fieldset className="jets-seat-list__filters">
         <legend className="jets-visually-hidden">{t(loc, 'filters', 'Filters')}</legend>
 
+        {decks.length > 0 && (
+          <label className="jets-seat-list__select">
+            <span>{t(loc, 'deck', 'Deck')}</span>
+            <select value={deckFilter} onChange={e => setDeckFilter(e.target.value)}>
+              <option value="all">{t(loc, 'allDecks', 'All decks')}</option>
+              {decks.map(({ value, label }) => (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
+
         <label className="jets-seat-list__select">
           <span>{t(loc, 'position', 'Position')}</span>
           <select value={positionFilter} onChange={e => setPositionFilter(e.target.value)}>
@@ -284,9 +312,17 @@ export const JetsSeatList = ({ content = [], lang = DEFAULT_LANG, showActions = 
                 {t(loc, 'row', 'Row')}
               </th>
               <th scope="col">{t(loc, 'seat', 'Seat')}</th>
-              <th scope="col">{t(loc, 'cabin', 'Cabin')}</th>
-              <th scope="col">{t(loc, 'position', 'Position')}</th>
-              {showFeaturesColumn && <th scope="col">{t(loc, 'features', 'Features')}</th>}
+              <th scope="col" className="jets-seat-list__col-cabin">
+                {t(loc, 'cabin', 'Cabin')}
+              </th>
+              <th scope="col" className="jets-seat-list__col-position">
+                {t(loc, 'position', 'Position')}
+              </th>
+              {showFeaturesColumn && (
+                <th scope="col" className="jets-seat-list__col-features">
+                  {t(loc, 'features', 'Features')}
+                </th>
+              )}
               {showActions && <th scope="col">{t(loc, 'action', 'Action')}</th>}
             </tr>
           </thead>
@@ -295,9 +331,9 @@ export const JetsSeatList = ({ content = [], lang = DEFAULT_LANG, showActions = 
               <tr key={entry.seat.id || entry.seat.uniqId}>
                 <td className="jets-seat-list__col-row">{entry.rowNumber}</td>
                 <td>{entry.seat.number || entry.seat.letter}</td>
-                <td>{entry.seat.classType || entry.seat.classCode || '—'}</td>
-                <td>{positionLabel(entry, loc)}</td>
-                {showFeaturesColumn && <td>{featuresLabel(entry.seat)}</td>}
+                <td className="jets-seat-list__col-cabin">{entry.seat.classType || entry.seat.classCode || '—'}</td>
+                <td className="jets-seat-list__col-position">{positionLabel(entry, loc)}</td>
+                {showFeaturesColumn && <td className="jets-seat-list__col-features">{featuresLabel(entry.seat)}</td>}
                 {showActions && <td>{renderActionCell(entry)}</td>}
               </tr>
             ))}

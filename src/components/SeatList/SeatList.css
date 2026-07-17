@@ -6,6 +6,9 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   width: 100%;
   box-sizing: border-box;
+  /* Lets the table react to the seat-map width (which the host configures),
+     not the viewport, so secondary columns can drop when the box is narrow. */
+  container-type: inline-size;
 }
 
 .jets-seat-list__filters {
@@ -57,6 +60,28 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
+}
+
+/* Progressive column drop so the essential columns (row, seat, cabin and the
+   Select/price action) always fit the configured seat-map width instead of
+   overflowing behind a horizontal scroll. Features and position are the
+   secondary columns — position also has its own filter above the table. */
+@container (max-width: 600px) {
+  .jets-seat-list__col-features {
+    display: none;
+  }
+}
+
+@container (max-width: 460px) {
+  .jets-seat-list__col-position {
+    display: none;
+  }
+}
+
+@container (max-width: 340px) {
+  .jets-seat-list__col-cabin {
+    display: none;
+  }
 }
 
 /* Row number is short — never wrap it onto two lines. */

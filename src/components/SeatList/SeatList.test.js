@@ -107,6 +107,59 @@ describe('JetsSeatList', () => {
     expect(button).toBeDisabled();
   });
 
+  it('shows the price on the action button for a paid seat', () => {
+    const content = [
+      deck({ rows: [row({ seats: [seatDataPremium({ number: '33A', status: 'available', price: '€ 25', priceValue: 25 })] })] }),
+    ];
+
+    setup({ content, events: { isSeatSelectDisabled: () => false } });
+
+    expect(screen.getByRole('button', { name: '€ 25' })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Select' })).not.toBeInTheDocument();
+  });
+
+  it('shows a plain "Select" button for a free (unpriced) seat', () => {
+    const content = [
+      deck({ rows: [row({ seats: [seatDataPremium({ number: '33A', status: 'available', price: '€ 0', priceValue: 0 })] })] }),
+    ];
+
+    setup({ content, events: { isSeatSelectDisabled: () => false } });
+
+    expect(screen.getByRole('button', { name: 'Select' })).toBeInTheDocument();
+  });
+
+  it('tags the secondary columns so CSS can drop them on a narrow width', () => {
+    setup();
+    const table = screen.getByRole('table');
+    expect(table.querySelector('th.jets-seat-list__col-cabin')).toBeInTheDocument();
+    expect(table.querySelector('th.jets-seat-list__col-position')).toBeInTheDocument();
+    expect(table.querySelector('td.jets-seat-list__col-cabin')).toBeInTheDocument();
+  });
+
+  it('shows no deck filter for a single-deck aircraft', () => {
+    setup();
+    expect(screen.queryByRole('combobox', { name: 'Deck' })).not.toBeInTheDocument();
+  });
+
+  it('renders a deck filter for a multi-deck aircraft and filters rows by deck', () => {
+    const content = [
+      deck({ uniqId: '_deck1', rows: [row({ seats: [seatDataPremium({ number: '33A' })] })] }),
+      deck({ uniqId: '_deck2', rows: [row({ uniqId: '_row50', number: 50, seats: [seatDataEconomy({ number: '50A' })] })] }),
+    ];
+
+    setup({ content });
+
+    const deckSelect = screen.getByRole('combobox', { name: 'Deck' });
+    // Default 'All decks' shows both decks' seats.
+    expect(screen.getByRole('table')).toHaveTextContent('33A');
+    expect(screen.getByRole('table')).toHaveTextContent('50A');
+
+    // Filtering to the second deck (index 1) drops the first deck's seat.
+    fireEvent.change(deckSelect, { target: { value: '1' } });
+    expect(screen.getByRole('table')).not.toHaveTextContent('33A');
+    expect(screen.getByRole('table')).toHaveTextContent('50A');
+  });
+
   it('exposes a select-disabled reason via aria-label, not a native title tooltip', () => {
     const content = [deck({ rows: [row({ seats: [seatDataPremium({ number: '33A', status: 'available' })] })] })];
 

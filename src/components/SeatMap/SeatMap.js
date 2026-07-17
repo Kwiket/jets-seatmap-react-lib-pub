@@ -877,12 +877,12 @@ export const JetsSeatMap = ({
           ref={seatMapRef}
           className={seatMapClassName}
           style={{
-            width:
-              effectiveView === 'list'
-                ? null
-                : configuration.horizontal
-                ? params?.scaledTotalDecksHeight
-                : configuration.width,
+            // List view keeps the host-configured width (its height is
+            // content-driven, so it is left to flow). `maxWidth: 100%` keeps a
+            // wide configured width from forcing horizontal page scroll on a
+            // narrow viewport (the 'auto' mode use case).
+            width: effectiveView === 'list' ? configuration.width : configuration.horizontal ? params?.scaledTotalDecksHeight : configuration.width,
+            maxWidth: effectiveView === 'list' ? '100%' : undefined,
             height:
               effectiveView === 'list'
                 ? null
@@ -898,7 +898,13 @@ export const JetsSeatMap = ({
         >
           {wcagFlags?.liveAnnouncer && <LiveRegion />}
           {activeTooltip && <ResolvedTooltip data={activeTooltip} />}
-          {shouldShowBuiltInDeckSelector && <JetsDeckSelector direction={!!activeDeck}></JetsDeckSelector>}
+          {/* The deck selector only drives the grid (which shows one deck at a
+              time). The list view already renders every deck, so hide the
+              otherwise-inert selector there — deck filtering is offered inside
+              the list instead. */}
+          {shouldShowBuiltInDeckSelector && effectiveView !== 'list' && (
+            <JetsDeckSelector direction={!!activeDeck}></JetsDeckSelector>
+          )}
           {/* wcagFlags.alternativeView: toggle button renders only when the
               config is 'auto' — pinned 'grid'/'list' modes never show it. */}
           {content?.length > 0 && showViewToggle && (
