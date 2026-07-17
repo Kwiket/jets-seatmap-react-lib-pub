@@ -816,8 +816,11 @@ changes** — no extra roles, attributes, DOM nodes, or behaviour. Every seat st
 exactly the `<div class="jets-seat">` it has always been. This makes adopting
 accessibility a deliberate, zero-risk opt-in rather than a breaking change.
 
-A full criterion-by-criterion conformance report is published at
-[`docs/ACR.md`](docs/ACR.md).
+The control is built to meet [The A11Y Project checklist](https://www.a11yproject.com/checklist/)
+(a practical reading of WCAG 2.2 AA). A full, checkpoint-by-checkpoint
+conformance report is published at
+[`docs/wcag/A11Y-CHECKLIST.md`](docs/wcag/A11Y-CHECKLIST.md), and a full
+criterion-by-criterion ACR at [`docs/ACR.md`](docs/ACR.md).
 
 ### Enabling it
 
