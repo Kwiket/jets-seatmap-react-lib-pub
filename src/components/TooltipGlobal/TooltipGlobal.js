@@ -12,6 +12,24 @@ import { JetsTooltipGlobalView } from './TooltipGlobal.view';
 const PASSENGER_KEY = 'passenger';
 const RESTRICTION_KEY = 'seatRestrictions';
 
+/**
+ * Viewport-space bottom edge of the nearest scrollable/clipping ancestor of
+ * `node`, falling back to the window bottom when there is none. Used to decide
+ * whether a downward-opening tooltip would push its action buttons out of view.
+ */
+export const getClippingBottom = node => {
+  if (typeof window === 'undefined') return Number.POSITIVE_INFINITY;
+  let el = node?.parentElement;
+  while (el && el !== document.body && el !== document.documentElement) {
+    const overflowY = window.getComputedStyle(el).overflowY;
+    if (overflowY === 'auto' || overflowY === 'scroll' || overflowY === 'hidden') {
+      return el.getBoundingClientRect().bottom;
+    }
+    el = el.parentElement;
+  }
+  return window.innerHeight;
+};
+
 export const JetsTooltipGlobal = ({ data }) => {
   const {
     componentOverrides,
@@ -89,7 +107,22 @@ export const JetsTooltipGlobal = ({ data }) => {
   // const allowedRight = seatX + tooltipWidth < seatmapRect.width;
   const preferredLeft = parentRowRect[keyForPosition] > seatmapParentCenter;
 
-  const negatePositionVertical = Number(rowSeatY > tooltipHeight);
+  // Default rule: open below the seat, flipping above only when the seat sits
+  // far enough down that the tooltip already fits in the space above it.
+  let openAbove = rowSeatY > tooltipHeight;
+
+  // Keep the action buttons reachable. They render at the BOTTOM of the tooltip,
+  // so if opening downward would push the tooltip past the bottom of the nearest
+  // scroll container / viewport, the buttons would be hidden. In that case flip
+  // above the seat regardless of the rule above: anchoring the tooltip's bottom
+  // to the seat keeps the buttons on screen (the header may clip at the top,
+  // which is acceptable since the actions are the priority).
+  if (!params?.isHorizontal && tooltipHeight > 0) {
+    const spaceBelow = getClippingBottom(seatNode) - seatRect.bottom;
+    if (tooltipHeight + pointerHeight > spaceBelow) openAbove = true;
+  }
+
+  const negatePositionVertical = Number(openAbove);
   const negatePositionHorizontal = Number(allowedLeft) * Number(preferredLeft);
 
   const relativeSeatY = tooltipHeight - seatY;

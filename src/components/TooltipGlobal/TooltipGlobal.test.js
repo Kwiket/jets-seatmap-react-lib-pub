@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { MockJetsContextProvider } from '../../__mocks__/MockJetsContext';
 
 import { JetsTooltipGlobal } from './index';
+import { getClippingBottom } from './TooltipGlobal';
 import { activeTooltipData } from './__fixtures__';
 
 const setup = ({ data = {}, componentOverrides = {}, config = {}, params = {}, events = {}, wcagFlags } = {}) => ({
@@ -306,6 +307,30 @@ describe('JetsTooltipGlobal', () => {
 
       expect(screen.queryByText(/No passenger available to select/)).not.toBeInTheDocument();
       expect(screen.getByRole('button', { name: /Unselect/ })).not.toHaveAttribute('aria-describedby');
+    });
+  });
+
+  describe('getClippingBottom (tooltip flip-up boundary)', () => {
+    it('returns the bottom of the nearest scrollable ancestor', () => {
+      const scroll = document.createElement('div');
+      scroll.style.overflowY = 'auto';
+      scroll.getBoundingClientRect = () => ({ bottom: 500 });
+      const child = document.createElement('div');
+      scroll.appendChild(child);
+      document.body.appendChild(scroll);
+
+      expect(getClippingBottom(child)).toBe(500);
+
+      document.body.removeChild(scroll);
+    });
+
+    it('falls back to the window height when there is no scrollable ancestor', () => {
+      const el = document.createElement('div');
+      document.body.appendChild(el);
+
+      expect(getClippingBottom(el)).toBe(window.innerHeight);
+
+      document.body.removeChild(el);
     });
   });
 });
