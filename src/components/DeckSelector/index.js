@@ -59,15 +59,28 @@ export const JetsDeckSelector = ({ direction }) => {
       }
     : {};
 
+  const glyphHtml = { __html: buttonSVG(deckSelectorStrokeColor) };
+
+  // Only wrap the decorative glyph in an aria-hidden span when the selector is
+  // actually exposed to assistive tech (role=switch, i.e. `landmarksAndSkipLink`
+  // — which `enabled` also implies). With WCAG off the glyph is injected
+  // straight onto the div, keeping the exact version-3 DOM so no consumer CSS
+  // selector (e.g. `.jets-deck-selector > svg`) shifts.
+  if (!switchOn) {
+    return (
+      <div
+        className={`jets-deck-selector`}
+        style={style}
+        ref={elementRef}
+        onClick={e => switchDeck()}
+        dangerouslySetInnerHTML={glyphHtml}
+      ></div>
+    );
+  }
+
   return (
     <div className={`jets-deck-selector`} style={style} ref={elementRef} onClick={e => switchDeck()} {...switchAttrs}>
-      <span
-        aria-hidden="true"
-        style={{ display: 'contents' }}
-        dangerouslySetInnerHTML={{
-          __html: buttonSVG(deckSelectorStrokeColor),
-        }}
-      ></span>
+      <span aria-hidden="true" style={{ display: 'contents' }} dangerouslySetInnerHTML={glyphHtml}></span>
     </div>
   );
 };

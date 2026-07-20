@@ -908,7 +908,12 @@ export const JetsSeatMap = ({
           {/* wcagFlags.alternativeView: toggle button renders only when the
               config is 'auto' — pinned 'grid'/'list' modes never show it. */}
           {content?.length > 0 && showViewToggle && (
-            <button type="button" className="jets-seat-map__view-toggle" onClick={toggleView}>
+            <button
+              type="button"
+              className="jets-seat-map__view-toggle"
+              style={configuration.rightToLeft ? { marginLeft: 0, marginRight: 'auto' } : undefined}
+              onClick={toggleView}
+            >
               {viewToggleLabel}
             </button>
           )}

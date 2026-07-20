@@ -76,10 +76,16 @@
 /* wcagFlags.alternativeView: 'auto' mode toggle button, switches between the
    grid and the semantic list view. Only rendered at all in 'auto' mode. */
 .jets-seat-map__view-toggle {
+  /* Right-aligned so it clears the deck selector, which floats absolutely at
+     the top-left (top-right in RTL — the button flips to the left there via an
+     inline margin override). Kept in normal flow so it never overlaps seats or
+     the list table. */
+  display: block;
+  width: fit-content;
+  margin: 8px 0 8px auto;
   font: inherit;
   font-size: 13px;
   padding: 6px 12px;
-  margin: 8px 0;
   border: 1px solid #0277bd;
   border-radius: 4px;
   cursor: pointer;

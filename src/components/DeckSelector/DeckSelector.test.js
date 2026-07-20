@@ -84,6 +84,25 @@ describe('JetsDeckSelector', () => {
     expect(switchDeck).toHaveBeenNthCalledWith(2);
   });
 
+  it('injects the glyph directly on the div (no wrapper span) when the flag is off — version-3 DOM preserved', () => {
+    setup({ direction: false, wcagFlags: undefined });
+
+    const selector = document.querySelector('.jets-deck-selector');
+    // Direct-child SVG: consumer CSS like `.jets-deck-selector > svg` keeps matching.
+    expect(selector.querySelector(':scope > svg')).not.toBeNull();
+    expect(selector.querySelector(':scope > span')).toBeNull();
+  });
+
+  it('wraps the glyph in an aria-hidden span when the switch semantics are on', () => {
+    setup({ direction: false, wcagFlags: { enabled: true, landmarksAndSkipLink: true } });
+
+    const selector = document.querySelector('.jets-deck-selector');
+    const wrapper = selector.querySelector(':scope > span');
+    expect(wrapper).not.toBeNull();
+    expect(wrapper.getAttribute('aria-hidden')).toBe('true');
+    expect(wrapper.querySelector('svg')).not.toBeNull();
+  });
+
   it('is not a tab stop and ignores keyboard when the flag is off (zero-change)', () => {
     const switchDeck = jest.fn();
     setup({ direction: false, wcagFlags: undefined, events: { switchDeck } });

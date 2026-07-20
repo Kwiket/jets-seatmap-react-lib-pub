@@ -5,7 +5,7 @@ file. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project
 loosely adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased] — WCAG 2.2 AA accessibility (opt-in)
+## [3.1.0] — Unreleased — WCAG 2.2 AA accessibility (opt-in)
 
 Adds an opt-in WCAG 2.2 Level AA accessibility layer, gated entirely
 behind `config.wcag`, plus a full
@@ -64,6 +64,16 @@ roles, attributes, or behaviour, unless a consumer explicitly turns on
   switches to it below a 480px viewport and shows a view-toggle button;
   `'grid'`/`'list'` are pinned with no toggle.
 
+### Changed
+
+- `fix(tooltip)`: a downward-opening tooltip now flips above the seat when
+  opening below would push its action buttons out of the nearest scroll
+  container (`overflow: auto/scroll/hidden` ancestor) or the viewport.
+  This is a genuine bug fix (previously the buttons could land off-screen),
+  and it applies to **all vertical seat maps regardless of `config.wcag`** —
+  the one behavioural change that is not gated behind the accessibility
+  flags. Horizontal maps are unaffected.
+
 ### Docs
 
 - `docs(a11y)`: README *Accessibility* section (flag reference, enabling
@@ -79,3 +89,5 @@ roles, attributes, or behaviour, unless a consumer explicitly turns on
 - `config.wcag.defaultColorTheme` is a reserved flag with no palette
   implemented behind it yet — colour/contrast remains the consumer's
   `colorTheme` responsibility.
+
+[3.1.0]: https://github.com/Kwiket/jets-seatmap-react-lib-pub/compare/v3.0.77...v3.1.0
