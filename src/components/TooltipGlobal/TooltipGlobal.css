@@ -192,3 +192,24 @@
 .horizontal .jets-tooltip--measurement svg {
   height: 30px;
 }
+
+/* WCAG: clear keyboard focus ring on the tooltip action buttons so users can
+   see which of Cancel / Select is focused while roving with the arrow keys. */
+.jets-tooltip--btn:focus-visible {
+  outline: 3px solid #d81b60;
+  outline-offset: 2px;
+}
+
+/* WCAG 3.3.1 / 3.3.3: visible reason a disabled Select button can't be used.
+   Rendered under the action buttons and tied to Select via aria-describedby.
+   Modest, muted styling on purpose — it's a secondary explanation, not the
+   primary content of the tooltip. Only rendered when
+   config.wcag.visibleRestrictionReason is on. */
+.jets-tooltip--restriction {
+  margin: 0 16px 12px;
+  padding: 6px 10px;
+  font-size: 11px;
+  line-height: 1.35;
+  color: #4f6f8f;
+  border-left: 3px solid #c62828;
+}

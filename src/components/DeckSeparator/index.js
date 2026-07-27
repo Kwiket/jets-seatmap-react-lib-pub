@@ -12,5 +12,13 @@ export const JetsDeckSeparator = ({ width }) => {
     background: colorTheme.fuselageFillColor,
   };
 
-  return <div className={`jets-deck-separator`} data-testid="jets-deck-separator" style={style} ref={elementRef}></div>;
+  return (
+    <div
+      className={`jets-deck-separator`}
+      data-testid="jets-deck-separator"
+      style={style}
+      ref={elementRef}
+      aria-hidden="true"
+    ></div>
+  );
 };

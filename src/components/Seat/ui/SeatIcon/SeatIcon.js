@@ -8,6 +8,7 @@ export const SeatIcon = ({ seatType, style }) => {
   return (
     <div
       className="jets-seat-svg"
+      aria-hidden="true"
       dangerouslySetInnerHTML={{
         __html: sanitizedSeatIcon,
       }}

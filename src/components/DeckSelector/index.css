@@ -7,3 +7,28 @@
   background-color: rgba(128, 128, 128, 0.5);
   z-index: 1000;
 }
+
+/* Visible keyboard focus for the deck switch (WCAG 2.4.7). A two-tone
+   white+magenta ring so it stays legible on any seat colour or the deck floor
+   (mirrors the seat focus ring). Only applies to keyboard focus, not clicks. */
+.jets-deck-selector:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 5px #d81b60;
+}
+
+/* Windows High Contrast / forced-colors mode.
+   The inline SVG icon uses a parameterised fill that the browser strips
+   under forced-colors, leaving an invisible clickable area. Render the
+   selector as a ButtonFace/ButtonText box so it stays visible and operable. */
+@media (forced-colors: active) {
+  .jets-deck-selector {
+    forced-color-adjust: none;
+    background-color: ButtonFace;
+    border: 1px solid ButtonText;
+  }
+
+  .jets-deck-selector svg,
+  .jets-deck-selector path {
+    fill: ButtonText !important;
+  }
+}

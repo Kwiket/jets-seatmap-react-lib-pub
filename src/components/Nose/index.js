@@ -57,6 +57,7 @@ export const JetsNose = ({ isFull }) => {
         __html: content,
       }}
       data-testid="jets-nose"
+      aria-hidden="true"
     ></div>
   );
 };

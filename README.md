@@ -89,6 +89,7 @@ Create your [config](#config) and embed seatmap into your component page via `<J
     - [ onSeatMouseClick](#-onseatmouseclick)
     - [ onAvailabilityApplied](#-onavailabilityapplied)
   - [Advanced: Overriding Components](#advanced-overriding-components)
+  - [Accessibility](#accessibility)
 
 The `flight` prop is required.
 
@@ -804,3 +805,104 @@ interface IJetsTooltipView {
   onTooltipClose: (data: ISeatData, element: HTMLElement, event: React.EventHandler<any>) => void;
 }
 ```
+
+&nbsp;
+
+## Accessibility
+
+The library ships an opt-in WCAG 2.2 Level AA accessibility layer, gated entirely
+behind a single config key: `config.wcag`. **If `config.wcag` is not set, nothing
+changes** — no extra roles, attributes, DOM nodes, or behaviour. Every seat stays
+exactly the `<div class="jets-seat">` it has always been. This makes adopting
+accessibility a deliberate, zero-risk opt-in rather than a breaking change.
+
+The control is built to meet [The A11Y Project checklist](https://www.a11yproject.com/checklist/)
+(a practical reading of WCAG 2.2 AA). A full, checkpoint-by-checkpoint
+conformance report is published at
+[`docs/wcag/A11Y-CHECKLIST.md`](docs/wcag/A11Y-CHECKLIST.md), and a full
+criterion-by-criterion ACR at [`docs/ACR.md`](docs/ACR.md).
+
+### Enabling it
+
+Turn everything on at once:
+
+```jsx
+const config = {
+  ...,
+  wcag: { enabled: true },
+};
+```
+
+Or enable only specific behaviours (any flag omitted while `enabled: true` still
+defaults to `true`; only flags explicitly set to `false` stay off):
+
+```jsx
+const config = {
+  ...,
+  wcag: {
+    enabled: true,
+    liveAnnouncer: false,       // turn everything on except the live region
+  },
+};
+```
+
+You may also enable individual flags without the `enabled` master switch — each
+flag defaults to `false` on its own.
+
+### Flags
+
+| Flag | What it does | Relevant SC |
+| --- | --- | --- |
+| `gridSemantics` | Seats become `<button role="gridcell">` with an accessible name (`aria-label`) built from seat number, position (window/aisle/middle), features, status and price. Decks get `role="grid"`, rows get `role="row"` with 1-based `aria-rowindex`/`aria-colindex`. A visible `:focus-visible` ring is added. | 1.3.1, 4.1.2, 2.4.7, 1.4.11 |
+| `keyboardNavigation` | *(implies `gridSemantics`)* 2D arrow-key navigation across the grid: `ArrowUp/Down/Left/Right`, `Home`/`End` (row ends), `Ctrl+Home`/`Ctrl+End` (first/last interactable seat), `PageUp`/`PageDown` (±5 rows), `Ctrl+Arrow` (skip to next interactable seat). Roving `tabindex` keeps a single Tab stop into the grid; focus is scrolled into view as it moves. | 2.1.1, 2.4.3, 2.4.11 |
+| `tooltipDialog` | The built-in seat tooltip becomes a non-modal `role="dialog"`. It auto-focuses the primary action (Select, or Unselect if the seat is taken, or Cancel), arrow keys rove focus between the Cancel/Select(/Unselect) buttons, `Escape` closes it and returns focus to the triggering seat, and grid keyboard navigation pauses while it is open. | 1.4.13, 4.1.2 |
+| `liveAnnouncer` | Mounts a visually-hidden `aria-live="polite"` region and announces seat selection, unselection, and programmatic jump-to-seat (`seatJumpTo`). | 4.1.3 |
+| `visibleRestrictionReason` | When a seat can't be selected (e.g. a passenger-type restriction), a visible reason line renders under the disabled Select button in the tooltip, wired to it via `aria-describedby`. | 3.3.1, 3.3.3 |
+| `landmarksAndSkipLink` | Wraps the widget in a `<section role="region">` landmark with a visually-hidden heading, adds a skip link (visible only when it receives keyboard focus) that jumps past the seat map, and applies `role="switch"` / `aria-checked` semantics to the two-deck deck-selector toggle. | 2.4.1 |
+| `alternativeView` (`'grid'` \| `'list'` \| `'auto'`, default `'grid'`) | Renders a semantic `<table>` list of every seat (with filters and price sorting) as an alternative to the 2D seat grid. `'list'` forces the table view; `'auto'` switches to it automatically below a 480px viewport width. A view-toggle button is rendered **only** in `'auto'` mode — `'grid'`/`'list'` are pinned and show no toggle. | 2.5.8 |
+
+### Always-on (no flag required)
+
+A small set of behaviours ship unconditionally because they are invisible to a
+sighted, non-assistive-technology user and change nothing about layout or
+interaction:
+
+- Decorative graphics (fuselage, wings, nose, tail, deck separators, bulk,
+  deck exits, tooltip amenity icons, seat SVG glyph) carry `aria-hidden="true"`.
+  (1.1.1)
+- `prefers-reduced-motion: reduce` is respected — smooth-scrolling on
+  seat-jump falls back to an instant jump, and hover/rotation transitions are
+  suppressed.
+- `forced-colors: active` (Windows High Contrast) is supported — focus rings,
+  seat borders and state icons stay visible instead of disappearing into the
+  authored SVG fill colours.
+
+### Colour and contrast
+
+The library does not ship a default, AA-contrast colour theme, and there is no
+`config.wcag.defaultColorTheme` behaviour implemented yet — `colorTheme` is,
+and remains, entirely the consumer's responsibility. If you enable
+`config.wcag`, audit your own `colorTheme` for ≥4.5:1 text contrast and ≥3:1
+non-text (borders, focus ring) contrast; the library will not do this for you.
+
+### Host responsibilities
+
+The widget is embedded in a host page it does not control. The following are
+out of scope for the library and remain the host's responsibility:
+
+- **Page `<title>`** (SC 2.4.2) — the widget cannot set the document title.
+- **`<html lang>`** (SC 3.1.1 / 3.1.2) — the widget renders its own strings in
+  `config.lang`, but the surrounding document's language attribute is the
+  host's concern.
+- **Page-level contrast and theme** — see *Colour and contrast* above.
+- **Authentication flows** (SC 3.3.7 / 3.3.8) — the widget has no login or
+  multi-step form of its own.
+- **Announcing the running selected-seat total** — `liveAnnouncer` announces
+  individual select/unselect/jump events, but a summary such as "3 of 4 seats
+  selected" is derived from the `onSeatSelected`/`onSeatUnselected` callbacks
+  and must be announced by the host.
+- **Preserving ARIA semantics through `componentOverrides`** — if you replace
+  `JetsSeat`, `JetsTooltip`, `JetsTooltipView` or `JetsNotInit` via
+  `componentOverrides`, the accessibility contract (roles, `aria-*` wiring,
+  focus management) that the default components provide is not enforced by
+  the library and must be reproduced by your override.

@@ -24,6 +24,8 @@ export const JetsTooltipGlobalView = ({
   pointerStyleHorizontal,
   shouldHideButtons,
   rootStyle,
+  selectRestrictionReason,
+  selectRestrictionReasonId,
   onSeatSelect,
   onSeatUnselect,
   onTooltipClose,
@@ -75,6 +77,7 @@ export const JetsTooltipGlobalView = ({
                   {icon ? (
                     <span
                       className={`svg_span ${cssClass ? cssClass + '-icon' : ''}`}
+                      aria-hidden="true"
                       dangerouslySetInnerHTML={{
                         __html: icon,
                       }}
@@ -105,6 +108,7 @@ export const JetsTooltipGlobalView = ({
                   <span
                     className="svg_span"
                     style={{ fill: tooltipIconColor }}
+                    aria-hidden="true"
                     dangerouslySetInnerHTML={{
                       __html: icon,
                     }}
@@ -143,9 +147,15 @@ export const JetsTooltipGlobalView = ({
               content={LOCALES_MAP[lang][SELECT_BTN_KEY]}
               className="jets-btn jets-tooltip--btn "
               style={{ color: tooltipSelectButtonTextColor, backgroundColor: tooltipSelectButtonBackgroundColor }}
+              aria-describedby={selectRestrictionReason ? selectRestrictionReasonId : undefined}
             />
           )}
         </div>
+        {selectRestrictionReason && (
+          <p id={selectRestrictionReasonId} className="jets-tooltip--restriction" style={featureListStyle}>
+            {selectRestrictionReason}
+          </p>
+        )}
       </div>
     </div>
   );

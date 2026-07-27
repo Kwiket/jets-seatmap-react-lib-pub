@@ -1,5 +1,14 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { JetsContext, ENTITY_TYPE_MAP, JetsDataHelper } from '../../common';
+import {
+  JetsContext,
+  ENTITY_TYPE_MAP,
+  ENTITY_STATUS_MAP,
+  LOCALES_MAP,
+  DEFAULT_LANG,
+  JetsDataHelper,
+  buildSeatAriaLabel,
+  computeSeatPosition,
+} from '../../common';
 import { SeatIcon } from './ui/SeatIcon';
 import { SeatPriceLabel } from './ui/SeatPriceLabel';
 
@@ -7,9 +16,19 @@ import './JetsSeat.css';
 
 const PASSENGER_BADGE_SIZE_COEF = 0.8;
 
-export const JetsSeat = ({ data }) => {
-  const { onSeatClick, showTooltip, onTooltipClose, seatLabelJumpTo, resetSeatJumpTo, params, config, colorTheme } =
-    useContext(JetsContext);
+export const JetsSeat = ({ data, colIndex, rowIndex, rowSeats }) => {
+  const {
+    onSeatClick,
+    showTooltip,
+    onTooltipClose,
+    seatLabelJumpTo,
+    resetSeatJumpTo,
+    announceMovedToSeat,
+    params,
+    config,
+    colorTheme,
+    wcagFlags,
+  } = useContext(JetsContext);
   const {
     letter,
     type,
@@ -30,6 +49,78 @@ export const JetsSeat = ({ data }) => {
   const { index, aisle } = ENTITY_TYPE_MAP;
   const componentClassNames = `jets-seat jets-${type} jets-${status} ${!!rotation ? `jets-seat-r-${rotation}` : ''}`;
   const showSeatPriceLabel = price && config?.visibleSeatPriceLabels;
+
+  const gridOn = !!wcagFlags?.gridSemantics;
+  const keyboardOn = !!wcagFlags?.keyboardNavigation;
+  const isSeatType = type === ENTITY_TYPE_MAP.seat;
+  const isInteractiveSeat =
+    isSeatType &&
+    (status === ENTITY_STATUS_MAP.available ||
+      status === ENTITY_STATUS_MAP.selected ||
+      status === ENTITY_STATUS_MAP.preferred ||
+      status === ENTITY_STATUS_MAP.extra);
+
+  const locale = LOCALES_MAP[config?.lang] ?? LOCALES_MAP[DEFAULT_LANG] ?? {};
+
+  const seatAriaLabel = isSeatType
+    ? buildSeatAriaLabel(data, computeSeatPosition(data, { seats: rowSeats ?? [data] }), locale)
+    : null;
+
+  const nonSeatAriaLabel = () => {
+    if (isSeatType) return null;
+    if (type === ENTITY_TYPE_MAP.aisle) return locale['aisle'] || 'aisle';
+    if (type === ENTITY_TYPE_MAP.empty) return locale['empty'] || 'empty';
+    if (type === ENTITY_TYPE_MAP.index) {
+      const rowLabel = locale['row'] || 'Row';
+      return number ? `${rowLabel} ${number}` : locale['index'] || rowLabel;
+    }
+    return locale['empty'] || 'empty';
+  };
+
+  const ariaSelected = isInteractiveSeat
+    ? status === ENTITY_STATUS_MAP.selected ||
+      status === ENTITY_STATUS_MAP.preferred ||
+      status === ENTITY_STATUS_MAP.extra
+    : null;
+  const ariaDisabled = isSeatType && !isInteractiveSeat;
+
+  // Roving tabindex: when keyboard nav is on, every cell starts at -1 and the
+  // SeatMap roving effect promotes exactly one to 0. When grid semantics are on
+  // but keyboard nav is off, a real seat stays an individual tab stop.
+  // INVARIANT: keep this a constant -1 when keyboardNavigation is on — SeatMap applies the
+  // focused cell's tabindex=0 imperatively (see applyRovingTabindex). Making this depend on
+  // focus state would let React clobber the imperative value.
+  const rovingTabIndex = keyboardOn ? -1 : isSeatType ? 0 : -1;
+
+  const gridAttrs = gridOn
+    ? {
+        role: 'gridcell',
+        tabIndex: rovingTabIndex,
+        ...(colIndex != null ? { 'aria-colindex': colIndex } : {}),
+        ...(rowIndex != null ? { 'aria-rowindex': rowIndex } : {}),
+        ...(isSeatType
+          ? {
+              type: 'button',
+              ...(seatAriaLabel ? { 'aria-label': seatAriaLabel } : {}),
+              ...(ariaSelected === null ? {} : { 'aria-selected': ariaSelected }),
+              ...(ariaDisabled ? { 'aria-disabled': 'true' } : {}),
+            }
+          : { 'aria-label': nonSeatAriaLabel() }),
+      }
+    : {};
+
+  const RootTag = gridOn && isSeatType ? 'button' : 'div';
+
+  const handleClick = e => {
+    if (gridOn && isSeatType && !isInteractiveSeat) return;
+    // Safari/Firefox on macOS do NOT move keyboard focus to a <button> on
+    // click (only Chrome does). Focus it explicitly so keyboard navigation can
+    // start from a clicked seat. preventScroll avoids a page jump.
+    if (gridOn && isSeatType) {
+      $component.current?.focus?.({ preventScroll: true });
+    }
+    onSeatClick(data, $component, e);
+  };
 
   const $component = useRef();
 
@@ -110,6 +201,7 @@ export const JetsSeat = ({ data }) => {
     $component.current?.scrollIntoView();
 
     showTooltip(data, $component, { nativeEvent: null });
+    announceMovedToSeat?.(data);
     resetSeatJumpTo();
   }, [seatLabelJumpTo]);
 
@@ -120,18 +212,21 @@ export const JetsSeat = ({ data }) => {
   };
 
   return (
-    <div
+    <RootTag
       ref={$component}
       style={style}
       className={componentClassNames}
-      onClick={e => onSeatClick(data, $component, e)}
+      onClick={handleClick}
       onMouseEnter={params.tooltipOnHover ? e => showTooltip(data, $component, e) : null}
       onMouseLeave={params.tooltipOnHover ? e => onMouseLeave(data, $component, e) : null}
       data-testid="jets-seat"
+      {...gridAttrs}
     >
       {seatType && type !== index ? (
         <>
-          {showSeatPriceLabel && <SeatPriceLabel priceValue={priceValue} currency={currency} maxWidth={size.width} />}
+          {showSeatPriceLabel && (
+            <SeatPriceLabel priceValue={priceValue} currency={currency} maxWidth={size.width} wcag={gridOn} />
+          )}
           <div className={`jets-seat-number ST-${seatIconType}`}>{`${number}`}</div>
           <SeatIcon seatType={seatType} style={svgStyle} />
           {passenger && (
@@ -147,6 +242,6 @@ export const JetsSeat = ({ data }) => {
           {getSeatContent()}
         </div>
       )}
-    </div>
+    </RootTag>
   );
 };

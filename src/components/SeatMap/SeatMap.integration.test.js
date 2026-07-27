@@ -190,7 +190,7 @@ describe('JetsSeatMap', () => {
     ]);
   });
 
-  it("should not allow selecting a seat that is not available", async () => {
+  it('should not allow selecting a seat that is not available', async () => {
     const onSeatSelected = jest.fn();
     const onSeatUnselected = jest.fn();
 
@@ -289,7 +289,6 @@ describe('JetsSeatMap', () => {
 
     // we can now use the passengers after the first select to rerender the component
     const passengersAfterFirstSelect = onSeatSelected.mock.calls[0][0];
-    
 
     rerender(
       <JetsSeatMap
@@ -313,6 +312,56 @@ describe('JetsSeatMap', () => {
     });
 
     expect(onSeatSelected).toHaveBeenCalledTimes(1);
+  });
+
+  it('should not render a visible restriction reason for a disabled Select button by default (flag off)', async () => {
+    const availability = [{ currency: 'EUR', label: '33A', price: 5 }];
+
+    setup({
+      flight,
+      availability,
+      passengers: [],
+      currentDeckIndex: 0,
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText(/33A/)).toBeInTheDocument();
+    });
+
+    fireEvent.click(screen.getByText(/33A/));
+
+    await waitFor(() => {
+      expect(screen.getByText(/Select/)).toBeInTheDocument();
+    });
+
+    expect(screen.getByRole('button', { name: /Select/ })).not.toHaveAttribute('aria-describedby');
+    expect(screen.queryByText(/No passenger available to select/)).not.toBeInTheDocument();
+  });
+
+  it('should render a visible restriction reason wired via aria-describedby when config.wcag.visibleRestrictionReason is on', async () => {
+    const availability = [{ currency: 'EUR', label: '33A', price: 5 }];
+
+    setup({
+      flight,
+      availability,
+      passengers: [],
+      currentDeckIndex: 0,
+      configOverrides: { wcag: { visibleRestrictionReason: true } },
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText(/33A/)).toBeInTheDocument();
+    });
+
+    fireEvent.click(screen.getByText(/33A/));
+
+    await waitFor(() => {
+      expect(screen.getByText(/Select/)).toBeInTheDocument();
+    });
+
+    const reason = screen.getByText(/No passenger available to select/);
+    expect(reason).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Select/ })).toHaveAttribute('aria-describedby', reason.id);
   });
 
   it('should trigger onSeatUnselected when a passenger unselects a seat they just selected', async () => {

@@ -71,6 +71,7 @@ export const JetsTail = ({ isFull }) => {
         __html: content,
       }}
       data-testid="jets-tail"
+      aria-hidden="true"
     ></div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useLayoutEffect, useState } from 'react';
+import React, { useContext, useRef, useLayoutEffect, useEffect, useState } from 'react';
 import {
   DEFAULT_SEAT_PASSENGER_TYPES,
   JetsContext,
@@ -12,9 +12,36 @@ import { JetsTooltipGlobalView } from './TooltipGlobal.view';
 const PASSENGER_KEY = 'passenger';
 const RESTRICTION_KEY = 'seatRestrictions';
 
+/**
+ * Viewport-space bottom edge of the nearest scrollable/clipping ancestor of
+ * `node`, falling back to the window bottom when there is none. Used to decide
+ * whether a downward-opening tooltip would push its action buttons out of view.
+ */
+export const getClippingBottom = node => {
+  if (typeof window === 'undefined') return Number.POSITIVE_INFINITY;
+  let el = node?.parentElement;
+  while (el && el !== document.body && el !== document.documentElement) {
+    const overflowY = window.getComputedStyle(el).overflowY;
+    if (overflowY === 'auto' || overflowY === 'scroll' || overflowY === 'hidden') {
+      return el.getBoundingClientRect().bottom;
+    }
+    el = el.parentElement;
+  }
+  return window.innerHeight;
+};
+
 export const JetsTooltipGlobal = ({ data }) => {
-  const { componentOverrides, isSeatSelectDisabled, onTooltipClose, onSeatSelect, onSeatUnselect, colorTheme, params } =
-    useContext(JetsContext);
+  const {
+    componentOverrides,
+    isSeatSelectDisabled,
+    getSelectDisabledReason,
+    onTooltipClose,
+    onSeatSelect,
+    onSeatUnselect,
+    colorTheme,
+    params,
+    wcagFlags,
+  } = useContext(JetsContext);
 
   const { isSafari } = useEnvironmentInfo();
 
@@ -80,7 +107,22 @@ export const JetsTooltipGlobal = ({ data }) => {
   // const allowedRight = seatX + tooltipWidth < seatmapRect.width;
   const preferredLeft = parentRowRect[keyForPosition] > seatmapParentCenter;
 
-  const negatePositionVertical = Number(rowSeatY > tooltipHeight);
+  // Default rule: open below the seat, flipping above only when the seat sits
+  // far enough down that the tooltip already fits in the space above it.
+  let openAbove = rowSeatY > tooltipHeight;
+
+  // Keep the action buttons reachable. They render at the BOTTOM of the tooltip,
+  // so if opening downward would push the tooltip past the bottom of the nearest
+  // scroll container / viewport, the buttons would be hidden. In that case flip
+  // above the seat regardless of the rule above: anchoring the tooltip's bottom
+  // to the seat keeps the buttons on screen (the header may clip at the top,
+  // which is acceptable since the actions are the priority).
+  if (!params?.isHorizontal && tooltipHeight > 0) {
+    const spaceBelow = getClippingBottom(seatNode) - seatRect.bottom;
+    if (tooltipHeight + pointerHeight > spaceBelow) openAbove = true;
+  }
+
+  const negatePositionVertical = Number(openAbove);
   const negatePositionHorizontal = Number(allowedLeft) * Number(preferredLeft);
 
   const relativeSeatY = tooltipHeight - seatY;
@@ -139,6 +181,57 @@ export const JetsTooltipGlobal = ({ data }) => {
 
   const shouldHideButtons = params?.tooltipOnHover && !params?.isTouchDevice;
 
+  // WCAG dialog behaviour (gated on wcag.tooltipDialog). When a click/Enter
+  // tooltip opens: mark it a dialog, auto-focus the primary action, and let
+  // Left/Right (and Home/End) rove between its buttons — stopPropagation keeps
+  // the grid's arrow navigation from moving seats while the dialog is open.
+  // Escape is intentionally allowed to bubble to the seat map, which closes the
+  // tooltip and returns focus to the trigger seat. Hover tooltips (no buttons)
+  // are excluded.
+  const dialogOn = !!wcagFlags?.tooltipDialog && !shouldHideButtons;
+  useEffect(() => {
+    if (!dialogOn) return;
+    const root = elementRef.current;
+    if (!root) return;
+
+    root.setAttribute('role', 'dialog');
+    root.setAttribute('aria-modal', 'false');
+    const title = root.querySelector('.jets-tooltip--header-title')?.textContent?.trim();
+    if (title) root.setAttribute('aria-label', title);
+
+    const enabledButtons = () =>
+      Array.from(root.querySelectorAll('.jets-tooltip--btns-block button')).filter(btn => !btn.disabled);
+
+    const buttons = enabledButtons();
+    // Primary action is the last button (Select / Unselect); fall back to the
+    // first enabled one (Cancel) when Select is disabled.
+    const primary = buttons[buttons.length - 1] || buttons[0];
+    primary?.focus?.({ preventScroll: true });
+
+    const onKeyDown = event => {
+      const items = enabledButtons();
+      if (items.length === 0) return;
+      const current = items.indexOf(document.activeElement);
+      let nextIndex = null;
+      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+        nextIndex = (Math.max(current, 0) + 1) % items.length;
+      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+        nextIndex = (Math.max(current, 0) - 1 + items.length) % items.length;
+      } else if (event.key === 'Home') {
+        nextIndex = 0;
+      } else if (event.key === 'End') {
+        nextIndex = items.length - 1;
+      }
+      if (nextIndex === null) return;
+      event.preventDefault();
+      event.stopPropagation();
+      items[nextIndex].focus({ preventScroll: true });
+    };
+
+    root.addEventListener('keydown', onKeyDown);
+    return () => root.removeEventListener('keydown', onKeyDown);
+  }, [dialogOn, data]);
+
   let passengerLabel = '';
   if (passenger) {
     passengerLabel = passenger?.passengerLabel || `${LOCALES_MAP[lang][PASSENGER_KEY]} ${passenger?.id}`;
@@ -156,6 +249,17 @@ export const JetsTooltipGlobal = ({ data }) => {
   const filteredFeatures = (features || []).filter(f => !params.hiddenSeatFeatures.includes(f.key));
   const finalListOfFeatures = [...filteredFeatures, ...(additionalProps || [])].slice(0, DEFAULT_FEATURES_RENDER_LIMIT);
 
+  const isSelectDisabled = isSeatSelectDisabled(data);
+
+  // WCAG 3.3.1 / 3.3.3: visible "why is Select disabled" line, wired to the
+  // Select button via aria-describedby. Only applies to the select case (no
+  // passenger assigned yet) — the unselect button is never disabled for this
+  // reason. Fully gated behind wcagFlags.visibleRestrictionReason: when the
+  // flag is off, selectRestrictionReason is '' and nothing renders.
+  const showSelectRestrictionReason = !!wcagFlags?.visibleRestrictionReason && !passenger && isSelectDisabled;
+  const selectRestrictionReason = showSelectRestrictionReason ? getSelectDisabledReason(data) : '';
+  const selectRestrictionReasonId = 'jets-tooltip-restriction';
+
   const ResolvedTooltip = componentOverrides?.JetsTooltipView ?? JetsTooltipGlobalView;
 
   return (
@@ -166,13 +270,15 @@ export const JetsTooltipGlobal = ({ data }) => {
       featureListStyle={featureListStyle}
       finalListOfFeatures={finalListOfFeatures}
       headerStyle={headerStyle}
-      isSeatSelectDisabled={isSeatSelectDisabled(data)}
+      isSeatSelectDisabled={isSelectDisabled}
       params={params}
       passengerLabel={passengerLabel.length ? passengerLabel : restrictionsLabel}
       pointerStyle={pointerStyle}
       pointerStyleHorizontal={pointerStyleHorizontal}
       rootStyle={style}
       shouldHideButtons={shouldHideButtons}
+      selectRestrictionReason={selectRestrictionReason}
+      selectRestrictionReasonId={selectRestrictionReasonId}
       onTooltipClose={onTooltipClose}
       onSeatSelect={onSeatSelect}
       onSeatUnselect={onSeatUnselect}

@@ -67,11 +67,24 @@ import {
   THEME_CABIN_TITLES_LABEL_COLOR,
   SEAT_MAP_WIDTH_TO_WINGS_WIDTH_RATIO,
   useEnvironmentInfo,
+  useLiveAnnouncer,
+  getWcagFlags,
+  classifyKey,
+  remapForOrientation,
+  move,
+  initialCell,
+  LOCALES_MAP,
+  DEFAULT_SEAT_PASSENGER_TYPES,
 } from '../../common';
 import './index.css';
 import { JetsPlaneBody } from '../PlaneBody';
 import { JetsDeckSelector } from '../DeckSelector';
 import { JetsTooltipGlobal } from '../TooltipGlobal';
+import { JetsSeatList } from '../SeatList';
+
+// wcagFlags.alternativeView: media query used by the 'auto' mode to switch
+// the default render to the list view on narrow viewports.
+const NARROW_VIEWPORT_QUERY = '(max-width: 480px)';
 
 const JETS_SEATMAP_DEFAULT_CONFIG = {
   width: DEFAULT_SEAT_MAP_WIDTH,
@@ -154,6 +167,11 @@ const JETS_SEATMAP_DEFAULT_CONFIG = {
   },
 };
 
+// Module-level counter so multiple JetsSeatMap instances on the same page
+// (wcagFlags.landmarksAndSkipLink) get distinct ids for the landmark heading
+// and the skip-link's jump target.
+let landmarkIdCounter = 0;
+
 export const JetsSeatMap = ({
   flight,
   availability,
@@ -188,6 +206,7 @@ export const JetsSeatMap = ({
   componentOverrides,
 }) => {
   const { isFirefox } = useEnvironmentInfo();
+  const { announce, LiveRegion } = useLiveAnnouncer();
 
   const colorTheme = JetsDataHelper.mergeColorThemeWithConstraints(
     JETS_SEATMAP_DEFAULT_CONFIG.colorTheme,
@@ -196,6 +215,8 @@ export const JetsSeatMap = ({
   config.colorTheme = colorTheme;
   config.lang = JetsDataHelper.validateLanguage(config.lang);
   const configuration = { ...JETS_SEATMAP_DEFAULT_CONFIG, ...config };
+
+  const wcagFlags = getWcagFlags(configuration);
 
   // SCALE_TYPES.ZOOM is not fully supported by FF
   if (isFirefox) {
@@ -217,10 +238,37 @@ export const JetsSeatMap = ({
   const [isSelectAvailable, setSelectAvailable] = useState(false);
   const [activeDeck, setActiveDeck] = useState(0);
   const [params, setParams] = useState(null);
+  // wcagFlags.landmarksAndSkipLink: stable ids for the region heading and the
+  // skip-link's jump target, generated once per mounted instance.
+  const landmarkIdsRef = useRef(null);
+  if (landmarkIdsRef.current === null) {
+    landmarkIdCounter += 1;
+    landmarkIdsRef.current = {
+      headingId: `jets-seat-map-heading-${landmarkIdCounter}`,
+      skipTargetId: `jets-seat-map-content-${landmarkIdCounter}`,
+    };
+  }
+  const { headingId, skipTargetId } = landmarkIdsRef.current;
+  // Focused cell for roving tabindex + keyboard navigation. Kept in a REF, not
+  // state, on purpose: mutating it must NOT trigger a React re-render. A
+  // re-render between a seat button's mousedown and mouseup rebuilds the seat
+  // DOM and cancels the native click, which would force a double-click to open
+  // the tooltip. All reads go through focusedCellRef.current.
+  const focusedCellRef = useRef({ deckIdx: 0, rowIdx: 0, colIdx: 0 });
+  // Which deck the roving anchor was last seeded for; lets the seeding effect
+  // re-assert roving on content changes without resetting the user's position.
+  const seededDeckRef = useRef(null);
 
   const [exits, setExits] = useState([]);
   const [bulks, setBulks] = useState([]);
   const [planeFeatures, setPlaneFeatures] = useState(null);
+
+  // wcagFlags.alternativeView: user toggle override. `null` means "follow
+  // config / viewport". Set when the user clicks the toggle button so a
+  // viewport resize doesn't fight the user's intent.
+  const [viewOverride, setViewOverride] = useState(null);
+  // Tracks `matchMedia('(max-width: 480px)').matches` for 'auto' mode.
+  const [viewportNarrow, setViewportNarrow] = useState(false);
 
   const hasReceivedFirstParams = useRef(false);
   const seatMapRef = useRef();
@@ -228,6 +276,48 @@ export const JetsSeatMap = ({
 
   const shouldShowOnlyOneDeck = params?.singleDeckMode && content.length > 1;
   const shouldShowBuiltInDeckSelector = params?.builtInDeckSelector && shouldShowOnlyOneDeck;
+
+  // ─── Alternative-view (list vs grid) ────────────────────────────────────
+  //
+  // Resolved render mode. Reads `wcagFlags.alternativeView` — `viewOverride`
+  // (set by the toggle button) wins over it. `'auto'` follows the live
+  // `viewportNarrow` flag (`matchMedia('(max-width: 480px)')`).
+  const effectiveView = viewOverride
+    ? viewOverride
+    : wcagFlags.alternativeView === 'list'
+    ? 'list'
+    : wcagFlags.alternativeView === 'auto'
+    ? viewportNarrow
+      ? 'list'
+      : 'grid'
+    : 'grid';
+
+  // The toggle button only renders when the host explicitly opted into
+  // 'auto' — pinning 'grid' / 'list' (or leaving the config alone, in which
+  // case getWcagFlags returns the 'grid' default) means the host picked a
+  // mode and the toggle stays hidden entirely (not just hidden via CSS).
+  const showViewToggle = wcagFlags.alternativeView === 'auto';
+
+  const viewToggleLabel =
+    effectiveView === 'list'
+      ? LOCALES_MAP[configuration.lang]?.['viewAsMap'] || 'View as map'
+      : LOCALES_MAP[configuration.lang]?.['viewAsList'] || 'View as list';
+
+  const toggleView = () => {
+    setViewOverride(effectiveView === 'list' ? 'grid' : 'list');
+  };
+
+  useEffect(() => {
+    if (wcagFlags.alternativeView !== 'auto') return;
+    if (typeof window === 'undefined' || !window.matchMedia) return;
+
+    const mql = window.matchMedia(NARROW_VIEWPORT_QUERY);
+    setViewportNarrow(mql.matches);
+
+    const listener = e => setViewportNarrow(e.matches);
+    mql.addEventListener('change', listener);
+    return () => mql.removeEventListener('change', listener);
+  }, [wcagFlags.alternativeView]);
 
   const ResolvedTooltip = componentOverrides?.JetsTooltip ?? JetsTooltipGlobal;
 
@@ -344,6 +434,33 @@ export const JetsSeatMap = ({
 
     setSeatLabelJumpTo(_providedSeatLabel);
   }, [seatJumpTo]);
+
+  useEffect(() => {
+    if (!wcagFlags?.keyboardNavigation) {
+      seededDeckRef.current = null;
+      return;
+    }
+    if (!content?.length) {
+      seededDeckRef.current = null;
+      return;
+    }
+    // Seed the roving anchor to the first interactive seat only on the initial
+    // load or when the active deck changes. On plain content mutations (a
+    // select/unselect within the same deck) keep the current focused cell — a
+    // React re-render there resets each seat's rendered tabindex, so we only
+    // need to re-assert the roving tabindex at the existing position, NOT jump
+    // the user back to the first seat.
+    let pos;
+    if (seededDeckRef.current !== activeDeck) {
+      seededDeckRef.current = activeDeck;
+      pos = initialCell(activeDeck, content);
+      focusedCellRef.current = pos;
+    } else {
+      pos = focusedCellRef.current;
+    }
+    const id = setTimeout(() => applyRovingTabindex(pos), 0);
+    return () => clearTimeout(id);
+  }, [content, activeDeck, wcagFlags?.keyboardNavigation]);
 
   const seatMapClassName = useMemo(() => {
     const _viewModeClassName = params?.isHorizontal ? 'horizontal' : 'vertical';
@@ -483,7 +600,63 @@ export const JetsSeatMap = ({
     });
   };
 
+  // When the built-in dialog tooltip closes via a button (Cancel/Select/
+  // Unselect) or Escape, keyboard focus would otherwise vanish with the removed
+  // tooltip. Return it to the trigger seat so grid navigation resumes. Deferred
+  // so the close re-render (content/tooltip) settles before we query the seat.
+  // Hover tooltips are excluded.
+  const returnFocusToTriggerSeat = () => {
+    if (!wcagFlags?.keyboardNavigation || configuration.tooltipOnHover) return;
+    setTimeout(() => focusCell(focusedCellRef.current), 0);
+  };
+
+  // ─── A11y live announcements ────────────────────────────────────────────
+  //
+  // All announcements use `polite` politeness — the seat-map is not an
+  // emergency UI, so assertive would over-interrupt the screen reader user.
+  // Strings are pulled from LOCALES_MAP with an English fallback so missing
+  // keys never silently swallow announcements. Gated strictly behind
+  // `wcagFlags.liveAnnouncer` so there is zero behavior/DOM change when the
+  // flag is off (see `LiveRegion` render gate below).
+
+  const a11yLocale = () => LOCALES_MAP[configuration.lang] || LOCALES_MAP['EN'] || {};
+
+  const announceIfEnabled = message => {
+    if (!wcagFlags?.liveAnnouncer) return;
+    announce(message);
+  };
+
+  const passengerAnnounceLabel = passenger => passenger?.passengerLabel?.trim() || passenger?.abbr?.trim() || '';
+
+  const announceSeatSelected = (seat, passenger) => {
+    const locale = a11yLocale();
+    const seatWord = locale['seat'] || 'Seat';
+    const selectedFor = locale['seatSelectedFor'] || 'selected for';
+    const number = seat?.number ?? '';
+    const passengerLabel = passengerAnnounceLabel(passenger);
+    const currency = seat?.currency ?? '';
+    const price = seat?.price;
+    const pricePart = price != null ? `, ${currency}${price}` : '';
+    announceIfEnabled(`${seatWord} ${number} ${selectedFor} ${passengerLabel}${pricePart}`.trim());
+  };
+
+  const announceSeatCleared = seat => {
+    const locale = a11yLocale();
+    const seatWord = locale['seat'] || 'Seat';
+    const clearedWord = locale['seatCleared'] || 'cleared';
+    const number = seat?.number ?? '';
+    announceIfEnabled(`${seatWord} ${number} ${clearedWord}`.trim());
+  };
+
+  const announceMovedToSeat = seat => {
+    const locale = a11yLocale();
+    const movedTo = locale['movedToSeat'] || locale['moveToSeat'] || 'Moved to seat';
+    const number = seat?.number ?? '';
+    announceIfEnabled(`${movedTo} ${number}`.trim());
+  };
+
   const onSeatSelect = seat => {
+    const nextPassenger = service.getNextPassenger(passengersList);
     const { data, passengers: newPassengers } = service.selectSeatHandler(content, seat, passengersList);
 
     setContent(data);
@@ -491,6 +664,8 @@ export const JetsSeatMap = ({
     setActiveTooltip(null);
 
     onSeatSelected(newPassengers);
+    announceSeatSelected(seat, nextPassenger);
+    returnFocusToTriggerSeat();
   };
 
   const onSeatUnselect = seat => {
@@ -501,6 +676,8 @@ export const JetsSeatMap = ({
     setActiveTooltip(null);
 
     onSeatUnselected(newPassengers);
+    announceSeatCleared(seat);
+    returnFocusToTriggerSeat();
   };
 
   const onTooltipClose = (data, element, event) => {
@@ -509,6 +686,7 @@ export const JetsSeatMap = ({
       onSeatMouseLeave({ seat, element: element.current, event: event.nativeEvent });
     }
     setActiveTooltip(null);
+    returnFocusToTriggerSeat();
   };
 
   const isSeatSelectDisabled = seatData => {
@@ -519,6 +697,33 @@ export const JetsSeatMap = ({
         seatData.passengerTypes?.length &&
         !seatData.passengerTypes?.includes(nextPassenger?.passengerType))
     );
+  };
+
+  // WCAG 3.3.1 / 3.3.3: localized, human-readable explanation for why the
+  // Select button is disabled. Mirrors isSeatSelectDisabled's own logic so the
+  // two never disagree, but returns a message string (or '' when selectable)
+  // instead of a boolean. Consumed by the tooltip only when
+  // wcagFlags.visibleRestrictionReason is on.
+  const getSelectDisabledReason = seatData => {
+    const locale = LOCALES_MAP[configuration.lang] || LOCALES_MAP[DEFAULT_LANG];
+    const nextPassenger = service.getNextPassenger(passengersList);
+
+    if (!nextPassenger) {
+      return locale['noPassengerToSelect'];
+    }
+
+    if (
+      nextPassenger?.passengerType &&
+      seatData.passengerTypes?.length &&
+      !seatData.passengerTypes?.includes(nextPassenger?.passengerType)
+    ) {
+      const allowedTypes = DEFAULT_SEAT_PASSENGER_TYPES;
+      const filteredPassengerTypes = seatData.passengerTypes.filter(type => allowedTypes.includes(type));
+      const typeStrings = filteredPassengerTypes.map(type => locale[type]);
+      return `${locale['seatRestrictions']}: ${typeStrings.join(', ')}`;
+    }
+
+    return '';
   };
 
   const scaleWrapStyle = {
@@ -536,6 +741,92 @@ export const JetsSeatMap = ({
     height: params?.scaledTotalDecksHeight,
   };
 
+  // Imperatively overrides the seats' rendered tabIndex; relies on JetsSeat's rovingTabIndex
+  // staying a constant -1 while keyboard nav is on, otherwise React would clobber this on re-render.
+  const applyRovingTabindex = pos => {
+    const container = seatMapRef.current;
+    if (!container) return;
+    const focusedRow = String(pos.rowIdx + 1);
+    const focusedCol = String(pos.colIdx + 1);
+    container.querySelectorAll('[role="gridcell"]').forEach(cell => {
+      const isFocused =
+        cell.getAttribute('aria-rowindex') === focusedRow && cell.getAttribute('aria-colindex') === focusedCol;
+      cell.setAttribute('tabindex', isFocused ? '0' : '-1');
+    });
+  };
+
+  const focusCell = pos => {
+    const container = seatMapRef.current;
+    if (!container) return;
+    const el = container.querySelector(
+      `[role="gridcell"][aria-rowindex="${pos.rowIdx + 1}"][aria-colindex="${pos.colIdx + 1}"]`
+    );
+    // Focus without the browser's default (jarring) scroll-to-top, then bring
+    // the focused seat into view minimally so keyboard users can SEE where the
+    // focus ring moved. `block/inline: 'nearest'` scrolls only when the seat is
+    // off-screen, and only just enough — no full-page jump.
+    el?.focus?.({ preventScroll: true });
+    el?.scrollIntoView?.({ block: 'nearest', inline: 'nearest' });
+  };
+
+  const onGridKeydown = event => {
+    if (wcagFlags?.keyboardNavigation && event.key === 'Escape' && activeTooltip) {
+      // onTooltipClose returns focus to the trigger seat (resumes seat nav).
+      onTooltipClose();
+      event.preventDefault();
+      return;
+    }
+    if (!wcagFlags?.keyboardNavigation) return;
+
+    // While the built-in dialog tooltip is open (click/Enter, not hover) it owns
+    // the keyboard — its own handler roves between the action buttons. Pause
+    // seat-to-seat navigation until it closes.
+    if (wcagFlags?.tooltipDialog && activeTooltip && !configuration.tooltipOnHover) return;
+
+    const rawKey = classifyKey(event.nativeEvent ?? event);
+    if (!rawKey) return;
+
+    const key = remapForOrientation(rawKey, configuration.horizontal ?? false, configuration.rightToLeft ?? false);
+    const from = focusedCellRef.current;
+    const next = move(from, key, content);
+    if (next === from) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+    focusedCellRef.current = next;
+    applyRovingTabindex(next);
+    focusCell(next);
+  };
+
+  const onGridFocusin = event => {
+    if (!wcagFlags?.keyboardNavigation) return;
+    const el = event.target;
+    const rowAttr = el?.getAttribute?.('aria-rowindex');
+    const colAttr = el?.getAttribute?.('aria-colindex');
+    if (rowAttr == null || colAttr == null) return;
+    const rowIdx = parseInt(rowAttr, 10) - 1;
+    const colIdx = parseInt(colAttr, 10) - 1;
+    if (isNaN(rowIdx) || isNaN(colIdx)) return;
+    const deckAttr = el.closest?.('[data-deck-index]')?.getAttribute('data-deck-index');
+    const parsedDeck = deckAttr != null ? parseInt(deckAttr, 10) : NaN;
+    const deckIdx = !isNaN(parsedDeck) ? parsedDeck : activeDeck;
+    const next = { deckIdx, rowIdx, colIdx };
+    focusedCellRef.current = next;
+    applyRovingTabindex(next);
+  };
+
+  // wcagFlags.landmarksAndSkipLink: jump keyboard focus straight past the
+  // seat-map content to the target span rendered right after it. Native
+  // anchor href jump behavior alone doesn't reliably move focus in every
+  // browser, so we do it explicitly and keep href only as a semantic fallback.
+  const onSkipLinkClick = event => {
+    event.preventDefault();
+    const target = document.getElementById(skipTargetId);
+    if (!target) return;
+    target.focus({ preventScroll: true });
+    target.scrollIntoView?.({ block: 'nearest', behavior: 'auto' });
+  };
+
   const providerValue = {
     onSeatClick,
     showTooltip,
@@ -543,43 +834,107 @@ export const JetsSeatMap = ({
     onSeatSelect,
     onSeatUnselect,
     isSeatSelectDisabled,
+    getSelectDisabledReason,
     switchDeck,
     resetSeatJumpTo,
+    announceMovedToSeat,
     params,
     config: configuration,
+    wcagFlags,
     colorTheme,
     activeTooltip,
     seatLabelJumpTo,
     componentOverrides,
   };
 
+  // wcagFlags.landmarksAndSkipLink: zero DOM change when off — the seat-map
+  // root div renders exactly as it does today, unwrapped. When on, the div is
+  // wrapped in a <section role="region"> landmark (transparent via
+  // display:contents so it never affects the parent's layout of the existing
+  // percentage-sized root), preceded by a visually-hidden heading and a skip
+  // link, and followed by the skip link's jump target.
+  const landmarksOn = !!wcagFlags?.landmarksAndSkipLink;
+  const locale = LOCALES_MAP[configuration.lang] || LOCALES_MAP[DEFAULT_LANG];
+  const RegionWrapper = landmarksOn ? 'section' : React.Fragment;
+  const regionProps = landmarksOn
+    ? { className: 'jets-seat-map-region', role: 'region', 'aria-labelledby': headingId }
+    : {};
+
   return (
     <JetsContext.Provider value={providerValue}>
-      <div
-        ref={seatMapRef}
-        className={seatMapClassName}
-        style={{
-          width: configuration.horizontal ? params?.scaledTotalDecksHeight : configuration.width,
-          height: configuration.horizontal ? configuration.width : params?.scaledTotalDecksHeight,
-          fontFamily: colorTheme.fontFamily,
-          background: colorTheme.seatMapBackgroundColor,
-        }}
-        data-testid="jets-seat-map"
-      >
-        {activeTooltip && <ResolvedTooltip data={activeTooltip} />}
-        {shouldShowBuiltInDeckSelector && <JetsDeckSelector direction={!!activeDeck}></JetsDeckSelector>}
-        <div style={configuration.scaleType === SCALE_TYPES.SCALE ? scaleWrapStyle : zoomWrapStyle}>
-          <JetsPlaneBody
-            showOneDeck={shouldShowOnlyOneDeck}
-            activeDeck={activeDeck}
-            content={content}
-            exits={exits}
-            bulks={bulks}
-            isSeatMapInited={isSeatMapInited}
-            config={configuration}
-          />
+      <RegionWrapper {...regionProps}>
+        {landmarksOn && (
+          <h2 id={headingId} className="jets-visually-hidden">
+            {locale['gridLabel'] || 'Seat map'}
+          </h2>
+        )}
+        {landmarksOn && (
+          <a href={`#${skipTargetId}`} className="jets-skip-link" onClick={onSkipLinkClick}>
+            {locale['skipSeatMap'] || 'Skip seat map'}
+          </a>
+        )}
+        <div
+          ref={seatMapRef}
+          className={seatMapClassName}
+          style={{
+            // List view keeps the host-configured width (its height is
+            // content-driven, so it is left to flow). `maxWidth: 100%` keeps a
+            // wide configured width from forcing horizontal page scroll on a
+            // narrow viewport (the 'auto' mode use case).
+            width: effectiveView === 'list' ? configuration.width : configuration.horizontal ? params?.scaledTotalDecksHeight : configuration.width,
+            maxWidth: effectiveView === 'list' ? '100%' : undefined,
+            height:
+              effectiveView === 'list'
+                ? null
+                : configuration.horizontal
+                ? configuration.width
+                : params?.scaledTotalDecksHeight,
+            fontFamily: colorTheme.fontFamily,
+            background: colorTheme.seatMapBackgroundColor,
+          }}
+          data-testid="jets-seat-map"
+          onKeyDown={onGridKeydown}
+          onFocus={onGridFocusin}
+        >
+          {wcagFlags?.liveAnnouncer && <LiveRegion />}
+          {activeTooltip && <ResolvedTooltip data={activeTooltip} />}
+          {/* The deck selector only drives the grid (which shows one deck at a
+              time). The list view already renders every deck, so hide the
+              otherwise-inert selector there — deck filtering is offered inside
+              the list instead. */}
+          {shouldShowBuiltInDeckSelector && effectiveView !== 'list' && (
+            <JetsDeckSelector direction={!!activeDeck}></JetsDeckSelector>
+          )}
+          {/* wcagFlags.alternativeView: toggle button renders only when the
+              config is 'auto' — pinned 'grid'/'list' modes never show it. */}
+          {content?.length > 0 && showViewToggle && (
+            <button
+              type="button"
+              className="jets-seat-map__view-toggle"
+              style={configuration.rightToLeft ? { marginLeft: 0, marginRight: 'auto' } : undefined}
+              onClick={toggleView}
+            >
+              {viewToggleLabel}
+            </button>
+          )}
+          {content?.length > 0 && effectiveView === 'list' ? (
+            <JetsSeatList content={content} lang={configuration.lang} />
+          ) : (
+            <div style={configuration.scaleType === SCALE_TYPES.SCALE ? scaleWrapStyle : zoomWrapStyle}>
+              <JetsPlaneBody
+                showOneDeck={shouldShowOnlyOneDeck}
+                activeDeck={activeDeck}
+                content={content}
+                exits={exits}
+                bulks={bulks}
+                isSeatMapInited={isSeatMapInited}
+                config={configuration}
+              />
+            </div>
+          )}
         </div>
-      </div>
+        {landmarksOn && <span id={skipTargetId} tabIndex={-1}></span>}
+      </RegionWrapper>
     </JetsContext.Provider>
   );
 };

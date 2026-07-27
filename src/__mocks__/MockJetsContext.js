@@ -11,7 +11,14 @@ jest.mock('../common', () => ({
 
 const MockJetsContext = createContext();
 
-const MockJetsContextProvider = ({ children, componentOverrides = {}, config = {}, params = {}, events = {} }) => {
+const MockJetsContextProvider = ({
+  children,
+  componentOverrides = {},
+  config = {},
+  params = {},
+  events = {},
+  wcagFlags,
+}) => {
   const mergedConfig = configData(config);
   const colorTheme = JetsDataHelper.mergeColorThemeWithConstraints(CONFIG_MOCK.colorTheme, config.colorTheme || {});
   mergedConfig.colorTheme = colorTheme;
@@ -24,6 +31,7 @@ const MockJetsContextProvider = ({ children, componentOverrides = {}, config = {
         colorTheme: mergedConfig.colorTheme,
         componentOverrides,
         isSeatSelectDisabled: () => false,
+        getSelectDisabledReason: () => '',
         params: {
           ...paramsData(params),
           // config should take precedent over passed param data
@@ -48,6 +56,7 @@ const MockJetsContextProvider = ({ children, componentOverrides = {}, config = {
         resetSeatJumpTo: jest.fn(),
         showTooltip: jest.fn(),
         switchDeck: jest.fn(),
+        wcagFlags,
         ...events,
       }}
     >

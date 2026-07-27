@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react';
-import { JetsContext } from '../../common';
+import { JetsContext, LOCALES_MAP, DEFAULT_LANG } from '../../common';
 
 import './index.css';
 
@@ -19,7 +19,7 @@ const buttonSVG = stroke => `
 `;
 
 export const JetsDeckSelector = ({ direction }) => {
-  const { params, colorTheme, switchDeck } = useContext(JetsContext);
+  const { params, config, wcagFlags, colorTheme, switchDeck } = useContext(JetsContext);
   const elementRef = useRef(null);
 
   const { deckSelectorStrokeColor, deckSelectorFillColor, deckSelectorSize } = colorTheme;
@@ -33,15 +33,54 @@ export const JetsDeckSelector = ({ direction }) => {
     right: params?.rightToLeft ? 0 : 'auto',
   };
 
+  // wcagFlags.landmarksAndSkipLink: minimal role=switch semantics for the
+  // common 2-deck toggle case. `direction` already carries the "is a
+  // non-default deck active" signal (SeatMap passes `!!activeDeck`), so it
+  // doubles as the checked state. Full tablist semantics for 3+ decks is out
+  // of scope here and should be a follow-up.
+  const switchOn = !!wcagFlags?.landmarksAndSkipLink;
+  // Once it is exposed as a switch it must also be keyboard-operable (WCAG
+  // 2.1.1 Keyboard): make it a tab stop and toggle the deck on Enter/Space.
+  // switchDeck() is called with NO argument so it toggles — passing a truthy
+  // value would be read as an explicit deck index.
+  const onSwitchKeyDown = e => {
+    if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+      e.preventDefault();
+      switchDeck();
+    }
+  };
+  const switchAttrs = switchOn
+    ? {
+        role: 'switch',
+        'aria-checked': !!direction,
+        'aria-label': (LOCALES_MAP[config?.lang] || LOCALES_MAP[DEFAULT_LANG])['switchDeck'] || 'Switch deck',
+        tabIndex: 0,
+        onKeyDown: onSwitchKeyDown,
+      }
+    : {};
+
+  const glyphHtml = { __html: buttonSVG(deckSelectorStrokeColor) };
+
+  // Only wrap the decorative glyph in an aria-hidden span when the selector is
+  // actually exposed to assistive tech (role=switch, i.e. `landmarksAndSkipLink`
+  // — which `enabled` also implies). With WCAG off the glyph is injected
+  // straight onto the div, keeping the exact version-3 DOM so no consumer CSS
+  // selector (e.g. `.jets-deck-selector > svg`) shifts.
+  if (!switchOn) {
+    return (
+      <div
+        className={`jets-deck-selector`}
+        style={style}
+        ref={elementRef}
+        onClick={e => switchDeck()}
+        dangerouslySetInnerHTML={glyphHtml}
+      ></div>
+    );
+  }
+
   return (
-    <div
-      className={`jets-deck-selector`}
-      style={style}
-      ref={elementRef}
-      onClick={e => switchDeck()}
-      dangerouslySetInnerHTML={{
-        __html: buttonSVG(deckSelectorStrokeColor),
-      }}
-    ></div>
+    <div className={`jets-deck-selector`} style={style} ref={elementRef} onClick={e => switchDeck()} {...switchAttrs}>
+      <span aria-hidden="true" style={{ display: 'contents' }} dangerouslySetInnerHTML={glyphHtml}></span>
+    </div>
   );
 };

@@ -3,3 +3,13 @@
   position: relative;
   mix-blend-mode: screen;
 }
+
+/* Windows High Contrast / forced-colors mode.
+   The separator's background is a parameterised theme colour that the
+   browser neutralises under forced-colors, leaving an invisible gap between
+   decks. Force CanvasText so the separator stays perceivable. */
+@media (forced-colors: active) {
+  .jets-deck-separator {
+    background: CanvasText !important;
+  }
+}

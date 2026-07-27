@@ -7,7 +7,7 @@ export const JetsWing = ({ wingsInfo }) => {
   const { isWingLeadingVisible, style } = useWings(wingsInfo);
 
   return (
-    <div className="jets-wings-alignment-wrapper" style={style.wrapper}>
+    <div className="jets-wings-alignment-wrapper" style={style.wrapper} aria-hidden="true">
       <div className={`jets-wings`} style={style.container} data-testid="jets-wings">
         {isWingLeadingVisible && (
           <>
