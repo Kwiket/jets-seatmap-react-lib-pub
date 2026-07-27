@@ -5,7 +5,7 @@ file. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project
 loosely adheres to [Semantic Versioning](https://semver.org/).
 
-## [3.1.0] — Unreleased — WCAG 2.2 AA accessibility (opt-in)
+## [3.1.0] — WCAG 2.2 AA accessibility (opt-in)
 
 Adds an opt-in WCAG 2.2 Level AA accessibility layer, gated entirely
 behind `config.wcag`, plus a full
