@@ -18,6 +18,18 @@ import {
   LOCALE_PT_BR,
   LOCALE_NL,
   LOCALE_FR_CA,
+  LOCALE_BG,
+  LOCALE_DA,
+  LOCALE_EL,
+  LOCALE_ET,
+  LOCALE_HE,
+  LOCALE_HU,
+  LOCALE_ID,
+  LOCALE_LT,
+  LOCALE_LV,
+  LOCALE_NO,
+  LOCALE_RO,
+  LOCALE_SV,
 } from './i18n.languages';
 
 export const SCALE_TYPES = {
@@ -80,6 +92,18 @@ export const LOCALES_MAP = {
   'PT-BR': LOCALE_PT_BR,
   NL: LOCALE_NL,
   'FR-CA': LOCALE_FR_CA,
+  BG: LOCALE_BG,
+  DA: LOCALE_DA,
+  EL: LOCALE_EL,
+  ET: LOCALE_ET,
+  HE: LOCALE_HE,
+  HU: LOCALE_HU,
+  ID: LOCALE_ID,
+  LT: LOCALE_LT,
+  LV: LOCALE_LV,
+  NO: LOCALE_NO,
+  RO: LOCALE_RO,
+  SV: LOCALE_SV,
 };
 
 //#endregion
