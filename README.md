@@ -350,7 +350,10 @@ interface IConfig {
 
 type TUnit = 'metric' | 'imperials';
 
-type TLang = 'CN' | 'DE' | 'EN' | 'ES' | 'PL' | 'RU' | 'AR' | 'CS' | 'FR' | 'PT' | 'UK' | 'IT' | 'JA' | 'KO' | 'TR' | 'PT-BR';
+type TLang =
+  | 'AR' | 'BG' | 'CN' | 'CS' | 'DA' | 'DE' | 'EL' | 'EN' | 'ES' | 'ET'
+  | 'FR' | 'FR-CA' | 'HE' | 'HU' | 'ID' | 'IT' | 'JA' | 'KO' | 'LT' | 'LV'
+  | 'NL' | 'NO' | 'PL' | 'PT' | 'PT-BR' | 'RO' | 'RU' | 'SV' | 'TR' | 'UK' | 'VI';
 ```
 
 Minimal `config` could look like this:

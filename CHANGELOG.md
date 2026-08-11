@@ -5,6 +5,31 @@ file. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project
 loosely adheres to [Semantic Versioning](https://semver.org/).
 
+## [3.1.0]
+
+### Added
+
+- `feat(i18n)`: 12 new locales — `BG`, `DA`, `EL`, `ET`, `HE`, `HU`, `ID`,
+  `LT`, `LV`, `NO`, `RO`, `SV` — bringing `config.lang` to full parity with
+  the seat-map API's supported languages (31 total). Each locale carries the
+  complete `LOCALE_EN` key set, including the WCAG a11y and list-view keys;
+  `i18n.test.js` enforces the parity.
+- Hebrew (`HE`) is the second right-to-left locale after `AR`. As before,
+  RTL layout is driven solely by `config.rightToLeft` — the library does not
+  infer direction from `config.lang`.
+
+### Docs
+
+- `README.md`: `TLang` now lists all 31 supported codes. It previously
+  omitted `VI`, `NL`, and `FR-CA`, which had shipped without being
+  documented.
+
+### Notes
+
+- The deprecated ISO 639-1 code `IW` for Hebrew is intentionally **not**
+  supported; use `HE`. Unrecognised values still fall back to `EN` via
+  `JetsDataHelper.validateLanguage`.
+
 ## [3.1.0] — WCAG 2.2 AA accessibility (opt-in)
 
 Adds an opt-in WCAG 2.2 Level AA accessibility layer, gated entirely

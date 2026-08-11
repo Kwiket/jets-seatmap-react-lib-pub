@@ -10,6 +10,7 @@ import { SUPPORTED_BULKS_COUNT } from '../Bulk/constants';
 
 const API_SUPPORTED_LANGUAGES = [
   'AR',
+  'BG',
   'CN',
   'CS',
   'DA',
@@ -39,7 +40,6 @@ const API_SUPPORTED_LANGUAGES = [
   'SV',
   'VI',
   'PT-BR',
-  'NL',
   'FR-CA',
 ];
 
