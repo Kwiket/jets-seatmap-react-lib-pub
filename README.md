@@ -111,7 +111,7 @@ interface IFlight {
   arrival: string;
   cabinClass: string;
   passengerType?: string;
-  planeCode?: number;
+  planeCode?: string;
   startRow?: string; // string [ 3 .. 24 ] characters
   endRow?: string; // string [ 3 .. 24 ] characters
   exitRowsLeft?: number[]; // restriction by exit rows numbers
