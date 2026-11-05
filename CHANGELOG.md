@@ -5,6 +5,19 @@ file. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project
 loosely adheres to [Semantic Versioning](https://semver.org/).
 
+## [3.1.2]
+
+### Changed
+
+- `engines.node` raised from `>=22.22.3` to `>=22.23.4` (the 2026-10-20
+  Node 22 security release). Node 24 is supported. Consumers installing
+  with engine-strict enabled on an older Node 22 release will be rejected.
+- CI (tests, security scan, npm publish) now runs on Node 24.22.1. The
+  published bundle is unchanged: `dist/` built on Node 24 is identical to
+  the Node 22 build.
+- The publish workflow no longer runs `npm install -g npm@latest`; Node 24
+  bundles npm 11.19.1, which already supports OIDC trusted publishing.
+
 ## [3.1.0]
 
 ### Added
