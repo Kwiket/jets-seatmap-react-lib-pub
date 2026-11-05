@@ -41,7 +41,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
-          node-version: 22.22.3
+          node-version: 24.22.1
           registry-url: 'https://registry.npmjs.org'
 
       - name: Set up pnpm
@@ -71,15 +71,10 @@ jobs:
       - name: Build lib
         run: pnpm run build-lib
 
-      - name: Upgrade npm to >= 11.5.1 (required for OIDC trusted publishing)
-        # Node 22 ships npm 10, which cannot exchange the OIDC token. pnpm does
-        # not perform the exchange at all, so publishing must go through npm.
-        run: |
-          npm install -g npm@latest
-          npm --version
-
       - name: Publish to npm with provenance
-        # npm (>= 11.5.1) auto-detects the GitHub Actions OIDC token and
-        # exchanges it for a short-lived registry token. --provenance adds the
-        # build attestation; --access public publishes the scoped package.
+        # npm (>= 11.5.1, bundled with Node 24) auto-detects the GitHub Actions
+        # OIDC token and exchanges it for a short-lived registry token. pnpm does
+        # not perform the exchange at all, so publishing must go through npm.
+        # --provenance adds the build attestation; --access public publishes
+        # the scoped package.
         run: npm publish --provenance --access public

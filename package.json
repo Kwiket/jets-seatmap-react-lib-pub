@@ -1,6 +1,6 @@
 {
   "name": "@seatmaps.com/react-lib",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "Jets seatmap react library.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -42,7 +42,7 @@
   "homepage": "https://github.com/Kwiket/jets-seatmap-react-lib-pub#readme",
   "packageManager": "pnpm@10.27.0",
   "engines": {
-    "node": ">=22.22.3"
+    "node": ">=22.23.4"
   },
   "dependencies": {
     "dompurify": "^3.4.0"
