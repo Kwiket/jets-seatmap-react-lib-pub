@@ -61,14 +61,14 @@
     "@playwright/test": "1.58.2",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^13.2.1",
-    "@storybook/addon-actions": "8.6.17",
-    "@storybook/addon-essentials": "8.6.17",
-    "@storybook/addon-interactions": "8.6.17",
-    "@storybook/addon-links": "8.6.17",
+    "@storybook/addon-actions": "8.6.19",
+    "@storybook/addon-essentials": "8.6.19",
+    "@storybook/addon-interactions": "8.6.19",
+    "@storybook/addon-links": "8.6.19",
     "@storybook/addon-webpack5-compiler-babel": "4.0.0",
-    "@storybook/react": "8.6.17",
-    "@storybook/react-webpack5": "8.6.17",
-    "@storybook/test": "8.6.17",
+    "@storybook/react": "8.6.19",
+    "@storybook/react-webpack5": "8.6.19",
+    "@storybook/test": "8.6.19",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
@@ -94,6 +94,6 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
-    "storybook": "8.6.17"
+    "storybook": "8.6.19"
   }
 }
